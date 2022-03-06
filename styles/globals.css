@@ -1,16 +1,26 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+@layer base{
+    body{
+        font-family: 'Nunito Sans', sans-serif;
+    }
 
-* {
-  box-sizing: border-box;
+    :root{
+        --main: #1955CA;
+        --red : #B92020 ;
+        --tag: #8FDDDD  ;
+        --btn-hover-blue: #144198 ;
+        --btn-hover-red: #961212 ;
+    }
+    @layer components{
+        .btn-blue{
+            @apply cursor-pointer bg-skin-main text-white rounded px-4 py-2 hover:bg-skin-hoverBlue transition-all font-semibold font-nunito active:scale-95
+        }
+        .btn-red{
+            @apply cursor-pointer bg-skin-red text-white rounded px-4 py-2 hover:bg-skin-hoverRed transition-all font-semibold font-nunito active:scale-95
+        }
+    }
+    
 }
