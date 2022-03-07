@@ -13,6 +13,7 @@
     "@emotion/styled": "^11.8.1",
     "@mui/icons-material": "^5.4.4",
     "@mui/material": "^5.4.4",
+    "@mui/styles": "^5.4.4",
     "@tailwindcss/aspect-ratio": "^0.4.0",
     "@types/yup": "^0.29.13",
     "formik": "^2.2.9",
