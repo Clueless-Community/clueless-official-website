@@ -1,13 +1,11 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-
 import Navbar from './components/Navbar/Navbar'
 import WhatIsClueLess from './components/WhatIsClueless/WhatIsClueLess'
 import UltimateResourceHub from './components/UltimateResourceHub/UltimateResourceHub'
 import Footer from './components/Footer'
 import TeamMembersHome from './components/TeamMembersHome/TeamMembersHome'
 import DonateHome from './components/DonateHome/DonateHome'
-
 
 
 const Home: NextPage = () => {

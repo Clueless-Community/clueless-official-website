@@ -2,7 +2,7 @@ import React from "react";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import StarIcon from "@mui/icons-material/Star";
 
-const AdminpanelChallenge = () => {
+const AdminpanelChallenge: React.FC = () => {
   return (
     <div>
       <div className="w-[281px] max-h-[358px] sm:w-[320px] sm:max-h-[440px] shadow-md pb-2 sm:pb-4 rounded-sm">

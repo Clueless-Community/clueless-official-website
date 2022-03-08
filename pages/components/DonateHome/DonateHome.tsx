@@ -3,6 +3,7 @@ import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism';
 
 const DonateHome = () => {
   return (
+    <>
     <div className='flex justify-between px-28 bg-skin-main pt-10 mt-10 flex-col lg:flex-row'>
         <div className='my-auto pb-10 text-center lg:text-left'>
             <h1 className='text-white md:text-5xl text-3xl'>Loved what we are doing?</h1>
@@ -12,6 +13,7 @@ const DonateHome = () => {
             <img src="https://c.tenor.com/r2b7aS322tUAAAAi/mochi-peach-cat-cat.gif" alt="" className='w-80' />
         </div>
     </div>
+    </>
   )
 }
 
