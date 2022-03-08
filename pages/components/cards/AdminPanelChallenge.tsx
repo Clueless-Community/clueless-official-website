@@ -2,6 +2,7 @@ import React from "react";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import StarIcon from "@mui/icons-material/Star";
 
+
 type Props = {
   //Interface of the Prop Passed in this Compnent
   img: string;
