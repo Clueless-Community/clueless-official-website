@@ -2,23 +2,32 @@ import React from "react";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import StarIcon from "@mui/icons-material/Star";
 
-const AdminpanelChallenge: React.FC = () => {
+
+type Props = {
+  //Interface of the Prop Passed in this Compnent
+  img: string;
+  title: string;
+  xp: number;
+  time: string;
+};
+
+const AdminpanelChallenge: React.FC<Props> = ({img, title, xp, time}) => {
   return (
     <div>
-      <div className="w-[281px] max-h-[358px] sm:w-[320px] sm:max-h-[440px] shadow-md pb-2 sm:pb-4 rounded-sm">
-        <img src="/Dummy.png" alt="" />
+      <div className="w-[281px] max-h-[358px] sm:w-[320px] sm:max-h-[440px] shadow-md pb-2 sm:pb-4 rounded">
+        <img src={img} alt="" />
         <div className="px-6 space-y-2">
           <h1 className="text-lg sm:text-xl mt-2 sm:mt-4">
-            GitHub Challenge for Students
+            {title}
           </h1>
           <div className="flex justify-between">
             <div className="inline-flex item-center text-skin-hoverBlue font-semibold ">
               <StarIcon className="w-[14px] my-auto" />
-              <p className="ml-2 text-xs my-auto font-semibold">500 XP</p>
+              <p className="ml-2 text-xs my-auto font-semibold">{xp} XP</p>
             </div>
             <div className="inline-flex item-center text-skin-hoverBlue font-semibold">
               <AccessTimeIcon className="w-[14px] my-auto font-semibold" />
-              <p className="ml-2 text-xs my-auto text-black">25 Mar - 27 Mar</p>
+              <p className="ml-2 text-xs my-auto text-black">{time}</p>
             </div>
           </div>
           <div className="flex justify-between">

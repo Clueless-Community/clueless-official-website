@@ -1,15 +1,26 @@
 import React from "react";
 
-const AdminpanelPreviousChallenge = () => {
+type Props = {
+  //Interface of the Prop Passed in this Compnent
+  img: string;
+  title: string;
+  description: string;
+};
+const AdminpanelPreviousChallenge: React.FC<Props> = ({
+  img,
+  title,
+  description,
+}) => {
   return (
     <div>
-      <div className="w-[281px] max-h-[358px] sm:w-[320px] sm:max-h-[440px] shadow-md pb-2 sm:pb-4 rounded-sm">
-        <img src="/Dummy.png" alt="" />
+      <div className="w-[281px] max-h-[358px] sm:w-[320px] sm:max-h-[440px] shadow-md pb-2 sm:pb-4 rounded">
+        <img src={img} alt="" />
         <div className="px-6 space-y-2">
-          <h1 className="text-lg sm:text-xl mt-2 sm:mt-4">
-            GitHub Challenge for Students
-          </h1>
-          <p className="text-xs">To enhance your GitHub skills and take you to a different in OpenSource</p>
+          <h1 className="text-lg sm:text-xl mt-2 sm:mt-4">{title}</h1>
+          <p className="text-xs">
+            {description.substring(0, 100)}
+            {/* 100 => length till we will truncate */}
+          </p>
           <div className="flex justify-between">
             <button className="btn-red text-xs w-[105px] sm:w-[119px]">
               Delete
