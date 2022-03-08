@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Navbar from './components/Navbar/Navbar'
 import WhatIsClueLess from './components/Navbar/WhatIsClueless/WhatIsClueLess'
 
+
 const Home: NextPage = () => {
   return (
     <div>
