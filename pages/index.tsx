@@ -5,6 +5,7 @@ import WhatIsClueLess from './components/WhatIsClueless/WhatIsClueLess'
 import UltimateResourceHub from './components/UltimateResourceHub/UltimateResourceHub'
 import Footer from './components/Footer'
 import TeamMembersHome from './components/TeamMembersHome/TeamMembersHome'
+import DonateHome from './components/DonateHome/DonateHome'
 
 
 const Home: NextPage = () => {
@@ -18,6 +19,7 @@ const Home: NextPage = () => {
       <WhatIsClueLess />
       <UltimateResourceHub />
       <TeamMembersHome />
+      <DonateHome />
       <Footer />
     </div>
   )

@@ -8,7 +8,7 @@ const TeamMembersHome = () => {
 
     return (
         <>
-        <h2 className='xl:px-28 lg:px-20 w-11/12 mx-auto text-center lg:text-left text-4xl font-semibold'>✨Amazing Team Behind this!</h2>
+        <h2 className='xl:px-28 lg:px-20 w-11/12 text-center lg:text-left text-4xl font-semibold'>✨Amazing Team Behind this!</h2>
             <div className=' mx-auto justify-center flex-wrap hidden lg:flex'>
                 <Link href="/about-us">
                 <AvatarGroup max={12} className="2xl:scale-[370%] xl:scale-[300%] lg:scale-[230%] my-32">
