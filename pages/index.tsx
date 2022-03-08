@@ -1,7 +1,9 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Navbar from './components/Navbar/Navbar'
-import WhatIsClueLess from './components/Navbar/WhatIsClueless/WhatIsClueLess'
+import WhatIsClueLess from './components/WhatIsClueless/WhatIsClueLess'
+import UltimateResourceHub from './components/UltimateResourceHub/UltimateResourceHub'
+import Footer from './components/Footer'
 
 
 const Home: NextPage = () => {
@@ -13,6 +15,8 @@ const Home: NextPage = () => {
       </Head>
       <Navbar />
       <WhatIsClueLess />
+      <UltimateResourceHub />
+      <Footer />
     </div>
   )
 }

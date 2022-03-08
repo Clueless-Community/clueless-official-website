@@ -8,6 +8,7 @@ import BuildProjects from "./States/BuildProjects";
 import OpenSource from "./States/OpenSource";
 import Resources from "./States/Resources";
 import WeeklyChallenges from "./States/WeeklyChallenges";
+import ReadMoreIcon from '@mui/icons-material/ReadMore';
 
 const WhatIsClueLess: React.FC = () => {
   const [state, setState] = useState<number>(0);
@@ -19,7 +20,7 @@ const WhatIsClueLess: React.FC = () => {
           <img src="/what-is-cluless.png" alt="" className="mx-auto" />
         </div>
         <GitHubIcon
-          className="absolute text-5xl hover:text-6xl transition-all cursor-pointer hover:text-skin-main text-skin-hoverBlue hidden md:block top-44 xl:left-32 left-28"
+          className="absolute text-5xl hover:text-6xl transition-all cursor-pointer hover:text-skin-main text-skin-hoverBlue hidden md:block top-44 xl:left-32 lg:left-5 left-28"
           onMouseOver={() => {
             setState(1);
           }}
@@ -46,7 +47,7 @@ const WhatIsClueLess: React.FC = () => {
           }}
         />
         <BuildIcon
-          className="absolute text-5xl hover:text-6xl transition-all cursor-pointer hover:text-skin-main text-skin-hoverBlue hidden md:block top-44 xl:right-44 right-40"
+          className="absolute text-5xl hover:text-6xl transition-all cursor-pointer hover:text-skin-main text-skin-hoverBlue hidden md:block top-44 xl:right-44 lg:right-16 right-40"
           onMouseOver={() => {
             setState(4);
           }}
@@ -70,7 +71,7 @@ const WhatIsClueLess: React.FC = () => {
           ""
         }
       >
-        <div className="md:px-28 flex flex-col items-center w-11/12 mx-auto my-auto">
+        <div className="xl:px-24 md:px-10 flex flex-col items-center w-11/12 mx-auto my-auto">
           {state === 0 && (
             <motion.div
               className="container"
@@ -91,8 +92,8 @@ const WhatIsClueLess: React.FC = () => {
                 to Open-source, and help you build projects.
               </p>
               <a href="/about-us">
-              <button className="btn-blue bg-white text-black hover:bg-gray-100 mt-10">
-                Learn More
+              <button className="btn-blue bg-white text-black hover:bg-gray-100 mt-10 flex items-center mx-auto lg:mx-0">
+                <ReadMoreIcon className="mr-2"/>Learn More
               </button>
               </a>
             </motion.div>
