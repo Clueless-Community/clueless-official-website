@@ -4,6 +4,7 @@ import Navbar from './components/Navbar/Navbar'
 import WhatIsClueLess from './components/WhatIsClueless/WhatIsClueLess'
 import UltimateResourceHub from './components/UltimateResourceHub/UltimateResourceHub'
 import Footer from './components/Footer'
+import TeamMembersHome from './components/TeamMembersHome/TeamMembersHome'
 
 
 const Home: NextPage = () => {
@@ -16,6 +17,7 @@ const Home: NextPage = () => {
       <Navbar />
       <WhatIsClueLess />
       <UltimateResourceHub />
+      <TeamMembersHome />
       <Footer />
     </div>
   )

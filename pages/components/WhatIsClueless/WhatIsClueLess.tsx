@@ -9,6 +9,7 @@ import OpenSource from "./States/OpenSource";
 import Resources from "./States/Resources";
 import WeeklyChallenges from "./States/WeeklyChallenges";
 import ReadMoreIcon from '@mui/icons-material/ReadMore';
+import Link from "next/link";
 
 const WhatIsClueLess: React.FC = () => {
   const [state, setState] = useState<number>(0);
@@ -91,11 +92,11 @@ const WhatIsClueLess: React.FC = () => {
                 resources, conducts weekly contests to test your skills, a guide
                 to Open-source, and help you build projects.
               </p>
-              <a href="/about-us">
+              <Link href="/about-us">
               <button className="btn-blue bg-white text-black hover:bg-gray-100 mt-10 flex items-center mx-auto lg:mx-0">
                 <ReadMoreIcon className="mr-2"/>Learn More
               </button>
-              </a>
+              </Link>
             </motion.div>
           )}
           {state === 1 && (
