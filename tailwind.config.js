@@ -25,6 +25,10 @@ module.exports = {
         // => @media (min-width: 1536px) { ... }
       },
 
+      backgroundImage: theme => ({
+        'home-code': "url('/home-code.png')",  
+      }),
+
 
       textColor: {
         skin:{
