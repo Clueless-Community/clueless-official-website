@@ -4,7 +4,7 @@ export function RightImage() {
     const x = useMotionValue(10);
     const y = useMotionValue(10);
 
-    const rotateX = useTransform(y, [0, 500], [25, -25]);
+    const rotateX = useTransform(y, [0, 500], [0, -25]);
     const rotateY = useTransform(x, [0, 3000], [-25, 25]);
 
     function handleMouse(event: any) {
