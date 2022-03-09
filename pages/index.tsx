@@ -7,6 +7,7 @@ import Footer from './components/Footer'
 import TeamMembersHome from './components/TeamMembersHome/TeamMembersHome'
 import DonateHome from './components/DonateHome/DonateHome'
 import HomeMain from './components/Home/HomeMain'
+import ActiveChallengesHome from './components/Home/ActiveChallengesHome'
 
 
 
@@ -20,6 +21,7 @@ const Home: NextPage = () => {
       <Navbar />
       <HomeMain />
       <WhatIsClueLess />
+      <ActiveChallengesHome />
       <UltimateResourceHub />
       <TeamMembersHome />
       <DonateHome />
