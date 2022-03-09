@@ -6,6 +6,14 @@ import UltimateResourceHub from './components/UltimateResourceHub/UltimateResour
 import Footer from './components/Footer'
 import TeamMembersHome from './components/TeamMembersHome/TeamMembersHome'
 import DonateHome from './components/DonateHome/DonateHome'
+import ResourceCard from './components/cards/ResourceCard'
+import ResourceCardAdmin from './components/cards/ResourceCardAdmin'
+import ProjectCard from './components/cards/ProjectCard'
+import ChallengeCardActive from './components/cards/ChallengeCardActive'
+import AdminpanelChallenge from './components/cards/AdminPanelChallenge'
+import AdminpanelPreviousChallenge from './components/cards/AdminpanelPreviousChallenge'
+import ChallengeCardPrevious from './components/cards/ChallengeCardPrevious'
+import ChallengeCardAdmin from './components/cards/ChallengeCardAdmin'
 
 
 const Home: NextPage = () => {
