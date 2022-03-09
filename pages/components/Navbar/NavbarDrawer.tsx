@@ -34,7 +34,7 @@ const NavbarDrawer: React.FC<Props> = ({ img, name, email }) => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const handleClose = () => {
     setAnchorEl(null);
-  };
+};
 
   return (
     <React.Fragment>
