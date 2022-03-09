@@ -11,7 +11,7 @@ const ChallengeCardPrevious: React.FC<Props> = ({img, title ,description}) => {
     <div>
       <div className="w-[281px] max-h-[358px] sm:w-[320px] sm:max-h-[440px] shadow-md pb-2 sm:pb-4 rounded">
         <img src={img} alt="" />
-        <div className="px-6 space-y-2">
+        <div className="px-6">
           <h1 className="text-lg sm:text-xl mt-2 sm:mt-4">
             {title}
           </h1>
@@ -19,7 +19,7 @@ const ChallengeCardPrevious: React.FC<Props> = ({img, title ,description}) => {
             {description.substring(0,100)} 
             {/* 100 => length till we will truncate */}
           </p>
-          <button className="btn-blue text-xs py-2 w-full">Participate</button>
+          <button className="btn-blue text-xs py-2 w-full mt-4">Participate</button>
         </div>
       </div>
     </div>

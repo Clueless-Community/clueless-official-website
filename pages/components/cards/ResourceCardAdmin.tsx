@@ -15,27 +15,27 @@ type Props = {
 
 const ResourceCardAdmin: React.FC<Props> = ({img, title, xp, category, price}) => {
   return (
-    <div className="w-[189px] max-h-[294px] sm:w-[597px] sm:h-[209px] p-4 flex justify-between rounded shadow-md">
-      <div className="sm:w-1/2 space-y-3">
+    <div className="w-[189px] max-h-[294px] sm:w-[672px] sm:h-[209px] p-4 flex justify-between rounded shadow-md">
+      <div className="sm:w-1/2">
         <p className="text-xs text-skin-main font-bold">{category}</p>
         <h1 className="text-xl mt-2">{title}</h1>
-        <div className="flex justify-between sm:w-1/2 my-2">
+        <div className="flex justify-between sm:w-1/2 mt-8">
           <div className="inline-flex item-center text-skin-hoverBlue font-semibold ">
             <CircleIcon className="w-[14px] my-auto" />
 
-            <p className="ml-2 text-xs my-auto font-semibold">{xp} XP</p>
+            <p className="ml-2 my-auto font-semibold">{xp} XP</p>
           </div>
           <div className="inline-flex item-center text-skin-hoverBlue font-semibold">
             <PaidIcon className="w-[14px] my-auto font-semibold" />
-            <p className="ml-2 text-xs my-auto text-black">{price}</p>
+            <p className="ml-2 my-auto text-black">{price}</p>
           </div>
         </div>
-        <div className="flex justify-between w-2/3">
-          <button className="w-inherit btn-blue text-xs py-2">
+        <div className="sm:flex justify-between my-4 sm:space-x-4 sm:w-3/4">
+          <button className="w-full sm:w-inherit btn-blue text-xs py-2 mb-2 sm:mb-0">
             <EditIcon className="w-[11px]" />{" "}
             <span className="my-auto ml-2">Edit</span>
           </button>
-          <button className="w-inherit btn-red text-xs py-2">
+          <button className="w-full sm:w-inherit btn-red text-xs py-2">
             <DeleteOutlineIcon className="w-[11px]" />{" "}
             <span className="my-auto ml-2">Delete</span>
           </button>
