@@ -3,14 +3,25 @@ import React from "react";
 import NavbarAvatarDropDown from "./NavbarAvatarDropDown";
 import NavbarDrawer from "./NavbarDrawer";
 import { NextComponentType } from "next";
+import { useSession } from "next-auth/react";
+import { SvgButton } from "../../../styles/Mui-styles/HoverFillButton";
 
 const Navbar: NextComponentType = () => {
+
+  const session = useSession();
+  const name = session.data?.user.name;
+  const email = session.data?.user.email;
+  const image = session.data?.user.image;
+
+  console.log(session);
+
+
   return (
     <nav className="flex justify-between sm:px-28 px-5 py-5 items-center shadow-xl">
       <Link href="/">
         <div className="flex items-center cursor-pointer">
-          <img src="/ClueLess Logo.png" alt="" className="w-[65px]" />
-          <h1 className=" font-raleway text-3xl ml-8">ClueLess</h1>
+          <img src="/ClueLess Logo.png" alt="" className="sm:w-[65px] w-[35px]" />
+          <h1 className=" font-raleway sm:text-3xl text-xl sm:ml-8 ml-2">ClueLess</h1>
         </div>
       </Link>
       <div className="hidden lg:block">
@@ -37,15 +48,28 @@ const Navbar: NextComponentType = () => {
           </button>
         </Link>
       </div>
-      <NavbarAvatarDropDown 
-      img="https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cGVyc29uJTIwd2l0aCUyMGdsYXNzZXN8ZW58MHx8MHx8&w=1000&q=80"
-      name="Rajdeep Sengupta"
-      email="rajdipgupta019@gmail.com"/>
-      <NavbarDrawer
-        img="https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cGVyc29uJTIwd2l0aCUyMGdsYXNzZXN8ZW58MHx8MHx8&w=1000&q=80"
-        name="Rajdeep Sengupta"
-        email="rajdipgupta019@gmail.com"
-      />
+      {session.status === "authenticated" && (
+        <>
+        <NavbarAvatarDropDown 
+        img={image as string}
+        name={name as string}
+        email={email as string}
+        />
+        <NavbarDrawer
+          img={image as string}
+          name={name as string}
+          email={email as string}
+        />
+        </>
+      )}{
+        session.status === "unauthenticated" && (
+          <Link href="/auth/signin">
+          <div className="scale-75 sm:scale-100">
+            <SvgButton>Sign In</SvgButton>
+          </div>
+          </Link>
+        )
+      }
     </nav>
   );
 };
