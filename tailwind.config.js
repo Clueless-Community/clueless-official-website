@@ -6,6 +6,9 @@ module.exports = {
   theme: {
 
     extend: {
+      boxShadow: {
+          'primary': '4px 5px 25px rgba(0, 0, 0, 0.25)',
+      },
       screens: {
         'xs': '357px',
 
