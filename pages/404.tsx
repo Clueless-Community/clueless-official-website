@@ -9,24 +9,26 @@ const NotFound = () => {
   return (
     <>
       <Head>
-        <title>404</title>
+        <title>OOPS,You're Lost</title>
       </Head>
       <Navbar />
-      <div className="scale-75">
-        <div className="flex flex-col justify-center h-full  ">
+      <div className="flex flex-col justify-center h-full">
+      <div className="scale-75 ">
+        <div className="  ">
           <img
             src="/cluelessdog404.png"
             alt=""
-            className="mx-auto flex flex-row  justify-center"
+            className="mx-auto flex  justify-center mt-8"
           />
         </div>
-        <div className="flex justify-center">
+        <div className="flex justify-center ">
           <Link href="/">
-            <button className="font-bold flex justify-center btn-blue bg-blue-600 text-white hover:bg-blue-700 mt-5 items-center mx-auto lg:mx-0  ">
+            <button className="mt-4 font-bold text-2xl flex justify-center btn-blue bg-blue-600 text-white hover:bg-blue">
               Go To Home
             </button>
           </Link>
         </div>
+      </div>
       </div>
     </>
   );
