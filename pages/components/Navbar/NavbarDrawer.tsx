@@ -8,6 +8,7 @@ import {
 } from "@mui/styles";
 import MenuIcon from "@mui/icons-material/Menu";
 import Link from "next/link";
+import { signOut } from "next-auth/react";
 
 const Style = makeStyles<WithStylesOptions<DefaultTheme>>({
   //Materia UI Styles for Menu
@@ -34,7 +35,7 @@ const NavbarDrawer: React.FC<Props> = ({ img, name, email }) => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const handleClose = () => {
     setAnchorEl(null);
-};
+  };
 
   return (
     <React.Fragment>
@@ -69,8 +70,12 @@ const NavbarDrawer: React.FC<Props> = ({ img, name, email }) => {
                 Home
               </button>
             </Link>
-              <div className="bg-gray-300 h-[1px] w-10/12 mx-auto mt-3"></div>
-            <a href="https://blog.clueless.tech" target="_blank" className="text-center">
+            <div className="bg-gray-300 h-[1px] w-10/12 mx-auto mt-3"></div>
+            <a
+              href="https://blog.clueless.tech"
+              target="_blank"
+              className="text-center"
+            >
               <button
                 onClick={handleClose}
                 className="font-semibold text-xl mt-5"
@@ -78,28 +83,29 @@ const NavbarDrawer: React.FC<Props> = ({ img, name, email }) => {
                 Blogs
               </button>{" "}
             </a>
-              <div className="bg-gray-300 h-[1px] w-10/12 mx-auto mt-3"></div>
-              <Link href="/resources">  
-            <button
-              onClick={handleClose}
-              className="font-semibold text-xl mt-5"
-            >
-              Resources
-            </button>
+            <div className="bg-gray-300 h-[1px] w-10/12 mx-auto mt-3"></div>
+            <Link href="/resources">
+              <button
+                onClick={handleClose}
+                className="font-semibold text-xl mt-5"
+              >
+                Resources
+              </button>
             </Link>
             <div className="bg-gray-300 h-[1px] w-10/12 mx-auto mt-3"></div>
             <Link href="/weekly-challenges">
-            <button
-              onClick={handleClose}
-              className="font-semibold text-xl mt-5"
-            >
-              Challenges
-            </button>
+              <button
+                onClick={handleClose}
+                className="font-semibold text-xl mt-5"
+              >
+                Challenges
+              </button>
             </Link>
             <div className="bg-gray-300 h-[1px] w-10/12 mx-auto mt-3"></div>
             <button
               onClick={(): void => {
                 handleClose();
+                signOut();
               }}
               className="font-semibold text-xl mt-5"
             >
