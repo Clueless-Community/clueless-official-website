@@ -4,10 +4,10 @@ import LocalPoliceIcon from "@mui/icons-material/LocalPolice";
 import StorageIcon from "@mui/icons-material/Storage";
 import BuildIcon from "@mui/icons-material/Build";
 import { motion } from "framer-motion";
-import BuildProjects from "./States/BuildProjects";
-import OpenSource from "./States/OpenSource";
-import Resources from "./States/Resources";
-import WeeklyChallenges from "./States/WeeklyChallenges";
+import BuildProjects from "./WhatIsClueLessStates/BuildProjects";
+import OpenSource from "./WhatIsClueLessStates/OpenSource";
+import Resources from "./WhatIsClueLessStates/Resources";
+import WeeklyChallenges from "./WhatIsClueLessStates/WeeklyChallenges";
 import ReadMoreIcon from '@mui/icons-material/ReadMore';
 import Link from "next/link";
 

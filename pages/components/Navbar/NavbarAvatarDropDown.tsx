@@ -4,6 +4,7 @@ import MenuItem from '@mui/material/MenuItem';
 import { Avatar, IconButton } from "@mui/material";
 import { ClassNameMap } from '@mui/styles';
 import { MenuStyle } from '../../../styles/Mui-styles/MenuStyle.Mui.';
+import {signOut} from 'next-auth/react';
 
 type Props = {
   //Interface of the Prop Passed in this Compnent
@@ -59,7 +60,7 @@ const NavbarAvatarDropDown: React.FC<Props> = ({img, name, email}) => {
       >
         <MenuItem onClick={handleClose} className=" font-nunito">Profile</MenuItem>
         <MenuItem onClick={handleClose} className=" font-nunito">Your Projects</MenuItem>
-        <MenuItem onClick={handleClose} className=" font-nunito">Sign Out</MenuItem>
+        <MenuItem onClick={(): void => { handleClose(); signOut(); }} className=" font-nunito">Sign Out</MenuItem>
       </Menu>
     </div>
   )
