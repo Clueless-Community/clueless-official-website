@@ -14,19 +14,19 @@ type Props = {
 const ChallengeCardActive: React.FC<Props> = ({img, title,xp, time }) => {
   return (
     <div>
-        <div className="w-[281px] max-h-[358px] sm:w-[320px] sm:max-h-[440px] shadow-md pb-2 sm:pb-4 rounded">
-            <img src={img} alt="" />
+        <div className="w-[281px] h-[381px] sm:w-[320px] sm:max-h-[440px] shadow-md pb-2 sm:pb-4 rounded-2xl">
+            <img src={img} alt="" className="w-[320px] h-[184px]"/>
             <div className="px-6">
                 <h1 className="text-lg sm:text-xl mt-2 sm:mt-4">{title}</h1>
-                <div className="flex item-center text-green-600 font-semibold my-1">
+                <div className="flex item-center text-green-600 font-semibold mt-1">
                     <CircleIcon className="w-[14px] my-auto"/>
                     <p className="ml-2 text-xs my-auto ">Active</p>
                 </div>
-                <div className="flex item-center text-skin-hoverBlue font-semibold my-1 "> 
+                <div className="flex item-center text-skin-hoverBlue font-semibold mt-1 "> 
                     <StarIcon className="w-[14px] my-auto"/>
                     <p className="ml-2 text-xs my-auto">{xp} XP</p>
                 </div>
-                <div className="flex item-center text-skin-hoverBlue font-semibold my-1">
+                <div className="flex item-center text-skin-hoverBlue font-semibold mt-1">
                     <AccessTimeIcon className="w-[14px] my-auto"/>
                     <p className="ml-2 text-xs my-auto">{time}</p>
                 </div>
