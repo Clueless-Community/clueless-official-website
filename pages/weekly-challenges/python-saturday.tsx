@@ -3,7 +3,7 @@ import Head from 'next/head'
 import React from 'react'
 import Navbar from '../components/Navbar/Navbar'
 import TopBannerWeeklyChallenge from '../components/WeeklyChallenges/TopBannerWeeklyChallenge'
-import ActiveWeeklyChallenges from '../components/WeeklyChallenges/ActiveWeeklyChallenges';
+import Footer from '../components/Footer'
 import PreviousWeeklyChallenges from '../components/WeeklyChallenges/PreviousWeeklyChallenges'
 import FilteredWeeklyActiveChallenge from '../components/WeeklyChallenges/FilteredWeeklyActiveChallenge'
 
@@ -20,6 +20,7 @@ const WeeklyChallenges: NextPage = () => {
         type="Python"
         />
         <PreviousWeeklyChallenges />
+        <Footer />
     </div>
   )
 }
