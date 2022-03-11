@@ -51,7 +51,7 @@ const Footer: React.FC = () => {
                 </div>
                 <div className='flex flex-col mx-auto  my-5 sm:my-0 text-center sm:text-left'>
                     <h3 className=' font-nunito font-semibold text-xl mb-8 sm:mt-12 lg:mt-0'>Contact & Help</h3>
-                    <Link href="/contact">
+                    <Link href="/contact-us">
                         <a className='my-3 hover:text-skin-main transition-all'>Contact Us</a>
                     </Link>
                     <Link href="/report-isuue">
