@@ -7,16 +7,16 @@ type Props = {
 
 const Sidebar: React.FC<Props> = ({title,img}) => {
   return (
-    <div>
-      <div className="hidden lg:block">
-        <div className="w-[400px] h-screen shadow-xl bg-sidebar-pattern float-left sticky text-center bg-skin-main px-10">
+    <>
+      <div className="hidden lg:block ">
+        <div className="w-[300px] h-full shadow-xl bg-sidebar-pattern text-center bg-skin-main px-10 float-left relative">
           <h1 className="font-extrabold text-4xl text-center mt-28 text-white">
             {title}
           </h1>
-            <img src={img} alt="" className="mt-20 "/>            
+            <img src={img} alt="" className="mt-[44.1vh]"/>            
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

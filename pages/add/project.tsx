@@ -1,8 +1,8 @@
 import { TextField } from "@mui/material";
 import { NextPage } from "next";
 import React from "react";
-import Navbar from "./components/Navbar/Navbar";
-import Sidebar from "./components/Sidebar";
+import Navbar from "../components/Navbar/Navbar";
+import Sidebar from "../components/Form/Sidebar";
 import { useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import OutlinedInput from "@mui/material/OutlinedInput";
@@ -11,6 +11,7 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import Chip from "@mui/material/Chip";
+import Head from "next/head";
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -64,6 +65,9 @@ const addProject: NextPage = () => {
   };
   return (
     <div>
+      <Head>
+        <title>ClueLess | Add Projects</title>
+      </Head>
       <Navbar />
       <Sidebar
         img={"/addProject.png"}

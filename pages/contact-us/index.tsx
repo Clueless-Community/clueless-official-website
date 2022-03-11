@@ -58,7 +58,6 @@ const ContactUs = () => {
           </div>
           
         </div>
-        <div></div>
         <div className="flex justify-end flex-grow ">
           <img src="/man.png" alt="" className="object-scale-down scale-125 h-100 w-96 mr-32" />
         </div>
