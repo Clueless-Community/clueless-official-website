@@ -6,9 +6,16 @@ type Props = {
   img: string;
   title: string;
   stack: string;
-  
 };
-const ChallengeCardAdmin: React.FC<Props> = ({img, title, stack}) => {
+const ChallengeCardAdmin: React.FC<Props> = ({ img, title, stack }) => {
+  function getStacks(item) {
+    return (
+      <div className="flex item-center text-skin-hoverBlue font-semibold mb-4 mt-2">
+        <LocalOfferIcon className="w-[10px] h-[10px] sm:w-[14px] my-auto" />
+        <p className="ml-2 text-xs font-semibold">{stack}</p>
+      </div>
+    );
+  }
   return (
     <div>
       <div className="w-[281px] max-h-[313px] sm:w-[320px] sm:max-h-[440px] shadow-md pb-2 sm:pb-4 rounded">
@@ -22,8 +29,12 @@ const ChallengeCardAdmin: React.FC<Props> = ({img, title, stack}) => {
             <p className="ml-2 text-xs font-semibold">{stack}</p>
           </div>
           <div className="flex justify-between">
-            <button className="btn-blue text-xs w-[105px] sm:w-[119px]">Edit</button>
-            <button className="btn-red text-xs w-[105px] sm:w-[119px]">Delete</button>
+            <button className="btn-blue text-xs w-[105px] sm:w-[119px]">
+              Edit
+            </button>
+            <button className="btn-red text-xs w-[105px] sm:w-[119px]">
+              Delete
+            </button>
           </div>
         </div>
       </div>
