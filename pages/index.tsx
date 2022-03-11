@@ -1,16 +1,24 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Navbar from './components/Navbar/Navbar'
-import WhatIsClueLess from './components/Home/WhatIsClueLess'
-import UltimateResourceHub from './components/Home/UltimateResourceHub'
-import Footer from './components/Footer'
-import TeamMembersHome from './components/Home/TeamMembersHome'
-import DonateHome from './components/Home/DonateHome'
-import HomeMain from './components/Home/HomeMain'
-import ActiveChallengesHome from './components/Home/ActiveChallengesHome'
-
-
-
+import type { NextPage } from "next";
+import Head from "next/head";
+import Navbar from "./components/Navbar/Navbar";
+import WhatIsClueLess from "./components/Home/WhatIsClueLess";
+import UltimateResourceHub from "./components/Home/UltimateResourceHub";
+import Footer from "./components/Footer";
+import TeamMembersHome from "./components/Home/TeamMembersHome";
+import DonateHome from "./components/Home/DonateHome";
+import HomeMain from "./components/Home/HomeMain";
+import ActiveChallengesHome from "./components/Home/ActiveChallengesHome";
+import weeklyChallenge from "../database/dummyDB/dummyChallenge";
+import ChallengeCardActive from "./components/cards/ChallengeCardActive";
+import ChallengeCardPrevious from "./components/cards/ChallengeCardPrevious";
+import weeklyChallengePrevious from "../database/dummyDB/dummyPreviousChallenges";
+import ChallengeCardAdmin from "./components/cards/ChallengeCardAdmin";
+import challengeCardAdmin from "../database/dummyDB/dummyChallengeCardAdmin";
+import ProjectCard from "./components/cards/ProjectCard";
+import ResourceCard from "./components/cards/ResourceCard";
+import ResourceCardAdmin from "./components/cards/ResourceCardAdmin";
+import AdminPanelChallenge from "./components/cards/AdminPanelChallenge";
+import AdminpanelPreviousChallenge from "./components/cards/AdminpanelPreviousChallenge";
 
 const Home: NextPage = () => {
   return (
@@ -22,14 +30,17 @@ const Home: NextPage = () => {
       <Navbar />
       <HomeMain />
       <WhatIsClueLess />
-      <h2 className='md:text-6xl sm:text-5xl text-3xl text-center my-10 mt-28 font-bold sm:leading-[80px] leading-10'>Dive into the world of <br /> <span className=' text-skin-main'>Development🚀</span></h2>
+      <h2 className="md:text-6xl sm:text-5xl text-3xl text-center my-10 mt-28 font-bold sm:leading-[80px] leading-10">
+        Dive into the world of <br />{" "}
+        <span className=" text-skin-main">Development🚀</span>
+      </h2>
       <ActiveChallengesHome />
       <UltimateResourceHub />
       <TeamMembersHome />
       <DonateHome />
       <Footer />
     </>
-  )
-}
+  );
+};
 
 export default Home;
