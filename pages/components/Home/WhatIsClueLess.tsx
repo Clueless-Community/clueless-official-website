@@ -75,7 +75,7 @@ const WhatIsClueLess: React.FC = () => {
         <div className="xl:px-24 md:px-10 flex flex-col items-center w-11/12 mx-auto my-auto">
           {state === 0 && (
             <motion.div
-              className="container"
+              className="container h-72 flex flex-col items-start justify-center"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{
