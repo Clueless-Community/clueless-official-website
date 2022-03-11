@@ -5,7 +5,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 const OpenSource = () => {
     return (
         <motion.div
-            className="container"
+            className="container h-72 flex flex-col items-start justify-center"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{

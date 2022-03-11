@@ -5,7 +5,7 @@ import StorageIcon from "@mui/icons-material/Storage";
 const Resources = () => {
   return (
     <motion.div
-    className="container"
+    className="container h-72 flex flex-col items-start justify-center"
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
     transition={{

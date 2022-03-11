@@ -13,7 +13,9 @@ const Sidebar: React.FC<Props> = ({title,img}) => {
           <h1 className="font-extrabold text-4xl text-center mt-28 text-white">
             {title}
           </h1>
-            <img src={img} alt="" className="mt-[44.1vh]"/>            
+          <div className="mt-[44.1vh] h-[239px]">
+            <img src={img} alt="" />            
+          </div>
         </div>
       </div>
     </>

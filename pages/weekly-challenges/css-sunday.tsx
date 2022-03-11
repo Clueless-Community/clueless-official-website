@@ -3,9 +3,9 @@ import Head from 'next/head'
 import React from 'react'
 import Navbar from '../components/Navbar/Navbar'
 import TopBannerWeeklyChallenge from '../components/WeeklyChallenges/TopBannerWeeklyChallenge'
-import ActiveWeeklyChallenges from '../components/WeeklyChallenges/ActiveWeeklyChallenges';
 import PreviousWeeklyChallenges from '../components/WeeklyChallenges/PreviousWeeklyChallenges'
 import FilteredWeeklyActiveChallenge from '../components/WeeklyChallenges/FilteredWeeklyActiveChallenge'
+import Footer from '../components/Footer'
 
 const WeeklyChallenges: NextPage = () => {
   return (
@@ -20,6 +20,7 @@ const WeeklyChallenges: NextPage = () => {
         type='CSS'
         />
         <PreviousWeeklyChallenges />
+        <Footer />
     </div>
   )
 }

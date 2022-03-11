@@ -33,12 +33,12 @@ const aboutUs = () => {
         {/* our vision */}
 
         <div className='h-[430px] md:h-[280px] flex flex-col justify-evenly items-center w-4/5 mx-auto mb-7'>
-            <h1 className='font-raleway font-bold text-5xl'>Our Vision</h1>
+            <h1 className='font-raleway font-bold text-3xl sm:text-5xl my-5'>Our Vision🚀</h1>
             <p className='text-center text-sm w-4/5 text-[#111111]'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni numquam natus mollitia. Perferendis, consequuntur vitae voluptatum officia veniam quia magnam explicabo aliquam, eius impedit provident omnis pariatur doloremque non similique rem, odit accusantium reiciendis veritatis! Maxime voluptate nihil ut dolores deserunt sed, culpa perspiciatis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis quam mollitia, cum corporis ipsam officiis, accusamus temporibus doloribus, ex debitis vitae consequuntur accusantium! </p>
         </div>
-        <h1 className='font-raleway font-bold text-5xl text-center'>Team Members</h1>
+        <h1 className='font-raleway font-bold text-3xl sm:text-5xl text-center my-8 '>Team Members✨</h1>
 
-        <div className="flex flex-wrap w-4/5 mx-auto justify-center">
+        <div className="flex flex-wrap w-10/12 mx-auto justify-center">
           {profile.map((profiles)=>{
             return (
               <div className='m-12'>
@@ -57,9 +57,9 @@ const aboutUs = () => {
           })}
           </div>
 
-          <div className='flex my-24'>
-            <div className='w-[40%] hidden justify-end items-center md:flex'>
-              <img className='w-72' src="/cactus.png" alt="" />
+          <div className='flex my-24 w-10/12 flex-col-reverse items-center sm:justify-between mx-auto md:flex-row'>
+            <div className='w-[40%] justify-end items-center md:flex'>
+              <img className='w-72 mt-10 md:mt-0' src="/cactus.png" alt=""  />
             </div>
             <div className='w-[80%]  md:w-[60%] flex flex-col justify-center text-center md:text-left mx-auto md:mx-0'>
               <p className=' font-nunito w-[100%]  md:w-[80%] text-sm text-[#5B5B5B]'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur sequi voluptas neque impedit vitae doloribus sapiente. Iste deleniti eos dolore voluptatem nisi hic consequatur excepturi distinctio, incidunt ut magni commodi provident dolores omnis cum. Nam neque dolor molestias nihil nisi. Inventore maiores non reiciendis ipsam!</p>
