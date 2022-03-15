@@ -116,7 +116,7 @@ const editProfile: NextPage = () => {
             </div>
             <div className="my-3">
               <FormControl sx={{}} className="w-full">
-                <InputLabel id="demo-multiple-chip-label">Chip</InputLabel>
+                <InputLabel id="demo-multiple-chip-label">Tech-Stack</InputLabel>
                 <Select
                   labelId="demo-multiple-chip-label"
                   id="demo-multiple-chip"
