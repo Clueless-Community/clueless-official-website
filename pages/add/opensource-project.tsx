@@ -94,7 +94,7 @@ const addOpenSourceProject: NextPage = () => {
                 label="Enter short description"
                 variant="outlined"
                 className="w-full"
-                multiline
+                multiline={true}
               />
             </div>
             <div className="my-3">
