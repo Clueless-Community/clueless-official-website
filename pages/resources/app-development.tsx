@@ -15,9 +15,9 @@ const Resources: NextPage = () => {
         </Head>
         <Navbar />
         <div className='px-28 flex justify-between items-center mt-16'>
-                <h2 className='text-4xl font-semibold text-center sm:text-left'>🎒 All Resources</h2>
+                <h2 className='text-4xl font-semibold text-center sm:text-left'>📱 App Development Resources</h2>
                 <FilterResource 
-                type="All"
+                type="app-dev"
                 />
             </div>
         <div className='grid 2xl:grid-cols-5 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:px-28 gap-10 mt-16'>
