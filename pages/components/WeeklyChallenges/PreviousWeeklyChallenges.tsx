@@ -1,7 +1,6 @@
 import React from 'react'
 import weeklyChallengePrevious from '../../../database/dummyDB/dummyPreviousChallenges'
 import ChallengeCardPrevious from '../cards/ChallengeCardPrevious'
-import Link from 'next/link'
 
 const PreviousWeeklyChallenges: React.FC = () => {
     return (

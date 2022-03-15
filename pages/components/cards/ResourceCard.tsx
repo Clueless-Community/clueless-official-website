@@ -10,30 +10,37 @@ type Props = {
   category: string;
   price: string;
   specificStack: string;
+  givenBY?: string;
+  givenByProfile? : string
 };
 
-const ResourceCard: React.FC<Props> = ({category, price, title, specificStack, img}) => {
+const ResourceCard: React.FC<Props> = ({category, price, title, specificStack, img, givenBY, givenByProfile}) => {
   return (
-    <div className="w-[189px] h-[264px] sm:w-[672px] sm:h-[209px] p-4 flex justify-between rounded-2xl shadow-md">
-      <div className="sm:w-1/2 relative">
+    <div className="w-[260px] h-[370px] p-4 flex justify-between rounded-2xl shadow-md bg-gray-50">
+      <div className="relative">
         <p className="text-xs text-skin-main font-bold">{category}</p>
+        <img src={img} alt="" className="h-28 mx-auto mt-3" />
         <h1 className="text-xl mt-2">{title}</h1>
-        <div className="absolute bottom-0">
-        <div className="flex justify-between mb-2 space-x-2">
-          <div className="inline-flex item-center text-skin-hoverBlue font-semibold ">
+        <div className="absolute bottom-0 w-full">
+        <div className="flex mb-2 space-x-2">
+          <div className="flex item-center text-skin-hoverBlue font-semibold ">
             <CircleIcon className="w-[14px] my-auto" />
-
-            <p className="ml-2 my-auto font-semibold text-sm sm:text-lg">{specificStack}</p>
+            <p className="ml-2 my-auto font-semibold text-sm ">{specificStack}</p>
           </div>
-          <div className="inline-flex item-center text-skin-hoverBlue font-semibold">
-            <PaidIcon className="w-[14px] my-auto font-semibold" />
-            <p className="ml-2 my-auto text-black text-sm sm:text-lg">{price}</p>
+          <div className="flex item-center text-skin-hoverBlue font-semibold">
+            <PaidIcon className="w-[14px] my-auto font-semibold ml-4" />
+            <p className="ml-2 my-auto text-black text-sm ">{price}</p>
           </div>
         </div>
-        <button className="w-full sm:w-inherit btn-blue py-2"><RemoveRedEyeIcon className="w-[15px] my-auto"/> <span className="my-auto ml-2">View</span></button>
+        {givenBY && (
+        <p className="text-xs mb-3">
+        Provided by - <a className="text-xs underline" href={givenByProfile} target="_blank"> {givenBY}</a>
+        </p>
+        )}
+        
+        <button className="w-full btn-blue py-2 flex justify-center items-center"><RemoveRedEyeIcon className="w-[15px] my-auto"/> <span className="my-auto ml-2">View</span></button>
         </div>
       </div>
-      <img src={img} alt="" className="w-[228px] h-[166px] hidden sm:block"/>
     </div>
   );
 };
