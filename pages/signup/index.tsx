@@ -3,7 +3,6 @@ import Box from "@mui/material/Box";
 import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
-import Sidebar from "../components/Form/Sidebar";
 import { NextPage } from "next";
 import { Avatar, TextField } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
@@ -15,6 +14,7 @@ import Select from "@mui/material/Select";
 import Chip from "@mui/material/Chip";
 import Head from "next/head";
 import Link from "next/link";
+import SidebarFullScreen from "../components/Form/SidebarFullScreen";
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -88,12 +88,12 @@ const index: NextPage = () => {
       </Head>
       {step == 0 && (
         <div>
-          <Sidebar
+          <SidebarFullScreen
             img={"/Personal details.png"}
             title={"Personal Details"}
           />
           <div className="lg:ml-[300px] px-[8%]">
-            <form action="" className="ml-[0px]  ">
+            <form action="" className="ml-[0px]">
               <h1 className="text-3xl font-semibold py-10 text-center sm:text-left">
                 Enter your Details Below
               </h1>
@@ -139,7 +139,7 @@ const index: NextPage = () => {
       )}
       {step == 1 && (
         <div>
-          <Sidebar
+          <SidebarFullScreen
             img={"/skills.png"}
             title={"Skills 🚀"}
           />
@@ -226,7 +226,7 @@ const index: NextPage = () => {
       )}
       {step == 2 && (
         <div>
-          <Sidebar
+          <SidebarFullScreen
             img={"/social links.png"}
             title={"Social Links"}
           />
