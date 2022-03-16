@@ -15,6 +15,9 @@ import Chip from "@mui/material/Chip";
 import Head from "next/head";
 import Link from "next/link";
 import SidebarFullScreen from "../components/Form/SidebarFullScreen";
+import { useSession } from "next-auth/react";
+import techstacks from "../../database/techstack";
+
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -26,19 +29,6 @@ const MenuProps = {
     },
   },
 };
-
-const names = [
-  "Oliver Hansen",
-  "Van Henry",
-  "April Tucker",
-  "Ralph Hubbard",
-  "Omar Alexander",
-  "Carlos Abbott",
-  "Miriam Wagner",
-  "Bradley Wilkerson",
-  "Virginia Andrews",
-  "Kelly Snyder",
-];
 
 function getStyles(
   name: any,
@@ -53,15 +43,17 @@ function getStyles(
   };
 }
 
-const steps = [
-  "Personal Details",
-  "Skills",
-  "Social Links",
-];
+const steps = ["Personal Details", "Skills", "Social Links"];
 
 const index: NextPage = () => {
+
+  const session = useSession();
+  const name = session.data?.user.name;
+  const email = session.data?.user.email;
+  const image = session.data?.user.image;
+
   const [step, setstep] = useState(0);
-  const [name, setname] = useState("");
+  const [username, setusername] = useState("");
   const [college, setcollege] = useState("");
   const [linkedIn, setlinkedIn] = useState("");
   const [blog, setblog] = useState("");
@@ -87,19 +79,19 @@ const index: NextPage = () => {
         <title>ClueLess | SignUp</title>
       </Head>
       {step == 0 && (
-        <div>
+        <div className="overflow-y-hidden">
           <SidebarFullScreen
             img={"/Personal details.png"}
             title={"Personal Details"}
           />
-          <div className="lg:ml-[300px] px-[8%]">
+          <div className="lg:ml-[300px] px-[8%] flex flex-col h-screen justify-center">
             <form action="" className="ml-[0px]">
               <h1 className="text-3xl font-semibold py-10 text-center sm:text-left">
                 Enter your Details Below
               </h1>
               <Avatar
-                alt="D"
-                src="/TeamMembers/Debajyoti Saha.jpg"
+                alt={name}
+                src={image}
                 className="w-[138px] h-[138px] mb-10 mx-auto md:mx-0"
               />
               <div className="my-3">
@@ -108,20 +100,23 @@ const index: NextPage = () => {
                   label="Enter your Name"
                   variant="outlined"
                   className="w-full"
-                  value={name}
-                  onChange={(e) => setname(e.target.value)}
+                  value={username}
+                  onChange={(e) => setusername(e.target.value)}
                 />
               </div>
               <div className="my-3">
                 <TextField
                   id="outlined-basic"
-                  label="Enter your Email"
+                  label={email}
                   variant="outlined"
                   className="w-full bg-[#F4F4F4]"
                   disabled
                 />
               </div>
-              <button className="btn-blue my-3" onClick={(e) => setstep(step+1)}>
+              <button
+                className="btn-blue my-3"
+                onClick={(e) => setstep(step + 1)}
+              >
                 Next
               </button>
               <Box sx={{ width: "100%" }} className="mt-10">
@@ -138,15 +133,12 @@ const index: NextPage = () => {
         </div>
       )}
       {step == 1 && (
-        <div>
-          <SidebarFullScreen
-            img={"/skills.png"}
-            title={"Skills 🚀"}
-          />
-          <div className="lg:ml-[300px] px-[8%]">
+        <div className="overflow-y-hidden">
+          <SidebarFullScreen img={"/skills.png"} title={"Tell us about your superpowers🚀"} />
+          <div className="lg:ml-[300px] px-[8%] flex flex-col h-screen justify-center">
             <form action="" className="ml-[0px]  ">
               <h1 className="text-3xl font-semibold py-10 text-center sm:text-left">
-                Enter your Details Below
+                Describe you and your Skills Below
               </h1>
               <div className="my-3">
                 <TextField
@@ -168,8 +160,10 @@ const index: NextPage = () => {
                 />
               </div>
               <div className="my-3">
-                <FormControl sx={{}} className="w-full">
-                  <InputLabel id="demo-multiple-chip-label">Tech-Stack</InputLabel>
+                <FormControl className="w-full">
+                  <InputLabel id="demo-multiple-chip-label">
+                    Tech-Stack
+                  </InputLabel>
                   <Select
                     labelId="demo-multiple-chip-label"
                     id="demo-multiple-chip"
@@ -191,25 +185,31 @@ const index: NextPage = () => {
                     )}
                     MenuProps={MenuProps}
                   >
-                    {names.map((name) => (
+                    {techstacks.map((techstack) => (
                       <MenuItem
-                        key={name}
-                        value={name}
-                        style={getStyles(name, personName, theme)}
+                        key={techstack}
+                        value={techstack}
+                        style={getStyles(techstack, personName, theme)}
                       >
-                        {name}
+                        {techstack}
                       </MenuItem>
                     ))}
                   </Select>
                 </FormControl>
               </div>
               <div className="space-x-2">
-              <button className="btn-blue my-3" onClick={(e) => setstep(step+1)}>
-                Next
-              </button>
-              <button className="btn-red my-3" onClick={(e) => setstep(step-1)}>
-                Back
-              </button>
+                <button
+                  className="btn-blue my-3"
+                  onClick={(): void => setstep(step + 1)}
+                >
+                  Next
+                </button>
+                <button
+                  className="btn-red my-3"
+                  onClick={(): void => setstep(step - 1)}
+                >
+                  Back
+                </button>
               </div>
               <Box sx={{ width: "100%" }} className="mt-10">
                 <Stepper activeStep={step} alternativeLabel>
@@ -225,15 +225,12 @@ const index: NextPage = () => {
         </div>
       )}
       {step == 2 && (
-        <div>
-          <SidebarFullScreen
-            img={"/social links.png"}
-            title={"Social Links"}
-          />
-          <div className="lg:ml-[300px] px-[8%]">
+        <div className="overflow-y-hidden">
+          <SidebarFullScreen img={"/social links.png"} title={"Social Links"} />
+          <div className="lg:ml-[300px] px-[8%] flex flex-col h-screen justify-center">
             <form action="" className="ml-[0px]  ">
               <h1 className="text-3xl font-semibold py-10 text-center sm:text-left">
-                Enter your Details Below
+                Enter your Social links Below
               </h1>
               <div className="my-3">
                 <TextField
@@ -286,14 +283,10 @@ const index: NextPage = () => {
                 />
               </div>
               <div className="space-x-4">
-              <button className="btn-blue my-3">
-                Submit
-              </button>
-              <Link href="/">
-              <button className="btn-red my-3">
-                Skip
-              </button>
-              </Link>
+                <button className="btn-blue my-3">Submit</button>
+                <Link href="/">
+                  <button className="btn-red my-3">Skip</button>
+                </Link>
               </div>
               <Box sx={{ width: "100%" }} className="mt-10">
                 <Stepper activeStep={step} alternativeLabel>
