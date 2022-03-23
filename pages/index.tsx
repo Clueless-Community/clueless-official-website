@@ -7,18 +7,8 @@ import Footer from "./components/Footer";
 import TeamMembersHome from "./components/Home/TeamMembersHome";
 import DonateHome from "./components/Home/DonateHome";
 import HomeMain from "./components/Home/HomeMain";
-import ActiveChallengesHome from "./components/Home/ActiveChallengesHome";
-import weeklyChallenge from "../database/dummyDB/dummyChallenge";
-import ChallengeCardActive from "./components/cards/ChallengeCardActive";
-import ChallengeCardPrevious from "./components/cards/ChallengeCardPrevious";
-import weeklyChallengePrevious from "../database/dummyDB/dummyPreviousChallenges";
-import ChallengeCardAdmin from "./components/cards/ChallengeCardAdmin";
-import challengeCardAdmin from "../database/dummyDB/dummyChallengeCardAdmin";
-import ProjectCard from "./components/cards/ProjectCard";
-import ResourceCard from "./components/cards/ResourceCard";
-import ResourceCardAdmin from "./components/cards/ResourceCardAdmin";
-import AdminPanelChallenge from "./components/cards/AdminPanelChallenge";
-import AdminpanelPreviousChallenge from "./components/cards/AdminpanelPreviousChallenge";
+import OpenSourceHome from "./components/Home/OpenSourceHome";
+import SocialHome from "./components/Home/SocialHome";
 
 const Home: NextPage = () => {
   return (
@@ -34,9 +24,10 @@ const Home: NextPage = () => {
         Dive into the world of <br />{" "}
         <span className=" text-skin-main">Development🚀</span>
       </h2>
-      <ActiveChallengesHome />
+      <OpenSourceHome />
       <UltimateResourceHub />
       <TeamMembersHome />
+      <SocialHome />
       <DonateHome />
       <Footer />
     </>

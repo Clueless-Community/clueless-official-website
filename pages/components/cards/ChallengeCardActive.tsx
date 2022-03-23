@@ -14,8 +14,8 @@ type Props = {
 const ChallengeCardActive: React.FC<Props> = ({ img, title, xp, time }) => {
   return (
     <div>
-      <div className="w-[281px] h-[410px] sm:w-[320px] sm:h-[420px] shadow-md pb-2 sm:pb-4 rounded-2xl relative">
-        <img src={img} alt="" className="w-[320px] h-[184px]" />
+      <div className="w-[281px] h-[410px] sm:w-[370px] sm:h-[420px] shadow-md pb-2 sm:pb-4 rounded-2xl relative">
+        <img src={img} alt="" className="w-[370px] h-[184px] rounded-t-xl" />
 
         <h1 className="text-lg sm:text-xl mt-2 sm:mt-4 px-6">{title}</h1>
         <div className="px-6 absolute bottom-4">

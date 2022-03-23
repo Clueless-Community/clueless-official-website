@@ -26,50 +26,55 @@ const Navbar: NextComponentType = () => {
       </Link>
       <div className="hidden lg:block">
         <Link href="/">
-          <button className="hover:font-semibold hover:underline cursor-pointer xl:mx-8 mx-5 text-xl transition-all">
+          <button className="hover:font-semibold hover:underline cursor-pointer xl:mx-8 mx-3 text-xl transition-all">
             Home
           </button>
         </Link>
 
-        <button className="hover:font-semibold hover:underline cursor-pointer xl:mx-8 mx-5 text-xl transition-all">
+        <button className="hover:font-semibold hover:underline cursor-pointer xl:mx-8 mx-3 text-xl transition-all">
           <a href="https://blog.clueless.tech" target="_blank">
             Blogs
           </a>
         </button>
 
-        <Link href="/resources">
-          <button className="hover:font-semibold hover:underline cursor-pointer xl:mx-8 mx-5 text-xl transition-all">
+        <a href="https://clueless-resources.super.site/resources" target="_blank">
+          <button className="hover:font-semibold hover:underline cursor-pointer xl:mx-8 mx-3 text-xl transition-all">
             Resources
           </button>
-        </Link>
+          </a>
         <Link href="/weekly-challenges">
-          <button className="hover:font-semibold hover:underline cursor-pointer xl:mx-8 mx-5 text-xl transition-all">
+          <button className="hover:font-semibold hover:underline cursor-pointer xl:mx-8 mx-3 text-xl transition-all">
             Challenges
           </button>
         </Link>
       </div>
-      {session.status === "authenticated" && (
+      <div className="hidden lg:block">
+      <a href="https://discord.gg/zrVMjGW8sB" target="_blank">
+        <SvgButton>Join Discord</SvgButton>
+        </a>
+      </div>
+      {/* {session.status === "authenticated" && (
         <>
         <NavbarAvatarDropDown 
         img={image as string}
         name={name as string}
         email={email as string}
         />
-        <NavbarDrawer
-          img={image as string}
-          name={name as string}
-          email={email as string}
-        />
         </>
-      )}{
-        session.status === "unauthenticated" && (
-          <Link href="/auth/signin">
-          <div className="scale-75 sm:scale-100">
+        )}{
+          session.status === "unauthenticated" && (
+            <Link href="/auth/signin">
+            <div className="scale-75 sm:scale-100">
             <SvgButton>Sign In</SvgButton>
-          </div>
-          </Link>
-        )
-      }
+            </div>
+            </Link>
+            )
+          } */}
+          <NavbarDrawer
+            img={image as string}
+            name={name as string}
+            email={email as string}
+          />
     </nav>
   );
 };
