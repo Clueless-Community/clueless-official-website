@@ -1,7 +1,6 @@
 import React from 'react'
-import { RightImage } from './RightImage'
+import RightImage from './RightImage'
 import { SvgButton } from '../../../styles/Mui-styles/HoverFillButton'
-import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 
 const HomeMain = () => {
     return (
