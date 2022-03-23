@@ -13,7 +13,7 @@ const BuildProjects = () => {
       duration: 0.5,
     }}
   >
-    <BuildIcon className="text-white text-6xl mb-8" />
+    <BuildIcon className="text-white text-6xl mb-8" fontSize='inherit'/>
     <h2 className="font-semibold text-4xl text-white">
       Build Projects🔥
     </h2>

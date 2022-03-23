@@ -13,7 +13,7 @@ const Resources = () => {
       duration: 0.5,
     }}
   >
-    <StorageIcon className="text-white text-6xl mb-8" />
+    <StorageIcon className="text-white text-6xl mb-8" fontSize='inherit'/>
     <h2 className="font-semibold text-4xl text-white">
       ClueLess ➡️ Resources
     </h2>

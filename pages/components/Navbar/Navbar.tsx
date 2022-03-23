@@ -32,7 +32,7 @@ const Navbar: NextComponentType = () => {
         </Link>
 
         <button className="hover:font-semibold hover:underline cursor-pointer xl:mx-8 mx-3 text-xl transition-all">
-          <a href="https://blog.clueless.tech" target="_blank">
+          <a href="https://clueless-blogs.hashnode.dev" target="_blank">
             Blogs
           </a>
         </button>
