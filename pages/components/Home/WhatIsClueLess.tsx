@@ -22,6 +22,7 @@ const WhatIsClueLess: React.FC = () => {
         </div>
         <GitHubIcon
           className="absolute text-5xl hover:text-6xl transition-all cursor-pointer hover:text-skin-main text-skin-hoverBlue hidden md:block top-44 xl:left-32 lg:left-5 left-28"
+          fontSize="inherit"
           onMouseOver={() => {
             setState(1);
           }}
@@ -31,6 +32,7 @@ const WhatIsClueLess: React.FC = () => {
         />
         <StorageIcon
           className="absolute text-5xl hover:text-6xl transition-all cursor-pointer hover:text-skin-main text-skin-hoverBlue hidden md:block top-12 2xl:left-60 xl:left-44 left-28"
+          fontSize="inherit"
           onMouseOver={() => {
             setState(2);
           }}
@@ -40,6 +42,7 @@ const WhatIsClueLess: React.FC = () => {
         />
         <LocalPoliceIcon
           className="absolute text-5xl hover:text-6xl transition-all cursor-pointer hover:text-skin-main text-skin-hoverBlue hidden md:block top-12 2xl:right-72 xl:right-52 right-40"
+          fontSize="inherit"
           onMouseOver={() => {
             setState(3);
           }}
@@ -49,6 +52,7 @@ const WhatIsClueLess: React.FC = () => {
         />
         <BuildIcon
           className="absolute text-5xl hover:text-6xl transition-all cursor-pointer hover:text-skin-main text-skin-hoverBlue hidden md:block top-44 xl:right-44 lg:right-16 right-40"
+          fontSize="inherit"
           onMouseOver={() => {
             setState(4);
           }}
@@ -103,11 +107,11 @@ const WhatIsClueLess: React.FC = () => {
             <OpenSource />
           )}
           {state === 2 && (
-            <WeeklyChallenges />
-          )}
-          {state === 3 && (
             <Resources />
-          )}
+            )}
+          {state === 3 && (
+            <WeeklyChallenges />
+            )}
           {state === 4 && (
             <BuildProjects />
           )}
