@@ -93,12 +93,12 @@ const NavbarDrawer: React.FC<Props> = ({ img, name, email }) => {
               </button>
             </Link>
             <div className="bg-gray-300 h-[1px] w-10/12 mx-auto mt-3"></div>
-            <Link href="/weekly-challenges">
+            <Link href="/challenges-events">
               <button
                 onClick={handleClose}
                 className="font-semibold text-xl mt-5"
               >
-                Challenges
+                Challenges & Events
               </button>
             </Link>
             <div className="bg-gray-300 h-[1px] w-10/12 mx-auto mt-3"></div>

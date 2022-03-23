@@ -23,7 +23,7 @@ const aboutUs = () => {
             <h1 className=' font-raleway font-bold text-5xl text-white tracking-wider leading-normal'>About</h1>
             <h1 className=' font-raleway font-bold text-5xl text-white tracking-wider'>ClueLess</h1>
             </div>
-            <p className='text-[#EDECEC] text-md font-nunito text-center lg:text-left'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt maxime non illo, repellendus cumque optio delectus ad? Maiores laboriosam at placeat laborum iure rerum earum dolore dignissimos esse sed quo aspernatur sapiente fugiat eius praesentium eum porro voluptatibus pariatur cum dicta quia nulla alias,</p>
+            <p className='text-[#EDECEC] text-md font-nunito text-center lg:text-left'>Clueless in a virtual open-source community built with the motive of “Learn and Grow”. We, as a community, encourage and guide enthusiasts to dive into the world of open-source. We provide the best resources available on the internet, write blogs that helps other to explore their domain more deeply, organize events, GitHub repositories, organize hackathons, and more couniting activities</p>
           </div>
           <div className='flex justify-center'>
             <img className='hidden lg:block' src="/aboutUsGirl.png" alt=""/>
@@ -34,7 +34,7 @@ const aboutUs = () => {
 
         <div className='h-[430px] md:h-[280px] flex flex-col justify-evenly items-center w-4/5 mx-auto mb-7'>
             <h1 className='font-raleway font-bold text-3xl sm:text-5xl my-5'>Our Vision🚀</h1>
-            <p className='text-center text-sm w-4/5 text-[#111111]'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni numquam natus mollitia. Perferendis, consequuntur vitae voluptatum officia veniam quia magnam explicabo aliquam, eius impedit provident omnis pariatur doloremque non similique rem, odit accusantium reiciendis veritatis! Maxime voluptate nihil ut dolores deserunt sed, culpa perspiciatis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis quam mollitia, cum corporis ipsam officiis, accusamus temporibus doloribus, ex debitis vitae consequuntur accusantium! </p>
+            <p className='text-center text-sm w-4/5 text-[#111111]'>Following the principle of “Learn and Grow” we try our best to make your every second spent with Clueless worth it and fruitful. We provide the most curated resource available on the internet like YouTube videos to go through, helpful GitHub repositories, documentation to read, blogs on different techs, and best websites to enhance your skills. Apart from this, we organize events and hackathons to test and enhance your coding skills, podcasts, and online meet sessions for better interactivity as well as awareness. We also keep you updated with useful social media feeds like, Twitter threads, Instagram accounts that might be helpful for you as a developer, and LinkedIn posts. We have an amazing Discord community where we have specific channels for every domain and sub-domain topics like Web Development, App Development, Artificial Intelligence&Machine Learning, Web 3.0, modern-day developer tools like Docker, Kubernetes, and GitHub. So stay connected with us!</p>
         </div>
         <h1 className='font-raleway font-bold text-3xl sm:text-5xl text-center my-8 '>Team Members✨</h1>
 
@@ -62,19 +62,12 @@ const aboutUs = () => {
               <img className='w-72 mt-10 md:mt-0' src="/cactus.png" alt=""  />
             </div>
             <div className='w-[80%]  md:w-[60%] flex flex-col justify-center text-center md:text-left mx-auto md:mx-0'>
-              <p className=' font-nunito w-[100%]  md:w-[80%] text-sm text-[#5B5B5B]'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur sequi voluptas neque impedit vitae doloribus sapiente. Iste deleniti eos dolore voluptatem nisi hic consequatur excepturi distinctio, incidunt ut magni commodi provident dolores omnis cum. Nam neque dolor molestias nihil nisi. Inventore maiores non reiciendis ipsam!</p>
+              <p className=' font-nunito w-[100%]  md:w-[80%] text-sm text-[#5B5B5B]'></p>
               <br />
-              <p className=' font-nunito w-[80%] text-sm text-[#5B5B5B] mx-auto md:mx-0'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia tempora, nam minima quidem ex odio beatae non sequi quos eos quae laborum?</p>
+              <p className=' font-nunito w-[80%] text-sm text-[#5B5B5B] mx-auto md:mx-0'>These were the glorious hands behind this great initiative. We are the first-year undergraduate students came together, with the same vision we devoted all our time and efforts to make this community a better place! 
+<br />"You need to be aware of what others are doing, applaud their efforts, acknowledge their successes, and encourage them in their pursuits. When we all help one another, everybody wins." – Jim Stovall</p>
             </div>
           </div>   
-
-          <div className='bg-skin-main h-[400px] flex flex-col justify-center items-center'>
-              
-                <h1 className=' font-raleway font-semibold text-3xl text-white my-4'>Checkout More</h1>
-                <p className='font-raleway text-white text-center w-[60%] my-4'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, accusamus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum dolor eum doloremque dignissimos ipsam, minus, sit officia assumenda, explicabo repudiandae quo ab.</p>
-                <button className='border-2 px-3 py-1 text-white rounded-md my-5'>Get Started</button>
-            
-          </div>
 
 
         <Footer />
