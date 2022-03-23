@@ -1,6 +1,6 @@
 import { motion, useMotionValue, useTransform } from "framer-motion";
 
-export function RightImage() {
+export default function RightImage() {
     const x = useMotionValue(10);
     const y = useMotionValue(10);
 
