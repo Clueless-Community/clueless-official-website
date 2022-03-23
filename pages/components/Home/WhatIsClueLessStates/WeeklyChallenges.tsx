@@ -13,7 +13,7 @@ const WeeklyChallenges = () => {
       duration: 0.5,
     }}
   >
-    <LocalPoliceIcon className="text-white text-6xl mb-8" fontSize='inherit'/>
+    <LocalPoliceIcon className="text-white mb-8" fontSize='inherit'sx={{fontSize: "50px"}}/>
     <h2 className="font-semibold text-4xl text-white">
       Weekly Challenges
     </h2>
