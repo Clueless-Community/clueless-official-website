@@ -23,10 +23,7 @@ const UltimateResourceHub: React.FC = () => {
               The Ultimate Resource Hub
             </h2>
             <p className="text-gray-200 mt-8">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type
+            Internet is flooded with so many resources that can make one confused and clueless. So we, the Clueless Community provide the best, filtered, and curated resources like YouTube videos, GitHub repositories, websites, cheatsheets, etc! 
             </p>
             <a href="https://clueless-resources.super.site/resources" target="_blank">
               <button className="btn-blue bg-white text-black hover:bg-gray-100 mt-10 flex items-center mx-auto lg:mx-0">
