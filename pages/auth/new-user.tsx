@@ -1,11 +1,9 @@
 import { TextField } from "@mui/material";
 import { NextPage } from "next";
 import React from "react";
-import SidebarFullScreen from "../components/Form/SidebarFullScreen";
 import Head from "next/head";
 import { Avatar } from "@mui/material";
 import { useSession } from "next-auth/react";
-import Stepper from "../components/Form/Stepper"
 
 
 const addProject: NextPage = () => {
@@ -17,10 +15,7 @@ const addProject: NextPage = () => {
             <Head>
                 <title>ClueLess | Sign Up</title>
             </Head>
-            <SidebarFullScreen
-                img="/personal-details.png"
-                title="Personal Details"
-            />
+
             <div
                 className="ml-[0px] lg:ml-[400px] lg:w-[calc(100%-400px)] px-10 pt-28"
             >
@@ -46,7 +41,6 @@ const addProject: NextPage = () => {
                     />
                 </div>
                 <div className="absolute bottom-10 w-8/12 right-32">
-                <Stepper />
                 </div>
             </div>
         </div>
