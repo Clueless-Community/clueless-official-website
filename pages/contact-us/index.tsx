@@ -1,26 +1,54 @@
-
 import Head from "next/head";
-import Link from "next/link";
-
 import Footer from "../components/Footer";
-
 import Navbar from "../components/Navbar/Navbar";
-
 import { TextField } from "@mui/material";
+import React, { useState } from "react";
 
-import React from "react";
 
 const ContactUs = () => {
+  
+  function handleSubmit(){
+    fetch("https://formsubmit.co/ajax/official.cluelesscommunity@gmail.com", {
+      method: "POST",
+      headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+          email,
+          subject,
+          message
+      })
+  })
+      .then(response => response.json())
+      .then(data => console.log(data))
+      .catch(error => console.log(error));
+  }
+
+  const handleReset = () => {
+    setEmail("");
+    setSubject("");
+    setMessage("");
+  }
+
+  const [email, setEmail] = useState<string | undefined>();
+  const [subject, setSubject] = useState<string | undefined>();
+  const [message, setMessage] = useState<string | undefined>();
+
   return (
     <div>
+      <Head>
+        <title>ClueLess | Contact Us</title>
+      </Head>
       <Navbar />
-      <div className="ml-22 flex mt-7 mb-14 mx-10">
+      <div className="flex justify-between items-center my-20 flex-col lg:flex-row lg:px-28 w-11/12 mx-auto lg:w-full">
+      <div className="">
         <div className="mt-4">
 
-          <div className="flex flex-col items-start space-y-4  text-xl ml-32">
+          <div className="flex flex-col items-start space-y-4 text-xl" >
             <div className="text-4xl font-semibold ">Contact Us</div>
             <div className="text-sm text-semibold text-slate-500">
-              Have any questions?We'd love to hear from you
+              Have any questions? We'd love to hear from you
             </div >
             <div className="space-y-4 ">
             <TextField
@@ -29,6 +57,11 @@ const ContactUs = () => {
               placeholder="Enter Your Email"
               fullWidth
               multiline
+              type="email"
+              name="email"
+              required
+              value={email}
+              onChange={(e:React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>): void => {setEmail(e.target.value)}}
             />
             <TextField
               id="outlined-textarea"
@@ -36,6 +69,11 @@ const ContactUs = () => {
               placeholder="Enter Subject"
               multiline
               fullWidth
+              type="text"
+              name="Subject"
+              required
+              value={subject}
+              onChange={(e:React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>): void => {setSubject(e.target.value)}}
             />
             <TextField
               id="outlined-textarea"
@@ -44,26 +82,30 @@ const ContactUs = () => {
               multiline
               rows={7}
               fullWidth
+              type="text"
+              name="Feedback"
+              required
+              value={message}
+              onChange={(e:React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>): void => {setMessage(e.target.value)}}
             />
             </div>
             <div className="text-sm mt-9">
             <button
-              type="submit"
               className="btn-blue"
-              
+              onClick={(): void => {handleReset(); handleSubmit(); }}
             >
               Submit
             </button>
             </div>
           </div>
-          
         </div>
-        <div className="flex justify-end flex-grow ">
-          <img src="/man.png" alt="" className="object-scale-down scale-125 h-100 w-96 mr-32" />
+      </div>
+        <div className="">
+          <img src="/OpenSourceProject.png" alt="" className="mt-20"/>
         </div>
       </div>
       <Footer />
-    </div>
+    </div >
   );
 };
 

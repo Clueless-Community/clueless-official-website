@@ -22,9 +22,6 @@ const Footer: React.FC = () => {
                     <Link href="/about-us">
                         <a className='my-3 hover:text-skin-main transition-all'>About Us</a>
                     </Link>
-                    <Link href="/our-goal">
-                        <a className='my-3 hover:text-skin-main transition-all'>Our Goal</a>
-                    </Link>
                 </div>
                 <div className='flex flex-col mx-auto my-5 sm:my-0 text-center sm:text-left'>
                     <h3 className=' font-nunito font-semibold text-xl mb-8'>Legal</h3>
@@ -38,23 +35,19 @@ const Footer: React.FC = () => {
                 <div className='hidden sm:block lg:hidden'></div>
                 <div className='flex flex-col mx-auto  my-5 sm:my-0 text-center sm:text-left'>
                     <h3 className=' font-nunito font-semibold text-xl mb-8 sm:mt-12 lg:mt-auto'>Quick links</h3>
-                    <Link href="/events">
-                        <a className='my-3 hover:text-skin-main transition-all'>Events</a>
+                    <Link href="/challenges-events">
+                        <a className='my-3 hover:text-skin-main transition-all'>Events & Challenges</a>
                     </Link>
-                    <Link href="/resources">
-                        <a className='my-3 hover:text-skin-main transition-all'>Resources</a>
-                    </Link>
+                    <a className='my-3 hover:text-skin-main transition-all' href='https://clueless-resources.super.site/' target="_blank">Resources</a>
+
                     <a href='https://blog.clueless.tech' target="_blank" className='my-3 hover:text-skin-main transition-all'>Blogs</a>
-                    <Link href="/projects">
-                        <a className='my-3 hover:text-skin-main transition-all'>Projects</a>
-                    </Link>
                 </div>
                 <div className='flex flex-col mx-auto  my-5 sm:my-0 text-center sm:text-left'>
                     <h3 className=' font-nunito font-semibold text-xl mb-8 sm:mt-12 lg:mt-0'>Contact & Help</h3>
                     <Link href="/contact-us">
                         <a className='my-3 hover:text-skin-main transition-all'>Contact Us</a>
                     </Link>
-                    <Link href="/report-isuue">
+                    <Link href="/contact-us/report-isuue">
                         <a className='my-3 hover:text-skin-main transition-all'>Report a Issue</a>
                     </Link>
                     <div className='text-skin-main flex justify-between my-3'>
@@ -72,7 +65,7 @@ const Footer: React.FC = () => {
             </div>
             <div className='px-28 flex justify-between text-sm py-10  bg-[#EFEFEF]'>
                 <p>Copyright &copy; by ClueLess 2022</p>
-                <p>Powerd by Clueless</p>
+                <p>Powered by Clueless</p>
             </div>
         </>
     )
