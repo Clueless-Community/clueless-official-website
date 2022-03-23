@@ -28,11 +28,11 @@ const UltimateResourceHub: React.FC = () => {
               ever since the 1500s, when an unknown printer took a galley of
               type and scrambled it to make a type
             </p>
-            <Link href="/resources">
+            <a href="https://clueless-resources.super.site/resources" target="_blank">
               <button className="btn-blue bg-white text-black hover:bg-gray-100 mt-10 flex items-center mx-auto lg:mx-0">
               <StorageIcon className="mr-2 text-md"/>Explore
               </button>
-            </Link>
+            </a>
             <img src="/resource hub cat.png" alt="" className="w-32 absolute right-5 -bottom-[56px] md:hidden z-20" />
           </motion.div>
         </div>

@@ -102,7 +102,7 @@ const NavbarDrawer: React.FC<Props> = ({ img, name, email }) => {
               </button>
             </Link>
             <div className="bg-gray-300 h-[1px] w-10/12 mx-auto mt-3"></div>
-            <button
+            {/* <button
               onClick={(): void => {
                 handleClose();
                 signOut();
@@ -110,9 +110,14 @@ const NavbarDrawer: React.FC<Props> = ({ img, name, email }) => {
               className="font-semibold text-xl mt-5"
             >
               Sign Out
+            </button> */}
+            <a href="https://discord.gg/zrVMjGW8sB" target="_blank" className="w-full mx-auto text-center">
+            <button className="font-semibold text-xl mt-5 mx-auto">
+              Join Discord
             </button>
+            </a>
           </div>
-          <div className="absolute bottom-5 left-5 flex items-center justify-center">
+          {/* <div className="absolute bottom-5 left-5 flex items-center justify-center">
             <Avatar
               className=" cursor-pointer ring-2 ring-white mx-auto "
               src={img}
@@ -123,7 +128,7 @@ const NavbarDrawer: React.FC<Props> = ({ img, name, email }) => {
               <p className="ml-5 text-lg font-semibold">{name}</p>
               <p className="ml-5 text-gray-300 text-sm">{email}</p>
             </div>
-          </div>
+          </div> */}
         </Drawer>
       </div>
     </React.Fragment>
