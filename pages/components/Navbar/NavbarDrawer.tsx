@@ -72,7 +72,7 @@ const NavbarDrawer: React.FC<Props> = ({ img, name, email }) => {
             </Link>
             <div className="bg-gray-300 h-[1px] w-10/12 mx-auto mt-3"></div>
             <a
-              href="https://blog.clueless.tech"
+              href="https://clueless-blogs.hashnode.dev/"
               target="_blank"
               className="text-center"
             >
@@ -84,21 +84,21 @@ const NavbarDrawer: React.FC<Props> = ({ img, name, email }) => {
               </button>{" "}
             </a>
             <div className="bg-gray-300 h-[1px] w-10/12 mx-auto mt-3"></div>
-            <Link href="/resources">
+            <a href="https://clueless-resources.super.site/resources" target="_blank">
               <button
                 onClick={handleClose}
                 className="font-semibold text-xl mt-5"
               >
                 Resources
               </button>
-            </Link>
+              </a>
             <div className="bg-gray-300 h-[1px] w-10/12 mx-auto mt-3"></div>
             <Link href="/challenges-events">
               <button
                 onClick={handleClose}
                 className="font-semibold text-xl mt-5"
               >
-                Challenges & Events
+              Events
               </button>
             </Link>
             <div className="bg-gray-300 h-[1px] w-10/12 mx-auto mt-3"></div>

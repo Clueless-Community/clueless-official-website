@@ -13,7 +13,7 @@ const OpenSource = () => {
                 duration: 0.5,
             }}
         >
-            <GitHubIcon className="text-white text-6xl mb-8" fontSize='inherit'/>
+            <GitHubIcon className="text-white mb-8" fontSize='inherit'sx={{fontSize: "50px"}}/>
             <h2 className="font-semibold text-4xl text-white">
                 ClueLess ❤️ Open-source
             </h2>

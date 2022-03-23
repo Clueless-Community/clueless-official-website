@@ -21,8 +21,8 @@ const WhatIsClueLess: React.FC = () => {
           <img src="/what-is-cluless.png" alt="" className="mx-auto" />
         </div>
         <GitHubIcon
-          className="absolute text-5xl hover:text-6xl transition-all cursor-pointer hover:text-skin-main text-skin-hoverBlue hidden md:block top-44 xl:left-32 lg:left-5 left-28"
-          fontSize="inherit"
+          className="absolute hover:scale-125 transition-all cursor-pointer hover:text-skin-main text-skin-hoverBlue hidden md:block top-44 xl:left-32 lg:left-5 left-28"
+          fontSize='inherit'sx={{fontSize: "50px"}}
           onMouseOver={() => {
             setState(1);
           }}
@@ -31,8 +31,8 @@ const WhatIsClueLess: React.FC = () => {
           }}
         />
         <StorageIcon
-          className="absolute text-5xl hover:text-6xl transition-all cursor-pointer hover:text-skin-main text-skin-hoverBlue hidden md:block top-12 2xl:left-60 xl:left-44 left-28"
-          fontSize="inherit"
+          className="absolute text-5xl hover:scale-125 transition-all cursor-pointer hover:text-skin-main text-skin-hoverBlue hidden md:block top-12 2xl:left-60 xl:left-44 left-28"
+          fontSize='inherit'sx={{fontSize: "50px"}}
           onMouseOver={() => {
             setState(2);
           }}
@@ -41,8 +41,8 @@ const WhatIsClueLess: React.FC = () => {
           }}
         />
         <LocalPoliceIcon
-          className="absolute text-5xl hover:text-6xl transition-all cursor-pointer hover:text-skin-main text-skin-hoverBlue hidden md:block top-12 2xl:right-72 xl:right-52 right-40"
-          fontSize="inherit"
+          className="absolute text-5xl hover:scale-125 transition-all cursor-pointer hover:text-skin-main text-skin-hoverBlue hidden md:block top-12 2xl:right-72 xl:right-52 right-40"
+          fontSize='inherit'sx={{fontSize: "50px"}}
           onMouseOver={() => {
             setState(3);
           }}
@@ -51,8 +51,8 @@ const WhatIsClueLess: React.FC = () => {
           }}
         />
         <BuildIcon
-          className="absolute text-5xl hover:text-6xl transition-all cursor-pointer hover:text-skin-main text-skin-hoverBlue hidden md:block top-44 xl:right-44 lg:right-16 right-40"
-          fontSize="inherit"
+          className="absolute text-5xl hover:scale-125 transition-all cursor-pointer hover:text-skin-main text-skin-hoverBlue hidden md:block top-44 xl:right-44 lg:right-16 right-40"
+          fontSize='inherit'sx={{fontSize: "50px"}}
           onMouseOver={() => {
             setState(4);
           }}
