@@ -40,15 +40,15 @@ const Footer: React.FC = () => {
                     </Link>
                     <a className='my-3 hover:text-skin-main transition-all' href='https://clueless-resources.super.site/' target="_blank">Resources</a>
 
-                    <a href='https://blog.clueless.tech' target="_blank" className='my-3 hover:text-skin-main transition-all'>Blogs</a>
+                    <a href='https://clueless-blogs.hashnode.dev/' target="_blank" className='my-3 hover:text-skin-main transition-all'>Blogs</a>
                 </div>
                 <div className='flex flex-col mx-auto  my-5 sm:my-0 text-center sm:text-left'>
                     <h3 className=' font-nunito font-semibold text-xl mb-8 sm:mt-12 lg:mt-0'>Contact & Help</h3>
                     <Link href="/contact-us">
                         <a className='my-3 hover:text-skin-main transition-all'>Contact Us</a>
                     </Link>
-                    <Link href="/contact-us/report-isuue">
-                        <a className='my-3 hover:text-skin-main transition-all'>Report a Issue</a>
+                    <Link href="/faq">
+                        <a className='my-3 hover:text-skin-main transition-all'>FAQ</a>
                     </Link>
                     <div className='text-skin-main flex justify-between my-3'>
                         <a href="https://twitter.com/by_clueless" target="_blank">
