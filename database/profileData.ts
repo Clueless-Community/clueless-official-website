@@ -54,7 +54,7 @@ const profile = [
         "img" : "/TeamMembers/Anubhab.jpg",
         "name" : "ANUBHAB HALDER",
         "tags" : "Co-founder",
-        "about" : "Web Developer | web3 enthusiast | I am exploring technologies, surfing through life playing guitar, and at your service | ",
+        "about" : "Web Developer | web3 enthusiast | exploring technologies, surfing through life playing guitar | ",
         "github" : "https://github.com/itsmeAnubhab",
         "linkedin" : "https://www.linkedin.com/in/anubhab-halder-289bb2218",
         "twitter" : "https://twitter.com/Anubhab_7?t=6DjvepjsErEdhNb5a1cA1g&s=09"
