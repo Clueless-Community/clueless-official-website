@@ -21,7 +21,7 @@ const WhatIsClueLess: React.FC = () => {
           <img src="/what-is-cluless.png" alt="" className="mx-auto" />
         </div>
         <GitHubIcon
-          className="absolute hover:scale-125 transition-all cursor-pointer hover:text-skin-main text-skin-hoverBlue hidden md:block top-44 xl:left-32 lg:left-5 left-28"
+          className="absolute hover:scale-125 transition-all cursor-pointer hover:text-skin-main text-skin-hoverBlue  md:block top-44 xl:left-20 lg:left-5 left-10 sm:left-24"
           fontSize='inherit'sx={{fontSize: "50px"}}
           onMouseOver={() => {
             setState(1);
@@ -31,7 +31,7 @@ const WhatIsClueLess: React.FC = () => {
           }}
         />
         <StorageIcon
-          className="absolute text-5xl hover:scale-125 transition-all cursor-pointer hover:text-skin-main text-skin-hoverBlue hidden md:block top-12 2xl:left-60 xl:left-44 left-28"
+          className="absolute text-5xl hover:scale-125 transition-all cursor-pointer hover:text-skin-main text-skin-hoverBlue  md:block top-12 2xl:left-60 xl:left-28 left-10 sm:left-24"
           fontSize='inherit'sx={{fontSize: "50px"}}
           onMouseOver={() => {
             setState(2);
@@ -41,7 +41,7 @@ const WhatIsClueLess: React.FC = () => {
           }}
         />
         <LocalPoliceIcon
-          className="absolute text-5xl hover:scale-125 transition-all cursor-pointer hover:text-skin-main text-skin-hoverBlue hidden md:block top-12 2xl:right-72 xl:right-52 right-40"
+          className="absolute text-5xl hover:scale-125 transition-all cursor-pointer hover:text-skin-main text-skin-hoverBlue  md:block top-12 2xl:right-72 xl:right-40 sm:right-24 right-10"
           fontSize='inherit'sx={{fontSize: "50px"}}
           onMouseOver={() => {
             setState(3);
@@ -51,7 +51,7 @@ const WhatIsClueLess: React.FC = () => {
           }}
         />
         <BuildIcon
-          className="absolute text-5xl hover:scale-125 transition-all cursor-pointer hover:text-skin-main text-skin-hoverBlue hidden md:block top-44 xl:right-44 lg:right-16 right-40"
+          className="absolute text-5xl hover:scale-125 transition-all cursor-pointer hover:text-skin-main text-skin-hoverBlue  md:block top-44 xl:right-32 lg:right-16 sm:right-24 right-10"
           fontSize='inherit'sx={{fontSize: "50px"}}
           onMouseOver={() => {
             setState(4);
@@ -87,7 +87,7 @@ const WhatIsClueLess: React.FC = () => {
                 duration: 0.5,
               }}
             >
-              <h2 className="font-semibold text-4xl text-white ease-in-out transition-all duration-1000">
+              <h2 className="font-semibold text-4xl text-white ease-in-out transition-all duration-1000 text-center mx-auto">
                 What is ClueLess?
               </h2>
               <p className="text-gray-200 mt-8">

@@ -32,11 +32,11 @@ const aboutUs = () => {
         </div>
         {/* our vision */}
 
-        <div className='h-[430px] md:h-[280px] flex flex-col justify-evenly items-center w-4/5 mx-auto mb-7'>
-            <h1 className='font-raleway font-bold text-3xl sm:text-5xl my-5'>Our Vision🚀</h1>
+        <div className=' flex flex-col justify-evenly items-center w-4/5 mx-auto mb-7'>
+            <h1 className='font-raleway font-bold text-3xl sm:text-5xl my-10'>Our Vision🚀</h1>
             <p className='text-center text-sm w-4/5 text-[#111111]'>Following the principle of “Learn and Grow” we try our best to make your every second spent with Clueless worth it and fruitful. We provide the most curated resource available on the internet like YouTube videos to go through, helpful GitHub repositories, documentation to read, blogs on different techs, and best websites to enhance your skills. Apart from this, we organize events and hackathons to test and enhance your coding skills, podcasts, and online meet sessions for better interactivity as well as awareness. We also keep you updated with useful social media feeds like, Twitter threads, Instagram accounts that might be helpful for you as a developer, and LinkedIn posts. We have an amazing Discord community where we have specific channels for every domain and sub-domain topics like Web Development, App Development, Artificial Intelligence&Machine Learning, Web 3.0, modern-day developer tools like Docker, Kubernetes, and GitHub. So stay connected with us!</p>
         </div>
-        <h1 className='font-raleway font-bold text-3xl sm:text-5xl text-center my-8 '>Team Members✨</h1>
+        <h1 className='font-raleway font-bold text-3xl sm:text-5xl text-center my-10 '>Team Members✨</h1>
 
         <div className="flex flex-wrap w-10/12 mx-auto justify-center">
           {profile.map((profiles)=>{
