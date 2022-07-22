@@ -9,8 +9,8 @@ const HomeMain = () => {
                 <h1 className='text-skin-main md:text-[90px] leading-tight font-bold text-5xl'>ClueLess <br /> <span className='text-gray-900'>Community</span></h1>
                 <h2 className=' font-raleway text-skin-main mt-5 text-4xl mb-16 '>Learn.<span className='text-gray-900'>Grow.</span></h2>
                 <div className='flex flex-col sm:flex-row items-start'>
-                    <a href="https://forms.gle/shdw9K6386fNKq1w9" target="_blank">
-                        <button className='btn-blue text-xl flex items-center px-6 py-3 shadow-blue-600'>Give us Feedback</button>
+                    <a href="https://forms.gle/agZ4GPiSMXaqzeeS7" target="_blank">
+                        <button className='btn-blue text-xl flex items-center px-6 py-3 shadow-blue-600'>Apply for Core Team</button>
                     </a>
                     <div>
                     </div>

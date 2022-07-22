@@ -27,7 +27,6 @@ const Home: NextPage = () => {
       </h2>
       <OpenSourceHome />
       <UltimateResourceHub />
-      <TeamMembersHome />
       <SocialHome />
       <DonateHome />
       <Footer />
