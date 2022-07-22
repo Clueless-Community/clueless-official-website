@@ -91,10 +91,7 @@ const WhatIsClueLess: React.FC = () => {
                 What is ClueLess?
               </h2>
               <p className="text-gray-200 mt-8">
-                Clueless is a student community built with the vision to
-                encourage open-source enthusiasts! We provide the best
-                resources, conducts weekly contests to test your skills, a guide
-                to Open-source, and help you build projects.
+              Clueless is a student community built with the vision to encourage development ! We provide the best resources, conducts contests, hackathons, workshops, sessions to test your skills, a guide to Open-source, and help you build projects.
               </p>
               <Link href="/about-us">
               <button className="btn-blue bg-white text-black hover:bg-gray-100 mt-10 flex items-center mx-auto lg:mx-0">
