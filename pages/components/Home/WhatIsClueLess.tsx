@@ -15,7 +15,7 @@ const WhatIsClueLess: React.FC = () => {
   const [state, setState] = useState<number>(0);
 
   return (
-    <div className="md:grid lg:grid-cols-2 md:mx-28 mt-10 flex flex-col-reverse text-center lg:text-left">
+    <div className="md:grid lg:grid-cols-2 md:mx-28 mt-10 flex flex-col-reverse text-center lg:text-left border border-dashed border-black rounded-tr-3xl rounded-br-3xl">
       <div className="md:bg-[#F2F2F2] lg:rounded-l-3xl md:rounded-t-3xl lg:rounded-tr-none pt-20 pb-10 relative">
         <div className="flex flex-col justify-end h-full">
           <img src="/what-is-cluless.png" alt="" className="mx-auto" />

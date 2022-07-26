@@ -1,6 +1,7 @@
 import React from 'react'
 import RightImage from './RightImage'
 import { SvgButton } from '../../../styles/Mui-styles/HoverFillButton'
+import {FaDiscord} from 'react-icons/fa'
 
 const HomeMain = () => {
     return (
@@ -15,7 +16,7 @@ const HomeMain = () => {
                     <div>
                     </div>
                     <a href="https://discord.gg/zrVMjGW8sB" target="_blank">
-                        <SvgButton className='sm:ml-10 mt-5 sm:mt-0'> <span className=' font-nunito font-bold'>Join Discord</span> </SvgButton>
+                        <SvgButton className='sm:ml-10 mt-5 sm:mt-0 max-w-fit'><FaDiscord className='text-3xl text-[#1955CA]'/> <span className=' font-nunito font-bold'>Join Discord</span> </SvgButton>
                     </a>
                 </div>
             </div>
