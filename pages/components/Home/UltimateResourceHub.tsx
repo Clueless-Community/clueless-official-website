@@ -7,7 +7,7 @@ const UltimateResourceHub: React.FC = () => {
   const [state, setState] = useState<number>(0);
 
   return (
-    <div className="md:grid lg:grid-cols-2 md:mx-28 mt-10 flex flex-col text-center lg:text-left sm:mb-32">
+    <div className="md:grid lg:grid-cols-2 md:mx-28 mt-10 flex flex-col text-center lg:text-left sm:mb-32 ">
       <div className="bg-skin-main lg:rounded-l-3xl md:rounded-t-3xl lg:rounded-tr-none py-20 transition-all duration-500 relative">
         <div className="xl:px-24 md:px-10 flex flex-col items-center w-11/12 mx-auto my-auto">
           <motion.div

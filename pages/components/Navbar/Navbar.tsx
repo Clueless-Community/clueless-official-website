@@ -13,7 +13,7 @@ const Navbar: NextComponentType = () => {
   const email = session.data?.user.email;
   const image = session.data?.user.image;
 
-  console.log(session);
+  // console.log(session);
 
 
   return (
