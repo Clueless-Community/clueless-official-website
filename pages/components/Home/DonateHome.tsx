@@ -4,7 +4,7 @@ import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism';
 const DonateHome = () => {
   return (
     <>
-    <div className='flex justify-between px-5 sm:px-28 bg-skin-main pt-10 mt-10 flex-col lg:flex-row'>
+    <div className='flex justify-between px-5 sm:px-40 bg-skin-main pt-10 mt-10 flex-col lg:flex-row'>
         <div className='my-auto pb-10 text-center lg:text-left'>
             <h1 className='text-white md:text-5xl text-3xl'>Loved what we are doing?</h1>
             <a href="https://www.buymeacoffee.com/forclueless" target="_blank">

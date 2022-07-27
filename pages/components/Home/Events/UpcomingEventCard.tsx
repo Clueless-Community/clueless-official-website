@@ -36,7 +36,7 @@ const agendaDummy = [
 const UpcomingEventCard = () => {
     const [open, setOpen] = useState(false)
     return (
-        <div className=' bg-[#1954ca25] border-dashed border border-black font-nunito flex justify-between p-8 rounded-xl'>
+        <div className=' bg-[#1954ca25] border-dashed border border-black font-nunito flex justify-between p-8 rounded-xl md:mx-40'>
             <section className='flex justify-center space-x-4'>
                 <div>
                     <img src="/eventbanner.png" className="rounded-xl" />
