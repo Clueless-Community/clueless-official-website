@@ -6,14 +6,14 @@ import { useState } from 'react'
 import Collapse from '@mui/material/Collapse';
 import Link from 'next/link'
 
-interface agenda {
+interface agenda  {
     startTime: string,
     endingTime: string,
     amOrpm: string,
     subject: string,
 }
 
-type dataProps = {
+interface dataProps {
     eventposter: string,
     heading: string,
     venue: string,
@@ -27,8 +27,8 @@ type dataProps = {
         twitterLink: string,
     },
     participants: number,
-    agenda: Array<agenda>,
-    winners: Array<string>
+    agenda: agenda[],
+    winners: string[]
 }
 
 
