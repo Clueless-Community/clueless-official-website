@@ -77,7 +77,7 @@ const Profile = () => {
                                 projectDesc={project.projectDesc}
                                 gitHubLink={project.gitHubLink}
                                 publicLink={project.publicLink}
-                                techStacks={project.techStacks.slice(0, 5)}
+                                techStacks={project.techStacks}
                             />
                         </div>
                     )
