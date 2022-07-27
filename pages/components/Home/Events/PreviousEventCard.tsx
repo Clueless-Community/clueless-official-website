@@ -6,7 +6,7 @@ import { useState } from 'react'
 import Collapse from '@mui/material/Collapse';
 import Link from 'next/link'
 
-interface agenda  {
+interface agenda {
     startTime: string,
     endingTime: string,
     amOrpm: string,
@@ -37,21 +37,21 @@ interface dataProps {
 const UpcomingEventCard: React.FC<dataProps> = ({ eventposter, heading, venue, startingTime, endingTime, instructorOrspeaker, agenda, winners, participants }) => {
     const [open, setOpen] = useState(false)
     return (
-        <div className=' bg-[#c3c8d241] border-dashed border border-black font-nunito xl:flex-row flex-col flex xl:justify-between p-8 rounded-xl relative space-y-2 xl:space-y-0'>
-            <section className={`flex xl:justify-start space-x-8 ${open && 'pb-12'} pb-4 xl:pb-0 w-full`}>
+        <div className=' bg-[#c3c8d241] border-dashed border border-black font-nunito xl:flex-row flex-col flex xl:justify-between xl:p-8 p-4 rounded-xl relative space-y-2 xl:space-y-0'>
+            <section className={`flex xl:justify-start xl:space-x-8 space-x-4 ${open && 'pb-12'} pb-4 xl:pb-0 w-full`}>
                 <div className='space-y-4'>
                     <img src={eventposter} className="rounded-xl" />
-                    <div className={`rounded-full px-4 py-2 bg-[#1954ca36] text-center text-xl font-semibold ${open && 'hidden'}`}>Participants : {participants}</div>
+                    <div className={`rounded-full px-4 py-2 bg-[#1954ca36] text-center xl:text-xl text-lg font-semibold hidden xl:block ${open && 'hidden'}`}>Participants : {participants}</div>
                 </div>
                 <div className='flex flex-col justify-center space-y-16'>
-                    <div className={`flex flex-col xl:justify-evenly space-y-4  h-full ${open && 'space-y-4'}`}>
+                    <div className={`flex flex-col xl:justify-evenly xl:space-y-4  h-full ${open && 'xl:space-y-4'}`}>
                         <h1 className='xl:text-4xl text-2xl hidden xl:block'> {heading}</h1>
-                        <div className={` ${open ? 'flex-col justify-start space-y-4 xl:space-y-0 xl:space-x-8' : 'xl:justify-start justify-evenly items-center xl:space-x-8'} flex xl:flex-row items-start xl:items-center flex-col text-xl h-full`}>
+                        <div className={` ${open ? 'flex-col justify-start space-y-4 xl:space-y-0 xl:space-x-8' : 'xl:justify-start justify-evenly items-center xl:space-x-8'} flex xl:flex-row items-start xl:items-center flex-col text-lg xl:text-xl h-full`}>
                             <div className={`${open ? 'justify-start' : 'justify-center'} flex flex-col xl:flex-row xl:items-center xl:space-x-2`}>
                                 <h1 className='font-semibold'>Venue :</h1>
                                 <h1>{venue}</h1>
                             </div>
-                            <div className={`${open ? 'justify-start' : 'justify-center'} flex flex-col xl:flex-row xl:items-center xl:space-x-2`}>
+                            <div className={`${open ? 'justify-start' : 'justify-center'} flex flex-col xl:flex-row xl:items-center xl:space-x-2 xl:w-fit w-full`}>
                                 <h1 className='font-semibold'>Time :</h1>
                                 <h1>{startingTime} - {endingTime}</h1>
                             </div>
@@ -61,11 +61,11 @@ const UpcomingEventCard: React.FC<dataProps> = ({ eventposter, heading, venue, s
                                 <h1 className='font-semibold'>Instructor / speaker :</h1>
                                 <h1>{instructorOrspeaker.name}</h1>
                             </div>
-                            <div className={`space-y-2 ${open && 'hidden'}`}>
+                            <div className={`space-y-2 ${open ? 'hidden' : 'xl:block hidden'} `}>
                                 <h1 className='text-2xl font-semibold'>Event Winners</h1>
                                 <div className='flex flex-start space-x-2'>
-                                    {winners.map((image, i)=>{
-                                        return <img src={image} className="rounded-full w-16 h-16"/>
+                                    {winners.map((image, i) => {
+                                        return <img src={image} className="rounded-full w-16 h-16" key={i} />
                                     })}
                                 </div>
                             </div>
@@ -104,24 +104,29 @@ const UpcomingEventCard: React.FC<dataProps> = ({ eventposter, heading, venue, s
                             </div>
                         </div>
                     </div>}
-                    <div className={`space-y-2 ${!open && 'hidden'}`}>
-                                <h1 className='text-3xl font-semibold'>Event Winners</h1>
-                                <div className='flex flex-start space-x-2'>
-                                    {winners.map((image, i)=>{
-                                        return <img src={image} className="rounded-full w-20 h-20"/>
-                                    })}
-                                </div>
-                            </div>
+                    <div className={`space-y-2 ${!open ? 'hidden' : 'hidden xl:block'} `}>
+                        <h1 className='text-3xl font-semibold'>Event Winners</h1>
+                        <div className='flex flex-start space-x-2'>
+                            {winners.map((image, i) => {
+                                return <img src={image} className="rounded-full w-20 h-20" />
+                            })}
+                        </div>
+                    </div>
                 </div>
             </section>
-            <h1 className='text-4xl xl:hidden'> Session 0 : Introduction</h1>
+            <h1 className='xl:text-4xl text-2xl xl:hidden font-semibold'>{heading}</h1>
             <div className={`text-xl flex flex-col space-y-2 xl:hidden`}>
                 <h1 className='font-semibold'>Instructor / speaker :</h1>
                 <h1>Roshan Kumar (ML Expert)</h1>
             </div>
-            <div className={`${open && 'text-center'}`} >
-                <button className='bg-skin-main text-white px-4 py-2 rounded-md text-2xl'>Register</button>
-            </div>
+            <div className={`space-y-2 pb-16 xl:hidden`}>
+                        <h1 className='text-xl font-semibold '>Event Winners</h1>
+                        <div className='flex flex-start space-x-2'>
+                            {winners.map((image, i) => {
+                                return <img src={image} className="rounded-full w-12 h-12" />
+                            })}
+                        </div>
+                    </div>
             <div>
                 <div className={`space-y-6 pb-16 ${!open && 'hidden'} xl:hidden`}>
                     <h1 className='text-3xl font-semibold'>Agenda</h1>
@@ -135,9 +140,17 @@ const UpcomingEventCard: React.FC<dataProps> = ({ eventposter, heading, venue, s
                             </div>
                         )
                     })}
+                    <div className={`space-y-2`}>
+                        <h1 className='text-3xl font-semibold'>Event Winners</h1>
+                        <div className='flex flex-start space-x-2'>
+                            {winners.map((image, i) => {
+                                return <img src={image} className="rounded-full w-16 h-16" />
+                            })}
+                        </div>
+                    </div>
                 </div>
             </div>
-            <button className='flex items-center justify-center space-x-2 bg-[#1954ca36] px-4 py-2 rounded-full font-bold absolute bottom-8 right-8' onClick={() => open ? setOpen(false) : setOpen(true)}><span>Show {open ? 'less' : 'more'}</span><BsChevronDown /></button>
+            <button className='flex items-center justify-center space-x-2 bg-[#1954ca36] xl:px-4 px-2 py-2 rounded-full font-bold absolute bottom-7 right-8' onClick={() => open ? setOpen(false) : setOpen(true)}><span>Show {open ? 'less' : 'more'}</span><BsChevronDown /></button>
 
         </div>
     )

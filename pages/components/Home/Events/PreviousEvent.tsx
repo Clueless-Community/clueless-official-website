@@ -8,7 +8,7 @@ import { FaDiscord } from 'react-icons/fa'
 
 const UpcomingEvents = () => {
     return (
-        <div className='md:mx-28 mt-10 flex flex-col lg:text-left sm:mb-32'>
+        <div className='md:mx-28 mt-10 flex flex-col w-10/12 mx-auto lg:text-left'>
             <h1 className='text-4xl text-center py-8' >Previous Events </h1>
             <div className=''>
                 {eventData.map((data, i) => {
@@ -16,7 +16,7 @@ const UpcomingEvents = () => {
                     participants={data.participants} agenda={data.agenda} winners={data.eventWinners} key={i}/>
                 })}
             </div>
-            <SvgButton className='max-w-fit mx-auto mt-10'><FaDiscord className='text-3xl text-[#1955CA]'/> <span className=' font-nunito font-bold'>Explore All</span> </SvgButton>
+            <SvgButton className='max-w-fit mx-auto mt-10'><span className=' font-nunito font-bold'>Explore All</span> </SvgButton>
         </div>
     )
 }
