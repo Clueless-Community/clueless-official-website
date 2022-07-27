@@ -28,7 +28,7 @@ const Home: NextPage = () => {
       </h2>
       <OpenSourceHome />
       <h1 className='child:text-skin-main md:text-6xl sm:text-5xl text-3xl text-center my-10 mt-28 font-bold sm:leading-[80px] leading-10'>️❤️<span>Events </span>by ClueLess <span>X</span> iNeuron</h1>
-      <UpcomingEvents/>
+      <UpcomingEvents />
       <UltimateResourceHub />
       <SocialHome />
       <DonateHome />
