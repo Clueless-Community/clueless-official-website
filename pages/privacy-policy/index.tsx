@@ -1,8 +1,8 @@
 import React from "react";
 import type { NextPage } from "next";
 import Head from "next/head";
-import Navbar from "../components/Navbar/Navbar";
-import Footer from "../components/Footer";
+import Navbar from "../components/shared/Navbar/Navbar";
+import Footer from "../components/shared/Footer";
 
 const PrivacyPolicy: NextPage = () => {
   return (

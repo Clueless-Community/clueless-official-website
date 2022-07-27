@@ -9,8 +9,8 @@ import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import { NextPage } from 'next';
 import Head from 'next/head';
-import Navbar from "../components/Navbar/Navbar";
-import Footer from "../components/Footer";
+import Navbar from "../components/shared/Navbar/Navbar";
+import Footer from "../components/shared/Footer";
 import Link from 'next/link';
 
 

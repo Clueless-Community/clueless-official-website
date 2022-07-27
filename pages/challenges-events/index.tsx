@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import React from 'react'
-import Navbar from '../components/Navbar/Navbar'
-import WorkInProgress from '../components/WorkInProgress'
+import Navbar from '../components/shared/Navbar/Navbar'
+import WorkInProgress from '../components/shared/WorkInProgress'
 
 const index = () => {
   return (
