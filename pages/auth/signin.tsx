@@ -7,7 +7,6 @@ import { getProviders, signIn } from "next-auth/react"
 import { GetServerSideProps } from 'next';
 import Head from "next/head";
 import Link from "next/link";
-import TeachStackLine from "../components/shared/TeachStackLine";
 
 const signin: React.FC = ({ providers }: any) => {
   return (
@@ -16,9 +15,9 @@ const signin: React.FC = ({ providers }: any) => {
         <title>🔒ClueLess | LogIn</title>
       </Head>
       <>
-      <img src="/sidelines-signin.png" alt="sidelines-signin" className=" absolute left-5 top-5 hidden lg:block" />
-      <img src="/sidelines-signin.png" alt="sidelines-signin" className=" absolute right-5 bottom-5 rotate-180 hidden lg:block" />
-        <div className="h-screen flex justify-center items-center flex-col" >
+      <img src="/sidelines-signin.png" alt="sidelines-signin" className=" absolute left-0 top-0 hidden lg:block scale-75" />
+      <img src="/sidelines-signin.png" alt="sidelines-signin" className=" absolute right-0 bottom-0 rotate-180 scale-75 hidden lg:block" />
+        <div className="min-h-screen flex justify-center items-center flex-col" >
           <div className="mb-10">
             <h1 className="text-4xl text-center">Welcome to <span className=" text-skin-main">Clueless <br /> Community</span></h1>
             <h1 className="text-xl text-center mt-5 font-bold">Log In</h1>
@@ -56,9 +55,8 @@ const signin: React.FC = ({ providers }: any) => {
             </div>
           </div>
           <div className="scale-50">
-            <TeachStackLine />
           </div>
-          <p className="text text-center text-red-500">** Signup to become a member and get access to this amazing community</p>
+          <p className="text text-center text-red-500 mt-5">** Signup to become a member and get access to this amazing community</p>
         </div>
       </>
     </React.Fragment>

@@ -3,7 +3,6 @@ import { BsChevronDown } from 'react-icons/bs'
 import { AiFillLinkedin, AiOutlineGithub, AiOutlineTwitter } from 'react-icons/ai'
 import { GoPrimitiveDot } from 'react-icons/go'
 import { useState } from 'react'
-import Collapse from '@mui/material/Collapse';
 
 
 const agendaDummy = [
@@ -51,7 +50,7 @@ const UpcomingEventCard = () => {
                             </div>
                             <div className={`${open ? 'justify-start' : 'justify-center'} flex items-center space-x-2`}>
                                 <h1 className='font-semibold'>Time :</h1>
-                                <h1> 12:00 - 4:00</h1>
+                                <h1>12:00 - 4:00</h1>
                             </div>
                         </div>
                         <div className={`${open && 'hidden'} text-xl flex items-center space-x-2`}>

@@ -56,20 +56,22 @@ const Navbar: NextComponentType = () => {
             email={email as string}
           />
         </>
-      )}{
-        session.status === "unauthenticated" && (
-          <Link href="/auth/signin">
-            <div className="scale-75 sm:scale-100">
-              <SvgButton>Log In</SvgButton>
-            </div>
-          </Link>
-        )
+      )}
+      {session.status === "unauthenticated" && (
+        <Link href="/auth/signin">
+          <div className="scale-75 sm:scale-100">
+            <SvgButton>Log In</SvgButton>
+          </div>
+        </Link>
+      )
       }
-      <NavbarDrawer
-        img={image as string}
-        name={name as string}
-        email={email as string}
-      />
+      {session.status === "authenticated" && (
+        <NavbarDrawer
+          img={image as string}
+          name={name as string}
+          email={email as string}
+        />
+      )}
     </nav>
   );
 };
