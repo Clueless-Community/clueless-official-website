@@ -4,7 +4,6 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import GitHubIcon from '@mui/icons-material/GitHub';
 
 type Props = {
-    // props interface for this components
     key: string,
     img: string,
     username: string,

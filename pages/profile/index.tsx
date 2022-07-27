@@ -4,7 +4,7 @@ import ProjectsCard from '../components/Profile/ProjectsCard'
 import Footer from '../components/shared/Footer'
 import Navbar from '../components/shared/Navbar/Navbar'
 import StyledChip from '../components/shared/StyledChip'
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import Head from 'next/head'
 
 const teckStacks = [
     'TypeScript', 'React', 'JavaScript', 'C', 'C++', 'Azure', 'AWS', 'Google Cloud'
@@ -32,6 +32,11 @@ const Projects = [
 const Profile = () => {
     return (
         <>
+            <Head>
+                <title>Rajdeep Sengupta</title>
+                <meta name="description" content="A virtual Open source and development community" />
+                <meta property="og:image" content="https://i.ibb.co/WVBNFXB/Clueless-SS.png" />
+            </Head>
             <Navbar />
             <div>
                 <ProfileSummary
@@ -55,7 +60,7 @@ const Profile = () => {
                 <div className='flex gap-4 flex-wrap mt-5'>
                     {teckStacks.map((teckStack: string) => {
                         return (
-                             <StyledChip text={teckStack} size='md' rounded='md' />
+                            <StyledChip text={teckStack} size='md' rounded='md' />
                         )
                     })}
                 </div>
@@ -72,7 +77,7 @@ const Profile = () => {
                                 projectDesc={project.projectDesc}
                                 gitHubLink={project.gitHubLink}
                                 publicLink={project.publicLink}
-                                techStacks={project.techStacks.slice(0,5)}
+                                techStacks={project.techStacks}
                             />
                         </div>
                     )

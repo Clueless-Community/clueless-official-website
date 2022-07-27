@@ -25,7 +25,7 @@ const ProjectsCard: React.FC<Props> = ({ projectImage, projectName, projectDesc,
                         </a>
                         <div className='hidden lg:block'>
                             <div className='flex gap-2 xl:ml-10'>
-                                {techStacks.map((teckStack: string) => {
+                                {techStacks?.map((teckStack: string) => {
                                     return (
                                         <StyledChip text={teckStack} size="xs" rounded='2xl' />
                                     )
@@ -43,11 +43,11 @@ const ProjectsCard: React.FC<Props> = ({ projectImage, projectName, projectDesc,
             </div>
             <div className=' block lg:hidden '>
                 <Stack direction="row" spacing={2} className="mt-5" alignItems="center" sx={{ 'flexWrap': 'wrap' }}>
-                    {techStacks.map((teckStack: string) => {
-                        return (
-                            <StyledChip text={teckStack} size="xs" rounded='2xl' />
-                        )
-                    })}
+                            {techStacks?.map((teckStack: string) => {
+                                return (
+                                    <StyledChip text={teckStack} size="xs" rounded='2xl' />
+                                )
+                            })}
                 </Stack>
                 <p className='mt-5 font-semibold opacity-80'>{projectDesc}</p>
                 <a href={gitHubLink} target="_blank">
