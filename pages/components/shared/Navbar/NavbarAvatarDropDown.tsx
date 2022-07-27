@@ -3,7 +3,7 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { Avatar, IconButton } from "@mui/material";
 import { ClassNameMap } from '@mui/styles';
-import { MenuStyle } from '../../../styles/Mui-styles/MenuStyle.Mui.';
+import { MenuStyle } from '../../../../styles/Mui-styles/MenuStyle.Mui.';
 import {signOut} from 'next-auth/react';
 
 type Props = {

@@ -1,5 +1,5 @@
 import React from 'react'
-import { SvgButton } from '../../styles/Mui-styles/HoverFillButton'
+import { SvgButton } from '../../../styles/Mui-styles/HoverFillButton'
 
 const WorkInProgress: React.FC = () => {
     return (

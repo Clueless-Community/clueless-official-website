@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
-import Navbar from "./components/Navbar/Navbar";
+import Navbar from "./components/shared/Navbar/Navbar";
 import React from "react";
 
 const NotFound: React.FC = () => {
