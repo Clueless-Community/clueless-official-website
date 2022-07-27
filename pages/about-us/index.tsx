@@ -2,10 +2,10 @@ import Head from 'next/head'
 import React from 'react'
 import Navbar from '../components/shared/Navbar/Navbar'
 import Footer from '../components/shared/Footer'
-import ProfileCard from '../components/AboutUs/ProfileCard'
+import ProfileCard from '../components/AboutUS/ProfileCard'
 import '../../database/profileData'
 import profile from '../../database/profileData'
-import OurVision from '../components/AboutUs/OurVision';
+import OurVision from '../components/AboutUS/OurVision';
 import TeachStackLine from '../components/shared/TeachStackLine'
 
 const aboutUs = () => {
