@@ -1,13 +1,10 @@
-import { Icon } from '@mui/material'
 import React from 'react'
-import ChallengeCardActive from '../cards/ChallengeCardActive'
 
 const Icons = [...Array(8)].map((_, i) => `icons/icon${i + 1}.svg`)
-console.log(Icons)
 
-const OpenSourceHome: React.FC = () => {
+const TeachStackLine = () => {
     return (
-        <div className='relative max-w-[1280px] mx-auto'>
+        <div className='relative md:mx-40 mx-auto'>
             <div className='hidden lg:block'>
                 <div className='grid grid-cols-10 place-items-center gap-4 px-12 py-8'>
                     {Icons.slice(0, 4).map((icon, i) => {
@@ -19,9 +16,8 @@ const OpenSourceHome: React.FC = () => {
                     })}
                 </div>
             </div>
-
         </div>
     )
 }
 
-export default OpenSourceHome
+export default TeachStackLine

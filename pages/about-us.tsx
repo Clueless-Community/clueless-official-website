@@ -2,9 +2,11 @@ import Head from 'next/head'
 import React from 'react'
 import Navbar from './components/Navbar/Navbar'
 import Footer from './components/Footer'
-import ProfileCard from './components/cards/ProfileCard'
+import ProfileCard from './components/AboutUS/ProfileCard'
 import '../database/profileData'
 import profile from '../database/profileData'
+import OurVision from './components/AboutUS/OurVision';
+import TeachStackLine from './components/shared/TeachStackLine'
 
 const aboutUs = () => {
   return (
@@ -16,66 +18,56 @@ const aboutUs = () => {
       <Navbar />
 
       {/* top section  */}
-      {/* <div  className=' bg-skin-main flex justify-center items-center h-[480px]'>
-          <div className='flex w-4/5 mx-auto justify-between'>
+      <div className=' bg-skin-main flex justify-center items-center h-[700px]'>
+        <div className='flex w-4/5 mx-auto justify-between'>
           <div className='w-full lg:w-1/2 flex flex-col justify-center'>
             <div className='mb-8 text-center lg:text-left'>
-            <h1 className=' font-raleway font-bold text-5xl text-white tracking-wider leading-normal'>About</h1>
-            <h1 className=' font-raleway font-bold text-5xl text-white tracking-wider'>ClueLess</h1>
+              <h1 className=' font-raleway font-bold text-6xl text-white tracking-wider leading-normal'>About</h1>
+              <h1 className=' font-raleway font-bold text-6xl text-white tracking-wider'>ClueLess</h1>
             </div>
-            <p className='text-[#EDECEC] text-md font-nunito text-center lg:text-left'>Clueless in a virtual open-source community built with the motive of “Learn and Grow”. We, as a community, encourage and guide enthusiasts to dive into the world of open-source. We provide the best resources available on the internet, write blogs that helps other to explore their domain more deeply, organize events, GitHub repositories, organize hackathons, and more couniting activities</p>
+            <p className='text-[#EDECEC] text-lg font-nunito text-center lg:text-left'>Clueless in a virtual open-source community built with the motive of “Learn and Grow”. We, as a community, encourage and guide enthusiasts to dive into the world of open-source. We provide the best resources available on the internet, write blogs that helps other to explore their domain more deeply, organize events, GitHub repositories, organize hackathons, and more couniting activities</p>
           </div>
           <div className='flex justify-center'>
-            <img className='hidden lg:block' src="/aboutUsGirl.png" alt=""/>
-          </div>
+            <img className='hidden lg:block' src="/aboutUsGirl.png" alt="" />
           </div>
         </div>
-        {/* our vision */}
+      </div>
 
-      {/* <div className=' flex flex-col justify-evenly items-center sm:px-28 px-7 py-10 mx-auto mb-7'>
-            <h1 className='font-raleway font-bold text-3xl sm:text-5xl my-10'>Our Vision🚀</h1>
-            <p className='text-center text-sm  text-[#111111]'>Following the principle of “Learn and Grow” we try our best to make your every second spent with Clueless worth it and fruitful. We provide the most curated resource available on the internet like YouTube videos to go through, helpful GitHub repositories, documentation to read, blogs on different techs, and best websites to enhance your skills. Apart from this, we organize events and hackathons to test and enhance your coding skills, podcasts, and online meet sessions for better interactivity as well as awareness. We also keep you updated with useful social media feeds like, Twitter threads, Instagram accounts that might be helpful for you as a developer, and LinkedIn posts. We have an amazing Discord community where we have specific channels for every domain and sub-domain topics like Web Development, App Development, Artificial Intelligence&Machine Learning, Web 3.0, modern-day developer tools like Docker, Kubernetes, and GitHub. So stay connected with us!</p>
-        </div>
+      {/* ClueLess Name Art */}
+      <p className='absolute right-[-180px] rotate-[270deg] text-[120px] font-extrabold leading-3 hidden lg:block'> <span className='text-[#1955CA] opacity-75 '>Clue</span> <span className='text-white'>Less</span></p>
+      {/* our vision */}
+      <OurVision />
+
+      {/* Team Members */}
+      <div className=' relative'>
         <h1 className='font-raleway font-bold text-3xl sm:text-5xl text-center my-10 '>Team Members✨</h1>
 
+        {/* SideLines */}
+        <img src="./side-lines-about-us.png" className=' absolute left-10' alt="side-lines-about-us" />
+        <img src="./side-lines-about-us.png" className=' absolute right-10 top-96' alt="side-lines-about-us" />
+
         <div className="flex flex-wrap w-10/12 mx-auto justify-center">
-          {profile.map((profiles)=>{
+          {profile.map((profiles) => {
             return (
               <div className='m-12'>
-              <ProfileCard
-                key={profiles.id}
-                img={profiles.img}
-                username={profiles.name}
-                tag={profiles.tags}
-                about={profiles.about}
-                github={profiles.github}
-                linkedin={profiles.linkedin}
-                twitter={profiles.twitter}
-              />
+                <ProfileCard
+                  key={profiles.id}
+                  img={profiles.img}
+                  username={profiles.name}
+                  tag={profiles.tags}
+                  about={profiles.about}
+                  github={profiles.github}
+                  linkedin={profiles.linkedin}
+                  twitter={profiles.twitter}
+                />
               </div>
             );
           })}
-          </div>
-
-          <div className='flex my-24 w-10/12 flex-col-reverse items-center sm:justify-between mx-auto md:flex-row'>
-            <div className='w-[40%] justify-end items-center md:flex'>
-              <img className='w-72 mt-10 md:mt-0' src="/cactus.png" alt=""  />
-            </div>
-            <div className='w-[80%]  md:w-[60%] flex flex-col justify-center text-center md:text-left mx-auto md:mx-0'>
-              <p className=' font-nunito w-[100%]  md:w-[80%] text-sm text-[#5B5B5B]'></p>
-              <br />
-              <p className=' font-nunito w-[80%] text-sm text-[#5B5B5B] mx-auto md:mx-0'>These were the glorious hands behind this great initiative. We are the first-year undergraduate students came together, with the same vision we devoted all our time and efforts to make this community a better place! 
-<br />"You need to be aware of what others are doing, applaud their efforts, acknowledge their successes, and encourage them in their pursuits. When we all help one another, everybody wins." – Jim Stovall</p>
-            </div>
-          </div>    */}
-      <div className='  h-screen flex items-center justify-center flex-col'>
-        <h1 className='text-5xl'>
-          Comming Soon....
-        </h1>
-        <p className='my-6 text-xl'>You can fill up the for for core team!</p>
-        <a className='btn-blue' href='https://forms.gle/2R2gMMthzkX7qTmGA' target="_blank">Fill Up</a>
+        </div>
       </div>
-
+      <div className='my-20'>
+        <TeachStackLine />
+      </div>
       <Footer />
     </div>
   )
