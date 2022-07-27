@@ -47,7 +47,7 @@ const ProjectsCardAdmin: React.FC<Props> = ({ projectImage, projectName, project
             </div>
             <div className=' block lg:hidden '>
                 <Stack direction="row" spacing={2} className="mt-5" alignItems="center" sx={{ 'flexWrap': 'wrap' }}>
-                    {techStacks.map((teckStack: string) => {
+                    {techStacks?.map((teckStack: string) => {
                         return (
                             <StyledChip text={teckStack} size="xs" rounded='2xl' />
                         )
