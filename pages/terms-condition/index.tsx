@@ -1,6 +1,6 @@
 import React from 'react'
-import Footer from '../components/Footer'
-import Navbar from '../components/Navbar/Navbar'
+import Footer from '../components/shared/Footer'
+import Navbar from '../components/shared/Navbar/Navbar'
 import Head from 'next/head'
 
 const index = () => {

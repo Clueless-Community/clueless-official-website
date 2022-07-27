@@ -4,7 +4,7 @@ import NavbarAvatarDropDown from "./NavbarAvatarDropDown";
 import NavbarDrawer from "./NavbarDrawer";
 import { NextComponentType } from "next";
 import { useSession } from "next-auth/react";
-import { SvgButton } from "../../../styles/Mui-styles/HoverFillButton";
+import { SvgButton } from "../../../../styles/Mui-styles/HoverFillButton";
 
 const Navbar: NextComponentType = () => {
 
