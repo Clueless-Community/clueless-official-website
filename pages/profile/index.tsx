@@ -4,7 +4,6 @@ import ProjectsCard from '../components/Profile/ProjectsCard'
 import Footer from '../components/shared/Footer'
 import Navbar from '../components/shared/Navbar/Navbar'
 import StyledChip from '../components/shared/StyledChip'
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import Head from 'next/head'
 
 const teckStacks = [
