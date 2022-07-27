@@ -25,7 +25,7 @@ const ProjectsCard: React.FC<Props> = ({ projectImage, projectName, projectDesc,
                         </a>
                         <div className='hidden lg:block'>
                             <div className='flex gap-2 xl:ml-10'>
-                                {techStacks.map((teckStack: string) => {
+                                {techStacks?.map((teckStack: string) => {
                                     return (
                                         <StyledChip text={teckStack} size="xs" rounded='2xl' />
                                     )
