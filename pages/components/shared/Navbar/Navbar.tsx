@@ -17,7 +17,7 @@ const Navbar: NextComponentType = () => {
 
 
   return (
-    <nav className="flex justify-between sm:px-28 px-5 py-5 items-center shadow-xl">
+    <nav className="flex justify-between sm:px-36 px-5 py-5 items-center shadow-xl">
       <Link href="/">
         <div className="flex items-center cursor-pointer">
           <img src="/ClueLess Logo.png" alt="" className="sm:w-[65px] w-[35px]" />
