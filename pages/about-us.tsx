@@ -43,8 +43,8 @@ const aboutUs = () => {
         <h1 className='font-raleway font-bold text-3xl sm:text-5xl text-center my-10 '>Team Members✨</h1>
 
         {/* SideLines */}
-        <img src="./side-lines-about-us.png" className=' absolute left-10' alt="side-lines-about-us" />
-        <img src="./side-lines-about-us.png" className=' absolute right-10 top-96' alt="side-lines-about-us" />
+        <img src="./side-lines-about-us.png" className=' absolute left-10 md:block hidden' alt="side-lines-about-us" />
+        <img src="./side-lines-about-us.png" className=' absolute right-10 md:block hidden top-96' alt="side-lines-about-us" />
 
         <div className="flex flex-wrap w-10/12 mx-auto justify-center">
           {profile.map((profiles) => {
