@@ -1,5 +1,4 @@
 import React from "react";
-import TerminalIcon from "@mui/icons-material/Terminal";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import GoogleIcon from "@mui/icons-material/Google";
@@ -32,19 +31,19 @@ const signin: React.FC = ({ providers }: any) => {
               <img src="/ClueLess Logo.png" alt="" className="block md:hidden mx-auto w-[90px] mb-6" />
               <h1 className="block md:hidden text-center font-semibold text-2xl w-[300px] mb-10">Welcome to Clueless Community </h1>
               <div className="space-y-6">
-                <button className="px-24 py-3 w-full text-lg flex items-center justify-center font-semibold bg-[#0276E1] hover:bg-[#0085FF] text-white max-w-[301px] rounded mx-auto cursor-pointer" onClick={(): void => { signIn(providers.google.id, { callbackUrl: "/checkuser" }) }}>
+                <button className="px-24 py-3 w-full text-lg flex items-center justify-center font-semibold bg-[#0276E1] hover:bg-[#0085FF] text-white max-w-[301px] rounded mx-auto cursor-pointer" onClick={(): void => { signIn(providers.google.id, { callbackUrl: "/" }) }}>
                   <div className="flex justify-center space-x-2">
                     <GoogleIcon />
                     <p>Google</p>
                   </div>
                 </button>
-                <button className="px-4 py-3 w-full font-semibold text-lg flex items-center justify-center bg-[#373636] hover:bg-[#262626] text-white max-w-[301px] rounded mx-auto cursor-pointer" onClick={(): void => { signIn(providers.github.id, { callbackUrl: "/checkuser" }) }}>
+                <button className="px-4 py-3 w-full font-semibold text-lg flex items-center justify-center bg-[#373636] hover:bg-[#262626] text-white max-w-[301px] rounded mx-auto cursor-pointer" onClick={(): void => { signIn(providers.github.id, { callbackUrl: "/" }) }}>
                   <div className="flex justify-center space-x-2">
                     <GitHubIcon />
                     <p>GitHub</p>
                   </div>
                 </button>
-                <button className="px-4 py-3 w-full font-semibold text-lg flex items-center justify-center bg-[#3F9CF0] hover:bg-[#2E9CFF] text-white max-w-[301px] rounded mx-auto cursor-pointer" onClick={(): void => { signIn(providers.twitter.id, { callbackUrl: "/checkuser" }) }}>
+                <button className="px-4 py-3 w-full font-semibold text-lg flex items-center justify-center bg-[#3F9CF0] hover:bg-[#2E9CFF] text-white max-w-[301px] rounded mx-auto cursor-pointer" onClick={(): void => { signIn(providers.twitter.id, { callbackUrl: "/" }) }}>
                   <div className="flex justify-center space-x-2">
                     <TwitterIcon />
                     <p>Twitter</p>
@@ -59,6 +58,7 @@ const signin: React.FC = ({ providers }: any) => {
           <div className="scale-50">
             <TeachStackLine />
           </div>
+          <p className="text text-center text-red-500">** Signup to become a member and get access to this amazing community</p>
         </div>
       </>
     </React.Fragment>
