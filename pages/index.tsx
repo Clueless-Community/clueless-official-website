@@ -1,9 +1,9 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Navbar from "./components/Navbar/Navbar";
+import Navbar from "./components/shared/Navbar/Navbar";
 import WhatIsClueLess from "./components/Home/WhatIsClueLess";
 import UltimateResourceHub from "./components/Home/UltimateResourceHub";
-import Footer from "./components/Footer";
+import Footer from "./components/shared/Footer";
 import TeamMembersHome from "./components/Home/TeamMembersHome";
 import DonateHome from "./components/Home/DonateHome";
 import HomeMain from "./components/Home/HomeMain";

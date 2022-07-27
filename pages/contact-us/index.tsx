@@ -1,6 +1,6 @@
 import Head from "next/head";
-import Footer from "../components/Footer";
-import Navbar from "../components/Navbar/Navbar";
+import Footer from "../components/shared/Footer";
+import Navbar from "../components/shared/Navbar/Navbar";
 import { TextField } from "@mui/material";
 import React, { useState } from "react";
 import Snackbar from '@mui/material/Snackbar';
