@@ -31,6 +31,12 @@ const Home: NextPage = () => {
       <UpcomingEvents/>
       <PreviousEvent/>
       <UltimateResourceHub />
+      <div className="flex flex-col justify-center items-center xl:space-y-16 space-y-8 w-[10/12] mx-auto">
+        <h1 className="xl:text-5xl font-bold md:text-4xl text-2xl">
+        Our <span className="text-skin-main">Sponsors</span> 
+        </h1>
+        <img src="ineuron-logo.png" alt="ineutron Logo"/>
+      </div>
       {/* <TeamMembersHome/> */}
       <SocialHome />
       <DonateHome />
