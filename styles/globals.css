@@ -24,3 +24,10 @@
     }
     
 }
+
+tbody:before {
+    content:"@";
+    display:block;
+    line-height:15px;
+    text-indent:-99999px;
+}

@@ -8,6 +8,7 @@ import DonateHome from "./components/Home/DonateHome";
 import HomeMain from "./components/Home/HomeMain";
 import SocialHome from "./components/Home/SocialHome";
 import UpcomingEvents from "./components/Home/Events/UpcomingEvents";
+import PreviousEvent from './components/Home/Events/PreviousEvent'
 import TeachStackLine from "./components/shared/TeachStackLine";
 
 const Home: NextPage = () => {
@@ -27,8 +28,10 @@ const Home: NextPage = () => {
       </h2>
       <TeachStackLine />
       <h1 className='child:text-skin-main md:text-6xl sm:text-5xl text-3xl text-center my-10 mt-28 font-bold sm:leading-[80px] leading-10'>️❤️<span>Events </span>by ClueLess <span>X</span> iNeuron</h1>
-      <UpcomingEvents />
+      <UpcomingEvents/>
+      <PreviousEvent/>
       <UltimateResourceHub />
+      {/* <TeamMembersHome/> */}
       <SocialHome />
       <DonateHome />
       <Footer />
