@@ -9,16 +9,9 @@ import { TextField } from "@mui/material";
 import TechStackAutoComplete from "../../shared/TechStackAutoComplete"
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import { theme } from '../../../../styles/theme'
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 
 
-interface Props {
-    projectImage: string,
-    projectName: string,
-    publicLink?: string,
-    gitHubLink?: string,
-    projectDesc: string,
-    techStacks: { 'name': string }[],
-}
 
 const style = {
     position: 'absolute' as 'absolute',
@@ -37,19 +30,20 @@ const style = {
     borderRadius: 3,
 };
 
-const EditProject: React.FC<Props> = ({ projectName, projectImage, projectDesc, publicLink, gitHubLink, techStacks }) => {
+const AddProject: React.FC = () => {
 
 
     const [editIsOpen, setEditIsOpen] = React.useState<boolean>(false);
+
     const handleOpen = () => setEditIsOpen(true);
 
-    const [projectNameNew, setProjectNameNew] = React.useState<string>(projectName);
-    const [projectImageNew, setProjectImageNew] = React.useState<string>(projectImage);
-    const [media, setMedia] = React.useState<File>();
-    const [projectDescNew, setProjectDescNew] = React.useState<string>(projectDesc);
-    const [publicLinkNew, setPublicLinkNew] = React.useState<string>(publicLink);
-    const [gitHubLinkNew, setGitHubLinkNew] = React.useState<string>(gitHubLink);
-    const [projectTechStacks, setProjectTechStacks] = React.useState<{ name: string }[]>(techStacks);
+    const [projectNameNew, setProjectNameNew] = React.useState<string>('');
+    const [projectImageNew, setProjectImageNew] = React.useState<string>('');
+    const [media, setMedia] = React.useState<File | undefined>();
+    const [projectDescNew, setProjectDescNew] = React.useState<string>('');
+    const [publicLinkNew, setPublicLinkNew] = React.useState<string>('');
+    const [gitHubLinkNew, setGitHubLinkNew] = React.useState<string>('');
+    const [projectTechStacks, setProjectTechStacks] = React.useState<{ name: string }[]>([]);
 
     const addImageToPost = (e: any) => {
         const reader = new FileReader();
@@ -65,20 +59,32 @@ const EditProject: React.FC<Props> = ({ projectName, projectImage, projectDesc, 
 
     const handleClose = () => {
         setEditIsOpen(false);
+        setProjectNameNew('');
+        setProjectImageNew('');
+        setProjectDescNew('');
+        setMedia(undefined);
+        setPublicLinkNew('');
+        setGitHubLinkNew('');
+        setProjectTechStacks([])
     };
 
     return (
         <>
-            <Button onClick={handleOpen}><EditIcon /></Button>
+
+                <div className='my-10' onClick={handleOpen}>
+                    <div className='p-6 border-2 border-dashed border-black border-opacity-60 rounded-lg h-48 bg-gray-100 flex justify-center items-center cursor-pointer hover:bg-gray-200 transition-all opacity-80 w-full'><AddCircleOutlineIcon fontSize='large' /></div>
+                </div>
             <Modal
                 open={editIsOpen}
                 onClose={handleClose}
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
                 closeAfterTransition
-                sx={{ [theme.breakpoints.down('md')]: {
-                    overflowY : 'scroll',
-                },}}
+                sx={{
+                    [theme.breakpoints.down('md')]: {
+                        overflowY: 'scroll',
+                    },
+                }}
             >
                 <Box sx={style}>
                     <Box sx={{
@@ -98,11 +104,19 @@ const EditProject: React.FC<Props> = ({ projectName, projectImage, projectDesc, 
                             htmlFor="file-upload"
                             className=" cursor-pointer h-52 relative"
                         >
-                            <img src={projectImageNew} alt="" className=" rounded-lg md:w-80 h-52 absolute -z-40" />
-                            <div className="absolute rounded-lg w-52 h-52 bg-black opacity-50 flex justify-center items-center -z-20"></div>
-                            <div className="w-52 h-52 flex justify-center items-center text-white">
-                                <CloudUploadIcon fontSize="large" />
-                            </div>
+                            {projectImageNew ? (
+                                <>
+                                    <img src={projectImageNew} alt="" className=" rounded-lg md:w-80 h-52 absolute -z-40" />
+                                    <div className="absolute rounded-lg w-52 h-52 bg-black opacity-50 flex justify-center items-center -z-20"></div>
+                                    <div className="w-52 h-52 flex justify-center items-center text-white">
+                                        <CloudUploadIcon fontSize="large" />
+                                    </div>
+                                </>
+                            ) : (
+                                <div className="w-52 h-52 flex justify-center items-center text-white bg-black opacity-20 rounded-lg">
+                                    <CloudUploadIcon fontSize="large" />
+                                </div>
+                            )}
                         </label>
                         <input
                             id="file-upload"
@@ -136,4 +150,4 @@ const EditProject: React.FC<Props> = ({ projectName, projectImage, projectDesc, 
         </>
     );
 };
-export default EditProject; 
+export default AddProject; 
