@@ -206,7 +206,7 @@ const editEvents = () => {
 
                                                             <div className="w-full flex justify-end mt-2">
                                                                 <button>
-                                                                    <HighlightOffIcon className="mt-3.5" onclick={() => handleRemove(i)} />
+                                                                    <HighlightOffIcon className="mt-3.5" onClick={() => handleRemove(i)} />
                                                                 </button>
                                                             </div>
                                                         </button>
