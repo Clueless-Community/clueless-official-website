@@ -4,12 +4,19 @@ import ProjectsCardAdmin from '../components/Profile/Admin/ProjectsCardAdmin'
 import Footer from '../components/shared/Footer'
 import Navbar from '../components/shared/Navbar/Navbar'
 import StyledChip from '../components/shared/StyledChip'
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import Head from 'next/head'
+import AddProject from '../components/Profile/Admin/AddProject'
 
 const teckStacks = [
-    'TypeScript', 'React', 'JavaScript', 'C', 'C++', 'Azure', 'AWS', 'Google Cloud'
+    { 'name': 'TypeScript' },
+    { 'name': 'React' },
+    { 'name': 'C' },
+    { 'name': 'C++' },
+    { 'name': 'Azure' },
+    { 'name': 'AWS' },
+    {'name': " Google Cloud"}
 ]
+
 
 const Projects = [
     {
@@ -59,9 +66,9 @@ const ProfileAdmin = () => {
                 <p className=' text-4xl'>Tech Stack</p>
                 <div className='h-1 w-28 bg-black ml-20 opacity-80'></div>
                 <div className='flex gap-4 flex-wrap mt-5'>
-                    {teckStacks.map((teckStack: string) => {
+                    {teckStacks.map((teckStack: { 'name': string }) => {
                         return (
-                            <StyledChip text={teckStack} size='md' rounded='md' />
+                            <StyledChip text={teckStack.name} size='md' rounded='md' />
                         )
                     })}
                 </div>
@@ -83,9 +90,7 @@ const ProfileAdmin = () => {
                         </div>
                     )
                 })}
-                <div className='my-10'>
-                    <div className='p-6 border-2 border-dashed border-black border-opacity-60 rounded-lg h-48 bg-gray-100 flex justify-center items-center cursor-pointer hover:bg-gray-200 transition-all opacity-80'><AddCircleOutlineIcon fontSize='large' /></div>
-                </div>
+                <AddProject />
             </div>
             <Footer />
         </>
