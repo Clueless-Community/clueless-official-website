@@ -8,19 +8,19 @@ const techstack = [
     { 'name': 'C++' },
     { 'name': 'Azure' },
     { 'name': 'AWS' },
-    {'name': " Google Cloud"}
+    { 'name': " Google Cloud" }
 ]
 
 interface Props {
-    projectTechStacks : {
+    projectTechStacks: {
         name: string;
     }[],
-    setProjectTechStacks : React.Dispatch<React.SetStateAction<{
+    setProjectTechStacks: React.Dispatch<React.SetStateAction<{
         name: string;
     }[]>>
 }
 
-const TechStackAutoComplete : React.FC<Props> = ({ projectTechStacks, setProjectTechStacks}) => {
+const TechStackAutoComplete: React.FC<Props> = ({ projectTechStacks, setProjectTechStacks }) => {
     return (
         <Autocomplete
             multiple
@@ -44,7 +44,7 @@ const TechStackAutoComplete : React.FC<Props> = ({ projectTechStacks, setProject
             }
             renderInput={(params) => <TextField {...params} placeholder="Select TechStacks"
             />}
-            sx={{ mt: 2.5 }}
+        // sx={{ mt: 2.5 }}
         />
     )
 }
