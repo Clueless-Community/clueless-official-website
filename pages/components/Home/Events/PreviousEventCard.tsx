@@ -12,6 +12,13 @@ interface agenda {
     amOrpm: string,
     subject: string,
 }
+interface instructorOrspeaker {
+    name: string,
+    image: string,
+    linkedinLink: string,
+    githubLink: string,
+    twitterLink: string,
+}
 
 interface dataProps {
     eventposter: string,
@@ -19,13 +26,7 @@ interface dataProps {
     venue: string,
     startingTime: string,
     endingTime: string,
-    instructorOrspeaker: {
-        name: string,
-        image: string,
-        linkedinLink: string,
-        githubLink: string,
-        twitterLink: string,
-    },
+    instructorOrspeaker:instructorOrspeaker,
     participants: number,
     agenda: agenda[],
     winners: string[]
@@ -59,12 +60,12 @@ const UpcomingEventCard: React.FC<dataProps> = ({ eventposter, heading, venue, s
                         <div className='hidden xl:block xl:space-y-4'>
                             <div className={`${open && 'hidden'} text-xl flex items-center space-x-2`}>
                                 <h1 className='font-semibold'>Instructor / speaker :</h1>
-                                <h1>{instructorOrspeaker.name}</h1>
+                                <h1>{instructorOrspeaker?.name}</h1>
                             </div>
                             <div className={`space-y-2 ${open ? 'hidden' : 'xl:block hidden'} `}>
                                 <h1 className='text-2xl font-semibold'>Event Winners</h1>
                                 <div className='flex flex-start space-x-2'>
-                                    {winners.map((image, i) => {
+                                    {winners?.map((image, i) => {
                                         return <img src={image} className="rounded-full w-16 h-16" key={i} />
                                     })}
                                 </div>
@@ -76,13 +77,13 @@ const UpcomingEventCard: React.FC<dataProps> = ({ eventposter, heading, venue, s
                         <div>
                             <h1 className='text-3xl font-semibold'>Instructor / speaker </h1>
                             <section className='flex justify-start space-x-4 '>
-                                <img src={instructorOrspeaker.image} className='w-32 rounded-full' />
+                                <img src={instructorOrspeaker?.image} className='w-32 rounded-full' />
                                 <div className='flex flex-col items-start justify-center space-y-2'>
-                                    <h1 className='text-xl'>{instructorOrspeaker.name}</h1>
+                                    <h1 className='text-xl'>{instructorOrspeaker?.name}</h1>
                                     <div className='flex justify-center space-x-2 child:text-[#7D7D7D] child:text-3xl'>
-                                        <Link href={instructorOrspeaker.linkedinLink}><a><AiFillLinkedin /></a></Link>
-                                        <Link href={instructorOrspeaker.githubLink}><a><AiOutlineGithub /></a></Link>
-                                        <Link href={instructorOrspeaker.twitterLink}><a><AiOutlineTwitter /></a></Link>
+                                        <Link href={instructorOrspeaker?.linkedinLink}><a><AiFillLinkedin /></a></Link>
+                                        <Link href={instructorOrspeaker?.githubLink}><a><AiOutlineGithub /></a></Link>
+                                        <Link href={instructorOrspeaker?.twitterLink}><a><AiOutlineTwitter /></a></Link>
                                     </div>
                                 </div>
                             </section>
@@ -90,7 +91,7 @@ const UpcomingEventCard: React.FC<dataProps> = ({ eventposter, heading, venue, s
                         <div>
                             <h1 className='text-3xl font-semibold'>Agenda</h1>
                             <div className='space-y-6'>
-                                {agenda.map((agenda, i) => {
+                                {agenda?.map((agenda, i) => {
                                     return (
                                         <div className='flex justify-start items-center text-xl' key={i}>
                                             <div className='flex items-center justify-start space-x-2 w-80'>
@@ -107,7 +108,7 @@ const UpcomingEventCard: React.FC<dataProps> = ({ eventposter, heading, venue, s
                     <div className={`space-y-2 ${!open ? 'hidden' : 'hidden xl:block'} `}>
                         <h1 className='text-3xl font-semibold'>Event Winners</h1>
                         <div className='flex flex-start space-x-2'>
-                            {winners.map((image, i) => {
+                            {winners?.map((image, i) => {
                                 return <img src={image} className="rounded-full w-20 h-20" />
                             })}
                         </div>
@@ -117,12 +118,12 @@ const UpcomingEventCard: React.FC<dataProps> = ({ eventposter, heading, venue, s
             <h1 className='xl:text-4xl text-2xl xl:hidden font-semibold'>{heading}</h1>
             <div className={`text-xl flex flex-col space-y-2 xl:hidden`}>
                 <h1 className='font-semibold'>Instructor / speaker :</h1>
-                <h1>Roshan Kumar (ML Expert)</h1>
+                <h1>{instructorOrspeaker?.name}</h1>
             </div>
             <div className={`space-y-2 pb-16 xl:hidden`}>
                         <h1 className='text-xl font-semibold '>Event Winners</h1>
                         <div className='flex flex-start space-x-2'>
-                            {winners.map((image, i) => {
+                            {winners?.map((image, i) => {
                                 return <img src={image} className="rounded-full w-12 h-12" />
                             })}
                         </div>
@@ -130,7 +131,7 @@ const UpcomingEventCard: React.FC<dataProps> = ({ eventposter, heading, venue, s
             <div>
                 <div className={`space-y-6 pb-16 ${!open && 'hidden'} xl:hidden`}>
                     <h1 className='text-3xl font-semibold'>Agenda</h1>
-                    {agenda.map((agenda, i) => {
+                    {agenda?.map((agenda, i) => {
                         return (
                             <div className='flex flex-col justify-start text-xl' key={i}>
                                 <div className='flex items-center justify-center space-x-2 w-56 font-semibold'><GoPrimitiveDot className='text-2xl' />
@@ -143,7 +144,7 @@ const UpcomingEventCard: React.FC<dataProps> = ({ eventposter, heading, venue, s
                     <div className={`space-y-2`}>
                         <h1 className='text-3xl font-semibold'>Event Winners</h1>
                         <div className='flex flex-start space-x-2'>
-                            {winners.map((image, i) => {
+                            {winners?.map((image, i) => {
                                 return <img src={image} className="rounded-full w-16 h-16" />
                             })}
                         </div>

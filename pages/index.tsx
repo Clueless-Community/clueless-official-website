@@ -32,6 +32,7 @@ const Home: NextPage = () => {
       <UpcomingEvents/>
       <PreviousEvent/>
       <UltimateResourceHub />
+      <TeamMembersHome/>
       <SocialHome />
       <DonateHome />
       <Footer />

@@ -5,6 +5,7 @@ import { GoPrimitiveDot } from 'react-icons/go'
 import { useState } from 'react'
 import Collapse from '@mui/material/Collapse';
 import Link from 'next/link'
+import { Interface } from 'readline'
 
 interface agenda {
     startTime: string,
@@ -13,19 +14,21 @@ interface agenda {
     subject: string,
 }
 
-type dataProps = {
+interface instructorOrspeaker {
+    name: string,
+    image: string,
+    linkedinLink: string,
+    githubLink: string,
+    twitterLink: string,
+}
+
+interface dataProps {
     eventposter: string,
     heading: string,
     venue: string,
     startingTime: string,
     endingTime: string,
-    instructorOrspeaker: {
-        name: string,
-        image: string,
-        linkedinLink: string,
-        githubLink: string,
-        twitterLink: string,
-    },
+    instructorOrspeaker: instructorOrspeaker
     attractions: string,
     agenda: Array<agenda>
 }
@@ -57,7 +60,7 @@ const UpcomingEventCard: React.FC<dataProps> = ({ eventposter, heading, venue, s
                         <div className='hidden xl:block xl:space-y-4'>
                             <div className={`${open && 'hidden'} text-xl flex items-center space-x-2`}>
                                 <h1 className='font-semibold'>Instructor / speaker :</h1>
-                                <h1>{instructorOrspeaker.name}</h1>
+                                <h1>{instructorOrspeaker?.name}</h1>
                             </div>
                             <h1 className='text-xl font-semibold'>{attractions}</h1>
                         </div>
@@ -66,13 +69,13 @@ const UpcomingEventCard: React.FC<dataProps> = ({ eventposter, heading, venue, s
                         <div>
                             <h1 className='text-3xl font-semibold'>Instructor / speaker </h1>
                             <section className='flex justify-start space-x-4 '>
-                                <img src={instructorOrspeaker.image} className='w-32 rounded-full' />
+                                <img src={instructorOrspeaker?.image} className='w-32 rounded-full' />
                                 <div className='flex flex-col items-start justify-center space-y-2'>
-                                    <h1 className='text-xl'>{instructorOrspeaker.name}</h1>
+                                    <h1 className='text-xl'>{instructorOrspeaker?.name}</h1>
                                     <div className='flex justify-center space-x-2 child:text-[#7D7D7D] child:text-3xl'>
-                                        <Link href={instructorOrspeaker.linkedinLink}><a><AiFillLinkedin /></a></Link>
-                                        <Link href={instructorOrspeaker.githubLink}><a><AiOutlineGithub /></a></Link>
-                                        <Link href={instructorOrspeaker.twitterLink}><a><AiOutlineTwitter /></a></Link>
+                                        <Link href={instructorOrspeaker?.linkedinLink}><a><AiFillLinkedin /></a></Link>
+                                        <Link href={instructorOrspeaker?.githubLink}><a><AiOutlineGithub /></a></Link>
+                                        <Link href={instructorOrspeaker?.twitterLink}><a><AiOutlineTwitter /></a></Link>
                                     </div>
                                 </div>
                             </section>
@@ -80,7 +83,7 @@ const UpcomingEventCard: React.FC<dataProps> = ({ eventposter, heading, venue, s
                         <div>
                             <h1 className='text-3xl font-semibold'>Agenda</h1>
                             <div className='space-y-6'>
-                                {agenda.map((agenda, i) => {
+                                {agenda?.map((agenda, i) => {
                                     return (
                                         <div className='flex justify-start items-center text-xl' key={i}>
                                             <div className='flex items-center justify-start space-x-2 w-80'>
@@ -107,7 +110,7 @@ const UpcomingEventCard: React.FC<dataProps> = ({ eventposter, heading, venue, s
             <div>
                 <div className={`space-y-6 pb-16 ${!open && 'hidden'} xl:hidden`}>
                     <h1 className='text-3xl font-semibold'>Agenda</h1>
-                    {agenda.map((agenda, i) => {
+                    {agenda?.map((agenda, i) => {
                         return (
                             <div className='flex flex-col justify-start xl:text-xl text-lg' key={i}>
                                 <div className='flex items-center justify-center space-x-2 w-56 font-semibold'><GoPrimitiveDot className='text-2xl' />

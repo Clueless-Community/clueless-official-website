@@ -38,24 +38,6 @@ const eventData = [
         amOrpm: 'am',
         subject: 'Intoduction',
       },
-      // {
-      //   startTime: '1',
-      //   amOrpm: 'pm',
-      //   endTime: '2',
-      //   subject: 'Intro to Machine Learning',
-      // },
-      // {
-      //   startTime: '2',
-      //   amOrpm: 'pm',
-      //   endTime: '2:30',
-      //   subject: 'Machine Learning and artificial Intelligence as a career option',
-      // },
-      // {
-      //   startTime: '2:30',
-      //   amOrpm: 'pm',
-      //   endTime: '3',
-      //   subject: 'Machine Learning and artificial Intelligence Roadmap',
-      // },
     ],
   },
 ];
