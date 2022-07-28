@@ -205,7 +205,7 @@ const addEvent = () => {
 
                                                             <div className="w-full flex justify-end mt-2">
                                                                 <button>
-                                                                    <HighlightOffIcon className="mt-3" onclick={() => handleRemove(i)} />
+                                                                    <HighlightOffIcon className="mt-3" onClick={() => handleRemove(i)} />
                                                                 </button>
                                                             </div>
                                                         </button>
