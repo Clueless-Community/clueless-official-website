@@ -38,7 +38,7 @@ interface dataProps {
 const UpcomingEventCard: React.FC<dataProps> = ({ eventposter, heading, venue, startingTime, endingTime, instructorOrspeaker, agenda, winners, participants }) => {
     const [open, setOpen] = useState(false)
     return (
-        <div className=' bg-[#c3c8d241] border-dashed border border-black font-nunito xl:flex-row flex-col flex xl:justify-between xl:p-8 p-4 rounded-xl relative space-y-2 xl:space-y-0'>
+        <div className=' bg-[#c3c8d241] border-dashed border-2 border-opacity-30 border-black font-nunito xl:flex-row flex-col flex xl:justify-between xl:p-8 p-4 rounded-xl relative space-y-2 xl:space-y-0'>
             <section className={`flex xl:justify-start xl:space-x-8 space-x-4 ${open && 'pb-12'} pb-4 xl:pb-0 w-full`}>
                 <div className='space-y-4'>
                     <img src={eventposter} className="rounded-xl" />

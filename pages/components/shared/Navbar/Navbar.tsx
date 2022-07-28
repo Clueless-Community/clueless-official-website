@@ -17,7 +17,7 @@ const Navbar: NextComponentType = () => {
 
 
   return (
-    <nav className="flex justify-between sm:px-28 px-5 py-5 items-center shadow-xl">
+    <nav className="flex justify-between sm:px-36 px-5 py-5 items-center shadow-xl">
       <Link href="/">
         <div className="flex items-center cursor-pointer">
           <img src="/ClueLess Logo.png" alt="" className="sm:w-[65px] w-[35px]" />
@@ -41,40 +41,37 @@ const Navbar: NextComponentType = () => {
           <button className="hover:font-semibold hover:underline cursor-pointer xl:mx-8 mx-3 text-xl transition-all">
             Resources
           </button>
-          </a>
+        </a>
         <Link href="/challenges-events">
           <button className="hover:font-semibold hover:underline cursor-pointer xl:mx-8 mx-3 text-xl transition-all">
-          Events
+            Events
           </button>
         </Link>
       </div>
-      <div className="hidden lg:block">
-      <a href="https://discord.gg/zrVMjGW8sB" target="_blank">
-        <SvgButton>Join Discord</SvgButton>
-        </a>
-      </div>
-      {/* {session.status === "authenticated" && (
+      {session.status === "authenticated" && (
         <>
-        <NavbarAvatarDropDown 
-        img={image as string}
-        name={name as string}
-        email={email as string}
-        />
-        </>
-        )}{
-          session.status === "unauthenticated" && (
-            <Link href="/auth/signin">
-            <div className="scale-75 sm:scale-100">
-            <SvgButton>Sign In</SvgButton>
-            </div>
-            </Link>
-            )
-          } */}
-          <NavbarDrawer
+          <NavbarAvatarDropDown
             img={image as string}
             name={name as string}
             email={email as string}
           />
+        </>
+      )}
+      {session.status === "unauthenticated" && (
+        <Link href="/auth/signin">
+          <div className="scale-75 sm:scale-100">
+            <SvgButton>Log In</SvgButton>
+          </div>
+        </Link>
+      )
+      }
+      {session.status === "authenticated" && (
+        <NavbarDrawer
+          img={image as string}
+          name={name as string}
+          email={email as string}
+        />
+      )}
     </nav>
   );
 };
