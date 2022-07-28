@@ -8,8 +8,15 @@ import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import Head from 'next/head'
 
 const teckStacks = [
-    'TypeScript', 'React', 'JavaScript', 'C', 'C++', 'Azure', 'AWS', 'Google Cloud'
+    { 'name': 'TypeScript' },
+    { 'name': 'React' },
+    { 'name': 'C' },
+    { 'name': 'C++' },
+    { 'name': 'Azure' },
+    { 'name': 'AWS' },
+    {'name': " Google Cloud"}
 ]
+
 
 const Projects = [
     {
@@ -59,9 +66,9 @@ const ProfileAdmin = () => {
                 <p className=' text-4xl'>Tech Stack</p>
                 <div className='h-1 w-28 bg-black ml-20 opacity-80'></div>
                 <div className='flex gap-4 flex-wrap mt-5'>
-                    {teckStacks.map((teckStack: string) => {
+                    {teckStacks.map((teckStack: { 'name': string }) => {
                         return (
-                            <StyledChip text={teckStack} size='md' rounded='md' />
+                            <StyledChip text={teckStack.name} size='md' rounded='md' />
                         )
                     })}
                 </div>

@@ -2,7 +2,7 @@ import { Button, Stack } from '@mui/material'
 import React from 'react'
 import StyledChip from '../../shared/StyledChip'
 import LinkIcon from '@mui/icons-material/Link';
-import EditIcon from '@mui/icons-material/Edit';
+import EditProject from './EditProject';
 
 interface Props {
     projectImage: string,
@@ -10,7 +10,7 @@ interface Props {
     publicLink?: string,
     gitHubLink?: string,
     projectDesc: string,
-    techStacks: string[],
+    techStacks: { 'name': string }[],
 }
 
 const ProjectsCardAdmin: React.FC<Props> = ({ projectImage, projectName, projectDesc, publicLink, gitHubLink, techStacks }) => {
@@ -27,15 +27,22 @@ const ProjectsCardAdmin: React.FC<Props> = ({ projectImage, projectName, project
                             </a>
                             <div className='hidden lg:block'>
                                 <div className='flex gap-2 xl:ml-10'>
-                                    {techStacks?.map((teckStack: string) => {
+                                    {techStacks?.map((teckStack: { 'name': string }) => {
                                         return (
-                                            <StyledChip text={teckStack} size="xs" rounded='2xl' />
+                                            <StyledChip text={teckStack.name} size="xs" rounded='2xl' />
                                         )
                                     })}
                                 </div>
                             </div>
                         </div>
-                        <button className='md:hover:bg-gray-100 rounded-full md:w-10 h-10 transition-all'><EditIcon /></button>
+                        <EditProject
+                            projectName={projectName}
+                            projectImage={projectImage}
+                            projectDesc={projectDesc}
+                            gitHubLink={gitHubLink}
+                            publicLink={publicLink}
+                            techStacks={techStacks}
+                        />
                     </div>
                     <div className=' hidden lg:block '>
                         <p className='mt-5 font-semibold opacity-80'>{projectDesc}</p>
@@ -47,11 +54,11 @@ const ProjectsCardAdmin: React.FC<Props> = ({ projectImage, projectName, project
             </div>
             <div className=' block lg:hidden '>
                 <Stack direction="row" spacing={2} className="mt-5" alignItems="center" sx={{ 'flexWrap': 'wrap' }}>
-                            {techStacks?.map((teckStack: string) => {
-                                return (
-                                    <StyledChip text={teckStack} size="xs" rounded='2xl' />
-                                )
-                            })}
+                    {techStacks?.map((teckStack: { 'name': string }) => {
+                        return (
+                            <StyledChip text={teckStack.name} size="xs" rounded='2xl' />
+                        )
+                    })}
                 </Stack>
                 <p className='mt-5 font-semibold opacity-80'>{projectDesc}</p>
                 <a href={gitHubLink} target="_blank">

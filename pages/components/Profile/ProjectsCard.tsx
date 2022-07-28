@@ -9,7 +9,7 @@ interface Props {
     publicLink?: string,
     gitHubLink?: string,
     projectDesc: string,
-    techStacks: string[],
+    techStacks: { 'name': string }[],
 }
 
 const ProjectsCard: React.FC<Props> = ({ projectImage, projectName, projectDesc, publicLink, gitHubLink, techStacks }) => {
@@ -25,9 +25,9 @@ const ProjectsCard: React.FC<Props> = ({ projectImage, projectName, projectDesc,
                         </a>
                         <div className='hidden lg:block'>
                             <div className='flex gap-2 xl:ml-10'>
-                                {techStacks?.map((teckStack: string) => {
+                                {techStacks?.map((teckStack: { 'name': string }) => {
                                     return (
-                                        <StyledChip text={teckStack} size="xs" rounded='2xl' />
+                                        <StyledChip text={teckStack.name} size="xs" rounded='2xl' />
                                     )
                                 })}
                             </div>
@@ -43,9 +43,9 @@ const ProjectsCard: React.FC<Props> = ({ projectImage, projectName, projectDesc,
             </div>
             <div className=' block lg:hidden '>
                 <Stack direction="row" spacing={2} className="mt-5" alignItems="center" sx={{ 'flexWrap': 'wrap' }}>
-                            {techStacks?.map((teckStack: string) => {
+                            {techStacks?.map((teckStack: { 'name': string }) => {
                                 return (
-                                    <StyledChip text={teckStack} size="xs" rounded='2xl' />
+                                    <StyledChip text={teckStack.name} size="xs" rounded='2xl' />
                                 )
                             })}
                 </Stack>
