@@ -4,8 +4,8 @@ import ProjectsCardAdmin from '../components/Profile/Admin/ProjectsCardAdmin'
 import Footer from '../components/shared/Footer'
 import Navbar from '../components/shared/Navbar/Navbar'
 import StyledChip from '../components/shared/StyledChip'
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import Head from 'next/head'
+import AddProject from '../components/Profile/Admin/AddProject'
 
 const teckStacks = [
     { 'name': 'TypeScript' },
@@ -90,9 +90,7 @@ const ProfileAdmin = () => {
                         </div>
                     )
                 })}
-                <div className='my-10'>
-                    <div className='p-6 border-2 border-dashed border-black border-opacity-60 rounded-lg h-48 bg-gray-100 flex justify-center items-center cursor-pointer hover:bg-gray-200 transition-all opacity-80'><AddCircleOutlineIcon fontSize='large' /></div>
-                </div>
+                <AddProject />
             </div>
             <Footer />
         </>
