@@ -13,7 +13,7 @@ import Navbar from "../components/shared/Navbar/Navbar";
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import { addDoc, collection, doc, setDoc } from "firebase/firestore";
-import { db } from "../../database/firebase/clientApp";
+import { db } from "../../firebase/clientApp";
 
 const addEvent = () => {
     const [selectedFile, setSelectedFile] = useState(null);

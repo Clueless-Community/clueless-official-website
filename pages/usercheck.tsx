@@ -3,7 +3,7 @@ import { useRouter} from 'next/router'
 import { template } from '../helpers/template';
 import { useSession } from 'next-auth/react';
 import { doc, getDoc, setDoc } from 'firebase/firestore';
-import { db } from '../database/firebase/clientApp';
+import { db } from '../firebase/clientApp';
 import CircularProgress from '@mui/material/CircularProgress';
 
 const usercheck = () => {
