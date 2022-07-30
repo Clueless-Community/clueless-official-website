@@ -42,7 +42,7 @@ const UpcomingEventCard: React.FC<dataProps> = ({ eventposter, heading, venue, s
             <section className={`flex xl:justify-start xl:space-x-8 space-x-4 ${open && 'pb-12'} pb-4 xl:pb-0 w-full`}>
                 <div className='space-y-4'>
                     <img src={eventposter} className="rounded-xl" />
-                    <div className={`rounded-full px-4 py-2 bg-[#1954ca36] text-center xl:text-xl text-lg font-semibold hidden xl:block ${open && 'hidden'}`}>Participants : {participants}</div>
+                    <div className={`rounded-full px-4 py-2 bg-[#1954ca36] text-center xl:text-xl text-lg font-semibold hidden xl:block ${open && 'xl:hidden'}`}>Participants : {participants}</div>
                 </div>
                 <div className='flex flex-col justify-center space-y-16'>
                     <div className={`flex flex-col xl:justify-evenly xl:space-y-4  h-full ${open && 'xl:space-y-4'}`}>
@@ -120,7 +120,7 @@ const UpcomingEventCard: React.FC<dataProps> = ({ eventposter, heading, venue, s
                 <h1 className='font-semibold'>Instructor / speaker :</h1>
                 <h1>{instructorOrspeaker?.name}</h1>
             </div>
-            <div className={`space-y-2 pb-16 xl:hidden`}>
+            <div className={`space-y-2 pb-16 xl:hidden ${open && 'hidden'}`}>
                         <h1 className='text-xl font-semibold '>Event Winners</h1>
                         <div className='flex flex-start space-x-2'>
                             {winners?.map((image, i) => {
