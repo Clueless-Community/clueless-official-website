@@ -1,9 +1,7 @@
 import React from "react";
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
-import EditIcon from '@mui/icons-material/Edit';
 import { Close } from "@mui/icons-material";
 import { TextField } from "@mui/material";
 import TechStackAutoComplete from "../../shared/TechStackAutoComplete"
@@ -71,9 +69,9 @@ const AddProject: React.FC = () => {
     return (
         <>
 
-                <div className='my-10' onClick={handleOpen}>
-                    <div className='p-6 border-2 border-dashed border-black border-opacity-60 rounded-lg h-48 bg-gray-100 flex justify-center items-center cursor-pointer hover:bg-gray-200 transition-all opacity-80 w-full'><AddCircleOutlineIcon fontSize='large' /></div>
-                </div>
+            <div className='my-10' onClick={handleOpen}>
+                <div className='p-6 border-2 border-dashed border-black border-opacity-60 rounded-lg h-48 bg-gray-100 flex justify-center items-center cursor-pointer hover:bg-gray-200 transition-all opacity-80 w-full'><AddCircleOutlineIcon fontSize='large' /></div>
+            </div>
             <Modal
                 open={editIsOpen}
                 onClose={handleClose}

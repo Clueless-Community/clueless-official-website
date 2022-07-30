@@ -1,18 +1,17 @@
+// 👇️ ts-nocheck disables type checking for entire file
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
+
 import Head from "next/head";
-import Link from "next/link";
 
 import {
     TextField,
-    FormControl,
-    InputLabel,
-    Button,
 } from "@mui/material";
 
 import React, { useState } from "react";
 import Navbar from "../components/shared/Navbar/Navbar";
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
-import { number } from "yup/lib/locale";
 
 const addEvent = () => {
     const [selectedFile, setSelectedFile] = useState(null);
@@ -34,11 +33,14 @@ const addEvent = () => {
         setInputList(list)
     }
 
-    const handleRemove = (index: number) => {
+    const handleRemove = (e, index: number) => {
+        e.preventDefault();
         const list = [...inputList];
         list.splice(index, 1)
         setInputList(list)
+        console.log("Removed");
     }
+
 
     const addImageToPost = (e: { target: { files: Blob[]; }; }) => {
         const reader = new FileReader();
@@ -49,6 +51,10 @@ const addEvent = () => {
         reader.onload = (readerEvent) => {
             setSelectedFile(readerEvent.target.result);
         };
+    };
+
+    const onSubmit = (e: { preventDefault: () => void; }) => {
+        e.preventDefault();
     };
     return (
         <>
@@ -113,16 +119,16 @@ const addEvent = () => {
                                                 type="file"
                                                 className="sr-only "
                                                 accept="image/*"
-                                            // onChange={(e) => {
-                                            //     setMedia(e.target.files[0]); addImageToPost(e);
-                                            // }}
+                                                onChange={(e) => {
+                                                    setMedia(e.target.files[0]); addImageToPost(e);
+                                                }}
                                             />
 
                                             {/* Showing the Uploaded File name */}
 
-                                            {/* <span className="ml-2">
+                                            <span className="ml-2">
                                                 {media.name} {!media.name && "No Photo Selected"}
-                                            </span> */}
+                                            </span>
                                         </div>
                                         <p className="text-xs text-gray-500">PNG, JPG up to 2MB</p>
                                     </div>
@@ -135,7 +141,6 @@ const addEvent = () => {
                                     placeholder="Enter Venue name"
                                     multiline
                                     fullWidth
-                                    required
                                     onChange={e => setvenuename(e.target.value)}
                                 />
                             </div>
@@ -146,7 +151,6 @@ const addEvent = () => {
                                     placeholder="Speaker name"
                                     multiline
                                     fullWidth
-                                    required
                                     onChange={e => setspeakername(e.target.value)}
 
                                 />
@@ -158,7 +162,6 @@ const addEvent = () => {
                                     placeholder="Enter Time Period"
                                     multiline
                                     fullWidth
-                                    required
                                     onChange={e => settimeperiod(e.target.value)}
                                 />
                             </div>
@@ -169,31 +172,35 @@ const addEvent = () => {
                                 {
                                     inputList.map((item, i) => {
                                         return (
-                                            <div className="grid grid-cols-1 md:grid-cols-2 space-y-2" key={i}>
-                                                <div className="col-span-1 mr-1 mt-2">
+                                            <div className="">
+                                                <div className="grid grid-cols-1 md:grid-cols-2 space-y-2 gap-5" key={i}>
+                                                    <div className="col-span-1 mt-2">
 
-                                                    <TextField
-                                                        id="outlined-textarea"
-                                                        name="time"
-                                                        label="Agenda Time"
-                                                        placeholder="Enter Agenda Time"
-                                                        multiline
-                                                        fullWidth
-                                                        required
-                                                        onChange={e => handleInputChange(e, i)}
-                                                    />
+                                                        <TextField
+                                                            id="outlined-textarea"
+                                                            name="time"
+                                                            label="Agenda Time"
+                                                            placeholder="Enter Agenda Time"
+                                                            multiline
+                                                            fullWidth
+                                                            onChange={e => handleInputChange(e, i)}
+                                                        />
+                                                    </div>
+                                                    <div className="col-span-1">
+                                                        <TextField
+                                                            id="outlined-textarea"
+                                                            name="description"
+                                                            label="Agenda Description"
+                                                            placeholder=" Enter Agenda Description"
+                                                            multiline
+                                                            fullWidth
+                                                            onChange={e => handleInputChange(e, i)}
+
+                                                        />
+                                                    </div>
                                                 </div>
-                                                <div className="col-span-1 ml-1">
-                                                    <TextField
-                                                        id="outlined-textarea"
-                                                        name="description"
-                                                        label="Agenda Description"
-                                                        placeholder=" Enter Agenda Description"
-                                                        multiline
-                                                        className="w-11/12"
-                                                        onChange={e => handleInputChange(e, i)}
+                                                <span className="space-x-2">
 
-                                                    />
                                                     {inputList.length - 1 == i &&
                                                         <button>
                                                             <AddCircleOutlineIcon className="" onClick={handleAddClick} />
@@ -204,13 +211,15 @@ const addEvent = () => {
                                                         <button>
 
                                                             <div className="w-full flex justify-end mt-2">
-                                                                <button>
-                                                                    <HighlightOffIcon className="mt-3" onclick={() => handleRemove(i)} />
-                                                                </button>
+                                                                {i !== 0 ? <button onclick={() => handleRemove(e, i)}>
+                                                                    <HighlightOffIcon />
+                                                                </button> : <button onclick={() => handleRemove(e, i)} disabled>
+                                                                    <HighlightOffIcon className="text-gray" />
+                                                                </button>}
                                                             </div>
                                                         </button>
                                                     }
-                                                </div>
+                                                </span>
                                             </div>
                                         )
                                     })
