@@ -12,6 +12,7 @@ import { collection, doc, getDoc, getDocs, query } from 'firebase/firestore'
 import { db } from '../../../firebase/clientApp'
 import { IProjectUser, ITechStack, IUser } from '../../../interfaces/user'
 import EditIcon from '@mui/icons-material/Edit';
+import { template } from '../../../helpers/template'
 
 const teckStacks = [
     { 'name': 'TypeScript' },
@@ -147,19 +148,13 @@ const ProfileAdmin: React.FC<Props> = ({ userData }) => {
 
 export const getServerSideProps: GetServerSideProps<{ [key: string]: any; }, ParsedUrlQuery, PreviewData> = async (context) => {
     const userId = context?.query?.uid;
+    const { templateString } = template;
     try {
-        const userRef = doc(db, "users", userId as string);
-        const userDocSnap = await getDoc(userRef);
-        if (userDocSnap.exists()) {
-            const userData = userDocSnap.data();
+        const res = await fetch(`${templateString}/api/profile/${userId}`);
+        const userData = await res.json()
             return {
                 props: { userData }
             }
-        } else {
-            return {
-                notFound: true,
-            }
-        }
     } catch {
         return {
             notFound: true,
