@@ -12,6 +12,7 @@ const Navbar: NextComponentType = () => {
   const name = session.data?.user.name;
   const email = session.data?.user.email;
   const image = session.data?.user.image;
+  const uid = session.data?.user.id;
 
   // console.log(session);
 
@@ -54,6 +55,7 @@ const Navbar: NextComponentType = () => {
             img={image as string}
             name={name as string}
             email={email as string}
+            uid={uid as string}
           />
         </>
       )}

@@ -1,15 +1,19 @@
 import React from "react";
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
-import EditIcon from '@mui/icons-material/Edit';
 import { Close } from "@mui/icons-material";
 import { TextField } from "@mui/material";
 import TechStackAutoComplete from "../../shared/TechStackAutoComplete"
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import { theme } from '../../../../styles/theme'
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
+import { storage } from "../../../../firebase/clientApp";
+import { addDoc, doc, setDoc, updateDoc } from "firebase/firestore";
+import { db } from "../../../../firebase/clientApp";
+import { collection } from "firebase/firestore";
+import { useSession } from "next-auth/react";
 
 
 
@@ -30,11 +34,13 @@ const style = {
     borderRadius: 3,
 };
 
+
+
 const AddProject: React.FC = () => {
 
-
     const [editIsOpen, setEditIsOpen] = React.useState<boolean>(false);
-
+    const {data : session} = useSession();
+    const uid = session?.user?.id;
     const handleOpen = () => setEditIsOpen(true);
 
     const [projectNameNew, setProjectNameNew] = React.useState<string>('');
@@ -44,6 +50,7 @@ const AddProject: React.FC = () => {
     const [publicLinkNew, setPublicLinkNew] = React.useState<string>('');
     const [gitHubLinkNew, setGitHubLinkNew] = React.useState<string>('');
     const [projectTechStacks, setProjectTechStacks] = React.useState<{ name: string }[]>([]);
+    const [downloadURL, setDownloadURL] = React.useState<string>('');
 
     const addImageToPost = (e: any) => {
         const reader = new FileReader();
@@ -52,7 +59,7 @@ const AddProject: React.FC = () => {
         }
 
         reader.onload = (readerEvent) => {
-            setProjectImageNew(readerEvent.target.result as string);
+            setProjectImageNew(readerEvent?.target?.result as string);
         };
 
     };
@@ -68,12 +75,71 @@ const AddProject: React.FC = () => {
         setProjectTechStacks([])
     };
 
+    //Firebase Ahead
+
+    const handleImageUpload = async () => {
+        const date = new Date();
+        const projectImageRef = ref(storage, `${uid}/project/${date.getTime()}_project.jpg`);
+        const uploadTask = media && uploadBytesResumable(projectImageRef, media);
+        uploadTask && uploadTask.on('state_changed',
+            (snapshot: { bytesTransferred: number; totalBytes: number; state: any; }) => {
+                const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                console.log('Upload is ' + progress + '% done');
+                switch (snapshot.state) {
+                    case 'paused':
+                        console.log('Upload is paused');
+                        break;
+                    case 'running':
+                        console.log('Upload is running');
+                        break;
+                }
+            },
+            (error: { code: any; }) => {
+                switch (error.code) {
+                    case 'storage/unauthorized':
+                        break;
+                    case 'storage/canceled':
+                        break;
+
+                    case 'storage/unknown':
+                        break;
+                }
+            },
+            () => {
+                getDownloadURL(uploadTask.snapshot.ref).then((downloadURLOnUpload) => {
+                    console.log('File uploaded');
+                    setDownloadURL(downloadURLOnUpload);
+                });
+            }
+        );
+    }
+
+    const handleUpload = async () => {
+        if(uid){
+            await handleImageUpload();
+            const projectRef = collection(db, `users/${uid}/projects`)
+            try{
+                await addDoc(projectRef , {
+                    project_name : projectNameNew,
+                    project_desc : projectDescNew,
+                    project_image : projectImageNew,
+                    github_link : gitHubLinkNew,
+                    public_link : publicLinkNew,
+                    techstacks : projectTechStacks
+                })     
+                console.log("Prject Added.");
+            }catch(e){
+                console.log(e)
+            }
+        }
+    }
+
     return (
         <>
 
-                <div className='my-10' onClick={handleOpen}>
-                    <div className='p-6 border-2 border-dashed border-black border-opacity-60 rounded-lg h-48 bg-gray-100 flex justify-center items-center cursor-pointer hover:bg-gray-200 transition-all opacity-80 w-full'><AddCircleOutlineIcon fontSize='large' /></div>
-                </div>
+            <div className='my-10' onClick={handleOpen}>
+                <div className='p-6 border-2 border-dashed border-black border-opacity-60 rounded-lg h-48 bg-gray-100 flex justify-center items-center cursor-pointer hover:bg-gray-200 transition-all opacity-80 w-full'><AddCircleOutlineIcon fontSize='large' /></div>
+            </div>
             <Modal
                 open={editIsOpen}
                 onClose={handleClose}
@@ -125,7 +191,7 @@ const AddProject: React.FC = () => {
                             className="sr-only "
                             accept="image/*"
                             onChange={(e) => {
-                                setMedia(e.target.files[0]);
+                                setMedia(e.target.files![0]);
                                 addImageToPost(e);
                             }}
                         />
@@ -139,11 +205,11 @@ const AddProject: React.FC = () => {
                             <TextField label="Deployed URL" variant="outlined" sx={{ width: '100%' }} defaultValue={publicLinkNew} value={publicLinkNew} onChange={(e) => { setPublicLinkNew(e.target.value) }} />
                         </Box>
                     </Box>
-                    <Box sx={{ mt: 3.5 }}>
-                        <TextField label="Project Description" variant="outlined" required multiline sx={{ width: '100%', }} rows={5} defaultValue={projectDescNew} value={projectDescNew} onChange={(e) => { setProjectDescNew(e.target.value) }} />
+                    <TextField label="Project Description" variant="outlined" required multiline sx={{ width: '100%', mt: 3.5 }} rows={5} defaultValue={projectDescNew} value={projectDescNew} onChange={(e) => { setProjectDescNew(e.target.value) }} />
+                    <Box sx={{ mt: 2.5 }}>
                         <TechStackAutoComplete projectTechStacks={projectTechStacks} setProjectTechStacks={setProjectTechStacks} />
                     </Box>
-                    <button className='btn-blue mt-5 float-right px-6 py-2 shadow-blue-600'>Save</button>
+                    <button className='btn-blue mt-5 float-right px-6 py-2 shadow-blue-600' onClick={handleUpload}>Save</button>
                     <button className='btn-red mt-5 float-right px-6 py-2 shadow-red-600 mr-5' onClick={handleClose}>Discard</button>
                 </Box>
             </Modal>

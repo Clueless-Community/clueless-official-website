@@ -47,8 +47,8 @@ const EditProject: React.FC<Props> = ({ projectName, projectImage, projectDesc, 
     const [projectImageNew, setProjectImageNew] = React.useState<string>(projectImage);
     const [media, setMedia] = React.useState<File>();
     const [projectDescNew, setProjectDescNew] = React.useState<string>(projectDesc);
-    const [publicLinkNew, setPublicLinkNew] = React.useState<string>(publicLink);
-    const [gitHubLinkNew, setGitHubLinkNew] = React.useState<string>(gitHubLink);
+    const [publicLinkNew, setPublicLinkNew] = React.useState<string>(publicLink as string);
+    const [gitHubLinkNew, setGitHubLinkNew] = React.useState<string>(gitHubLink as string);
     const [projectTechStacks, setProjectTechStacks] = React.useState<{ name: string }[]>(techStacks);
 
     const addImageToPost = (e: any) => {
@@ -58,7 +58,7 @@ const EditProject: React.FC<Props> = ({ projectName, projectImage, projectDesc, 
         }
 
         reader.onload = (readerEvent) => {
-            setProjectImageNew(readerEvent.target.result as string);
+            readerEvent?.target?.result && setProjectImageNew(readerEvent?.target.result as string);
         };
 
     };
@@ -111,7 +111,7 @@ const EditProject: React.FC<Props> = ({ projectName, projectImage, projectDesc, 
                             className="sr-only "
                             accept="image/*"
                             onChange={(e) => {
-                                setMedia(e.target.files[0]);
+                                setMedia(e.target?.files![0] as File)
                                 addImageToPost(e);
                             }}
                         />
