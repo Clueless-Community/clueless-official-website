@@ -8,14 +8,6 @@ type Props = {
   stack: string;
 };
 const ChallengeCardAdmin: React.FC<Props> = ({ img, title, stack }) => {
-  function getStacks(item) {
-    return (
-      <div className="flex item-center text-skin-hoverBlue font-semibold mb-4 mt-2">
-        <LocalOfferIcon className="w-[10px] h-[10px] sm:w-[14px] my-auto" />
-        <p className="ml-2 text-xs font-semibold">{stack}</p>
-      </div>
-    );
-  }
   return (
     <div>
       <div className="w-[281px] max-h-[313px] sm:w-[320px] sm:max-h-[440px] shadow-md pb-2 sm:pb-4 rounded">

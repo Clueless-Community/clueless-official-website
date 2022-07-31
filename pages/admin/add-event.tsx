@@ -12,6 +12,8 @@ import React, { useState } from "react";
 import Navbar from "../components/shared/Navbar/Navbar";
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import { addDoc, collection, doc, setDoc } from "firebase/firestore";
+import { db } from "../../firebase/clientApp";
 
 const addEvent = () => {
     const [selectedFile, setSelectedFile] = useState(null);
@@ -21,7 +23,7 @@ const addEvent = () => {
     const [eventname, seteventname] = useState("");
     const [timeperiod, settimeperiod] = useState("");
     const [inputList, setInputList] = useState([{ time: "", description: "", }])
-    console.log(inputList);
+    // console.log(inputList);
 
     const handleAddClick = () => {
         setInputList([...inputList, { time: "", description: "", }])
@@ -33,8 +35,8 @@ const addEvent = () => {
         setInputList(list)
     }
 
-    const handleRemove = (e, index: number) => {
-        e.preventDefault();
+    const handleRemove = (e: { preventDefault: () => void; }, index: number) => {
+        // e.preventDefault();
         const list = [...inputList];
         list.splice(index, 1)
         setInputList(list)
@@ -53,16 +55,29 @@ const addEvent = () => {
         };
     };
 
-    const onSubmit = (e: { preventDefault: () => void; }) => {
-        e.preventDefault();
-    };
+    // const onSubmit = (e: { preventDefault: () => void; }) => {
+    //     e.preventDefault();
+    // };
+
+    const addEvent = async () => {
+        try{
+            await addDoc(collection(db, 'events'), {
+                name : venuename
+            })     
+            console.log("Hello");
+        }catch(e){
+            console.log(e)
+        }
+    }
+
+
     return (
         <>
             <Head>
                 <title>Add Event</title>
             </Head>
             <Navbar />
-            <form className="mx-auto text-xl mt-11 mb-10 w-10/12">
+            <div className="mx-auto text-xl mt-11 mb-10 w-10/12">
                 <div className="space-y-4 ">
                     <div className="flex flex-col items-start font-semibold mt-6">
                         Add a New Event
@@ -211,9 +226,9 @@ const addEvent = () => {
                                                         <button>
 
                                                             <div className="w-full flex justify-end mt-2">
-                                                                {i !== 0 ? <button onclick={() => handleRemove(e, i)}>
+                                                                {i !== 0 ? <button onClick={(e) => handleRemove(e, i)}>
                                                                     <HighlightOffIcon />
-                                                                </button> : <button onclick={() => handleRemove(e, i)} disabled>
+                                                                </button> : <button onClick={(e) => handleRemove(e, i)} disabled>
                                                                     <HighlightOffIcon className="text-gray" />
                                                                 </button>}
                                                             </div>
@@ -229,7 +244,7 @@ const addEvent = () => {
                             </div>
                             <div>
 
-                                <button className="py-3 px-2 font-bold  text-green-800  bg-green-200 text-sm rounded-md hover:bg-green-400 hover:shadow-xl mt-6">
+                                <button className="py-3 px-2 font-bold  text-green-800  bg-green-200 text-sm rounded-md hover:bg-green-400 hover:shadow-xl mt-6" onClick={addEvent}>
                                     Publish
                                 </button>
                             </div>
@@ -242,7 +257,7 @@ const addEvent = () => {
                     </div>
 
                 </div>
-            </form>
+            </div>
         </>
     );
 };

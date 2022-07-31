@@ -30,19 +30,19 @@ const signin: React.FC = ({ providers }: any) => {
               <img src="/ClueLess Logo.png" alt="" className="block md:hidden mx-auto w-[90px] mb-6" />
               <h1 className="block md:hidden text-center font-semibold text-2xl w-[300px] mb-10">Welcome to Clueless Community </h1>
               <div className="space-y-6">
-                <button className="px-24 py-3 w-full text-lg flex items-center justify-center font-semibold bg-[#0276E1] hover:bg-[#0085FF] text-white max-w-[301px] rounded mx-auto cursor-pointer" onClick={(): void => { signIn(providers.google.id, { callbackUrl: "/" }) }}>
+                <button className="px-24 py-3 w-full text-lg flex items-center justify-center font-semibold bg-[#0276E1] hover:bg-[#0085FF] text-white max-w-[301px] rounded mx-auto cursor-pointer" onClick={(): void => { signIn(providers.google.id, { callbackUrl: "/usercheck" }) }}>
                   <div className="flex justify-center space-x-2">
                     <GoogleIcon />
                     <p>Google</p>
                   </div>
                 </button>
-                <button className="px-4 py-3 w-full font-semibold text-lg flex items-center justify-center bg-[#373636] hover:bg-[#262626] text-white max-w-[301px] rounded mx-auto cursor-pointer" onClick={(): void => { signIn(providers.github.id, { callbackUrl: "/" }) }}>
+                <button className="px-4 py-3 w-full font-semibold text-lg flex items-center justify-center bg-[#373636] hover:bg-[#262626] text-white max-w-[301px] rounded mx-auto cursor-pointer" onClick={(): void => { signIn(providers.github.id, { callbackUrl: "/usercheck" }) }}>
                   <div className="flex justify-center space-x-2">
                     <GitHubIcon />
                     <p>GitHub</p>
                   </div>
                 </button>
-                <button className="px-4 py-3 w-full font-semibold text-lg flex items-center justify-center bg-[#3F9CF0] hover:bg-[#2E9CFF] text-white max-w-[301px] rounded mx-auto cursor-pointer" onClick={(): void => { signIn(providers.twitter.id, { callbackUrl: "/" }) }}>
+                <button className="px-4 py-3 w-full font-semibold text-lg flex items-center justify-center bg-[#3F9CF0] hover:bg-[#2E9CFF] text-white max-w-[301px] rounded mx-auto cursor-pointer" onClick={(): void => { signIn(providers.twitter.id, { callbackUrl: "/usercheck" }) }}>
                   <div className="flex justify-center space-x-2">
                     <TwitterIcon />
                     <p>Twitter</p>

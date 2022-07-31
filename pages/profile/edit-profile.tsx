@@ -1,6 +1,6 @@
 import { Avatar, Box, FormControl, InputLabel, MenuItem, Select, SelectChangeEvent, TextareaAutosize, TextField } from '@mui/material'
 import Head from 'next/head'
-import React from 'react'
+import React, { Dispatch, SetStateAction } from 'react'
 import Navbar from '../components/shared/Navbar/Navbar'
 import TechStackAutoComplete from '../components/shared/TechStackAutoComplete'
 
@@ -59,7 +59,7 @@ const editProfile = () => {
                                         />
                                     </div>
                                     <div >
-                                        <TechStackAutoComplete projectTechStacks={projectTechStacks} setProjectTechStacks={setProjectTechStacks} />
+                                        <TechStackAutoComplete projectTechStacks={projectTechStacks as { name: string; }[]} setProjectTechStacks={setProjectTechStacks as Dispatch<SetStateAction<{ name: string; }[]>>} />
                                     </div>
                                 </div>
                                 <div className="col-span-1 space-y-4">
