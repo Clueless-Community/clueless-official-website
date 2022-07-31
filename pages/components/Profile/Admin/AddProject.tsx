@@ -50,7 +50,7 @@ const AddProject: React.FC = () => {
         }
 
         reader.onload = (readerEvent) => {
-            setProjectImageNew(readerEvent.target.result as string);
+            setProjectImageNew(readerEvent?.target?.result as string);
         };
 
     };
@@ -123,7 +123,7 @@ const AddProject: React.FC = () => {
                             className="sr-only "
                             accept="image/*"
                             onChange={(e) => {
-                                setMedia(e.target.files[0]);
+                                setMedia(e.target.files![0]);
                                 addImageToPost(e);
                             }}
                         />
