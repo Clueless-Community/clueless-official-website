@@ -79,12 +79,12 @@ const dynamicupcomig = () => {
               <div className='space-y-6'>
                 {eventData[0].agenda?.map((agenda, i) => {
                   return (
-                    <div className='flex justify-start items-center xl:text-xl text-lg' key={i}>
-                      <div className='flex items-center justify-start space-x-2 xl:w-80'>
+                    <div className='flex flex-col xl:flex-row justify-start xl:items-center xl:text-xl text-lg' key={i}>
+                      <div className='flex xl:items-center justify-start space-x-2 xl:w-80'>
                         <GoPrimitiveDot className='text-2xl' />
                         <h1 className=''>{agenda?.startTime} - {agenda.endingTime}{agenda.amOrpm}</h1>
                       </div>
-                      <h1 className='w-full'>{agenda.subject}</h1>
+                      <h1 className='w-full ml-2 xl:ml-0'>{agenda.subject}</h1>
                     </div>
                   )
                 })}
