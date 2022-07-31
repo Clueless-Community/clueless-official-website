@@ -60,7 +60,6 @@ const addEvent = () => {
     // };
 
     const addEvent = async () => {
-        
         try{
             await addDoc(collection(db, 'events'), {
                 name : venuename
