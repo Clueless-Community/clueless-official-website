@@ -77,7 +77,7 @@ const EditProject: React.FC<Props> = ({projectId, projectName, projectImage, pro
     };
 
     const validateProject = () => {
-        if (projectTechStacks.length === 0 || projectDescNew === '' || projectImageNew === '' || projectImageNew === '' || gitHubLinkNew === '' || publicLinkNew === '') return true
+        if (projectTechStacks?.length === 0 || projectDescNew === '' || projectImageNew === '' || projectImageNew === '' || gitHubLinkNew === '' || publicLinkNew === '') return true
         else return false
     }
 
