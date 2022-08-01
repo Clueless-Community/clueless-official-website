@@ -5,8 +5,6 @@ import Swag from '../components/events/Swag';
 import Footer from '../components/shared/Footer';
 import Navbar from '../components/shared/Navbar/Navbar';
 import UpcomingEventCard from '../components/Home/Events/UpcomingEventCard';
-import PreviousEventCard from '../components/Home/Events/PreviousEventCard';
-import { useSession } from "next-auth/react";
 
 
 const index = () => {
@@ -41,8 +39,8 @@ const index = () => {
                 <h1 className='text-4xl text-center py-8 font-semibold' >Upcoming Events </h1>
                 <div className='space-y-4'>
                     {eventData.length > 0 && eventData.map((data, i) => {
-                        return <UpcomingEventCard eventposter={data.event_icon_image} heading={data.event_name} venue={data.venue_name} Time={data.time_period} instructorOrspeaker={data.instructorOrspeaker}
-                            attractions={data.attractions} agenda={data.agenda} />
+                        return <UpcomingEventCard eventposter={data.event_icon_image} heading={data.event_name} venue={data.venue_name} Time={data.time_period} instructorOrspeaker={data.speakers_info}
+                            attractions="Win T-shirts, swags and free food. 🚀 " agenda={data.agenda} />
                     })}
                 </div>
                 {/* <div className=''>

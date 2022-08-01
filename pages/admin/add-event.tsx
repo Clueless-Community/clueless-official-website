@@ -12,7 +12,7 @@ import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
-import { addDoc, collection, doc, setDoc } from "firebase/firestore";
+import { addDoc, collection, doc, serverTimestamp, setDoc } from "firebase/firestore";
 import { db, storage } from "../../lib/clientApp";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 
@@ -28,7 +28,8 @@ const addEvent = () => {
     const [venuename, setvenuename] = useState<string>("");
     const [timeperiod, settimeperiod] = useState<string>("");
     const [inputListAgenda, setInputListAgenda] = useState([{ time: "", description: "", }])
-    const [inputListSpeakers, setInputListSpeakers] = useState([{ profileURL: "" }])
+    const [inputListSpeakers, setInputListSpeakers] = useState([{ name: "", image: "", linkedinUrl: "", gitHubURL: "", twitterURL: "" }])
+    const [attraction, setattraction] = useState("")
     const [date, setDate] = React.useState<Date | null>(
         new Date(),
     );
@@ -39,7 +40,7 @@ const addEvent = () => {
     }
 
     const handleAddClickSpeakers = () => {
-        setInputListSpeakers([...inputListSpeakers, { profileURL: "" }])
+        setInputListSpeakers([...inputListSpeakers, { name: "", image: "", linkedinUrl: "", gitHubURL: "", twitterURL: "" }])
     }
     const handleInputChangeAgenda = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>, index: number) => {
         const { name, value } = e.target;
@@ -122,8 +123,6 @@ const addEvent = () => {
                 await getDownloadURL(uploadTask.snapshot.ref).then((downloadURLOnUpload) => {
                     console.log('File uploaded');
                     setBannerDownloadURL(downloadURLOnUpload);
-                    console.log(BannerDownloadURL);
-                    console.log("BANNER UPDATED");
                 });
             }
         );
@@ -181,11 +180,11 @@ const addEvent = () => {
         setvenuename("")
         settimeperiod("")
         setInputListAgenda([{ time: "", description: "", }])
-        setInputListSpeakers([{ profileURL: "" }])
+        setInputListSpeakers([{ name: "", image: "", linkedinUrl: "", gitHubURL: "", twitterURL: "" }])
         setDate(new Date)
     };
 
-    //For adding Data in Firebase for Event 
+    // For adding Data in Firebase for Event 
     const addEvent = async () => {
         await handleBannerImageUpload();
         await handleIconImageUpload();
@@ -200,11 +199,11 @@ const addEvent = () => {
                 time_period: timeperiod,
                 agenda: inputListAgenda,
                 present: true,
-                winners: [],
+                attraction: attraction,
+                created_time: serverTimestamp()
             })
             console.log("Data Added");
-            console.log(BannerDownloadURL, IconDownloadURL);
-            // handleResetForm()
+            handleResetForm()
         } catch (e) {
             console.log(e)
         }
@@ -372,40 +371,91 @@ const addEvent = () => {
                                             return (
                                                 <div className="">
                                                     <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2" key={i}>
-                                                        <div className="w-full">
+                                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 w-full">
+                                                            <div className="w-full col-span-1">
 
-                                                            <TextField
-                                                                id="outlined-textarea"
-                                                                name="profileURL"
-                                                                label="Speaker Profile URL"
-                                                                placeholder="Speaker Profile URL"
-                                                                // value={inputListSpeakers[i].profileURL}
-                                                                multiline
-                                                                fullWidth
-                                                                onChange={e => handleInputChangeSpeakers(e, i)}
-                                                            />
+                                                                <TextField
+                                                                    id="outlined-textarea"
+                                                                    name="name"
+                                                                    label="Speaker name"
+                                                                    placeholder="Speaker name"
+                                                                    value={inputListSpeakers[i].name}
+                                                                    multiline
+                                                                    fullWidth
+                                                                    onChange={e => handleInputChangeSpeakers(e, i)}
+                                                                />
+                                                            </div>
+                                                            <div className="w-full col-span-1">
+
+                                                                <TextField
+                                                                    id="outlined-textarea"
+                                                                    name="image"
+                                                                    label="Image URL"
+                                                                    placeholder="Image URL"
+                                                                    value={inputListSpeakers[i].image}
+                                                                    multiline
+                                                                    fullWidth
+                                                                    onChange={e => handleInputChangeSpeakers(e, i)}
+                                                                />
+                                                            </div>
+                                                            <div className="w-full col-span-1">
+                                                                <TextField
+                                                                    id="outlined-textarea"
+                                                                    name="linkedinUrl"
+                                                                    label="Speaker LinkedIn Profile URL"
+                                                                    placeholder="Speaker LinkedIn Profile URL"
+                                                                    value={inputListSpeakers[i].linkedinUrl}
+                                                                    multiline
+                                                                    fullWidth
+                                                                    onChange={e => handleInputChangeSpeakers(e, i)}
+                                                                />
+                                                            </div>
+                                                            <div className="w-full col-span-1">
+                                                                <TextField
+                                                                    id="outlined-textarea"
+                                                                    name="gitHubURL"
+                                                                    label="Speaker GitHub Profile URL"
+                                                                    placeholder="Speaker GitHub Profile URL"
+                                                                    value={inputListSpeakers[i].gitHubURL}
+                                                                    multiline
+                                                                    fullWidth
+                                                                    onChange={e => handleInputChangeSpeakers(e, i)}
+                                                                />
+                                                            </div>
+                                                            <div className="w-full col-span-1">
+                                                                <TextField
+                                                                    id="outlined-textarea"
+                                                                    name="twitterURL"
+                                                                    label="Speaker Twitter Profile URL"
+                                                                    placeholder="Speaker Twitter Profile URL"
+                                                                    value={inputListSpeakers[i].twitterURL}
+                                                                    multiline
+                                                                    fullWidth
+                                                                    onChange={e => handleInputChangeSpeakers(e, i)}
+                                                                />
+                                                            </div>
                                                         </div>
-                                                        <span className="space-x-2 flex justify-end">
-
-                                                            {inputListSpeakers.length - 1 == i &&
-                                                                <button>
-                                                                    <AddCircleOutlineIcon className="h-[27px] w-[27px]" onClick={handleAddClickSpeakers} />
-                                                                </button>
-                                                            }
-                                                            {inputListSpeakers.length !== 1 &&
-                                                                <button>
-
-                                                                    <div className="w-full flex justify-end">
-                                                                        {i !== 0 ? <button onClick={(e) => handleRemoveSpeakers(e, i)}>
-                                                                            <HighlightOffIcon className="h-[27px] w-[27px]" />
-                                                                        </button> : <button onClick={(e) => handleRemoveSpeakers(e, i)} disabled>
-                                                                            <HighlightOffIcon className="text-[#979696] h-[27px] w-[27px]" />
-                                                                        </button>}
-                                                                    </div>
-                                                                </button>
-                                                            }
-                                                        </span>
                                                     </div>
+                                                    <span className="space-x-2 flex justify-end">
+
+                                                        {inputListSpeakers.length - 1 == i &&
+                                                            <button>
+                                                                <AddCircleOutlineIcon className="h-[27px] w-[27px]" onClick={handleAddClickSpeakers} />
+                                                            </button>
+                                                        }
+                                                        {inputListSpeakers.length !== 1 &&
+                                                            <button>
+
+                                                                <div className="w-full flex justify-end">
+                                                                    {i !== 0 ? <button onClick={(e) => handleRemoveSpeakers(e, i)}>
+                                                                        <HighlightOffIcon className="h-[27px] w-[27px]" />
+                                                                    </button> : <button onClick={(e) => handleRemoveSpeakers(e, i)} disabled>
+                                                                        <HighlightOffIcon className="text-[#979696] h-[27px] w-[27px]" />
+                                                                    </button>}
+                                                                </div>
+                                                            </button>
+                                                        }
+                                                    </span>
                                                 </div>
                                             )
                                         })
@@ -432,16 +482,30 @@ const addEvent = () => {
                             </div>
                             <div>
                                 <label className="block text-sm font-medium text-gray-700 mb-1 mt-6">
-                                    Add Time Period:
+                                    Add Time :
                                 </label>
                                 <TextField
                                     id="outlined-textarea"
-                                    label="Time Period"
-                                    placeholder="Enter Time Period"
+                                    label="Time Slot"
+                                    placeholder="Enter Time Slot"
                                     value={timeperiod}
                                     multiline
                                     fullWidth
                                     onChange={e => settimeperiod(e.target.value)}
+                                />
+                            </div>
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1 mt-6">
+                                    Perks
+                                </label>
+                                <TextField
+                                    id="outlined-textarea"
+                                    label="Perks"
+                                    placeholder="Enter Perks"
+                                    value={attraction}
+                                    multiline
+                                    fullWidth
+                                    onChange={e => setattraction(e.target.value)}
                                 />
                             </div>
                             <div>
