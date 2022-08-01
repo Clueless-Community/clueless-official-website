@@ -9,15 +9,21 @@ import { TextField } from "@mui/material";
 import TechStackAutoComplete from "../../shared/TechStackAutoComplete"
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import { theme } from '../../../../styles/theme'
+import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
+import { db, storage } from "../../../../lib/clientApp";
+import { useSession } from "next-auth/react";
+import { collection, doc, setDoc } from "firebase/firestore";
 
 
 interface Props {
+    projectId : string
     projectImage: string,
     projectName: string,
     publicLink?: string,
     gitHubLink?: string,
     projectDesc: string,
     techStacks: { 'name': string }[],
+    handleProjectFetch: () => Promise<void>
 }
 
 const style = {
@@ -37,10 +43,12 @@ const style = {
     borderRadius: 3,
 };
 
-const EditProject: React.FC<Props> = ({ projectName, projectImage, projectDesc, publicLink, gitHubLink, techStacks }) => {
+const EditProject: React.FC<Props> = ({projectId, projectName, projectImage, projectDesc, publicLink, gitHubLink, techStacks, handleProjectFetch }) => {
 
 
     const [editIsOpen, setEditIsOpen] = React.useState<boolean>(false);
+    const { data: session } = useSession();
+    const uid = session?.user?.id;
     const handleOpen = () => setEditIsOpen(true);
 
     const [projectNameNew, setProjectNameNew] = React.useState<string>(projectName);
@@ -50,6 +58,7 @@ const EditProject: React.FC<Props> = ({ projectName, projectImage, projectDesc, 
     const [publicLinkNew, setPublicLinkNew] = React.useState<string>(publicLink as string);
     const [gitHubLinkNew, setGitHubLinkNew] = React.useState<string>(gitHubLink as string);
     const [projectTechStacks, setProjectTechStacks] = React.useState<{ name: string }[]>(techStacks);
+    const [downloadURL, setDownloadURL] = React.useState<string>('');
 
     const addImageToPost = (e: any) => {
         const reader = new FileReader();
@@ -67,9 +76,74 @@ const EditProject: React.FC<Props> = ({ projectName, projectImage, projectDesc, 
         setEditIsOpen(false);
     };
 
+    const validateProject = () => {
+        if (projectTechStacks?.length === 0 || projectDescNew === '' || projectImageNew === '' || projectImageNew === '' || gitHubLinkNew === '' || publicLinkNew === '') return true
+        else return false
+    }
+
+    //Firebase Ahead
+    const handleImageUpload = async () => {
+        const date = new Date();
+        const projectImageRef = ref(storage, `${uid}/project/${date.getTime()}_project.jpg`);
+        const uploadTask = media && uploadBytesResumable(projectImageRef, media);
+        uploadTask && uploadTask.on('state_changed',
+            (snapshot: { bytesTransferred: number; totalBytes: number; state: any; }) => {
+                const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                console.log('Upload is ' + progress + '% done');
+                switch (snapshot.state) {
+                    case 'paused':
+                        console.log('Upload is paused');
+                        break;
+                    case 'running':
+                        console.log('Upload is running');
+                        break;
+                }
+            },
+            (error: { code: any; }) => {
+                switch (error.code) {
+                    case 'storage/unauthorized':
+                        break;
+                    case 'storage/canceled':
+                        break;
+
+                    case 'storage/unknown':
+                        break;
+                }
+            },
+            () => {
+                getDownloadURL(uploadTask.snapshot.ref).then((downloadURLOnUpload) => {
+                    console.log('File uploaded');
+                    setDownloadURL(downloadURLOnUpload);
+                });
+            }
+        );
+    }
+
+    const handleUpload = async () => {
+        if (uid) {
+            if(projectImage !== projectImageNew){
+                await handleImageUpload();
+            }
+            const projectRef = doc(db, `users/${uid}/projects`, projectId)
+            try {
+                await setDoc(projectRef, {
+                    project_name: projectNameNew,
+                    project_desc: projectDescNew,
+                    project_image: projectImageNew,
+                    github_link: gitHubLinkNew,
+                    public_link: publicLinkNew,
+                    techstacks: projectTechStacks
+                })
+                console.log("Prject Added.");
+            } catch (e) {
+                console.log(e)
+            }
+        }
+    }
+
     return (
         <>
-            <Button onClick={handleOpen}><EditIcon /></Button>
+            <button className='ml-3 bg-blue-500 text-white p-1 hover:bg-blue-600 rounded-full w-9 h-9 flex items-center justify-center transition-all' onClick={handleOpen}><EditIcon /></button>
             <Modal
                 open={editIsOpen}
                 onClose={handleClose}
@@ -80,7 +154,7 @@ const EditProject: React.FC<Props> = ({ projectName, projectImage, projectDesc, 
                     overflowY : 'scroll',
                 },}}
             >
-                <Box sx={style}>
+                <Box sx={style} key={projectId}>
                     <Box sx={{
                         display: "flex", justifyContent: 'space-between'
                     }}>
@@ -125,11 +199,15 @@ const EditProject: React.FC<Props> = ({ projectName, projectImage, projectDesc, 
                             <TextField label="Deployed URL" variant="outlined" sx={{ width: '100%' }} defaultValue={publicLinkNew} value={publicLinkNew} onChange={(e) => { setPublicLinkNew(e.target.value) }} />
                         </Box>
                     </Box>
-                    <Box sx={{ mt: 3.5 }}>
-                        <TextField label="Project Description" variant="outlined" required multiline sx={{ width: '100%', }} rows={5} defaultValue={projectDescNew} value={projectDescNew} onChange={(e) => { setProjectDescNew(e.target.value) }} />
+                    <TextField label="Project Description" variant="outlined" required multiline sx={{ width: '100%', mt: 3.5 }} rows={5} defaultValue={projectDescNew} value={projectDescNew} onChange={(e) => { setProjectDescNew(e.target.value) }} />
+                    <Box sx={{ mt: 2.5 }}>
                         <TechStackAutoComplete projectTechStacks={projectTechStacks} setProjectTechStacks={setProjectTechStacks} />
                     </Box>
-                    <button className='btn-blue mt-5 float-right px-6 py-2 shadow-blue-600'>Save</button>
+                    {validateProject() ? (
+                        <button className='btn-blue bg-gray-300 hover:bg-gray-300 mt-5 float-right px-6 py-2 shadow-blue-600' disabled >Save</button>
+                        ) : (
+                        <button className='btn-blue mt-5 float-right px-6 py-2 shadow-blue-600' onClick={async () => { await handleUpload(); handleClose(); await handleProjectFetch(); }}>Save</button>
+                    )}
                     <button className='btn-red mt-5 float-right px-6 py-2 shadow-red-600 mr-5' onClick={handleClose}>Discard</button>
                 </Box>
             </Modal>

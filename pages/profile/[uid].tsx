@@ -8,7 +8,7 @@ import Head from 'next/head';
 import { GetServerSideProps, PreviewData } from 'next'
 import { ParsedUrlQuery } from 'querystring'
 import { doc, getDoc } from 'firebase/firestore'
-import { db } from '../../firebase/clientApp'
+import { db } from '../../lib/clientApp'
 import { IProjectUser, ITechStack, IUser } from '../../interfaces/user'
 
 const teckStacks = [
@@ -48,7 +48,7 @@ const Profile: React.FC<Props> = ({ userData }) => {
     console.log(userData);
 
     const userProjects = () => {
-        
+
     }
     return (
         <>
@@ -105,7 +105,7 @@ const Profile: React.FC<Props> = ({ userData }) => {
                                         projectName={project.project_name}
                                         projectImage={project.project_image}
                                         projectDesc={project.project_desc}
-                                        gitHubLink={project.gitHub_link}
+                                        gitHubLink={project.github_link}
                                         publicLink={project.public_link}
                                         techStacks={project.techstacks}
                                     />

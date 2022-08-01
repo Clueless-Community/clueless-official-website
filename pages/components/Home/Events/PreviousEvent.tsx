@@ -2,7 +2,6 @@ import React from 'react'
 import PreviousEventCard from './PreviousEventCard'
 import eventData from '../../../../dummyPrevEventData'
 import { SvgButton } from '../../../../styles/Mui-styles/HoverFillButton'
-import { FaDiscord } from 'react-icons/fa'
 
 
 

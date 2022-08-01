@@ -1,18 +1,17 @@
 import React from 'react'
-import ProfileSummaryAdmin from '../../components/Profile/Admin/ProfileSummaryAdmin'
-import ProjectsCardAdmin from '../../components/Profile/Admin/ProjectsCardAdmin'
-import Footer from '../../components/shared/Footer'
-import Navbar from '../../components/shared/Navbar/Navbar'
-import StyledChip from '../../components/shared/StyledChip'
+import ProfileSummaryAdmin from '../../../components/Profile/Admin/ProfileSummaryAdmin'
+import ProjectsCardAdmin from '../../../components/Profile/Admin/ProjectsCardAdmin'
+import Footer from '../../../components/shared/Footer'
+import Navbar from '../../../components/shared/Navbar/Navbar'
+import StyledChip from '../../../components/shared/StyledChip'
 import Head from 'next/head'
-import AddProject from '../../components/Profile/Admin/AddProject'
-import { GetServerSideProps, PreviewData } from 'next'
-import { ParsedUrlQuery } from 'querystring'
+import AddProject from '../../../components/Profile/Admin/AddProject'
 import { collection, doc, getDoc, getDocs, query } from 'firebase/firestore'
-import { db } from '../../../firebase/clientApp'
-import { IProjectUser, ITechStack, IUser } from '../../../interfaces/user'
+import { db } from '../../../../lib/clientApp'
+import { IProjectUser, ITechStack, IUser } from '../../../../interfaces/user'
 import EditIcon from '@mui/icons-material/Edit';
-import { template } from '../../../helpers/template'
+import { useRouter } from 'next/router'
+import { Grow } from '@mui/material'
 
 const teckStacks = [
     { 'name': 'TypeScript' },
@@ -44,54 +43,65 @@ const Projects = [
     },
 ]
 
-interface Props {
-    userData: IUser
-}
 
-const ProfileAdmin: React.FC<Props> = ({ userData }) => {
-    console.log(userData);
-    const [projects, setProjects] = React.useState<IProjectUser[]>([])
+const ProfileAdmin: React.FC = () => {
+    const [projects, setProjects] = React.useState<IProjectUser[]>([]);
+    const [user, setUser] = React.useState<any>()
+    const router = useRouter();
+
+
+    const fetchUser = async () => {
+        const { uid } = router.query;
+        const userRef = doc(db, 'users', uid as string);
+        const userSnap = await getDoc(userRef);
+        if (userSnap.exists()) {
+            setUser(userSnap.data());
+        }
+    }
 
     const handleProjectFetch = async () => {
         setProjects([])
-        const projectQuery = query(collection(db, `users/${userData.uid}/projects`));
+        const { uid } = router.query;
+        const projectQuery = query(collection(db, `users/${uid}/projects`));
         const querySnapshot = await getDocs(projectQuery);
         querySnapshot.forEach((doc) => {
             setProjects((prev: any) => {
-               return [{project_id: doc.id, ...doc.data()}, ...prev]
+                return [{ project_id: doc.id, ...doc.data() }, ...prev]
             })
         })
     }
-    
+
     React.useEffect(() => {
+        if (!router.isReady) return;
+        fetchUser();
         handleProjectFetch();
-    }, [])
-    
+    }, [router.isReady])
+
     console.log(projects);
     return (
         <>
             <Head>
-                <title>{userData.name} | Admin</title>
+                <title>{user?.name} | Admin</title>
                 <meta name="description" content="A virtual Open source and development community" />
                 <meta property="og:image" content="https://i.ibb.co/WVBNFXB/Clueless-SS.png" />
             </Head>
             <Navbar />
             <div>
                 <ProfileSummaryAdmin
-                    profileImage={userData.image}
-                    profileName={userData.name}
-                    collegeName={userData.college}
-                    passOutYear={userData.graduation_year}
-                    githubLink={userData.github_link}
-                    linkedInLink={userData.linkedIn_link}
-                    twitterlink={userData.twitter_link}
+                    profileImage={user?.image}
+                    profileName={user?.name}
+                    collegeName={user?.college}
+                    passOutYear={user?.graduation_year}
+                    githubLink={user?.github_link}
+                    linkedInLink={user?.linkedIn_link}
+                    twitterlink={user?.twitter_link}
                 />
             </div>
             <div className='my-20 md:mx-40 mx-10'>
                 <p className=' text-4xl'>About Me</p>
                 <div className='h-1 w-28 bg-black ml-16 opacity-80'></div>
-                {userData.about ? (
-                    <p className='mt-5 text-lg'>{userData.about}</p>
+                {user?.about ? (
+                    <p className='mt-5 text-lg'>{user?.about}</p>
                 ) : (
                     <div className=' flex items-center mt-5 '>
                         <p className='text-xl'>Add about us section.</p>
@@ -101,9 +111,9 @@ const ProfileAdmin: React.FC<Props> = ({ userData }) => {
             <div className='my-20 md:mx-40 mx-10'>
                 <p className=' text-4xl'>Tech Stack</p>
                 <div className='h-1 w-28 bg-black ml-20 opacity-80'></div>
-                {userData.techstack ? (
+                {user?.techstack ? (
                     <div className='flex gap-4 flex-wrap mt-5'>
-                        {userData.techstack.map((teckStack: ITechStack) => {
+                        {user?.techstack.map((teckStack: ITechStack) => {
                             return (
                                 <StyledChip text={teckStack.name} size='md' rounded='md' />
                             )
@@ -111,9 +121,9 @@ const ProfileAdmin: React.FC<Props> = ({ userData }) => {
                     </div>
                 ) : (
                     <div className=' flex items-center mt-5 '>
-                    <p className='text-xl'>Add tech stacks and get more opportunities.</p>
-                    <button className='ml-3 bg-blue-500 text-white p-0.5 hover:bg-blue-600 rounded-full w-8 h-8 flex items-center justify-center transition-all'><EditIcon fontSize='small' /></button>
-                </div>
+                        <p className='text-xl'>Add tech stacks and get more opportunities.</p>
+                        <button className='ml-3 bg-blue-500 text-white p-0.5 hover:bg-blue-600 rounded-full w-8 h-8 flex items-center justify-center transition-all'><EditIcon fontSize='small' /></button>
+                    </div>
                 )}
             </div>
             <div className='my-20 md:mx-40 mx-10'>
@@ -125,41 +135,27 @@ const ProfileAdmin: React.FC<Props> = ({ userData }) => {
                             return (
                                 <div className='my-10'>
                                     <ProjectsCardAdmin
+                                        projectId={project.project_id}
                                         projectName={project.project_name}
                                         projectImage={project.project_image}
                                         projectDesc={project.project_desc}
-                                        gitHubLink={project.gitHub_link}
+                                        gitHubLink={project.github_link}
                                         publicLink={project.public_link}
                                         techStacks={project.techstacks}
+                                        handleProjectFetch={handleProjectFetch}
                                     />
                                 </div>
                             )
                         })}
                     </>
                 ) : (
-                    <p className='mt-5 text-xl'>Add your first project and show the world now! {userData.name}.👇</p>
+                    <p className='mt-5 text-xl'>Add your first project and show the world now! {user?.name}.👇</p>
                 )}
-                <AddProject />
+                <AddProject handleProjectFetch={handleProjectFetch} />
             </div>
             <Footer />
         </>
     )
-}
-
-export const getServerSideProps: GetServerSideProps<{ [key: string]: any; }, ParsedUrlQuery, PreviewData> = async (context) => {
-    const userId = context?.query?.uid;
-    const { templateString } = template;
-    try {
-        const res = await fetch(`${templateString}/api/profile/${userId}`);
-        const userData = await res.json()
-            return {
-                props: { userData }
-            }
-    } catch {
-        return {
-            notFound: true,
-        }
-    }
 }
 
 export default ProfileAdmin

@@ -19,6 +19,7 @@
     "@types/yup": "^0.29.13",
     "date-fns": "^2.29.1",
     "firebase": "^9.9.1",
+    "firebase-admin": "^11.0.1",
     "formik": "^2.2.9",
     "framer-motion": "^6.2.8",
     "mongoose": "^6.2.4",
