@@ -60,7 +60,7 @@ const NavbarAvatarDropDown: React.FC<Props> = ({ img, name, email, uid }) => {
           horizontal: 'center',
         }}
       >
-        <Link href={'/profile/[uid]'} as={`/profile/${uid}`}>
+        <Link href={'/profile/admin/[uid]'} as={`/profile/admin/${uid}`}>
           <MenuItem onClick={handleClose} className=" font-nunito">Profile</MenuItem>
         </Link>
         <MenuItem onClick={handleClose} className=" font-nunito">Your Projects</MenuItem>
