@@ -13,7 +13,7 @@ import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
 import { addDoc, collection, doc, setDoc } from "firebase/firestore";
-import { db, storage } from "../../firebase/clientApp";
+import { db, storage } from "../../lib/clientApp";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 
 const addEvent = () => {

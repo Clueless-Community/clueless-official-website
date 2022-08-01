@@ -7,7 +7,7 @@ export interface IProjectUser{
     project_image: string,
     project_name: string,
     public_link?: string,
-    gitHub_link?: string,
+    github_link?: string,
     project_desc: string,
     techstacks: ITechStack[]
 }

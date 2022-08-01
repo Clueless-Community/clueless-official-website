@@ -9,9 +9,9 @@ import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import { theme } from '../../../../styles/theme'
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
-import { storage } from "../../../../firebase/clientApp";
-import { addDoc, doc, setDoc, updateDoc } from "firebase/firestore";
-import { db } from "../../../../firebase/clientApp";
+import { storage } from "../../../../lib/clientApp";
+import { addDoc } from "firebase/firestore";
+import { db } from "../../../../lib/clientApp";
 import { collection } from "firebase/firestore";
 import { useSession } from "next-auth/react";
 
@@ -34,14 +34,17 @@ const style = {
     borderRadius: 3,
 };
 
+interface Props {
+    handleProjectFetch: () => Promise<void>
+}
 
 
-const AddProject: React.FC = () => {
+const AddProject: React.FC<Props> = ({ handleProjectFetch }) => {
 
     const [editIsOpen, setEditIsOpen] = React.useState<boolean>(false);
-    const {data : session} = useSession();
-    const uid = session?.user?.id;
     const handleOpen = () => setEditIsOpen(true);
+    const { data: session } = useSession();
+    const uid = session?.user?.id;
 
     const [projectNameNew, setProjectNameNew] = React.useState<string>('');
     const [projectImageNew, setProjectImageNew] = React.useState<string>('');
@@ -74,6 +77,11 @@ const AddProject: React.FC = () => {
         setGitHubLinkNew('');
         setProjectTechStacks([])
     };
+
+    const validateProject = () => {
+        if (projectTechStacks.length === 0 || projectDescNew === '' || projectImageNew === '' || projectImageNew === '' || gitHubLinkNew === '' || publicLinkNew === '') return true
+        else return false
+    }
 
     //Firebase Ahead
 
@@ -115,20 +123,20 @@ const AddProject: React.FC = () => {
     }
 
     const handleUpload = async () => {
-        if(uid){
+        if (uid) {
             await handleImageUpload();
             const projectRef = collection(db, `users/${uid}/projects`)
-            try{
-                await addDoc(projectRef , {
-                    project_name : projectNameNew,
-                    project_desc : projectDescNew,
-                    project_image : projectImageNew,
-                    github_link : gitHubLinkNew,
-                    public_link : publicLinkNew,
-                    techstacks : projectTechStacks
-                })     
+            try {
+                await addDoc(projectRef, {
+                    project_name: projectNameNew,
+                    project_desc: projectDescNew,
+                    project_image: projectImageNew,
+                    github_link: gitHubLinkNew,
+                    public_link: publicLinkNew,
+                    techstacks: projectTechStacks
+                })
                 console.log("Prject Added.");
-            }catch(e){
+            } catch (e) {
                 console.log(e)
             }
         }
@@ -209,7 +217,12 @@ const AddProject: React.FC = () => {
                     <Box sx={{ mt: 2.5 }}>
                         <TechStackAutoComplete projectTechStacks={projectTechStacks} setProjectTechStacks={setProjectTechStacks} />
                     </Box>
-                    <button className='btn-blue mt-5 float-right px-6 py-2 shadow-blue-600' onClick={handleUpload}>Save</button>
+                    {validateProject() ? (
+                        <button className='btn-blue bg-gray-300 hover:bg-gray-300 mt-5 float-right px-6 py-2 shadow-blue-600' disabled >Save</button>
+                        ) : (
+                        <button className='btn-blue mt-5 float-right px-6 py-2 shadow-blue-600' onClick={async () => { await handleUpload(); handleClose(); await handleProjectFetch(); }}>Save</button>
+                    )}
+
                     <button className='btn-red mt-5 float-right px-6 py-2 shadow-red-600 mr-5' onClick={handleClose}>Discard</button>
                 </Box>
             </Modal>

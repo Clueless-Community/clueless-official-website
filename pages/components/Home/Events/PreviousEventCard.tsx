@@ -13,7 +13,7 @@ interface agenda {
     subject: string,
 }
 interface instructorOrspeaker {
-    profileURL: string,
+    profileURL ? : string,
     // image: string,
     // linkedinLink: string,
     // githubLink: string,
@@ -26,7 +26,7 @@ interface dataProps {
     venue: string,
     startingTime: string,
     endingTime: string,
-    instructorOrspeaker: instructorOrspeaker,
+    instructorOrspeaker: any,
     participants?: number,
     agenda: agenda[],
     winners?: string[]
@@ -59,7 +59,7 @@ const UpcomingEventCard: React.FC<dataProps> = ({ eventposter, heading, venue, s
                         <div className='hidden xl:block xl:space-y-4'>
                             <div className={`text-xl flex items-center space-x-2`}>
                                 <h1 className='font-semibold'>Instructor / speaker :</h1>
-                                <h1>{instructorOrspeaker?.name}</h1>
+                                {/* <h1>{instructorOrspeaker?.name}</h1> */}
                             </div>
                             <div className={`space-y-2 hidden xl:block`}>
                                 <h1 className='text-2xl font-semibold'>Event Winners</h1>
@@ -76,7 +76,7 @@ const UpcomingEventCard: React.FC<dataProps> = ({ eventposter, heading, venue, s
             <h1 className='xl:text-4xl text-2xl xl:hidden font-semibold'>{heading}</h1>
             <div className={`text-xl flex flex-col space-y-2 xl:hidden`}>
                 <h1 className='font-semibold'>Instructor / speaker :</h1>
-                <h1>{instructorOrspeaker?.name}</h1>
+                {/* <h1>{instructorOrspeaker?.name}</h1> */}
             </div>
             <div className={`space-y-2 xl:hidden`}>
                 <h1 className='text-xl font-semibold'>Event Winners</h1>
