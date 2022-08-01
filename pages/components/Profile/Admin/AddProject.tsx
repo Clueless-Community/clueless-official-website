@@ -79,7 +79,7 @@ const AddProject: React.FC<Props> = ({ handleProjectFetch }) => {
     };
 
     const validateProject = () => {
-        if (projectTechStacks.length === 0 || projectDescNew === '' || projectImageNew === '' || projectImageNew === '' || gitHubLinkNew === '' || publicLinkNew === '') return true
+        if (projectTechStacks?.length === 0 || projectDescNew === '' || projectImageNew === '' || projectImageNew === '' || gitHubLinkNew === '' || publicLinkNew === '') return true
         else return false
     }
 
