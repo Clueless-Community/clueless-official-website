@@ -105,7 +105,7 @@ const Profile: React.FC<Props> = ({ userData }) => {
                                         projectName={project.project_name}
                                         projectImage={project.project_image}
                                         projectDesc={project.project_desc}
-                                        gitHubLink={project.gitHub_link}
+                                        gitHubLink={project.github_link}
                                         publicLink={project.public_link}
                                         techStacks={project.techstacks}
                                     />
