@@ -55,7 +55,7 @@ const UpcomingEventCard: React.FC<dataProps> = ({ eventposter, heading, venue, T
                         <div className='hidden xl:block xl:space-y-4'>
                             <div className={`flex xl:flex-row flex-col space-x-2`}>
                                 <h1 className='font-semibold'>Instructor / speaker :</h1>
-                                {allSpeakerNames.map((item, i) => {
+                                {allSpeakerNames?.map((item, i) => {
                                     return <h1 key={i}>{item}</h1>
                                 })}
                             </div>
