@@ -67,7 +67,7 @@ const UpcomingEventCard: React.FC<dataProps> = ({ eventposter, heading, venue, T
             <h1 className='xl:text-4xl text-2xl xl:hidden font-semibold'> {heading}</h1>
             <div className={`flex flex-col  xl:hidden text-xl`}>
                 <h1 className='font-semibold'>Instructor / speaker :</h1>
-                <h1>{instructorOrspeaker[0].name}</h1>
+                <h1>{instructorOrspeaker[0]?.name}</h1>
             </div>
             <div>
                 {session ? <Link href={`/events/${heading}`}>
