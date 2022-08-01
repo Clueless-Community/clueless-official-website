@@ -30,7 +30,7 @@ interface dataProps {
 
 const UpcomingEventCard: React.FC<dataProps> = ({ eventposter, heading, venue, Time, instructorOrspeaker, attractions, agenda }) => {
     const { data: session } = useSession();
-    const allSpeakerNames = instructorOrspeaker.map(key => key.name)
+    const allSpeakerNames = instructorOrspeaker?.map(key => key.name)
     console.log(allSpeakerNames);
 
     return (
