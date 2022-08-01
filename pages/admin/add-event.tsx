@@ -188,8 +188,11 @@ const addEvent = () => {
     const addEvent = async () => {
         await handleBannerImageUpload();
         await handleIconImageUpload();
+        const eventIdtemp = eventname.toLowerCase().replace(' ', '-');
+        const dateId = (new Date).getTime()
+        const eventId = `${eventIdtemp}-${dateId}`
         try {
-            await addDoc(collection(db, 'events'), {
+            await setDoc(doc(db, 'events', eventId), {
                 event_name: eventname,
                 event_banner_image: BannerDownloadURL,
                 event_icon_image: IconDownloadURL,
@@ -200,6 +203,7 @@ const addEvent = () => {
                 agenda: inputListAgenda,
                 present: true,
                 attraction: attraction,
+                event_id: eventId,
                 created_time: serverTimestamp()
             })
             console.log("Data Added");

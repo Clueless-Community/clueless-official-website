@@ -29,7 +29,7 @@ const Profile: React.FC = () => {
         if (userSnap.exists()) {
             const data = userSnap.data() as IUser;
             setUser(data);
-        }else{
+        } else {
             router.push(`/404`);
         }
     }

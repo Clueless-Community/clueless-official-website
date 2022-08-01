@@ -22,13 +22,14 @@ interface dataProps {
         twitterLink: string,
     }[]
     attractions: string,
-    agenda: Array<agenda>
+    agenda: Array<agenda>,
+    id: string,
 }
 
 
 
 
-const UpcomingEventCard: React.FC<dataProps> = ({ eventposter, heading, venue, Time, instructorOrspeaker, attractions, agenda }) => {
+const UpcomingEventCard: React.FC<dataProps> = ({ eventposter, heading, venue, Time, instructorOrspeaker, attractions, agenda, id }) => {
     const { data: session } = useSession();
     const allSpeakerNames = instructorOrspeaker?.map(key => key.name)
     console.log(allSpeakerNames);
@@ -72,7 +73,7 @@ const UpcomingEventCard: React.FC<dataProps> = ({ eventposter, heading, venue, T
                 })}
             </div>
             <div>
-                {session ? <Link href={`/events/${heading}`}>
+                {session ? <Link href={`/events/[eventid]`} as={`/events/${id}`}>
                     <button className='bg-skin-main px-4 xl:py-3 py-2 rounded-md text-white font-semibold xl:text-xl text-lg'>View</button>
                 </Link> : <SignInRequired />}
 

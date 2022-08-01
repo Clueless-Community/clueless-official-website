@@ -7,7 +7,10 @@ import eventData from '../../dummyEventData'
 import Footer from '../components/shared/Footer'
 import { useRouter } from 'next/router'
 import { useSession } from 'next-auth/react'
-import { doc } from 'firebase/firestore'
+import { doc, getDoc, getDocs, query, collection } from 'firebase/firestore'
+import { db } from '../../lib/clientApp'
+import { IEvent } from '../../interfaces/event-interface'
+
 
 const dynamicupcomig: React.FC = () => {
   const router = useRouter();
@@ -15,19 +18,28 @@ const dynamicupcomig: React.FC = () => {
   const { data: session } = useSession();
   const userId = session?.user?.id;
 
-  const [event, setEvent] = React.useState();
+  const [event, setEvent] = React.useState<any | undefined>();
+  console.log(event);
+
 
   const fetchEvent = async () => {
-    const { eventId } = router.query;
-    const eventRef = doc(db, 'events', eventId);
-    const userSnap = await getDoc(eventRef);
-    if (userSnap.exists()) {
-      const data = userSnap.data();
-      setUser(data);
+    const { event_id } = router.query;
+    const eventRef = doc(db, 'events', event_id as string);
+
+    const eventsnap = await getDoc(eventRef);
+    if (eventsnap.exists()) {
+      const data = eventsnap.data() as any;
+      setEvent(data);
     } else {
       router.push(`/404`);
     }
   }
+
+  React.useEffect(() => {
+    if (!router.isReady) return;
+    fetchEvent();
+  }, [router.isReady])
+
   return (
     <div>
       <Navbar />
@@ -123,17 +135,3 @@ const dynamicupcomig: React.FC = () => {
 }
 
 export default dynamicupcomig
-
-function db(db: any, arg1: string, arg2: string) {
-  throw new Error('Function not implemented.')
-}
-
-
-function getDoc(userRef: DocumentReference<DocumentData>) {
-  throw new Error('Function not implemented.')
-}
-
-
-function setUser(data: IUser) {
-  throw new Error('Function not implemented.')
-}

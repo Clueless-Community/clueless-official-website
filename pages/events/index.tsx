@@ -40,7 +40,7 @@ const index = () => {
                 <div className='space-y-4'>
                     {eventData.length > 0 && eventData.map((data, i) => {
                         return <UpcomingEventCard eventposter={data.event_icon_image} heading={data.event_name} venue={data.venue_name} Time={data.time_period} instructorOrspeaker={data.speakers_info}
-                            attractions="Win T-shirts, swags and free food. 🚀 " agenda={data.agenda} />
+                            attractions="Win T-shirts, swags and free food. 🚀 " agenda={data.agenda} id={data.event_id} />
                     })}
                 </div>
                 {/* <div className=''>
