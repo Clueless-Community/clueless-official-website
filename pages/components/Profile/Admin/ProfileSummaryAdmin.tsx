@@ -4,6 +4,9 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import EditIcon from '@mui/icons-material/Edit';
+import Link from 'next/link';
+import { useSession } from 'next-auth/react';
+import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 
 interface Props {
     profileImage: string,
@@ -16,11 +19,22 @@ interface Props {
 }
 
 const ProfileSummaryAdmin: React.FC<Props> = ({ profileImage, profileName, collegeName, passOutYear, githubLink, linkedInLink, twitterlink }) => {
+
+    const { data: session } = useSession();
+    const userId = session?.user?.id;
+
     return (
         <div className='relative'>
             <img src="/profile-bg.png" alt="" className='absolute -z-50' />
-            <button className=' md:bg-white btn-blue md:text-black flex items-center md:px-6 px-4 py-2 shadow-blue-600 rounded-lg absolute right-10 top-20 md:top-5 hover:bg-gray-100 transition-all'><span className='md:mr-2'><EditIcon fontSize='small' /></span><span className='hidden md:block'>Edit Profile</span></button>
-            <div className=' flex flex-col items-center pt-44'>
+            <div className=' flex flex-row-reverse pt-5 mr-5'>
+                <Link href={'/profile/admin/[uid]/edit'} as={`/profile/admin/${userId}/edit`}>
+                    <button className=' md:bg-white btn-blue md:text-black flex items-center md:px-6 px-4 py-2 shadow-blue-600 rounded-lg  right-10 top-20 md:top-5 hover:bg-gray-100 transition-all'><span className='md:mr-2'><EditIcon fontSize='small' /></span><span className='hidden md:block'>Edit Profile</span></button>
+                </Link>
+                <Link href={'/profile/[uid]'} as={`/profile/${userId}`}>
+                    <button className=' md:bg-white mr-5 btn-blue md:text-black flex items-center md:px-6 px-4 py-2 shadow-blue-600 rounded-lg  right-10 top-20 md:top-5 hover:bg-gray-100 transition-all'><span className='md:mr-2'><RemoveRedEyeIcon fontSize='small' /></span><span className='hidden md:block'>Visitor View</span></button>
+                </Link>
+            </div>
+            <div className=' flex flex-col items-center pt-36'>
                 <Avatar
                     src={profileImage}
                     alt={profileName}
