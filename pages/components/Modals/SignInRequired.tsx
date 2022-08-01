@@ -1,6 +1,7 @@
 import React from 'react'
-import { Box, Button, Modal, Typography } from '@mui/material'
+import { Box, Modal, Typography } from '@mui/material'
 import HttpsIcon from '@mui/icons-material/Https';
+import Link from 'next/link';
 
 const style = {
     position: 'absolute' as 'absolute',
@@ -21,7 +22,8 @@ const SignInRequired = () => {
     const handleClose = () => setOpen(false);
     return (
         <div>
-            <Button onClick={handleOpen}>Open modal</Button>
+            <button onClick={handleOpen} className='bg-skin-main px-4 xl:py-3 py-2 rounded-md text-white font-semibold xl:text-xl text-lg'>View</button>
+
             <Modal
                 open={open}
                 onClose={handleClose}
@@ -35,9 +37,11 @@ const SignInRequired = () => {
                     <Typography id="modal-modal-title" variant="h6" component="h2" className='text-center font-nunito text-[24px]'>
                         Sign-In Required
                     </Typography>
-                    <Box className="w-full flex justify-center mt-4">
-                        <button className="btn-blue">Sign In</button>
-                    </Box>
+                    <Link href="auth/signin">
+                        <Box className="w-full flex justify-center mt-4">
+                            <button className="btn-blue">Sign In</button>
+                        </Box>
+                    </Link>
                 </Box>
             </Modal>
         </div>

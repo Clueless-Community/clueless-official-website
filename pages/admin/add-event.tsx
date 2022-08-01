@@ -55,14 +55,12 @@ const addEvent = () => {
     }
 
     const handleRemoveAgenda = (e: { preventDefault: () => void; }, index: number) => {
-        // e.preventDefault();
         const list = [...inputListAgenda];
         list.splice(index, 1)
         setInputListAgenda(list)
     }
 
     const handleRemoveSpeakers = (e: { preventDefault: () => void; }, index: number) => {
-        // e.preventDefault();
         const list = [...inputListSpeakers];
         list.splice(index, 1)
         setInputListSpeakers(list)
@@ -200,7 +198,9 @@ const addEvent = () => {
                 speakers_info: inputListSpeakers,
                 date: date,
                 time_period: timeperiod,
-                agenda: inputListAgenda
+                agenda: inputListAgenda,
+                present: true,
+                winners: [],
             })
             console.log("Data Added");
             console.log(BannerDownloadURL, IconDownloadURL);
