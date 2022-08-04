@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { Button, Stack } from '@mui/material'
 import React from 'react'
 import StyledChip from '../shared/StyledChip'
@@ -16,7 +17,7 @@ const ProjectsCard: React.FC<Props> = ({ projectImage, projectName, projectDesc,
     return (
         <div className='p-6 border-2 border-dashed border-black border-opacity-60 rounded-lg'>
             <div className='flex'>
-                <img src={projectImage} alt="" className=' w-32 h-32 rounded-lg' />
+                <img src={projectImage} alt="ok" className='w-32 h-32 rounded-lg'  />
                 <div className='ml-5'>
                     <div className=' flex flex-col xl:flex-row xl:items-center  '>
                         <a href={publicLink} className='flex items-center flex-wrap'>

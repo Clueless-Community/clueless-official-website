@@ -11,10 +11,20 @@ import { IProjectUser, ITechStack, IUser } from '../../interfaces/user'
 import { useRouter } from 'next/router'
 import { useSession } from 'next-auth/react'
 import { CircularProgress } from '@mui/material'
+import { GetServerSideProps, PreviewData } from 'next'
+import { ParsedUrlQuery } from 'querystring'
+import { template } from '../../helpers/template'
 
-const Profile: React.FC = () => {
+
+interface Props{
+    userData :  IUser
+}
+
+const Profile: React.FC<Props> = ({userData}) => {
 
     const router = useRouter();
+
+    console.log(userData);
 
     const { data: session } = useSession();
     const userId = session?.user?.id;
@@ -99,6 +109,7 @@ const Profile: React.FC = () => {
                             <div className='flex gap-4 flex-wrap mt-5'>
                                 {user?.techstack.map((teckStack: ITechStack) => {
                                     return (
+                                        // eslint-disable-next-line react/jsx-key
                                         <StyledChip text={teckStack.name} size='md' rounded='md' />
                                     )
                                 })}
@@ -114,8 +125,10 @@ const Profile: React.FC = () => {
                             <>
                                 {projects?.map((project: IProjectUser) => {
                                     return (
+                                        // eslint-disable-next-line react/jsx-key
                                         <div className='my-10'>
                                             <ProjectsCard
+                                                key={project.project_id}
                                                 projectName={project.project_name}
                                                 projectImage={project.project_image}
                                                 projectDesc={project.project_desc}
@@ -143,3 +156,13 @@ const Profile: React.FC = () => {
 }
 
 export default Profile
+
+export const getServerSideProps: GetServerSideProps<{[key: string]: any;}, ParsedUrlQuery, PreviewData> = async (context) => {
+    const { uid } = context.query;
+    const { templateString } = template;
+    const res = await fetch(`${templateString}/api/profile/${uid}`);
+    const userData = await res.json(); 
+    return {
+        props : { userData }
+    }
+}

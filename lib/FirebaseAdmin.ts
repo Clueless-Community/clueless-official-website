@@ -1,6 +1,6 @@
 import admin from 'firebase-admin'
 
-try {
+if(!admin.apps.length) {
   admin.initializeApp({
     credential: admin.credential.cert({
         projectId : process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
@@ -10,10 +10,7 @@ try {
     databaseURL : process.env.FIREBASE_DATABASE_URL,
   })
   console.log('Initialized.')
-} catch (error : any) {
-  if (!/already exists/u.test(error.message)) {
-    console.error('Firebase admin initialization error', error.stack)
-  }
 }
+
 
 export default admin
