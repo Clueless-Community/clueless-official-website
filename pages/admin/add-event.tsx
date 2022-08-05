@@ -189,8 +189,11 @@ const AddEvent: React.FC = () => {
     const addEvent = async () => {
         await handleBannerImageUpload();
         await handleIconImageUpload();
+        const eventIdtemp = eventname.toLowerCase().replace(' ', '-');
+        const dateId = (new Date).getTime()
+        const eventId = `${eventIdtemp}-${dateId}`
         try {
-            await addDoc(collection(db, 'events'), {
+            await setDoc(doc(db, 'events', eventId), {
                 event_name: eventname,
                 event_banner_image: BannerDownloadURL,
                 event_icon_image: IconDownloadURL,
@@ -201,6 +204,7 @@ const AddEvent: React.FC = () => {
                 agenda: inputListAgenda,
                 present: true,
                 attraction: attraction,
+                event_id: eventId,
                 created_time: serverTimestamp()
             })
             console.log("Data Added");
@@ -366,7 +370,7 @@ const AddEvent: React.FC = () => {
                                 <label className="block text-sm font-medium text-gray-700 mb-1">
                                     Add Speakers:
                                 </label>
-                                <div className="space-y-2">
+                                <div className="space-y-4">
                                     {
                                         inputListSpeakers.map((item, i) => {
                                             return (
@@ -587,7 +591,7 @@ const AddEvent: React.FC = () => {
                         </div>
                         <div className="w-full col-span-1 hidden md:block">
                             {/* Image */}
-                            <img src="/addEvent.png" className="ml-auto w-[341px]" alt="event-png"/>
+                            <img src="/addEvent.png" className="ml-auto w-[341px]" alt="event-png" />
                         </div>
 
                     </div>

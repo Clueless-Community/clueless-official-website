@@ -24,15 +24,15 @@ interface dataProps {
     }[]
     attractions: string,
     agenda: Array<agenda>
+    eventId: string
 }
 
 
 
 
-const UpcomingEventCard: React.FC<dataProps> = ({ eventposter, heading, venue, Time, instructorOrspeaker, attractions, agenda }) => {
+const UpcomingEventCard: React.FC<dataProps> = ({ eventposter, heading, venue, Time, instructorOrspeaker, attractions, agenda, eventId }) => {
     const { data: session } = useSession();
     const allSpeakerNames = instructorOrspeaker?.map(key => key.name)
-    console.log(allSpeakerNames);
 
     return (
         <div className=' bg-[#1954ca25] border-dashed border-2 border-opacity-30 border-black font-nunito xl:flex-row flex-col flex xl:justify-between xl:p-8 p-3 rounded-xl relative space-y-3 xl:space-y-0'>
@@ -73,7 +73,7 @@ const UpcomingEventCard: React.FC<dataProps> = ({ eventposter, heading, venue, T
                 })}
             </div>
             <div>
-                {session ? <Link href={`/events/${heading}`} passHref>
+                {session ? <Link href={`/events/[event_id]`} as={`/events/${eventId}`} passHref>
                     <button className='bg-skin-main px-4 xl:py-3 py-2 rounded-md text-white font-semibold xl:text-xl text-lg'>View</button>
                 </Link> : <SignInRequired />}
 
