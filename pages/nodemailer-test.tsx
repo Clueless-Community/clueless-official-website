@@ -5,7 +5,7 @@ const NodemailerTest = () => {
     const { data: session } = useSession();
 
     const testNodeMailer = async () => {
-        const data = await fetch('/api/nodeMailertest', {
+        const data = await fetch('/api/mail/even-registration-mail', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json, text/plain, */*',
