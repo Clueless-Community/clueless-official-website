@@ -21,7 +21,7 @@ const Profile: React.FC = () => {
     const [user, setUser] = React.useState<IUser | undefined>();
     const [projects, setProjects] = React.useState<IProjectUser[]>([]);
 
-    const fetchUser = async () => {
+    const fetchUser = React.useCallback( async () => {
         const { uid } = router.query;
         const userRef = doc(db, 'users', uid as string);
         const userSnap = await getDoc(userRef);
@@ -31,9 +31,9 @@ const Profile: React.FC = () => {
         }else{
             router.push(`/404`);
         }
-    }
+    }, [router])
 
-    const handleProjectFetch = async () => {
+    const handleProjectFetch = React.useCallback ( async () => {
         setProjects([])
         const { uid } = router.query;
         const projectQuery = query(collection(db, `users/${uid}/projects`));
@@ -43,13 +43,13 @@ const Profile: React.FC = () => {
                 return [{ project_id: doc.id, ...doc.data() }, ...prev]
             })
         })
-    }
+    }, [router.query])
 
     React.useEffect(() => {
         if (!router.isReady) return;
         fetchUser();
         handleProjectFetch();
-    }, [router.isReady])
+    }, [fetchUser, handleProjectFetch, router.isReady])
 
 
     return (
