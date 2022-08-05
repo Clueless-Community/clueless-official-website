@@ -6,7 +6,7 @@ import { doc, getDoc, setDoc } from 'firebase/firestore';
 import { db } from '../lib/clientApp';
 import CircularProgress from '@mui/material/CircularProgress';
 
-const usercheck = () => {
+const Usercheck = () => {
     const router = useRouter();
     const { data : session} = useSession();
     const userId = session?.user?.id.toString() as string;
@@ -50,4 +50,4 @@ const usercheck = () => {
     )
 }
 
-export default usercheck
+export default Usercheck

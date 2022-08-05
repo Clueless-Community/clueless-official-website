@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react'
 import Link from 'next/link'
 import { useSession } from "next-auth/react";
@@ -38,7 +39,7 @@ const UpcomingEventCard: React.FC<dataProps> = ({ eventposter, heading, venue, T
         <div className=' bg-[#1954ca25] border-dashed border-2 border-opacity-30 border-black font-nunito xl:flex-row flex-col flex xl:justify-between xl:p-8 p-3 rounded-xl relative space-y-3 xl:space-y-0'>
             <section className={`flex xl:justify-start xl:space-x-8 space-x-4  pb-4 xl:pb-0 w-full`}>
                 <div>
-                    <img src={eventposter} className="rounded-xl h-auto w-36 object-cover xl:h-[200px] xl:w-[200px]" />
+                    <img src={eventposter} className="rounded-xl h-auto w-36 object-cover xl:h-[200px] xl:w-[200px]" alt='' />
                 </div>
                 <div className='flex flex-col xl:justify-center  space-y-16 xl:text-xl'>
                     <div className={`flex flex-col xl:justify-center justify-between xl:space-y-4`}>
@@ -73,7 +74,7 @@ const UpcomingEventCard: React.FC<dataProps> = ({ eventposter, heading, venue, T
                 })}
             </div>
             <div>
-                {session ? <Link href={`/events/[eventid]`} as={`/events/${id}`}>
+                {session ? <Link href={`/events/${heading}`} passHref>
                     <button className='bg-skin-main px-4 xl:py-3 py-2 rounded-md text-white font-semibold xl:text-xl text-lg'>View</button>
                 </Link> : <SignInRequired />}
 

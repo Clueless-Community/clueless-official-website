@@ -10,7 +10,7 @@ import { db } from '../../../../lib/clientApp'
 import Navbar from '../../../components/shared/Navbar/Navbar'
 import TechStackAutoComplete from '../../../components/shared/TechStackAutoComplete'
 
-const editProfile = () => {
+const EditProfile = () => {
     const [collegeName, setcollegeName] = React.useState<string>("")
     // const [graduationYear, setgraduationYear] = React.useState<number | null>()
     const [bio, setbio] = React.useState<string>("")
@@ -30,8 +30,7 @@ const editProfile = () => {
 
 
     const saveUser = async () => {
-        const { uid } = router.query;
-        const userRef = doc(db, "users", uid as string);
+        const userRef = doc(db, "users", userId as string);
         await updateDoc(userRef, {
             college: collegeName,
             github_link: gitHubURL,
@@ -49,7 +48,7 @@ const editProfile = () => {
         if (userSnap.exists()) {
             const data = userSnap.data() as IUser
             setUser(data);
-        }else{
+        } else {
             router.push(`/404`);
         }
     }
@@ -65,14 +64,14 @@ const editProfile = () => {
 
     React.useEffect(() => {
         if (user) {
-            if(user.uid === userId){
+            if (user.uid === userId) {
                 setcollegeName(user?.college as string);
                 setbio(user?.about as string);
                 setTechStacks(user?.techstack as ITechStack[]);
                 settwitterURL(user?.twitter_link as string);
                 setlinkedInURL(user?.linkedIn_link as string);
                 setgitHubURL(user?.github_link as string);
-            }else{
+            } else {
                 router.push(`/profile/${user.uid}`);
             }
         }
@@ -261,7 +260,7 @@ const editProfile = () => {
                                                     </button>
                                                 </div>
                                                 <div className='space-x-4 mt-12'>
-                                                    <Link href={'/profile/admin/[uid]'} as={`/profile/admin/${userId}`}>
+                                                    <Link href={'/profile/admin/[uid]'} as={`/profile/admin/${userId}`} passHref>
                                                         <button className="btn-blue">
                                                             Back to Profile
                                                         </button>
@@ -269,7 +268,7 @@ const editProfile = () => {
                                                 </div>
                                                 <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
                                                     <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
-                                                        This is a success message!
+                                                        {user.name.split(' ')[0]}, Your Profile is updated!
                                                     </Alert>
                                                 </Snackbar>
                                             </div>
@@ -296,4 +295,4 @@ const editProfile = () => {
     )
 }
 
-export default editProfile
+export default EditProfile

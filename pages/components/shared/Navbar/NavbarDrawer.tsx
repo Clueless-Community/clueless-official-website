@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { useState } from "react";
 import { Avatar, Drawer, Button } from "@mui/material";
 import {
@@ -56,13 +57,13 @@ const NavbarDrawer: React.FC<Props> = ({ img, name, email }) => {
           className={classes.Drawer}
         >
           <div className=" flex flex-col my-10">
-            <Link href="/">
+            <Link href="/" passHref>
               <div className="flex items-center cursor-pointer mx-auto">
-                <img src="/ClueLess Logo.png" alt="" className="w-[65px]" />
+                <img src="/ClueLess Logo.png" alt="" className="w-[65px]"  />
                 <h1 className=" font-raleway text-3xl ml-8">ClueLess</h1>
               </div>
             </Link>
-            <Link href="/">
+            <Link href="/" passHref>
               <button
                 onClick={handleClose}
                 className="font-semibold text-xl mt-16"
@@ -74,7 +75,7 @@ const NavbarDrawer: React.FC<Props> = ({ img, name, email }) => {
             <a
               href="https://clueless-blogs.hashnode.dev/"
               target="_blank"
-              className="text-center"
+              className="text-center" rel="noreferrer"
             >
               <button
                 onClick={handleClose}
@@ -84,7 +85,7 @@ const NavbarDrawer: React.FC<Props> = ({ img, name, email }) => {
               </button>{" "}
             </a>
             <div className="bg-gray-300 h-[1px] w-10/12 mx-auto mt-3"></div>
-            <a href="https://clueless-resources.super.site/resources" target="_blank" className="text-center">
+            <a href="https://clueless-resources.super.site/resources" target="_blank" className="text-center" rel="noreferrer">
               <button
                 onClick={handleClose}
                 className="font-semibold text-xl mt-5"
@@ -93,7 +94,7 @@ const NavbarDrawer: React.FC<Props> = ({ img, name, email }) => {
               </button>
               </a>
             <div className="bg-gray-300 h-[1px] w-10/12 mx-auto mt-3"></div>
-            <Link href="/challenges-events">
+            <Link href="/challenges-events" passHref>
               <button
                 onClick={handleClose}
                 className="font-semibold text-xl mt-5"
@@ -111,7 +112,7 @@ const NavbarDrawer: React.FC<Props> = ({ img, name, email }) => {
             >
               Sign Out
             </button> */}
-            <a href="https://discord.gg/zrVMjGW8sB" target="_blank" className="w-full mx-auto text-center">
+            <a href="https://discord.gg/zrVMjGW8sB" target="_blank" className="w-full mx-auto text-center" rel="noreferrer">
             <button className="font-semibold text-xl mt-5 mx-auto">
               Join Discord
             </button>

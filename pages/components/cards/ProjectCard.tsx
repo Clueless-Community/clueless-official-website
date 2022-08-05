@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { Chip } from '@mui/material'
 import React from 'react'
 

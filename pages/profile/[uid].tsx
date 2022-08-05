@@ -11,10 +11,20 @@ import { IProjectUser, ITechStack, IUser } from '../../interfaces/user'
 import { useRouter } from 'next/router'
 import { useSession } from 'next-auth/react'
 import { CircularProgress } from '@mui/material'
+import { GetServerSideProps, PreviewData } from 'next'
+import { ParsedUrlQuery } from 'querystring'
+import { template } from '../../helpers/template'
 
-const Profile: React.FC = () => {
+
+interface Props{
+    userData :  IUser
+}
+
+const Profile: React.FC<Props> = ({userData}) => {
 
     const router = useRouter();
+
+    console.log(userData);
 
     const { data: session } = useSession();
     const userId = session?.user?.id;
@@ -97,9 +107,9 @@ const Profile: React.FC = () => {
                         <div className='h-1 w-28 bg-black ml-20 opacity-80'></div>
                         {user?.techstack ? (
                             <div className='flex gap-4 flex-wrap mt-5'>
-                                {user?.techstack.map((teckStack: ITechStack) => {
+                                {user?.techstack.map((teckStack: ITechStack, i : number) => {
                                     return (
-                                        <StyledChip text={teckStack.name} size='md' rounded='md' />
+                                        <StyledChip text={teckStack.name} size='md' rounded='md' key={i}/>
                                     )
                                 })}
                             </div>
@@ -112,10 +122,11 @@ const Profile: React.FC = () => {
                         <div className='h-1 w-20 bg-black ml-16 opacity-80'></div>
                         {projects?.length !== 0 ? (
                             <>
-                                {projects?.map((project: IProjectUser) => {
+                                {projects?.map((project: IProjectUser, i : number) => {
                                     return (
-                                        <div className='my-10'>
+                                        <div className='my-10' key={i}>
                                             <ProjectsCard
+                                                key={project.project_id}
                                                 projectName={project.project_name}
                                                 projectImage={project.project_image}
                                                 projectDesc={project.project_desc}
@@ -143,3 +154,13 @@ const Profile: React.FC = () => {
 }
 
 export default Profile
+
+export const getServerSideProps: GetServerSideProps<{[key: string]: any;}, ParsedUrlQuery, PreviewData> = async (context) => {
+    const { uid } = context.query;
+    const { templateString } = template;
+    const res = await fetch(`${templateString}/api/profile/${uid}`);
+    const userData = await res.json(); 
+    return {
+        props : { userData }
+    }
+}
