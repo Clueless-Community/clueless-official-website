@@ -14,11 +14,20 @@ import { useRouter } from 'next/router'
 import { CircularProgress, Grow } from '@mui/material'
 import { useSession } from 'next-auth/react'
 import Link from 'next/link'
+import { GetServerSideProps, PreviewData } from 'next'
+import { ParsedUrlQuery } from 'querystring'
+import { template } from '../../../../helpers/template'
 
-const ProfileAdmin: React.FC = () => {
+interface Props{
+    userData :  IUser
+}
+
+const ProfileAdmin: React.FC<Props> = ({userData}) => {
     const [projects, setProjects] = React.useState<IProjectUser[]>([]);
     const [user, setUser] = React.useState<IUser | undefined>()
     const router = useRouter();
+    console.log(userData);
+    
 
     const { data: session } = useSession();
     const userId = session?.user?.id;
@@ -35,6 +44,7 @@ const ProfileAdmin: React.FC = () => {
         })
     }, [router.query])
 
+
     const fetchUser = React.useCallback(async () => {
         const { uid } = router.query;
         const userRef = doc(db, 'users', uid as string);
@@ -47,16 +57,16 @@ const ProfileAdmin: React.FC = () => {
         }
     }, [router])
 
+
     React.useEffect(() => {
         if (!router.isReady) return;
-        fetchUser();
         handleProjectFetch();
     }, [fetchUser, handleProjectFetch, router.isReady])
 
     React.useEffect(() => {
-        if (user) {
-            if (user.uid !== userId) {
-                router.push(`/profile/${user.uid}`);
+        if (userData) {
+            if (userData.uid !== userId) {
+                router.push(`/profile/${userData.uid}`);
             }
         }
     }, [router, user, userId]);
@@ -64,40 +74,31 @@ const ProfileAdmin: React.FC = () => {
 
     return (
         <>
-            {user ? (
                 <Head>
                     <title>
-                        {user?.name} | Admin</title>
+                        {userData.name} | Admin</title>
                     <meta name="description" content="A virtual Open source and development community" />
                 </Head>
-            ) : (
-                <Head>
-                    <title>
-                        Loading...</title>
-                    <meta name="description" content="A virtual Open source and development community" />
-                </Head>
-            )}
-            {user ? (
                 <>
-                    {user.uid === userId ? (
+                    {userData.uid === userId ? (
                         <>
                             < Navbar />
                             <div>
                                 <ProfileSummaryAdmin
-                                    profileImage={user?.image}
-                                    profileName={user?.name}
-                                    collegeName={user?.college}
-                                    passOutYear={user?.graduation_year}
-                                    githubLink={user?.github_link}
-                                    linkedInLink={user?.linkedIn_link}
-                                    twitterlink={user?.twitter_link}
+                                    profileImage={userData.image}
+                                    profileName={userData.name}
+                                    collegeName={userData.college}
+                                    passOutYear={userData.graduation_year}
+                                    githubLink={userData.github_link}
+                                    linkedInLink={userData.linkedIn_link}
+                                    twitterlink={userData.twitter_link}
                                 />
                             </div>
                             <div className='my-20 md:mx-40 mx-10'>
                                 <p className=' text-4xl'>About Me</p>
                                 <div className='h-1 w-28 bg-black ml-16 opacity-80'></div>
-                                {user?.about ? (
-                                    <p className='mt-5 text-lg'>{user?.about}</p>
+                                {userData.about ? (
+                                    <p className='mt-5 text-lg'>{userData.about}</p>
                                 ) : (
                                     <div className=' flex items-center mt-5 '>
                                         <p className='text-xl'>Add about us section.</p>
@@ -109,7 +110,7 @@ const ProfileAdmin: React.FC = () => {
                             <div className='my-20 md:mx-40 mx-10'>
                                 <p className=' text-4xl'>Tech Stack</p>
                                 <div className='h-1 w-28 bg-black ml-20 opacity-80'></div>
-                                {user?.techstack ? (
+                                {userData.techstack ? (
                                     <div className='flex gap-4 flex-wrap mt-5'>
                                         {user?.techstack.map((teckStack: ITechStack, i : number) => {
                                             return (
@@ -149,7 +150,7 @@ const ProfileAdmin: React.FC = () => {
                                         })}
                                     </>
                                 ) : (
-                                    <p className='mt-5 text-xl'>Add your first project and show the world now! {user?.name}.👇</p>
+                                    <p className='mt-5 text-xl'>Add your first project and show the world now! {userData.name}.👇</p>
                                 )}
                                 <AddProject handleProjectFetch={handleProjectFetch} />
                             </div>
@@ -160,15 +161,9 @@ const ProfileAdmin: React.FC = () => {
                         </div>
                     )}
                 </>
-            ) : (
-                <div className='flex justify-center items-center h-screen'>
-                    <CircularProgress />
-                </div>
-            )
-            }
-
         </>
     )
 }
 
 export default ProfileAdmin
+
