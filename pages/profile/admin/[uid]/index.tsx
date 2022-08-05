@@ -32,7 +32,7 @@ const ProfileAdmin: React.FC<Props> = ({userData}) => {
     const { data: session } = useSession();
     const userId = session?.user?.id;
 
-    const handleProjectFetch = async () => {
+    const handleProjectFetch = React.useCallback( async () => {
         setProjects([])
         const { uid } = router.query;
         const projectQuery = query(collection(db, `users/${uid}/projects`));
@@ -42,12 +42,26 @@ const ProfileAdmin: React.FC<Props> = ({userData}) => {
                 return [{ project_id: doc.id, ...doc.data() }, ...prev]
             })
         })
-    }
+    }, [router.query])
+
+
+    const fetchUser = React.useCallback(async () => {
+        const { uid } = router.query;
+        const userRef = doc(db, 'users', uid as string);
+        const userSnap = await getDoc(userRef);
+        if (userSnap.exists()) {
+            const data = userSnap.data() as IUser;
+            setUser(data);
+        }else{
+            router.push(`/404`);
+        }
+    }, [router])
+
 
     React.useEffect(() => {
         if (!router.isReady) return;
         handleProjectFetch();
-    }, [router.isReady])
+    }, [fetchUser, handleProjectFetch, router.isReady])
 
     React.useEffect(() => {
         if (userData) {
@@ -55,7 +69,7 @@ const ProfileAdmin: React.FC<Props> = ({userData}) => {
                 router.push(`/profile/${userData.uid}`);
             }
         }
-    }, [router, userData, userId]);
+    }, [router, user, userId]);
 
 
     return (
@@ -88,7 +102,7 @@ const ProfileAdmin: React.FC<Props> = ({userData}) => {
                                 ) : (
                                     <div className=' flex items-center mt-5 '>
                                         <p className='text-xl'>Add about us section.</p>
-                                        <Link href={'/profile/admin/[uid]/edit'} as={`/profile/admin/${userId}/edit`}>
+                                        <Link href={'/profile/admin/[uid]/edit'} as={`/profile/admin/${userId}/edit`} passHref>
                                             <button className='ml-3 bg-blue-500 text-white p-0.5 hover:bg-blue-600 rounded-full w-8 h-8 flex items-center justify-center transition-all'><EditIcon fontSize='small' /></button>
                                         </Link>
                                     </div>
@@ -98,16 +112,16 @@ const ProfileAdmin: React.FC<Props> = ({userData}) => {
                                 <div className='h-1 w-28 bg-black ml-20 opacity-80'></div>
                                 {userData.techstack ? (
                                     <div className='flex gap-4 flex-wrap mt-5'>
-                                        {userData.techstack.map((teckStack: ITechStack) => {
+                                        {user?.techstack.map((teckStack: ITechStack, i : number) => {
                                             return (
-                                                <StyledChip text={teckStack.name} size='md' rounded='md' />
+                                                <StyledChip text={teckStack.name} size='md' rounded='md' key={i} />
                                             )
                                         })}
                                     </div>
                                 ) : (
                                     <div className=' flex items-center mt-5 '>
                                         <p className='text-xl'>Add tech stacks and get more opportunities.</p>
-                                        <Link href={'/profile/admin/[uid]/edit'} as={`/profile/admin/${userId}/edit`}>
+                                        <Link href={'/profile/admin/[uid]/edit'} as={`/profile/admin/${userId}/edit`} passHref>
                                             <button className='ml-3 bg-blue-500 text-white p-0.5 hover:bg-blue-600 rounded-full w-8 h-8 flex items-center justify-center transition-all'><EditIcon fontSize='small' /></button>
                                         </Link>
                                     </div>
@@ -118,9 +132,9 @@ const ProfileAdmin: React.FC<Props> = ({userData}) => {
                                 <div className='h-1 w-20 bg-black ml-16 opacity-80'></div>
                                 {projects ? (
                                     <>
-                                        {projects.map((project: IProjectUser) => {
+                                        {projects.map((project: IProjectUser, i : number) => {
                                             return (
-                                                <div className='my-10'>
+                                                <div className='my-10' key={i}>
                                                     <ProjectsCardAdmin
                                                         projectId={project.project_id}
                                                         projectName={project.project_name}
@@ -153,13 +167,3 @@ const ProfileAdmin: React.FC<Props> = ({userData}) => {
 
 export default ProfileAdmin
 
-
-export const getServerSideProps: GetServerSideProps<{[key: string]: any;}, ParsedUrlQuery, PreviewData> = async (context) => {
-    const { uid } = context.query;
-    const { templateString } = template;
-    const res = await fetch(`${templateString}/api/profile/${uid}`);
-    const userData = await res.json(); 
-    return {
-        props : { userData }
-    }
-}

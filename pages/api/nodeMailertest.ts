@@ -1,7 +1,8 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextApiRequest, NextApiResponse } from "next";
+
 let nodemailer = require("nodemailer");
 
-export default async function (req: any, res: any) {
+const nodeMailer = async function (req: NextApiRequest, res: NextApiResponse) {
   const { email, name, id, image } = req.body;
   const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
@@ -1095,3 +1096,5 @@ export default async function (req: any, res: any) {
   console.log("done");
   return res.status(200).json({ error: "" });
 }
+
+export default nodeMailer

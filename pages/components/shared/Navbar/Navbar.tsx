@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import React from "react";
 import NavbarAvatarDropDown from "./NavbarAvatarDropDown";
@@ -19,31 +20,31 @@ const Navbar: NextComponentType = () => {
 
   return (
     <nav className="flex justify-between sm:px-36 px-5 py-5 items-center shadow-xl">
-      <Link href="/">
+      <Link href="/" passHref>
         <div className="flex items-center cursor-pointer">
           <img src="/ClueLess Logo.png" alt="" className="sm:w-[65px] w-[35px]" />
           <h1 className=" font-raleway sm:text-3xl text-xl sm:ml-8 ml-2">ClueLess</h1>
         </div>
       </Link>
       <div className="hidden lg:block">
-        <Link href="/">
+        <Link href="/" passHref>
           <button className="hover:font-semibold hover:underline cursor-pointer xl:mx-8 mx-3 text-xl transition-all">
             Home
           </button>
         </Link>
 
         <button className="hover:font-semibold hover:underline cursor-pointer xl:mx-8 mx-3 text-xl transition-all">
-          <a href="https://clueless-blogs.hashnode.dev" target="_blank">
+          <a href="https://clueless-blogs.hashnode.dev" target="_blank" rel="noreferrer">
             Blogs
           </a>
         </button>
 
-        <a href="https://clueless-resources.super.site/resources" target="_blank">
+        <a href="https://clueless-resources.super.site/resources" target="_blank" rel="noreferrer">
           <button className="hover:font-semibold hover:underline cursor-pointer xl:mx-8 mx-3 text-xl transition-all">
             Resources
           </button>
         </a>
-        <Link href="/challenges-events">
+        <Link href="/challenges-events" passHref>
           <button className="hover:font-semibold hover:underline cursor-pointer xl:mx-8 mx-3 text-xl transition-all">
             Events
           </button>
@@ -60,7 +61,7 @@ const Navbar: NextComponentType = () => {
         </>
       )}
       {session.status === "unauthenticated" && (
-        <Link href="/auth/signin">
+        <Link href="/auth/signin" passHref>
           <div className="scale-75 sm:scale-100">
             <SvgButton>Log In</SvgButton>
           </div>

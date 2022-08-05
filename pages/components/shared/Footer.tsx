@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react'
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TwitterIcon from '@mui/icons-material/Twitter';
@@ -38,9 +39,9 @@ const Footer: React.FC = () => {
                     <Link href="/challenges-events">
                         <a className='my-3 hover:text-skin-main transition-all'>Events & Challenges</a>
                     </Link>
-                    <a className='my-3 hover:text-skin-main transition-all' href='https://clueless-resources.super.site/' target="_blank">Resources</a>
+                    <a className='my-3 hover:text-skin-main transition-all' href='https://clueless-resources.super.site/' target="_blank" rel="noreferrer">Resources</a>
 
-                    <a href='https://clueless-blogs.hashnode.dev/' target="_blank" className='my-3 hover:text-skin-main transition-all'>Blogs</a>
+                    <a href='https://clueless-blogs.hashnode.dev/' target="_blank" className='my-3 hover:text-skin-main transition-all' rel="noreferrer">Blogs</a>
                 </div>
                 <div className='flex flex-col mx-auto  my-5 sm:my-0 text-center sm:text-left'>
                     <h3 className=' font-nunito font-semibold text-xl mb-8 sm:mt-12 lg:mt-0'>Contact & Help</h3>
@@ -51,13 +52,13 @@ const Footer: React.FC = () => {
                         <a className='my-3 hover:text-skin-main transition-all'>FAQ</a>
                     </Link>
                     <div className='text-skin-main flex justify-between my-3'>
-                        <a href="https://twitter.com/by_clueless" target="_blank">
+                        <a href="https://twitter.com/by_clueless" target="_blank" rel="noreferrer">
                             <TwitterIcon className='text-3xl cursor-pointer hover:text-skin-hoverBlue hover:scale-110 transition-all' />
                         </a>
-                        <a href="https://github.com/Clueless-Community" target="_blank">
+                        <a href="https://github.com/Clueless-Community" target="_blank" rel="noreferrer">
                             <GitHubIcon className='text-3xl cursor-pointer hover:text-skin-hoverBlue hover:scale-110 transition-all' />
                         </a>
-                        <a href="https://www.linkedin.com/company/clueless-tech" target="_blank">
+                        <a href="https://www.linkedin.com/company/clueless-tech" target="_blank" rel="noreferrer">
                             <LinkedInIcon className='text-3xl cursor-pointer hover:text-skin-hoverBlue hover:scale-110 transition-all' />
                         </a>
                     </div>

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react'
 
 const Icons = [...Array(8)].map((_, i) => `/icons/icon${i + 1}.svg`)

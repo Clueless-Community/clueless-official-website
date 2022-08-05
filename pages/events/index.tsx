@@ -7,7 +7,7 @@ import Navbar from '../components/shared/Navbar/Navbar';
 import UpcomingEventCard from '../components/Home/Events/UpcomingEventCard';
 
 
-const index = () => {
+const Events = () => {
 
 
     const [eventData, seteventData] = React.useState<any[]>([])
@@ -39,7 +39,7 @@ const index = () => {
                 <h1 className='text-4xl text-center py-8 font-semibold' >Upcoming Events </h1>
                 <div className='space-y-4'>
                     {eventData.length > 0 && eventData.map((data, i) => {
-                        return <UpcomingEventCard eventposter={data.event_icon_image} heading={data.event_name} venue={data.venue_name} Time={data.time_period} instructorOrspeaker={data.speakers_info}
+                        return <UpcomingEventCard key={i} eventposter={data.event_icon_image} heading={data.event_name} venue={data.venue_name} Time={data.time_period} instructorOrspeaker={data.speakers_info}
                             attractions="Win T-shirts, swags and free food. 🚀 " agenda={data.agenda} />
                     })}
                 </div>
@@ -59,4 +59,4 @@ const index = () => {
     )
 }
 
-export default index
+export default Events

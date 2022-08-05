@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Head from "next/head";
 import Link from "next/link";
 import Navbar from "./components/shared/Navbar/Navbar";
@@ -19,7 +20,7 @@ const NotFound: React.FC = () => {
           />
         </div>
         <div className="flex justify-center">
-          <Link href="/">
+          <Link href="/" passHref>
             <button className="flex justify-center btn-blue mt-5 items-center mx-auto lg:mx-0 text-2xl ">
               Go To Home
             </button>
