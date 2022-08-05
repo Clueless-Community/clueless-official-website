@@ -112,7 +112,7 @@ const ProfileAdmin: React.FC<Props> = ({userData}) => {
                                 <div className='h-1 w-28 bg-black ml-20 opacity-80'></div>
                                 {userData.techstack ? (
                                     <div className='flex gap-4 flex-wrap mt-5'>
-                                        {user?.techstack.map((teckStack: ITechStack, i : number) => {
+                                        {user?.techstack?.map((teckStack: ITechStack, i : number) => {
                                             return (
                                                 <StyledChip text={teckStack.name} size='md' rounded='md' key={i} />
                                             )
@@ -132,7 +132,7 @@ const ProfileAdmin: React.FC<Props> = ({userData}) => {
                                 <div className='h-1 w-20 bg-black ml-16 opacity-80'></div>
                                 {projects ? (
                                     <>
-                                        {projects.map((project: IProjectUser, i : number) => {
+                                        {projects?.map((project: IProjectUser, i : number) => {
                                             return (
                                                 <div className='my-10' key={i}>
                                                     <ProjectsCardAdmin
