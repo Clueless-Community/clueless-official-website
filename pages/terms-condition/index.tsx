@@ -1,9 +1,10 @@
+/* eslint-disable react/no-unescaped-entities */
 import React from 'react'
 import Footer from '../components/shared/Footer'
 import Navbar from '../components/shared/Navbar/Navbar'
 import Head from 'next/head'
 
-const index = () => {
+const TermsAndCondition = () => {
     return (
         <div>
             <Head>
@@ -44,4 +45,4 @@ const index = () => {
     )
 }
 
-export default index
+export default TermsAndCondition

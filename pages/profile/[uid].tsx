@@ -97,9 +97,9 @@ const Profile: React.FC = () => {
                         <div className='h-1 w-28 bg-black ml-20 opacity-80'></div>
                         {user?.techstack ? (
                             <div className='flex gap-4 flex-wrap mt-5'>
-                                {user?.techstack.map((teckStack: ITechStack) => {
+                                {user?.techstack.map((teckStack: ITechStack, i : number) => {
                                     return (
-                                        <StyledChip text={teckStack.name} size='md' rounded='md' />
+                                        <StyledChip text={teckStack.name} size='md' rounded='md' key={i}/>
                                     )
                                 })}
                             </div>
@@ -112,9 +112,9 @@ const Profile: React.FC = () => {
                         <div className='h-1 w-20 bg-black ml-16 opacity-80'></div>
                         {projects?.length !== 0 ? (
                             <>
-                                {projects?.map((project: IProjectUser) => {
+                                {projects?.map((project: IProjectUser, i : number) => {
                                     return (
-                                        <div className='my-10'>
+                                        <div className='my-10' key={i}>
                                             <ProjectsCard
                                                 projectName={project.project_name}
                                                 projectImage={project.project_image}

@@ -10,7 +10,7 @@ import { db } from '../../../../lib/clientApp'
 import Navbar from '../../../components/shared/Navbar/Navbar'
 import TechStackAutoComplete from '../../../components/shared/TechStackAutoComplete'
 
-const editProfile = () => {
+const EditProfile = () => {
     const [collegeName, setcollegeName] = React.useState<string>("")
     // const [graduationYear, setgraduationYear] = React.useState<number | null>()
     const [bio, setbio] = React.useState<string>("")
@@ -260,7 +260,7 @@ const editProfile = () => {
                                                     </button>
                                                 </div>
                                                 <div className='space-x-4 mt-12'>
-                                                    <Link href={'/profile/admin/[uid]'} as={`/profile/admin/${userId}`}>
+                                                    <Link href={'/profile/admin/[uid]'} as={`/profile/admin/${userId}`} passHref>
                                                         <button className="btn-blue">
                                                             Back to Profile
                                                         </button>
@@ -295,4 +295,4 @@ const editProfile = () => {
     )
 }
 
-export default editProfile
+export default EditProfile

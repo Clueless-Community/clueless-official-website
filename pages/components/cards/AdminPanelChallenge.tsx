@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import StarIcon from "@mui/icons-material/Star";

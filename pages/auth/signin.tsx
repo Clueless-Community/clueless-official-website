@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import GitHubIcon from "@mui/icons-material/GitHub";
@@ -49,7 +50,7 @@ const signin: React.FC = ({ providers }: any) => {
                   </div>
                 </button>
               </div>
-              <Link href="/">
+              <Link href="/" passHref>
                 <p className=" text-center text-skin-main font-semibold hover:underline cursor-pointer mt-10"><p className="flex items-center justify-center"><KeyboardArrowLeftIcon />Go back Home</p></p>
               </Link>
             </div>

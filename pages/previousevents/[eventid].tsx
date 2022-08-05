@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Link from 'next/link'
 import React from 'react'
 import { AiFillLinkedin, AiOutlineGithub, AiOutlineTwitter } from 'react-icons/ai'
@@ -10,10 +11,10 @@ const dynamicupcomig = () => {
     return (
         <div>
             <Navbar />
-            <img src='/banner.png' />
+            <img src='/banner.png' alt='' />
             <div className='flex flex-col justify-center xl:px-24 px-8 xl:-mt-20 my-20 space-y-8 xl:space-y-0'>
                 <div className='w-full flex justify-between items-start space-x-4'>
-                    <img src='/eventbanner.png' className='xl:w-56 w-36' />
+                    <img src='/eventbanner.png' className='xl:w-56 w-36' alt='' />
                     <button className='bg-[#949CAB] font-semibold text-white px-4 py-3 rounded-md text-lg xl:hidden'>
                         Event Ended
                     </button>
@@ -38,7 +39,7 @@ const dynamicupcomig = () => {
                             <h1 className='xl:text-3xl text-2xl font-semibold text-skin-main'>Instructor / speaker </h1>
                             <div className='flex items-center max-w-fit flex-wrap'>
                                 <section className='flex justify-start space-x-4  mr-4 xl:mr-0'>
-                                    <img src='/profilePic.png' className='xl:w-28 w-20 rounded-full border-dashed border-2 border-zinc-400 xl:mr-8 mr-2 xl:mb-8 mb-4' />
+                                    <img alt='' src='/profilePic.png' className='xl:w-28 w-20 rounded-full border-dashed border-2 border-zinc-400 xl:mr-8 mr-2 xl:mb-8 mb-4' />
                                     <div className='flex flex-col items-start justify-center space-y-2'>
                                         <h1 className='xl:text-xl text-lg'>Roshan Kumar</h1>
                                         <div className='flex justify-center space-x-2 child:text-[#7D7D7D] child:text-3xl'>
@@ -49,7 +50,7 @@ const dynamicupcomig = () => {
                                     </div>
                                 </section>
                                 <section className='flex justify-start space-x-4 mr-4 xl:mr-0'>
-                                    <img src='/profilePic.png' className='xl:w-28 w-20 rounded-full border-dashed border-2 border-zinc-400 xl:mr-8 mr-2 xl:mb-8 mb-4' />
+                                    <img alt='' src='/profilePic.png' className='xl:w-28 w-20 rounded-full border-dashed border-2 border-zinc-400 xl:mr-8 mr-2 xl:mb-8 mb-4' />
                                     <div className='flex flex-col items-start justify-center space-y-2'>
                                         <h1 className='xl:text-xl text-lg'>Roshan Kumar</h1>
                                         <div className='flex justify-center space-x-2 child:text-[#7D7D7D] child:text-3xl'>
@@ -60,7 +61,7 @@ const dynamicupcomig = () => {
                                     </div>
                                 </section>
                                 <section className='flex justify-start space-x-4  mr-4 xl:mr-0'>
-                                    <img src='/profilePic.png' className='xl:w-28 w-20 rounded-full border-dashed border-2 border-zinc-400 xl:mr-8 mr-2 xl:mb-8 mb-4' />
+                                    <img alt='' src='/profilePic.png' className='xl:w-28 w-20 rounded-full border-dashed border-2 border-zinc-400 xl:mr-8 mr-2 xl:mb-8 mb-4' />
                                     <div className='flex flex-col items-start justify-center space-y-2'>
                                         <h1 className='xl:text-xl text-lg'>Roshan Kumar</h1>
                                         <div className='flex justify-center space-x-2 child:text-[#7D7D7D] child:text-3xl'>
@@ -94,7 +95,7 @@ const dynamicupcomig = () => {
                             <h1 className='text-3xl font-semibold'>Event Winners</h1>
                             <div className='flex flex-start space-x-2 xl:space-x-8'>
                                 {eventData[0]?.eventWinners?.map((image, i) => {
-                                    return <img src={image} className="rounded-full w-16 xl:w-32 h-16 xl:h-32 border-2 border-dashed border-[#949CAB]" />
+                                    return <img src={image} className="rounded-full w-16 xl:w-32 h-16 xl:h-32 border-2 border-dashed border-[#949CAB]" key={i} alt='' />
                                 })}
                             </div>
                         </div>

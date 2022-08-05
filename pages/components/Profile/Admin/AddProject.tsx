@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';

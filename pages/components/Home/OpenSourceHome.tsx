@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { Icon } from '@mui/material'
 import React from 'react'
 import ChallengeCardActive from '../cards/ChallengeCardActive'
