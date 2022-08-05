@@ -8,30 +8,24 @@ import UpcomingEventCard from '../components/Home/Events/UpcomingEventCard';
 
 
 const Events = () => {
-
-
     const [eventData, seteventData] = React.useState<any[]>([])
 
-    const getEventData = async () => {
+    const getEventData = React.useCallback( async () => {
         const data: ((prevState: never[]) => never[]) | { id: string; }[] = []
         getDocs(collection(db, 'events')).then((snapshot) => {
             snapshot.docs.map((doc) => {
                 data?.push({ ...doc.data(), id: doc.id })
             })
-            console.log(eventData);
             seteventData(data)
 
         }).catch((err) => {
             console.log(err);
         })
-    }
+    }, [])
 
     React.useEffect(() => {
         getEventData()
-    }, [])
-
-    console.log(eventData);
-
+    }, [getEventData])
 
     return (
         <div>
