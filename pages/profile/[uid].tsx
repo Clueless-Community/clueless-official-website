@@ -15,7 +15,6 @@ import { CircularProgress } from '@mui/material'
 const Profile: React.FC = () => {
 
     const router = useRouter();
-
     const { data: session } = useSession();
     const userId = session?.user?.id;
 
