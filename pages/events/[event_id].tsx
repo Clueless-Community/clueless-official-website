@@ -43,7 +43,7 @@ const EventDetails: React.FC = () => {
     return (
         event ? <div>
             <Navbar />
-            <img src={event.event_banner_image} className="w-full h-[150px] md:h-[250px] xl:h-[410px] object-cover absolute" />
+            <img src={event.event_banner_image} className="w-full h-[150px] md:h-[250px] xl:h-[380px] object-cover absolute" />
             <div className="relative z-1 top-10 md:top-20 xl:top-52">
                 <div className='flex flex-col justify-center xl:px-24 px-8 my-20 space-y-8 xl:space-y-3'>
                     <div className='w-full flex justify-between items-start space-x-4'>
