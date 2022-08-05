@@ -1,4 +1,6 @@
 /* eslint-disable react/jsx-key */
+// @ts-nocheck
+
 import React from 'react'
 import { TextField, Autocomplete, Chip } from "@mui/material";
 import { ITechStack } from '../../../interfaces/user';
@@ -24,7 +26,7 @@ const TechStackAutoComplete: React.FC<Props> = ({ projectTechStacks, setProjectT
         <Autocomplete
             multiple
             value={projectTechStacks}
-            // defaultValue={defaultValue}
+            defaultValue={defaultValue as ITechStack[]}
             id="arrival-date"
             getOptionLabel={option => option.name}
             options={techstack}

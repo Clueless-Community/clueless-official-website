@@ -4,7 +4,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import { Close } from "@mui/icons-material";
-import { TextField } from "@mui/material";
+import { TextField, Snackbar, Alert } from "@mui/material";
 import TechStackAutoComplete from "../../shared/TechStackAutoComplete"
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import { theme } from '../../../../styles/theme'
@@ -123,6 +123,18 @@ const AddProject: React.FC<Props> = ({ handleProjectFetch }) => {
         );
     }
 
+    //Snackbar Settings
+    const [open, setOpen] = React.useState(false);
+
+    const handleCloseSnackBar = (event?: React.SyntheticEvent | Event, reason?: string) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+
+        setOpen(false);
+    };
+
+
     const handleUpload = async () => {
         if (uid) {
             await handleImageUpload();
@@ -220,13 +232,18 @@ const AddProject: React.FC<Props> = ({ handleProjectFetch }) => {
                     </Box>
                     {validateProject() ? (
                         <button className='btn-blue bg-gray-300 hover:bg-gray-300 mt-5 float-right px-6 py-2 shadow-blue-600' disabled >Save</button>
-                        ) : (
-                        <button className='btn-blue mt-5 float-right px-6 py-2 shadow-blue-600' onClick={async () => { await handleUpload(); handleClose(); await handleProjectFetch(); }}>Save</button>
+                    ) : (
+                        <button className='btn-blue mt-5 float-right px-6 py-2 shadow-blue-600' onClick={async () => { await handleUpload(); handleClose(); await handleProjectFetch(); setOpen(true);}}>Save</button>
                     )}
 
                     <button className='btn-red mt-5 float-right px-6 py-2 shadow-red-600 mr-5' onClick={handleClose}>Discard</button>
                 </Box>
             </Modal>
+            <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+                <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+                    Yay🎉! Your project is added.
+                </Alert>
+            </Snackbar>
         </>
     );
 };
