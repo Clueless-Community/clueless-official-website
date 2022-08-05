@@ -16,7 +16,7 @@ const techstack = [
 interface Props {
     projectTechStacks: ITechStack[],
     setProjectTechStacks: React.Dispatch<React.SetStateAction<ITechStack[]>>
-    defaultValue ? :  ITechStack[]
+    defaultValue :  ITechStack[]
 }
 
 const TechStackAutoComplete: React.FC<Props> = ({ projectTechStacks, setProjectTechStacks, defaultValue }) => {
@@ -24,6 +24,7 @@ const TechStackAutoComplete: React.FC<Props> = ({ projectTechStacks, setProjectT
         <Autocomplete
             multiple
             value={projectTechStacks}
+            // defaultValue={defaultValue}
             id="arrival-date"
             getOptionLabel={option => option.name}
             options={techstack}

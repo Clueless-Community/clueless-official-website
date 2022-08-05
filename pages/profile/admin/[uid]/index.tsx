@@ -50,7 +50,6 @@ const ProfileAdmin: React.FC = () => {
     React.useEffect(() => {
         if (!router.isReady) return;
         fetchUser();
-        handleProjectFetch();
     }, [fetchUser, handleProjectFetch, router.isReady])
 
     React.useEffect(() => {

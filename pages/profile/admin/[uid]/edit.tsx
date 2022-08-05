@@ -41,7 +41,7 @@ const EditProfile = () => {
         })
     }
 
-    const fetchUser = async () => {
+    const fetchUser = React.useCallback(async () => {
         const { uid } = router.query;
         const userRef = doc(db, 'users', uid as string);
         const userSnap = await getDoc(userRef);
@@ -51,31 +51,28 @@ const EditProfile = () => {
         } else {
             router.push(`/404`);
         }
-    }
+    }, [router])
 
-    const getUserData = async () => {
-        await fetchUser();
-    }
-
+    
     React.useEffect(() => {
         if (!router.isReady) return;
-        getUserData();
-    }, [router.isReady]);
+        fetchUser();
+    }, [fetchUser, router.isReady]);
 
     React.useEffect(() => {
         if (user) {
             if (user.uid === userId) {
-                setcollegeName(user?.college as string);
-                setbio(user?.about as string);
-                setTechStacks(user?.techstack as ITechStack[]);
-                settwitterURL(user?.twitter_link as string);
-                setlinkedInURL(user?.linkedIn_link as string);
-                setgitHubURL(user?.github_link as string);
+                setcollegeName(user?.college ? user.college : '');
+                setbio(user?.about ? user.about :  '');
+                setTechStacks(user?.techstack ? user.techstack : []);
+                settwitterURL(user?.twitter_link ? user.twitter_link : '');
+                setlinkedInURL(user?.linkedIn_link ? user.linkedIn_link : '');
+                setgitHubURL(user?.github_link ? user.github_link : '');
             } else {
                 router.push(`/profile/${user.uid}`);
             }
         }
-    }, [user]);
+    }, [router, user, userId]);
 
     //Snack Bars Settings
 
@@ -163,7 +160,7 @@ const EditProfile = () => {
                                                         <TechStackAutoComplete
                                                             projectTechStacks={techStacks as { name: string; }[]}
                                                             setProjectTechStacks={setTechStacks as Dispatch<SetStateAction<{ name: string; }[]>>}
-                                                            defaultValue={user.techstack}
+                                                            defaultValue={user?.techstack as ITechStack[]}
                                                         />
                                                     </div>
                                                 </div>
