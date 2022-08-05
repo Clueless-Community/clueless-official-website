@@ -12,7 +12,7 @@ import { db } from '../../lib/clientApp'
 import { IEvent } from '../../interfaces/event-interface'
 
 
-const dynamicupcomig: React.FC = () => {
+const EventDetails: React.FC = () => {
     const router = useRouter();
 
     const { data: session } = useSession();
@@ -81,8 +81,8 @@ const dynamicupcomig: React.FC = () => {
                             <div className='space-y-4'>
                                 <h1 className='xl:text-3xl text-2xl font-semibold text-skin-main'>Instructor / speaker </h1>
                                 <div className='flex justify-start max-w-fit flex-wrap'>
-                                    {event.speakers_info.map((speaker: any) => {
-                                        return <section className='flex justify-start space-x-4'>
+                                    {event.speakers_info.map((speaker: any, i: number) => {
+                                        return <section className='flex justify-start space-x-4' key={i}>
                                             <img src={speaker.image} className='xl:w-28 w-20 rounded-full border-dashed border-2 border-[#1955CA] m-auto' />
                                             <div className='flex flex-col items-start justify-center space-y-2'>
                                                 <h1 className='xl:text-xl text-lg'>{speaker.name}</h1>
@@ -125,4 +125,4 @@ const dynamicupcomig: React.FC = () => {
     )
 }
 
-export default dynamicupcomig
+export default EventDetails
