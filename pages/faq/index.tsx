@@ -132,7 +132,7 @@ const Faq: NextPage = () => {
 
           <div className="my-6 flex items-center">
             <h2 className="text-lg font-semibold mr-3">Have Questions other than this?</h2>
-            <Link href="/contact-us">
+            <Link href="/contact-us" passHref>
             <button className=" btn-blue">Contact</button>
             </Link>
           </div>

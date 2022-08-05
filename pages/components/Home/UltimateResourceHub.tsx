@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import StorageIcon from '@mui/icons-material/Storage';
@@ -25,7 +26,7 @@ const UltimateResourceHub: React.FC = () => {
             <p className="text-gray-200 mt-8">
             Internet is flooded with so many resources that can make one confused and clueless. So we, the Clueless Community provide the best, filtered, and curated resources like YouTube videos, GitHub repositories, websites, cheatsheets, etc! 
             </p>
-            <a href="https://clueless-resources.super.site/resources" target="_blank">
+            <a href="https://clueless-resources.super.site/resources" target="_blank" rel="noreferrer">
               <button className="btn-blue bg-white text-black hover:bg-gray-100 mt-10 flex items-center mx-auto lg:mx-0">
               <StorageIcon className="mr-2 text-md"/>Explore
               </button>

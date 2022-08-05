@@ -1,5 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
 // 👇️ ts-nocheck disables type checking for entire file
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 
 import { FormControl, InputLabel, MenuItem, OutlinedInput, Select, SelectChangeEvent, TextField } from '@mui/material'
@@ -9,7 +9,7 @@ import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import Head from 'next/head';
 
-const editEvents = () => {
+const EditEvents = () => {
     const [selectedFileBannerImage, setSelectedFileBannerImage] = useState("");
     const [selectedFileIconImage, setSelectedFileIconImage] = useState("");
     const [mediaBannerImage, setMediaBannerImage] = useState("");
@@ -248,7 +248,7 @@ const editEvents = () => {
                                         {
                                             inputListSpeakers.map((item, i) => {
                                                 return (
-                                                    <div className="">
+                                                    <div className="" key={i}>
                                                         <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2" key={i}>
                                                             <div className="w-full">
 
@@ -391,7 +391,7 @@ const editEvents = () => {
                         </div>
                         <div className="w-full col-span-1 hidden md:block h-full">
                             {/* Image */}
-                            <img src="/edit-events.png" className="ml-auto w-[341px]" />
+                            <img src="/edit-events.png" className="ml-auto w-[341px]" alt='event-edit'/>
                         </div>
 
                     </div>
@@ -402,4 +402,4 @@ const editEvents = () => {
     )
 }
 
-export default editEvents
+export default EditEvents

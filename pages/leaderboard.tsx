@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react'
 import Navbar from './components/shared/Navbar/Navbar'
 import leaderboardData from '../dummyLeaderboardData'
@@ -22,7 +23,7 @@ const leaderboard = () => {
                             return (
                                 <tr className={`${i % 2 === 0 && 'bg-[#1954ca33]'} rounded-md`} key={i}>
                                     <td className={`my-2 pl-2 xl:rounded-tl-md rounded-tl-sm xl:rounded-bl-md rounded-bl-sm font-semibold`}>{i + 1}.</td>
-                                    <td className={`my-2 flex justify-start items-center xl:space-x-4 space-x-2 w-full`}><img src={data.image} className='w-16 rounded-full border-dashed border-2 border-blue-400' /><span>{data.name}</span></td>
+                                    <td className={`my-2 flex justify-start items-center xl:space-x-4 space-x-2 w-full`}><img src={data.image} className='w-16 rounded-full border-dashed border-2 border-blue-400' alt=''/><span>{data.name}</span></td>
                                     <td className='my-2 pr-2 xl:rounded-tr-md rounded-tr-sm xl:rounded-br-md rounded-br-sm w-fit'><div className='flex justify-start items-center space-x-2'><img src="/leaderboardlogo.png" alt='leaderboardLogo' className='w-8' /><span className='float-left'>{data.points}</span></div></td>
                                 </tr>)
                         })}

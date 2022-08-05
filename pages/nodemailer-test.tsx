@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSession } from 'next-auth/react'
 
-const nodemailerTest = () => {
+const NodemailerTest = () => {
     const { data: session } = useSession();
 
     const testNodeMailer = async () => {
@@ -25,4 +25,4 @@ const nodemailerTest = () => {
     )
 }
 
-export default nodemailerTest
+export default NodemailerTest

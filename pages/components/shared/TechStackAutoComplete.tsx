@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 import React from 'react'
 import { TextField, Autocomplete, Chip } from "@mui/material";
 
@@ -37,7 +38,7 @@ const TechStackAutoComplete: React.FC<Props> = ({ projectTechStacks, setProjectT
                 setProjectTechStacks(newValue as any)
             }}
             renderTags={(tagValue, getTagProps) =>
-                tagValue.map((option, index) => (
+                tagValue.map((option, index : number) => (
                     <Chip
                         color="primary"
                         label={option.name}

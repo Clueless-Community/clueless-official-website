@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react'
 import RightImage from './RightImage'
 import { SvgButton } from '../../../styles/Mui-styles/HoverFillButton'
@@ -16,7 +17,7 @@ const HomeMain = () => {
                 <h2 className=' font-raleway text-skin-main mt-5 text-4xl mb-16 '>Learn.<span className='text-gray-900'>Grow.</span></h2>
                 <div className='flex flex-col sm:flex-row items-start'>
                     {session.status === "unauthenticated" && (
-                        <Link href="/auth/signin">
+                        <Link href="/auth/signin" passHref>
                             <button className='btn-blue text-xl flex items-center px-6 py-3 shadow-blue-600'>Become a Member</button>
                         </Link>
                     )}
@@ -25,7 +26,7 @@ const HomeMain = () => {
                     )}
                     <div>
                     </div>
-                    <a href="https://discord.gg/zrVMjGW8sB" target="_blank">
+                    <a href="https://discord.gg/zrVMjGW8sB" target="_blank" rel="noreferrer">
                         <SvgButton className='sm:ml-10 mt-5 sm:mt-0 max-w-fit'><FaDiscord className='text-3xl text-[#1955CA]' /> <span className=' font-nunito font-bold'>Join Discord</span> </SvgButton>
                     </a>
                 </div>

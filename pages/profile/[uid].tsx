@@ -44,7 +44,7 @@ const Profile: React.FC<Props> = ({userData}) => {
         }
     }
 
-    const handleProjectFetch = async () => {
+    const handleProjectFetch =  React.useCallback( async () => {
         setProjects([])
         const { uid } = router.query;
         const projectQuery = query(collection(db, `users/${uid}/projects`));
@@ -54,13 +54,12 @@ const Profile: React.FC<Props> = ({userData}) => {
                 return [{ project_id: doc.id, ...doc.data() }, ...prev]
             })
         })
-    }
+    }, [router.query])
 
     React.useEffect(() => {
         if (!router.isReady) return;
-        fetchUser();
         handleProjectFetch();
-    }, [router.isReady])
+    }, [handleProjectFetch, router.isReady])
 
 
     return (

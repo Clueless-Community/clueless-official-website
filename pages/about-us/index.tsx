@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Head from 'next/head'
 import React from 'react'
 import Navbar from '../components/shared/Navbar/Navbar'
@@ -47,9 +48,9 @@ const aboutUs = () => {
         <img src="./side-lines-about-us.png" className=' absolute right-10 md:block hidden top-96' alt="side-lines-about-us" />
 
         <div className="flex flex-wrap w-10/12 mx-auto justify-center">
-          {profile.map((profiles) => {
+          {profile.map((profiles, i) => {
             return (
-              <div className='m-12'>
+              <div className='m-12' key={i}>
                 <ProfileCard
                   key={profiles.id}
                   img={profiles.img}

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { useState } from "react";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LocalPoliceIcon from "@mui/icons-material/LocalPolice";
@@ -93,7 +94,7 @@ const WhatIsClueLess: React.FC = () => {
               <p className="text-gray-200 mt-8">
               Clueless is a student community built with the vision to encourage development ! We provide the best resources, conducts contests, hackathons, workshops, sessions to test your skills, a guide to Open-source, and help you build projects.
               </p>
-              <Link href="/about-us">
+              <Link href="/about-us" passHref>
               <button className="btn-blue bg-white text-black hover:bg-gray-100 mt-10 flex items-center mx-auto lg:mx-0">
                 <ReadMoreIcon className="mr-2"/>Learn More
               </button>

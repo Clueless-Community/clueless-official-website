@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react'
 import { BsChevronDown } from 'react-icons/bs'
 import { AiFillLinkedin, AiOutlineGithub, AiOutlineTwitter } from 'react-icons/ai'
@@ -40,7 +41,7 @@ const UpcomingEventCard: React.FC<dataProps> = ({ eventposter, heading, venue, s
         <div className=' bg-[#c3c8d241] border-dashed border-2 border-opacity-30 border-black font-nunito xl:flex-row flex-col flex xl:p-8 p-4 rounded-xl relative space-y-2 xl:space-y-0'>
             <section className={`flex xl:justify-start xl:space-x-8 space-x-4  pb-4 xl:pb-0 w-full`}>
                 <div className='space-y-4'>
-                    <img src={eventposter} className="rounded-xl w-36 xl:w-fit" />
+                    <img src={eventposter} className="rounded-xl w-36 xl:w-fit" alt='' />
                     <div className={`rounded-full px-4 py-2 bg-[#1954ca36] text-center xl:text-xl text-lg font-semibold hidden xl:block `}>Participants : {participants}</div>
                 </div>
                 <div className='flex flex-col justify-center xl:justify-start space-y-16'>
@@ -65,7 +66,7 @@ const UpcomingEventCard: React.FC<dataProps> = ({ eventposter, heading, venue, s
                                 <h1 className='text-2xl font-semibold'>Event Winners</h1>
                                 <div className='flex flex-start space-x-2'>
                                     {winners?.map((image, i) => {
-                                        return <img src={image} className="rounded-full w-16 h-16" key={i} />
+                                        return <img src={image} className="rounded-full w-16 h-16" key={i} alt=""/>
                                     })}
                                 </div>
                             </div>
@@ -82,7 +83,7 @@ const UpcomingEventCard: React.FC<dataProps> = ({ eventposter, heading, venue, s
                 <h1 className='text-xl font-semibold'>Event Winners</h1>
                 <div className='flex flex-start space-x-2'>
                     {winners?.map((image, i) => {
-                        return <img src={image} className="rounded-full w-16 h-16" key={i} />
+                        return <img src={image} className="rounded-full w-16 h-16" key={i} alt="" />
                     })}
                 </div>
             </div>

@@ -26,9 +26,9 @@ const ProjectsCard: React.FC<Props> = ({ projectImage, projectName, projectDesc,
                         </a>
                         <div className='hidden lg:block'>
                             <div className='flex gap-2 xl:ml-10'>
-                                {techStacks?.map((teckStack: { 'name': string }) => {
+                                {techStacks?.map((teckStack: { 'name': string }, i) => {
                                     return (
-                                        <StyledChip text={teckStack.name} size="xs" rounded='2xl' />
+                                        <StyledChip text={teckStack.name} size="xs" rounded='2xl'  key={i}/>
                                     )
                                 })}
                             </div>
@@ -36,7 +36,7 @@ const ProjectsCard: React.FC<Props> = ({ projectImage, projectName, projectDesc,
                     </div>
                     <div className=' hidden lg:block '>
                         <p className='mt-5 font-semibold opacity-80'>{projectDesc}</p>
-                        <a href={gitHubLink} target="_blank">
+                        <a href={gitHubLink} target="_blank" rel="noreferrer">
                             <button className='btn-blue mt-5 flex items-center px-4 py-2 shadow-blue-600'>View Repo</button>
                         </a>
                     </div>
@@ -44,14 +44,14 @@ const ProjectsCard: React.FC<Props> = ({ projectImage, projectName, projectDesc,
             </div>
             <div className=' block lg:hidden '>
                 <Stack direction="row" spacing={2} className="mt-5" alignItems="center" sx={{ 'flexWrap': 'wrap' }}>
-                            {techStacks?.map((teckStack: { 'name': string }) => {
+                            {techStacks?.map((teckStack: { 'name': string }, i) => {
                                 return (
-                                    <StyledChip text={teckStack.name} size="xs" rounded='2xl' />
+                                    <StyledChip text={teckStack.name} size="xs" rounded='2xl' key={i} />
                                 )
                             })}
                 </Stack>
                 <p className='mt-5 font-semibold opacity-80'>{projectDesc}</p>
-                <a href={gitHubLink} target="_blank">
+                <a href={gitHubLink} target="_blank" rel="noreferrer">
                     <button className='btn-blue mt-5 flex items-center px-4 py-2 shadow-blue-600'>View Repo</button>
                 </a>
             </div>

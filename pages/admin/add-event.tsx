@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Head from "next/head";
 
 import {
@@ -16,7 +17,7 @@ import { addDoc, collection, doc, serverTimestamp, setDoc } from "firebase/fires
 import { db, storage } from "../../lib/clientApp";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 
-const addEvent = () => {
+const AddEvent: React.FC = () => {
 
     const [eventname, seteventname] = useState<string>("");
     const [selectedFileBannerImage, setSelectedFileBannerImage] = useState<string>("");
@@ -369,7 +370,7 @@ const addEvent = () => {
                                     {
                                         inputListSpeakers.map((item, i) => {
                                             return (
-                                                <div className="">
+                                                <div className="" key={i}>
                                                     <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2" key={i}>
                                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 w-full">
                                                             <div className="w-full col-span-1">
@@ -515,7 +516,7 @@ const addEvent = () => {
                                 {
                                     inputListAgenda.map((item, i) => {
                                         return (
-                                            <div className="">
+                                            <div className="" key={i}>
                                                 <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2" key={i}>
                                                     <div className="w-full">
 
@@ -586,7 +587,7 @@ const addEvent = () => {
                         </div>
                         <div className="w-full col-span-1 hidden md:block">
                             {/* Image */}
-                            <img src="/addEvent.png" className="ml-auto w-[341px]" />
+                            <img src="/addEvent.png" className="ml-auto w-[341px]" alt="event-png"/>
                         </div>
 
                     </div>
@@ -597,4 +598,4 @@ const addEvent = () => {
     );
 };
 
-export default addEvent;
+export default AddEvent;
