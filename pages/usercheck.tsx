@@ -30,7 +30,6 @@ const Usercheck = () => {
         if (userId) {
             const userRef = doc(db, "users", userId);
             const userDocSnap = await getDoc(userRef);
-            console.log(userDocSnap);
 
             if (userDocSnap.exists()) {
                 console.log("user exists");

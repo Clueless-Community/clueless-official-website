@@ -1,15 +1,16 @@
-import Link from 'next/link'
+/* eslint-disable @next/next/no-img-element */
 import React from 'react'
 import { AiFillLinkedin, AiOutlineGithub, AiOutlineTwitter } from 'react-icons/ai'
 import { GoPrimitiveDot } from 'react-icons/go'
 import Navbar from '../components/shared/Navbar/Navbar'
-import eventData from '../../dummyEventData'
 import Footer from '../components/shared/Footer'
 import { useRouter } from 'next/router'
 import { useSession } from 'next-auth/react'
-import { doc, getDoc, getDocs, query, collection } from 'firebase/firestore'
+import { doc, getDoc, serverTimestamp, setDoc } from 'firebase/firestore'
 import { db } from '../../lib/clientApp'
-import { IEvent } from '../../interfaces/event-interface'
+import { format } from 'date-fns'
+import { Alert, CircularProgress, Snackbar } from '@mui/material'
+
 
 
 const EventDetails: React.FC = () => {
@@ -17,37 +18,117 @@ const EventDetails: React.FC = () => {
 
     const { data: session } = useSession();
     const userId = session?.user?.id;
+    const { event_id } = router.query;
 
     const [event, setEvent] = React.useState<any | undefined>();
-    console.log(event);
+    const [isRegistered, setIsRegistered] = React.useState<boolean>(false);
+    const [date, setDate] = React.useState<string>('')
 
-
-    const fetchEvent = async () => {
-        const { event_id } = router.query;
+    const fetchEvent = React.useCallback(async () => {
         const eventRef = doc(db, 'events', event_id as string);
 
         const eventsnap = await getDoc(eventRef);
         if (eventsnap.exists()) {
             const data = eventsnap.data() as any;
             setEvent(data);
+            const formattedDated = format(new Date(data.date.seconds * 1000), 'do LLLLLL, yyyy');
+            setDate(formattedDated)
         } else {
             router.push(`/404`);
         }
-    }
+    }, [event_id, router])
+
+    console.log(event);
+
+    const checkIfRegistered = React.useCallback(async () => {
+        if (userId) {
+            const userRegistrationRef = doc(db, `events/${event_id}/registrations`, userId);
+            const userRegistrationSnap = await getDoc(userRegistrationRef);
+            if (userRegistrationSnap.exists()) {
+                console.log("You are already registered");
+                setIsRegistered(true)
+            } else {
+                setIsRegistered(false)
+            }
+        }
+    }, [event_id, userId]);
 
     React.useEffect(() => {
         if (!router.isReady) return;
         fetchEvent();
-    }, [router.isReady])
+        checkIfRegistered()
+    }, [checkIfRegistered, fetchEvent, router.isReady]);
+
+    const registrationMail = React.useCallback(async () => {
+        if (event) {
+            await fetch('/api/mail/even-registration-mail', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json, text/plain, */*',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    id: userId,
+                    email: session?.user.email,
+                    registar_name: session?.user.name,
+                    venue: event.venue_name,
+                    time_period: event.time_period,
+                    event_name: event.event_name,
+                    ticket_no: `${event.event_id}-${userId}`,
+                    date: date,
+                })
+            })
+        }
+    }, [date, event, session?.user.email, session?.user.name, userId])
+
+    const handleRegistration = async () => {
+        if (userId) {
+            const registrationRef = doc(db, `events/${event_id}/registrations`, userId)
+            try {
+                await setDoc(registrationRef, {
+                    uid: userId,
+                    name: session?.user?.name,
+                    email: session?.user?.email,
+                    image: session?.user?.image,
+                    registration_time: serverTimestamp(),
+                })
+                console.log("Registered.");
+                setIsRegistered(true);
+                try {
+                    await registrationMail();
+                    console.log("Registration Mail Sent.");
+                } catch (e) {
+                    console.log(e)
+                }
+            } catch (e) {
+                console.log(e)
+            }
+        }
+    }
+
+    //Snack Bars Settings
+
+    const [open, setOpen] = React.useState(false);
+
+    const handleClose = (event?: React.SyntheticEvent | Event, reason?: string) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+
+        setOpen(false);
+    };
+
+
 
     return (
         event ? <div>
             <Navbar />
-            <img src={event.event_banner_image} className="w-full h-[150px] md:h-[250px] xl:h-[380px] object-cover absolute" />
+            <img src={event.event_banner_image} className="w-full h-[150px] md:h-[250px] xl:h-[410px] object-cover absolute" alt='' />
+
             <div className="relative z-1 top-10 md:top-20 xl:top-52">
                 <div className='flex flex-col justify-center xl:px-24 px-8 my-20 space-y-8 xl:space-y-3'>
                     <div className='w-full flex justify-between items-start space-x-4'>
-                        <img src={event.event_icon_image} className='w-28 md:w-36 xl:w-56 rounded-full' />
+                        <img src={event.event_icon_image} className='w-28 md:w-36 xl:w-56 rounded-full' alt='' />
                         {/* <button className='bg-skin-main font-semibold text-white px-4 py-3 rounded-md text-lg'>
                             Register
                         </button> */}
@@ -63,9 +144,15 @@ const EventDetails: React.FC = () => {
                                     </h1>
                                 </div>
                                 <div>
-                                    <button className='bg-skin-main font-semibold text-white px-4 py-3 rounded-md xl:text-xl text-lg'>
-                                        Register
-                                    </button>
+                                    {isRegistered ? (
+                                        <button className='bg-gray-400 font-semibold text-white px-4 py-3 rounded-md xl:text-xl text-lg' disabled>
+                                            Registered
+                                        </button>
+                                    ) : (
+                                        <button className='bg-skin-main font-semibold text-white px-4 py-3 rounded-md xl:text-xl text-lg' onClick={handleRegistration}>
+                                            Register
+                                        </button>
+                                    )}
                                 </div>
                             </div>
                             <div className={`text-xl xl:space-y-6 space-y-3`}>
@@ -75,7 +162,7 @@ const EventDetails: React.FC = () => {
                                 </div>
                                 <div className={`flex flex-col xl:flex-row xl:items-center xl:space-x-2 xl:w-fit w-full`}>
                                     <h1 className='font-semibold text-skin-main'>Date & Time :</h1>
-                                    <h1>{event.time_period}</h1>
+                                    <h1>{date} - {event.time_period}</h1>
                                 </div>
                             </div>
                             <div className='space-y-4'>
@@ -83,7 +170,7 @@ const EventDetails: React.FC = () => {
                                 <div className='flex justify-start max-w-fit flex-wrap'>
                                     {event.speakers_info.map((speaker: any, i: number) => {
                                         return <section className='flex justify-start space-x-4' key={i}>
-                                            <img src={speaker.image} className='xl:w-28 w-20 rounded-full border-dashed border-2 border-[#1955CA] m-auto' />
+                                            <img src={speaker.image} alt='' className='xl:w-28 w-20 rounded-full border-dashed border-2 border-[#1955CA] m-auto' />
                                             <div className='flex flex-col items-start justify-center space-y-2'>
                                                 <h1 className='xl:text-xl text-lg'>{speaker.name}</h1>
                                                 <div className='flex justify-center space-x-2 child:text-[#7D7D7D] child:text-3xl'>
@@ -94,10 +181,7 @@ const EventDetails: React.FC = () => {
                                             </div>
                                         </section>
                                     })}
-
-
                                 </div>
-
                             </div>
                             <div className='space-y-4'>
                                 <h1 className='text-3xl font-semibold'>Agenda</h1>
@@ -116,12 +200,21 @@ const EventDetails: React.FC = () => {
                                 </div>
                             </div>
                         </div>
+                        <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+                            <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+                                You are successfully registered for {event.name}! 🎉
+                            </Alert>
+                        </Snackbar>
 
                     </div>
                 </div>
                 <Footer />
             </div>
-        </div> : <></>
+        </div> : (
+            <div className='flex justify-center items-center h-screen'>
+                <CircularProgress />
+            </div>
+        )
     )
 }
 
