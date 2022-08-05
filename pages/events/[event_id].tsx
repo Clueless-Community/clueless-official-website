@@ -87,9 +87,9 @@ const EventDetails: React.FC = () => {
                                             <div className='flex flex-col items-start justify-center space-y-2'>
                                                 <h1 className='xl:text-xl text-lg'>{speaker.name}</h1>
                                                 <div className='flex justify-center space-x-2 child:text-[#7D7D7D] child:text-3xl'>
-                                                    {speaker.linkedinUrl && <a href={speaker.linkedinUrl} target="_blank"><AiFillLinkedin /></a>}
-                                                    {speaker.gitHubURL && <a href={speaker.gitHubURL} target="_blank"><AiOutlineGithub /></a>}
-                                                    {speaker.twitterURL && <a href={speaker.twitterURL} target="_blank"><AiOutlineTwitter /></a>}
+                                                    {speaker.linkedinUrl && <a href={speaker.linkedinUrl} target="_blank" rel="noreferrer"><AiFillLinkedin /></a>}
+                                                    {speaker.gitHubURL && <a href={speaker.gitHubURL} target="_blank" rel="noreferrer"><AiOutlineGithub /></a>}
+                                                    {speaker.twitterURL && <a href={speaker.twitterURL} target="_blank" rel="noreferrer"><AiOutlineTwitter /></a>}
                                                 </div>
                                             </div>
                                         </section>
