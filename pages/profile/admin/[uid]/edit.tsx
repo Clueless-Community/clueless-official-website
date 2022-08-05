@@ -53,7 +53,7 @@ const EditProfile = () => {
         }
     }, [router])
 
-    
+
     React.useEffect(() => {
         if (!router.isReady) return;
         fetchUser();
@@ -63,7 +63,7 @@ const EditProfile = () => {
         if (user) {
             if (user.uid === userId) {
                 setcollegeName(user?.college ? user.college : '');
-                setbio(user?.about ? user.about :  '');
+                setbio(user?.about ? user.about : '');
                 setTechStacks(user?.techstack ? user.techstack : []);
                 settwitterURL(user?.twitter_link ? user.twitter_link : '');
                 setlinkedInURL(user?.linkedIn_link ? user.linkedIn_link : '');
@@ -247,16 +247,16 @@ const EditProfile = () => {
                                                     </div> */}
                                                 </div>
                                             </div>
-                                            <div className='flex justify-between' >
+                                            <div className='flex md:justify-between flex-col md:flex-row ' >
                                                 <div className="space-x-4 mt-12 ">
                                                     <button className="btn-blue" onClick={async () => { await saveUser(); setOpen(true); }}>
                                                         Save
                                                     </button>
-                                                    <button className="btn-red">
+                                                    {/* <button className="btn-red">
                                                         Discard
-                                                    </button>
+                                                    </button> */}
                                                 </div>
-                                                <div className='space-x-4 mt-12'>
+                                                <div className='space-x-4 md:mt-12 mt-5'>
                                                     <Link href={'/profile/admin/[uid]'} as={`/profile/admin/${userId}`} passHref>
                                                         <button className="btn-blue">
                                                             Back to Profile
@@ -274,7 +274,6 @@ const EditProfile = () => {
                                 </div>
                             </div>
                         </>
-
                     ) : (
                         <div className='flex justify-center items-center h-screen'>
                             <CircularProgress />

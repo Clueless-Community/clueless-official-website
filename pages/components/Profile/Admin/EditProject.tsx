@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import EditIcon from '@mui/icons-material/Edit';
 import { Close } from "@mui/icons-material";
-import { TextField } from "@mui/material";
+import { TextField, Snackbar, Alert } from "@mui/material";
 import TechStackAutoComplete from "../../shared/TechStackAutoComplete"
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import { theme } from '../../../../styles/theme'
@@ -17,7 +17,7 @@ import { collection, doc, setDoc } from "firebase/firestore";
 
 
 interface Props {
-    projectId : string
+    projectId: string
     projectImage: string,
     projectName: string,
     publicLink?: string,
@@ -44,7 +44,7 @@ const style = {
     borderRadius: 3,
 };
 
-const EditProject: React.FC<Props> = ({projectId, projectName, projectImage, projectDesc, publicLink, gitHubLink, techStacks, handleProjectFetch }) => {
+const EditProject: React.FC<Props> = ({ projectId, projectName, projectImage, projectDesc, publicLink, gitHubLink, techStacks, handleProjectFetch }) => {
 
 
     const [editIsOpen, setEditIsOpen] = React.useState<boolean>(false);
@@ -122,7 +122,7 @@ const EditProject: React.FC<Props> = ({projectId, projectName, projectImage, pro
 
     const handleUpload = async () => {
         if (uid) {
-            if(projectImage !== projectImageNew){
+            if (projectImage !== projectImageNew) {
                 await handleImageUpload();
             }
             const projectRef = doc(db, `users/${uid}/projects`, projectId)
@@ -142,6 +142,17 @@ const EditProject: React.FC<Props> = ({projectId, projectName, projectImage, pro
         }
     }
 
+    //Snackbar Settings
+    const [open, setOpen] = React.useState(false);
+
+    const handleCloseSnackBar = (event?: React.SyntheticEvent | Event, reason?: string) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+        setOpen(false);
+    };
+
+
     return (
         <>
             <button className='ml-3 bg-blue-500 text-white p-1 hover:bg-blue-600 rounded-full w-9 h-9 flex items-center justify-center transition-all' onClick={handleOpen}><EditIcon /></button>
@@ -151,9 +162,11 @@ const EditProject: React.FC<Props> = ({projectId, projectName, projectImage, pro
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
                 closeAfterTransition
-                sx={{ [theme.breakpoints.down('md')]: {
-                    overflowY : 'scroll',
-                },}}
+                sx={{
+                    [theme.breakpoints.down('md')]: {
+                        overflowY: 'scroll',
+                    },
+                }}
             >
                 <Box sx={style} key={projectId}>
                     <Box sx={{
@@ -206,12 +219,17 @@ const EditProject: React.FC<Props> = ({projectId, projectName, projectImage, pro
                     </Box>
                     {validateProject() ? (
                         <button className='btn-blue bg-gray-300 hover:bg-gray-300 mt-5 float-right px-6 py-2 shadow-blue-600' disabled >Save</button>
-                        ) : (
-                        <button className='btn-blue mt-5 float-right px-6 py-2 shadow-blue-600' onClick={async () => { await handleUpload(); handleClose(); await handleProjectFetch(); }}>Save</button>
+                    ) : (
+                        <button className='btn-blue mt-5 float-right px-6 py-2 shadow-blue-600' onClick={async () => { await handleUpload(); handleClose(); await handleProjectFetch(); setOpen(true) }}>Save</button>
                     )}
                     <button className='btn-red mt-5 float-right px-6 py-2 shadow-red-600 mr-5' onClick={handleClose}>Discard</button>
                 </Box>
             </Modal>
+            <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+                <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+                   Your project is updated.😉
+                </Alert>
+            </Snackbar>
         </>
     );
 };
