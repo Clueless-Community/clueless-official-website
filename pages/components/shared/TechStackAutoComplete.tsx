@@ -43,7 +43,6 @@ const TechStackAutoComplete: React.FC<Props> = ({ projectTechStacks, setProjectT
             }
             renderInput={(params) => <TextField {...params} placeholder="Select TechStacks"
             />}
-        // sx={{ mt: 2.5 }}
         />
     )
 }
