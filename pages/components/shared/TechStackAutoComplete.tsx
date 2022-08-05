@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-key */
 import React from 'react'
 import { TextField, Autocomplete, Chip } from "@mui/material";
+import { ITechStack } from '../../../interfaces/user';
 
 const techstack = [
     { 'name': 'TypeScript' },
@@ -13,15 +14,9 @@ const techstack = [
 ]
 
 interface Props {
-    projectTechStacks: {
-        name: string;
-    }[],
-    setProjectTechStacks: React.Dispatch<React.SetStateAction<{
-        name: string;
-    }[]>>
-    defaultValue ? :  {
-        name: string;
-    }[]
+    projectTechStacks: ITechStack[],
+    setProjectTechStacks: React.Dispatch<React.SetStateAction<ITechStack[]>>
+    defaultValue ? :  ITechStack[]
 }
 
 const TechStackAutoComplete: React.FC<Props> = ({ projectTechStacks, setProjectTechStacks, defaultValue }) => {
@@ -29,7 +24,6 @@ const TechStackAutoComplete: React.FC<Props> = ({ projectTechStacks, setProjectT
         <Autocomplete
             multiple
             value={projectTechStacks}
-            defaultValue={defaultValue ? defaultValue : undefined}
             id="arrival-date"
             getOptionLabel={option => option.name}
             options={techstack}
