@@ -5,6 +5,7 @@ import Swag from '../components/events/Swag';
 import Footer from '../components/shared/Footer';
 import Navbar from '../components/shared/Navbar/Navbar';
 import UpcomingEventCard from '../components/Home/Events/UpcomingEventCard';
+import { CircularProgress } from '@mui/material';
 
 
 const Events = () => {
@@ -29,17 +30,21 @@ const Events = () => {
 
     return (
         <div>
-            <Navbar />
-            <Swag />
-            <div className='xl:my-20 my-4 md:mx-40 mx-4'>
-                <h1 className='text-4xl text-center py-8 font-semibold' >Upcoming Events </h1>
-                <div className='space-y-4'>
-                    {eventData.length > 0 && eventData.map((data, i) => {
-                        return <UpcomingEventCard key={i} eventposter={data.event_icon_image} heading={data.event_name} venue={data.venue_name} Time={data.time_period} instructorOrspeaker={data.speakers_info}
-                            attractions="Win T-shirts, swags and free food. 🚀 " agenda={data.agenda} eventId={data.id} />
-                    })}
-                </div>
-                {/* <div className=''>
+            {eventData.length > 0 ?
+                <div>
+                    <Navbar />
+                    <Swag />
+
+                    <div className='xl:my-20 my-4 md:mx-40 mx-4'>
+                        <h1 className='text-4xl text-center py-8 font-semibold' >Upcoming Events </h1>
+                        <div className='space-y-4'>
+                            {eventData.map((data, i) => {
+                                return <UpcomingEventCard key={i} eventposter={data.event_icon_image} heading={data.event_name} venue={data.venue_name} Time={data.time_period} instructorOrspeaker={data.speakers_info}
+                                    attractions="Win T-shirts, swags and free food. 🚀 " agenda={data.agenda} eventId={data.id} />
+                            })}
+                        </div>
+                    </div>
+                    {/* <div className=''>
                     <h1 className='text-4xl text-center py-8 font-semibold' >Previous Events </h1>
                     <div className=''>
                         {eventData.map((data, i) => {
@@ -49,7 +54,11 @@ const Events = () => {
                     </div>
                     <SvgButton className='max-w-fit mx-auto mt-10'><span className=' font-nunito font-bold'>Explore All</span> </SvgButton>
                 </div> */}
-            </div>
+                </div> : (
+                    <div className='flex justify-center items-center h-screen'>
+                        <CircularProgress />
+                    </div>
+                )}
             <Footer />
         </div>
     )

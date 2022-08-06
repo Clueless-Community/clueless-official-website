@@ -44,7 +44,7 @@ const Navbar: NextComponentType = () => {
             Resources
           </button>
         </a>
-        <Link href="/challenges-events" passHref>
+        <Link href="/events" passHref>
           <button className="hover:font-semibold hover:underline cursor-pointer xl:mx-8 mx-3 text-xl transition-all">
             Events
           </button>

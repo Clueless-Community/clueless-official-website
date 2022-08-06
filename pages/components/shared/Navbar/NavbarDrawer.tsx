@@ -59,7 +59,7 @@ const NavbarDrawer: React.FC<Props> = ({ img, name, email }) => {
           <div className=" flex flex-col my-10">
             <Link href="/" passHref>
               <div className="flex items-center cursor-pointer mx-auto">
-                <img src="/ClueLess Logo.png" alt="" className="w-[65px]"  />
+                <img src="/ClueLess Logo.png" alt="" className="w-[65px]" />
                 <h1 className=" font-raleway text-3xl ml-8">ClueLess</h1>
               </div>
             </Link>
@@ -92,14 +92,14 @@ const NavbarDrawer: React.FC<Props> = ({ img, name, email }) => {
               >
                 Resources
               </button>
-              </a>
+            </a>
             <div className="bg-gray-300 h-[1px] w-10/12 mx-auto mt-3"></div>
-            <Link href="/challenges-events" passHref>
+            <Link href="/events" passHref>
               <button
                 onClick={handleClose}
                 className="font-semibold text-xl mt-5"
               >
-              Events
+                Events
               </button>
             </Link>
             <div className="bg-gray-300 h-[1px] w-10/12 mx-auto mt-3"></div>
@@ -113,9 +113,9 @@ const NavbarDrawer: React.FC<Props> = ({ img, name, email }) => {
               Sign Out
             </button> */}
             <a href="https://discord.gg/zrVMjGW8sB" target="_blank" className="w-full mx-auto text-center" rel="noreferrer">
-            <button className="font-semibold text-xl mt-5 mx-auto">
-              Join Discord
-            </button>
+              <button className="font-semibold text-xl mt-5 mx-auto">
+                Join Discord
+              </button>
             </a>
           </div>
           {/* <div className="absolute bottom-5 left-5 flex items-center justify-center">
