@@ -239,8 +239,8 @@ const AddProject: React.FC<Props> = ({ handleProjectFetch }) => {
                     <button className='btn-red mt-5 float-right px-6 py-2 shadow-red-600 mr-5' onClick={handleClose}>Discard</button>
                 </Box>
             </Modal>
-            <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
-                <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+            <Snackbar open={open} autoHideDuration={6000} onClose={handleCloseSnackBar}>
+                <Alert onClose={handleCloseSnackBar} severity="success" sx={{ width: '100%' }}>
                     Yay🎉! Your project is added.
                 </Alert>
             </Snackbar>
