@@ -9,30 +9,24 @@ import { CircularProgress } from '@mui/material';
 
 
 const Events = () => {
-
-
     const [eventData, seteventData] = React.useState<any[]>([])
 
-    const getEventData = async () => {
+    const getEventData = React.useCallback( async () => {
         const data: ((prevState: never[]) => never[]) | { id: string; }[] = []
         getDocs(collection(db, 'events')).then((snapshot: { docs: any[]; }) => {
             snapshot.docs.map((doc) => {
                 data?.push({ ...doc.data(), id: doc.id })
             })
-            console.log(eventData);
             seteventData(data)
 
         }).catch((err: any) => {
             console.log(err);
         })
-    }
+    }, [])
 
     React.useEffect(() => {
         getEventData()
-    }, [])
-
-    console.log(eventData);
-
+    }, [getEventData])
 
     return (
         <div>
