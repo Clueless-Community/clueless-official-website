@@ -95,6 +95,7 @@ const AddEvent: React.FC = () => {
     const handleBannerImageUpload = async () => {
         const date = new Date();
         const bannerImageRef = ref(storage, `event/${date.getTime()}_bannerImage.jpg`);
+
         const uploadTask = mediaBannerImage && uploadBytesResumable(bannerImageRef, mediaBannerImage);
         uploadTask && uploadTask.on('state_changed',
             (snapshot: { bytesTransferred: number; totalBytes: number; state: any; }) => {
@@ -160,10 +161,7 @@ const AddEvent: React.FC = () => {
             () => {
                 getDownloadURL(uploadTask.snapshot.ref).then((downloadURLOnUpload) => {
                     console.log('File uploaded');
-                    console.log(downloadURLOnUpload);
                     setIconDownloadURL(downloadURLOnUpload);
-                    // console.log(IconDownloadURL);
-                    console.log("ICON UPDATED");
                 });
             }
         );
@@ -183,20 +181,23 @@ const AddEvent: React.FC = () => {
         setInputListAgenda([{ time: "", description: "", }])
         setInputListSpeakers([{ name: "", image: "", linkedinUrl: "", gitHubURL: "", twitterURL: "" }])
         setDate(new Date)
+        setattraction("")
     };
 
     // For adding Data in Firebase for Event 
     const addEvent = async () => {
         await handleBannerImageUpload();
+        console.log(BannerDownloadURL);
         await handleIconImageUpload();
+        console.log(IconDownloadURL);
         const eventIdtemp = eventname.toLowerCase().replace(' ', '-');
         const dateId = (new Date).getTime()
         const eventId = `${eventIdtemp}-${dateId}`
         try {
             await setDoc(doc(db, 'events', eventId), {
                 event_name: eventname,
-                event_banner_image: BannerDownloadURL,
-                event_icon_image: IconDownloadURL,
+                event_banner_image: selectedFileBannerImage,
+                event_icon_image: selectedFileIconImage,
                 venue_name: venuename,
                 speakers_info: inputListSpeakers,
                 date: date,
@@ -249,7 +250,7 @@ const AddEvent: React.FC = () => {
                             {/* Upload Banner Image Section */}
                             <div>
                                 <label className="block text-sm font-medium text-gray-700">
-                                    Add Event Cover Image:
+                                    Add Event Banner Image:
                                 </label>
                                 <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
                                     <div className="space-y-1 text-center">

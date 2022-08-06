@@ -73,9 +73,9 @@ const UpcomingEventCard: React.FC<dataProps> = ({ eventposter, heading, venue, T
                 })}
             </div>
             <div>
-                {session ? <Link href={`/events/[event_id]`} as={`/events/${eventId}`} passHref>
+                <Link href={`/events/[event_id]`} as={`/events/${eventId}`} passHref>
                     <button className='bg-skin-main px-4 xl:py-3 py-2 rounded-md text-white font-semibold xl:text-xl text-lg'>View</button>
-                </Link> : <SignInRequired />}
+                </Link>
 
             </div>
 
