@@ -4,16 +4,7 @@
 import React from 'react'
 import { TextField, Autocomplete, Chip } from "@mui/material";
 import { ITechStack } from '../../../interfaces/user';
-
-const techstack = [
-    { 'name': 'TypeScript' },
-    { 'name': 'React' },
-    { 'name': 'C' },
-    { 'name': 'C++' },
-    { 'name': 'Azure' },
-    { 'name': 'AWS' },
-    { 'name': " Google Cloud" }
-]
+import { techstack } from '../../../database/techstacks';
 
 interface Props {
     projectTechStacks: ITechStack[],
