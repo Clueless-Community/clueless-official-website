@@ -15,9 +15,6 @@ const Navbar: NextComponentType = () => {
   const image = session.data?.user.image;
   const uid = session.data?.user.id;
 
-  // console.log(session);
-
-
   return (
     <nav className="flex justify-between sm:px-36 px-5 py-5 items-center shadow-xl">
       <Link href="/" passHref>
