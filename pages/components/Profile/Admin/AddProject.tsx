@@ -233,7 +233,7 @@ const AddProject: React.FC<Props> = ({ handleProjectFetch }) => {
                     {validateProject() ? (
                         <button className='btn-blue bg-gray-300 hover:bg-gray-300 mt-5 float-right px-6 py-2 shadow-blue-600' disabled >Save</button>
                     ) : (
-                        <button className='btn-blue mt-5 float-right px-6 py-2 shadow-blue-600' onClick={async () => { await handleUpload(); handleClose(); await handleProjectFetch(); setOpen(true);}}>Save</button>
+                        <button className='btn-blue mt-5 float-right px-6 py-2 shadow-blue-600' onClick={async () => { await handleUpload(); handleClose(); await handleProjectFetch(); setOpen(true); }}>Save</button>
                     )}
 
                     <button className='btn-red mt-5 float-right px-6 py-2 shadow-red-600 mr-5' onClick={handleClose}>Discard</button>
