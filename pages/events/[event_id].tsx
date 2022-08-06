@@ -9,7 +9,23 @@ import { useSession } from 'next-auth/react'
 import { doc, getDoc, serverTimestamp, setDoc } from 'firebase/firestore'
 import { db } from '../../lib/clientApp'
 import { format } from 'date-fns'
-import { Alert, CircularProgress, Snackbar } from '@mui/material'
+import { Alert, Box, CircularProgress, Modal, Snackbar, Typography } from '@mui/material'
+import HttpsIcon from '@mui/icons-material/Https';
+import Link from 'next/link';
+
+
+const style = {
+    position: 'absolute' as 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 469,
+    height: 225,
+    bgcolor: 'background.paper',
+    boxShadow: 24,
+    p: 4,
+    borderRadius: 3,
+};
 
 
 
@@ -115,6 +131,10 @@ const EventDetails: React.FC = () => {
         setOpen(false);
     };
 
+    //Modal Settings
+    const [openModal, setOpenModal] = React.useState(false);
+    const handleOpenModal = () => setOpenModal(true);
+    const handleModalClose = () => setOpenModal(false);
 
 
     return (
@@ -125,9 +145,6 @@ const EventDetails: React.FC = () => {
                 <div className='flex flex-col justify-center xl:px-24 px-8 my-20 space-y-8 xl:space-y-3'>
                     <div className='w-full flex justify-between items-start space-x-4'>
                         <img src={event.event_icon_image} className='w-28 md:w-36 xl:w-56 rounded-full' alt='' />
-                        {/* <button className='bg-skin-main font-semibold text-white px-4 py-3 rounded-md text-lg'>
-                            Register
-                        </button> */}
                     </div>
                     <div className='xl:ml-60 ' >
                         <div className='xl:space-y-6 space-y-3 xl:-mt-12'>
@@ -139,17 +156,40 @@ const EventDetails: React.FC = () => {
                                         {event.event_name}
                                     </h1>
                                 </div>
-                                <div>
+                                {session ? <div>
                                     {isRegistered ? (
                                         <button className='bg-gray-400 font-semibold text-white px-4 py-3 rounded-md xl:text-xl text-lg' disabled>
                                             Registered
                                         </button>
                                     ) : (
-                                        <button className='bg-skin-main font-semibold text-white px-4 py-3 rounded-md xl:text-xl text-lg' onClick={handleRegistration}>
+                                        <button className='btn-blue' onClick={handleRegistration}>
                                             Register
                                         </button>
                                     )}
-                                </div>
+                                </div> : <div>
+                                    <button onClick={handleOpenModal} className='btn-blue'>Register</button>
+
+                                    <Modal
+                                        open={openModal}
+                                        onClose={handleModalClose}
+                                        aria-labelledby="modal-modal-title"
+                                        aria-describedby="modal-modal-description"
+                                    >
+                                        <Box sx={style}>
+                                            <Box className="w-full flex justify-center mb-2">
+                                                <HttpsIcon className="text-[#F24E1E] h-[45px] w-[45px] mx-auto" />
+                                            </Box>
+                                            <Typography id="modal-modal-title" variant="h6" component="h2" className='text-center font-nunito text-[24px]'>
+                                                Sign-In Required
+                                            </Typography>
+                                            <Link href="/auth/signin" passHref>
+                                                <Box className="w-full flex justify-center mt-4">
+                                                    <button className="btn-blue">Sign In</button>
+                                                </Box>
+                                            </Link>
+                                        </Box>
+                                    </Modal>
+                                </div>}
                             </div>
                             <div className={`text-xl xl:space-y-6 space-y-3`}>
                                 <div className={`flex flex-col xl:flex-row xl:space-x-2 xl:items-center`}>

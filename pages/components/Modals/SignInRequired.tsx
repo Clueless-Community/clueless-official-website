@@ -37,7 +37,7 @@ const SignInRequired = () => {
                     <Typography id="modal-modal-title" variant="h6" component="h2" className='text-center font-nunito text-[24px]'>
                         Sign-In Required
                     </Typography>
-                    <Link href="auth/signin" passHref>
+                    <Link href="/auth/signin" passHref>
                         <Box className="w-full flex justify-center mt-4">
                             <button className="btn-blue">Sign In</button>
                         </Box>

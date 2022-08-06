@@ -92,7 +92,7 @@ const dynamicupcomig = () => {
               </div>
             </div>
           </div>
-          <button className='bg-skin-main font-semibold text-white px-4 py-3 rounded-md xl:text-xl text-lg hidden xl:block'>
+          <button className='btn-blue hidden xl:block'>
             Register
           </button>
         </div>
