@@ -13,13 +13,13 @@ const Events = () => {
 
     const getEventData = React.useCallback( async () => {
         const data: ((prevState: never[]) => never[]) | { id: string; }[] = []
-        getDocs(collection(db, 'events')).then((snapshot) => {
+        getDocs(collection(db, 'events')).then((snapshot: { docs: any[]; }) => {
             snapshot.docs.map((doc) => {
                 data?.push({ ...doc.data(), id: doc.id })
             })
             seteventData(data)
 
-        }).catch((err) => {
+        }).catch((err: any) => {
             console.log(err);
         })
     }, [])

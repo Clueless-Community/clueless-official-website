@@ -94,6 +94,7 @@ const EventDetails: React.FC = () => {
                 console.log("Registered.");
                 setIsRegistered(true);
                 setOpen(true)
+
                 try {
                     await registrationMail();
                     console.log("Registration Mail Sent.");
@@ -198,6 +199,7 @@ const EventDetails: React.FC = () => {
                         <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
                             <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
                                 You are successfully registered for {event.event_name}! 🎉
+
                             </Alert>
                         </Snackbar>
 
