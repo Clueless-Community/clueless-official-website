@@ -16,6 +16,9 @@ import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
 import { addDoc, collection, doc, serverTimestamp, setDoc } from "firebase/firestore";
 import { db, storage } from "../../lib/clientApp";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
+import { useAdminLogIn } from "../../context/AdminLogInContext";
+import AdminLogIn from "../api/admin/logIn";
+import AdminLogInScreen from "../components/Admin/AdminLogInScreen";
 
 const AddEvent: React.FC = () => {
 
@@ -34,6 +37,8 @@ const AddEvent: React.FC = () => {
     const [date, setDate] = React.useState<Date | null>(
         new Date(),
     );
+
+    const { isAdmin } = useAdminLogIn()
 
 
     const handleAddClickAgenda = () => {
@@ -224,244 +229,354 @@ const AddEvent: React.FC = () => {
 
 
     return (
-        <>
-            <Head>
-                <title>Add Event</title>
-            </Head>
-            <Navbar />
-            <div className="mx-auto text-xl mt-11 mb-10 w-10/12">
-                <div className="space-y-4 ">
-                    <div className="flex flex-col items-start font-semibold mt-6">
-                        Add a New Event
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-3">
-                        <div className="space-y-2 col-span-1 md:col-span-2">
-                            <div>
-                                <TextField
-                                    id="outlined-textarea"
-                                    label="Event Name"
-                                    placeholder="Enter Event Name"
-                                    value={eventname}
-                                    multiline
-                                    fullWidth
-                                    onChange={e => seteventname(e.target.value)}
-                                />
-                            </div>
-                            {/* Upload Banner Image Section */}
-                            <div>
-                                <label className="block text-sm font-medium text-gray-700">
-                                    Add Event Banner Image:
-                                </label>
-                                <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
-                                    <div className="space-y-1 text-center">
+        <>{isAdmin ? (
+            <>
+                <Head>
+                    <title>Add Event</title>
+                </Head>
+                <Navbar />
+                <div className="mx-auto text-xl mt-11 mb-10 w-10/12">
+                    <div className="space-y-4 ">
+                        <div className="flex flex-col items-start font-semibold mt-6">
+                            Add a New Event
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-3">
+                            <div className="space-y-2 col-span-1 md:col-span-2">
+                                <div>
+                                    <TextField
+                                        id="outlined-textarea"
+                                        label="Event Name"
+                                        placeholder="Enter Event Name"
+                                        value={eventname}
+                                        multiline
+                                        fullWidth
+                                        onChange={e => seteventname(e.target.value)}
+                                    />
+                                </div>
+                                {/* Upload Banner Image Section */}
+                                <div>
+                                    <label className="block text-sm font-medium text-gray-700">
+                                        Add Event Cover Image:
+                                    </label>
+                                    <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
+                                        <div className="space-y-1 text-center">
 
-                                        {selectedFileBannerImage ? (<img src={selectedFileBannerImage} alt="" className="w-60 mx-auto my-3" />) : (
-                                            <svg
-                                                className="mx-auto h-12 w-12 text-gray-400"
-                                                stroke="currentColor"
-                                                fill="none"
-                                                viewBox="0 0 48 48"
-                                                aria-hidden="true"
-                                            >
-                                                <path
-                                                    d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02"
-                                                    strokeWidth={2}
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
+                                            {selectedFileBannerImage ? (<img src={selectedFileBannerImage} alt="" className="w-60 mx-auto my-3" />) : (
+                                                <svg
+                                                    className="mx-auto h-12 w-12 text-gray-400"
+                                                    stroke="currentColor"
+                                                    fill="none"
+                                                    viewBox="0 0 48 48"
+                                                    aria-hidden="true"
+                                                >
+                                                    <path
+                                                        d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02"
+                                                        strokeWidth={2}
+                                                        strokeLinecap="round"
+                                                        strokeLinejoin="round"
+                                                    />
+                                                </svg>
+                                            )}
+                                            <div className="flex text-sm text-gray-600">
+                                                <label
+                                                    htmlFor="file-uploadbanner"
+                                                    className="relative cursor-pointer bg-white rounded-md font-medium text-skin-darkBlue hover:text-skin-darkBlue  focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-bg-skin-lightBlue"
+                                                >
+                                                    <span className="hover:underline transition-all">
+                                                        Upload a photo
+                                                    </span>
+                                                </label>
+                                                <input
+                                                    id="file-uploadbanner"
+                                                    name="file-uploadbanner"
+                                                    type="file"
+                                                    className="sr-only"
+                                                    accept="image/*"
+                                                    onChange={(e) => {
+                                                        setMediaBannerImage(e?.target?.files![0] as File); addImageToPostBanner(e);
+                                                    }}
                                                 />
-                                            </svg>
-                                        )}
-                                        <div className="flex text-sm text-gray-600">
-                                            <label
-                                                htmlFor="file-uploadbanner"
-                                                className="relative cursor-pointer bg-white rounded-md font-medium text-skin-darkBlue hover:text-skin-darkBlue  focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-bg-skin-lightBlue"
-                                            >
-                                                <span className="hover:underline transition-all">
-                                                    Upload a photo
+
+                                                {/* Showing the Uploaded File name */}
+
+                                                <span className="ml-2">
+                                                    {mediaBannerImage?.name!} {mediaBannerImage?.name && "No Photo Selected"}
                                                 </span>
-                                            </label>
-                                            <input
-                                                id="file-uploadbanner"
-                                                name="file-uploadbanner"
-                                                type="file"
-                                                className="sr-only"
-                                                accept="image/*"
-                                                onChange={(e) => {
-                                                    setMediaBannerImage(e?.target?.files![0] as File); addImageToPostBanner(e);
-                                                }}
-                                            />
-
-                                            {/* Showing the Uploaded File name */}
-
-                                            <span className="ml-2">
-                                                {mediaBannerImage?.name!} {mediaBannerImage?.name && "No Photo Selected"}
-                                            </span>
+                                            </div>
+                                            <p className="text-xs text-gray-500">PNG, JPG up to 2MB</p>
                                         </div>
-                                        <p className="text-xs text-gray-500">PNG, JPG up to 2MB</p>
                                     </div>
                                 </div>
-                            </div>
 
-                            {/* Upload Icon Image Section */}
-                            <div>
-                                <label className="block text-sm font-medium text-gray-700">
-                                    Add Event Icon Image:
-                                </label>
-                                <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
-                                    <div className="space-y-1 text-center">
-                                        {selectedFileIconImage ? (<img src={selectedFileIconImage} alt="" className="w-60 mx-auto my-3" />) : (
-                                            <svg
-                                                className="mx-auto h-12 w-12 text-gray-400"
-                                                stroke="currentColor"
-                                                fill="none"
-                                                viewBox="0 0 48 48"
-                                                aria-hidden="true"
-                                            >
-                                                <path
-                                                    d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02"
-                                                    strokeWidth={2}
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
+                                {/* Upload Icon Image Section */}
+                                <div>
+                                    <label className="block text-sm font-medium text-gray-700">
+                                        Add Event Icon Image:
+                                    </label>
+                                    <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
+                                        <div className="space-y-1 text-center">
+                                            {selectedFileIconImage ? (<img src={selectedFileIconImage} alt="" className="w-60 mx-auto my-3" />) : (
+                                                <svg
+                                                    className="mx-auto h-12 w-12 text-gray-400"
+                                                    stroke="currentColor"
+                                                    fill="none"
+                                                    viewBox="0 0 48 48"
+                                                    aria-hidden="true"
+                                                >
+                                                    <path
+                                                        d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02"
+                                                        strokeWidth={2}
+                                                        strokeLinecap="round"
+                                                        strokeLinejoin="round"
+                                                    />
+                                                </svg>
+                                            )}
+                                            <div className="flex text-sm text-gray-600">
+                                                <label
+                                                    htmlFor="file-upload"
+                                                    className="relative cursor-pointer bg-white rounded-md font-medium text-skin-darkBlue hover:text-skin-darkBlue  focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-bg-skin-lightBlue"
+                                                >
+                                                    <span className="hover:underline transition-all">
+                                                        Upload a photo
+                                                    </span>
+                                                </label>
+                                                <input
+                                                    id="file-upload"
+                                                    name="file-upload"
+                                                    type="file"
+                                                    className="sr-only"
+                                                    accept="image/*"
+                                                    onChange={(e) => {
+                                                        setMediaIconImage(e.target.files![0]); addImageToPostIcon(e);
+                                                    }}
                                                 />
-                                            </svg>
-                                        )}
-                                        <div className="flex text-sm text-gray-600">
-                                            <label
-                                                htmlFor="file-upload"
-                                                className="relative cursor-pointer bg-white rounded-md font-medium text-skin-darkBlue hover:text-skin-darkBlue  focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-bg-skin-lightBlue"
-                                            >
-                                                <span className="hover:underline transition-all">
-                                                    Upload a photo
+
+                                                {/* Showing the Uploaded File name */}
+
+                                                <span className="ml-2">
+                                                    {mediaIconImage?.name} {!mediaIconImage?.name && "No Photo Selected"}
                                                 </span>
-                                            </label>
-                                            <input
-                                                id="file-upload"
-                                                name="file-upload"
-                                                type="file"
-                                                className="sr-only"
-                                                accept="image/*"
-                                                onChange={(e) => {
-                                                    setMediaIconImage(e.target.files![0]); addImageToPostIcon(e);
-                                                }}
-                                            />
-
-                                            {/* Showing the Uploaded File name */}
-
-                                            <span className="ml-2">
-                                                {mediaIconImage?.name} {!mediaIconImage?.name && "No Photo Selected"}
-                                            </span>
+                                            </div>
+                                            <p className="text-xs text-gray-500">PNG, JPG up to 2MB</p>
                                         </div>
-                                        <p className="text-xs text-gray-500">PNG, JPG up to 2MB</p>
                                     </div>
                                 </div>
-                            </div>
 
-                            <div>
-                                <TextField
-                                    id="outlined-textarea"
-                                    label="Venue name"
-                                    placeholder="Enter Venue name"
-                                    value={venuename}
-                                    multiline
-                                    fullWidth
-                                    onChange={e => setvenuename(e.target.value)}
-                                />
-                            </div>
-                            <div>
-                                <label className="block text-sm font-medium text-gray-700 mb-1">
-                                    Add Speakers:
-                                </label>
-                                <div className="space-y-4">
+                                <div>
+                                    <TextField
+                                        id="outlined-textarea"
+                                        label="Venue name"
+                                        placeholder="Enter Venue name"
+                                        value={venuename}
+                                        multiline
+                                        fullWidth
+                                        onChange={e => setvenuename(e.target.value)}
+                                    />
+                                </div>
+                                <div>
+                                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                                        Add Speakers:
+                                    </label>
+                                    <div className="space-y-4">
+                                        {
+                                            inputListSpeakers.map((item, i) => {
+                                                return (
+                                                    <div className="" key={i}>
+                                                        <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2" key={i}>
+                                                            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 w-full">
+                                                                <div className="w-full col-span-1">
+
+                                                                    <TextField
+                                                                        id="outlined-textarea"
+                                                                        name="name"
+                                                                        label="Speaker name"
+                                                                        placeholder="Speaker name"
+                                                                        value={inputListSpeakers[i].name}
+                                                                        multiline
+                                                                        fullWidth
+                                                                        onChange={e => handleInputChangeSpeakers(e, i)}
+                                                                    />
+                                                                </div>
+                                                                <div className="w-full col-span-1">
+
+                                                                    <TextField
+                                                                        id="outlined-textarea"
+                                                                        name="image"
+                                                                        label="Image URL"
+                                                                        placeholder="Image URL"
+                                                                        value={inputListSpeakers[i].image}
+                                                                        multiline
+                                                                        fullWidth
+                                                                        onChange={e => handleInputChangeSpeakers(e, i)}
+                                                                    />
+                                                                </div>
+                                                                <div className="w-full col-span-1">
+                                                                    <TextField
+                                                                        id="outlined-textarea"
+                                                                        name="linkedinUrl"
+                                                                        label="Speaker LinkedIn Profile URL"
+                                                                        placeholder="Speaker LinkedIn Profile URL"
+                                                                        value={inputListSpeakers[i].linkedinUrl}
+                                                                        multiline
+                                                                        fullWidth
+                                                                        onChange={e => handleInputChangeSpeakers(e, i)}
+                                                                    />
+                                                                </div>
+                                                                <div className="w-full col-span-1">
+                                                                    <TextField
+                                                                        id="outlined-textarea"
+                                                                        name="gitHubURL"
+                                                                        label="Speaker GitHub Profile URL"
+                                                                        placeholder="Speaker GitHub Profile URL"
+                                                                        value={inputListSpeakers[i].gitHubURL}
+                                                                        multiline
+                                                                        fullWidth
+                                                                        onChange={e => handleInputChangeSpeakers(e, i)}
+                                                                    />
+                                                                </div>
+                                                                <div className="w-full col-span-1">
+                                                                    <TextField
+                                                                        id="outlined-textarea"
+                                                                        name="twitterURL"
+                                                                        label="Speaker Twitter Profile URL"
+                                                                        placeholder="Speaker Twitter Profile URL"
+                                                                        value={inputListSpeakers[i].twitterURL}
+                                                                        multiline
+                                                                        fullWidth
+                                                                        onChange={e => handleInputChangeSpeakers(e, i)}
+                                                                    />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <span className="space-x-2 flex justify-end">
+
+                                                            {inputListSpeakers.length - 1 == i &&
+                                                                <button>
+                                                                    <AddCircleOutlineIcon className="h-[27px] w-[27px]" onClick={handleAddClickSpeakers} />
+                                                                </button>
+                                                            }
+                                                            {inputListSpeakers.length !== 1 &&
+                                                                <button>
+
+                                                                    <div className="w-full flex justify-end">
+                                                                        {i !== 0 ? <button onClick={(e) => handleRemoveSpeakers(e, i)}>
+                                                                            <HighlightOffIcon className="h-[27px] w-[27px]" />
+                                                                        </button> : <button onClick={(e) => handleRemoveSpeakers(e, i)} disabled>
+                                                                            <HighlightOffIcon className="text-[#979696] h-[27px] w-[27px]" />
+                                                                        </button>}
+                                                                    </div>
+                                                                </button>
+                                                            }
+                                                        </span>
+                                                    </div>
+                                                )
+                                            })
+                                        }
+
+
+                                    </div>
+                                </div>
+                                <div>
+                                    <LocalizationProvider dateAdapter={AdapterDateFns}>
+                                        <DesktopDatePicker
+                                            label="Date desktop"
+                                            inputFormat="MM/dd/yyyy"
+                                            value={date}
+                                            onChange={(newValue: Date | null) => {
+                                                setDate(newValue);
+                                            }}
+                                            renderInput={(params: JSX.IntrinsicAttributes & TextFieldProps) => <TextField {...params}
+                                                fullWidth
+                                            />}
+                                            className="mt-2"
+                                        />
+                                    </LocalizationProvider>
+                                </div>
+                                <div>
+                                    <label className="block text-sm font-medium text-gray-700 mb-1 mt-6">
+                                        Add Time :
+                                    </label>
+                                    <TextField
+                                        id="outlined-textarea"
+                                        label="Time Slot"
+                                        placeholder="Enter Time Slot"
+                                        value={timeperiod}
+                                        multiline
+                                        fullWidth
+                                        onChange={e => settimeperiod(e.target.value)}
+                                    />
+                                </div>
+                                <div>
+                                    <label className="block text-sm font-medium text-gray-700 mb-1 mt-6">
+                                        Perks
+                                    </label>
+                                    <TextField
+                                        id="outlined-textarea"
+                                        label="Perks"
+                                        placeholder="Enter Perks"
+                                        value={attraction}
+                                        multiline
+                                        fullWidth
+                                        onChange={e => setattraction(e.target.value)}
+                                    />
+                                </div>
+                                <div>
+                                    <h1 className="mt-6">Agenda</h1>
+                                </div>
+                                <div className="space-y-2">
                                     {
-                                        inputListSpeakers.map((item, i) => {
+                                        inputListAgenda.map((item, i) => {
                                             return (
                                                 <div className="" key={i}>
                                                     <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2" key={i}>
-                                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 w-full">
-                                                            <div className="w-full col-span-1">
+                                                        <div className="w-full">
 
-                                                                <TextField
-                                                                    id="outlined-textarea"
-                                                                    name="name"
-                                                                    label="Speaker name"
-                                                                    placeholder="Speaker name"
-                                                                    value={inputListSpeakers[i].name}
-                                                                    multiline
-                                                                    fullWidth
-                                                                    onChange={e => handleInputChangeSpeakers(e, i)}
-                                                                />
-                                                            </div>
-                                                            <div className="w-full col-span-1">
-
-                                                                <TextField
-                                                                    id="outlined-textarea"
-                                                                    name="image"
-                                                                    label="Image URL"
-                                                                    placeholder="Image URL"
-                                                                    value={inputListSpeakers[i].image}
-                                                                    multiline
-                                                                    fullWidth
-                                                                    onChange={e => handleInputChangeSpeakers(e, i)}
-                                                                />
-                                                            </div>
-                                                            <div className="w-full col-span-1">
-                                                                <TextField
-                                                                    id="outlined-textarea"
-                                                                    name="linkedinUrl"
-                                                                    label="Speaker LinkedIn Profile URL"
-                                                                    placeholder="Speaker LinkedIn Profile URL"
-                                                                    value={inputListSpeakers[i].linkedinUrl}
-                                                                    multiline
-                                                                    fullWidth
-                                                                    onChange={e => handleInputChangeSpeakers(e, i)}
-                                                                />
-                                                            </div>
-                                                            <div className="w-full col-span-1">
-                                                                <TextField
-                                                                    id="outlined-textarea"
-                                                                    name="gitHubURL"
-                                                                    label="Speaker GitHub Profile URL"
-                                                                    placeholder="Speaker GitHub Profile URL"
-                                                                    value={inputListSpeakers[i].gitHubURL}
-                                                                    multiline
-                                                                    fullWidth
-                                                                    onChange={e => handleInputChangeSpeakers(e, i)}
-                                                                />
-                                                            </div>
-                                                            <div className="w-full col-span-1">
-                                                                <TextField
-                                                                    id="outlined-textarea"
-                                                                    name="twitterURL"
-                                                                    label="Speaker Twitter Profile URL"
-                                                                    placeholder="Speaker Twitter Profile URL"
-                                                                    value={inputListSpeakers[i].twitterURL}
-                                                                    multiline
-                                                                    fullWidth
-                                                                    onChange={e => handleInputChangeSpeakers(e, i)}
-                                                                />
-                                                            </div>
+                                                            <TextField
+                                                                id="outlined-textarea"
+                                                                name="time"
+                                                                label="Agenda Time"
+                                                                placeholder="Enter Agenda Time"
+                                                                value={inputListAgenda[i].time}
+                                                                multiline
+                                                                fullWidth
+                                                                onChange={e => handleInputChangeAgenda(e, i)}
+                                                            />
                                                         </div>
+                                                        <div className="w-full">
+                                                            <TextField
+                                                                id="outlined-textarea"
+                                                                name="description"
+                                                                label="Agenda Description"
+                                                                value={inputListAgenda[i].description}
+                                                                placeholder=" Enter Agenda Description"
+                                                                multiline
+                                                                fullWidth
+                                                                onChange={e => handleInputChangeAgenda(e, i)}
+
+                                                            />
+                                                        </div>
+                                                        <span className="space-x-2 flex justify-end">
+
+                                                            {inputListAgenda.length - 1 == i &&
+                                                                <button>
+                                                                    <AddCircleOutlineIcon className="h-[27px] w-[27px]" onClick={handleAddClickAgenda} />
+
+                                                                </button>
+                                                            }
+                                                            {inputListAgenda.length !== 1 &&
+                                                                <button>
+
+                                                                    <div className="w-full flex justify-end">
+                                                                        {i !== 0 ? <button onClick={(e) => handleRemoveAgenda(e, i)}>
+                                                                            <HighlightOffIcon className="h-[27px] w-[27px]" />
+                                                                        </button> : <button onClick={(e) => handleRemoveAgenda(e, i)} disabled>
+                                                                            <HighlightOffIcon className="text-[#979696] h-[27px] w-[27px]" />
+                                                                        </button>}
+                                                                    </div>
+                                                                </button>
+                                                            }
+                                                        </span>
                                                     </div>
-                                                    <span className="space-x-2 flex justify-end">
-
-                                                        {inputListSpeakers.length - 1 == i &&
-                                                            <button>
-                                                                <AddCircleOutlineIcon className="h-[27px] w-[27px]" onClick={handleAddClickSpeakers} />
-                                                            </button>
-                                                        }
-                                                        {inputListSpeakers.length !== 1 &&
-                                                            <button>
-
-                                                                <div className="w-full flex justify-end">
-                                                                    {i !== 0 ? <button onClick={(e) => handleRemoveSpeakers(e, i)}>
-                                                                        <HighlightOffIcon className="h-[27px] w-[27px]" />
-                                                                    </button> : <button onClick={(e) => handleRemoveSpeakers(e, i)} disabled>
-                                                                        <HighlightOffIcon className="text-[#979696] h-[27px] w-[27px]" />
-                                                                    </button>}
-                                                                </div>
-                                                            </button>
-                                                        }
-                                                    </span>
                                                 </div>
                                             )
                                         })
@@ -469,136 +584,36 @@ const AddEvent: React.FC = () => {
 
 
                                 </div>
-                            </div>
-                            <div>
-                                <LocalizationProvider dateAdapter={AdapterDateFns}>
-                                    <DesktopDatePicker
-                                        label="Date desktop"
-                                        inputFormat="MM/dd/yyyy"
-                                        value={date}
-                                        onChange={(newValue: Date | null) => {
-                                            setDate(newValue);
-                                        }}
-                                        renderInput={(params: JSX.IntrinsicAttributes & TextFieldProps) => <TextField {...params}
-                                            fullWidth
-                                        />}
-                                        className="mt-2"
-                                    />
-                                </LocalizationProvider>
-                            </div>
-                            <div>
-                                <label className="block text-sm font-medium text-gray-700 mb-1 mt-6">
-                                    Add Time :
-                                </label>
-                                <TextField
-                                    id="outlined-textarea"
-                                    label="Time Slot"
-                                    placeholder="Enter Time Slot"
-                                    value={timeperiod}
-                                    multiline
-                                    fullWidth
-                                    onChange={e => settimeperiod(e.target.value)}
-                                />
-                            </div>
-                            <div>
-                                <label className="block text-sm font-medium text-gray-700 mb-1 mt-6">
-                                    Perks
-                                </label>
-                                <TextField
-                                    id="outlined-textarea"
-                                    label="Perks"
-                                    placeholder="Enter Perks"
-                                    value={attraction}
-                                    multiline
-                                    fullWidth
-                                    onChange={e => setattraction(e.target.value)}
-                                />
-                            </div>
-                            <div>
-                                <h1 className="mt-6">Agenda</h1>
-                            </div>
-                            <div className="space-y-2">
-                                {
-                                    inputListAgenda.map((item, i) => {
-                                        return (
-                                            <div className="" key={i}>
-                                                <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2" key={i}>
-                                                    <div className="w-full">
+                                <div>
 
-                                                        <TextField
-                                                            id="outlined-textarea"
-                                                            name="time"
-                                                            label="Agenda Time"
-                                                            placeholder="Enter Agenda Time"
-                                                            value={inputListAgenda[i].time}
-                                                            multiline
-                                                            fullWidth
-                                                            onChange={e => handleInputChangeAgenda(e, i)}
-                                                        />
-                                                    </div>
-                                                    <div className="w-full">
-                                                        <TextField
-                                                            id="outlined-textarea"
-                                                            name="description"
-                                                            label="Agenda Description"
-                                                            value={inputListAgenda[i].description}
-                                                            placeholder=" Enter Agenda Description"
-                                                            multiline
-                                                            fullWidth
-                                                            onChange={e => handleInputChangeAgenda(e, i)}
-
-                                                        />
-                                                    </div>
-                                                    <span className="space-x-2 flex justify-end">
-
-                                                        {inputListAgenda.length - 1 == i &&
-                                                            <button>
-                                                                <AddCircleOutlineIcon className="h-[27px] w-[27px]" onClick={handleAddClickAgenda} />
-
-                                                            </button>
-                                                        }
-                                                        {inputListAgenda.length !== 1 &&
-                                                            <button>
-
-                                                                <div className="w-full flex justify-end">
-                                                                    {i !== 0 ? <button onClick={(e) => handleRemoveAgenda(e, i)}>
-                                                                        <HighlightOffIcon className="h-[27px] w-[27px]" />
-                                                                    </button> : <button onClick={(e) => handleRemoveAgenda(e, i)} disabled>
-                                                                        <HighlightOffIcon className="text-[#979696] h-[27px] w-[27px]" />
-                                                                    </button>}
-                                                                </div>
-                                                            </button>
-                                                        }
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        )
-                                    })
-                                }
-
-
-                            </div>
-                            <div>
-
-                                {validatePublish() ? <button className="py-3 px-2 font-bold  text-black  bg-gray-200 text-sm rounded-md mt-6 cursor-not-allowed" disabled>
-                                    Publish
-                                </button> :
-                                    <button className="py-3 px-2 font-bold  text-green-800  bg-green-200 text-sm rounded-md hover:bg-green-400 hover:shadow-xl mt-6" onClick={addEvent}>
+                                    {validatePublish() ? <button className="py-3 px-2 font-bold  text-black  bg-gray-200 text-sm rounded-md mt-6 cursor-not-allowed" disabled>
                                         Publish
-                                    </button>
-                                }
+                                    </button> :
+                                        <button className="py-3 px-2 font-bold  text-green-800  bg-green-200 text-sm rounded-md hover:bg-green-400 hover:shadow-xl mt-6" onClick={addEvent}>
+                                            Publish
+                                        </button>
+                                    }
 
+                                </div>
                             </div>
-                        </div>
-                        <div className="w-full col-span-1 hidden md:block">
-                            {/* Image */}
-                            <img src="/addEvent.png" className="ml-auto w-[341px]" alt="event-png" />
+                            <div className="w-full col-span-1 hidden md:block">
+                                {/* Image */}
+                                <img src="/addEvent.png" className="ml-auto w-[341px]" alt="event-png" />
+                            </div>
+
                         </div>
 
                     </div>
-
                 </div>
-            </div>
+            </>
+        ) : (
+            <>
+                <Head>
+                    <title>Admin Login 🔒</title>
+                </Head>
+                <AdminLogInScreen />
+            </>
+        )}
         </>
     );
 };
