@@ -11,13 +11,16 @@ const nodeMailer = async function (req: NextApiRequest, res: NextApiResponse) {
       user: process.env.SMTP_USER,
       pass: process.env.SMTP_PASSWORD,
     },
+    tls: {
+        secureProtocol: "TLSv1_method"
+    }
   });
 
   const firstName = name.split(' ')[0];
 
   try {
     await transporter.sendMail({
-      from: "official.cluelesscommunity@gmail.com",
+      from: "ClueLess",
       to: email,
       subject: `Welcome to ClueLess, ${firstName}`,
       html: `<!DOCTYPE html>

@@ -1,9 +1,10 @@
 import React from 'react'
 import { useRouter } from 'next/router'
 import { useSession } from 'next-auth/react';
-import { doc, getDoc, setDoc } from 'firebase/firestore';
+import { doc, getDoc, serverTimestamp, setDoc } from 'firebase/firestore';
 import { db } from '../lib/clientApp';
 import CircularProgress from '@mui/material/CircularProgress';
+import Head from 'next/head';
 
 const Usercheck = () => {
     const router = useRouter();
@@ -39,12 +40,12 @@ const Usercheck = () => {
                     name: session?.user?.name,
                     image: session?.user?.image,
                     email: session?.user?.email,
+                    created_time: serverTimestamp()
                 })
                 console.log("New User Added");
-                try{
-                    await joiningMail();
-                    console.log("Welcome mail sent.");
-                }catch(e){
+                try {
+                    joiningMail();
+                } catch (e) {
                     console.log("Some problem faced while sending the welcome email");
                 }
             }
@@ -59,9 +60,15 @@ const Usercheck = () => {
     }, [checkUser, session])
 
     return (
-        <div className='flex justify-center items-center h-screen'>
-            <CircularProgress />
-        </div>
+        <>
+            <Head>
+                <title>Loging In...</title>
+                <meta name="description" content="A virtual Open source and development community" />
+            </Head>
+            <div className='flex justify-center items-center h-screen'>
+                <CircularProgress />
+            </div>
+        </>
     )
 }
 

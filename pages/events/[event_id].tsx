@@ -22,7 +22,8 @@ const EventDetails: React.FC = () => {
 
     const [event, setEvent] = React.useState<any | undefined>();
     const [isRegistered, setIsRegistered] = React.useState<boolean>(false);
-    const [date, setDate] = React.useState<string>('')
+    const [date, setDate] = React.useState<string>('');
+    const [open, setOpen] = React.useState(false);
 
     const fetchEvent = React.useCallback(async () => {
         const eventRef = doc(db, 'events', event_id as string);
@@ -37,8 +38,6 @@ const EventDetails: React.FC = () => {
             router.push(`/404`);
         }
     }, [event_id, router])
-
-    console.log(event);
 
     const checkIfRegistered = React.useCallback(async () => {
         if (userId) {
@@ -94,6 +93,8 @@ const EventDetails: React.FC = () => {
                 })
                 console.log("Registered.");
                 setIsRegistered(true);
+                setOpen(true)
+
                 try {
                     await registrationMail();
                     console.log("Registration Mail Sent.");
@@ -107,14 +108,10 @@ const EventDetails: React.FC = () => {
     }
 
     //Snack Bars Settings
-
-    const [open, setOpen] = React.useState(false);
-
     const handleClose = (event?: React.SyntheticEvent | Event, reason?: string) => {
         if (reason === 'clickaway') {
             return;
         }
-
         setOpen(false);
     };
 
@@ -124,7 +121,6 @@ const EventDetails: React.FC = () => {
         event ? <div>
             <Navbar />
             <img src={event.event_banner_image} className="w-full h-[150px] md:h-[250px] xl:h-[410px] object-cover absolute" alt='' />
-
             <div className="relative z-1 top-10 md:top-20 xl:top-52">
                 <div className='flex flex-col justify-center xl:px-24 px-8 my-20 space-y-8 xl:space-y-3'>
                     <div className='w-full flex justify-between items-start space-x-4'>
@@ -202,7 +198,8 @@ const EventDetails: React.FC = () => {
                         </div>
                         <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
                             <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
-                                You are successfully registered for {event.name}! 🎉
+                                You are successfully registered for {event.event_name}! 🎉
+
                             </Alert>
                         </Snackbar>
 
