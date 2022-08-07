@@ -55,6 +55,7 @@ const EventDetails: React.FC = () => {
         }
     }, [event_id, router])
 
+
     const checkIfRegistered = React.useCallback(async () => {
         if (userId) {
             const userRegistrationRef = doc(db, `events/${event_id}/registrations`, userId);

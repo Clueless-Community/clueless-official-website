@@ -38,6 +38,9 @@ const AddEvent: React.FC = () => {
         new Date(),
     );
 
+    console.log(date);
+
+
     const { isAdmin } = useAdminLogIn()
 
 
