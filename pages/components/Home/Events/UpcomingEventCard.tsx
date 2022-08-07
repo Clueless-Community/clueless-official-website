@@ -9,7 +9,7 @@ interface agenda {
     subject: string,
 }
 
-interface instructorOrspeaker{
+interface instructorOrspeaker {
     name: string,
     image: string,
     linkedinLink: string,
@@ -22,7 +22,7 @@ interface dataProps {
     heading: string,
     venue: string,
     Time: string,
-    instructorOrspeaker:instructorOrspeaker[],
+    instructorOrspeaker: instructorOrspeaker[],
     attractions: string,
     agenda: Array<agenda>
     eventId: string,
@@ -43,23 +43,23 @@ const UpcomingEventCard: React.FC<dataProps> = ({ eventposter, heading, venue, T
                 </div>
                 <div className='flex flex-col xl:justify-center  space-y-16 xl:text-xl'>
                     <div className={`flex flex-col xl:justify-center justify-between md:space-y-4`}>
-                        <h1 className='xl:text-4xl text-2xl hidden md:block'> {heading}</h1>
-                        <div className={`flex xl:flex-row flex-col xl:justify-start justify-evenly xl:space-x-8 h-full xl:space-y-0 space-y-4`}>
-                            <div className={`flex md:flex-row flex-col md:space-x-2 justify-start`}>
+                        <h1 className='xl:text-4xl text-2xl hidden xl:block'> {heading}</h1>
+                        <div className={`flex md:flex-row flex-col flex-wrap xl:justify-start md:child:mr-8 h-full md:space-y-0 space-y-4 `}>
+                            <div className={`flex 2xl:flex-row flex-col 2xl:space-x-2 justify-start`}>
                                 <h1 className='font-semibold'>Venue :</h1>
                                 <h1>{venue}</h1>
                             </div>
-                            <div className={`flex space-x-2 justify-start`}>
+                            <div className={`flex 2xl:flex-row flex-col 2xl:space-x-2 justify-start`}>
                                 <h1 className='font-semibold'>Date :</h1>
                                 <h1>{date}</h1>
                             </div>
-                            <div className={`flex space-x-2 justify-start`}>
+                            <div className={`flex 2xl:flex-row flex-col 2xl:space-x-2 justify-start`}>
                                 <h1 className='font-semibold'>Time :</h1>
                                 <h1>{Time}</h1>
                             </div>
                         </div>
-                        <div className='hidden xl:block xl:space-y-4'>
-                            <div className={`flex xl:flex-row flex-col space-x-2`}>
+                        <div className='hidden md:block xl:space-y-4'>
+                            <div className={`flex 2xl:flex-row flex-col 2xl:space-x-2`}>
                                 <h1 className='font-semibold'>Instructor / speaker :</h1>
                                 {allSpeakerNames?.map((item, i) => {
                                     return <h1 key={i}>{item}</h1>
@@ -70,14 +70,18 @@ const UpcomingEventCard: React.FC<dataProps> = ({ eventposter, heading, venue, T
                     </div>
                 </div>
             </section>
-            <h1 className='xl:text-4xl text-2xl xl:hidden font-semibold'> {heading}</h1>
-            <div className={`flex flex-col  xl:hidden text-xl`}>
-                <h1 className='font-semibold'>Instructor / speaker :</h1>
-                {allSpeakerNames?.map((item, i) => {
-                    return <h1 key={i}>{item}</h1>
-                })}
+            <div className='space-y-2 md:hidden'>
+                <h1 className='xl:text-4xl text-xl xl:hidden font-semibold'> {heading}</h1>
+                <div className={`flex flex-col  xl:hidden text-lg space-y-2`}>
+                    <h1 className='font-semibold'>Instructor / speaker :</h1>
+                    <div className='flex child:mr-8 flex-wrap'>
+                        {allSpeakerNames?.map((item, i) => {
+                            return <h1 key={i} className="text-base">{item}</h1>
+                        })}
+                    </div>
+                </div>
             </div>
-            <div>
+            <div className='text-right'>
                 <Link href={`/events/[event_id]`} as={`/events/${eventId}`} passHref>
                     <button className='bg-skin-main px-4 xl:py-3 py-2 rounded-md text-white font-semibold xl:text-xl text-lg'>View</button>
                 </Link>
