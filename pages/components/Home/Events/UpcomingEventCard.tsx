@@ -1,8 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import React from 'react'
 import Link from 'next/link'
-import SignInRequired from '../../Modals/SignInRequired'
-import { useSession } from "next-auth/react"
 
 interface agenda {
     startTime: string,
@@ -27,14 +25,14 @@ interface dataProps {
     instructorOrspeaker:instructorOrspeaker[],
     attractions: string,
     agenda: Array<agenda>
-    eventId: string
+    eventId: string,
+    date: string,
 }
 
 
 
 
-const UpcomingEventCard: React.FC<dataProps> = ({ eventposter, heading, venue, Time, instructorOrspeaker, attractions, agenda, eventId }) => {
-    const { data: session } = useSession();
+const UpcomingEventCard: React.FC<dataProps> = ({ eventposter, heading, venue, Time, instructorOrspeaker, attractions, eventId, date }) => {
     const allSpeakerNames = instructorOrspeaker?.map(key => key.name)
 
     return (
@@ -50,6 +48,10 @@ const UpcomingEventCard: React.FC<dataProps> = ({ eventposter, heading, venue, T
                             <div className={`flex md:flex-row flex-col md:space-x-2 justify-start`}>
                                 <h1 className='font-semibold'>Venue :</h1>
                                 <h1>{venue}</h1>
+                            </div>
+                            <div className={`flex space-x-2 justify-start`}>
+                                <h1 className='font-semibold'>Date :</h1>
+                                <h1>{date}</h1>
                             </div>
                             <div className={`flex space-x-2 justify-start`}>
                                 <h1 className='font-semibold'>Time :</h1>

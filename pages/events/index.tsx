@@ -6,12 +6,13 @@ import Footer from '../components/shared/Footer';
 import Navbar from '../components/shared/Navbar/Navbar';
 import UpcomingEventCard from '../components/Home/Events/UpcomingEventCard';
 import { CircularProgress } from '@mui/material';
+import { format } from 'date-fns';
 
 
 const Events = () => {
     const [eventData, seteventData] = React.useState<any[]>([])
 
-    const getEventData = React.useCallback( async () => {
+    const getEventData = React.useCallback(async () => {
         const data: ((prevState: never[]) => never[]) | { id: string; }[] = []
         getDocs(collection(db, 'events')).then((snapshot: { docs: any[]; }) => {
             snapshot.docs.map((doc) => {
@@ -28,6 +29,9 @@ const Events = () => {
         getEventData()
     }, [getEventData])
 
+    console.log(eventData);
+
+
     return (
         <div>
             {eventData.length > 0 ?
@@ -39,8 +43,9 @@ const Events = () => {
                         <h1 className='text-4xl text-center py-8 font-semibold' >Upcoming Events </h1>
                         <div className='space-y-4'>
                             {eventData.map((data, i) => {
+                                const date = format(new Date(data.date.seconds * 1000), 'do LLLLLL, yyyy')
                                 return <UpcomingEventCard key={i} eventposter={data.event_icon_image} heading={data.event_name} venue={data.venue_name} Time={data.time_period} instructorOrspeaker={data.speakers_info}
-                                    attractions="Win T-shirts, swags and free food. 🚀 " agenda={data.agenda} eventId={data.id} />
+                                    attractions="Win T-shirts, swags and free food. 🚀 " agenda={data.agenda} eventId={data.id} date={date} />
                             })}
                         </div>
                     </div>
