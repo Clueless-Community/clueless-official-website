@@ -10,18 +10,21 @@ interface agenda {
     amOrpm: string,
     subject: string,
 }
+
+interface instructorOrspeaker{
+    name: string,
+    image: string,
+    linkedinLink: string,
+    githubLink: string,
+    twitterLink: string,
+}
+
 interface dataProps {
     eventposter: string,
     heading: string,
     venue: string,
     Time: string,
-    instructorOrspeaker: {
-        name: string,
-        image: string,
-        linkedinLink: string,
-        githubLink: string,
-        twitterLink: string,
-    }[]
+    instructorOrspeaker:instructorOrspeaker[],
     attractions: string,
     agenda: Array<agenda>
     eventId: string
@@ -41,10 +44,10 @@ const UpcomingEventCard: React.FC<dataProps> = ({ eventposter, heading, venue, T
                     <img src={eventposter} className="rounded-full h-auto w-36 object-cover xl:h-[200px] xl:w-[200px]" alt='' />
                 </div>
                 <div className='flex flex-col xl:justify-center  space-y-16 xl:text-xl'>
-                    <div className={`flex flex-col xl:justify-center justify-between xl:space-y-4`}>
-                        <h1 className='xl:text-4xl text-2xl hidden xl:block'> {heading}</h1>
+                    <div className={`flex flex-col xl:justify-center justify-between md:space-y-4`}>
+                        <h1 className='xl:text-4xl text-2xl hidden md:block'> {heading}</h1>
                         <div className={`flex xl:flex-row flex-col xl:justify-start justify-evenly xl:space-x-8 h-full xl:space-y-0 space-y-4`}>
-                            <div className={`flex xl:flex-row flex-col xl:space-x-2 justify-start`}>
+                            <div className={`flex md:flex-row flex-col md:space-x-2 justify-start`}>
                                 <h1 className='font-semibold'>Venue :</h1>
                                 <h1>{venue}</h1>
                             </div>

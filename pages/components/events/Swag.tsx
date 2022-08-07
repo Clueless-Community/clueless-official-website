@@ -2,7 +2,7 @@ import React from 'react'
 
 const Swag = () => {
     return (
-        <div className='xl:my-20 my-4 md:mx-40 '>
+        <div className='xl:my-20 my-4 xl:mx-40 md:mx-20'>
             <div className='bg-gradient-to-r from-[#1955CA] to-[#C5DCFA] xl:rounded-3xl flex justify-between xl:px-8 px-4 font-raleway items-center xl:py-4 py-2 text-white'>
                 <div className='hidden xl:block'>
                     <div className='font-semibold flex flex-col space-y-2'>
