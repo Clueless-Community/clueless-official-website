@@ -39,7 +39,7 @@ const Events = () => {
                     <Navbar />
                     <Swag />
 
-                    <div className='xl:my-20 my-4 md:mx-40 mx-4'>
+                    <div className='xl:my-20 my-4 xl:mx-40 md:mx-20 mx-4'>
                         <h1 className='text-4xl text-center py-8 font-semibold' >Upcoming Events </h1>
                         <div className='space-y-4'>
                             {eventData.map((data, i) => {

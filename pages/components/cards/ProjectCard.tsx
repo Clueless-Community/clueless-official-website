@@ -12,7 +12,7 @@ const ProjectCard: React.FC<Props> = ({img, title, stack}) => {
   return (
     <div>
         <div className="w-[195px] max-h-[275px] sm:w-[320px] sm:max-h-[440px] shadow-md pb-2 sm:pb-4 rounded">
-            <img src={img} alt="" />
+            <img src={img} alt="" className=''/>
             <div className="px-4 sm:px-6">
                 <h1 className="sm:text-xl mt-2 sm:mt-4 sm:mb-2 font-semibold">{title}</h1>
                 <div className="space-x-2">

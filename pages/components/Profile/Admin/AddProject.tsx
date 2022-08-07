@@ -193,7 +193,7 @@ const AddProject: React.FC<Props> = ({ handleProjectFetch }) => {
                         >
                             {projectImageNew ? (
                                 <>
-                                    <img src={projectImageNew} alt="" className=" rounded-lg md:w-80 h-52 absolute -z-40" />
+                                    <img src={projectImageNew} alt="" className=" rounded-lg md:w-80 h-52 absolute -z-40 object-cover" />
                                     <div className="absolute rounded-lg w-52 h-52 bg-black opacity-50 flex justify-center items-center -z-20"></div>
                                     <div className="w-52 h-52 flex justify-center items-center text-white">
                                         <CloudUploadIcon fontSize="large" />
