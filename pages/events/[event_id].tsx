@@ -12,6 +12,7 @@ import { format } from 'date-fns'
 import { Alert, Box, CircularProgress, Modal, Snackbar, Typography } from '@mui/material'
 import HttpsIcon from '@mui/icons-material/Https';
 import Link from 'next/link';
+import { Head } from 'next/document'
 
 
 const style = {
@@ -26,8 +27,6 @@ const style = {
     p: 4,
     borderRadius: 3,
 };
-
-
 
 const EventDetails: React.FC = () => {
     const router = useRouter();
@@ -140,6 +139,12 @@ const EventDetails: React.FC = () => {
 
     return (
         event ? <div>
+            <Head>
+                <title>ClueLess | {event.event_name}</title>
+                <meta name="description" content="A virtual Open source and development community" />
+                <meta property="og:image" content="https://i.ibb.co/WVBNFXB/Clueless-SS.png" />
+                <meta property="og:image" content={event.event_banner_image}/>
+            </Head>
             <Navbar />
             <img src={event.event_banner_image} className="w-full h-[150px] md:h-[250px] xl:h-[410px] object-cover absolute" alt='' />
             <div className="relative z-1 top-10 md:top-20 xl:top-52">
