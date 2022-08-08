@@ -66,9 +66,17 @@ const Events = () => {
                     <SvgButton className='max-w-fit mx-auto mt-10'><span className=' font-nunito font-bold'>Explore All</span> </SvgButton>
                 </div> */}
                 </div> : (
-                    <div className='flex justify-center items-center h-screen'>
-                        <CircularProgress />
-                    </div>
+                    <>
+                        <Head>
+                            <title>Loading events...</title>
+                            <meta name="description" content="A virtual Open source and development community" />
+                            <meta property="og:image" content="https://i.ibb.co/WVBNFXB/Clueless-SS.png" />
+                            {/* <meta name="og:image" content={event.event_banner_image} /> */}
+                        </Head>
+                        <div className='flex justify-center items-center h-screen'>
+                            <CircularProgress />
+                        </div>
+                    </>
                 )}
             <Footer />
         </div>
