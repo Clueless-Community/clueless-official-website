@@ -7,6 +7,7 @@ import Navbar from '../components/shared/Navbar/Navbar';
 import UpcomingEventCard from '../components/Home/Events/UpcomingEventCard';
 import { CircularProgress } from '@mui/material';
 import { format } from 'date-fns';
+import Head from 'next/head';
 
 
 const Events = () => {
@@ -34,6 +35,11 @@ const Events = () => {
 
     return (
         <div>
+            <Head>
+                <title>ClueLess | Events</title>
+                <meta name="description" content="A virtual Open source and development community" />
+                <meta property="og:image" content="https://i.ibb.co/WVBNFXB/Clueless-SS.png" />
+            </Head>
             {eventData.length > 0 ?
                 <div>
                     <Navbar />
