@@ -8,15 +8,14 @@ const Swag = () => {
                     <div className='font-semibold flex flex-col space-y-2'>
                         <span className='xl:text-3xl text-xl'>Attend Events &</span>
                         <span className='xl:text-5xl text-2xl'>Workshops 👊</span>
-
                     </div>
                 </div>
-                <div className='flex xl:flex-row flex-start items-center space-x-6 xl:space-x-0'>
+                <h1 className='xl:hidden text-xl font-semibold'>
+                    Monthy Top Scorer will
+                    win this Swag 🔥
+                </h1>
+                <div className='flex xl:flex-row md:justify-end justify-between items-center space-x-6 xl:space-x-0'>
                     <h1 className='text-3xl font-semibold hidden xl:block'>Win amazing swags,<br /> stickers, t-shirts and<br /> cash prizes. </h1>
-                    <h1 className='xl:hidden text-xl font-semibold'>
-                        Monthy Top Scorer will
-                        win this Swag 🔥
-                    </h1>
                     <img src='tshirt.png' alt='tshirt' className='w-32 xl:w-fit' />
                 </div>
             </div>

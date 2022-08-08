@@ -1,6 +1,4 @@
 import React from 'react'
-import UpcomingEventCard from './UpcomingEventCard'
-import eventData from '../../../../dummyEventData'
 
 
 
