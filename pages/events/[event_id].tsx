@@ -140,7 +140,7 @@ const EventDetails: React.FC = () => {
     return (
         event ? <div>
             <Head>
-                <title>ClueLess | {event.event_name}</title>
+                <title>{event.event_name}</title>
                 <meta name="description" content="A virtual Open source and development community" />
                 <meta property="og:image" content="https://i.ibb.co/WVBNFXB/Clueless-SS.png" />
                 {/* <meta name="og:image" content={event.event_banner_image} /> */}
@@ -254,9 +254,17 @@ const EventDetails: React.FC = () => {
                 <Footer />
             </div>
         </div> : (
-            <div className='flex justify-center items-center h-screen'>
-                <CircularProgress />
-            </div>
+            <>
+                <Head>
+                    <title>Loading event...</title>
+                    <meta name="description" content="A virtual Open source and development community" />
+                    <meta property="og:image" content="https://i.ibb.co/WVBNFXB/Clueless-SS.png" />
+                    {/* <meta name="og:image" content={event.event_banner_image} /> */}
+                </Head>
+                <div className='flex justify-center items-center h-screen'>
+                    <CircularProgress />
+                </div>
+            </>
         )
     )
 }

@@ -33,12 +33,12 @@ const ProjectsCardAdmin: React.FC<Props> = ({ projectId, projectImage, projectNa
     const handleClose = () => setOpen(false);
 
     const deleteProject = async () => {
-            if (uid) {
-                await deleteDoc(doc(db, `users/${uid}/projects`, projectId));
-                handleClose();
-            } else {
-                return null
-            }
+        if (uid) {
+            await deleteDoc(doc(db, `users/${uid}/projects`, projectId));
+            handleClose();
+        } else {
+            return null
+        }
     }
 
     return (
@@ -104,32 +104,32 @@ const ProjectsCardAdmin: React.FC<Props> = ({ projectId, projectImage, projectNa
                 onClose={handleClose}
                 aria-labelledby="alert-dialog-title"
                 aria-describedby="alert-dialog-description"
-                className="text-black rounded-xl"
+                className="text-black rounded-xl p-10"
             >
-                <div id="alert-dialog-title">
-                    <BsFillExclamationTriangleFill className='text-red-500 text-5xl mx-auto'/>
+            <div id="alert-dialog-title">
+                <BsFillExclamationTriangleFill className='text-red-500 text-5xl mx-auto' />
+            </div>
+            <DialogContent className='p-10'>
+                <div id="alert-dialog-description" className='w-full p-0'>
+                    <h1 className='text-xl font-nunito'>
+                        Do you want to Delete the Project?
+                    </h1>
                 </div>
-                <DialogContent>
-                    <div id="alert-dialog-description" className='w-full p-0'>
-                        <h1 className='text-xl font-nunito'>
-                            Do you want to Delete the Project?
-                        </h1>
-                    </div>
-                </DialogContent>
-                <DialogActions className="space-x-7 w-full p-0">
-                    <button
-                        onClick={() => {
-                            handleClose();
-                        }} className="bg-zinc-200 px-4 py-2 rounded-md font-nunito font-semibold"
-                    >
-                        Cancel
-                    </button>
-                    <button onClick={async () => { await deleteProject(); handleProjectFetch(); }} className="bg-red-500 text-white px-4 py-2 rounded-md font-nunito font-semibold" autoFocus>
-                        Yes
-                    </button>
-                </DialogActions>
-            </Dialog>
-        </div>
+            </DialogContent>
+            <DialogActions className="space-x-7 w-full">
+                <button
+                    onClick={() => {
+                        handleClose();
+                    }} className="bg-zinc-200 px-4 py-2 rounded-md font-nunito font-semibold"
+                >
+                    Cancel
+                </button>
+                <button onClick={async () => { await deleteProject(); handleProjectFetch(); }} className="bg-red-500 text-white px-4 py-2 rounded-md font-nunito font-semibold" autoFocus>
+                    Yes
+                </button>
+            </DialogActions>
+        </Dialog>
+        </div >
     )
 }
 
