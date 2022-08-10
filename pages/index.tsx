@@ -10,6 +10,9 @@ import DonateHome from "./components/Home/DonateHome";
 import HomeMain from "./components/Home/HomeMain";
 import SocialHome from "./components/Home/SocialHome";
 import TeachStackLine from "./components/shared/TeachStackLine";
+import PreviousEvent from "./components/Home/Events/PreviousEvent";
+import UpcomingEvents from "./components/Home/Events/PreviousEvent";
+import TeamMembersHome from "./components/Home/TeamMembersHome";
 
 
 const Home: NextPage = () => {
@@ -36,6 +39,8 @@ const Home: NextPage = () => {
         </h1>
         <img src="ineuron-logo.png" alt="ineutron Logo" />
       </div>
+      {/* <UpcomingEvents/>  */}
+
       {/* <TeamMembersHome/> */}
       <SocialHome />
       <DonateHome />

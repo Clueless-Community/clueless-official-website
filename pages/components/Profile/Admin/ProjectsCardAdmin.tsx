@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
-import { Button, Stack } from '@mui/material'
-import React from 'react'
+import { Stack } from '@mui/material'
+import React, { useState } from 'react'
 import StyledChip from '../../shared/StyledChip'
 import LinkIcon from '@mui/icons-material/Link';
 import EditProject from './EditProject';
@@ -8,6 +8,9 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import { deleteDoc, doc } from 'firebase/firestore';
 import { db } from '../../../../lib/clientApp';
 import { useSession } from "next-auth/react";
+import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from '@mui/material'
+import { BsFillExclamationTriangleFill } from 'react-icons/bs'
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 
 interface Props {
@@ -25,11 +28,15 @@ interface Props {
 const ProjectsCardAdmin: React.FC<Props> = ({ projectId, projectImage, projectName, projectDesc, publicLink, gitHubLink, techStacks, handleProjectFetch }) => {
     const { data: session } = useSession();
     const uid = session?.user?.id;
-    
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
+
     const deleteProject = async () => {
-        if(uid){
+        if (uid) {
             await deleteDoc(doc(db, `users/${uid}/projects`, projectId));
-        }else{
+            handleClose();
+        } else {
             return null
         }
     }
@@ -38,7 +45,7 @@ const ProjectsCardAdmin: React.FC<Props> = ({ projectId, projectImage, projectNa
         <div className='p-6 border-2 border-dashed border-black border-opacity-60 rounded-lg w-full' key={projectId}>
             <div className='flex w-full justify-between items-start'>
                 <div className=' flex'>
-                    <img src={projectImage} alt="" className=' w-32 h-32 rounded-lg' />
+                    <img src={projectImage} alt="" className=' w-32 h-32 rounded-lg object-cover' />
                     <div className='ml-5'>
                         <div className=' flex justify-between flex-wrap w-full'>
                             <div className=' flex flex-col xl:flex-row xl:items-center '>
@@ -66,24 +73,24 @@ const ProjectsCardAdmin: React.FC<Props> = ({ projectId, projectImage, projectNa
                     </div>
                 </div>
                 <div className=' flex items-center'>
-                <button className='ml-3 bg-red-500 text-white p-1 hover:bg-red-600 rounded-full w-9 h-9 flex items-center justify-center transition-all' onClick={async() => {await deleteProject(); handleProjectFetch()}}><DeleteIcon /></button>                        
-                <EditProject
-                    projectId={projectId}
-                    projectName={projectName}
-                    projectImage={projectImage}
-                    projectDesc={projectDesc}
-                    gitHubLink={gitHubLink}
-                    publicLink={publicLink}
-                    techStacks={techStacks}
-                    handleProjectFetch={handleProjectFetch}
-                />
+                    <button className='ml-3 bg-red-500 text-white p-1 hover:bg-red-600 rounded-full w-9 h-9 flex items-center justify-center transition-all' onClick={() => handleOpen()}><DeleteIcon /></button>
+                    <EditProject
+                        projectId={projectId}
+                        projectName={projectName}
+                        projectImage={projectImage}
+                        projectDesc={projectDesc}
+                        gitHubLink={gitHubLink}
+                        publicLink={publicLink}
+                        techStacks={techStacks}
+                        handleProjectFetch={handleProjectFetch}
+                    />
                 </div>
             </div>
             <div className=' block lg:hidden '>
                 <Stack direction="row" spacing={2} className="mt-5" alignItems="center" sx={{ 'flexWrap': 'wrap' }}>
                     {techStacks?.map((teckStack: { 'name': string }, i) => {
                         return (
-                            <StyledChip text={teckStack.name} size="xs" rounded='2xl' key={i}/>
+                            <StyledChip text={teckStack.name} size="xs" rounded='2xl' key={i} />
                         )
                     })}
                 </Stack>
@@ -92,7 +99,37 @@ const ProjectsCardAdmin: React.FC<Props> = ({ projectId, projectImage, projectNa
                     <button className='btn-blue mt-5 flex items-center px-4 py-2 shadow-blue-600'>View Repo</button>
                 </a>
             </div>
-        </div>
+            <Dialog
+                open={open}
+                onClose={handleClose}
+                aria-labelledby="alert-dialog-title"
+                aria-describedby="alert-dialog-description"
+                className="text-black rounded-xl p-10"
+            >
+            <div id="alert-dialog-title">
+                <BsFillExclamationTriangleFill className='text-red-500 text-5xl mx-auto' />
+            </div>
+            <DialogContent className='p-10'>
+                <div id="alert-dialog-description" className='w-full p-0'>
+                    <h1 className='text-xl font-nunito'>
+                        Do you want to Delete the Project?
+                    </h1>
+                </div>
+            </DialogContent>
+            <DialogActions className="space-x-7 w-full">
+                <button
+                    onClick={() => {
+                        handleClose();
+                    }} className="bg-zinc-200 px-4 py-2 rounded-md font-nunito font-semibold"
+                >
+                    Cancel
+                </button>
+                <button onClick={async () => { await deleteProject(); handleProjectFetch(); }} className="bg-red-500 text-white px-4 py-2 rounded-md font-nunito font-semibold" autoFocus>
+                    Yes
+                </button>
+            </DialogActions>
+        </Dialog>
+        </div >
     )
 }
 

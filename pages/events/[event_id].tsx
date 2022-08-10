@@ -12,6 +12,7 @@ import { format } from 'date-fns'
 import { Alert, Box, CircularProgress, Modal, Snackbar, Typography } from '@mui/material'
 import HttpsIcon from '@mui/icons-material/Https';
 import Link from 'next/link';
+import Head from 'next/head'
 
 
 const style = {
@@ -26,8 +27,6 @@ const style = {
     p: 4,
     borderRadius: 3,
 };
-
-
 
 const EventDetails: React.FC = () => {
     const router = useRouter();
@@ -140,6 +139,12 @@ const EventDetails: React.FC = () => {
 
     return (
         event ? <div>
+            <Head>
+                <title>{event.event_name}</title>
+                <meta name="description" content="A virtual Open source and development community" />
+                <meta property="og:image" content="https://i.ibb.co/WVBNFXB/Clueless-SS.png" />
+                {/* <meta name="og:image" content={event.event_banner_image} /> */}
+            </Head>
             <Navbar />
             <img src={event.event_banner_image} className="w-full h-[150px] md:h-[250px] xl:h-[410px] object-cover absolute" alt='' />
             <div className="relative z-1 top-10 md:top-20 xl:top-52">
@@ -204,7 +209,7 @@ const EventDetails: React.FC = () => {
                             </div>
                             <div className='space-y-4'>
                                 <h1 className='xl:text-3xl text-2xl font-semibold text-skin-main'>Instructor / speaker </h1>
-                                <div className='flex justify-start max-w-fit flex-wrap'>
+                                <div className='flex justify-start max-w-fit flex-wrap child:mr-28 child:mb-8'>
                                     {event.speakers_info.map((speaker: any, i: number) => {
                                         return <section className='flex justify-start space-x-4' key={i}>
                                             <img src={speaker.image} alt='' className='xl:w-28 w-20 rounded-full border-dashed border-2 border-[#1955CA] m-auto' />
@@ -249,9 +254,17 @@ const EventDetails: React.FC = () => {
                 <Footer />
             </div>
         </div> : (
-            <div className='flex justify-center items-center h-screen'>
-                <CircularProgress />
-            </div>
+            <>
+                <Head>
+                    <title>Loading event...</title>
+                    <meta name="description" content="A virtual Open source and development community" />
+                    <meta property="og:image" content="https://i.ibb.co/WVBNFXB/Clueless-SS.png" />
+                    {/* <meta name="og:image" content={event.event_banner_image} /> */}
+                </Head>
+                <div className='flex justify-center items-center h-screen'>
+                    <CircularProgress />
+                </div>
+            </>
         )
     )
 }

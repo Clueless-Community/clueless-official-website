@@ -8,7 +8,7 @@ import Link from 'next/link';
 const Footer: React.FC = () => {
     return (
         <>
-            <div className='grid lg:grid-cols-5 sm:grid-cols-3 grid-cols-1 md:px-28 sm:px-12 px-6 mt-auto bg-[#EFEFEF] pt-12'>
+            <div className='grid lg:grid-cols-5 sm:grid-cols-3 gap-8 grid-cols-1 md:px-28 sm:px-12 px-6 mt-auto bg-[#EFEFEF] pt-12 justify-items-start child:w-full'>
                 <div className='flex mb-auto flex-wrap justify-center'>
                     <div className="flex  items-center cursor-pointer">
                         <img src="/ClueLess Logo.png" alt="" className="w-[70px]" />
@@ -18,13 +18,13 @@ const Footer: React.FC = () => {
                         <p className=' font-raleway ml-8 mt-1'>Learn. Grow.</p>
                     </div>
                 </div>
-                <div className='flex flex-col mx-auto my-5 mt-12 sm:my-0 text-center sm:text-left'>
+                <div className='flex flex-col mx-auto my-5 mt-12 sm:my-0 sm:text-left text-center'>
                     <h3 className=' font-nunito font-semibold text-xl mb-8'>Know Us</h3>
                     <Link href="/about-us">
                         <a className='my-3 hover:text-skin-main transition-all'>About Us</a>
                     </Link>
                 </div>
-                <div className='flex flex-col mx-auto my-5 sm:my-0 text-center sm:text-left'>
+                <div className='flex flex-col mx-auto my-5 sm:my-0 sm:text-left text-center'>
                     <h3 className=' font-nunito font-semibold text-xl mb-8'>Legal</h3>
                     <Link href="/privacy-policy">
                         <a className='my-3 hover:text-skin-main transition-all'>Privacy Policy</a>
@@ -34,8 +34,8 @@ const Footer: React.FC = () => {
                     </Link>
                 </div>
                 <div className='hidden sm:block lg:hidden'></div>
-                <div className='flex flex-col mx-auto  my-5 sm:my-0 text-center sm:text-left'>
-                    <h3 className=' font-nunito font-semibold text-xl mb-8 sm:mt-12 lg:mt-auto'>Quick links</h3>
+                <div className='flex flex-col mx-auto  my-5 sm:my-0 sm:text-left text-center'>
+                    <h3 className='font-nunito font-semibold text-xl mb-8'>Quick links</h3>
                     <Link href="/challenges-events">
                         <a className='my-3 hover:text-skin-main transition-all'>Events & Challenges</a>
                     </Link>
@@ -43,7 +43,7 @@ const Footer: React.FC = () => {
 
                     <a href='https://clueless-blogs.hashnode.dev/' target="_blank" className='my-3 hover:text-skin-main transition-all' rel="noreferrer">Blogs</a>
                 </div>
-                <div className='flex flex-col mx-auto  my-5 sm:my-0 text-center sm:text-left'>
+                <div className='flex flex-col mx-auto  my-5 sm:my-0 sm:text-left text-center'>
                     <h3 className=' font-nunito font-semibold text-xl mb-8 sm:mt-12 lg:mt-0'>Contact & Help</h3>
                     <Link href="/contact-us">
                         <a className='my-3 hover:text-skin-main transition-all'>Contact Us</a>
