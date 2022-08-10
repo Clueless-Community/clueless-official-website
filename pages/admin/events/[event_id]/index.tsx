@@ -2,24 +2,57 @@
 import Head from "next/head";
 
 import {
+    FormControl,
+    InputLabel,
+    MenuItem,
+    Select,
     TextField, TextFieldProps,
 } from "@mui/material";
-
-import React, { useState } from "react";
-import Navbar from "../components/shared/Navbar/Navbar";
-
+// import {get} from 'lodash'
+import React, { useEffect, useState } from "react";
+import Navbar from "../../../components/shared/Navbar/Navbar";
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
-import { addDoc, collection, doc, serverTimestamp, setDoc } from "firebase/firestore";
-import { db, storage } from "../../lib/clientApp";
+import { addDoc, collection, doc, getDoc, serverTimestamp, setDoc, updateDoc } from "firebase/firestore";
+import { db, storage } from "../../../../lib/clientApp";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
-import { useAdminLogIn } from "../../context/AdminLogInContext";
-import AdminLogIn from "../api/admin/logIn";
-import AdminLogInScreen from "../components/Admin/AdminLogInScreen";
-import {MdRemoveCircleOutline} from 'react-icons/md'
+import { useAdminLogIn } from "../../../../context/AdminLogInContext";
+import AdminLogIn from "../../../api/admin/logIn";
+import AdminLogInScreen from "../../../components/Admin/AdminLogInScreen";
+import { useRouter } from "next/router";
+import { MdOutlineFileDownloadDone, MdRemoveCircleOutline } from 'react-icons/md'
+import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from '@mui/material'
+import { BsFillExclamationTriangleFill } from 'react-icons/bs'
+import { RemoveCircleOutline } from "@mui/icons-material";
+
+
+interface agenda {
+    time: string
+    description: string,
+}
+
+interface instructorOrspeaker {
+    name: string,
+    image: string,
+    linkedinUrl: string,
+    gitHubURL: string,
+    twitterURL: string,
+}
+
+interface dataProps {
+    eventposter: string,
+    heading: string,
+    venue: string,
+    Time: string,
+    instructorOrspeaker: instructorOrspeaker[],
+    attractions: string,
+    agenda: Array<agenda>
+    eventId: string,
+    date: string,
+}
 
 const AddEvent: React.FC = () => {
 
@@ -34,30 +67,124 @@ const AddEvent: React.FC = () => {
     const [timeperiod, settimeperiod] = useState<string>("");
     const [inputListAgenda, setInputListAgenda] = useState([{ time: "", description: "", }])
     const [inputListSpeakers, setInputListSpeakers] = useState([{ name: "", image: "", linkedinUrl: "", gitHubURL: "", twitterURL: "" }])
+    const [inputListWinners, setInputListWinners] = useState([{ name: "", imageURL: "" }])
     const [attraction, setattraction] = useState("")
     const [date, setDate] = React.useState<Date | null>(
         new Date(),
     );
+    const [eventData, seteventData] = React.useState<any>([])
+    const [open, setOpen] = React.useState(false);
+    const [open2, setOpen2] = React.useState(false);
+    const [open3, setOpen3] = React.useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleOpen2 = () => setOpen2(true);
+    const handleOpen3 = () => setOpen3(true);
+    const handleClose = () => setOpen(false);
+    const handleClose2 = () => setOpen2(false);
+    const handleClose3 = () => setOpen3(false);
+    const [deleteIndex, setDeleteIndex] = useState<number>(0)
+    const [deleteIndexAgenda, setDeleteIndexAgenda] = useState<number>(0);
+    const [presentForm, setPresentForm] = useState<string>("Event Not done yet");
+    const [present, setPresent] = useState<boolean>(true);
 
-    console.log(date);
-
+    // console.log(date);
 
     const { isAdmin } = useAdminLogIn()
+    const router = useRouter()
+
+    const getEventData = React.useCallback(async () => {
+        const eventId = router.query.event_id;
+        const eventRef = doc(db, 'events', `${eventId}`)
+        const eventSnap = await getDoc(eventRef);
+        if (eventSnap.exists()) {
+            const data = eventSnap.data();
+            seteventData(data);
+        } else {
+            router.push('/404');
+        }
+
+    }, [router])
+
+    useEffect(() => {
+        seteventname(eventData?.event_name ? eventData?.event_name : "")
+        setInputListSpeakers(eventData?.speakers_info);
+        setInputListAgenda(eventData?.agenda)
+        setSelectedFileBannerImage(eventData?.event_banner_image)
+        setSelectedFileIconImage(eventData?.event_icon_image)
+        setvenuename(eventData?.venue_name)
+        settimeperiod(eventData?.time_period)
+        setattraction(eventData?.attraction)
+        setPresent(eventData?.present)
+        const ut = eventData?.date
+        setDate(new Date(ut?.seconds * 1000))
+        // console.log(ut?.seconds)
+        setInputListWinners(eventData?.winners),
+            setPresent(eventData?.present),
+            present ? setPresentForm("Event Not done yet") : setPresentForm("Event Done")
+    }, [eventData])
+
+    // console.log(inputListSpeakers);
+
+    React.useEffect(() => {
+        if (!router.isReady) return;
+        getEventData();
+    }, [getEventData, router.isReady])
+
+    // console.log(eventData)
 
 
+    //Agenda functions
     const handleAddClickAgenda = () => {
         setInputListAgenda([...inputListAgenda, { time: "", description: "", }])
     }
 
-    const handleAddClickSpeakers = () => {
-        setInputListSpeakers([...inputListSpeakers, { name: "", image: "", linkedinUrl: "", gitHubURL: "", twitterURL: "" }])
-    }
     const handleInputChangeAgenda = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>, index: number) => {
         const { name, value } = e.target;
         const list: any = [...inputListAgenda];
         list[index][name] = value;
         setInputListAgenda(list)
     }
+    const handleRemoveAgenda = (e: { preventDefault: () => void; }, index: number) => {
+        // console.log("function hit", index)
+        const list = [...inputListAgenda];
+        list.splice(index, 1)
+        setInputListAgenda(list)
+        // console.log(inputListAgenda)
+        handleClose2()
+    }
+
+    //winner functions
+
+
+    const handleClickAddWinners = () => {
+        setInputListWinners([...inputListWinners, { name: "", imageURL: "" }])
+    }
+
+    const handleRemoveWinners = (e: { preventDefault: () => void; }, index: number) => {
+        const list = [...inputListWinners];
+        list.splice(index, 1)
+        setInputListWinners(list)
+    }
+
+    const handleAddWinners = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>, index: number) => {
+        const { name, value } = e.target;
+        const list: any = [...inputListWinners]
+        list[index][name] = value;
+        setInputListWinners(list)
+        console.log(inputListWinners)
+    }
+
+    // const addWineers = ()=>{
+
+    // }
+
+
+    //speaker functions
+
+    const handleAddClickSpeakers = () => {
+        setInputListSpeakers([...inputListSpeakers, { name: "", image: "", linkedinUrl: "", gitHubURL: "", twitterURL: "" }])
+    }
+
     const handleInputChangeSpeakers = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>, index: number) => {
         const { name, value } = e.target;
         const list: any = [...inputListSpeakers];
@@ -65,19 +192,18 @@ const AddEvent: React.FC = () => {
         setInputListSpeakers(list)
     }
 
-    const handleRemoveAgenda = (e: { preventDefault: () => void; }, index: number) => {
-        const list = [...inputListAgenda];
-        list.splice(index, 1)
-        setInputListAgenda(list)
-    }
-
     const handleRemoveSpeakers = (e: { preventDefault: () => void; }, index: number) => {
         const list = [...inputListSpeakers];
-        list.splice(index, 1)
+        list.splice(index, 1);
+        // await updateDoc(eventRef, {
+        //     speakers_info: list
+        // })
         setInputListSpeakers(list)
+        handleClose();
     }
 
 
+    //Image Add Functions
     const addImageToPostBanner = (e: any) => {
         const reader = new FileReader();
         if (e.target.files![0]) {
@@ -109,7 +235,7 @@ const AddEvent: React.FC = () => {
         uploadTask && uploadTask.on('state_changed',
             (snapshot: { bytesTransferred: number; totalBytes: number; state: any; }) => {
                 const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-                console.log('Upload is ' + progress + '% done');
+                // console.log('Upload is ' + progress + '% done');
                 switch (snapshot.state) {
                     case 'paused':
                         console.log('Upload is paused');
@@ -176,22 +302,22 @@ const AddEvent: React.FC = () => {
         );
     }
 
-    const handleResetForm = () => {
-        seteventname("")
-        setSelectedFileBannerImage("")
-        setSelectedFileIconImage("")
-        setMediaBannerImage(undefined)
-        setMediaIconImage(undefined)
-        setBannerDownloadURL("")
-        setIconDownloadURL("")
-        setBannerDownloadURL("")
-        setvenuename("")
-        settimeperiod("")
-        setInputListAgenda([{ time: "", description: "", }])
-        setInputListSpeakers([{ name: "", image: "", linkedinUrl: "", gitHubURL: "", twitterURL: "" }])
-        setDate(new Date)
-        setattraction("")
-    };
+    // const handleResetForm = () => {
+    //     seteventname("")
+    //     setSelectedFileBannerImage("")
+    //     setSelectedFileIconImage("")
+    //     setMediaBannerImage(undefined)
+    //     setMediaIconImage(undefined)
+    //     setBannerDownloadURL("")
+    //     setIconDownloadURL("")
+    //     setBannerDownloadURL("")
+    //     setvenuename("")
+    //     settimeperiod("")
+    //     setInputListAgenda([{ time: "", description: "", }])
+    //     setInputListSpeakers([{ name: "", image: "", linkedinUrl: "", gitHubURL: "", twitterURL: "" }])
+    //     setDate(new Date)
+    //     setattraction("")
+    // };
 
     // For adding Data in Firebase for Event 
     const addEvent = async () => {
@@ -201,9 +327,10 @@ const AddEvent: React.FC = () => {
         console.log(IconDownloadURL);
         const eventIdtemp = eventname.toLowerCase().replace(' ', '-');
         const dateId = (new Date).getTime()
-        const eventId = `${eventIdtemp}-${dateId}`
+        const eventId = router.query.event_id;
+        const eventRef = doc(db, 'events', `${eventId}`)
         try {
-            await setDoc(doc(db, 'events', eventId), {
+            await updateDoc(eventRef, {
                 event_name: eventname,
                 event_banner_image: selectedFileBannerImage,
                 event_icon_image: selectedFileIconImage,
@@ -212,37 +339,47 @@ const AddEvent: React.FC = () => {
                 date: date,
                 time_period: timeperiod,
                 agenda: inputListAgenda,
-                present: true,
+                present: present,
                 attraction: attraction,
                 event_id: eventId,
-                created_time: serverTimestamp()
+                created_time: serverTimestamp(),
+                winners: inputListWinners
             })
             console.log("Data Added");
-            handleResetForm()
         } catch (e) {
             console.log(e)
         }
     }
 
     const validatePublish = () => {
-        if (selectedFileBannerImage.length === 0 || date === null || selectedFileIconImage.length === 0 || mediaBannerImage! === undefined || mediaIconImage! === undefined || venuename.length === 0 || eventname.length === 0 || timeperiod.length === 0 || Object.values(inputListAgenda).every(value => "") || Object.values(inputListSpeakers).every(value => "")) return true
-        else return false
+        if (eventname === "" || selectedFileBannerImage === "" || selectedFileIconImage === "" || venuename === "" || inputListSpeakers.length === 0 || !inputListSpeakers.every(item => item.name && item.image && item.linkedinUrl && item.twitterURL || item.gitHubURL) || !inputListAgenda.every(item => item.description && item.time) || !inputListWinners.every(item => item.name && item.imageURL) || date === null || timeperiod === "" || attraction === "") {
+            return false
+        } else {
+            return true
+        }
+    }
+
+    const handlePublish = () => {
+        console.log("Function hit")
+        addEvent();
+        handleClose3()
+        alert("Event Editted Successfully");
     }
 
 
-
+    // console.log(present)
 
     return (
         <>{isAdmin ? (
             <>
                 <Head>
-                    <title>Add Event</title>
+                    <title>Edit Event | {eventData?.event_name}</title>
                 </Head>
                 <Navbar />
                 <div className="mx-auto text-xl mt-11 mb-10 w-10/12">
                     <div className="space-y-4 ">
                         <div className="flex flex-col items-start font-semibold mt-6">
-                            Add a New Event
+                            Edit Event
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-3">
                             <div className="space-y-2 col-span-1 md:col-span-2">
@@ -258,14 +395,14 @@ const AddEvent: React.FC = () => {
                                     />
                                 </div>
                                 {/* Upload Banner Image Section */}
-                                <div>
+                                <div className="">
                                     <label className="block text-sm font-medium text-gray-700">
                                         Add Event Cover Image:
                                     </label>
-                                    <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
+                                    <div className="mt-1 px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md relative w-full">
                                         <div className="space-y-1 text-center">
 
-                                            {selectedFileBannerImage ? (<img src={selectedFileBannerImage} alt="" className="w-60 mx-auto my-3" />) : (
+                                            {selectedFileBannerImage ? (<img src={selectedFileBannerImage} alt="" className="w-full h-full object-cover mx-auto my-3" />) : (
                                                 <svg
                                                     className="mx-auto h-12 w-12 text-gray-400"
                                                     stroke="currentColor"
@@ -281,12 +418,12 @@ const AddEvent: React.FC = () => {
                                                     />
                                                 </svg>
                                             )}
-                                            <div className="flex text-sm text-gray-600">
+                                            <div className=" text-sm text-gray-600">
                                                 <label
                                                     htmlFor="file-uploadbanner"
                                                     className="relative cursor-pointer bg-white rounded-md font-medium text-skin-darkBlue hover:text-skin-darkBlue  focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-bg-skin-lightBlue"
                                                 >
-                                                    <span className="hover:underline transition-all">
+                                                    <span className="hover:underline transition-all text-center w-full">
                                                         Upload a photo
                                                     </span>
                                                 </label>
@@ -302,10 +439,6 @@ const AddEvent: React.FC = () => {
                                                 />
 
                                                 {/* Showing the Uploaded File name */}
-
-                                                <span className="ml-2">
-                                                    {mediaBannerImage?.name!} {mediaBannerImage?.name && "No Photo Selected"}
-                                                </span>
                                             </div>
                                             <p className="text-xs text-gray-500">PNG, JPG up to 2MB</p>
                                         </div>
@@ -335,10 +468,10 @@ const AddEvent: React.FC = () => {
                                                     />
                                                 </svg>
                                             )}
-                                            <div className="flex text-sm text-gray-600">
+                                            <div className="text-sm text-gray-600">
                                                 <label
                                                     htmlFor="file-upload"
-                                                    className="relative cursor-pointer bg-white rounded-md font-medium text-skin-darkBlue hover:text-skin-darkBlue  focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-bg-skin-lightBlue"
+                                                    className="relative w-full text-center cursor-pointer bg-white rounded-md font-medium text-skin-darkBlue hover:text-skin-darkBlue  focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-bg-skin-lightBlue"
                                                 >
                                                     <span className="hover:underline transition-all">
                                                         Upload a photo
@@ -357,9 +490,7 @@ const AddEvent: React.FC = () => {
 
                                                 {/* Showing the Uploaded File name */}
 
-                                                <span className="ml-2">
-                                                    {mediaIconImage?.name} {!mediaIconImage?.name && "No Photo Selected"}
-                                                </span>
+
                                             </div>
                                             <p className="text-xs text-gray-500">PNG, JPG up to 2MB</p>
                                         </div>
@@ -370,7 +501,6 @@ const AddEvent: React.FC = () => {
                                     <TextField
                                         id="outlined-textarea"
                                         label="Venue name"
-                                        placeholder="Enter Venue name"
                                         value={venuename}
                                         multiline
                                         fullWidth
@@ -379,13 +509,14 @@ const AddEvent: React.FC = () => {
                                 </div>
                                 <div>
                                     <label className="block text-sm font-medium text-gray-700 mb-1">
-                                        Add Speakers:
+                                        Speakers:
                                     </label>
                                     <div className="space-y-4">
                                         {
-                                            inputListSpeakers.map((item, i) => {
+                                            inputListSpeakers?.map((item: instructorOrspeaker, i: number) => {
                                                 return (
                                                     <div className="" key={i}>
+                                                        <button className="w-full flex items-center justify-end py-2"> <MdRemoveCircleOutline className="text-3xl" onClick={() => { setDeleteIndex(i); handleOpen() }} /> </button>
                                                         <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2" key={i}>
                                                             <div className="grid grid-cols-1 md:grid-cols-2 gap-5 w-full">
                                                                 <div className="w-full col-span-1">
@@ -395,7 +526,7 @@ const AddEvent: React.FC = () => {
                                                                         name="name"
                                                                         label="Speaker name"
                                                                         placeholder="Speaker name"
-                                                                        value={inputListSpeakers[i].name}
+                                                                        value={item.name}
                                                                         multiline
                                                                         fullWidth
                                                                         onChange={e => handleInputChangeSpeakers(e, i)}
@@ -408,7 +539,7 @@ const AddEvent: React.FC = () => {
                                                                         name="image"
                                                                         label="Image URL"
                                                                         placeholder="Image URL"
-                                                                        value={inputListSpeakers[i].image}
+                                                                        value={item.image}
                                                                         multiline
                                                                         fullWidth
                                                                         onChange={e => handleInputChangeSpeakers(e, i)}
@@ -420,7 +551,7 @@ const AddEvent: React.FC = () => {
                                                                         name="linkedinUrl"
                                                                         label="Speaker LinkedIn Profile URL"
                                                                         placeholder="Speaker LinkedIn Profile URL"
-                                                                        value={inputListSpeakers[i].linkedinUrl}
+                                                                        value={item.linkedinUrl}
                                                                         multiline
                                                                         fullWidth
                                                                         onChange={e => handleInputChangeSpeakers(e, i)}
@@ -432,7 +563,7 @@ const AddEvent: React.FC = () => {
                                                                         name="gitHubURL"
                                                                         label="Speaker GitHub Profile URL"
                                                                         placeholder="Speaker GitHub Profile URL"
-                                                                        value={inputListSpeakers[i].gitHubURL}
+                                                                        value={item.gitHubURL}
                                                                         multiline
                                                                         fullWidth
                                                                         onChange={e => handleInputChangeSpeakers(e, i)}
@@ -444,7 +575,7 @@ const AddEvent: React.FC = () => {
                                                                         name="twitterURL"
                                                                         label="Speaker Twitter Profile URL"
                                                                         placeholder="Speaker Twitter Profile URL"
-                                                                        value={inputListSpeakers[i].twitterURL}
+                                                                        value={item.twitterURL}
                                                                         multiline
                                                                         fullWidth
                                                                         onChange={e => handleInputChangeSpeakers(e, i)}
@@ -452,30 +583,24 @@ const AddEvent: React.FC = () => {
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <span className="space-x-2 flex justify-end">
-
-                                                            {inputListSpeakers.length - 1 == i &&
-                                                                <button>
-                                                                    <AddCircleOutlineIcon className="h-[27px] w-[27px]" onClick={handleAddClickSpeakers} />
-                                                                </button>
-                                                            }
-                                                            {inputListSpeakers.length !== 1 &&
-                                                                <button>
-
-                                                                    <div className="w-full flex justify-end">
-                                                                        {i !== 0 ? <button onClick={(e) => handleRemoveSpeakers(e, i)}>
-                                                                            <HighlightOffIcon className="h-[27px] w-[27px]" />
-                                                                        </button> : <button onClick={(e) => handleRemoveSpeakers(e, i)} disabled>
-                                                                            <HighlightOffIcon className="text-[#979696] h-[27px] w-[27px]" />
-                                                                        </button>}
-                                                                    </div>
-                                                                </button>
-                                                            }
-                                                        </span>
+                                                        <hr className="my-8 border-[0.5px] border-opacity-30 border-zinc-500" />
                                                     </div>
                                                 )
                                             })
                                         }
+                                        <span className="space-x-2 flex justify-end">
+
+
+                                            <button className="w-full pb-4">
+
+                                                <div className="w-full flex justify-end">
+                                                    <button onClick={() => handleAddClickSpeakers()} className="">
+                                                        <AddCircleOutlineIcon className="text-3xl" />
+                                                    </button>
+                                                </div>
+                                            </button>
+
+                                        </span>
 
 
                                     </div>
@@ -483,7 +608,7 @@ const AddEvent: React.FC = () => {
                                 <div>
                                     <LocalizationProvider dateAdapter={AdapterDateFns}>
                                         <DesktopDatePicker
-                                            label="Date desktop"
+                                            label="Event Date"
                                             inputFormat="MM/dd/yyyy"
                                             value={date}
                                             onChange={(newValue: Date | null) => {
@@ -498,7 +623,7 @@ const AddEvent: React.FC = () => {
                                 </div>
                                 <div>
                                     <label className="block text-sm font-medium text-gray-700 mb-1 mt-6">
-                                        Add Time :
+                                        Edit Time :
                                     </label>
                                     <TextField
                                         id="outlined-textarea"
@@ -529,7 +654,7 @@ const AddEvent: React.FC = () => {
                                 </div>
                                 <div className="space-y-2">
                                     {
-                                        inputListAgenda.map((item, i) => {
+                                        inputListAgenda?.map((item: agenda, i: number) => {
                                             return (
                                                 <div className="" key={i}>
                                                     <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2" key={i}>
@@ -540,7 +665,7 @@ const AddEvent: React.FC = () => {
                                                                 name="time"
                                                                 label="Agenda Time"
                                                                 placeholder="Enter Agenda Time"
-                                                                value={inputListAgenda[i].time}
+                                                                value={item?.time}
                                                                 multiline
                                                                 fullWidth
                                                                 onChange={e => handleInputChangeAgenda(e, i)}
@@ -551,7 +676,7 @@ const AddEvent: React.FC = () => {
                                                                 id="outlined-textarea"
                                                                 name="description"
                                                                 label="Agenda Description"
-                                                                value={inputListAgenda[i].description}
+                                                                value={item?.description}
                                                                 placeholder=" Enter Agenda Description"
                                                                 multiline
                                                                 fullWidth
@@ -560,43 +685,103 @@ const AddEvent: React.FC = () => {
                                                             />
                                                         </div>
                                                         <span className="space-x-2 flex justify-end">
+                                                            {
+                                                                inputListAgenda.length > 0 && <button onClick={(e) => { setDeleteIndexAgenda(i), handleOpen2() }}>
+                                                                    <HighlightOffIcon className="h-[27px] w-[27px]" /></button>
+                                                            }
 
-                                                            {inputListAgenda.length - 1 == i &&
+                                                            {/* {inputListAgenda.length - 1 == i &&
                                                                 <button>
                                                                     <AddCircleOutlineIcon className="h-[27px] w-[27px]" onClick={handleAddClickAgenda} />
-
                                                                 </button>
-                                                            }
-                                                            {inputListAgenda.length !== 1 &&
+                                                            } */}
+                                                            {/* {inputListAgenda.length !== 1 &&
                                                                 <button>
 
                                                                     <div className="w-full flex justify-end">
-                                                                        {i !== 0 ? <button onClick={(e) => handleRemoveAgenda(e, i)}>
-                                                                            <HighlightOffIcon className="h-[27px] w-[27px]" />
+                                                                        {i !== 0 ? 
                                                                         </button> : <button onClick={(e) => handleRemoveAgenda(e, i)} disabled>
                                                                             <HighlightOffIcon className="text-[#979696] h-[27px] w-[27px]" />
                                                                         </button>}
                                                                     </div>
                                                                 </button>
-                                                            }
+                                                            } */}
                                                         </span>
                                                     </div>
                                                 </div>
                                             )
                                         })
                                     }
+                                    <button className="w-full flex justify-end">
+                                        <AddCircleOutlineIcon className="h-[27px] w-[27px]" onClick={handleAddClickAgenda} />
+                                    </button>
 
+                                    <FormControl fullWidth className='mt-6'>
+                                        <InputLabel id="demo-simple-select-label">Event Type</InputLabel>
+                                        <Select
+                                            labelId="demo-simple-select-label"
+                                            id="demo-simple-select"
+                                            value={presentForm}
+                                            label="Event Type"
+                                            onChange={(e) => { setPresentForm(e.target.value); presentForm === "Event Not done yet" ? setPresent(false) : setPresent(true) }}
+                                        >
+                                            <MenuItem value="Event Done">Event Done</MenuItem>
+                                            <MenuItem value="Event Not done yet">Event Not done yet</MenuItem>
+                                        </Select>
+                                    </FormControl>
+
+                                    {!present && <div><div>
+                                        <h1 className="mt-6">Winners</h1>
+                                    </div>
+                                        {inputListWinners?.map((item, index) => {
+                                            return (
+                                                <div>
+
+                                                    <div className="col-span-1 mr-1 mt-2 flex gap-4  items-start">
+                                                        <TextField
+                                                            id="outlined-textarea"
+                                                            name="name"
+                                                            label={`Winner ${index + 1} Name`}
+                                                            placeholder={`Enter Name of Winner ${index + 1}`}
+                                                            value={item.name}
+                                                            multiline
+                                                            fullWidth
+                                                            onChange={e => handleAddWinners(e, index)}
+                                                        />
+                                                        <TextField
+                                                            id="outlined-textarea"
+                                                            name="imageURL"
+                                                            label={`Winner ${index + 1} Image`}
+                                                            placeholder={`Enter imageURL of Winner ${index + 1}`}
+                                                            value={item.imageURL}
+                                                            multiline
+                                                            fullWidth
+                                                            onChange={e => handleAddWinners(e, index)}
+                                                        />
+                                                        <div>
+                                                            {inputListWinners.length > 0 && <button onClick={(e) => handleRemoveWinners(e, index)}>
+                                                                <MdRemoveCircleOutline className="text-2xl" />
+                                                            </button>}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            )
+                                        })}
+                                        <button className="w-full flex justify-end">
+                                            <AddCircleOutlineIcon onClick={handleClickAddWinners} />
+                                        </button>
+                                    </div>}
 
                                 </div>
                                 <div>
-
-                                    {validatePublish() ? <button className="py-3 px-2 font-bold  text-black  bg-gray-200 text-sm rounded-md mt-6 cursor-not-allowed" disabled>
+                                    {!validatePublish() ? <button className="py-3 px-2 font-bold  text-black  bg-gray-200 text-sm rounded-md mt-6 cursor-not-allowed" disabled>
                                         Publish
                                     </button> :
-                                        <button className="py-3 px-2 font-bold  text-green-800  bg-green-200 text-sm rounded-md hover:bg-green-400 hover:shadow-xl mt-6" onClick={addEvent}>
+                                        <button className="py-3 px-2 font-bold  text-green-800  bg-green-200 text-sm rounded-md hover:bg-green-400 hover:shadow-xl mt-6" onClick={handleOpen3}>
                                             Publish
-                                        </button>
-                                    }
+                                        </button>}
+
+
 
                                 </div>
                             </div>
@@ -604,10 +789,105 @@ const AddEvent: React.FC = () => {
                                 {/* Image */}
                                 <img src="/addEvent.png" className="ml-auto w-[341px]" alt="event-png" />
                             </div>
-
+                        </div>
+                    </div>
+                    <Dialog
+                        open={open}
+                        onClose={handleClose}
+                        aria-labelledby="alert-dialog-title"
+                        aria-describedby="alert-dialog-description"
+                    >
+                        <div className='p-6'>
+                            <div id="alert-dialog-title">
+                                <BsFillExclamationTriangleFill className='text-red-500 text-5xl mx-auto' />
+                            </div>
+                            <DialogContent className='p-10'>
+                                <div id="alert-dialog-description" className='w-full p-0'>
+                                    <h1 className='text-xl font-nunito'>
+                                        Do you want to Delete the Speaker?
+                                    </h1>
+                                </div>
+                            </DialogContent>
+                            <DialogActions className="space-x-7 w-full">
+                                <button
+                                    onClick={() => {
+                                        handleClose();
+                                    }} className="bg-zinc-200 px-4 py-2 rounded-md font-nunito font-semibold"
+                                >
+                                    Cancel
+                                </button>
+                                <button onClick={(e) => { handleRemoveSpeakers(e, deleteIndex); }} className="bg-red-500 text-white px-4 py-2 rounded-md font-nunito font-semibold" autoFocus>
+                                    Yes
+                                </button>
+                            </DialogActions>
                         </div>
 
-                    </div>
+                    </Dialog>
+                    <Dialog
+                        open={open2}
+                        onClose={handleClose2}
+                        aria-labelledby="alert-dialog-title"
+                        aria-describedby="alert-dialog-description"
+                    >
+                        <div className='p-6'>
+                            <div id="alert-dialog-title">
+                                <BsFillExclamationTriangleFill className='text-red-500 text-5xl mx-auto' />
+                            </div>
+                            <DialogContent className='p-10'>
+                                <div id="alert-dialog-description" className='w-full p-0'>
+                                    <h1 className='text-xl font-nunito'>
+                                        Do you want to Delete the Agenda?
+                                    </h1>
+                                </div>
+                            </DialogContent>
+                            <DialogActions className="space-x-7 w-full">
+                                <button
+                                    onClick={() => {
+                                        handleClose2();
+                                    }} className="bg-zinc-200 px-4 py-2 rounded-md font-nunito font-semibold"
+                                >
+                                    Cancel
+                                </button>
+                                <button onClick={(e) => { handleRemoveAgenda(e, deleteIndexAgenda) }} className="bg-red-500 text-white px-4 py-2 rounded-md font-nunito font-semibold" autoFocus>
+                                    Yes
+                                </button>
+                            </DialogActions>
+                        </div>
+
+                    </Dialog>
+                    <Dialog
+                        open={open3}
+                        onClose={handleClose3}
+                        aria-labelledby="alert-dialog-title"
+                        aria-describedby="alert-dialog-description"
+                    >
+                        <div className='p-6'>
+                            <div id="alert-dialog-title">
+                                <MdOutlineFileDownloadDone className='text-sky-500 text-5xl mx-auto' />
+                            </div>
+                            <DialogContent className='p-10'>
+                                <div id="alert-dialog-description" className='w-full p-0'>
+                                    <h1 className='text-xl font-nunito'>
+                                        Do you want to Publish the Event?
+                                    </h1>
+                                </div>
+                            </DialogContent>
+                            <DialogActions className="space-x-7 w-full">
+                                <button
+                                    onClick={() => {
+                                        handleClose3();
+                                    }} className="bg-zinc-200 px-4 py-2 rounded-md font-nunito font-semibold"
+                                >
+                                    Cancel
+                                </button>
+                                <button onClick={handlePublish} className="bg-sky-500 text-white px-4 py-2 rounded-md font-nunito font-semibold" autoFocus>
+                                    Yes
+                                </button>
+                            </DialogActions>
+                        </div>
+
+                    </Dialog>
+                    <button className="bg-skin-main text-white px-4 py-2 rounded-md fixed z-100 right-8 bottom-8 md:text-lg text-xs" onClick={() => router.push(`/events/${eventData?.event_id}`)}>View Event</button>
                 </div>
             </>
         ) : (

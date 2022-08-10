@@ -1,6 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
-import React from 'react'
+import React, { useEffect } from 'react'
 import Link from 'next/link'
+import EditIcon from "@mui/icons-material/Edit";
+import { useRouter } from 'next/router'
 
 interface agenda {
     startTime: string,
@@ -33,7 +35,16 @@ interface dataProps {
 
 
 const UpcomingEventCard: React.FC<dataProps> = ({ eventposter, heading, venue, Time, instructorOrspeaker, attractions, eventId, date }) => {
+    const router = useRouter()
+    const [admin, setAdmin] = React.useState(false)
     const allSpeakerNames = instructorOrspeaker?.map(key => key.name)
+
+
+    useEffect(() => {
+        router.pathname.includes('admin') && setAdmin(true)
+    }, [])
+
+    console.log(admin)
 
     return (
         <div className=' bg-[#1954ca25] border-dashed border-2 border-opacity-30 border-black font-nunito xl:flex-row flex-col flex xl:justify-between xl:p-8 p-3 rounded-xl relative space-y-3 xl:space-y-0'>
@@ -81,11 +92,15 @@ const UpcomingEventCard: React.FC<dataProps> = ({ eventposter, heading, venue, T
                     </div>
                 </div>
             </div>
-            <div className='text-right'>
+            <div className='text-right flex items-center space-x-4 h-fit'>
                 <Link href={`/events/[event_id]`} as={`/events/${eventId}`} passHref>
                     <button className='bg-skin-main px-4 xl:py-3 py-2 rounded-md text-white font-semibold xl:text-xl text-lg'>View</button>
                 </Link>
-
+                <div className={`${!admin && "block"}`}>
+                    <Link href={`/admin/events/[event_id]`} as={`/admin/events/${eventId}`}>
+                        <button className='bg-skin-main p-2 rounded-full text-white font-semibold xl:text-xl text-lg'><EditIcon /></button>
+                    </Link>
+                </div>
             </div>
 
         </div>
