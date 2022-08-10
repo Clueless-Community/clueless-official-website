@@ -735,7 +735,7 @@ const AddEvent: React.FC = () => {
                                     </div>
                                         {inputListWinners?.map((item, index) => {
                                             return (
-                                                <div>
+                                                <div key={index}>
 
                                                     <div className="col-span-1 mr-1 mt-2 flex gap-4  items-start">
                                                         <TextField

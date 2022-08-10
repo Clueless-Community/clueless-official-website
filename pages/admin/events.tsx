@@ -9,7 +9,7 @@ import Navbar from '../components/shared/Navbar/Navbar';
 import Footer from '../components/shared/Footer';
 
 
-const events = () => {
+const Events = () => {
 
   const [eventData, seteventData] = React.useState<any[]>([])
 
@@ -62,4 +62,4 @@ const events = () => {
   )
 }
 
-export default events
+export default Events
