@@ -150,7 +150,7 @@ const EventDetails: React.FC = () => {
             <div className="relative z-1 top-10 md:top-20 xl:top-52">
                 <div className='flex flex-col justify-center xl:px-24 px-8 my-20 space-y-8 xl:space-y-3'>
                     <div className='w-full flex justify-between items-start space-x-4'>
-                        <img src={event.event_icon_image} className='w-28 md:w-36 xl:w-56 rounded-full' alt='' />
+                        <img src={event.event_icon_image} className='w-28 h-28 md:w-36 md:h-36 xl:w-56 xl:h-56 rounded-full object-cover' alt='' />
                     </div>
                     <div className='xl:ml-60 ' >
                         <div className='xl:space-y-6 space-y-3 xl:-mt-12'>
@@ -254,17 +254,9 @@ const EventDetails: React.FC = () => {
                 <Footer />
             </div>
         </div> : (
-            <>
-                <Head>
-                    <title>Loading event...</title>
-                    <meta name="description" content="A virtual Open source and development community" />
-                    <meta property="og:image" content="https://i.ibb.co/WVBNFXB/Clueless-SS.png" />
-                    {/* <meta name="og:image" content={event.event_banner_image} /> */}
-                </Head>
-                <div className='flex justify-center items-center h-screen'>
-                    <CircularProgress />
-                </div>
-            </>
+            <div className='flex justify-center items-center h-screen'>
+                <CircularProgress />
+            </div>
         )
     )
 }
