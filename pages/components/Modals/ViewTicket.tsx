@@ -20,9 +20,10 @@ type Props = {
     venue: string
     eventLogo: string
     tokenNo: string
+    eventMode: string
 };
 
-const ViewTicket: React.FC<Props> = ({ eventId, eventName, date, venue, eventLogo, tokenNo }) => {
+const ViewTicket: React.FC<Props> = ({ eventId, eventName, date, venue, eventLogo, tokenNo, eventMode }) => {
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
@@ -38,7 +39,7 @@ const ViewTicket: React.FC<Props> = ({ eventId, eventName, date, venue, eventLog
             >
                 <Box sx={style} className='w-[70%] p-2 md:p-4'>
                     <div className='flex flex-col-reverse xl:flex-row'>
-                        <div className="flex flex-col justify-center items-center space-y-4 border-dashed xl:border-r-2 border-[#989797] p-4 md:p-8 xl:pr-16">
+                        <div className="hidden md:flex flex-col justify-center items-center space-y-4 border-dashed xl:border-r-2 border-[#989797] p-4 md:p-8 xl:pr-16">
                             <QRCode value={eventId as string} size={150} />
                             <p className='text-sm text-gray-400 text-center'>Scan this QR code for the entry in the venue</p>
                         </div>
@@ -46,7 +47,7 @@ const ViewTicket: React.FC<Props> = ({ eventId, eventName, date, venue, eventLog
                             <div className='flex flex-col-reverse md:flex-row justify-between space-y-6 md:space-y-0'>
                                 <div className='flex flex-col'>
                                     <p className='text-center md:text-left text-sm text-gray-400 mt-4 md:mt-0'>Token No.</p>
-                                    <p className='text-center md:text-left text-[10px] text-gray-400 max-w-fit mx-auto'>{tokenNo}</p>
+                                    <p className='text-center md:text-left text-[10px] text-gray-400 max-w-fit mx-auto break-all'>{tokenNo}</p>
                                 </div>
                                 <div className='text-center'>
                                     <p className='text-2xl text-gray-400'>TICKET</p>
@@ -54,13 +55,16 @@ const ViewTicket: React.FC<Props> = ({ eventId, eventName, date, venue, eventLog
                                 </div>
                                 <img src='/ClueLess Logo.png' className='w-[60px] h-[60px] mx-auto md:mx-0' />
                             </div>
-                            <div className='hidden justify-between mx-auto w-[90%] md:flex'>
-                                <ul className='list-disc text-[#858585] my-auto w-[50%] space-y-4'>
+                            <div className='justify-between mx-auto w-[90%] flex flex-col sm:flex-row'>
+                                <ul className='list-disc text-[#858585] my-auto w-full md:w-[50%] space-y-4'>
                                     <li>Date: {date}</li>
                                     <li>Venue: {venue}</li>
-                                    <li>Event Mode: offline</li>
+                                    <li>Event Mode: {eventMode}</li>
                                 </ul>
-                                <img src={eventLogo} className='w-[50%] h-[160px] border-dashed border-2 border-[#989797] rounded-lg' />
+                                <img src={eventLogo} className='w-[50%] h-[160px] border-dashed border-2 border-[#989797] rounded-lg hidden md:block' />
+                                <div className="sm:w-[50%] flex justify-center  md:hidden mt-4">
+                                    <QRCode value={eventId as string} size={120} />
+                                </div>
                             </div>
                         </div>
                     </div>
