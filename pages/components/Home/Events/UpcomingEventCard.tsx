@@ -96,7 +96,7 @@ const UpcomingEventCard: React.FC<dataProps> = ({ eventposter, heading, venue, T
                 <Link href={`/events/[event_id]`} as={`/events/${eventId}`} passHref>
                     <button className='bg-skin-main px-4 xl:py-3 py-2 rounded-md text-white font-semibold xl:text-xl text-lg'>View</button>
                 </Link>
-                <div className={`${!admin && "block"}`}>
+                <div className={`${!admin && "hidden"}`}>
                     <Link href={`/admin/events/[event_id]`} as={`/admin/events/${eventId}`}>
                         <button className='bg-skin-main p-2 rounded-full text-white font-semibold xl:text-xl text-lg'><EditIcon /></button>
                     </Link>
