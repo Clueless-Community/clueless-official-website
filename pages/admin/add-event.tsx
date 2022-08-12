@@ -2,6 +2,11 @@
 import Head from "next/head";
 
 import {
+    FormControl,
+    InputLabel,
+    MenuItem,
+    Select,
+    SelectChangeEvent,
     TextField, TextFieldProps,
 } from "@mui/material";
 
@@ -19,7 +24,7 @@ import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import { useAdminLogIn } from "../../context/AdminLogInContext";
 import AdminLogIn from "../api/admin/logIn";
 import AdminLogInScreen from "../components/Admin/AdminLogInScreen";
-import {MdRemoveCircleOutline} from 'react-icons/md'
+import { MdRemoveCircleOutline } from 'react-icons/md'
 
 const AddEvent: React.FC = () => {
 
@@ -38,6 +43,7 @@ const AddEvent: React.FC = () => {
     const [date, setDate] = React.useState<Date | null>(
         new Date(),
     );
+    const [eventMode, seteventMode] = useState<string | undefined>("")
 
     console.log(date);
 
@@ -176,6 +182,10 @@ const AddEvent: React.FC = () => {
         );
     }
 
+    const handleEventMode = (event: SelectChangeEvent) => {
+        seteventMode(event.target.value as string);
+    };
+
     const handleResetForm = () => {
         seteventname("")
         setSelectedFileBannerImage("")
@@ -208,6 +218,7 @@ const AddEvent: React.FC = () => {
                 event_banner_image: selectedFileBannerImage,
                 event_icon_image: selectedFileIconImage,
                 venue_name: venuename,
+                event_mode: eventMode,
                 speakers_info: inputListSpeakers,
                 date: date,
                 time_period: timeperiod,
@@ -376,6 +387,21 @@ const AddEvent: React.FC = () => {
                                         fullWidth
                                         onChange={e => setvenuename(e.target.value)}
                                     />
+                                </div>
+                                <div>
+                                    <FormControl fullWidth className='mt-6'>
+                                        <InputLabel id="demo-simple-select-label">Event Mode</InputLabel>
+                                        <Select
+                                            labelId="demo-simple-select-label"
+                                            id="demo-simple-select"
+                                            value={eventMode}
+                                            label="Age"
+                                            onChange={handleEventMode}
+                                        >
+                                            <MenuItem value="offline">Offline</MenuItem>
+                                            <MenuItem value="online">Online</MenuItem>
+                                        </Select>
+                                    </FormControl>
                                 </div>
                                 <div>
                                     <label className="block text-sm font-medium text-gray-700 mb-1">
