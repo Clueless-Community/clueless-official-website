@@ -35,7 +35,6 @@ const Events = () => {
     getEventData()
   }, [getEventData, eventData])
 
-  console.log(eventData);
 
   return (
     <div>

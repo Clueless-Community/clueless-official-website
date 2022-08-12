@@ -88,8 +88,6 @@ const AddEvent: React.FC = () => {
     const [presentForm, setPresentForm] = useState<string>("Event Not done yet");
     const [present, setPresent] = useState<boolean>(true);
 
-    // console.log(date);
-
     const { isAdmin } = useAdminLogIn()
     const router = useRouter()
 
@@ -118,20 +116,17 @@ const AddEvent: React.FC = () => {
         setPresent(eventData?.present)
         const ut = eventData?.date
         setDate(new Date(ut?.seconds * 1000))
-        // console.log(ut?.seconds)
         setInputListWinners(eventData?.winners),
             setPresent(eventData?.present),
             present ? setPresentForm("Event Not done yet") : setPresentForm("Event Done")
     }, [eventData])
 
-    // console.log(inputListSpeakers);
 
     React.useEffect(() => {
         if (!router.isReady) return;
         getEventData();
     }, [getEventData, router.isReady])
 
-    // console.log(eventData)
 
 
     //Agenda functions
@@ -146,11 +141,9 @@ const AddEvent: React.FC = () => {
         setInputListAgenda(list)
     }
     const handleRemoveAgenda = (e: { preventDefault: () => void; }, index: number) => {
-        // console.log("function hit", index)
         const list = [...inputListAgenda];
         list.splice(index, 1)
         setInputListAgenda(list)
-        // console.log(inputListAgenda)
         handleClose2()
     }
 
@@ -172,7 +165,6 @@ const AddEvent: React.FC = () => {
         const list: any = [...inputListWinners]
         list[index][name] = value;
         setInputListWinners(list)
-        console.log(inputListWinners)
     }
 
     // const addWineers = ()=>{
@@ -323,9 +315,7 @@ const AddEvent: React.FC = () => {
     // For adding Data in Firebase for Event 
     const addEvent = async () => {
         await handleBannerImageUpload();
-        console.log(BannerDownloadURL);
         await handleIconImageUpload();
-        console.log(IconDownloadURL);
         const eventIdtemp = eventname.toLowerCase().replace(' ', '-');
         const dateId = (new Date).getTime()
         const eventId = router.query.event_id;
@@ -361,14 +351,10 @@ const AddEvent: React.FC = () => {
     }
 
     const handlePublish = () => {
-        console.log("Function hit")
         addEvent();
         handleClose3()
         alert("Event Editted Successfully");
     }
-
-
-    // console.log(present)
 
     return (
         <>{isAdmin ? (
