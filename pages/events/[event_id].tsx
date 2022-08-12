@@ -13,6 +13,7 @@ import { Alert, Box, CircularProgress, Modal, Snackbar, Typography } from '@mui/
 import HttpsIcon from '@mui/icons-material/Https';
 import Link from 'next/link';
 import Head from 'next/head'
+import ViewTicket from '../components/Modals/ViewTicket'
 
 
 const style = {
@@ -164,9 +165,12 @@ const EventDetails: React.FC = () => {
                                 </div>
                                 {session ? <div>
                                     {isRegistered ? (
-                                        <button className='bg-gray-400 font-semibold text-white px-4 py-3 rounded-md xl:text-xl text-lg' disabled>
-                                            Registered
-                                        </button>
+                                        <div className='space-x-2 flex'>
+                                            <ViewTicket eventId={event_id} eventName={event.event_name} date={date} venue={event.venue_name} eventLogo={event.event_icon_image} />
+                                            <button className='bg-gray-400 text-white px-4 py-3 rounded-md' disabled>
+                                                Registered
+                                            </button>
+                                        </div>
                                     ) : (
                                         <button className='btn-blue' onClick={handleRegistration}>
                                             Register
