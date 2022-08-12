@@ -16,7 +16,7 @@ const Navbar: NextComponentType = () => {
   const uid = session.data?.user.id;
 
   return (
-    <nav className="flex justify-between sm:px-36 px-5 py-5 items-center shadow-xl">
+    <nav className="flex justify-between sm:px-14 lg:px-36 px-5 py-5 items-center shadow-xl">
       <Link href="/" passHref>
         <div className="flex items-center cursor-pointer">
           <img src="/ClueLess Logo.png" alt="" className="sm:w-[65px] w-[35px]" />
@@ -30,11 +30,11 @@ const Navbar: NextComponentType = () => {
           </button>
         </Link>
 
-        <button className="hover:font-semibold hover:underline cursor-pointer xl:mx-8 mx-3 text-xl transition-all">
+        {/* <button className="hover:font-semibold hover:underline cursor-pointer xl:mx-8 mx-3 text-xl transition-all">
           <a href="https://clueless-blogs.hashnode.dev" target="_blank" rel="noreferrer">
             Blogs
           </a>
-        </button>
+        </button> */}
 
         <a href="https://clueless-resources.super.site/resources" target="_blank" rel="noreferrer">
           <button className="hover:font-semibold hover:underline cursor-pointer xl:mx-8 mx-3 text-xl transition-all">
@@ -48,30 +48,39 @@ const Navbar: NextComponentType = () => {
         </Link>
       </div>
       {session.status === "authenticated" && (
-        <>
+        <div className="hidden md:block">
           <NavbarAvatarDropDown
             img={image as string}
             name={name as string}
             email={email as string}
             uid={uid as string}
           />
-        </>
+        </div>
       )}
       {session.status === "unauthenticated" && (
         <Link href="/auth/signin" passHref>
-          <div className="scale-75 sm:scale-100">
+          <div className="scale-75 sm:scale-100 hidden lg:block">
             <SvgButton>Log In</SvgButton>
           </div>
         </Link>
       )
       }
-      {session.status === "authenticated" && (
+      <div className=" flex items-center lg:hidden">
+      {session.status === "unauthenticated" && (
+        <Link href="/auth/signin" passHref>
+          <div className="btn-blue text-xs sm:text-lg ">
+            <button>Log In</button>
+          </div>
+        </Link>
+      )
+      }
         <NavbarDrawer
+          uid={uid as string}
           img={image as string}
           name={name as string}
           email={email as string}
         />
-      )}
+        </div>
     </nav>
   );
 };
