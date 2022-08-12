@@ -1,8 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import EditIcon from "@mui/icons-material/Edit";
 import { useRouter } from 'next/router'
+import { MdDelete } from 'react-icons/md';
+import { Dialog } from '@mui/material';
+import { db } from '../../../../lib/clientApp';
+import { deleteDoc, doc } from 'firebase/firestore';
 
 interface agenda {
     startTime: string,
@@ -36,8 +40,26 @@ interface dataProps {
 
 const UpcomingEventCard: React.FC<dataProps> = ({ eventposter, heading, venue, Time, instructorOrspeaker, attractions, eventId, date }) => {
     const router = useRouter()
+    const [open, setOpen] = React.useState(false);
     const [admin, setAdmin] = React.useState(false)
     const allSpeakerNames = instructorOrspeaker?.map(key => key.name)
+    const [deleteInput, setDeleteInput] = useState<string>("")
+
+    const handleClose = () => setOpen(false);
+    const handleOpen = () => setOpen(true);
+
+    const handleChange = (e: any) => {
+        e.preventDefault();
+        setDeleteInput(e.target.value.toUpperCase())
+    }
+
+    const handleDelete = async () => {
+        // const eventRef = collection()
+        // const eventSnap = await getDocs(eventRef);
+        await deleteDoc(doc(db, "events", eventId));
+        handleClose()
+    }
+
 
 
     useEffect(() => {
@@ -96,7 +118,41 @@ const UpcomingEventCard: React.FC<dataProps> = ({ eventposter, heading, venue, T
                 <Link href={`/events/[event_id]`} as={`/events/${eventId}`} passHref>
                     <button className='bg-skin-main px-4 xl:py-3 py-2 rounded-md text-white font-semibold xl:text-xl text-lg'>View</button>
                 </Link>
+                <div>
+                    <Link href={`/admin/events/[event_id]`} as={`/admin/events/${eventId}`}>
+                        <button className='bg-skin-main p-2 rounded-full text-white font-semibold xl:text-xl text-lg'><EditIcon /></button>
+                    </Link>
+                </div>
+                <button className='hover:bg-skin-red bg-red-600 p-2 rounded-full'>
+                <MdDelete className="text-3xl text-white cursor-pointer" onClick={handleOpen} />
+
+                </button>
             </div>
+            <Dialog
+                open={open}
+                onClose={handleClose}
+                aria-labelledby="alert-dialog-title"
+                aria-describedby="alert-dialog-description"
+            >
+                <div className='space-y-4 p-6'>
+                    <div id="alert-dialog-title">
+                        <img src="/icons/warning.svg" className='text-sky-500 text-5xl mx-auto' />
+                    </div>
+                    <div className='space-y-4 h-fit flex  flex-col justify-center items-center'>
+                        <h1 className='text-3xl font-nunito font-semibold'>Please Confirm!</h1>
+                        <h1 className='text-lg font-nunito text-zinc-500'>Type “Delete” in the box below to confirm your deletion.</h1>
+                        <input type="text" className='text-xl rounded-md focus:outline-none px-4 py-3 border-black border border-opacity-30 w-full' value={deleteInput} placeholder='DELETE' onChange={(e) => handleChange(e)} />
+                    </div>
+                    <div className="w-10/12 mx-auto text-center">
+                        {deleteInput === "DELETE" ? <button className="btn-blue bg-skin-red hover:bg-skin-red" autoFocus onClick={handleDelete}>
+                            Yes
+                        </button> : <button className="btn-blue bg-gray-400 hover:bg-gray-400 text-white cursor-not-allowed" autoFocus disabled>
+                            Yes
+                        </button>}
+                    </div>
+                </div>
+
+            </Dialog>
 
         </div>
     )

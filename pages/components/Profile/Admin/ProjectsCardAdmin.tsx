@@ -107,7 +107,7 @@ const ProjectsCardAdmin: React.FC<Props> = ({ projectId, projectImage, projectNa
             >
                 <div className='p-6'>
                     <div id="alert-dialog-title">
-                        <BsFillExclamationTriangleFill className='text-red-500 text-5xl mx-auto' />
+                        <img src='/icons/delete.svg' className='text-red-500 text-5xl mx-auto' />
                     </div>
                     <DialogContent className='p-10'>
                         <div id="alert-dialog-description" className='w-full p-0'>
@@ -116,18 +116,19 @@ const ProjectsCardAdmin: React.FC<Props> = ({ projectId, projectImage, projectNa
                             </h1>
                         </div>
                     </DialogContent>
-                    <DialogActions className="space-x-7 w-full">
+                    <div className="space-x-12 w-full flex justify-center">
+
+                        <button onClick={async () => { await deleteProject(); handleProjectFetch(); }} className="bg-skin-main btn-blue hover:skin-main" autoFocus>
+                            Yes
+                        </button>
                         <button
                             onClick={() => {
                                 handleClose();
-                            }} className="bg-zinc-200 px-4 py-2 rounded-md font-nunito font-semibold"
+                            }} className="bg-zinc-200 btn-blue text-black hover:bg-zinc-200"
                         >
                             Cancel
                         </button>
-                        <button onClick={async () => { await deleteProject(); handleProjectFetch(); }} className="bg-red-500 text-white px-4 py-2 rounded-md font-nunito font-semibold" autoFocus>
-                            Yes
-                        </button>
-                    </DialogActions>
+                    </div>
                 </div>
 
             </Dialog>

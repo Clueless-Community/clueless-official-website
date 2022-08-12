@@ -373,7 +373,7 @@ const AddEvent: React.FC = () => {
         <>{isAdmin ? (
             <>
                 <Head>
-                    <title>Edit Event | {eventData?.event_name}</title>
+                    <title>{eventData?.event_name} | Edit </title>
                 </Head>
                 <Navbar />
                 <div className="mx-auto text-xl mt-11 mb-10 w-10/12">
@@ -774,10 +774,10 @@ const AddEvent: React.FC = () => {
 
                                 </div>
                                 <div>
-                                    {!validatePublish() ? <button className="py-3 px-2 font-bold  text-black  bg-gray-200 text-sm rounded-md mt-6 cursor-not-allowed" disabled>
+                                    {!validatePublish() ? <button className=" btn-blue bg-zinc-400 hover:bg-zinc-400 cursor-not-allowed" disabled>
                                         Publish
                                     </button> :
-                                        <button className="py-3 px-2 font-bold  text-green-800  bg-green-200 text-sm rounded-md hover:bg-green-400 hover:shadow-xl mt-6" onClick={handleOpen3}>
+                                        <button className="bg-green-600 hover:bg-green-700 btn-blue  hover:shadow-xl" onClick={handleOpen3}>
                                             Publish
                                         </button>}
 
@@ -799,7 +799,7 @@ const AddEvent: React.FC = () => {
                     >
                         <div className='p-6'>
                             <div id="alert-dialog-title">
-                                <BsFillExclamationTriangleFill className='text-red-500 text-5xl mx-auto' />
+                                <img src='/icons/delete.svg' className='text-red-500 text-5xl mx-auto' />
                             </div>
                             <DialogContent className='p-10'>
                                 <div id="alert-dialog-description" className='w-full p-0'>
@@ -808,18 +808,19 @@ const AddEvent: React.FC = () => {
                                     </h1>
                                 </div>
                             </DialogContent>
-                            <DialogActions className="space-x-7 w-full">
+                            <div className="space-x-12 w-full flex justify-center">
+
+                                <button onClick={(e) => { handleRemoveSpeakers(e, deleteIndex); }} className="btn-blue" autoFocus>
+                                    Yes
+                                </button>
                                 <button
                                     onClick={() => {
                                         handleClose();
-                                    }} className="bg-zinc-200 px-4 py-2 rounded-md font-nunito font-semibold"
+                                    }} className="bg-zinc-200 btn-blue text-black hover:bg-zinc-200"
                                 >
-                                    Cancel
+                                    No
                                 </button>
-                                <button onClick={(e) => { handleRemoveSpeakers(e, deleteIndex); }} className="bg-red-500 text-white px-4 py-2 rounded-md font-nunito font-semibold" autoFocus>
-                                    Yes
-                                </button>
-                            </DialogActions>
+                            </div>
                         </div>
 
                     </Dialog>
@@ -831,7 +832,7 @@ const AddEvent: React.FC = () => {
                     >
                         <div className='p-6'>
                             <div id="alert-dialog-title">
-                                <BsFillExclamationTriangleFill className='text-red-500 text-5xl mx-auto' />
+                                <img src='/icons/delete.svg' className='text-red-500 text-5xl mx-auto' />
                             </div>
                             <DialogContent className='p-10'>
                                 <div id="alert-dialog-description" className='w-full p-0'>
@@ -840,18 +841,18 @@ const AddEvent: React.FC = () => {
                                     </h1>
                                 </div>
                             </DialogContent>
-                            <DialogActions className="space-x-7 w-full">
+                            <div className="space-x-12 w-full flex justify-center">
+                                <button onClick={(e) => { handleRemoveAgenda(e, deleteIndexAgenda) }} className="btn-blue" autoFocus>
+                                    Yes
+                                </button>
                                 <button
                                     onClick={() => {
                                         handleClose2();
-                                    }} className="bg-zinc-200 px-4 py-2 rounded-md font-nunito font-semibold"
+                                    }} className="bg-zinc-200 btn-blue hover:bg-zinc-200 text-black"
                                 >
-                                    Cancel
+                                    No
                                 </button>
-                                <button onClick={(e) => { handleRemoveAgenda(e, deleteIndexAgenda) }} className="bg-red-500 text-white px-4 py-2 rounded-md font-nunito font-semibold" autoFocus>
-                                    Yes
-                                </button>
-                            </DialogActions>
+                            </div>
                         </div>
 
                     </Dialog>
@@ -876,18 +877,18 @@ const AddEvent: React.FC = () => {
                                 <button
                                     onClick={() => {
                                         handleClose3();
-                                    }} className="bg-zinc-200 px-4 py-2 rounded-md font-nunito font-semibold"
+                                    }} className="bg-zinc-200 hover:bg-zinc-200 text-black btn-blue"
                                 >
                                     Cancel
                                 </button>
-                                <button onClick={handlePublish} className="bg-sky-500 text-white px-4 py-2 rounded-md font-nunito font-semibold" autoFocus>
+                                <button onClick={handlePublish} className="btn-blue" autoFocus>
                                     Yes
                                 </button>
                             </DialogActions>
                         </div>
 
                     </Dialog>
-                    <button className="bg-skin-main text-white px-4 py-2 rounded-md fixed z-100 right-8 bottom-8 md:text-lg text-xs" onClick={() => router.push(`/events/${eventData?.event_id}`)}>View Event</button>
+                    <button className="btn-blue fixed z-100 right-8 bottom-8 " onClick={() => router.push(`/events/${eventData?.event_id}`)}>View Event</button>
                 </div>
             </>
         ) : (
