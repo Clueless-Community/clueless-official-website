@@ -7,6 +7,7 @@ import Navbar from '../components/shared/Navbar/Navbar';
 import UpcomingEventCard from '../components/Home/Events/UpcomingEventCard';
 import { CircularProgress } from '@mui/material';
 import { format } from 'date-fns';
+import Head from 'next/head';
 
 
 const Events = () => {
@@ -31,6 +32,19 @@ const Events = () => {
     }, [getEventData])
     return (
         <div>
+            {isFetched ? (
+                <Head>
+                    <title>
+                        ClueLess | Events</title>
+                    <meta name="description" content="A virtual Open source and development community" />
+                </Head>
+            ) : (
+                <Head>
+                    <title>
+                        Loading...</title>
+                    <meta name="description" content="A virtual Open source and development community" />
+                </Head>
+            )}
             {isFetched ?
                 <div>
                     <Navbar />

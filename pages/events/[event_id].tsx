@@ -13,6 +13,7 @@ import { Alert, Box, CircularProgress, Modal, Snackbar, Typography } from '@mui/
 import HttpsIcon from '@mui/icons-material/Https';
 import Link from 'next/link';
 import Head from 'next/head'
+import ViewTicket from '../components/Modals/ViewTicket'
 
 
 const style = {
@@ -164,9 +165,9 @@ const EventDetails: React.FC = () => {
                                 </div>
                                 {session ? <div>
                                     {isRegistered ? (
-                                        <button className='bg-gray-400 font-semibold text-white px-4 py-3 rounded-md xl:text-xl text-lg' disabled>
-                                            Registered
-                                        </button>
+                                        <div className='space-x-2 flex'>
+                                            <ViewTicket eventId={`${event.event_id}-${session?.user.name}-Verified`} eventName={event.event_name} date={date} venue={event.venue_name} eventLogo={event.event_icon_image} tokenNo={`${event.event_id}-${userId}`} eventMode={event.event_mode} />
+                                        </div>
                                     ) : (
                                         <button className='btn-blue' onClick={handleRegistration}>
                                             Register
@@ -211,7 +212,7 @@ const EventDetails: React.FC = () => {
                                 <h1 className='xl:text-3xl text-2xl font-semibold text-skin-main'>Instructor / speaker </h1>
                                 <div className='flex justify-start max-w-fit flex-wrap child:mr-28 child:mb-8'>
                                     {event.speakers_info.map((speaker: any, i: number) => {
-                                        return <section className='flex justify-start space-x-8' key={i}>
+                                        return <section className='flex justify-start space-x-8 mt-5' key={i}>
                                             <img src={speaker.image} alt='' className='xl:w-28 w-20 rounded-full border-dashed border-2 border-[#1955CA] m-auto' />
                                             <div className='flex flex-col items-start justify-center space-y-2'>
                                                 <h1 className='xl:text-xl text-lg'>{speaker.name}</h1>

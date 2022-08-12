@@ -16,11 +16,12 @@
     }
     @layer components{
         .btn-blue{
-            @apply cursor-pointer bg-skin-main text-white rounded px-8 py-2 hover:bg-skin-hoverBlue transition-all font-semibold font-nunito active:scale-95
+            @apply cursor-pointer bg-skin-main text-white rounded px-4 py-3 hover:bg-skin-hoverBlue transition-all font-semibold font-nunito active:scale-95
         }
         .btn-red{
-            @apply cursor-pointer bg-skin-red text-white rounded px-8 py-2 hover:bg-skin-hoverRed transition-all font-semibold font-nunito active:scale-95
+            @apply cursor-pointer bg-skin-red text-white rounded px-4 py-3 hover:bg-skin-hoverRed transition-all font-semibold font-nunito active:scale-95
         }
+        
     }
     
 }

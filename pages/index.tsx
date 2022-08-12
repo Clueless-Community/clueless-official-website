@@ -30,6 +30,8 @@ const Home: NextPage = () => {
       </h2>
       <TeachStackLine />
       <h1 className='child:text-skin-main md:text-6xl sm:text-5xl text-3xl text-center my-10 mt-28 font-bold sm:leading-[80px] leading-10'>️❤️<span>Events </span>by ClueLess <span>X</span> iNeuron.</h1>
+      {/* <UpcomingEvents/>  */}
+      <UpcomingEvents/>
       <UltimateResourceHub />
       <div className="flex flex-col justify-center items-center xl:space-y-16 space-y-8 w-[10/12] mx-auto">
         <h1 className="xl:text-5xl font-bold md:text-4xl text-2xl">
@@ -37,8 +39,6 @@ const Home: NextPage = () => {
         </h1>
         <img src="ineuron-logo.png" alt="ineutron Logo" />
       </div>
-      {/* <UpcomingEvents/>  */}
-      <UpcomingEvents/>
 
       {/* <TeamMembersHome/> */}
       <SocialHome />

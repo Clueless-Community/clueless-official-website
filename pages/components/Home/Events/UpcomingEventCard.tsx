@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { useEffect } from 'react'
 import Link from 'next/link'
-import EditIcon from "@mui/icons-material/Edit";
 import { useRouter } from 'next/router'
 
 interface agenda {
@@ -36,15 +35,9 @@ interface dataProps {
 
 const UpcomingEventCard: React.FC<dataProps> = ({ eventposter, heading, venue, Time, instructorOrspeaker, attractions, eventId, date }) => {
     const router = useRouter()
-    const [admin, setAdmin] = React.useState(false)
     const allSpeakerNames = instructorOrspeaker?.map(key => key.name)
+    console.log(eventId);
 
-
-    useEffect(() => {
-        router.pathname.includes('admin') && setAdmin(true)
-    }, [])
-
-    console.log(admin)
 
     return (
         <div className=' bg-[#1954ca25] border-dashed border-2 border-opacity-30 border-black font-nunito xl:flex-row flex-col flex xl:justify-between xl:p-8 p-3 rounded-xl relative space-y-3 xl:space-y-0'>

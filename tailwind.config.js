@@ -22,7 +22,7 @@ module.exports = {
 
         xl: '1280px',
         // => @media (min-width: 1280px) { ... }
-        
+
 
         '2xl': '1536px',
         // => @media (min-width: 1536px) { ... }
@@ -53,6 +53,7 @@ module.exports = {
       fontFamily: {
         nunito: "'Nunito Sans', sans-serif;",
         raleway: "'Raleway', sans-serif;",
+        poppins: "'Poppins', sans- serif",
       },
     },
   },
@@ -60,11 +61,11 @@ module.exports = {
     extend: {},
   },
   plugins: [
-    require ('@tailwindcss/aspect-ratio'),
-    require ('tailwind-scrollbar'),
-    function({addVariant}) {
-      addVariant ('child', '& > *');
-      addVariant ('child-hover', '& > *:hover');
+    require('@tailwindcss/aspect-ratio'),
+    require('tailwind-scrollbar'),
+    function ({ addVariant }) {
+      addVariant('child', '& > *');
+      addVariant('child-hover', '& > *:hover');
     },
   ],
 };
