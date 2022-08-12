@@ -4,7 +4,7 @@ import { SvgButton } from '../../../../styles/Mui-styles/HoverFillButton'
 
 
 
-const UpcomingEvents = () => {
+const PreviousEvents = () => {
     return (
         <div className=''>
             <h1 className='text-4xl text-center py-8 font-semibold' >Previous Events </h1>
@@ -19,4 +19,4 @@ const UpcomingEvents = () => {
     )
 }
 
-export default UpcomingEvents
+export default PreviousEvents

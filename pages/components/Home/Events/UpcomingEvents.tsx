@@ -1,19 +1,50 @@
+import { collection, getDocs } from 'firebase/firestore';
+import { useRouter } from 'next/router';
 import React from 'react'
+import { db } from '../../../../lib/clientApp';
+import UpcomingEventCard from './UpcomingEventCard';
+import { format } from 'date-fns';
+import { CircularProgress } from '@mui/material';
+
 
 
 
 const UpcomingEvents = () => {
+  const router = useRouter()
+  const [eventData, seteventData] = React.useState<any>([])
+
+  const getEventData = async () => {
+    const eventRef = collection(db, 'events',)
+    const eventSnap = await getDocs(eventRef);
+    eventSnap.forEach(doc => {
+      seteventData((event: any) => { return [{ project_id: doc.id, ...doc.data() }, ...event] })
+    })
+  }
+
+  React.useEffect(() => {
+    if (!router.isReady) return;
+    getEventData();
+  }, [router.isReady])
+
+  console.log(eventData)
+
+
+
+
   return (
-    <div className=''>
+
+    eventData.length !== 0 ? <div className='xl:my-20 my-4 xl:mx-40 md:mx-20 mx-4'>
       <h1 className='text-4xl text-center py-8 font-semibold' >Upcoming Events </h1>
       <div className=''>
-        {/* {eventData.map((data, i) => {
-          return <UpcomingEventCard eventposter={data.eventposter} heading={data.heading} venue={data.venue} startingTime={data.startingTime} endingTime={data.endingTime} instructorOrspeaker={data.instructorOrspeaker}
-            attractions={data.attractions} agenda={data.agenda} />
-        })} */}
-        
-      </div>z`1`
-    </div>
+        {eventData.map((data: any, i: number) => {
+          const date = format(new Date(data.date.seconds * 1000), 'do LLLLLL, yyyy')
+          return <UpcomingEventCard key={i} eventposter={data.event_icon_image} heading={data.event_name} venue={data.venue_name} Time={data.time_period} instructorOrspeaker={data.speakers_info}
+            attractions="Win T-shirts, swags and free food. 🚀 " agenda={data.agenda} eventId={data.id} date={date} />
+        })}
+      </div>
+    </div> : <CircularProgress />
+
+
   )
 }
 

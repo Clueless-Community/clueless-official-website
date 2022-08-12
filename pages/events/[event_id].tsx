@@ -216,11 +216,11 @@ const EventDetails: React.FC = () => {
                                 <h1 className='xl:text-3xl text-2xl font-semibold text-skin-main'>Instructor / speaker </h1>
                                 <div className='flex justify-start max-w-fit flex-wrap child:mr-28 child:mb-8'>
                                     {event.speakers_info.map((speaker: any, i: number) => {
-                                        return <section className='flex justify-start space-x-4' key={i}>
+                                        return <section className='flex justify-start space-x-8' key={i}>
                                             <img src={speaker.image} alt='' className='xl:w-28 w-20 rounded-full border-dashed border-2 border-[#1955CA] m-auto' />
                                             <div className='flex flex-col items-start justify-center space-y-2'>
                                                 <h1 className='xl:text-xl text-lg'>{speaker.name}</h1>
-                                                <div className='flex justify-center space-x-2 child:text-[#7D7D7D] child:text-3xl'>
+                                                <div className='flex justify-center space-x-4 child:text-[#7D7D7D] child:text-3xl'>
                                                     {speaker.linkedinUrl && <a href={speaker.linkedinUrl} target="_blank" rel="noreferrer"><AiFillLinkedin /></a>}
                                                     {speaker.gitHubURL && <a href={speaker.gitHubURL} target="_blank" rel="noreferrer"><AiOutlineGithub /></a>}
                                                     {speaker.twitterURL && <a href={speaker.twitterURL} target="_blank" rel="noreferrer"><AiOutlineTwitter /></a>}
