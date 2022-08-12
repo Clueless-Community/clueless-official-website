@@ -17,7 +17,7 @@ const HomeMain = () => {
                 <h2 className=' font-raleway text-skin-main mt-5 text-4xl mb-16 '>Learn.<span className='text-gray-900'>Grow.</span></h2>
                 <div className='flex flex-col sm:flex-row items-start'>
                     <Link href={"/events"} passHref>
-                    <button className='btn-blue text-xl flex items-center px-6 py-3 shadow-blue-600'>Explore events</button>
+                        <button className='btn-blue text-xl flex items-center px-6 py-3 shadow-blue-600'>Explore events</button>
                     </Link>
                     <div>
                     </div>
