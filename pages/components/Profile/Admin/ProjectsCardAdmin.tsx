@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
 import { Stack } from '@mui/material'
 import React, { useState } from 'react'
@@ -104,6 +105,7 @@ const ProjectsCardAdmin: React.FC<Props> = ({ projectId, projectImage, projectNa
                 onClose={handleClose}
                 aria-labelledby="alert-dialog-title"
                 aria-describedby="alert-dialog-description"
+                // sx={{borderRadius : 20}}
             >
                 <div className='p-6'>
                     <div id="alert-dialog-title">
@@ -118,7 +120,7 @@ const ProjectsCardAdmin: React.FC<Props> = ({ projectId, projectImage, projectNa
                     </DialogContent>
                     <div className="space-x-12 w-full flex justify-center">
 
-                        <button onClick={async () => { await deleteProject(); handleProjectFetch(); }} className="bg-skin-main btn-blue hover:skin-main" autoFocus>
+                        <button onClick={async () => { await deleteProject(); handleProjectFetch(); }} className="bg-skin-main btn-blue px-8 hover:skin-main" autoFocus>
                             Yes
                         </button>
                         <button

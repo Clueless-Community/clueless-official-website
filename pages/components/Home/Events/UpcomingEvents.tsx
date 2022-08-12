@@ -21,14 +21,13 @@ const UpcomingEvents = () => {
     })
   }
 
+  console.log(eventData);
+  
+
   React.useEffect(() => {
     if (!router.isReady) return;
     getEventData();
   }, [router.isReady])
-
-  console.log(eventData)
-
-
 
 
   return (
@@ -39,7 +38,7 @@ const UpcomingEvents = () => {
         {eventData.map((data: any, i: number) => {
           const date = format(new Date(data.date.seconds * 1000), 'do LLLLLL, yyyy')
           return <UpcomingEventCard key={i} eventposter={data.event_icon_image} heading={data.event_name} venue={data.venue_name} Time={data.time_period} instructorOrspeaker={data.speakers_info}
-            attractions="Win T-shirts, swags and free food. 🚀 " agenda={data.agenda} eventId={data.id} date={date} />
+            attractions="Win T-shirts, swags and free food. 🚀 " agenda={data.agenda} eventId={data.project_id} date={date} />
         })}
       </div>
     </div> : <CircularProgress />

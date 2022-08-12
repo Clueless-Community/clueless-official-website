@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
@@ -64,7 +65,7 @@ const UpcomingEventCard: React.FC<dataProps> = ({ eventposter, heading, venue, T
 
     useEffect(() => {
         router.pathname.includes('admin') && setAdmin(true)
-    }, [])
+    }, [router.pathname])
 
     console.log(admin)
 
@@ -119,7 +120,7 @@ const UpcomingEventCard: React.FC<dataProps> = ({ eventposter, heading, venue, T
                     <button className='bg-skin-main px-4 xl:py-3 py-2 rounded-md text-white font-semibold xl:text-xl text-lg'>View</button>
                 </Link>
                 <div>
-                    <Link href={`/admin/events/[event_id]`} as={`/admin/events/${eventId}`}>
+                    <Link href={`/admin/events/[event_id]`} as={`/admin/events/${eventId}`} passHref>
                         <button className='bg-skin-main p-2 rounded-full text-white font-semibold xl:text-xl text-lg'><EditIcon /></button>
                     </Link>
                 </div>
@@ -133,6 +134,7 @@ const UpcomingEventCard: React.FC<dataProps> = ({ eventposter, heading, venue, T
                 onClose={handleClose}
                 aria-labelledby="alert-dialog-title"
                 aria-describedby="alert-dialog-description"
+                // sx={{borderRadius : 200}}
             >
                 <div className='space-y-4 p-6'>
                     <div id="alert-dialog-title">
@@ -145,9 +147,9 @@ const UpcomingEventCard: React.FC<dataProps> = ({ eventposter, heading, venue, T
                     </div>
                     <div className="w-10/12 mx-auto text-center">
                         {deleteInput === "DELETE" ? <button className="btn-blue bg-skin-red hover:bg-skin-red" autoFocus onClick={handleDelete}>
-                            Yes
+                            Delete
                         </button> : <button className="btn-blue bg-gray-400 hover:bg-gray-400 text-white cursor-not-allowed" autoFocus disabled>
-                            Yes
+                            Delete
                         </button>}
                     </div>
                 </div>
