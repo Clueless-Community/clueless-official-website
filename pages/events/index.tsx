@@ -30,8 +30,6 @@ const Events = () => {
     React.useEffect(() => {
         getEventData()
     }, [getEventData])
-
-    console.log(eventData);
     return (
         <div>
             {isFetched ? (

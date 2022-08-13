@@ -33,7 +33,6 @@ const Usercheck = () => {
             const userDocSnap = await getDoc(userRef);
 
             if (userDocSnap.exists()) {
-                console.log("user exists");
             } else {
                 await setDoc(doc(db, 'users', userId), {
                     uid: userId,
@@ -42,11 +41,9 @@ const Usercheck = () => {
                     email: session?.user?.email,
                     created_time: serverTimestamp()
                 })
-                console.log("New User Added");
                 try {
                     joiningMail();
                 } catch (e) {
-                    console.log("Some problem faced while sending the welcome email");
                 }
             }
             router.push('/');

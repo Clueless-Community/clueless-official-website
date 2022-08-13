@@ -29,7 +29,6 @@ const UpcomingEvents = () => {
     getEventData();
   }, [router.isReady])
 
-
   return (
 
     eventData.length !== 0 ? <div className='xl:my-20 my-4 xl:mx-40 md:mx-20 mx-4'>

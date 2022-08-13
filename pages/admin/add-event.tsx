@@ -45,7 +45,6 @@ const AddEvent: React.FC = () => {
     );
     const [eventMode, seteventMode] = useState<string | undefined>("")
 
-    console.log(date);
 
 
     const { isAdmin } = useAdminLogIn()
@@ -115,7 +114,6 @@ const AddEvent: React.FC = () => {
         uploadTask && uploadTask.on('state_changed',
             (snapshot: { bytesTransferred: number; totalBytes: number; state: any; }) => {
                 const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-                console.log('Upload is ' + progress + '% done');
                 switch (snapshot.state) {
                     case 'paused':
                         console.log('Upload is paused');
@@ -138,7 +136,6 @@ const AddEvent: React.FC = () => {
             },
             async () => {
                 await getDownloadURL(uploadTask.snapshot.ref).then((downloadURLOnUpload) => {
-                    console.log('File uploaded');
                     setBannerDownloadURL(downloadURLOnUpload);
                 });
             }
@@ -206,9 +203,7 @@ const AddEvent: React.FC = () => {
     // For adding Data in Firebase for Event 
     const addEvent = async () => {
         await handleBannerImageUpload();
-        console.log(BannerDownloadURL);
         await handleIconImageUpload();
-        console.log(IconDownloadURL);
         const eventIdtemp = eventname.toLowerCase().replace(' ', '-');
         const dateId = (new Date).getTime()
         const eventId = `${eventIdtemp}-${dateId}`
@@ -228,10 +223,10 @@ const AddEvent: React.FC = () => {
                 event_id: eventId,
                 created_time: serverTimestamp()
             })
-            console.log("Data Added");
+
             handleResetForm()
         } catch (e) {
-            console.log(e)
+           console.log(e)
         }
     }
 
