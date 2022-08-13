@@ -43,12 +43,12 @@ const signin: React.FC = ({ providers }: any) => {
                     <p>GitHub</p>
                   </div>
                 </button>
-                <button className="px-4 py-3 w-full font-semibold text-lg flex items-center justify-center bg-[#3F9CF0] hover:bg-[#2E9CFF] text-white max-w-[301px] rounded mx-auto cursor-pointer" onClick={(): void => { signIn(providers.twitter.id, { callbackUrl: "/usercheck" }) }}>
+                {/* <button className="px-4 py-3 w-full font-semibold text-lg flex items-center justify-center bg-[#3F9CF0] hover:bg-[#2E9CFF] text-white max-w-[301px] rounded mx-auto cursor-pointer" onClick={(): void => { signIn(providers.twitter.id, { callbackUrl: "/usercheck" }) }}>
                   <div className="flex justify-center space-x-2">
                     <TwitterIcon />
                     <p>Twitter</p>
                   </div>
-                </button>
+                </button> */}
               </div>
               <Link href="/" passHref>
                 <p className=" text-center text-skin-main font-semibold hover:underline cursor-pointer mt-10"><p className="flex items-center justify-center"><KeyboardArrowLeftIcon />Go back Home</p></p>
