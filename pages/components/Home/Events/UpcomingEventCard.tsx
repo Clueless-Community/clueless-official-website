@@ -41,7 +41,7 @@ const UpcomingEventCard: React.FC<dataProps> = ({ eventposter, heading, venue, T
 
     return (
         <div className=' bg-[#1954ca25] border-dashed border-2 border-opacity-30 border-black font-nunito xl:flex-row flex-col flex xl:justify-between xl:p-8 p-3 rounded-xl relative space-y-3 xl:space-y-0'>
-            <section className={`flex xl:justify-start xl:space-x-8 space-x-4  pb-4 xl:pb-0 w-full`}>
+            <section className="flex xl:justify-start xl:space-x-8 space-x-4  pb-4 xl:pb-0 w-full">
                 <div>
                     <img src={eventposter} className="rounded-full h-auto w-36 object-cover xl:h-[200px] xl:w-[200px]" alt='' />
                 </div>

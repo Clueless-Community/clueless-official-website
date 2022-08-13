@@ -33,16 +33,19 @@ const UpcomingEvents = () => {
 
     eventData.length !== 0 ? <div className='xl:my-20 my-4 xl:mx-40 md:mx-20 mx-4'>
       <h1 className='text-4xl text-center py-8 font-semibold' >Upcoming Events </h1>
-      <div className=''>
+      <div>
         {eventData.map((data: any, i: number) => {
           const date = format(new Date(data.date.seconds * 1000), 'do LLLLLL, yyyy')
-          return <UpcomingEventCard key={i} eventposter={data.event_icon_image} heading={data.event_name} venue={data.venue_name} Time={data.time_period} instructorOrspeaker={data.speakers_info}
-            attractions="Win T-shirts, swags and free food. 🚀 " agenda={data.agenda} eventId={data.project_id} date={date} />
-        })}
+          return (
+          <div key={i} className="my-10">
+
+            <UpcomingEventCard eventposter={data.event_icon_image} heading={data.event_name} venue={data.venue_name} Time={data.time_period} instructorOrspeaker={data.speakers_info}
+              attractions="Win T-shirts, swags and free food. 🚀 " agenda={data.agenda} eventId={data.project_id} date={date} />
+          </div>
+        
+        )  })}
       </div>
     </div> : <CircularProgress />
-
-
   )
 }
 
