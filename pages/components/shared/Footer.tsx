@@ -51,7 +51,7 @@ const Footer: React.FC = () => {
                     <Link href="/faq">
                         <a className='my-3 hover:text-skin-main transition-all'>FAQ</a>
                     </Link>
-                    <div className='text-skin-main flex justify-between my-3'>
+                    <div className='text-skin-main flex gap-10 my-3 justify-center md:justify-start'>
                         <a href="https://twitter.com/by_clueless" target="_blank" rel="noreferrer">
                             <TwitterIcon className='text-3xl cursor-pointer hover:text-skin-hoverBlue hover:scale-110 transition-all' />
                         </a>
