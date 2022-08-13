@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { useState } from "react";
 import { Avatar, Drawer, Button } from "@mui/material";
 import {
@@ -9,6 +10,7 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import Link from "next/link";
 import { signOut } from "next-auth/react";
+import { useSession } from "next-auth/react";
 
 const Style = makeStyles<WithStylesOptions<DefaultTheme>>({
   //Materia UI Styles for Menu
@@ -23,14 +25,16 @@ const Style = makeStyles<WithStylesOptions<DefaultTheme>>({
 
 type Props = {
   //Interface of the Prop Passed in this Compnent
+  uid: string;
   img: string;
   name: string;
   email: string;
 };
 
-const NavbarDrawer: React.FC<Props> = ({ img, name, email }) => {
+const NavbarDrawer: React.FC<Props> = ({ img, name, email, uid }) => {
   const classes: ClassNameMap<"Drawer"> = Style();
   const [drawer, SetDrawer] = useState<boolean>(false);
+  const session = useSession();
 
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const handleClose = () => {
@@ -45,7 +49,7 @@ const NavbarDrawer: React.FC<Props> = ({ img, name, email }) => {
             SetDrawer(true);
           }}
         >
-          <MenuIcon className="w-16 scale-150 cursor-pointer text-skin-main" />
+          <MenuIcon className="sm:w-16 scale-150 cursor-pointer text-skin-main" />
         </Button>
         <Drawer
           anchor="right"
@@ -56,13 +60,13 @@ const NavbarDrawer: React.FC<Props> = ({ img, name, email }) => {
           className={classes.Drawer}
         >
           <div className=" flex flex-col my-10">
-            <Link href="/">
+            <Link href="/" passHref>
               <div className="flex items-center cursor-pointer mx-auto">
                 <img src="/ClueLess Logo.png" alt="" className="w-[65px]" />
                 <h1 className=" font-raleway text-3xl ml-8">ClueLess</h1>
               </div>
             </Link>
-            <Link href="/">
+            <Link href="/" passHref>
               <button
                 onClick={handleClose}
                 className="font-semibold text-xl mt-16"
@@ -71,10 +75,10 @@ const NavbarDrawer: React.FC<Props> = ({ img, name, email }) => {
               </button>
             </Link>
             <div className="bg-gray-300 h-[1px] w-10/12 mx-auto mt-3"></div>
-            <a
+            {/* <a
               href="https://clueless-blogs.hashnode.dev/"
               target="_blank"
-              className="text-center"
+              className="text-center" rel="noreferrer"
             >
               <button
                 onClick={handleClose}
@@ -82,42 +86,57 @@ const NavbarDrawer: React.FC<Props> = ({ img, name, email }) => {
               >
                 Blogs
               </button>{" "}
-            </a>
-            <div className="bg-gray-300 h-[1px] w-10/12 mx-auto mt-3"></div>
-            <a href="https://clueless-resources.super.site/resources" target="_blank" className="text-center">
+            </a> */}
+            {/* <div className="bg-gray-300 h-[1px] w-10/12 mx-auto mt-3"></div> */}
+            <a href="https://clueless-resources.super.site/resources" target="_blank" className="text-center" rel="noreferrer">
               <button
                 onClick={handleClose}
                 className="font-semibold text-xl mt-5"
               >
                 Resources
               </button>
-              </a>
+            </a>
             <div className="bg-gray-300 h-[1px] w-10/12 mx-auto mt-3"></div>
-            <Link href="/challenges-events">
+            <Link href="/events" passHref>
               <button
                 onClick={handleClose}
                 className="font-semibold text-xl mt-5"
               >
-              Events
+                Events
               </button>
             </Link>
-            <div className="bg-gray-300 h-[1px] w-10/12 mx-auto mt-3"></div>
-            {/* <button
-              onClick={(): void => {
-                handleClose();
-                signOut();
-              }}
-              className="font-semibold text-xl mt-5"
-            >
-              Sign Out
-            </button> */}
-            <a href="https://discord.gg/zrVMjGW8sB" target="_blank" className="w-full mx-auto text-center">
-            <button className="font-semibold text-xl mt-5 mx-auto">
-              Join Discord
-            </button>
-            </a>
+            {session.status === "unauthenticated" && (
+              <>
+                <div className="bg-gray-300 h-[1px] w-10/12 mx-auto mt-3"></div>
+                <Link href="/auth/signin" passHref>
+                  <button
+                    onClick={handleClose}
+                    className="font-semibold text-xl mt-5"
+                  >
+                    LogIn
+                  </button>
+                </Link></>
+            )}
           </div>
-          {/* <div className="absolute bottom-5 left-5 flex items-center justify-center">
+          {session.status === "authenticated" && (
+            <>
+              <div className="bg-gray-300 h-[1px] w-10/12 mx-auto mt-3"></div>
+              <button
+                onClick={(): void => {
+                  handleClose();
+                  signOut();
+                }}
+                className="font-semibold text-xl mt-5"
+              >
+                Sign Out
+              </button>
+              {/* <div className="bg-gray-300 h-[1px] w-10/12 mx-auto mt-3"></div>
+            <a href="https://discord.gg/zrVMjGW8sB" target="_blank" className="w-full mx-auto text-center" rel="noreferrer">
+              <button className="font-semibold text-xl mt-5 mx-auto">
+                Join Discord
+              </button>
+            </a> */}
+              {/* <div className="absolute bottom-5 left-5 flex items-center justify-center">
             <Avatar
               className=" cursor-pointer ring-2 ring-white mx-auto "
               src={img}
@@ -129,6 +148,17 @@ const NavbarDrawer: React.FC<Props> = ({ img, name, email }) => {
               <p className="ml-5 text-gray-300 text-sm">{email}</p>
             </div>
           </div> */}
+              <Link href={'/profile/admin/[uid]'} as={`/profile/admin/${uid}`} passHref>
+                <div className='absolute bottom-5 left-5 sm:left-10 flex items-center'>
+                  <Avatar className=' cursor-pointer ring-2 ring-white' src={img} alt={name} sx={{ width: 40, height: 40 }} />
+                  <div>
+                    <p className='ml-5 text-lg font-semibold'>{name}</p>
+                    <p className='ml-5 text-gray-700 text-xs'>{email}</p>
+                  </div>
+                </div>
+              </Link>
+            </>
+          )}
         </Drawer>
       </div>
     </React.Fragment>

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import CircleIcon from "@mui/icons-material/Circle";
 import PaidIcon from "@mui/icons-material/Paid";

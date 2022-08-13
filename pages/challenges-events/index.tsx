@@ -6,11 +6,11 @@ import WorkInProgress from '../components/shared/WorkInProgress'
 const index = () => {
   return (
     <div>
-        <Head>
-            <title>ClueLess | Challenegs & Event</title>
-        </Head>
-        <Navbar />
-        <WorkInProgress />
+      <Head>
+        <title>ClueLess | Challenge & Event</title>
+      </Head>
+      <Navbar />
+      <WorkInProgress />
     </div>
   )
 }

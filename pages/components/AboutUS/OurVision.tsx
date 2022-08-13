@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
@@ -25,7 +26,7 @@ const OurVision: React.FC = () => {
                         </motion.div>
                     </div>
                 </div>
-                <div className="md:bg-[#F2F2F2] lg:rounded-r-3xl md:rounded-b-3xl lg:rounded-bl-none md:pt-20 pb-10 relative md:border-2 border-dashed border-black border-opacity-30 lg:border-l-0 md:border-t-0">
+                <div className="md:bg-[#F2F2F2] lg:rounded-r-3xl md:rounded-b-3xl lg:rounded-bl-none md:pt-20 pb-10 relative md:border-2 border-dashed border-black border-opacity-30 lg:border-l-0 lg:border-t-2 md:border-t-0">
                     <h2 className="font-semibold text-4xl mb-16 md:hidden">
                         Our Vision
                     </h2>

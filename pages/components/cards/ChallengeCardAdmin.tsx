@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import LocalOfferIcon from "@mui/icons-material/LocalOffer";
 
@@ -8,6 +9,7 @@ type Props = {
   stack: string;
 };
 const ChallengeCardAdmin: React.FC<Props> = ({ img, title, stack }) => {
+
   function getStacks() {
     return (
       <div className="flex item-center text-skin-hoverBlue font-semibold mb-4 mt-2">
@@ -16,6 +18,7 @@ const ChallengeCardAdmin: React.FC<Props> = ({ img, title, stack }) => {
       </div>
     );
   }
+
   return (
     <div>
       <div className="w-[281px] max-h-[313px] sm:w-[320px] sm:max-h-[440px] shadow-md pb-2 sm:pb-4 rounded">

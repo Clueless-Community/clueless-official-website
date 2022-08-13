@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import CircleIcon from "@mui/icons-material/Circle";
 import PaidIcon from "@mui/icons-material/Paid";
@@ -34,7 +35,7 @@ const ResourceCard: React.FC<Props> = ({category, price, title, specificStack, i
         </div>
         {givenBY && (
         <p className="text-xs mb-3">
-        Provided by - <a className="text-xs underline" href={givenByProfile} target="_blank"> {givenBY}</a>
+        Provided by - <a className="text-xs underline" href={givenByProfile} target="_blank" rel="noreferrer"> {givenBY}</a>
         </p>
         )}
         

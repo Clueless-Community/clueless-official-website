@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import StorageIcon from '@mui/icons-material/Storage';
@@ -7,7 +8,7 @@ const UltimateResourceHub: React.FC = () => {
   const [state, setState] = useState<number>(0);
 
   return (
-    <div className="md:grid lg:grid-cols-2 md:mx-28 mt-10 flex flex-col text-center lg:text-left sm:mb-32">
+    <div className="md:grid lg:grid-cols-2 xl:mx-40 mt-10 flex flex-col text-center lg:text-left sm:mb-32">
       <div className="bg-skin-main lg:rounded-l-3xl md:rounded-t-3xl lg:rounded-tr-none py-20 transition-all duration-500 relative">
         <div className="xl:px-24 md:px-10 flex flex-col items-center w-11/12 mx-auto my-auto">
           <motion.div
@@ -25,7 +26,7 @@ const UltimateResourceHub: React.FC = () => {
             <p className="text-gray-200 mt-8">
             Internet is flooded with so many resources that can make one confused and clueless. So we, the Clueless Community provide the best, filtered, and curated resources like YouTube videos, GitHub repositories, websites, cheatsheets, etc! 
             </p>
-            <a href="https://clueless-resources.super.site/resources" target="_blank">
+            <a href="https://clueless-resources.super.site/resources" target="_blank" rel="noreferrer">
               <button className="btn-blue bg-white text-black hover:bg-gray-100 mt-10 flex items-center mx-auto lg:mx-0">
               <StorageIcon className="mr-2 text-md"/>Explore
               </button>

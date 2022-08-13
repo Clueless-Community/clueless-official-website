@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Head from "next/head";
 import Footer from "../components/shared/Footer";
 import Navbar from "../components/shared/Navbar/Navbar";
@@ -76,7 +77,7 @@ const ContactUs = () => {
               <div className="flex flex-col items-start space-y-4 text-xl" >
                 <div className="text-4xl font-semibold ">Contact Us</div>
                 <div className="text-sm text-semibold text-slate-500">
-                  Have any questions? We'd love to hear from you
+                  Have any questions? We would love to hear from you
                 </div >
                 <div className="space-y-4 ">
                   <TextField

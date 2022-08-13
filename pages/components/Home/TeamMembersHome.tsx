@@ -8,9 +8,9 @@ const TeamMembersHome = () => {
 
     return (
         <div className='sm:mb-44 mt-20'>
-            <h2 className='xl:px-28 lg:px-20 w-11/12 text-center lg:text-left text-4xl font-semibold'>✨Amazing Team Behind this!</h2>
+            <h2 className='xl:px-28 lg:px-20 w-11/12 text-center  text-4xl font-semibold'>✨Amazing Team Behind this!</h2>
             <div className=' mx-auto justify-center flex-wrap hidden lg:flex'>
-                <Link href="/about-us">
+                <Link href="/about-us" passHref>
                     <AvatarGroup max={12} className="2xl:scale-[370%] xl:scale-[300%] lg:scale-[230%] mt-32">
                         <Tooltip title="Rajdeep Sengupta" arrow>
                             <Avatar alt="Remy Sharp" sx={{ maxWidth: 150, maxHeight: 150 }} className="ring-1 border-[#1955CA] hover:scale-110 transition-all cursor-pointer hover:z-50 relative" src="/TeamMembers/Rajdeep.png" />
@@ -66,7 +66,7 @@ const TeamMembersHome = () => {
                 </AvatarGroup>
             </div>
             <div className='flex justify-center'>
-                <Link href="/about-us">
+                <Link href="/about-us" passHref>
                     <button className='btn-blue mx-auto lg:hidden'>Know More about Us</button>
                 </Link>
             </div>

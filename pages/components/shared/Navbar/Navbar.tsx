@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import React from "react";
 import NavbarAvatarDropDown from "./NavbarAvatarDropDown";
@@ -12,69 +13,74 @@ const Navbar: NextComponentType = () => {
   const name = session.data?.user.name;
   const email = session.data?.user.email;
   const image = session.data?.user.image;
-
-  console.log(session);
-
+  const uid = session.data?.user.id;
 
   return (
-    <nav className="flex justify-between sm:px-28 px-5 py-5 items-center shadow-xl">
-      <Link href="/">
+    <nav className="flex justify-between sm:px-14 lg:px-36 px-5 py-5 items-center shadow-xl">
+      <Link href="/" passHref>
         <div className="flex items-center cursor-pointer">
           <img src="/ClueLess Logo.png" alt="" className="sm:w-[65px] w-[35px]" />
           <h1 className=" font-raleway sm:text-3xl text-xl sm:ml-8 ml-2">ClueLess</h1>
         </div>
       </Link>
       <div className="hidden lg:block">
-        <Link href="/">
+        <Link href="/" passHref>
           <button className="hover:font-semibold hover:underline cursor-pointer xl:mx-8 mx-3 text-xl transition-all">
             Home
           </button>
         </Link>
 
-        <button className="hover:font-semibold hover:underline cursor-pointer xl:mx-8 mx-3 text-xl transition-all">
-          <a href="https://clueless-blogs.hashnode.dev" target="_blank">
+        {/* <button className="hover:font-semibold hover:underline cursor-pointer xl:mx-8 mx-3 text-xl transition-all">
+          <a href="https://clueless-blogs.hashnode.dev" target="_blank" rel="noreferrer">
             Blogs
           </a>
-        </button>
+        </button> */}
 
-        <a href="https://clueless-resources.super.site/resources" target="_blank">
+        <a href="https://clueless-resources.super.site/resources" target="_blank" rel="noreferrer">
           <button className="hover:font-semibold hover:underline cursor-pointer xl:mx-8 mx-3 text-xl transition-all">
             Resources
           </button>
-          </a>
-        <Link href="/challenges-events">
+        </a>
+        <Link href="/events" passHref>
           <button className="hover:font-semibold hover:underline cursor-pointer xl:mx-8 mx-3 text-xl transition-all">
-          Events
+            Events
           </button>
         </Link>
       </div>
-      <div className="hidden lg:block">
-      <a href="https://discord.gg/zrVMjGW8sB" target="_blank">
-        <SvgButton>Join Discord</SvgButton>
-        </a>
-      </div>
-      {/* {session.status === "authenticated" && (
-        <>
-        <NavbarAvatarDropDown 
-        img={image as string}
-        name={name as string}
-        email={email as string}
-        />
-        </>
-        )}{
-          session.status === "unauthenticated" && (
-            <Link href="/auth/signin">
-            <div className="scale-75 sm:scale-100">
-            <SvgButton>Sign In</SvgButton>
-            </div>
-            </Link>
-            )
-          } */}
-          <NavbarDrawer
+      {session.status === "authenticated" && (
+        <div className="hidden md:block">
+          <NavbarAvatarDropDown
             img={image as string}
             name={name as string}
             email={email as string}
+            uid={uid as string}
           />
+        </div>
+      )}
+      {session.status === "unauthenticated" && (
+        <Link href="/auth/signin" passHref>
+          <div className="scale-75 sm:scale-100 hidden lg:block">
+            <SvgButton>Log In</SvgButton>
+          </div>
+        </Link>
+      )
+      }
+      <div className=" flex items-center lg:hidden">
+      {session.status === "unauthenticated" && (
+        <Link href="/auth/signin" passHref>
+          <div className="btn-blue text-xs sm:text-lg ">
+            <button>Log In</button>
+          </div>
+        </Link>
+      )
+      }
+        <NavbarDrawer
+          uid={uid as string}
+          img={image as string}
+          name={name as string}
+          email={email as string}
+        />
+        </div>
     </nav>
   );
 };
