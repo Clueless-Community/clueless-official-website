@@ -45,7 +45,7 @@ const UpcomingEvents = () => {
         
         )  })}
       </div>
-    </div> : <CircularProgress />
+    </div> : null
   )
 }
 
