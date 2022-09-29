@@ -53,7 +53,7 @@ Here we have used <mark>firebase-authentication</mark> for authentication.
 We have three different authentication options.
 
 - Google
-- Twitter
+- Twitter ( For stage environment only )
 - GitHub
 
 Now for Google you first need to create OAuth credentials. Watch the video mentioned below.
