@@ -39,6 +39,5 @@ An API that gets you the list of Indian colleges and their details like city, st
 Check this project [this](https://github.com/Clueless-Community/collegeAPI) here! 
 
 # Events
-Soon we are going to organise a jam packed session in which we will talk about technologies like Blockchain, DevOps and lots more. Stay tuned 🤞
-
-[![image](https://www.linkpicture.com/q/cluelessEvents.jpg)](https://www.linkpicture.com/view.php?img=LPic62f7b956725321488063980)
+## Hacktoberfest
+Hacktoborfest is here and we are ready for you guys awesome contributions. And this time you will also get awesome swags for contribution. T-shirts, stickers, certificates andmuch more.
