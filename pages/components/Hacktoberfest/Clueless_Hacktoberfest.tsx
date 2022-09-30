@@ -1,6 +1,4 @@
 import React from 'react'
-import ReadMoreIcon from '@mui/icons-material/ReadMore';
-import Link from 'next/link';
 
 const Clueless_Hacktoberfest = () => {
     return (
