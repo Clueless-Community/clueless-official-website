@@ -353,7 +353,7 @@ const AddEvent: React.FC = () => {
     const handlePublish = () => {
         addEvent();
         handleClose3()
-        alert("Event Editted Successfully");
+        alert("Event Edited Successfully");
     }
 
     return (
