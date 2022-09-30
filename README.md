@@ -4,7 +4,14 @@ Clueless is an open-source student community built in collaboration with [iNeuro
 [![official_website](https://www.linkpicture.com/q/cluelessHomepage.png)](https://www.clueless.tech/)
 
 # Want to contribute?
-## If you are willing to contribute, please check the guide to local system setup [here on CONTRIBUTING.md](https://github.com/Clueless-Community/clueless-official-website/blob/main/CONTRIBUTING.md).
+
+
+You can contribute to this project under [Hacktoberfest 2022](https://hacktoberfest.com/) 🤩
+
+
+![hack](https://user-images.githubusercontent.com/58213083/193335881-eac1f6fd-dab6-4c99-8389-89b47d4154ce.png)
+
+### If you are willing to contribute, please check the guide to local system setup [here on CONTRIBUTING.md](https://github.com/Clueless-Community/clueless-official-website/blob/main/CONTRIBUTING.md).
 
 Don't forget to check the [issue](https://github.com/Clueless-Community/clueless-official-website/issues) section where we have already raised some issues for you to work on.
 
