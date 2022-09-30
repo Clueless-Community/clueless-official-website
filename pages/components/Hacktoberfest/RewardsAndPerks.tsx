@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 const RewardsAndPerks = () => {
@@ -12,7 +13,9 @@ const RewardsAndPerks = () => {
                         <li>All contributors will receive certificate for contributing</li>
                         <li>Contribute to open-source and be the part of the revolution</li>
                     </ol>
-                    <button className='btn-blue mt-6'>Read More</button>
+                    <Link href='#' passHref>
+                        <button className='btn-blue mt-6'>More Info</button>
+                    </Link>
                 </div>
 
             </div>

@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 const Contribute = () => {
@@ -9,7 +10,9 @@ const Contribute = () => {
                     <p className='text-[14px] '>You will get the idea of how to contribute by visiting the contribution.md file of each repo.</p>
                     <button className='btn-blue mt-6'>Read More</button>
                 </div>
-                <img src='/contribute.png' className='mx-auto ' />
+                <Link href='#' passHref>
+                    <img src='/contribute.png' className='mx-auto ' />
+                </Link>
             </div>
         </div>
     )
