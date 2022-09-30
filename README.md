@@ -8,8 +8,8 @@ Clueless is an open-source student community built in collaboration with [iNeuro
 
 You can contribute to this project under [Hacktoberfest 2022](https://hacktoberfest.com/) 🤩
 
+![1ad7db43-d819-4dd7-8ead-0ea3cca39b2f](https://user-images.githubusercontent.com/91758830/193353014-0b52c976-ee52-4512-ac25-590038a79014.jpg)
 
-![hack](https://user-images.githubusercontent.com/58213083/193335881-eac1f6fd-dab6-4c99-8389-89b47d4154ce.png)
 
 ### If you are willing to contribute, please check the guide to local system setup [here on CONTRIBUTING.md](https://github.com/Clueless-Community/clueless-official-website/blob/main/CONTRIBUTING.md).
 
@@ -44,7 +44,3 @@ Click [here](https://github.com/Clueless-Community/Datasets) to check this amazi
 An API that gets you the list of Indian colleges and their details like city, state, and NIRF ranks. You can even filter out colleges by city and state. 
 
 Check this project [this](https://github.com/Clueless-Community/collegeAPI) here! 
-
-# Events
-## Hacktoberfest
-Hacktoborfest is here and we are ready for you guys awesome contributions. And this time you will also get awesome swags for contribution. T-shirts, stickers, certificates andmuch more.
