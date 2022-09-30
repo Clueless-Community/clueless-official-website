@@ -21,7 +21,7 @@ const ProjectCard: React.FC<ProjectProps> = ({ name, description, imgSources, re
                     })}
                 </div>
             </div>
-            <Link href={repoUrl} passHref>
+            <Link href={`${repoUrl}`} passHref>
                 <button className="btn-blue bg-white text-black hover:bg-gray-100 mt-10 flex items-center mx-auto lg:mx-0">
                     <ReadMoreIcon className="mr-2" />Explore
                 </button>
