@@ -23,7 +23,7 @@ const WhatIsClueLess: React.FC = () => {
         </div>
         <GitHubIcon
           className="absolute hover:scale-125 transition-all cursor-pointer hover:text-skin-main text-skin-hoverBlue  md:block top-44 xl:left-20 lg:left-5 left-10 sm:left-24"
-          fontSize='inherit'sx={{fontSize: "50px"}}
+          fontSize='inherit' sx={{ fontSize: "50px" }}
           onMouseOver={() => {
             setState(1);
           }}
@@ -33,7 +33,7 @@ const WhatIsClueLess: React.FC = () => {
         />
         <StorageIcon
           className="absolute text-5xl hover:scale-125 transition-all cursor-pointer hover:text-skin-main text-skin-hoverBlue  md:block top-12 2xl:left-60 xl:left-28 left-10 sm:left-24"
-          fontSize='inherit'sx={{fontSize: "50px"}}
+          fontSize='inherit' sx={{ fontSize: "50px" }}
           onMouseOver={() => {
             setState(2);
           }}
@@ -43,7 +43,7 @@ const WhatIsClueLess: React.FC = () => {
         />
         <LocalPoliceIcon
           className="absolute text-5xl hover:scale-125 transition-all cursor-pointer hover:text-skin-main text-skin-hoverBlue  md:block top-12 2xl:right-72 xl:right-40 sm:right-24 right-10"
-          fontSize='inherit'sx={{fontSize: "50px"}}
+          fontSize='inherit' sx={{ fontSize: "50px" }}
           onMouseOver={() => {
             setState(3);
           }}
@@ -53,7 +53,7 @@ const WhatIsClueLess: React.FC = () => {
         />
         <BuildIcon
           className="absolute text-5xl hover:scale-125 transition-all cursor-pointer hover:text-skin-main text-skin-hoverBlue  md:block top-44 xl:right-32 lg:right-16 sm:right-24 right-10"
-          fontSize='inherit'sx={{fontSize: "50px"}}
+          fontSize='inherit' sx={{ fontSize: "50px" }}
           onMouseOver={() => {
             setState(4);
           }}
@@ -92,12 +92,12 @@ const WhatIsClueLess: React.FC = () => {
                 What is ClueLess?
               </h2>
               <p className="text-gray-200 mt-8">
-              Clueless is a student community built with the vision to encourage development ! We provide the best resources, conducts contests, hackathons, workshops, sessions to test your skills, a guide to Open-source, and help you build projects.
+                Clueless is a student community built with the vision to encourage development ! We provide the best resources, conducts contests, hackathons, workshops, sessions to test your skills, a guide to Open-source, and help you build projects.
               </p>
               <Link href="/about-us" passHref>
-              <button className="btn-blue bg-white text-black hover:bg-gray-100 mt-10 flex items-center mx-auto lg:mx-0">
-                <ReadMoreIcon className="mr-2"/>Learn More
-              </button>
+                <button className="btn-blue bg-white text-black hover:bg-gray-100 mt-10 flex items-center mx-auto lg:mx-0">
+                  <ReadMoreIcon className="mr-2" />Learn More
+                </button>
               </Link>
             </motion.div>
           )}
@@ -106,10 +106,10 @@ const WhatIsClueLess: React.FC = () => {
           )}
           {state === 2 && (
             <Resources />
-            )}
+          )}
           {state === 3 && (
             <WeeklyChallenges />
-            )}
+          )}
           {state === 4 && (
             <BuildProjects />
           )}

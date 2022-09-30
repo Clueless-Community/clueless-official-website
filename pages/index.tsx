@@ -11,6 +11,7 @@ import HomeMain from "./components/Home/HomeMain";
 import SocialHome from "./components/Home/SocialHome";
 import TeachStackLine from "./components/shared/TeachStackLine";
 import UpcomingEvents from "./components/Home/Events/UpcomingEvents";
+import Hacktoberfest from "./components/Home/Hacktoberfest";
 
 
 const Home: NextPage = () => {
@@ -23,6 +24,7 @@ const Home: NextPage = () => {
       </Head>
       <Navbar />
       <HomeMain />
+      <Hacktoberfest />
       <WhatIsClueLess />
       <h2 className="md:text-6xl sm:text-5xl text-3xl text-center my-10 mt-28 font-bold sm:leading-[80px] leading-10">
         Dive into the world of <br />{" "}
@@ -30,11 +32,11 @@ const Home: NextPage = () => {
       </h2>
       <TeachStackLine />
       <div className="flex justify-center w-full lg:hidden">
-      <img src="/Open-source Home.png" alt="" className="w-72 sm:w-96" />
+        <img src="/Open-source Home.png" alt="" className="w-72 sm:w-96" />
       </div>
       <h1 className='child:text-skin-main md:text-6xl sm:text-5xl text-3xl text-center my-10 mt-28 font-bold sm:leading-[80px] leading-10'>️❤️<span>Events </span>by ClueLess <span>X</span> iNeuron.</h1>
       {/* <UpcomingEvents/>  */}
-      <UpcomingEvents/>
+      <UpcomingEvents />
       <UltimateResourceHub />
       <div className="flex flex-col justify-center items-center xl:space-y-16 space-y-8 w-[10/12] mx-auto">
         <h1 className="xl:text-5xl font-bold md:text-4xl text-2xl">
