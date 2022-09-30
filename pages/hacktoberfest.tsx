@@ -4,6 +4,7 @@ import Clueless_Hacktoberfest from './components/Hacktoberfest/Clueless_Hacktobe
 import Contribute from './components/Hacktoberfest/Contribute'
 import Projects from './components/Hacktoberfest/Projects'
 import RewardsAndPerks from './components/Hacktoberfest/RewardsAndPerks'
+import Why_Contribute from './components/Hacktoberfest/Why_Contribute'
 import Navbar from './components/shared/Navbar/Navbar'
 
 const hacktoberfest = () => {
@@ -17,6 +18,7 @@ const hacktoberfest = () => {
             <RewardsAndPerks />
             <Projects />
             <Contribute />
+            <Why_Contribute />
         </div>
     )
 }
