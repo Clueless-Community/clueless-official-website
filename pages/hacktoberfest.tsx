@@ -6,6 +6,7 @@ import Guidelines from './components/Hacktoberfest/Guidelines'
 import Projects from './components/Hacktoberfest/Projects'
 import RewardsAndPerks from './components/Hacktoberfest/RewardsAndPerks'
 import Why_Contribute from './components/Hacktoberfest/Why_Contribute'
+import Footer from './components/shared/Footer'
 import Navbar from './components/shared/Navbar/Navbar'
 
 const hacktoberfest = () => {
@@ -21,6 +22,7 @@ const hacktoberfest = () => {
             <Contribute />
             <Why_Contribute />
             <Guidelines />
+            <Footer />
         </div>
     )
 }
