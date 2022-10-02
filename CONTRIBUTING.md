@@ -44,55 +44,7 @@ export const template = {
 
 This is the most important part. There are Authentication, Database, Filter & search and Map APIs that you need to setup. Let's go through all of them one by one.
 
-Before jumping in just rename your <mark>**.env.example** file to **.env.local**</mark>
-
-## Authentication API Keys
-
-Here we have used <mark>firebase-authentication</mark> for authentication. 
-
-We have three different authentication options.
-
-- Google
-- Twitter ( For stage environment only )
-- GitHub
-
-Now for Google you first need to create OAuth credentials. Watch the video mentioned below.
-
-[How to create Google OAuth Credentials (Client ID and Secret)](https://www.youtube.com/watch?v=xH6hAW3EqLk).
-
-After you get the keys you need to setup the **google client ID** and **google client secret** in the **.env.local** file.
-
-For Twitter watch this video.
-
-[How to Get Twitter API Key 🔑 and Secret Key](https://www.youtube.com/watch?v=gLZE1L8UfqA)
-
-After you get the keys you need to setup the **twitter client ID** and **twitter client secret** in the **.env.local** file.\
-
-For GitHub watch this video.
-
-[How to create GitHub OAuth App (client ID and client secret)](https://www.youtube.com/watch?v=R9lxXQcy-nM)
-
-After you get the keys you need to setup the **GitHub client ID** and **GitHub client secret** in the **.env.local** file.
-
-With that's done you are done with the authentication part.
-
-## Firebase APIs
-
-We are using Firebase as a backend. In this Project We have used Firebase Firestore, Firebase Auth, Firebase Storage.
-
-[You can checkout the Docs for **Firebase**](https://firebase.google.com/docs)
-
-
-## Mail API
-
-We have configured Nodemailer for setting up Mailing Services.
-
-[ You can watch this stuff for setting up **Nodemailer**](https://medium.com/nerd-for-tech/coding-a-contact-form-with-next-js-and-nodemailer-d3a8dc6cd645)
-
-
-## Shortcut
-
-If you want to contribute here and dont't want to set all this up to get started. The you can shoot us a mail at official.cluelesscommunity@gmail.com with your GitHub profile URL and where you want to contribute. After reviewing We will send you the credentials.
+If you are assigned the mail us at **official.cluelesscommunity@gmail.com** with the PR link and your gitHub ID we will send you the credentials within 2 - 3 hours.
 
 **Never push credentials to GitHub**
 
