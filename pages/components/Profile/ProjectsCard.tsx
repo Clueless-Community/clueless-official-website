@@ -24,7 +24,7 @@ const ProjectsCard: React.FC<Props> = ({ projectImage, projectName, projectDesc,
                     backgroundSize: "cover"
                 }} />
             <div className="p-5 h-[17rem] flex flex-col">
-                <a href={publicLink} className='flex flex-row items-center flex-wrap w-[100%]'>
+                <a href={publicLink} target="_blank" rel="noreferrer" className='flex flex-row items-center flex-wrap w-[100%]'>
                     <h1 className='flex-auto text-2xl mr-2 font-semibold hover:underline underline-offset-2 transition-all'>
                         {projectName}
                     </h1>
@@ -32,12 +32,13 @@ const ProjectsCard: React.FC<Props> = ({ projectImage, projectName, projectDesc,
                 </a>
                 <div className='flex gap-2 flex-row my-2 flex-wrap'>
                     {techStacks?.map((teckStack: { 'name': string }, i) => {
+                        if(i >= 3) return <></>
                         return (
                             <StyledChip text={teckStack.name} size="xs" rounded='2xl'  key={i}/>
                         )
                     })}
                 </div>
-                <p className='my-2 font-semibold opacity-80 flex-auto w-full overflow-y-hidden'>
+                <p className='my-2 font-semibold opacity-80 flex-auto w-[calc(100%)] text-ellipsis overflow-hidden'>
                     {projectDesc}
                 </p>
                 <a
