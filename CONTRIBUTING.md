@@ -56,6 +56,8 @@ For pushing your updates make a new branch in this format.
 
 And also describe a bit what changes made and try to attach screenshots.
 
+Make sure that you push your PR into the **dev** branch instead of **main**
+
 ## Having problem?
 
 If you face any problem you can mail us at **official.cluelesscommunity@gmail.com**.
