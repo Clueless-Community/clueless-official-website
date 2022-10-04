@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from "next/link";
 
 const Guidelines = () => {
     return (
@@ -11,7 +12,9 @@ const Guidelines = () => {
                         <li>All contributors will receive certificate for contributing</li>
                         <li>Contribute to open-source and be the part of the revolution</li>
                     </ol>
+                    <Link href="https://github.com/Clueless-Community/clueless-official-website/blob/main/CODE_OF_CONDUCT.md" passHref>
                     <button className='btn-blue mt-6'>Read More</button>
+                    </Link>
                 </div>
                 <img src='/guidelines.png' className='mx-auto md:mx-0' />
             </div>
