@@ -17,7 +17,7 @@ const ProjectCard: React.FC<ProjectProps> = ({ name, description, imgSources, re
             <h1 className='text-white text-[24px] lg:text-3xl'>{name}</h1>
             <div className='space-y-2'>
                 <p className='text-white text-sm mt-3'>{description}</p>
-                <div className='space-x-3 flex justify-center md:justify-start'>
+                <div className='space-x-3 flex justify-center md:justify-center lg:justify-start'>
                     {imgSources?.map((image, i) => {
                         return <img key={i} src={image} className='rounded-full w-5 h-5' />
                     })}
