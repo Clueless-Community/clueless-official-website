@@ -68,8 +68,6 @@ const style = {
 };
 
 const EditProject: React.FC<Props> = ({ projectId, projectName, projectImage, projectDesc, publicLink, gitHubLink, techStacks, handleProjectFetch }) => {
-
-
     const [editIsOpen, setEditIsOpen] = React.useState<boolean>(false);
     const { data: session } = useSession();
     const uid = session?.user?.id;

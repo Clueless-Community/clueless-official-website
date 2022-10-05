@@ -36,7 +36,7 @@ const ProjectsCardAdmin: React.FC<Props> = ({
             gitHubLink={gitHubLink}
             customTitleButtons={[
                 <EditProject
-                    key="editButton"
+                    key={`${projectId}-edit`}
                     projectId={projectId}
                     projectName={projectName}
                     projectImage={projectImage}
@@ -47,7 +47,7 @@ const ProjectsCardAdmin: React.FC<Props> = ({
                     handleProjectFetch={handleProjectFetch}
                 />,
                 <RemoveProject
-                    key="removeButton"
+                    key={`${projectId}-remove`}
                     projectId={projectId}
                     handleProjectFetch={handleProjectFetch}
                 />

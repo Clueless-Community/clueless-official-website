@@ -10,7 +10,7 @@ interface Props {
     gitHubLink?: string,
     projectDesc: string,
     techStacks: { 'name': string }[],
-    customTitleButtons: React.ReactNode[],
+    customTitleButtons?: React.ReactNode[],
 }
 
 const ProjectsCard: React.FC<Props> = ({ projectImage, projectName, projectDesc, publicLink, gitHubLink, techStacks, customTitleButtons }) => {
@@ -24,7 +24,7 @@ const ProjectsCard: React.FC<Props> = ({ projectImage, projectName, projectDesc,
                     backgroundRepeat: "no-repeat",
                     backgroundSize: "cover"
                 }} />
-            <div className="p-5 h-[17rem] flex flex-col">
+            <div className="p-5 h-[21rem] flex flex-col">
                 <a href={publicLink} target="_blank" rel="noreferrer" className='flex flex-row items-center flex-wrap w-[100%]'>
                     <h1 title={projectName} className='flex-auto text-2xl mr-2 font-semibold hover:underline underline-offset-2 transition-all line-clamp-1'>
                         {projectName}
@@ -42,7 +42,7 @@ const ProjectsCard: React.FC<Props> = ({ projectImage, projectName, projectDesc,
                         )
                     })}
                 </div>
-                <p title={projectDesc} className='my-2 font-semibold opacity-80 flex-auto w-[calc(100%)] text-ellipsis overflow-hidden line-clamp-3'>
+                <p title={projectDesc} className='my-2 font-semibold opacity-80 flex-auto w-[100%] text-ellipsis overflow-hidden line-clamp-3'>
                     {projectDesc}
                 </p>
                 <a

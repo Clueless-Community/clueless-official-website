@@ -108,12 +108,12 @@ const Profile: React.FC = () => {
                     </div>
                     <div className='my-20 md:mx-40 mx-10'>
                         <p className=' text-4xl'>Projects</p>
-                        <div className='h-1 w-20 bg-black ml-16 opacity-80'></div>
+                        <div className='h-1 w-20 bg-black ml-16 opacity-80 mb-5'></div>
                         {projects?.length !== 0 ? (
                             <Grid container spacing={4} className="my-2">
                                 {projects?.map((project: IProjectUser, i : number) => {
                                     return (
-                                        <Grid item xs={12} sm={6} md={4} key={i}>
+                                        <Grid item minWidth={306} width={'100%'} xs={12} md={6} wrap={'wrap'} xl={4} key={i}>
                                             <ProjectsCard
                                                 projectName={project.project_name}
                                                 projectImage={project.project_image}

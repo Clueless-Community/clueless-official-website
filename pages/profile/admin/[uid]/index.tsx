@@ -11,7 +11,7 @@ import { db } from '../../../../lib/clientApp'
 import { IProjectUser, ITechStack, IUser } from '../../../../interfaces/user'
 import EditIcon from '@mui/icons-material/Edit';
 import { useRouter } from 'next/router'
-import { CircularProgress, Grid, Grow } from '@mui/material'
+import { CircularProgress, Grid } from '@mui/material'
 import { useSession } from 'next-auth/react'
 import Link from 'next/link'
 
@@ -133,7 +133,7 @@ const ProfileAdmin: React.FC = () => {
                                     <Grid container spacing={4} className="my-2">
                                         {projects?.map((project: IProjectUser, i : number) => {
                                             return (
-                                                <Grid item xs={12} sm={6} md={4} key={i}>
+                                                <Grid item minWidth={306} width={'100%'} xs={12} md={6} wrap={'wrap'} xl={4} key={i}>
                                                     <ProjectsCardAdmin
                                                         projectId={project.project_id}
                                                         projectName={project.project_name}

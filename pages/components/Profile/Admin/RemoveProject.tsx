@@ -39,7 +39,7 @@ const RemoveProject: FC<Props> = ({ projectId, handleProjectFetch }) => {
         <>
             <button
                 key="removeButton"
-                className="hover:text-red-600 p-1 text-red-500 rounded-full w-9 h-9 flex items-center justify-center transition-all"
+                className="hover:text-red-600 p-1 text-gray-500 rounded-full w-9 h-9 flex items-center justify-center transition-all"
                 onClick={handleOpen}
             >
                 <DeleteIcon />
