@@ -6,14 +6,14 @@ import ProjectsCard from '../ProjectsCard';
 import RemoveProject from './RemoveProject';
 
 interface Props {
-    projectId: string;
-    projectImage: string;
-    projectName: string;
-    publicLink?: string;
-    gitHubLink?: string;
-    projectDesc: string;
-    techStacks: { name: string }[];
-    handleProjectFetch: () => Promise<void>;
+    projectId: string,
+    projectImage: string,
+    projectName: string,
+    publicLink?: string,
+    gitHubLink?: string,
+    projectDesc: string,
+    techStacks: { name: string }[],
+    handleProjectFetch: () => Promise<void>,
 }
 
 const ProjectsCardAdmin: React.FC<Props> = ({
