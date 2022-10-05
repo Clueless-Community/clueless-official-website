@@ -1,3 +1,3 @@
 export const template = {
-    templateString : "https://clueless-stage.vercel.app"
-}
+    templateString: 'http://localhost:3000'
+};

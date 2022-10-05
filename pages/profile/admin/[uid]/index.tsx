@@ -11,7 +11,7 @@ import { db } from '../../../../lib/clientApp'
 import { IProjectUser, ITechStack, IUser } from '../../../../interfaces/user'
 import EditIcon from '@mui/icons-material/Edit';
 import { useRouter } from 'next/router'
-import { CircularProgress, Grow } from '@mui/material'
+import { CircularProgress, Grid, Grow } from '@mui/material'
 import { useSession } from 'next-auth/react'
 import Link from 'next/link'
 
@@ -128,12 +128,12 @@ const ProfileAdmin: React.FC = () => {
                             </div>
                             <div className='my-20 md:mx-40 mx-10'>
                                 <p className=' text-4xl'>Projects</p>
-                                <div className='h-1 w-20 bg-black ml-16 opacity-80'></div>
+                                <div className='h-1 w-20 bg-black ml-16 opacity-80 mb-5'></div>
                                 {projects ? (
-                                    <>
+                                    <Grid container spacing={4} className="my-2">
                                         {projects?.map((project: IProjectUser, i : number) => {
                                             return (
-                                                <div className='my-10' key={i}>
+                                                <Grid item xs={12} sm={6} md={4} key={i}>
                                                     <ProjectsCardAdmin
                                                         projectId={project.project_id}
                                                         projectName={project.project_name}
@@ -144,10 +144,10 @@ const ProfileAdmin: React.FC = () => {
                                                         techStacks={project.techstacks}
                                                         handleProjectFetch={handleProjectFetch}
                                                     />
-                                                </div>
+                                                </Grid>
                                             )
                                         })}
-                                    </>
+                                    </Grid>
                                 ) : (
                                     <p className='mt-5 text-xl'>Add your first project and show the world now! {user?.name}.👇</p>
                                 )}
