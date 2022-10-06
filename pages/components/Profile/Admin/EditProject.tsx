@@ -67,6 +67,11 @@ const style = {
     borderRadius: 3,
 };
 
+const MAX_PROJECT_NAME_LENGTH = 100;
+const MAX_DESC_LENGTH = 200;
+const MAX_GITHUB_LINK_LENGTH = 100;
+const MAX_PUBLIC_LINK_LENGTH = 100;
+
 const EditProject: React.FC<Props> = ({ projectId, projectName, projectImage, projectDesc, publicLink, gitHubLink, techStacks, handleProjectFetch }) => {
     const [editIsOpen, setEditIsOpen] = React.useState<boolean>(false);
     const { data: session } = useSession();
@@ -77,14 +82,23 @@ const EditProject: React.FC<Props> = ({ projectId, projectName, projectImage, pr
         setEditIsOpen(true);
     };
 
-    const [projectNameNew, setProjectNameNew] = React.useState<string>(projectName);
+    const [projectNameNew, _setProjectNameNew] = React.useState<string>(projectName);
     const [projectImageNew, setProjectImageNew] = React.useState<string>(projectImage);
     const [media, setMedia] = React.useState<File>();
-    const [projectDescNew, setProjectDescNew] = React.useState<string>(projectDesc);
-    const [publicLinkNew, setPublicLinkNew] = React.useState<string>(publicLink as string);
-    const [gitHubLinkNew, setGitHubLinkNew] = React.useState<string>(gitHubLink as string);
+    const [projectDescNew, _setProjectDescNew] = React.useState<string>(projectDesc);
+    const [publicLinkNew, _setPublicLinkNew] = React.useState<string>(publicLink as string);
+    const [gitHubLinkNew, _setGitHubLinkNew] = React.useState<string>(gitHubLink as string);
     const [projectTechStacks, setProjectTechStacks] = React.useState<{ name: string }[]>(techStacks);
     const [downloadURL, setDownloadURL] = React.useState<string>('');
+
+    const setProjectNameNew = (val: string) =>
+        _setProjectNameNew(val.slice(0, MAX_PROJECT_NAME_LENGTH));
+    const setProjectDescNew = (val: string) =>
+        _setProjectDescNew(val.slice(0, MAX_DESC_LENGTH));
+    const setPublicLinkNew = (val: string) =>
+        _setPublicLinkNew(val.slice(0, MAX_PUBLIC_LINK_LENGTH));
+    const setGitHubLinkNew = (val: string) =>
+        _setGitHubLinkNew(val.slice(0, MAX_GITHUB_LINK_LENGTH));
 
     const addImageToPost = (e: any) => {
         const reader = new FileReader();
@@ -235,7 +249,7 @@ const EditProject: React.FC<Props> = ({ projectId, projectName, projectImage, pr
                                 ml: 0, mt: 3
                             },
                         }}>
-                            <TextField label="Project Name" required variant="outlined" sx={{ width: '100%' }} defaultValue={projectNameNew} value={projectNameNew} onChange={(e) => { setProjectNameNew(e.target.value) }} />
+                            <TextField label="Project Name" required variant="outlined" sx={{ width: '100%' }} defaultValue={projectNameNew} value={projectNameNew} onChange={(e) => { setProjectNameNew(e.target.value); console.log('here') }} />
                             <TextField label="GitHub Link" required variant="outlined" sx={{ width: '100%' }} defaultValue={gitHubLinkNew} value={gitHubLinkNew} onChange={(e) => { setGitHubLinkNew(e.target.value) }} />
                             <TextField label="Deployed URL" required variant="outlined" sx={{ width: '100%' }} defaultValue={publicLinkNew} value={publicLinkNew} onChange={(e) => { setPublicLinkNew(e.target.value) }} />
                         </Box>
