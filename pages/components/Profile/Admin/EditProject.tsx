@@ -249,7 +249,7 @@ const EditProject: React.FC<Props> = ({ projectId, projectName, projectImage, pr
                                 ml: 0, mt: 3
                             },
                         }}>
-                            <TextField label="Project Name" required variant="outlined" sx={{ width: '100%' }} defaultValue={projectNameNew} value={projectNameNew} onChange={(e) => { setProjectNameNew(e.target.value); console.log('here') }} />
+                            <TextField label="Project Name" required variant="outlined" sx={{ width: '100%' }} defaultValue={projectNameNew} value={projectNameNew} onChange={(e) => { setProjectNameNew(e.target.value) }} />
                             <TextField label="GitHub Link" required variant="outlined" sx={{ width: '100%' }} defaultValue={gitHubLinkNew} value={gitHubLinkNew} onChange={(e) => { setGitHubLinkNew(e.target.value) }} />
                             <TextField label="Deployed URL" required variant="outlined" sx={{ width: '100%' }} defaultValue={publicLinkNew} value={publicLinkNew} onChange={(e) => { setPublicLinkNew(e.target.value) }} />
                         </Box>
