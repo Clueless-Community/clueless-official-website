@@ -6,7 +6,7 @@ import { db } from '../../lib/clientApp';
 import Footer from '../components/shared/Footer';
 import Navbar from '../components/shared/Navbar/Navbar';
 
-const leaderboard: React.FC = () => {
+const Leaderboard: React.FC = () => {
     const [leaderboard, setLeaderboard] = React.useState<ILeaderboardHacktoberfest[]>([]);
     const [loading, setLoading] = React.useState<boolean>(false);
 
@@ -66,4 +66,4 @@ const leaderboard: React.FC = () => {
     )
 }
 
-export default leaderboard
+export default Leaderboard
