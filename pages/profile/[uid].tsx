@@ -10,7 +10,7 @@ import { db } from '../../lib/clientApp'
 import { IProjectUser, ITechStack, IUser } from '../../interfaces/user'
 import { useRouter } from 'next/router'
 import { useSession } from 'next-auth/react'
-import { CircularProgress } from '@mui/material'
+import {CircularProgress, Grid} from '@mui/material'
 
 const Profile: React.FC = () => {
 
@@ -108,12 +108,12 @@ const Profile: React.FC = () => {
                     </div>
                     <div className='my-20 md:mx-40 mx-10'>
                         <p className=' text-4xl'>Projects</p>
-                        <div className='h-1 w-20 bg-black ml-16 opacity-80'></div>
+                        <div className='h-1 w-20 bg-black ml-16 opacity-80 mb-5'></div>
                         {projects?.length !== 0 ? (
-                            <>
+                            <Grid container spacing={4} className="my-2">
                                 {projects?.map((project: IProjectUser, i : number) => {
                                     return (
-                                        <div className='my-10' key={i}>
+                                        <Grid item minWidth={306} width={'100%'} xs={12} md={6} wrap={'wrap'} xl={4} key={i}>
                                             <ProjectsCard
                                                 projectName={project.project_name}
                                                 projectImage={project.project_image}
@@ -122,10 +122,10 @@ const Profile: React.FC = () => {
                                                 publicLink={project.public_link}
                                                 techStacks={project.techstacks}
                                             />
-                                        </div>
+                                        </Grid>
                                     )
                                 })}
-                            </>
+                            </Grid>
                         ) : (
                             <p className='mt-5 text-xl'>No projects uploaded by {user?.name}.😢</p>
                         )}

@@ -8,10 +8,13 @@ interface Props {
 
 const StyledChip: React.FC<Props> = ({ text, size, rounded }) => {
     return (
-        <div className={`bg-[#A1BFF9] px-3 py-2 font-bold text-${size} rounded-${rounded} my-2 xl:my-0`}>
+        <div
+            title={text}
+            className={`bg-[#A1BFF9] px-3 whitespace-nowrap overflow-hidden text-ellipsis py-2 font-bold text-${size} rounded-${rounded} my-0`}
+        >
             {text}
         </div>
-    )
+    );
 }
 
 export default StyledChip
