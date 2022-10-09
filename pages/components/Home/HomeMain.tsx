@@ -30,7 +30,7 @@ const HomeMain = () => {
                 <RightImage />
             </div>
             <div className='mt-28 md:hidden'>
-                <img src="/home-code.png" alt="" />
+                <img src="/home-code.png" alt="home-code" />
             </div>
         </div>
     )
