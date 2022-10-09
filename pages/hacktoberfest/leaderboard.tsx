@@ -41,7 +41,7 @@ const Leaderboard: React.FC = () => {
             {loading ? <div className='flex justify-center items-center h-screen'>
                 <CircularProgress />
             </div> : <div className='xl:my-20 my-4 md:mx-40 sm:mx-4 mx-1'>
-                <h1 className='flex justify-center w-full xl:space-x-16 space-x-8 items-center xl:py-8 pb-4 xl:text-5xl md:text-3xl sm:text-2xl text-xl font-bold'>🥇HacktoberFest LeaderBoard🥇</h1>
+                <h1 className='flex justify-center w-full xl:space-x-16 space-x-8 items-center xl:py-8 pb-4 xl:text-5xl md:text-3xl sm:text-2xl text-xl font-bold'>🥇Clueless LeaderBoard🥇</h1>
                 <p className='my-1.5 sm:my-3 text-center'>Leaderboard will be updated everyday</p>
                 <table className='w-full xl:text-xl text-lg box-content my-8 xl:my-12'>
                     <thead className='bg-[#1C1525] text-white'>
