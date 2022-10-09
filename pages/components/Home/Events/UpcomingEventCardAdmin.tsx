@@ -138,7 +138,7 @@ const UpcomingEventCard: React.FC<dataProps> = ({ eventposter, heading, venue, T
             >
                 <div className='space-y-4 p-6'>
                     <div id="alert-dialog-title">
-                        <img src="/icons/warning.svg" className='text-sky-500 text-5xl mx-auto' />
+                        <img src="/icons/warning.svg" alt="warning" className='text-sky-500 text-5xl mx-auto' />
                     </div>
                     <div className='space-y-4 h-fit flex  flex-col justify-center items-center'>
                         <h1 className='text-3xl font-nunito font-semibold'>Please Confirm!</h1>
