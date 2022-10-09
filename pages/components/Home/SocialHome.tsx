@@ -19,7 +19,7 @@ const SocialHome = () => {
                     <FacebookIcon className='text-7xl text-blue-600 sm:mx-5 mx-0 hover:scale-110 transition-all cursor-pointer' fontSize='inherit' />
                 </a>
                 <a href="https://www.instagram.com/by_clueless/" target="_blank" rel="noreferrer">
-                    <Instagram className='text-7xl text-violet-600 sm:ml-5 ml-0 hover:scale-110 transition-all cursor-pointer' fontSize='inherit' />
+                    <Instagram className='text-7xl text-blue-600 ml-5 hover:scale-110 transition-all cursor-pointer' fontSize='inherit' />
                 </a>
             </div>
 
