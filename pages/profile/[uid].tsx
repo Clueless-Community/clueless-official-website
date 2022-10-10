@@ -113,7 +113,7 @@ const Profile: React.FC = () => {
          linkedInLink={user?.linkedIn_link}
          twitterlink={user?.twitter_link}
         />
-
+        
         <div className='md:grow pt-16 pl-8 pr-8 md:pl-16 md:pr-16 lg:pl-24 lg:pr-16 flex flex-col gap-10'>
          <div>
           <p className=' text-4xl'>About Me</p>

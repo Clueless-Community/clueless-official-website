@@ -2,7 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base{   
+@layer base{
+    *{
+        scroll-behavior: smooth;
+    }
+
     body{
         font-family: 'Nunito Sans', sans-serif;
     }
