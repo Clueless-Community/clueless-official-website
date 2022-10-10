@@ -11,6 +11,7 @@ import { collection, doc, getDoc, getDocs, query } from 'firebase/firestore';
 import { db } from '../../../../lib/clientApp';
 import { IProjectUser, ITechStack, IUser } from '../../../../interfaces/user';
 import EditIcon from '@mui/icons-material/Edit';
+import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import { useRouter } from 'next/router';
 import { CircularProgress, Grow } from '@mui/material';
 import { useSession } from 'next-auth/react';
@@ -86,18 +87,18 @@ const ProfileAdmin: React.FC = () => {
      {user.uid === userId ? (
       <>
        <Navbar />
-       <div className='relative pt-60'>
+       <div className='relative pt-[15%]'>
         <div className='absolute -z-10 top-0'>
          <img src='/profile-bg.png' alt='' />
         </div>
         <div
-         className='pb-16 bg-white'
+         className='pb-16 bg-white rounded-t-[1rem] md:rounded-t-[1rem]'
          style={{
-          borderRadius: '3rem 3rem 0 0',
+          //   borderRadius: '3rem 3rem 0 0',
           boxShadow: '0px -10px 50px rgba(0, 0, 0, 0.25)',
          }}
         >
-         <div className='flex'>
+         <div className='flex flex-col lg:flex-row'>
           <ProfileSummaryAdmin
            profileImage={user?.image}
            profileName={user?.name}
@@ -108,7 +109,7 @@ const ProfileAdmin: React.FC = () => {
            twitterlink={user?.twitter_link}
           />
 
-          <div className='grow pt-16 pl-24 pr-16 flex flex-col gap-10'>
+          <div className='md:grow pt-16 pl-8 pr-8 md:pl-16 md:pr-16 lg:pl-24 lg:pr-16 flex flex-col gap-10'>
            <div>
             <p className=' text-4xl'>About Me</p>
             {user?.about ? (
@@ -121,7 +122,10 @@ const ProfileAdmin: React.FC = () => {
                as={`/profile/admin/${userId}/edit`}
                passHref
               >
-               <button className='ml-3 bg-blue-500 text-white p-0.5 hover:bg-blue-600 rounded-full w-8 h-8 flex items-center justify-center transition-all'>
+               <button
+                title='tech'
+                className='ml-3 bg-blue-500 text-white p-0.5 hover:bg-blue-600 rounded-full w-8 h-8 flex items-center justify-center transition-all'
+               >
                 <EditIcon fontSize='small' />
                </button>
               </Link>
@@ -154,7 +158,10 @@ const ProfileAdmin: React.FC = () => {
                as={`/profile/admin/${userId}/edit`}
                passHref
               >
-               <button className='ml-3 bg-blue-500 text-white p-0.5 hover:bg-blue-600 rounded-full w-8 h-8 flex items-center justify-center transition-all'>
+               <button
+                title='tech'
+                className='ml-3 bg-blue-500 text-white p-0.5 hover:bg-blue-600 rounded-full w-8 h-8 flex items-center justify-center transition-all'
+               >
                 <EditIcon fontSize='small' />
                </button>
               </Link>
@@ -162,14 +169,22 @@ const ProfileAdmin: React.FC = () => {
             )}
            </div>
           </div>
-          <div className='flex items-center pr-16'>
+          <div className='flex flex-row lg:flex-col items-center justify-start lg:justify-center gap-5 pt-8 pr-8 pl-8 md:pl-16 md:pr-16 lg:pr-16 lg:pl-0 lg:pt-0'>
            <Link
             href={'/profile/admin/[uid]/edit'}
             as={`/profile/admin/${userId}/edit`}
             passHref
            >
-            <button className='bg-blue btn-blue text-white md:px-6 px-4 py-2 shadow-blue-600 rounded-sm w-40'>
+            <button className='bg-blue btn-blue text-white md:px-6 px-2 py-2 shadow-blue-600 rounded-sm md:w-40'>
+             <EditIcon fontSize='small' className='block md:hidden' />
              <span className='hidden md:block'>Edit Profile</span>
+            </button>
+           </Link>
+
+           <Link href={'/profile/[uid]'} as={`/profile/${userId}`} passHref>
+            <button className='bg-blue btn-blue text-white md:px-6 px-2 py-2 shadow-blue-600 rounded-sm md:w-40'>
+             <RemoveRedEyeIcon fontSize='small' className='block md:hidden' />
+             <span className='hidden md:block'>Visitor View</span>
             </button>
            </Link>
           </div>

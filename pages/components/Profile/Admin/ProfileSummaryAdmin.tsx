@@ -32,7 +32,7 @@ const ProfileSummaryAdmin: React.FC<Props> = ({
  const userId = session?.user?.id;
 
  return (
-  <div className='flex flex-col items-center -mt-14 pl-24'>
+  <div className='flex flex-col items-center -mt-7 md:-mt-14 lg:pl-24'>
    <Avatar
     src={profileImage}
     alt={profileName}
@@ -79,28 +79,3 @@ const ProfileSummaryAdmin: React.FC<Props> = ({
 };
 
 export default ProfileSummaryAdmin;
-
-{
- /* <div className=' flex flex-row-reverse pt-5 mr-5'>
-    <Link
-     href={'/profile/admin/[uid]/edit'}
-     as={`/profile/admin/${userId}/edit`}
-     passHref
-    >
-     <button className=' md:bg-white btn-blue md:text-black flex items-center md:px-6 px-4 py-2 shadow-blue-600 rounded-lg  right-10 top-20 md:top-5 hover:bg-gray-100 transition-all'>
-      <span className='md:mr-2'>
-       <EditIcon fontSize='small' />
-      </span>
-      <span className='hidden md:block'>Edit Profile</span>
-     </button>
-    </Link>
-    <Link href={'/profile/[uid]'} as={`/profile/${userId}`} passHref>
-     <button className=' md:bg-white mr-5 btn-blue md:text-black flex items-center md:px-6 px-4 py-2 shadow-blue-600 rounded-lg  right-10 top-20 md:top-5 hover:bg-gray-100 transition-all'>
-      <span className='md:mr-2'>
-       <RemoveRedEyeIcon fontSize='small' />
-      </span>
-      <span className='hidden md:block'>Visitor View</span>
-     </button>
-    </Link>
-   </div> */
-}
