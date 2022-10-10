@@ -74,7 +74,7 @@ const Faq: NextPage = () => {
             Having Questions?
             <span className="font-raleway text-skin-main"> Try finding them below </span>:
           </h1>
-          <p className="leading-6 text-sm md:text-base my-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit qui, excepturi rerum, ea repellendus molestiae, obcaecati hic eveniet reiciendis cum iusto accusamus. Enim minima inventore soluta, accusantium atque quod. Expedita officiis sapiente enim reiciendis.</p>
+          <p className="leading-6 text-sm md:text-base my-5">Below you’ll find answers to the most common questions you may have on ClueLess. If you still can’t find the answer you’re looking for, just Contact us!</p>
 
           {/* FAQ section */}
           <h1 className="font-raleway text-[28px] md:text-[36px] font-semibold leading-normal my-3 md:text-[28]">FAQ</h1>
