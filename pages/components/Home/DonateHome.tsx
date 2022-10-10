@@ -13,7 +13,7 @@ const DonateHome = () => {
             </a>
         </div>
         <div className='mx-auto lg:mx-0'>
-            <img src="https://c.tenor.com/r2b7aS322tUAAAAi/mochi-peach-cat-cat.gif" alt="" className='w-80' />
+            <img src="https://c.tenor.com/r2b7aS322tUAAAAi/mochi-peach-cat-cat.gif" alt="cat gif" className='w-80' />
         </div>
     </div>
     </>
