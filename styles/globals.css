@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base{
+@layer base{   
     body{
         font-family: 'Nunito Sans', sans-serif;
     }
