@@ -94,7 +94,6 @@ const ProfileAdmin: React.FC = () => {
         <div
          className='pb-16 bg-white rounded-t-[1rem] md:rounded-t-[1rem]'
          style={{
-          //   borderRadius: '3rem 3rem 0 0',
           boxShadow: '0px -10px 50px rgba(0, 0, 0, 0.25)',
          }}
         >
@@ -175,14 +174,14 @@ const ProfileAdmin: React.FC = () => {
             as={`/profile/admin/${userId}/edit`}
             passHref
            >
-            <button className='bg-blue btn-blue text-white md:px-6 px-2 py-2 shadow-blue-600 rounded-sm md:w-40'>
+            <button className='bg-blue btn-blue text-white md:px-6 px-2 py-2 shadow-blue-600 rounded-lg md:w-40'>
              <EditIcon fontSize='small' className='block md:hidden' />
              <span className='hidden md:block'>Edit Profile</span>
             </button>
            </Link>
 
            <Link href={'/profile/[uid]'} as={`/profile/${userId}`} passHref>
-            <button className='bg-blue btn-blue text-white md:px-6 px-2 py-2 shadow-blue-600 rounded-sm md:w-40'>
+            <button className='bg-blue btn-blue text-white md:px-6 px-2 py-2 shadow-blue-600 rounded-lg md:w-40'>
              <RemoveRedEyeIcon fontSize='small' className='block md:hidden' />
              <span className='hidden md:block'>Visitor View</span>
             </button>
