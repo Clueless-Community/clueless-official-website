@@ -61,6 +61,7 @@ module.exports = {
     extend: {},
   },
   plugins: [
+    require('@tailwindcss/line-clamp'),
     require('@tailwindcss/aspect-ratio'),
     require('tailwind-scrollbar'),
     function ({ addVariant }) {

@@ -21,12 +21,13 @@ const TechStackAutoComplete: React.FC<Props> = ({ projectTechStacks, setProjectT
             id="arrival-date"
             getOptionLabel={option => option.name}
             options={techstack}
+            isOptionEqualToValue={(o, v) => o.name === v.name}
             filterSelectedOptions
             onChange={(event, newValue) => {
-                setProjectTechStacks(newValue as any)
+                setProjectTechStacks(newValue as any);
             }}
             renderTags={(tagValue, getTagProps) =>
-                tagValue.map((option, index : number) => (
+                tagValue.map((option, index: number) => (
                     <Chip
                         color="primary"
                         label={option.name}
@@ -34,10 +35,11 @@ const TechStackAutoComplete: React.FC<Props> = ({ projectTechStacks, setProjectT
                     />
                 ))
             }
-            renderInput={(params) => <TextField {...params} placeholder="Select TechStacks"
-            />}
+            renderInput={params => (
+                <TextField {...params} placeholder="Select TechStacks" />
+            )}
         />
-    )
+    );
 }
 
 export default TechStackAutoComplete
