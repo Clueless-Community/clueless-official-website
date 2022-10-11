@@ -28,8 +28,10 @@ const Leaderboard: React.FC = () => {
     }, [])
 
     React.useEffect(() => {
+        window.onbeforeunload = () => {
+            window.scrollTo({top:0, behavior:'smooth'});
+          }
         handleLeaderboardFetch();
-
     }, [])
 
     return (
