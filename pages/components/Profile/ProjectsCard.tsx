@@ -10,9 +10,10 @@ interface Props {
     gitHubLink?: string,
     projectDesc: string,
     techStacks: { 'name': string }[],
+    customTitleButtons?: React.ReactNode[],
 }
 
-const ProjectsCard: React.FC<Props> = ({ projectImage, projectName, projectDesc, publicLink, gitHubLink, techStacks }) => {
+const ProjectsCard: React.FC<Props> = ({ projectImage, projectName, projectDesc, publicLink, gitHubLink, techStacks, customTitleButtons }) => {
     return (
         <div className='border-opacity-60 rounded-xl shadow-lg'>
             <div
@@ -23,14 +24,17 @@ const ProjectsCard: React.FC<Props> = ({ projectImage, projectName, projectDesc,
                     backgroundRepeat: "no-repeat",
                     backgroundSize: "cover"
                 }} />
-            <div className="p-5 h-[17rem] flex flex-col">
+            <div className="p-5 h-[21rem] flex flex-col">
                 <a href={publicLink} target="_blank" rel="noreferrer" className='flex flex-row items-center flex-wrap w-[100%]'>
-                    <h1 className='flex-auto text-2xl mr-2 font-semibold hover:underline underline-offset-2 transition-all'>
+                    <h1 title={projectName} className='flex-auto text-2xl mr-2 font-semibold hover:underline underline-offset-2 transition-all line-clamp-2'>
                         {projectName}
                     </h1>
-                    <LinkIcon className=' cursor-pointer' />
+                    {customTitleButtons?.length
+                        ? customTitleButtons
+                        : <LinkIcon className=' cursor-pointer' />
+                    }
                 </a>
-                <div className='flex gap-2 flex-row my-2 flex-wrap'>
+                <div className='flex gap-2 flex-row my-2'>
                     {techStacks?.map((teckStack: { 'name': string }, i) => {
                         if(i >= 3) return <></>
                         return (
@@ -38,7 +42,7 @@ const ProjectsCard: React.FC<Props> = ({ projectImage, projectName, projectDesc,
                         )
                     })}
                 </div>
-                <p className='my-2 font-semibold opacity-80 flex-auto w-[calc(100%)] text-ellipsis overflow-hidden'>
+                <p title={projectDesc} className='my-2 font-semibold opacity-80 flex-auto w-[100%] text-ellipsis overflow-hidden line-clamp-3'>
                     {projectDesc}
                 </p>
                 <a
