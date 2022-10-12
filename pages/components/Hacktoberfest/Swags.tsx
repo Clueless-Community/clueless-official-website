@@ -19,9 +19,7 @@ const Swags = () => {
                         </a>
                     </Link>
                 </div>
-                <Link href='#' passHref>
-                    <img src='/contribute.png' className='mx-auto ' />
-                </Link>
+                <img src='/contribute.png' className='mx-auto ' />
             </div>
         </div>
     )
