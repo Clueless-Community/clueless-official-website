@@ -46,4 +46,22 @@ export const ProjectsHacktoberFest = [{
     ],
     repoUrl: 'https://github.com/Clueless-Community/Datasets'
 },
+{
+    Name: 'Web UI-Kit',
+    Description: 'This an open-sourced UI library built using HTML and CSS and maintained by Clueless Community',
+    techstack_Icon: [
+        'https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582748_1280.png',
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/2048px-Tailwind_CSS_Logo.svg.png'
+    ],
+    repoUrl: 'https://github.com/Clueless-Community/web-ui-kit'
+},
+{
+    Name: 'Flutter UI-Components',
+    Description: 'A collection of flutter UI components provided by Clueless Community.',
+    techstack_Icon: [
+        'https://www.kindpng.com/picc/m/355-3557482_flutter-logo-png-transparent-png.png',
+        'https://upload.wikimedia.org/wikipedia/commons/7/7e/Dart-logo.png',
+    ],
+    repoUrl: 'https://github.com/Clueless-Community/flutter-ui-components'
+},
 ]
