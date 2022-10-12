@@ -13,7 +13,7 @@ const SocialHome = () => {
                     <TwitterIcon className='text-7xl text-blue-600 sm:mr-5 mr-0 hover:scale-110 transition-all cursor-pointer' fontSize='inherit' />
                 </a>
                 <a href="https://www.linkedin.com/company/clueless-tech/" target="_blank" rel="noreferrer">
-                    <LinkedInIcon className='text-7xl text-blue-500 sm:mx-5 mx-0 hover:scale-110 transition-all cursor-pointer' fontSize='inherit' />
+                    <LinkedInIcon className='text-7xl text-blue-600 sm:mx-5 mx-0 hover:scale-110 transition-all cursor-pointer' fontSize='inherit' />
                 </a>
                 <a href="https://www.facebook.com/cluelesscommunity/" target="_blank" rel="noreferrer">
                     <FacebookIcon className='text-7xl text-blue-600 sm:mx-5 mx-0 hover:scale-110 transition-all cursor-pointer' fontSize='inherit' />

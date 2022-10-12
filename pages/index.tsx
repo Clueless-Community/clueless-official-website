@@ -42,7 +42,7 @@ const Home: NextPage = () => {
         <h1 className="xl:text-5xl font-bold md:text-4xl text-2xl">
           Our <span className="text-skin-main">Sponsors</span>
         </h1>
-        <img src="ineuron-logo.png" alt="ineutron Logo" />
+        <img src="ineuron-logo.png" alt="ineutron Logo" className="p-10"/>
       </div>
 
       {/* <TeamMembersHome/> */}
