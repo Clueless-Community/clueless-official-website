@@ -44,3 +44,12 @@ Click [here](https://github.com/Clueless-Community/Datasets) to check this amazi
 An API that gets you the list of Indian colleges and their details like city, state, and NIRF ranks. You can even filter out colleges by city and state. 
 
 Check this project [this](https://github.com/Clueless-Community/collegeAPI) here! 
+
+---
+<h2 align="center"> Project Contributors </h2> 
+
+<div align="center">
+    <a href="https://github.com/Clueless-Community/clueless-official-website/graphs/contributors">
+    <img src="https://contrib.rocks/image?repo=Clueless-Community/clueless-official-website" />
+    </a>
+</div>
