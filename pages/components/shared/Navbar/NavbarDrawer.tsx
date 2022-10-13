@@ -41,7 +41,7 @@ const NavbarDrawer: React.FC<Props> = ({ img, name, email, uid }) => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const handleClose = () => setAnchorEl(null);
 
-  const [dialog, openDialog] = useConfirmationDialog(
+  const { dialog, openDialog } = useConfirmationDialog(
     {
       title: "Are you sure",
       subTitle: "You are about to logout from this platform",

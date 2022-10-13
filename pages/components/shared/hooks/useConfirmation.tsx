@@ -19,11 +19,11 @@ const useConfirmationDialog = (
   const [open, setOpen] = React.useState(false);
 
   const openDialog = useCallback(() => setOpen(true), []);
-  const handleClose = useCallback((ev: any, reason?: CloseReason) => {
+  const handleClose = useCallback((_: any, reason?: CloseReason) => {
     setOpen(false);
     reason === "agree" ? onAgree() : onDisAgree?.(reason);
   }, []);
-  const handleActionsClick = (...args: any) => handleClose(...args.reverse());
+  const handleActionsClick = (r: CloseReason, ev: any) => handleClose(ev, r);
 
   const dialog = useMemo(
     () => (
@@ -61,7 +61,7 @@ const useConfirmationDialog = (
     [open]
   );
 
-  return [dialog, openDialog];
+  return { dialog, openDialog };
 };
 
 export default useConfirmationDialog;
