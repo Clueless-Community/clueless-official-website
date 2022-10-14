@@ -12,7 +12,7 @@ import Link from "next/link";
 import { signOut } from "next-auth/react";
 import { useSession } from "next-auth/react";
 import LogoutIcon from "@mui/icons-material/Logout";
-import useConfirmationDialog from "../hooks/useConfirmation";
+import useConfirmationDialog from "../../../../hooks/useConfirmation";
 
 const Style = makeStyles<WithStylesOptions<DefaultTheme>>({
   //Materia UI Styles for Menu

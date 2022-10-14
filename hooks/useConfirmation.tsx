@@ -23,7 +23,6 @@ const useConfirmationDialog = (
     setOpen(false);
     reason === "agree" ? onAgree() : onDisAgree?.(reason);
   }, []);
-  const handleActionsClick = (r: CloseReason, ev: any) => handleClose(ev, r);
 
   const dialog = useMemo(
     () => (
@@ -43,13 +42,13 @@ const useConfirmationDialog = (
           <button
             type="button"
             className="btn-muted text-xs sm:text-lg "
-            onClick={handleActionsClick.bind(this, "disAgree")}
+            onClick={(ev) => handleClose(ev, "disAgree")}
             autoFocus
           >
             Cancel
           </button>
           <button
-            onClick={handleActionsClick.bind(this, "agree")}
+            onClick={(ev) => handleClose(ev, "agree")}
             type="button"
             className="btn-blue text-xs sm:text-lg "
           >
