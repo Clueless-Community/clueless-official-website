@@ -30,9 +30,9 @@ const HomeMain = () => {
                 {/* <RightImage /> */}
                 <img src="/homeMainGif.gif" alt="gif" className='object-contain h-[450px] w-[600px]' />
             </div>
-            <div className='mt-28 md:hidden'>
+            {/* <div className='mt-28 md:hidden'>
                 <img src="/home-code.png" alt="" />
-            </div>
+            </div> */}
         </div>
     )
 }

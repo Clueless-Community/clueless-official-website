@@ -113,7 +113,7 @@ const NavbarDrawer: React.FC<Props> = ({ img, name, email, uid }) => {
                     onClick={handleClose}
                     className="font-semibold text-xl mt-5"
                   >
-                    LogIn
+                    Login
                   </button>
                 </Link></>
             )}
