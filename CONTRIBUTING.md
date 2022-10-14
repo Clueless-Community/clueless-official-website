@@ -28,7 +28,7 @@ npm install
 
 Before setting up any API keys you need to change the helper, so that it makes request to your localhost.
 
-Go to <mark >./helpers/template.js</mark> .
+Go to <mark >./helpers/template.ts</mark> .
 
 Remove everything and copy paste this code snippet.
 
@@ -42,9 +42,11 @@ export const template = {
 
 ## Setting up API Keys.
 
-This is the most important part. There are Authentication, Database, Filter & search and Map APIs that you need to setup. Let's go through all of them one by one.
+This is the most important part. There are Authentication, Database, Filter & search and Map APIs that you need to setup.
 
-If you are assigned the mail us at **official.cluelesscommunity@gmail.com** with the PR link and your gitHub ID we will send you the credentials within 2 - 3 hours.
+If you are assigned an issue mail us at **official.cluelesscommunity@gmail.com** with the PR link and your gitHub ID we will send you the credentials within 2 - 3 hours.
+
+Create **.env.local** file in the root directory with the credentials you receive.
 
 **Never push credentials to GitHub**
 

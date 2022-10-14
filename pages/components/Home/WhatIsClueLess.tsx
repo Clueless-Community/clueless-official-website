@@ -17,7 +17,7 @@ const WhatIsClueLess: React.FC = () => {
 
   return (
     <div className="md:grid lg:grid-cols-2 md:mx-40 mt-10 flex flex-col-reverse text-center lg:text-left rounded-tr-3xl rounded-br-3xl">
-      <div className="md:bg-[#F2F2F2] lg:rounded-l-3xl md:rounded-t-3xl lg:rounded-tr-none pt-20 pb-10 relative border-y-2 border-dashed border-l-2 border-black border-opacity-30">
+      <div className="md:bg-[#F2F2F2] lg:rounded-l-3xl md:rounded-t-3xl lg:rounded-tr-none pt-20 pb-10 relative border-dashed lg:border-t-2 lg:border-b-2 lg:border-l-2 md:border-l-2 md:border-r-2 md:border-t-2 border-black border-opacity-30">
         <div className="flex flex-col justify-end h-full">
           <img src="/what-is-cluless.png" alt="" className="mx-auto" />
         </div>

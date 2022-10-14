@@ -37,8 +37,8 @@ const UltimateResourceHub: React.FC = () => {
       </div>
       <div className="md:bg-[#F2F2F2] lg:rounded-r-3xl md:rounded-b-3xl lg:rounded-bl-none pt-20 pb-10 relative">
         <div className="flex flex-col justify-end h-full">
-          <img src="/resource hub.png" alt="" className="mx-auto w-80" />
-          <img src="/resource hub cat.png" alt="" className="w-40 absolute right-5 -bottom-16 hidden md:block" />
+          <img src="/resource hub.png" alt="resource hub logo" className="mx-auto w-80" />
+          <img src="/resource hub cat.png" alt="resource hub cat" className="w-40 absolute right-5 -bottom-16 hidden md:block" />
         </div>
       </div>
     </div>
