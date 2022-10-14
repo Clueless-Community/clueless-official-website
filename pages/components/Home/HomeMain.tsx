@@ -57,15 +57,6 @@ const HomeMain = () => {
                 {/* <RightImage /> */}
                 <img src="/homeMainGif.gif" alt="gif" className='object-contain h-[450px] w-[600px]' />
             </div>
-<<<<<<< HEAD
-            {/* <div className='mt-28 md:hidden'>
-                <img src="/home-code.png" alt="" />
-            </div> */}
-=======
-            <div className='mt-28 md:hidden'>
-                <img src="/home-code.png" alt="home-code" />
-            </div>
->>>>>>> 6c1abcf190ccd7fabe8d47765d7f2bf2f8158953
         </div>
         </>
     )
