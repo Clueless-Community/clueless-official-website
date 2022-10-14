@@ -19,13 +19,12 @@ const signin: React.FC = ({ providers }: any) => {
       <img src="/sidelines-signin.png" alt="sidelines-signin" className=" absolute left-0 top-0 hidden lg:block scale-75" />
       <img src="/sidelines-signin.png" alt="sidelines-signin" className=" absolute right-0 bottom-0 rotate-180 scale-75 hidden lg:block" />
         <div className="min-h-screen flex justify-center items-center flex-col" >
-          <div className="mb-10">
-            <h1 className="text-4xl text-center">Welcome to <span className=" text-skin-main">Clueless <br /> Community</span></h1>
-            <h1 className="text-xl text-center mt-5 font-bold">Log In</h1>
+          <div className="">
+            <h1 className="text-4xl text-center">Welcome to <span className="text-skin-main">Clueless <br /> Community</span></h1>
           </div>
           <div className="flex items-center">
-            <div className=" hidden md:block">
-              <img src="/signin-page-laptop.png" alt="signin-page-laptop" />
+            <div className=" hidden md:flex">
+              <img src="/signin-page-laptop-2.png" alt="signin-page-laptop" className="w-[600px] h-[500px] object-cover cursor-pointer" />
             </div>
             <div>
               <img src="/ClueLess Logo.png" alt="" className="block md:hidden mx-auto w-[90px] mb-6" />
@@ -51,13 +50,12 @@ const signin: React.FC = ({ providers }: any) => {
                 </button> */}
               </div>
               <Link href="/" passHref>
-                <p className=" text-center text-skin-main font-semibold hover:underline cursor-pointer mt-10"><p className="flex items-center justify-center"><KeyboardArrowLeftIcon />Go back Home</p></p>
+                <p className=" text-center text-skin-main font-semibold hover:scale-105 hover:-translate-y-1 transition hover:ease-in-out cursor-pointer mt-10"><p className="flex items-center justify-center"><KeyboardArrowLeftIcon />Go back Home</p></p>
               </Link>
             </div>
           </div>
           <div className="scale-50">
           </div>
-          <p className="text text-center text-red-500 mt-5">** Signup to become a member and get access to this amazing community</p>
         </div>
       </>
     </React.Fragment>
