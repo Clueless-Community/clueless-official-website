@@ -39,7 +39,7 @@ const Leaderboard: React.FC = (leaderboardData) => {
                         {leaderBoardDataArray.map((data, i) => {
                             const avatarURL = data.avatarUrl === '#' ? 'https://i.stack.imgur.com/YaL3s.jpg' : data.avatarUrl
                             return (
-                                <tr className={`${i % 2 === 0 && 'bg-[#DBE0EB]'} rounded-md`} key={i}>
+                                data.userName != 'rajdip019' && <tr className={`${i % 2 === 0 && 'bg-[#DBE0EB]'} rounded-md`} key={i}>
                                     <td className={`my-2 pl-2 xl:rounded-tl-md rounded-tl-sm xl:rounded-bl-md rounded-bl-sm font-semibold`}>{i + 1}.</td>
                                     <td className={`my-2 flex justify-start items-center xl:space-x-4 space-x-2 w-full`}><img src={avatarURL} className='w-16 rounded-full border-dashed border-2 border-blue-400 text-sm ' alt='' /><span className='max-w-[113px] truncate sm:max-w-fit'>{data.userName}</span></td>
                                     <td className={`my-2 pl-2 xl:rounded-tl-md rounded-tl-sm xl:rounded-bl-md rounded-bl-sm font-semibold text-center`}>{data.PRCount}</td>
