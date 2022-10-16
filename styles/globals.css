@@ -19,6 +19,7 @@
     --btn-hover-red: #961212;
   }
 
+/* CSS for scrollbar begin*/
   ::-webkit-scrollbar {
     background: transparent;
     width:20px;
@@ -31,6 +32,7 @@
     border: 6px solid transparent;
     background-clip: content-box;
   }
+/* CSS for scrollbar ends*/
 
   @layer components {
     .btn-blue {
