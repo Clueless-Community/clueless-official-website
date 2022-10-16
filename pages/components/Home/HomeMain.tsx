@@ -53,9 +53,11 @@ const HomeMain = () => {
                     </a>
                 </div>
             </div>
-            <div className=' xl:ml-auto xl:mr-10 xl:mt-0 hidden md:block'>
-                {/* <RightImage /> */}
-                <img src="/homeMainGif.gif" alt="gif" className='object-contain h-[450px] w-[600px]' />
+            <div className='hover:scale-125 scale-110 transition-all xl:ml-auto xl:mr-10 mx-auto mt-32 xl:mt-0 hidden md:block'>
+                <RightImage />
+            </div>
+            <div className='mt-28 md:hidden'>
+                <img src="/home-code.png" alt="home-code" />
             </div>
         </div>
         </>
