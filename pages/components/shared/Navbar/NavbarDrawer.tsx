@@ -121,6 +121,15 @@ const NavbarDrawer: React.FC<Props> = ({ img, name, email, uid }) => {
                 Events
               </button>
             </Link>
+            <div className="bg-gray-300 h-[1px] w-10/12 mx-auto mt-3"></div>
+            <Link href="/about-us" passHref>
+              <button
+                onClick={handleClose}
+                className="font-semibold text-xl mt-5"
+              >
+                About Us
+              </button>
+            </Link>
             {session.status === "unauthenticated" && (
               <>
                 <div className="bg-gray-300 h-[1px] w-10/12 mx-auto mt-3"></div>
