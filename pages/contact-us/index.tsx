@@ -130,7 +130,7 @@ const ContactUs = () => {
           </div>
         </div>
         <div className="">
-          <img src="/OpenSourceProject.png" alt="" className="mt-20" />
+          <img src="/OpenSourceProject.png" alt="" className="mt-20" style={{marginLeft: "64px"}} />
         </div>
       </div>
       <Footer />
