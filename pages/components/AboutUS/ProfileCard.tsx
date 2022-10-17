@@ -22,7 +22,7 @@ const ProfileCard: React.FC<Props> = ({key, img, username, tag, about, github, l
             <img className="h-20 w-20 my-3 rounded-full" src={img} alt="" />
             <h1 className="font-raleway font-semibold mt-2 text-center">{username}</h1>
             <h2 className="font-raleway text-[#7E7E7E] text-xs mt-1 mb-2">{tag}</h2>
-            <p className=" font-nunito font-semibold text-sm mt-5 text-center">{about}</p>
+            <p className="h-20 font-nunito font-semibold text-sm mt-5 mb-4 text-center">{about}</p>
             <div className="mt-8 w-4/5 flex justify-between">
                 <a href={github} target="_blank" rel="noreferrer"><GitHubIcon/></a>
                 <a href={linkedin} target="_blank" rel="noreferrer"><LinkedInIcon/></a>
