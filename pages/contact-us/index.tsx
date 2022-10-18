@@ -8,6 +8,7 @@ import Snackbar from "@mui/material/Snackbar";
 import MuiAlert, { AlertProps } from "@mui/material/Alert";
 
 const ContactUs = () => {
+  const maxSubjectInputLength = 150;
   const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
     props,
     ref
@@ -106,6 +107,9 @@ const ContactUs = () => {
                     placeholder="Enter Subject"
                     multiline
                     fullWidth
+                    inputProps={{
+                      maxLength: maxSubjectInputLength,
+                    }}
                     type="text"
                     name="Subject"
                     required
