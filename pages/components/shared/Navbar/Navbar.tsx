@@ -30,7 +30,7 @@ const Navbar: NextComponentType = () => {
       </Link>
       <div className="hidden lg:block">
         <Link href="/" passHref>
-          <button className="hover:font-semibold hover:underline cursor-pointer xl:mx-8 mx-3 text-xl transition-all">
+          <button className="hover:-translate-y-1 hover:ease-in-out hover:scale-105 hover:duration-150 xl:mx-8 mx-3 text-xl transition-all">
             Home
           </button>
         </Link>
@@ -41,17 +41,22 @@ const Navbar: NextComponentType = () => {
           </a>
         </button> */}
 
+<<<<<<< Updated upstream
         <a
           href="https://clueless-resources.super.site/resources"
           target="_blank"
           rel="noreferrer"
         >
           <button className="hover:font-semibold hover:underline cursor-pointer xl:mx-8 mx-3 text-xl transition-all">
+=======
+        <a href="https://clueless-resources.super.site/resources" target="_blank" rel="noreferrer">
+          <button className="hover:-translate-y-1 hover:ease-in-out hover:scale-105 hover:duration-150 xl:mx-8 mx-3 text-xl transition-all">
+>>>>>>> Stashed changes
             Resources
           </button>
         </a>
         <Link href="/events" passHref>
-          <button className="hover:font-semibold hover:underline cursor-pointer xl:mx-8 mx-3 text-xl transition-all">
+          <button className="hover:-translate-y-1 hover:ease-in-out hover:scale-105 hover:duration-150 xl:mx-8 mx-3 text-xl transition-all">
             Events
           </button>
         </Link>
