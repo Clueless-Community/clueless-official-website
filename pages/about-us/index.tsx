@@ -29,7 +29,7 @@ const aboutUs = () => {
             <p className='text-[#EDECEC] text-lg font-nunito text-center lg:text-left'>Clueless in a virtual open-source community built with the motive of “Learn and Grow”. We, as a community, encourage and guide enthusiasts to dive into the world of open-source. We provide the best resources available on the internet, write blogs that helps other to explore their domain more deeply, organize events, GitHub repositories, organize hackathons, and more couniting activities</p>
           </div>
           <div className='flex justify-center'>
-            <img className='hidden lg:block' src="/aboutUsGirl.png" alt="" />
+            <img className='w-[550px] object-contain hidden lg:block' src="/aboutUsGif.gif" alt="gif" />
           </div>
         </div>
       </div>

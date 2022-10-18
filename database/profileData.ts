@@ -5,7 +5,7 @@ const profile = [
     name: "RAJDEEP SENGUPTA",
     tags: "CEO, Co-founder",
     about:
-      "Microsoft Imagine Cup India Finalist '22 l Intern @Hirable | GSSoC '22 | Full-stack Web Developer | Building @Clueless",
+      "SDE Intern @DocuComb | 🇮🇳 Microsoft Imagine Cup India Finalist '22 l Campus Tech Leader @iNeuron.ai 🔰 | Full stack Web Developer 📌| AWS ✨ | Learning DevOps⚡| Building @Clueless 🚀 | Loves to Play Chess",
     github: "https://github.com/Rajdip019",
     linkedin: "https://www.linkedin.com/in/rajdeep-sengupta/",
     twitter: "https://twitter.com/RajdeepS019",
@@ -14,9 +14,9 @@ const profile = [
     id: "2",
     img: "/TeamMembers/Debajyoti Saha.jpg",
     name: "DEBAJYOTI SAHA",
-    tags: "Design Lead, Co-founder",
+    tags: "App Lead, Co-founder",
     about:
-      "Microsoft Imagine Cup India Finalist '22 l GSSoC '22 | Full-stack Web Developer | Blogger | Building @Clueless",
+      "Intern @Docucomb | Microsoft Imagine Cup India Finalist '22 l GDSC HITK Core Team Member | Full stack Web & Mobile Developer | Exploring Flutter",
     github: "https://github.com/Debajyoti14",
     linkedin: "https://www.linkedin.com/in/debajyotisaha14/",
     twitter: "https://twitter.com/debajyoti14_",
@@ -27,7 +27,7 @@ const profile = [
     name: "ROSHAN KUMAR",
     tags: "Co-founder",
     about:
-      "Hey there!! I'm Roshan Kumar | Currently doing app development using flutter framework | Interested in machine learning ",
+      "Hey there!! I'm Roshan Kumar | Currently doing app development using flutter framework | Interested in machine learning",
     github: "https://github.com/Roshaen",
     linkedin: "https://www.linkedin.com/in/roshan-kumar-176918202/",
     twitter: "https://twitter.com/Roshaen_RC",
