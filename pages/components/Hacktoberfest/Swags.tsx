@@ -51,7 +51,7 @@ const Swags = () => {
 					<img
 						src="/contribute.png"
 						alt="swag guidelines img"
-						className="mx-auto w-72 md:w-96"
+						className="mx-auto w-100 md:w-110"
 					/>
 				</div>
 			</div>
