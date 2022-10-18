@@ -27,10 +27,13 @@
   
   
   ::-webkit-scrollbar-thumb {
-    background-color: var(--main);
+    background-color: #437ae9b9;
     border-radius: 20px;
     border: 6px solid transparent;
     background-clip: content-box;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #437ae9;
   }
 /* CSS for scrollbar ends*/
 
