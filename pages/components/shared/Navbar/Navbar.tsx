@@ -8,7 +8,6 @@ import { useSession } from "next-auth/react";
 import { SvgButton } from "../../../../styles/Mui-styles/HoverFillButton";
 
 const Navbar: NextComponentType = () => {
-
   const session = useSession();
   const name = session.data?.user.name;
   const email = session.data?.user.email;
@@ -19,8 +18,14 @@ const Navbar: NextComponentType = () => {
     <nav className="flex justify-between sm:px-14 lg:px-36 px-5 py-5 items-center shadow-xl">
       <Link href="/" passHref>
         <div className="flex items-center cursor-pointer">
-          <img src="/ClueLess Logo.png" alt="" className="sm:w-[65px] w-[35px]" />
-          <h1 className=" font-raleway sm:text-3xl text-xl sm:ml-8 ml-2">ClueLess</h1>
+          <img
+            src="/ClueLess Logo.png"
+            alt=""
+            className="sm:w-[65px] w-[35px]"
+          />
+          <h1 className=" font-raleway sm:text-3xl text-xl sm:ml-8 ml-2">
+            ClueLess
+          </h1>
         </div>
       </Link>
       <div className="hidden lg:block">
@@ -32,12 +37,30 @@ const Navbar: NextComponentType = () => {
 
         <a href="https://clueless-resources.super.site/resources" target="_blank" rel="noreferrer">
           <button className="hover:-translate-y-1 hover:ease-in-out hover:scale-105 hover:duration-150 xl:mx-8 mx-3 text-xl transition-all">
+
+        {/* <button className="hover:font-semibold hover:underline cursor-pointer xl:mx-8 mx-3 text-xl transition-all">
+          <a href="https://clueless-blogs.hashnode.dev" target="_blank" rel="noreferrer">
+            Blogs
+          </a>
+        </button> */}
+
+        <a
+          href="https://clueless-resources.super.site/resources"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <button className="hover:font-semibold hover:underline cursor-pointer xl:mx-8 mx-3 text-xl transition-all">
             Resources
           </button>
         </a>
         <Link href="/events" passHref>
           <button className="hover:-translate-y-1 hover:ease-in-out hover:scale-105 hover:duration-150 xl:mx-8 mx-3 text-xl transition-all">
             Events
+          </button>
+        </Link>
+        <Link href="/about-us" passHref>
+          <button className="hover:font-semibold hover:underline cursor-pointer xl:mx-8 mx-3 text-xl transition-all">
+            About Us
           </button>
         </Link>
       </div>
@@ -57,24 +80,22 @@ const Navbar: NextComponentType = () => {
             <SvgButton>Log In</SvgButton>
           </div>
         </Link>
-      )
-      }
+      )}
       <div className=" flex items-center lg:hidden">
-      {session.status === "unauthenticated" && (
-        <Link href="/auth/signin" passHref>
-          <div className="btn-blue text-xs sm:text-lg ">
-            <button>Log In</button>
-          </div>
-        </Link>
-      )
-      }
+        {session.status === "unauthenticated" && (
+          <Link href="/auth/signin" passHref>
+            <div className="btn-blue text-xs sm:text-lg ">
+              <button>Log In</button>
+            </div>
+          </Link>
+        )}
         <NavbarDrawer
           uid={uid as string}
           img={image as string}
           name={name as string}
           email={email as string}
         />
-        </div>
+      </div>
     </nav>
   );
 };
