@@ -5,7 +5,7 @@ import React from "react";
 const Swags = () => {
 	return (
 		<div className="md:grid lg:grid-cols-2 md:mx-40 mx-10 mt-10 flex flex-col lg:text-left sm:mb-32">
-			<div className="bg-black lg:rounded-l-3xl md:rounded-t-3xl lg:rounded-tr-none rounded-t-3xl py-20 transition-all duration-500 relative">
+			<div className="bg-blue-900 lg:rounded-l-3xl md:rounded-t-3xl lg:rounded-tr-none rounded-t-3xl py-20 transition-all duration-500 relative">
 				<div className="xl:px-16 md:px-10 sm:px-8 px-4 flex flex-col items-start w-11/12 mx-auto my-auto">
 					<h2 className="font-semibold xl:text-4xl lg:text-3xl text-2xl text-white ease-in-out transition-all duration-1000">
 						How to win Swags❓✨
