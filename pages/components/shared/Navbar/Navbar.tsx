@@ -35,9 +35,6 @@ const Navbar: NextComponentType = () => {
           </button>
         </Link>
 
-        <a href="https://clueless-resources.super.site/resources" target="_blank" rel="noreferrer">
-          <button className="hover:-translate-y-1 hover:ease-in-out hover:scale-105 hover:duration-150 xl:mx-8 mx-3 text-xl transition-all">
-
         {/* <button className="hover:font-semibold hover:underline cursor-pointer xl:mx-8 mx-3 text-xl transition-all">
           <a href="https://clueless-blogs.hashnode.dev" target="_blank" rel="noreferrer">
             Blogs
@@ -49,17 +46,17 @@ const Navbar: NextComponentType = () => {
           target="_blank"
           rel="noreferrer"
         >
-          <button className="hover:font-semibold hover:underline cursor-pointer xl:mx-8 mx-3 text-xl transition-all">
+          <button className="hover:-translate-y-1 hover:ease-in-out hover:scale-105 hover:duration-150  xl:mx-8 mx-3 text-xl transition-all">
             Resources
           </button>
         </a>
         <Link href="/events" passHref>
-          <button className="hover:-translate-y-1 hover:ease-in-out hover:scale-105 hover:duration-150 xl:mx-8 mx-3 text-xl transition-all">
+          <button className="hover:-translate-y-1 hover:ease-in-out hover:scale-105 hover:duration-150  xl:mx-8 mx-3 text-xl transition-all">
             Events
           </button>
         </Link>
         <Link href="/about-us" passHref>
-          <button className="hover:font-semibold hover:underline cursor-pointer xl:mx-8 mx-3 text-xl transition-all">
+          <button className="hover:-translate-y-1 hover:ease-in-out hover:scale-105 hover:duration-150  xl:mx-8 mx-3 text-xl transition-all">
             About Us
           </button>
         </Link>
