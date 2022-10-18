@@ -82,7 +82,7 @@ const Leaderboard: React.FC = (leaderboardData) => {
                                     ? "https://i.stack.imgur.com/YaL3s.jpg"
                                     : data.avatarUrl;
                             return (
-                                data.userName != 'rajdip019' && <tr
+                                data.userName != 'Rajdip019' && <tr
                                     className={`${i % 2 === 0 && "bg-[#DBE0EB]"} rounded-md`}
                                     key={i}
                                 >
