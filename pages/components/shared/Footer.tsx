@@ -9,8 +9,8 @@ const Footer: React.FC = () => {
     return (
         <>
             <div className='grid lg:grid-cols-5 sm:grid-cols-3 gap-8 grid-cols-1 md:px-28 sm:px-12 px-6 mt-auto bg-[#EFEFEF] pt-12 justify-items-start child:w-full'>
-                <div className='flex mb-auto flex-wrap justify-center'>
-                    <div className="flex  items-center cursor-pointer">
+                <div className='flex mb-auto flex-wrap justify-center cursor-pointer'>
+                    <div className="flex items-center">
                         <img src="/ClueLess Logo.png" alt="" className="w-[70px]" />
                     </div>
                     <div className='mt-2'>
