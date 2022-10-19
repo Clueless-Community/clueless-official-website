@@ -78,7 +78,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="sm:px-40 flex justify-between text-sm py-10  bg-[#EFEFEF] dark:bg-transparent flex-col items-center sm:flex-row">
+      <div className="sm:px-40 flex justify-between text-sm py-10  bg-[#EFEFEF] dark:bg-transparent flex-col items-center sm:flex-row shadow-xl dark:bg-zinc-900">
         <p>Copyright &copy; by ClueLess 2022</p>
         <p className="mt-5 sm:mt-0">Powered by Clueless</p>
       </div>
