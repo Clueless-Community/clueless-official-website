@@ -18,6 +18,25 @@
     --btn-hover-blue: #144198;
     --btn-hover-red: #961212;
   }
+
+/* CSS for scrollbar begin*/
+  ::-webkit-scrollbar {
+    background: transparent;
+    width:20px;
+  }
+  
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #437ae9b9;
+    border-radius: 20px;
+    border: 6px solid transparent;
+    background-clip: content-box;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #437ae9;
+  }
+/* CSS for scrollbar ends*/
+
   @layer components {
     .btn-blue {
       @apply cursor-pointer bg-skin-main text-white rounded px-4 py-3 hover:bg-skin-hoverBlue transition-all font-semibold font-nunito active:scale-95;

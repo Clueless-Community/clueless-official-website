@@ -8,7 +8,11 @@ import Snackbar from "@mui/material/Snackbar";
 import MuiAlert, { AlertProps } from "@mui/material/Alert";
 
 const ContactUs = () => {
-  const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(props, ref) {
+  const maxSubjectInputLength = 150;
+  const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
+    props,
+    ref
+  ) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
   });
 
@@ -18,7 +22,10 @@ const ContactUs = () => {
     setOpen(true);
   };
 
-  const handleClose = (event?: React.SyntheticEvent | Event, reason?: string) => {
+  const handleClose = (
+    event?: React.SyntheticEvent | Event,
+    reason?: string
+  ) => {
     if (reason === "clickaway") {
       return;
     }
@@ -61,7 +68,7 @@ const ContactUs = () => {
         <title>ClueLess | Contact Us</title>
       </Head>
       <Navbar />
-      <div className="flex justify-between items-center my-20 flex-col lg:flex-row lg:px-28 w-11/12 mx-auto lg:w-full">
+      <div className="flex justify-between gap-20 items-center my-20 flex-col lg:flex-row lg:px-28 w-11/12 mx-auto lg:w-full">
         <div className="">
           <div className="mt-4">
             <div className="flex flex-col items-start space-y-4 text-xl">
@@ -86,7 +93,11 @@ const ContactUs = () => {
                     name="email"
                     required
                     value={email}
-                    onChange={(e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>): void => {
+                    onChange={(
+                      e: React.ChangeEvent<
+                        HTMLTextAreaElement | HTMLInputElement
+                      >
+                    ): void => {
                       setEmail(e.target.value);
                     }}
                   />
@@ -96,11 +107,18 @@ const ContactUs = () => {
                     placeholder="Enter Subject"
                     multiline
                     fullWidth
+                    inputProps={{
+                      maxLength: maxSubjectInputLength,
+                    }}
                     type="text"
                     name="Subject"
                     required
                     value={subject}
-                    onChange={(e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>): void => {
+                    onChange={(
+                      e: React.ChangeEvent<
+                        HTMLTextAreaElement | HTMLInputElement
+                      >
+                    ): void => {
                       setSubject(e.target.value);
                     }}
                   />
@@ -115,7 +133,11 @@ const ContactUs = () => {
                     name="Feedback"
                     required
                     value={message}
-                    onChange={(e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>): void => {
+                    onChange={(
+                      e: React.ChangeEvent<
+                        HTMLTextAreaElement | HTMLInputElement
+                      >
+                    ): void => {
                       setMessage(e.target.value);
                     }}
                   />
@@ -129,7 +151,7 @@ const ContactUs = () => {
             </div>
           </div>
         </div>
-        <div className="">
+        <div>
           <img src="/OpenSourceProject.png" alt="" className="mt-20" />
         </div>
       </div>
