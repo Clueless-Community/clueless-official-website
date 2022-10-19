@@ -46,6 +46,11 @@ const Navbar: NextComponentType = () => {
             Events
           </button>
         </Link>
+        <Link href="/about-us" passHref>
+          <button className="hover:font-semibold hover:underline cursor-pointer xl:mx-8 mx-3 text-xl transition-all">
+            About Us
+          </button>
+        </Link>
       </div>
       <ModeSelect />
       {session.status === "authenticated" && (

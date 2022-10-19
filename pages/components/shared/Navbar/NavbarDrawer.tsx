@@ -11,6 +11,8 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Link from "next/link";
 import { signOut } from "next-auth/react";
 import { useSession } from "next-auth/react";
+import LogoutIcon from "@mui/icons-material/Logout";
+import useConfirmationDialog from "../../../../hooks/useConfirmation";
 
 const Style = makeStyles<WithStylesOptions<DefaultTheme>>({
   //Materia UI Styles for Menu
@@ -18,7 +20,8 @@ const Style = makeStyles<WithStylesOptions<DefaultTheme>>({
     "& .MuiDrawer-paper": {
       // This is to only style the Drawer Paper Section
       borderRadius: "10px 0px 0px 10px",
-      width: "80%",
+      width: "100%",
+      maxWidth: "290px",
     },
   },
 });
@@ -35,11 +38,19 @@ const NavbarDrawer: React.FC<Props> = ({ img, name, email, uid }) => {
   const classes: ClassNameMap<"Drawer"> = Style();
   const [drawer, SetDrawer] = useState<boolean>(false);
   const session = useSession();
-
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
+  const handleClose = () => setAnchorEl(null);
+
+  const { dialog, openDialog } = useConfirmationDialog(
+    {
+      title: "Are you sure",
+      subTitle: "You are about to logout from this platform",
+    },
+    () => {
+      handleClose();
+      signOut();
+    }
+  );
 
   return (
     <React.Fragment>
@@ -88,7 +99,12 @@ const NavbarDrawer: React.FC<Props> = ({ img, name, email, uid }) => {
               </button>{" "}
             </a> */}
             {/* <div className="bg-gray-300 h-[1px] w-10/12 mx-auto mt-3"></div> */}
-            <a href="https://clueless-resources.super.site/resources" target="_blank" className="text-center" rel="noreferrer">
+            <a
+              href="https://clueless-resources.super.site/resources"
+              target="_blank"
+              className="text-center"
+              rel="noreferrer"
+            >
               <button
                 onClick={handleClose}
                 className="font-semibold text-xl mt-5"
@@ -105,6 +121,15 @@ const NavbarDrawer: React.FC<Props> = ({ img, name, email, uid }) => {
                 Events
               </button>
             </Link>
+            <div className="bg-gray-300 h-[1px] w-10/12 mx-auto mt-3"></div>
+            <Link href="/about-us" passHref>
+              <button
+                onClick={handleClose}
+                className="font-semibold text-xl mt-5"
+              >
+                About Us
+              </button>
+            </Link>
             {session.status === "unauthenticated" && (
               <>
                 <div className="bg-gray-300 h-[1px] w-10/12 mx-auto mt-3"></div>
@@ -113,23 +138,14 @@ const NavbarDrawer: React.FC<Props> = ({ img, name, email, uid }) => {
                     onClick={handleClose}
                     className="font-semibold text-xl mt-5"
                   >
-                    LogIn
+                    Login
                   </button>
-                </Link></>
+                </Link>
+              </>
             )}
           </div>
           {session.status === "authenticated" && (
-            <>
-              <div className="bg-gray-300 h-[1px] w-10/12 mx-auto mt-3"></div>
-              <button
-                onClick={(): void => {
-                  handleClose();
-                  signOut();
-                }}
-                className="font-semibold text-xl mt-5"
-              >
-                Sign Out
-              </button>
+            <div className="mt-auto p-4 space-y-3">
               {/* <div className="bg-gray-300 h-[1px] w-10/12 mx-auto mt-3"></div>
             <a href="https://discord.gg/zrVMjGW8sB" target="_blank" className="w-full mx-auto text-center" rel="noreferrer">
               <button className="font-semibold text-xl mt-5 mx-auto">
@@ -148,16 +164,34 @@ const NavbarDrawer: React.FC<Props> = ({ img, name, email, uid }) => {
               <p className="ml-5 text-gray-300 text-sm">{email}</p>
             </div>
           </div> */}
-              <Link href={'/profile/admin/[uid]'} as={`/profile/admin/${uid}`} passHref>
-                <div className='absolute bottom-5 left-5 sm:left-10 flex items-center'>
-                  <Avatar className=' cursor-pointer ring-2 ring-white' src={img} alt={name} sx={{ width: 40, height: 40 }} />
+              <Link
+                href={"/profile/admin/[uid]"}
+                as={`/profile/admin/${uid}`}
+                passHref
+              >
+                <div className="flex items-center">
+                  <Avatar
+                    className=" cursor-pointer ring-2 ring-white"
+                    src={img}
+                    alt={name}
+                    sx={{ width: 40, height: 40 }}
+                  />
                   <div>
-                    <p className='ml-5 text-lg font-semibold'>{name}</p>
-                    <p className='ml-5 text-gray-700 text-xs'>{email}</p>
+                    <p className="ml-5 text-lg font-semibold">{name}</p>
+                    <p className="ml-5 text-gray-700 text-xs">{email}</p>
                   </div>
                 </div>
               </Link>
-            </>
+
+              <button
+                onClick={openDialog}
+                className="font-semibold text-md w-full flex items-center space-x-3 p-2 rounded-md bg-gray-200"
+              >
+                <LogoutIcon />
+                <span>Sign Out</span>
+              </button>
+              {dialog}
+            </div>
           )}
         </Drawer>
       </div>
