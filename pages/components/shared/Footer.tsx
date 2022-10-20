@@ -37,11 +37,11 @@ const Footer: React.FC = () => {
         <div className="flex flex-col mx-auto  my-5 sm:my-0 sm:text-left text-center">
           <h3 className="font-nunito font-semibold text-xl mb-8">Quick links</h3>
           <Link href="/challenges-events">
-            <a className="my-3 hover:text-skin-main transition-all">Events</a>
+            <a className="my-3 hover:text-skin-main transition-all">Events & Challenges</a>
           </Link>
           <a
             className="my-3 hover:text-skin-main transition-all"
-            href="https://www.clueless.tech/events"
+            href="https://clueless-resources.super.site/"
             target="_blank"
             rel="noreferrer"
           >
