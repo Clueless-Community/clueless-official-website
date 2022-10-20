@@ -43,7 +43,7 @@ const Home: NextPage = () => {
         <h1 className="xl:text-5xl font-bold md:text-4xl text-2xl">
           Our <span className="text-skin-main">Sponsors</span>
         </h1>
-        <img src="ineuron-logo.png" alt="ineutron Logo" />
+        <img src="ineuron-logo.png" alt="ineutron Logo" className="p-10"/>
       </div>
       {/* Community Partner Section */}
       <div className="mt-32 flex flex-col justify-center items-center xl:space-y-16 space-y-8 w-[10/12] mx-auto">

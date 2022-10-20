@@ -13,7 +13,7 @@ interface ProjectProps {
 
 const ProjectCard: React.FC<ProjectProps> = ({ name, description, imgSources, repoUrl }) => {
   return (
-    <div className="md:w-[475px] tracking-tight bg-gradient-to-r from-black via-black to-neutral-400 shadow-lg rounded-2xl p-[57px] space-y-12 md:h-[500px] h-auto hover:cursor-pointer hover:shadow-2xl transition hover:ease-in-out">
+    <div className="md:w-[475px] bg-gradient-to-r from-black via-blue-1000 to-blue-800 rounded-2xl p-[57px]">
       <h1 className="text-white text-[24px] lg:text-3xl">{name}</h1>
       <div className="space-y-12">
         <p className="text-white text-md md:text-lg md:font-light	">{description}</p>
