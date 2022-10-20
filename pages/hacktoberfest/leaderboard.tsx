@@ -83,7 +83,7 @@ const Leaderboard: React.FC = (leaderboardData) => {
                                     : data.avatarUrl;
                             return (
                                 data.userName != 'Rajdip019' && <tr
-                                    className={`${i % 2 === 0 && "bg-[#DBE0EB]"} rounded-md`}
+                                    className={`${i % 2 === 0 && "bg-[#889abf]"} rounded-md`}
                                     key={i}
                                 >
                                     <td
@@ -104,7 +104,7 @@ const Leaderboard: React.FC = (leaderboardData) => {
                                         </span>
                                     </td>
                                     <td
-                                        className={`my-2 pl-2 xl:rounded-tl-md rounded-tl-sm xl:rounded-bl-md rounded-bl-sm font-semibold text-center`}
+                                        className={`my-2 pl-2 font-semibold text-center`}
                                     >
                                         {data.PRCount}
                                     </td>
