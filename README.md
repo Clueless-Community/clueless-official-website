@@ -1,7 +1,7 @@
 <!-- # What is Clueless? ![hippo](https://media.tenor.com/LA_6z3bAMScAAAAi/ナニ-ベタックマ.gif) -->
 # What is Clueless<img src="https://media.tenor.com/LA_6z3bAMScAAAAi/ナニ-ベタックマ.gif" alt="gif" width="67"/>
 
-Clueless is an open-source student community built in collaboration with [iNeuron]() with the vision to encourage development and promote open-source. We aim to provide the best and curated resources from the Internet, conduct contests, hackathons, and lots more.
+Clueless is an open-source student community built in collaboration with [iNeuron]() with the vision to encourage development and promote open-source. We aim to provide the best and curated resources from the Internet, conduct contests, hackathons, and a lot more.
 
 [![official_website](https://www.linkpicture.com/q/cluelessHomepage.png)](https://www.clueless.tech/)
 
@@ -21,14 +21,14 @@ Don't forget to check the [issue](https://github.com/Clueless-Community/clueless
 
 + ## Resources
 
-The Internet is flooded with so many resources that can make one confused and clueless. So we, the Clueless Community provide the best, filtered, and curated resources like YouTube videos, GitHub repositories, websites, cheatsheets, etc! You can check our resources page [here](https://clueless-resources.super.site/resources)
+The Internet is flooded with so many resources that can make one confused and clueless. So we, the Clueless Community, provide the best, filtered, and curated resources like YouTube videos, GitHub repositories, websites, cheatsheets, etc! You can check our resources page [here](https://clueless-resources.super.site/resources)
 
 
 
 [![image](https://www.linkpicture.com/q/cluelessResources.png)](https://clueless-resources.super.site/resources)
 
 + ## Discord Community<img src="https://media.tenor.com/EU5PsyIFwRUAAAAj/wumpus-discord.gif" alt="gif" width="67"/>
-We have an amazing Discord Community, where separate channels are created for different topics like web development, app development, web3, etc where you can use these respective channels to query and help others. We try to keep you updated with the latest opportunities, jobs, and hackathons, and share useful resources too.
+We have an amazing Discord Community, where separate channels are created for different topics like web development, app development, web3, etc. There, you can use these respective channels to query and help others. We try to keep you updated with the latest opportunities, jobs, hackathons, and share useful resources too.
 
 [![image](https://www.linkpicture.com/q/cluelessDiscord.png)](https://discord.gg/zrVMjGW8sB)
 
