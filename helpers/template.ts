@@ -1,3 +1,3 @@
 export const template = {
-    templateString : "http://localhost:3000"
+    templateString: "http://localhost:3000"
 }
