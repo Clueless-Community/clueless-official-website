@@ -43,7 +43,7 @@ const Home: NextPage = () => {
         <h1 className="xl:text-5xl font-bold md:text-4xl text-2xl">
           Our <span className="text-skin-main">Sponsors</span>
         </h1>
-        <img src="ineuron-logo.png" alt="ineutron Logo" className="p-10"/>
+        <img src="ineuron-logo.png" alt="ineutron Logo" className="p-10" />
       </div>
       {/* Community Partner Section */}
       <div className="mt-32 flex flex-col justify-center items-center xl:space-y-16 space-y-8 w-[10/12] mx-auto">
@@ -52,11 +52,7 @@ const Home: NextPage = () => {
         </h1>
         <div className="flex space-x-5">
           <img src="flutter_kolkata.jpeg" alt="Flutter Kolkata Logo" className="w-[170px] sm:w-[250px]" />
-          <img
-            src="Metafy-3.png"
-            alt="Flutter Kolkata Logo"
-            className="w-[170px] sm:w-[250px] dark:invert dark:brightness-0"
-          />
+          <img src="Metafy-3.png" alt="Flutter Kolkata Logo" className="w-[170px] sm:w-[250px]" />
         </div>
       </div>
 
