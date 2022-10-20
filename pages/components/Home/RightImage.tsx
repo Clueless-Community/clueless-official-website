@@ -33,14 +33,13 @@ export default function RightImage() {
             onMouseMove={handleMouse}
             onMouseOut={handleMOuseOut}
         >
-            <motion.div
+            <motion.img 
+                src="home-code.png"
                 style={{
                     width: 500,
                     height: 400,
                     borderRadius: 30,
-                    backgroundColor: "#fff",
-                    backgroundImage:
-                        "url('/home-code.png')",
+                    background: "none",
                     rotateX: rotateX,
                     rotateY: rotateY,
                     scale: 1,
