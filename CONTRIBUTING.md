@@ -6,7 +6,7 @@ Here are the exact steps you need to follow to run ClueLess in your local system
 
 So, first of all you need to do is clone the [Clueless-Community/clueless-official-website](https://github.com/Clueless-Community/clueless-official-website) GitHub repository or you can also download the files.
 
-If you don't know how to clone or where to download the code the watch this video.
+If you don't know how to clone or where to download the code, then watch this video.
 
 [How to Clone a GitHub Repo](https://www.youtube.com/watch?v=CKcqniGu3tA)
 [Blog on the same topic, official GitHub Docs](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
@@ -19,18 +19,18 @@ git clone https://github.com/Clueless-Community/clueless-official-website.git
 
 ## 2. Installing all npm packages
 
-Then you need to navigate to the directory and run the following code. This will install all the dependencies you need.
+After this, you need to navigate to the directory and run the following code. This will install all the dependencies you need.
 
 ```
 npm install
 ```
 ## 3. Setup helper
 
-Before setting up any API keys you need to change the helper, so that it makes request to your localhost.
-
+Before setting up any API keys you need to change the helper, so that it makes a request to your localhost.
+ 
 Go to <mark >./helpers/template.ts</mark> .
 
-Remove everything and copy paste this code snippet.
+Remove everything and copy-paste this code snippet.
 
 ```
 export const template = {
@@ -38,11 +38,11 @@ export const template = {
 }
 ```
 
-**Note** : You can have different localhost other than 3000, use that in that case. 
+**Note** : You can have a different localhost other than 3000, use that in that case. 
 
 ## Setting up API Keys.
 
-This is the most important part. There are Authentication, Database, Filter & search and Map APIs that you need to setup.
+This is the most important part. There are Authentication, Database, Filter & search and Map APIs that you need to set up.
 
 If you are assigned an issue mail us at **official.cluelesscommunity@gmail.com** with the PR link and your gitHub ID we will send you the credentials within 2 - 3 hours.
 
