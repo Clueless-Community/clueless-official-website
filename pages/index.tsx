@@ -13,7 +13,6 @@ import TeachStackLine from "./components/shared/TeachStackLine";
 import UpcomingEvents from "./components/Home/Events/UpcomingEvents";
 import Hacktoberfest from "./components/Home/Hacktoberfest";
 
-
 const Home: NextPage = () => {
   return (
     <>
@@ -27,14 +26,15 @@ const Home: NextPage = () => {
       <Hacktoberfest />
       <WhatIsClueLess />
       <h2 className="md:text-6xl sm:text-5xl text-3xl text-center my-10 mt-28 font-bold sm:leading-[80px] leading-10">
-        Dive into the world of <br />{" "}
-        <span className=" text-skin-main">Development🚀</span>
+        Dive into the world of <br /> <span className=" text-skin-main">Development🚀</span>
       </h2>
       <TeachStackLine />
       <div className="flex justify-center w-full lg:hidden">
         <img src="/Open-source Home.png" alt="" className="w-72 sm:w-96" />
       </div>
-      <h1 className='child:text-skin-main md:text-6xl sm:text-5xl text-3xl text-center my-10 mt-28 font-bold sm:leading-[80px] leading-10'>️❤️<span>Events </span>by ClueLess <span>X</span> iNeuron.</h1>
+      <h1 className="child:text-skin-main md:text-6xl sm:text-5xl text-3xl text-center my-10 mt-28 font-bold sm:leading-[80px] leading-10">
+        ️❤️<span>Events </span>by ClueLess <span>X</span> iNeuron.
+      </h1>
       {/* <UpcomingEvents/>  */}
       <UpcomingEvents />
       <UltimateResourceHub />
@@ -52,7 +52,11 @@ const Home: NextPage = () => {
         </h1>
         <div className="flex space-x-5">
           <img src="flutter_kolkata.jpeg" alt="Flutter Kolkata Logo" className="w-[170px] sm:w-[250px]" />
-          <img src="Metafy-3.png" alt="Flutter Kolkata Logo" className="w-[170px] sm:w-[250px]" />
+          <img
+            src="Metafy-3.png"
+            alt="Flutter Kolkata Logo"
+            className="w-[170px] sm:w-[250px] dark:invert dark:brightness-0"
+          />
         </div>
       </div>
 
@@ -65,5 +69,3 @@ const Home: NextPage = () => {
 };
 
 export default Home;
-
-
