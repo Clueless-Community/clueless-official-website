@@ -11,6 +11,7 @@ import Navbar from '../../../components/shared/Navbar/Navbar'
 import TechStackAutoComplete from '../../../components/shared/TechStackAutoComplete'
 
 const EditProfile = () => {
+
     const [collegeName, setcollegeName] = React.useState<string>("")
     // const [graduationYear, setgraduationYear] = React.useState<number | null>()
     const [bio, setbio] = React.useState<string>("")
@@ -26,7 +27,7 @@ const EditProfile = () => {
 
 
     const [user, setUser] = React.useState<IUser | undefined>()
-    const router = useRouter();
+    const router = useRouter()
 
 
     const saveUser = async () => {
@@ -122,13 +123,16 @@ const EditProfile = () => {
                                                 <div className="col-span-1 space-y-4">
 
                                                     <div>
-                                                        <TextField
-                                                            id="outlined-textarea"
-                                                            label="Name"
-                                                            disabled
-                                                            fullWidth
-                                                            value={user?.name}
-                                                        />
+                                                       
+                                                            <TextField
+                                                                id="outlined-textarea"
+                                                                label="Name"
+                                                                disabled
+                                                                fullWidth
+                                                                value={user?.name}
+                                                                
+                                                            />
+                                                      
                                                     </div>
                                                     <div>
                                                         <TextField
@@ -207,6 +211,7 @@ const EditProfile = () => {
                                                             value={linkedInURL}
                                                             defaultValue={user?.linkedIn_link}
                                                             onChange={e => setlinkedInURL(e.target.value)}
+                                                            color="primary"
                                                         />
                                                     </div>
 

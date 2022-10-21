@@ -16,11 +16,13 @@ import { useRouter } from 'next/router';
 import { CircularProgress, Grow } from '@mui/material';
 import { useSession } from 'next-auth/react';
 import Link from 'next/link';
+import { useTheme } from "next-themes";
 
 const ProfileAdmin: React.FC = () => {
  const [projects, setProjects] = React.useState<IProjectUser[]>([]);
  const [user, setUser] = React.useState<IUser | undefined>();
  const router = useRouter();
+ const { theme, setTheme } = useTheme();
 
  const { data: session } = useSession();
  const userId = session?.user?.id;
@@ -92,7 +94,7 @@ const ProfileAdmin: React.FC = () => {
          <img src='/profile-bg.png' alt='' />
         </div>
         <div
-         className='pb-16 bg-white rounded-t-[1rem] md:rounded-t-[1rem]'
+         className={`pb-16 bg-white rounded-t-[1rem] md:rounded-t-[1rem] ${theme==='dark'? 'bg-[#18181b]' : 'bg-transparent'}`}
          style={{
           boxShadow: '0px -10px 50px rgba(0, 0, 0, 0.25)',
          }}
@@ -190,7 +192,7 @@ const ProfileAdmin: React.FC = () => {
          </div>
          <div className='my-20 md:mx-40 mx-10'>
           <p className=' text-4xl'>Projects</p>
-          <div className='h-1 w-20 bg-black ml-16 opacity-80'></div>
+          <div className={`h-1 w-20 ${theme==='dark'? 'bg-[#1955ca]' : 'bg-black'} ml-16 opacity-80`}></div>
           {projects ? (
            <>
             {projects?.map((project: IProjectUser, i: number) => {
@@ -215,7 +217,7 @@ const ProfileAdmin: React.FC = () => {
             Add your first project and show the world now! {user?.name}.👇
            </p>
           )}
-          <AddProject handleProjectFetch={handleProjectFetch} />
+          <AddProject handleProjectFetch={handleProjectFetch} themeColor={theme}/>
          </div>
         </div>
         <Footer />

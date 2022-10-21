@@ -24,6 +24,7 @@ interface Props {
   handleProjectFetch: () => Promise<void>;
 }
 
+
 const editSvg = (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path
@@ -83,6 +84,7 @@ const EditProject: React.FC<Props> = ({
     e.preventDefault();
     setEditIsOpen(true);
   };
+  
 
   const [projectNameNew, _setProjectNameNew] = React.useState<string>(projectName);
   const [projectImageNew, setProjectImageNew] = React.useState<string>(projectImage);

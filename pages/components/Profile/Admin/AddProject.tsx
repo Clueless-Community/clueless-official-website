@@ -34,14 +34,17 @@ const style = {
 };
 
 interface Props {
+  themeColor?:string,
   handleProjectFetch: () => Promise<void>;
 }
 
-const AddProject: React.FC<Props> = ({ handleProjectFetch }) => {
+const AddProject: React.FC<Props> = ({ handleProjectFetch, themeColor }) => {
   const [editIsOpen, setEditIsOpen] = React.useState<boolean>(false);
   const handleOpen = () => setEditIsOpen(true);
   const { data: session } = useSession();
   const uid = session?.user?.id;
+
+  console.log(themeColor)
 
   const [projectNameNew, setProjectNameNew] = React.useState<string>("");
   const [projectImageNew, setProjectImageNew] = React.useState<string>("");
@@ -161,7 +164,7 @@ const AddProject: React.FC<Props> = ({ handleProjectFetch }) => {
   return (
     <>
       <div className="my-10" onClick={handleOpen}>
-        <div className="p-6 border-2 border-dashed border-black border-opacity-60 rounded-lg h-48 bg-gray-100 flex flex-col justify-center items-center cursor-pointer hover:bg-gray-200 transition-all opacity-80 w-full">
+        <div className={`p-6 border-2 border-dashed border-black border-opacity-60 rounded-lg h-48  flex flex-col justify-center items-center cursor-pointer ${themeColor == 'dark' ? 'bg-zinc-800 hover:bg-[#212124bd]' : 'bg-zinc-100 hover:bg-zinc-200'} transition-all opacity-80 w-full`}>
           <AddCircleIcon className="text-blue-700 hover:text-blue-800 w-16 h-16" />
           <div className="text-center text-xl font-bold mt-2">Add Projects</div>
         </div>

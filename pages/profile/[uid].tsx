@@ -14,8 +14,11 @@ import { useSession } from 'next-auth/react';
 import { CircularProgress, Grid } from '@mui/material';
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import Link from 'next/link';
+import { useTheme } from "next-themes";
+
 
 const Profile: React.FC = () => {
+const { theme, setTheme } = useTheme();
  const router = useRouter();
  const { data: session } = useSession();
  const userId = session?.user?.id;
@@ -97,7 +100,7 @@ const Profile: React.FC = () => {
       ) : null}
 
       <div
-       className='pb-16 bg-white rounded-t-[1rem] md:rounded-t-[1rem]'
+       className={`pb-16 bg-white rounded-t-[1rem] md:rounded-t-[1rem] ${theme==='dark'? 'bg-[#18181b]' : 'bg-transparent'} `}
        style={{
         boxShadow: '0px -10px 50px rgba(0, 0, 0, 0.25)',
        }}
@@ -114,7 +117,7 @@ const Profile: React.FC = () => {
          twitterlink={user?.twitter_link}
         />
         
-        <div className='md:grow pt-16 pl-8 pr-8 md:pl-16 md:pr-16 lg:pl-24 lg:pr-16 flex flex-col gap-10'>
+        <div className={`md:grow pt-16 pl-8 pr-8 md:pl-16 md:pr-16 lg:pl-24 lg:pr-16 flex flex-col gap-10 `}>
          <div>
           <p className=' text-4xl'>About Me</p>
           {user?.about ? (
@@ -148,7 +151,7 @@ const Profile: React.FC = () => {
        </div>
        <div className='my-20 md:mx-40 mx-10'>
         <p className=' text-4xl'>Projects</p>
-        <div className='h-1 w-20 bg-black ml-16 opacity-80'></div>
+        <div className={`h-1 w-20 ${theme==='dark'? 'bg-[#1955ca]' : 'bg-black'} ml-16 opacity-80`}></div>
         {projects?.length !== 0 ? (
          <Grid container spacing={4} className='my-2'>
           {projects?.map((project: IProjectUser, i: number) => {
