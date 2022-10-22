@@ -36,8 +36,13 @@ const Footer: React.FC = () => {
         <div className="hidden sm:block lg:hidden"></div>
         <div className="flex flex-col mx-auto  my-5 sm:my-0 sm:text-left text-center">
           <h3 className="font-nunito font-semibold text-xl mb-8">Quick links</h3>
-          <Link href="/challenges-events">
-            <a className="my-3 hover:text-skin-main transition-all">Events & Challenges</a>
+          <Link href="/events">
+            <a
+              className="my-3 hover:text-skin-main transition-all"
+              href="https://www.clueless.tech/events"
+              target="_blank"
+              rel="noreferrer"
+            >Events</a>
           </Link>
           <a
             className="my-3 hover:text-skin-main transition-all"
