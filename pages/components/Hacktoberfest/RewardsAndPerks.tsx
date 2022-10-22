@@ -1,5 +1,5 @@
-import Link from 'next/link'
-import React from 'react'
+import Link from "next/link";
+import React from "react";
 
 const RewardsAndPerks = () => {
     return (
@@ -17,10 +17,9 @@ const RewardsAndPerks = () => {
                         <button className='btn-blue mt-6'>More Info</button>
                     </Link>
                 </div>
-
             </div>
         </div>
-    )
-}
+  );
+};
 
-export default RewardsAndPerks
+export default RewardsAndPerks;

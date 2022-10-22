@@ -6,11 +6,57 @@ import { TextField } from "@mui/material";
 import React, { useState } from "react";
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert, { AlertProps } from "@mui/material/Alert";
+import { useTheme } from "next-themes";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+
+const oldTextFieldTheme = createTheme();
+const textFieldTheme = createTheme({
+  components: {
+    MuiTextField: {
+      styleOverrides: {
+        // Name of the slot
+        root: {
+          // Some CSS
+          fontSize: "1rem",
+          "& label.Mui-focused": {
+            color: "white",
+          },
+          "& label": {
+            color: "white",
+          },
+          "& .MuiInputBase-root": {
+            color: "white",
+          },
+          "& .MuiInput-underline:after": {
+            borderBottomColor: "white",
+          },
+          "& .MuiOutlinedInput-root": {
+            "& fieldset": {
+              borderColor: "white",
+            },
+            "&:hover fieldset": {
+              borderColor: "white",
+            },
+            "&.Mui-focused fieldset": {
+              borderColor: "white",
+            },
+          },
+        },
+      },
+    },
+  },
+});
 
 const ContactUs = () => {
-  const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(props, ref) {
+  const maxSubjectInputLength = 150;
+  const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
+    props,
+    ref
+  ) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
   });
+
+  const { theme, setTheme } = useTheme();
 
   const [open, setOpen] = React.useState(false);
 
@@ -18,7 +64,10 @@ const ContactUs = () => {
     setOpen(true);
   };
 
-  const handleClose = (event?: React.SyntheticEvent | Event, reason?: string) => {
+  const handleClose = (
+    event?: React.SyntheticEvent | Event,
+    reason?: string
+  ) => {
     if (reason === "clickaway") {
       return;
     }
@@ -51,7 +100,6 @@ const ContactUs = () => {
     setSubject("");
     setMessage("");
   };
-
   const [email, setEmail] = useState<string | undefined>();
   const [subject, setSubject] = useState<string | undefined>();
   const [message, setMessage] = useState<string | undefined>();
@@ -61,7 +109,7 @@ const ContactUs = () => {
         <title>ClueLess | Contact Us</title>
       </Head>
       <Navbar />
-      <div className="flex justify-between items-center my-20 flex-col lg:flex-row lg:px-28 w-11/12 mx-auto lg:w-full">
+      <div className="flex justify-between gap-20 items-center my-20 flex-col lg:flex-row lg:px-28 w-11/12 mx-auto lg:w-full">
         <div className="">
           <div className="mt-4">
             <div className="flex flex-col items-start space-y-4 text-xl">
@@ -77,48 +125,70 @@ const ContactUs = () => {
                 }}
               >
                 <div className="space-y-4 ">
-                  <TextField
-                    id="outlined-textarea"
-                    label="Your Email"
-                    placeholder="Enter Your Email"
-                    fullWidth
-                    type="email"
-                    name="email"
-                    required
-                    value={email}
-                    onChange={(e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>): void => {
-                      setEmail(e.target.value);
-                    }}
-                  />
-                  <TextField
-                    id="outlined-textarea"
-                    label="Subject"
-                    placeholder="Enter Subject"
-                    multiline
-                    fullWidth
-                    type="text"
-                    name="Subject"
-                    required
-                    value={subject}
-                    onChange={(e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>): void => {
-                      setSubject(e.target.value);
-                    }}
-                  />
-                  <TextField
-                    id="outlined-textarea"
-                    label="Write here"
-                    placeholder="How can we help you?"
-                    multiline
-                    rows={7}
-                    fullWidth
-                    type="text"
-                    name="Feedback"
-                    required
-                    value={message}
-                    onChange={(e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>): void => {
-                      setMessage(e.target.value);
-                    }}
-                  />
+                  <ThemeProvider
+                    theme={
+                      theme === "dark" ? textFieldTheme : oldTextFieldTheme
+                    }
+                  >
+                    <TextField
+                      id="outlined-textarea"
+                      label="Your Email"
+                      placeholder="Enter Your Email"
+                      fullWidth
+                      type="email"
+                      name="email"
+                      required
+                      value={email}
+                      onChange={(
+                        e: React.ChangeEvent<
+                          HTMLTextAreaElement | HTMLInputElement
+                        >
+                      ): void => {
+                        setEmail(e.target.value);
+                      }}
+                    />
+                    <TextField
+                      id="outlined-textarea"
+                      label="Subject"
+                      placeholder="Enter Subject"
+                      multiline
+                      fullWidth
+                      inputProps={{
+                        maxLength: maxSubjectInputLength,
+                      }}
+                      type="text"
+                      name="Subject"
+                      required
+                      value={subject}
+                      onChange={(
+                        e: React.ChangeEvent<
+                          HTMLTextAreaElement | HTMLInputElement
+                        >
+                      ): void => {
+                        setSubject(e.target.value);
+                      }}
+                      sx={{ borderColor: "white" }}
+                    />
+                    <TextField
+                      id="outlined-textarea"
+                      label="Write here"
+                      placeholder="How can we help you?"
+                      multiline
+                      rows={7}
+                      fullWidth
+                      type="text"
+                      name="Feedback"
+                      required
+                      value={message}
+                      onChange={(
+                        e: React.ChangeEvent<
+                          HTMLTextAreaElement | HTMLInputElement
+                        >
+                      ): void => {
+                        setMessage(e.target.value);
+                      }}
+                    />
+                  </ThemeProvider>
                 </div>
                 <div className="text-sm mt-9">
                   <button className="btn-blue" type="submit">
@@ -129,7 +199,7 @@ const ContactUs = () => {
             </div>
           </div>
         </div>
-        <div className="">
+        <div>
           <img src="/OpenSourceProject.png" alt="" className="mt-20" />
         </div>
       </div>

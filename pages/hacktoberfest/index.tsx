@@ -15,7 +15,7 @@ const hacktoberfest = () => {
     return (
         <div>
             <Head>
-                <title>Hacktoberfest</title>
+                <title>Clueless | Hacktoberfest</title>
             </Head>
             <Navbar />
             <Leaderboard />

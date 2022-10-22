@@ -1,17 +1,19 @@
-import { AppProps } from 'next/dist/shared/lib/router/router'
-import '../styles/globals.css'
-import { SessionProvider } from 'next-auth/react'
-import { AdminProvider } from '../context/AdminLogInContext'
+import { AppProps } from "next/dist/shared/lib/router/router";
+import "../styles/globals.css";
+import { SessionProvider } from "next-auth/react";
+import { AdminProvider } from "../context/AdminLogInContext";
+import { ThemeProvider } from "next-themes";
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   return (
     <SessionProvider session={session}>
       <AdminProvider>
-        <Component {...pageProps} />
+        <ThemeProvider attribute="class">
+          <Component {...pageProps} />
+        </ThemeProvider>
       </AdminProvider>
     </SessionProvider>
-  )
+  );
 }
 
-
-export default MyApp
+export default MyApp;
