@@ -44,8 +44,6 @@ const AddProject: React.FC<Props> = ({ handleProjectFetch, themeColor }) => {
   const { data: session } = useSession();
   const uid = session?.user?.id;
 
-  console.log(themeColor)
-
   const [projectNameNew, setProjectNameNew] = React.useState<string>("");
   const [projectImageNew, setProjectImageNew] = React.useState<string>("");
   const [media, setMedia] = React.useState<File | undefined>();
