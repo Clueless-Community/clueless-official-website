@@ -2,13 +2,12 @@ import { CircularProgress } from '@mui/material';
 import { query, collection, getDocs, orderBy } from 'firebase/firestore';
 import Head from 'next/head';
 import React, { SetStateAction } from 'react'
-import { ILeaderboardHacktoberfest } from '../../interfaces/hacktoberfest_leaderboard';
 import { db } from '../../lib/clientApp';
 import Footer from '../components/shared/Footer';
 import Navbar from '../components/shared/Navbar/Navbar';
 
 const Leaderboard: React.FC = () => {
-    const [leaderboard, setLeaderboard] = React.useState<ILeaderboardHacktoberfest[]>([]);
+    const [leaderboard, setLeaderboard] = React.useState([]);
     const [loading, setLoading] = React.useState<boolean>(false);
 
     console.table(leaderboard);
