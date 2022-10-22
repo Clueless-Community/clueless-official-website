@@ -35,11 +35,13 @@ const renderSelectedIcon = (theme?: string) => {
     >
       <path
         d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
-        className={`${theme === "system" ? "stroke-slate-400" : "stroke-sky-500"} dark:stroke-slate-500`}
+        className="
+          stroke-sky-500
+        dark:stroke-slate-500"
       ></path>
       <path
         d="M12 4v1M17.66 6.344l-.828.828M20.005 12.004h-1M17.66 17.664l-.828-.828M12 20.01V19M6.34 17.664l.835-.836M3.995 12.004h1.01M6 6l.835.836"
-        className={`${theme === "system" ? "stroke-slate-400" : "stroke-sky-500"} dark:stroke-slate-500`}
+        className="stroke-sky-500 dark:stroke-slate-500"
       ></path>
     </svg>
   );
@@ -65,7 +67,7 @@ const ModeSelect = () => {
   if (!mounted) {
     return null;
   }
-
+  console.log("current theme", theme);
   return (
     <div>
       <IconButton
@@ -111,14 +113,20 @@ const ModeSelect = () => {
             >
               <path
                 d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
-                className={`${theme === "light" ? "stroke-sky-500" : "stroke-slate-400"} dark:stroke-slate-500`}
+                className={`${
+                  theme === "light" ? "stroke-sky-500" : "stroke-slate-400"
+                } dark:stroke-slate-500`}
               ></path>
               <path
                 d="M12 4v1M17.66 6.344l-.828.828M20.005 12.004h-1M17.66 17.664l-.828-.828M12 20.01V19M6.34 17.664l.835-.836M3.995 12.004h1.01M6 6l.835.836"
-                className={`${theme === "light" ? "stroke-sky-500" : "stroke-slate-400"} dark:stroke-slate-500`}
+                className={`${
+                  theme === "light" ? "stroke-sky-500" : "stroke-slate-400"
+                } dark:stroke-slate-500`}
               ></path>
             </svg>
-            <span className={`${theme === "light" ? "text-sky-600" : ""}`}>Light</span>
+            <span className={`${theme === "light" ? "text-sky-600" : ""}`}>
+              Light
+            </span>
           </MenuItem>
           <MenuItem
             onClick={(): void => {
@@ -146,30 +154,6 @@ const ModeSelect = () => {
               ></path>
             </svg>
             <span className="dark:text-sky-600">Dark</span>
-          </MenuItem>
-          <MenuItem
-            onClick={(): void => {
-              setTheme("system");
-              handleClose();
-            }}
-            className="font-nunito"
-          >
-            <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6 mr-2">
-              <path
-                d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6Z"
-                strokeWidth="2"
-                strokeLinejoin="round"
-                className={`${theme === "system" ? "stroke-sky-500" : "stroke-slate-400"} dark:stroke-slate-500`}
-              ></path>
-              <path
-                d="M14 15c0 3 2 5 2 5H8s2-2 2-5"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className={`${theme === "system" ? "stroke-sky-500" : "stroke-slate-400"} dark:stroke-slate-500`}
-              ></path>
-            </svg>
-            <span className={`${theme === "system" ? "text-sky-600" : ""}`}>System</span>
           </MenuItem>
         </Menu>
       </div>
