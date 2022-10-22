@@ -31,7 +31,7 @@ const ProfileCard: React.FC<Props> = ({ key, img, username, tag, about, github, 
             <div className="sm:hidden sm:group-hover:block">
                 <p className="h-20 font-nunito font-semibold text-sm mt-5 mb-4 text-center">{about}</p>
             </div>
-            <div className="sm:hidden sm:-hover:block">
+            <div className="sm:hidden sm:hover:block">
                 <div className="sm:group-hover:mt-8 w-4/5 flex justify-center space-x-4 sm:group-hover:justify-between">
                     <a href={github} target="_blank" rel="noreferrer" className="sm:hover:scale-105"><GitHubIcon /></a>
                     <a href={linkedin} target="_blank" rel="noreferrer" className="sm:hover:scale-105"><LinkedInIcon /></a>
