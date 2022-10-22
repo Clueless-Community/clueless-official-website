@@ -72,10 +72,10 @@ const HomeMain = () => {
       >
         <div>
           <h1 className="text-skin-main md:text-[90px] leading-tight font-bold text-5xl">
-            ClueLess <br /> <span className="text-gray-900 dark:text-white">Community</span>
+            ClueLess <br /> <span className="text-gray-900">Community</span>
           </h1>
           <h2 className=" font-raleway text-skin-main mt-5 text-4xl mb-16 ">
-            Learn.<span className="text-gray-900 dark:text-white">Grow.</span>
+            Learn.<span className="text-gray-900">Grow.</span>
           </h2>
           <div className="flex flex-col sm:flex-row items-start">
             <Link href={"/events"} passHref>

@@ -19,10 +19,10 @@ const signin: React.FC = ({ providers }: any) => {
       </Head>
       <>
         <Navbar />
-        <div className="min-h-screen  flex flex-col lg:flex-row justify-center items-center bg-gray-100 dark:bg-zinc-900 space-y-12 lg:space-y-0">
+        <div className="min-h-screen  flex flex-col lg:flex-row justify-center items-center bg-gray-100 space-y-12 lg:space-y-0">
           {/* Sign In Text and image */}
           <div className="relative lg:mb-44">
-            <div className="absolute top-0 lg:-right-64 -right-4 w-44 h-44 bg-blue-300 dark:bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-50" />
+            <div className="absolute top-0 lg:-right-64 -right-4 w-44 h-44 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-50" />
           </div>
           <div className=" flex flex-col justify-start items-center space-y-6 lg:mb-16">
             <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-left w-full">

@@ -8,7 +8,7 @@ import Link from "next/link";
 const Footer: React.FC = () => {
   return (
     <>
-      <div className="grid lg:grid-cols-5 sm:grid-cols-3 gap-8 grid-cols-1 md:px-28 sm:px-12 px-6 mt-auto bg-[#EFEFEF] pt-12 justify-items-start child:w-full shadow-inner dark:bg-zinc-900">
+      <div className="grid lg:grid-cols-5 sm:grid-cols-3 gap-8 grid-cols-1 md:px-28 sm:px-12 px-6 mt-auto bg-[#EFEFEF] pt-12 justify-items-start child:w-full shadow-inner">
         <div className="flex mb-auto flex-wrap justify-center">
           <div className="flex  items-center cursor-pointer">
             <img src="/ClueLess Logo.png" alt="" className="w-[70px]" />
@@ -83,7 +83,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="sm:px-40 flex justify-between text-sm py-10  bg-[#EFEFEF] flex-col items-center sm:flex-row shadow-xl dark:bg-zinc-900">
+      <div className="sm:px-40 flex justify-between text-sm py-10  bg-[#EFEFEF] flex-col items-center sm:flex-row shadow-xl">
         <p>Copyright &copy; by ClueLess 2022</p>
         <p className="mt-5 sm:mt-0">Powered by Clueless</p>
       </div>

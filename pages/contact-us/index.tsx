@@ -6,47 +6,9 @@ import { TextField } from "@mui/material";
 import React, { useState } from "react";
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert, { AlertProps } from "@mui/material/Alert";
-import { useTheme } from "next-themes";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
-const oldTextFieldTheme = createTheme();
-const textFieldTheme = createTheme({
-  components: {
-    MuiTextField: {
-      styleOverrides: {
-        // Name of the slot
-        root: {
-          // Some CSS
-          fontSize: "1rem",
-          "& label.Mui-focused": {
-            color: "white",
-          },
-          "& label": {
-            color: "white",
-          },
-          "& .MuiInputBase-root": {
-            color: "white",
-          },
-          "& .MuiInput-underline:after": {
-            borderBottomColor: "white",
-          },
-          "& .MuiOutlinedInput-root": {
-            "& fieldset": {
-              borderColor: "white",
-            },
-            "&:hover fieldset": {
-              borderColor: "white",
-            },
-            "&.Mui-focused fieldset": {
-              borderColor: "white",
-            },
-          },
-        },
-      },
-    },
-  },
-});
-
+const textFieldTheme = createTheme();
 const ContactUs = () => {
   const maxSubjectInputLength = 150;
   const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
@@ -55,8 +17,6 @@ const ContactUs = () => {
   ) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
   });
-
-  const { theme, setTheme } = useTheme();
 
   const [open, setOpen] = React.useState(false);
 
@@ -126,9 +86,7 @@ const ContactUs = () => {
               >
                 <div className="space-y-4 ">
                   <ThemeProvider
-                    theme={
-                      theme === "dark" ? textFieldTheme : oldTextFieldTheme
-                    }
+                    theme={textFieldTheme}
                   >
                     <TextField
                       id="outlined-textarea"
