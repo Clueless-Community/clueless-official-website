@@ -16,7 +16,6 @@ const TeachStackLine = () => {
                     {
                         theme === 'dark' ? <img src='/icons/iconmiddleDark.svg' alt='github' className='col-span-2' /> : <img src='/icons/iconmiddle.svg' alt='github' className='col-span-2' />
                     }
-                    
                     {Icons.slice(4, 8).map((icon, i) => {
                         return <img src={icon} alt={icon} key={i} />
                     })}
