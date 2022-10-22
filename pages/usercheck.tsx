@@ -59,7 +59,7 @@ const Usercheck = () => {
     return (
         <>
             <Head>
-                <title>Loging In...</title>
+                <title>Logging In...</title>
                 <meta name="description" content="A virtual Open source and development community" />
             </Head>
             <div className='flex justify-center items-center h-screen'>
