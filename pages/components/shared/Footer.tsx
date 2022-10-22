@@ -8,7 +8,7 @@ import Link from "next/link";
 const Footer: React.FC = () => {
   return (
     <>
-      <div className="grid lg:grid-cols-5 sm:grid-cols-3 gap-8 grid-cols-1 md:px-28 sm:px-12 px-6 mt-auto bg-[#EFEFEF] dark:bg-transparent pt-12 justify-items-start child:w-full">
+      <div className="grid lg:grid-cols-5 sm:grid-cols-3 gap-8 grid-cols-1 md:px-28 sm:px-12 px-6 mt-auto bg-[#EFEFEF] pt-12 justify-items-start child:w-full shadow-inner dark:bg-zinc-900">
         <div className="flex mb-auto flex-wrap justify-center">
           <div className="flex  items-center cursor-pointer">
             <img src="/ClueLess Logo.png" alt="" className="w-[70px]" />
@@ -36,8 +36,13 @@ const Footer: React.FC = () => {
         <div className="hidden sm:block lg:hidden"></div>
         <div className="flex flex-col mx-auto  my-5 sm:my-0 sm:text-left text-center">
           <h3 className="font-nunito font-semibold text-xl mb-8">Quick links</h3>
-          <Link href="/challenges-events">
-            <a className="my-3 hover:text-skin-main transition-all">Events & Challenges</a>
+          <Link href="/events">
+            <a
+              className="my-3 hover:text-skin-main transition-all"
+              href="https://www.clueless.tech/events"
+              target="_blank"
+              rel="noreferrer"
+            >Events</a>
           </Link>
           <a
             className="my-3 hover:text-skin-main transition-all"
@@ -78,7 +83,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="sm:px-40 flex justify-between text-sm py-10  bg-[#EFEFEF] dark:bg-transparent flex-col items-center sm:flex-row">
+      <div className="sm:px-40 flex justify-between text-sm py-10  bg-[#EFEFEF] flex-col items-center sm:flex-row shadow-xl dark:bg-zinc-900">
         <p>Copyright &copy; by ClueLess 2022</p>
         <p className="mt-5 sm:mt-0">Powered by Clueless</p>
       </div>
