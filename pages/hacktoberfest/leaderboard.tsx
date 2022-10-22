@@ -1,8 +1,38 @@
-import Head from 'next/head'
-import React from 'react'
-import Navbar from '../components/shared/Navbar/Navbar'
+import { CircularProgress } from '@mui/material';
+import { query, collection, getDocs, orderBy } from 'firebase/firestore';
+import Head from 'next/head';
+import React, { SetStateAction } from 'react'
+import { db } from '../../lib/clientApp';
+import Footer from '../components/shared/Footer';
+import Navbar from '../components/shared/Navbar/Navbar';
 
-const Leaderboard = () => {
+const Leaderboard: React.FC = () => {
+    const [leaderboard, setLeaderboard] = React.useState([]);
+    const [loading, setLoading] = React.useState<boolean>(false);
+
+    console.table(leaderboard);
+
+
+    const handleLeaderboardFetch = React.useCallback(async () => {
+        setLoading(true);
+        setLeaderboard([])
+        const leaderboardQuery = query(collection(db, `hacktoberfest2022`), orderBy('points'));
+        const querySnapshot = await getDocs(leaderboardQuery);
+        querySnapshot.forEach((doc) => {
+            setLeaderboard((prev: any) => {
+                return [{ ...doc.data() }, ...prev] as any
+            })
+        })
+        setLoading(false);
+    }, [])
+
+    React.useEffect(() => {
+        window.onbeforeunload = () => {
+            window.scrollTo({top:0, behavior:'smooth'});
+          }
+        handleLeaderboardFetch();
+    }, [])
+
     return (
         <div className='h-screen'>
             <Head>
