@@ -13,7 +13,7 @@ const RewardsAndPerks = () => {
                         <li>All contributors will receive certificate for contributing</li>
                         <li>Contribute to open-source and be the part of the revolution</li>
                     </ol>
-                    <Link href='#' passHref>
+                    <Link href="https://clueless-resources.super.site/hacktoberfest/how-to-get-eligible-for-swags" passHref>
                         <button className='btn-blue mt-6'>More Info</button>
                     </Link>
                 </div>
