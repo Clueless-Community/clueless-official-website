@@ -8,7 +8,7 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   return (
     <SessionProvider session={session}>
       <AdminProvider>
-        <ThemeProvider attribute="class">
+        <ThemeProvider attribute="class" enableSystem={false}>
           <Component {...pageProps} />
         </ThemeProvider>
       </AdminProvider>
