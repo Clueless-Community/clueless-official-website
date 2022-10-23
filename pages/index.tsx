@@ -54,7 +54,7 @@ const Home: NextPage = () => {
             {" "}
             <img src="flutter_kolkata-removebg-preview.png" alt="Flutter Kolkata Logo" className="w-[170px] sm:w-[250px]" />
           </a>
-          <a href="https://metafy.social/">
+          <a href="https://metafy.social/" target='_blank'>
             <img
               src="Metafy-3.png"
               alt="Flutter Kolkata Logo"
