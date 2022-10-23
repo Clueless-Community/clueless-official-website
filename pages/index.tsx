@@ -51,7 +51,7 @@ const Home: NextPage = () => {
           Our <span className="text-skin-main">Community Partners</span>
         </h1>
         <div className="flex space-x-5">
-          <img src="flutter_kolkata.jpeg" alt="Flutter Kolkata Logo" className="w-[170px] sm:w-[250px]" />
+          <img src="flutter_kolkata-removebg-preview.png" alt="Flutter Kolkata Logo" className="w-[170px] sm:w-[250px]" />
           <img src="Metafy-3.png" alt="Flutter Kolkata Logo" className="w-[170px] sm:w-[250px]" />
         </div>
       </div>
