@@ -32,9 +32,6 @@ const Home: NextPage = () => {
       <div className="flex justify-center w-full lg:hidden">
         <img src="/Open-source Home.png" alt="" className="w-72 sm:w-96" />
       </div>
-      <h1 className="child:text-skin-main md:text-6xl sm:text-5xl text-3xl text-center my-10 mt-28 font-bold sm:leading-[80px] leading-10">
-        ️❤️<span>Events </span>by ClueLess <span>X</span> iNeuron.
-      </h1>
       {/* <UpcomingEvents/>  */}
       <UpcomingEvents />
       <UltimateResourceHub />
@@ -43,7 +40,9 @@ const Home: NextPage = () => {
         <h1 className="xl:text-5xl font-bold md:text-4xl text-2xl">
           Our <span className="text-skin-main">Sponsors</span>
         </h1>
-        <img src="ineuron-logo.png" alt="ineutron Logo" className="p-10" />
+        <a href="https://ineuron.ai/">
+          <img src="ineuron-logo.png" alt="ineutron Logo" className="p-10" />
+        </a>
       </div>
       {/* Community Partner Section */}
       <div className="mt-32 flex flex-col justify-center items-center xl:space-y-16 space-y-8 w-[10/12] mx-auto">
@@ -51,8 +50,13 @@ const Home: NextPage = () => {
           Our <span className="text-skin-main">Community Partners</span>
         </h1>
         <div className="flex space-x-5">
-          <img src="flutter_kolkata.jpeg" alt="Flutter Kolkata Logo" className="w-[170px] sm:w-[250px]" />
-          <img src="Metafy-3.png" alt="Flutter Kolkata Logo" className="w-[170px] sm:w-[250px]" />
+          <a href="http://www.flutterkolkata.dev/">
+            {" "}
+            <img src="flutter_kolkata.jpeg" alt="Flutter Kolkata Logo" className="w-[170px] sm:w-[250px]" />
+          </a>
+          <a href="https://metafy.social/">
+            <img src="Metafy-3.png" alt="Flutter Kolkata Logo" className="w-[170px] sm:w-[250px]" />
+          </a>
         </div>
       </div>
 

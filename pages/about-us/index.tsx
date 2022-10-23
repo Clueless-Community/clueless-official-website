@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import Head from 'next/head'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from '../components/shared/Navbar/Navbar'
 import Footer from '../components/shared/Footer'
 import ProfileCard from '../components/AboutUS/ProfileCard'
@@ -9,14 +9,68 @@ import profile from '../../database/profileData'
 import OurVision from '../components/AboutUS/OurVision';
 import TeachStackLine from '../components/shared/TeachStackLine'
 
-const aboutUs = () => {
+
+const AboutUs = () => {
+  const [showButton, setShowButton] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== undefined) {
+      window.addEventListener("scroll", () => {
+        if (window.pageYOffset > 300) {
+          setShowButton(true);
+        } else {
+          setShowButton(false);
+        }
+      });
+    }
+  }, []);
+
+  const scrollToTop = () => {
+    if (typeof window !== undefined) {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <div>
       <Head>
         <title>ClueLess | About Us</title>
         <meta name="description" content="ClueLess About Us Page" />
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        ></link>
       </Head>
       <Navbar />
+      {showButton && (
+        <div
+          id="return_top"
+          style={{
+            position: "fixed",
+            zIndex: "99",
+            right: "5%",
+            top: "90%",
+            width: "50px",
+            height: "50px",
+            textDecoration: "none",
+            borderRadius: "50%",
+            backgroundColor: "#0b5ac2",
+            padding: "12px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <button
+            onClick={scrollToTop}
+            className="fa fa-arrow-up"
+            style={{ color: "white", fontSize: "25px" }}
+          ></button>
+        </div>
+      )}
 
       {/* top section  */}
       <div className=' bg-skin-main flex justify-center items-center h-[700px]'>
@@ -74,4 +128,4 @@ const aboutUs = () => {
   )
 }
 
-export default aboutUs
+export default AboutUs
