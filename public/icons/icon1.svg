@@ -1,1 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 48 48" width="120px" height="120px"><polygon fill="#40c4ff" points="26,4 6,24 12,30 38,4"/><polygon fill="#40c4ff" points="38,22 27,33 21,27 26,22"/><rect width="8.485" height="8.485" x="16.757" y="28.757" fill="#03a9f4" transform="rotate(-45.001 21 33)"/><polygon fill="#01579b" points="38,44 26,44 21,39 27,33"/><polygon fill="#084994" points="21,39 30,36 27,33"/></svg>
+<svg width="256" height="317" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1">
+ <defs>
+  <linearGradient y2="0.58693" x2="0.73801" y1="0.32763" x1="0.01853" id="SVGID_1_">
+   <stop stop-color="#000000" offset="0"/>
+   <stop stop-opacity="0" stop-color="#000000" offset="1"/>
+  </linearGradient>
+ </defs>
+ <g>
+  <title>Layer 1</title>
+  <g stroke="null" id="svg_1">
+   <polygon stroke="null" id="svg_2" fill="#47C5FB" points="155.9040069580078,15.999990463256836 13,156.97454833984375 57.229820251464844,200.6072235107422 244.3636474609375,15.999990463256836 " class="st0"/>
+   <polygon stroke="null" id="svg_3" fill="#47C5FB" points="155.81336975097656,146.26699829101562 79.29940032958984,221.38412475585938 123.69235229492188,265.61614990234375 167.84060668945312,222.27389526367188 245.26998901367188,146.26699829101562 " class="st0"/>
+   <polygon stroke="null" id="svg_4" fill="#00569E" points="123.69235229492188,265.61614990234375 157.29978942871094,298.6099853515625 245.26998901367188,298.6099853515625 167.84060668945312,222.27389526367188 " class="st2"/>
+   <polygon stroke="null" id="svg_5" fill="#00B5F8" points="78.80091857910156,221.86459350585938 123.03074645996094,178.44223022460938 167.84060668945312,222.27389526367188 123.69235229492188,265.61614990234375 " class="st3"/>
+   <polygon stroke="null" id="svg_6" fill-opacity="0.8" fill="url(#SVGID_1_)" points="123.69235229492188,265.61614990234375 160.45387268066406,253.63943481445312 164.1064453125,225.93988037109375 " class="st1"/>
+  </g>
+ </g>
+</svg>
