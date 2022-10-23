@@ -9,17 +9,15 @@ const Footer: React.FC = () => {
   return (
     <>
       <div className="grid lg:grid-cols-5 sm:grid-cols-3 gap-8 grid-cols-1 md:px-28 sm:px-12 px-6 mt-auto bg-[#EFEFEF] pt-12 justify-items-start child:w-full shadow-inner dark:bg-zinc-900">
-        <Link href="/">
-          <div className="flex mb-auto flex-wrap justify-center">
-            <div className="flex  items-center cursor-pointer">
-              <img src="/ClueLess Logo.png" alt="" className="w-[70px]" />
-            </div>
-            <div className="mt-2">
-              <h1 className=" font-raleway text-3xl ml-8">ClueLess</h1>
-              <p className=" font-raleway ml-8 mt-1">Learn. Grow.</p>
-            </div>
+        <div className="flex mb-auto flex-wrap justify-center">
+          <div className="flex  items-center cursor-pointer">
+            <img src="/ClueLess Logo.png" alt="" className="w-[70px]" />
           </div>
-        </Link>
+          <div className="mt-2">
+            <h1 className=" font-raleway text-3xl ml-8">ClueLess</h1>
+            <p className=" font-raleway ml-8 mt-1">Learn. Grow.</p>
+          </div>
+        </div>
         <div className="flex flex-col mx-auto my-5 mt-12 sm:my-0 sm:text-left text-center">
           <h3 className=" font-nunito font-semibold text-xl mb-8">Know Us</h3>
           <Link href="/about-us">
