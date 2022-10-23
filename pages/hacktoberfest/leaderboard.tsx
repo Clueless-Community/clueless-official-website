@@ -5,6 +5,7 @@ import Navbar from "../components/shared/Navbar/Navbar";
 import { FaAngleUp } from "react-icons/fa";
 
 interface Ileaderboard {
+    position: number;
     userName: string;
     PRLinks: string[];
     PRCount: number;
@@ -13,10 +14,29 @@ interface Ileaderboard {
 }
 
 const Leaderboard: React.FC = (leaderboardData) => {
-    const leaderBoardDataArray = Object.values(
-        leaderboardData
-    )[0] as Ileaderboard[];
+
+    const leaderBoardDataArray: any = Object.values(leaderboardData)[0];
+
+    const allData = leaderBoardDataArray && leaderBoardDataArray.map((i: any,ind: number) => ({...i, "position": ind+1})) as Ileaderboard[];
+
+
+    const [search, setSearch] = useState("");
     const [showButton, setShowButton] = useState(false);
+    const [searchResult, setSearchResult] = useState(allData);
+  
+    const searchStyles = {
+      width: '100%',
+      margin: '30px 0',
+      display: 'flex',
+      height: 42,
+      overflow:'hidden'
+    }
+  
+    function searchCards(){
+      let searchRes = allData.filter((item: Ileaderboard) =>item.userName.includes(search));
+      setSearchResult(searchRes);
+    }
+
     useEffect(() => {
         if (typeof window !== undefined) {
             window.addEventListener("scroll", () => {
@@ -60,6 +80,10 @@ const Leaderboard: React.FC = (leaderboardData) => {
                     </a>
                     .
                 </p>
+                <div style={searchStyles}>
+                    <input style={{flex: 1, display:'flex', paddingLeft: 12, border: '1px solid black', borderRadius: 6, color: 'black'}} onChange={(e) => setSearch(e.target.value)}  type="text" placeholder="Enter your github username" />
+                    <button onClick={searchCards} style={{background:'gray', width: 100, color:'white',borderRadius: 6, marginLeft:4}} >Search</button>
+                </div>
                 <table className="w-full xl:text-xl text-lg box-content my-8 xl:my-12">
                     <thead className="bg-[#1C1525] text-white">
                         <tr className="text-left child:py-2 child:px-2">
@@ -76,7 +100,7 @@ const Leaderboard: React.FC = (leaderboardData) => {
                     <tbody>
                         {/* {showButton && (<div id="return_top" style={{position:"fixed",zIndex:"99",right:"5%",top:"90%",width:"50px",height:"50px",textDecoration:"none",borderRadius:"50%",backgroundColor:"#0b5ac2",padding:"12px",display:"flex",alignItems:"center",justifyContent:"center"}}><button onClick={scrollToTop} className="fa fa-arrow-up" style={{color:"white",fontSize:"25px"}}></button></div>)} */}
 
-                        {leaderBoardDataArray.map((data, i) => {
+                        {searchResult.map((data, i) => {
                             const avatarURL =
                                 data.avatarUrl === "#"
                                     ? "https://i.stack.imgur.com/YaL3s.jpg"
@@ -89,7 +113,7 @@ const Leaderboard: React.FC = (leaderboardData) => {
                                     <td
                                         className={`my-2 pl-2 xl:rounded-tl-md rounded-tl-sm xl:rounded-bl-md rounded-bl-sm font-semibold`}
                                     >
-                                        {i + 1}.
+                                        {data.position}.
                                     </td>
                                     <td
                                         className={`my-2 flex justify-start items-center xl:space-x-4 space-x-2 w-full`}
@@ -123,6 +147,7 @@ const Leaderboard: React.FC = (leaderboardData) => {
                         })}
                     </tbody>
                 </table>
+                {searchResult.length == 0 && <p className="text-center" >No results found</p>}
                 {showButton && (
                     <FaAngleUp
                         style={{
