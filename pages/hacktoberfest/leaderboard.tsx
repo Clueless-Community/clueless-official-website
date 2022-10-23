@@ -100,7 +100,7 @@ const Leaderboard: React.FC = (leaderboardData) => {
                     <tbody>
                         {/* {showButton && (<div id="return_top" style={{position:"fixed",zIndex:"99",right:"5%",top:"90%",width:"50px",height:"50px",textDecoration:"none",borderRadius:"50%",backgroundColor:"#0b5ac2",padding:"12px",display:"flex",alignItems:"center",justifyContent:"center"}}><button onClick={scrollToTop} className="fa fa-arrow-up" style={{color:"white",fontSize:"25px"}}></button></div>)} */}
 
-                        {searchResult.map((data, i) => {
+                        {searchResult.map((data:Ileaderboard, i:number) => {
                             const avatarURL =
                                 data.avatarUrl === "#"
                                     ? "https://i.stack.imgur.com/YaL3s.jpg"
