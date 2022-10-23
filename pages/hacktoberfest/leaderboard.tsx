@@ -92,12 +92,9 @@ const Leaderboard: React.FC = (leaderboardData) => {
             }}
             onChange={(e) => setSearch(e.target.value)}
             type="text"
-            placeholder="Enter your github username"
+            placeholder="Enter your GitHub username"
           />
-          <button
-            onClick={searchCards}
-            style={{ background: "gray", width: 100, color: "white", borderRadius: 6, marginLeft: 4 }}
-          >
+          <button className="btn-blue disabled:bg-gray-500 ml-2" onClick={searchCards} disabled={!search}>
             Search
           </button>
         </div>
