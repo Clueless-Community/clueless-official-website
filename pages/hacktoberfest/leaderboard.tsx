@@ -14,16 +14,15 @@ interface Ileaderboard {
 }
 
 const Leaderboard: React.FC = (leaderboardData) => {
-
+    
     const leaderBoardDataArray: any = Object.values(leaderboardData)[0];
 
     const allData = leaderBoardDataArray && leaderBoardDataArray.map((i: any,ind: number) => ({...i, "position": ind+1})) as Ileaderboard[];
-
-
+    
     const [search, setSearch] = useState("");
     const [showButton, setShowButton] = useState(false);
     const [searchResult, setSearchResult] = useState(allData);
-  
+
     const searchStyles = {
       width: '100%',
       margin: '30px 0',
@@ -32,11 +31,15 @@ const Leaderboard: React.FC = (leaderboardData) => {
       overflow:'hidden'
     }
   
-    function searchCards(){
-      let searchRes = allData.filter((item: Ileaderboard) =>item.userName.includes(search));
-      setSearchResult(searchRes);
+    function searchCards(clearSearchFlag : boolean){
+        let searchRes;
+        const SearchBar = document.getElementById('searchBar') as HTMLInputElement;
+        
+        clearSearchFlag ? (setSearch(""), searchRes = allData, SearchBar.value = "")
+        : searchRes = allData.filter((item: Ileaderboard) =>item.userName.includes(search));
+        setSearchResult(searchRes);
     }
-
+    
     useEffect(() => {
         if (typeof window !== undefined) {
             window.addEventListener("scroll", () => {
@@ -57,7 +60,6 @@ const Leaderboard: React.FC = (leaderboardData) => {
             });
         }
     };
-
     return (
         <div className="">
             <Head>
@@ -81,8 +83,9 @@ const Leaderboard: React.FC = (leaderboardData) => {
                     .
                 </p>
                 <div style={searchStyles}>
-                    <input style={{flex: 1, display:'flex', paddingLeft: 12, border: '1px solid black', borderRadius: 6, color: 'black'}} onChange={(e) => setSearch(e.target.value)}  type="text" placeholder="Enter your github username" />
-                    <button onClick={searchCards} style={{background:'gray', width: 100, color:'white',borderRadius: 6, marginLeft:4}} >Search</button>
+                    <input  id="searchBar" style={{flex: 1, display:'flex', paddingLeft: 13, border: '1px solid black', borderRadius: 6, color: 'black'}} onChange={(e) => setSearch(e.target.value)}  type="text" placeholder="Enter your github username" />
+                    <button onClick={()=>{searchCards(true)}} style={{position:'relative', right:'60px',color:'blue'}}>Clear</button>
+                    <button onClick={()=>{searchCards(false)}} style={{background:'gray', width: 100, color:'white',borderRadius: 6, marginLeft:4}} >Search</button>
                 </div>
                 <table className="w-full xl:text-xl text-lg box-content my-8 xl:my-12">
                     <thead className="bg-[#1C1525] text-white">
