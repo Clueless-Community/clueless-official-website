@@ -88,9 +88,9 @@ const Leaderboard: React.FC = (leaderboardData) => {
               paddingLeft: 12,
               border: "1px solid black",
               borderRadius: 6,
-              color: "black",
             }}
             onChange={(e) => setSearch(e.target.value)}
+            className="dark:bg-zinc-700 dark:text-white"
             type="text"
             placeholder="Enter your GitHub username"
           />
