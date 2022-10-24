@@ -67,7 +67,7 @@ const profile = [
   },
   {
     id: "7",
-    img: "/TeamMembers/Rupsha Sarkar.jpg",
+    img: "/TeamMembers/Rupsha Sarkar.jpeg",
     name: "RUPSHA SARKAR",
     tags: "Web Developer",
     about:
