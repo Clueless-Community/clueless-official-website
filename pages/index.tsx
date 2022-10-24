@@ -12,11 +12,12 @@ import SocialHome from "./components/Home/SocialHome";
 import TeachStackLine from "./components/shared/TeachStackLine";
 import UpcomingEvents from "./components/Home/Events/UpcomingEvents";
 import Hacktoberfest from "./components/Home/Hacktoberfest";
-
+import ReactTooltip from 'react-tooltip';
 
 const Home: NextPage = () => {
   return (
     <>
+    <ReactTooltip />
       <Head>
         <title>ClueLess</title>
         <meta name="description" content="A virtual Open source and development community" />
@@ -27,8 +28,7 @@ const Home: NextPage = () => {
       <Hacktoberfest />
       <WhatIsClueLess />
       <h2 className="md:text-6xl sm:text-5xl text-3xl text-center my-10 mt-28 font-bold sm:leading-[80px] leading-10">
-        Dive into the world of <br />{" "}
-        <span className=" text-skin-main">Development🚀</span>
+        Dive into the world of <br /> <span className=" text-skin-main">Development🚀</span>
       </h2>
       <TeachStackLine />
       <div className="flex justify-center w-full lg:hidden">
@@ -42,7 +42,9 @@ const Home: NextPage = () => {
         <h1 className="xl:text-5xl font-bold md:text-4xl text-2xl">
           Our <span className="text-skin-main">Sponsors</span>
         </h1>
-        <a href="https://ineuron.ai/"><img src="ineuron-logo.png" alt="ineutron Logo" className="p-10" /></a>
+        <a href="https://ineuron.ai/">
+          <img src="ineuron-logo.png" alt="ineutron Logo" className="p-10" />
+        </a>
       </div>
       {/* Community Partner Section */}
       <div className="mt-32 flex flex-col justify-center items-center xl:space-y-16 space-y-8 w-[10/12] mx-auto">
@@ -50,10 +52,17 @@ const Home: NextPage = () => {
           Our <span className="text-skin-main">Community Partners</span>
         </h1>
         <div className="flex space-x-5">
-          <a href="http://www.flutterkolkata.dev/"> <img src="flutter_kolkata.jpeg" alt="Flutter Kolkata Logo" className="w-[170px] sm:w-[250px]" /></a>
-          <a href="https://metafy.social/"><img src="Metafy-3.png" alt="Flutter Kolkata Logo" className="w-[170px] sm:w-[250px]" /></a>
-
-
+          <a data-tip="Flutter Kolkata" href="http://www.flutterkolkata.dev/">
+            {" "}
+            <img src="flutter_kolkata-removebg-preview.png" alt="Flutter Kolkata Logo" className="w-[170px] sm:w-[250px]" />
+          </a>
+          <a data-tip="Metafy" href="https://metafy.social/">
+            <img
+              src="Metafy-3.png"
+              alt="Flutter Kolkata Logo"
+              className="w-[170px] sm:w-[250px] dark:invert dark:brightness-0"
+            />
+          </a>
         </div>
       </div>
 
@@ -66,5 +75,3 @@ const Home: NextPage = () => {
 };
 
 export default Home;
-
-

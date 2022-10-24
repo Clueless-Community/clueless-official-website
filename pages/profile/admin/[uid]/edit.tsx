@@ -10,7 +10,64 @@ import { db } from '../../../../lib/clientApp'
 import Navbar from '../../../components/shared/Navbar/Navbar'
 import TechStackAutoComplete from '../../../components/shared/TechStackAutoComplete'
 
+import { useTheme } from "next-themes";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+
+const oldTextFieldTheme = createTheme();
+const textFieldTheme = createTheme({
+  components: {
+    MuiTextField: {
+      styleOverrides: {
+        // Name of the slot
+        root: {
+          // Some CSS
+          fontSize: "1rem",
+          "& label.Mui-focused": {
+            color: "white",
+          },
+          "& label": {
+            color: "white",
+          },
+          "& .MuiInputBase-root": {
+            color: "white",
+          },
+          "& .MuiInput-underline:after": {
+            borderBottomColor: "white",
+          },
+          "& .MuiInputBase-input.Mui-disabled": {
+            WebkitTextFillColor: "white",
+            color: "white",
+          },
+          "& .MuiInputBase-root.Mui-disabled": {
+            color: "white",
+          },
+          "& .MuiFormLabel-root.Mui-disabled": {
+            color: "white",
+          },
+          "& .MuiOutlinedInput-notchedOutline" : {
+            borderColor: "white",
+          },
+          "& .MuiOutlinedInput-root": {
+            "& fieldset": {
+              borderColor: "white",
+            },
+            "&:hover fieldset": {
+              borderColor: "white",
+            },
+            "&.Mui-focused fieldset": {
+              borderColor: "white",
+            },
+          },
+        },
+      },
+    },
+  },
+});
+
+
 const EditProfile = () => {
+    const { theme, setTheme } = useTheme();
+
     const [collegeName, setcollegeName] = React.useState<string>("")
     // const [graduationYear, setgraduationYear] = React.useState<number | null>()
     const [bio, setbio] = React.useState<string>("")
@@ -113,6 +170,7 @@ const EditProfile = () => {
                                         <div className="col-span-1">
                                             <Avatar alt={user?.name} src={user?.image} sx={{ width: 150, height: 150 }} className="mt-10 ring-4" />
                                         </div>
+                                        <ThemeProvider theme={theme === "dark" ? textFieldTheme : oldTextFieldTheme}>    
                                         <div className="space-y-4 col-span-1 lg:col-span-4">
                                             <div className="flex flex-col items-start font-semibold my-6 text-4xl">
                                                 Edit Profile
@@ -270,6 +328,7 @@ const EditProfile = () => {
                                                 </Snackbar>
                                             </div>
                                         </div>
+                                        </ThemeProvider>
                                     </div>
                                 </div>
                             </div>
