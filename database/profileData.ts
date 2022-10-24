@@ -33,9 +33,9 @@ const profile = [
     twitter: "https://twitter.com/Roshaen_RC",
   },
   {
-    id: "11",
+    id: "4",
     img: "/TeamMembers/Kingshuk Sarkar.jpeg",
-    name: "Kingshuk Sarkar",
+    name: "KINGSHUK SARKAR",
     tags: "Design, Development",
     about:
       "I am a junior web developer, a social media post designer, and a tech and programming enthusiast,loves new challenges. ",
@@ -44,7 +44,7 @@ const profile = [
     twitter: "",
   },
   {
-    id: "4",
+    id: "5",
     img: "/TeamMembers/Nikhil Raj.jpg",
     name: "NIKHIL RAJ",
     tags: "Co-founder",
@@ -55,7 +55,7 @@ const profile = [
     twitter: "https://twitter.com/humans_write",
   },
   {
-    id: "9",
+    id: "6",
     img: "/TeamMembers/Subho Ghosh.jpg",
     name: "SUBHO GHOSH",
     tags: "Social Media & Growth Expert",
@@ -64,6 +64,17 @@ const profile = [
     github: "https://github.com/ighoshsubho",
     linkedin: "https://www.linkedin.com/in/thesubhoghosh/",
     twitter: "https://twitter.com/subhoghosh02",
+  },
+  {
+    id: "7",
+    img: "/TeamMembers/Rupsha Sarkar.jpg",
+    name: "RUPSHA SARKAR",
+    tags: "Web Developer",
+    about:
+      "Core team @Clueless⭐ | Maintainer @Hacktoberfest'22💻 | HITK'25",
+    github: "https://github.com/rupsha014",
+    linkedin: "https://www.linkedin.com/in/rupsha-sarkar-aab06723a/",
+    twitter: "https://twitter.com/ruuuuu_0506",
   },
 ];
 
