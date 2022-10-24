@@ -12,10 +12,12 @@ import SocialHome from "./components/Home/SocialHome";
 import TeachStackLine from "./components/shared/TeachStackLine";
 import UpcomingEvents from "./components/Home/Events/UpcomingEvents";
 import Hacktoberfest from "./components/Home/Hacktoberfest";
+import ReactTooltip from 'react-tooltip';
 
 const Home: NextPage = () => {
   return (
     <>
+    <ReactTooltip />
       <Head>
         <title>ClueLess</title>
         <meta name="description" content="A virtual Open source and development community" />
@@ -55,6 +57,7 @@ const Home: NextPage = () => {
             <img src="flutter_kolkata-removebg-preview.png" alt="Flutter Kolkata Logo" className="w-[170px] sm:w-[250px]" />
           </a>
           <a href="https://metafy.social/" target='_blank' rel="noopener noreferrer">
+
             <img
               src="Metafy-3.png"
               alt="Flutter Kolkata Logo"
