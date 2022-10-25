@@ -97,7 +97,7 @@ const Profile: React.FC = () => {
       ) : null}
 
       <div
-       className='pb-16 bg-white rounded-t-[1rem] md:rounded-t-[1rem]'
+       className='pb-16 rounded-t-[1rem] md:rounded-t-[1rem] dark:bg-zinc-900'
        style={{
         boxShadow: '0px -10px 50px rgba(0, 0, 0, 0.25)',
        }}
