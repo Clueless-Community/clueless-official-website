@@ -121,12 +121,15 @@ const Leaderboard: React.FC = (leaderboardData) => {
                       {data.position}.
                     </td>
                     <td className={`my-2 flex justify-start items-center xl:space-x-4 space-x-2 w-full`}>
-                      <img
-                        src={avatarURL}
-                        className="w-16 rounded-full border-dashed border-2 border-blue-400 text-sm "
-                        alt=""
-                      />
-                      <span className="max-w-[113px] truncate sm:max-w-fit">{data.userName}</span>
+                        <img
+                            src={avatarURL}
+                            className="w-16 rounded-full border-dashed border-2 border-blue-400 text-sm "
+                            alt=""
+                            onClick={() => window.location.href=`https://github.com/${data.userName}`}
+                        />
+                        <span onClick={() => window.location.href=`https://github.com/${data.userName}`} className="max-w-[113px] truncate sm:max-w-fit">
+                            {data.userName}
+                        </span>
                     </td>
                     <td
                       className={`my-2 pl-2 xl:rounded-tl-md rounded-tl-sm xl:rounded-bl-md rounded-bl-sm font-semibold text-center`}
