@@ -36,7 +36,7 @@ const Leaderboard: React.FC = (leaderboardData) => {
         const SearchBar = document.getElementById('searchBar') as HTMLInputElement;
         
         clearSearchFlag ? (setSearch(""), searchRes = allData, SearchBar.value = "")
-        : searchRes = allData.filter((item: Ileaderboard) =>item.userName.includes(search));
+        : searchRes = allData.filter((item: Ileaderboard) =>item.userName.toLowerCase().includes(search.toLowerCase()));
         setSearchResult(searchRes);
     }
     
