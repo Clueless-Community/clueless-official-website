@@ -1,4 +1,4 @@
-import { Alert, Avatar, Box, CircularProgress, FormControl, InputLabel, MenuItem, Select, SelectChangeEvent, Snackbar, TextareaAutosize, TextField } from '@mui/material'
+import { Alert, Avatar, Backdrop, Box, CircularProgress, FormControl, InputLabel, MenuItem, Select, SelectChangeEvent, Snackbar, TextareaAutosize, TextField } from '@mui/material'
 import { doc, getDoc, updateDoc } from 'firebase/firestore'
 import { useSession } from 'next-auth/react'
 import Head from 'next/head'
@@ -87,6 +87,7 @@ const EditProfile = () => {
 
 
     const saveUser = async () => {
+        setLoader(true);
         const userRef = doc(db, "users", userId as string);
         await updateDoc(userRef, {
             college: collegeName,
@@ -96,6 +97,7 @@ const EditProfile = () => {
             about: bio,
             techstack: techStacks
         })
+        setLoader(false);
     }
 
     const fetchUser = React.useCallback(async () => {
@@ -135,6 +137,9 @@ const EditProfile = () => {
 
     const [open, setOpen] = React.useState(false);
 
+    // Loader settings
+    const [loader, setLoader] = React.useState(false);
+
     const handleClose = (event?: React.SyntheticEvent | Event, reason?: string) => {
         if (reason === 'clickaway') {
             return;
@@ -165,6 +170,13 @@ const EditProfile = () => {
                         <>
                             <Navbar />
                             <div className="mx-auto text-xl mt-11 mb-10 w-10/12">
+                                {/* Loading screen while the user data is being saved */}
+                                <Backdrop
+                                    sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
+                                    open={loader}
+                                >
+                                    <CircularProgress size={50} />
+                                </Backdrop>
                                 <div className="space-y-4 ">
                                     <div className="grid grid-cols-1 lg:grid-cols-5">
                                         <div className="col-span-1">
