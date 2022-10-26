@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import Footer from "../components/shared/Footer";
 import Navbar from "../components/shared/Navbar/Navbar";
 import { FaAngleUp } from "react-icons/fa";
+import Link from "next/link";
 
 interface Ileaderboard {
   position: number;
@@ -18,7 +19,10 @@ const Leaderboard: React.FC = (leaderboardData) => {
 
   const allData =
     leaderBoardDataArray &&
-    (leaderBoardDataArray.map((i: any, ind: number) => ({ ...i, position: ind + 1 })) as Ileaderboard[]);
+    (leaderBoardDataArray.map((i: any, ind: number) => ({
+      ...i,
+      position: ind + 1,
+    })) as Ileaderboard[]);
 
   const [search, setSearch] = useState("");
   const [showButton, setShowButton] = useState(false);
@@ -33,7 +37,9 @@ const Leaderboard: React.FC = (leaderboardData) => {
   };
 
   function searchCards() {
-    let searchRes = allData.filter((item: Ileaderboard) => item.userName.includes(search));
+    let searchRes = allData.filter((item: Ileaderboard) =>
+      item.userName.includes(search)
+    );
     setSearchResult(searchRes);
   }
 
@@ -94,39 +100,67 @@ const Leaderboard: React.FC = (leaderboardData) => {
             type="text"
             placeholder="Enter your GitHub username"
           />
-          <button className="btn-blue disabled:bg-gray-500 ml-2" onClick={searchCards} disabled={!search}>
+          <button
+            className="btn-blue disabled:bg-gray-500 ml-2"
+            onClick={searchCards}
+            disabled={!search}
+          >
             Search
           </button>
         </div>
         <table className="w-full xl:text-xl text-lg box-content my-8 xl:my-12">
           <thead className="bg-[#1C1525] dark:bg-[#2E4053] text-white">
             <tr className="text-left child:py-2 child:px-2">
-              <th className="xl:rounded-tl-md rounded-tl-sm xl:rounded-bl-md rounded-bl-sm">No</th>
+              <th className="xl:rounded-tl-md rounded-tl-sm xl:rounded-bl-md rounded-bl-sm">
+                No
+              </th>
               <th>Name</th>
               <th className="text-center">PR Merged</th>
-              <th className="xl:rounded-tr-md rounded-tr-sm xl:rounded-br-md rounded-br-sm w-fit">Points</th>
+              <th className="xl:rounded-tr-md rounded-tr-sm xl:rounded-br-md rounded-br-sm w-fit">
+                Points
+              </th>
             </tr>
           </thead>
           <tbody>
             {/* {showButton && (<div id="return_top" style={{position:"fixed",zIndex:"99",right:"5%",top:"90%",width:"50px",height:"50px",textDecoration:"none",borderRadius:"50%",backgroundColor:"#0b5ac2",padding:"12px",display:"flex",alignItems:"center",justifyContent:"center"}}><button onClick={scrollToTop} className="fa fa-arrow-up" style={{color:"white",fontSize:"25px"}}></button></div>)} */}
 
             {searchResult.map((data: Ileaderboard, i: number) => {
-              const avatarURL = data.avatarUrl === "#" ? "https://i.stack.imgur.com/YaL3s.jpg" : data.avatarUrl;
+              const avatarURL =
+                data.avatarUrl === "#"
+                  ? "https://i.stack.imgur.com/YaL3s.jpg"
+                  : data.avatarUrl;
               return (
                 data.userName != "Rajdip019" && (
-                  <tr className={`${i % 2 === 0 && "bg-[#DBE0EB] dark:bg-[#17202A]"} rounded-md`} key={i}>
+                  <tr
+                    className={`${
+                      i % 2 === 0 && "bg-[#DBE0EB] dark:bg-[#17202A]"
+                    } rounded-md`}
+                    key={i}
+                  >
                     <td
                       className={`my-2 pl-2 xl:rounded-tl-md rounded-tl-sm xl:rounded-bl-md rounded-bl-sm font-semibold`}
                     >
                       {data.position}.
                     </td>
-                    <td className={`my-2 flex justify-start items-center xl:space-x-4 space-x-2 w-full`}>
-                      <img
-                        src={avatarURL}
-                        className="w-16 rounded-full border-dashed border-2 border-blue-400 text-sm "
-                        alt=""
-                      />
-                      <span className="max-w-[113px] truncate sm:max-w-fit">{data.userName}</span>
+                    <td
+                      className={`my-2 flex justify-start items-center xl:space-x-4 space-x-2 w-full`}
+                    >
+                      <Link href={`https://github.com/${data.userName}`}>
+                        <a target="_blank">
+                          <img
+                            src={avatarURL}
+                            className="cursor-pointer w-16 rounded-full border-dashed border-2 border-blue-400 text-sm "
+                            alt=""
+                          />
+                        </a>
+                      </Link>
+                      <Link href={`https://github.com/${data.userName}`}>
+                        <a target="_blank">
+                          <span className="max-w-[113px] truncate sm:max-w-fit cursor-pointer hover:underline">
+                            {data.userName}
+                          </span>
+                        </a>
+                      </Link>
                     </td>
                     <td
                       className={`my-2 pl-2 xl:rounded-tl-md rounded-tl-sm xl:rounded-bl-md rounded-bl-sm font-semibold text-center`}
@@ -135,7 +169,11 @@ const Leaderboard: React.FC = (leaderboardData) => {
                     </td>
                     <td className="my-2 pr-2 xl:rounded-tr-md rounded-tr-sm xl:rounded-br-md rounded-br-sm w-fit">
                       <div className="flex justify-start items-center space-x-2">
-                        <img src="/leaderboardlogo.png" alt="leaderboardLogo" className="w-8" />
+                        <img
+                          src="/leaderboardlogo.png"
+                          alt="leaderboardLogo"
+                          className="w-8"
+                        />
                         <span className="float-left">{data.Score}</span>
                       </div>
                     </td>
@@ -145,7 +183,9 @@ const Leaderboard: React.FC = (leaderboardData) => {
             })}
           </tbody>
         </table>
-        {searchResult.length == 0 && <p className="text-center">No results found</p>}
+        {searchResult.length == 0 && (
+          <p className="text-center">No results found</p>
+        )}
         {showButton && (
           <FaAngleUp
             style={{
@@ -177,7 +217,9 @@ const Leaderboard: React.FC = (leaderboardData) => {
 export default Leaderboard;
 
 export async function getStaticProps() {
-  const res = await fetch("https://hacktoberfest22-leaderboard.herokuapp.com/leaderboard");
+  const res = await fetch(
+    "https://hacktoberfest22-leaderboard.herokuapp.com/leaderboard"
+  );
   const leaderboardData = await res.json();
 
   return {
