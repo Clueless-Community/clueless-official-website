@@ -24,6 +24,7 @@ const Leaderboard: React.FC = (leaderboardData) => {
   const [showButton, setShowButton] = useState(false);
   const [searchResult, setSearchResult] = useState(allData);
 
+
   const searchStyles = {
     width: "100%",
     margin: "30px 0",
@@ -48,6 +49,11 @@ const Leaderboard: React.FC = (leaderboardData) => {
       });
     }
   }, []);
+
+  useEffect(() => {
+     searchCards();
+  }, [search])
+  
 
   const scrollToTop = () => {
     if (typeof window !== undefined) {
@@ -94,9 +100,6 @@ const Leaderboard: React.FC = (leaderboardData) => {
             type="text"
             placeholder="Enter your GitHub username"
           />
-          <button className="btn-blue disabled:bg-gray-500 ml-2" onClick={searchCards} disabled={!search}>
-            Search
-          </button>
         </div>
         <table className="w-full xl:text-xl text-lg box-content my-8 xl:my-12">
           <thead className="bg-[#1C1525] dark:bg-[#2E4053] text-white">
