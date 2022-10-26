@@ -48,7 +48,7 @@ const ProfileSummary: React.FC<Props> = ({
      <a
       href={githubLink}
       target='_blank'
-      className=' opacity-80'
+      className=' opacity-80 hover:opacity-90 transition-transform hover:scale-90'
       rel='noreferrer'
      >
       <GitHubIcon fontSize='large' />
@@ -58,7 +58,7 @@ const ProfileSummary: React.FC<Props> = ({
      <a
       href={linkedInLink}
       target='_blank'
-      className=' opacity-80'
+      className=' opacity-80 hover:opacity-90 transition-transform hover:scale-90'
       rel='noreferrer'
      >
       <LinkedInIcon fontSize='large' />
@@ -68,7 +68,7 @@ const ProfileSummary: React.FC<Props> = ({
      <a
       href={twitterlink}
       target='_blank'
-      className=' opacity-80'
+      className=' opacity-80 hover:opacity-90 transition-transform hover:scale-90'
       rel='noreferrer'
      >
       <TwitterIcon fontSize='large' />
