@@ -140,7 +140,7 @@ const Leaderboard: React.FC = (leaderboardData) => {
                                         </div>
                                     </td>
                                 </tr>
-                            );
+                            ))
                         })}
                     </tbody>
                 </table>
