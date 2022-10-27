@@ -103,35 +103,29 @@ const Leaderboard: React.FC = (leaderboardData) => {
                     <tbody>
                         {/* {showButton && (<div id="return_top" style={{position:"fixed",zIndex:"99",right:"5%",top:"90%",width:"50px",height:"50px",textDecoration:"none",borderRadius:"50%",backgroundColor:"#0b5ac2",padding:"12px",display:"flex",alignItems:"center",justifyContent:"center"}}><button onClick={scrollToTop} className="fa fa-arrow-up" style={{color:"white",fontSize:"25px"}}></button></div>)} */}
 
-                        {searchResult.map((data:Ileaderboard, i:number) => {
-                            const avatarURL =
-                                data.avatarUrl === "#"
-                                    ? "https://i.stack.imgur.com/YaL3s.jpg"
-                                    : data.avatarUrl;
-                            return (
-                                data.userName != 'Rajdip019' && <tr
-                                    className={`${i % 2 === 0 && "bg-[#DBE0EB]"} rounded-md`}
-                                    key={i}
-                                >
-                                    <td
-                                        className={`my-2 pl-2 xl:rounded-tl-md rounded-tl-sm xl:rounded-bl-md rounded-bl-sm font-semibold`}
-                                    >
-                                        {data.position}.
-                                    </td>
-                                    <td
-                                        className={`my-2 flex justify-start items-center xl:space-x-4 space-x-2 w-full`}
-                                    >
-                                        <img
-                                            src={avatarURL}
-                                            className="w-16 rounded-full border-dashed border-2 border-blue-400 text-sm "
-                                            alt=""
-                                        />
-                                        <span className="max-w-[113px] truncate sm:max-w-fit">
-                                            {data.userName}
-                                        </span>
-                                    </td>
-                                    <td
-                                        className={`my-2 pl-2 xl:rounded-tl-md rounded-tl-sm xl:rounded-bl-md rounded-bl-sm font-semibold text-center`}
+                        {searchResult.map((data: Ileaderboard, i: number) => {
+              const avatarURL = data.avatarUrl === "#" ? "https://i.stack.imgur.com/YaL3s.jpg" : data.avatarUrl;
+              return (
+                data.userName != "Rajdip019" && (
+                  <tr className={`${i % 2 === 0 && "bg-[#DBE0EB] dark:bg-[#17202A]"} rounded-md`} key={i}>
+                    <td
+                      className={`my-2 pl-2 xl:rounded-tl-md rounded-tl-sm xl:rounded-bl-md rounded-bl-sm font-semibold`}
+                    >
+                      {data.position}.
+                    </td>
+                    <td className={`my-2 flex justify-start items-center xl:space-x-4 space-x-2 w-full`}>
+                        <img
+                            src={avatarURL}
+                            className="w-16 rounded-full border-dashed border-2 border-blue-400 text-sm "
+                            alt=""
+                            onClick={() => window.location.href=`https://github.com/${data.userName}`}
+                        />
+                        <span onClick={() => window.location.href=`https://github.com/${data.userName}`} className="max-w-[113px] truncate sm:max-w-fit">
+                            {data.userName}
+                        </span>
+                    </td>
+                    <td
+                      className={`my-2 pl-2 xl:rounded-tl-md rounded-tl-sm xl:rounded-bl-md rounded-bl-sm font-semibold text-center`}
                                     >
                                         {data.PRCount}
                                     </td>
@@ -146,7 +140,7 @@ const Leaderboard: React.FC = (leaderboardData) => {
                                         </div>
                                     </td>
                                 </tr>
-                            );
+                            ))
                         })}
                     </tbody>
                 </table>
