@@ -27,14 +27,6 @@ const Leaderboard: React.FC = (leaderboardData) => {
     const [showButton, setShowButton] = useState(false);
     const [searchResult, setSearchResult] = useState(allData);
 
-    const searchStyles = {
-        width: "100%",
-        margin: "30px 0",
-        display: "flex",
-        height: 42,
-        overflow: "hidden",
-    };
-
     function searchCards(clearSearchFlag: boolean) {
         let searchRes;
         const SearchBar = document.getElementById(
@@ -92,45 +84,23 @@ const Leaderboard: React.FC = (leaderboardData) => {
                     </a>
                     .
                 </p>
-                <div style={searchStyles}>
-                    <input
+                <div className="w-[100%] h-10 mt-8 flex flex-row relative">
+                    <input className="flex flex-row pl-[15px] border-[1px] border-black rounded text-black w-[100%] lg:w-[90%] lg:text-base text-sm"
                         id="searchBar"
-                        style={{
-                            flex: 1,
-                            display: "flex",
-                            paddingLeft: 13,
-                            border: "1px solid black",
-                            borderRadius: 6,
-                            color: "black",
-                        }}
                         onChange={(e) => setSearch(e.target.value)}
                         type="text"
                         placeholder="Enter your github username"
                     />
-                    <button
+                    <button className="text-blue-600 absolute right-20 top-2 font-semibold lg:right-44"
                         onClick={() => {
                             searchCards(true);
-                        }}
-                        style={{
-                            position: "relative",
-                            right: "60px",
-                            color: "blue",
-                        }}
-                    >
+                        }}>
                         Clear
                     </button>
-                    <button
+                    <button className="bg-blue-600 hover:bg-blue-500 lg:w-[150px] text-white rounded lg:ml-4 w-[80px] ml-2"
                         onClick={() => {
                             searchCards(false);
-                        }}
-                        style={{
-                            background: "gray",
-                            width: 100,
-                            color: "white",
-                            borderRadius: 6,
-                            marginLeft: 4,
-                        }}
-                    >
+                        }}>
                         Search
                     </button>
                 </div>
@@ -196,7 +166,7 @@ const Leaderboard: React.FC = (leaderboardData) => {
                                             </span>
                                         </td>
                                         <td
-                                            className={`my-2 pl-2 xl:rounded-tl-md rounded-tl-sm xl:rounded-bl-md rounded-bl-sm font-semibold text-center`}
+                                            className={`my-2 pl-2 font-semibold text-center`}
                                         >
                                             {data.PRCount}
                                         </td>
