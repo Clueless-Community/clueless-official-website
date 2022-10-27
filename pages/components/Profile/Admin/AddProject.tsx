@@ -163,7 +163,7 @@ const AddProject: React.FC<Props> = ({ handleProjectFetch }) => {
       <div className="my-10" onClick={handleOpen}>
         <div className="p-6 border-2 border-dashed border-black border-opacity-60 rounded-lg h-48 bg-gray-100 flex flex-col justify-center items-center cursor-pointer hover:bg-gray-200 transition-all opacity-80 w-full">
           <AddCircleIcon className="text-blue-700 hover:text-blue-800 w-16 h-16" />
-          <div className="text-center text-xl font-bold mt-2">Add Projects</div>
+          <div className="text-center text-xl font-bold mt-2 dark:text-black">Add Projects</div>
         </div>
       </div>
       <Modal
