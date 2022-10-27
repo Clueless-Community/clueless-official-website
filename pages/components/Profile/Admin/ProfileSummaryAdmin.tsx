@@ -40,7 +40,7 @@ const ProfileSummaryAdmin: React.FC<Props> = ({
     sx={{ width: 120, height: 120 }}
    />
    <p className='mt-5 text-2xl text-center'>{profileName}</p>
-   {collegeName && <p className='mt-2 text-sm opacity-80'>{collegeName}</p>}
+   {collegeName && <p className='mt-2 text-sm opacity-80 text-center'>{collegeName}</p>}
    {passOutYear && <p className='mt-1 text-sm'>{passOutYear}</p>}
    <div className='flex gap-10 mt-3'>
     {githubLink && (
