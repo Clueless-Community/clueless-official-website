@@ -26,6 +26,7 @@ const Leaderboard: React.FC = (leaderboardData) => {
     const [search, setSearch] = useState("");
     const [showButton, setShowButton] = useState(false);
     const [searchResult, setSearchResult] = useState(allData);
+    const [clear, setClear] = useState(false);
 
     const searchStyles = {
         width: "100%",
@@ -60,6 +61,13 @@ const Leaderboard: React.FC = (leaderboardData) => {
             });
         }
     }, []);
+
+    useEffect(() => {
+      searchCards(false);
+      if(search != "") setClear(true);
+      else setClear(false);
+    }, [search])
+    
 
     const scrollToTop = () => {
         if (typeof window !== undefined) {
@@ -107,32 +115,20 @@ const Leaderboard: React.FC = (leaderboardData) => {
                         type="text"
                         placeholder="Enter your github username"
                     />
-                    <button
-                        onClick={() => {
-                            searchCards(true);
-                        }}
-                        style={{
-                            position: "relative",
-                            right: "60px",
-                            color: "blue",
-                        }}
-                    >
-                        Clear
-                    </button>
-                    <button
-                        onClick={() => {
-                            searchCards(false);
-                        }}
-                        style={{
-                            background: "gray",
-                            width: 100,
-                            color: "white",
-                            borderRadius: 6,
-                            marginLeft: 4,
-                        }}
-                    >
-                        Search
-                    </button>
+                    {clear && 
+                        <button
+                            onClick={() => {
+                                searchCards(true);
+                            }}
+                            style={{
+                                position: "relative",
+                                right: "60px",
+                                color: "blue",
+                            }}
+                        >
+                            clear
+                        </button>
+                    }
                 </div>
                 <table className="w-full xl:text-xl text-lg box-content my-8 xl:my-12">
                     <thead className="bg-[#1C1525] text-white">
