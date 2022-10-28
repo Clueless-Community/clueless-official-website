@@ -69,7 +69,7 @@ const ModeSelect = () => {
   }
   console.log("current theme", theme);
   return (
-    <div>
+    <div className="flex flex-row items-center justify-center lg:mr-20">
       <IconButton
         id="basic-button"
         aria-controls={open ? "basic-menu" : undefined}
