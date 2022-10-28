@@ -163,7 +163,7 @@ const ProfileAdmin: React.FC = () => {
                   </div>
                   <div className="my-20 md:mx-40 mx-10">
                     <p className=" text-4xl">Projects</p>
-                    <div className="h-1 w-20 bg-black ml-16 opacity-80"></div>
+                    <div className="h-1 w-20 bg-black ml-16 opacity-80 dark:bg-white dark:opacity-100"></div>
                     {projects ? (
                       <Grid container spacing={4} className="my-2">
                         {projects?.map((project: IProjectUser, i: number) => {
