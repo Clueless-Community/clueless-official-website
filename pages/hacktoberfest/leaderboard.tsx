@@ -61,6 +61,11 @@ const Leaderboard: React.FC = (leaderboardData) => {
         }
     }, []);
 
+    useEffect(() => {
+      searchCards(false);
+    }, [search])
+    
+
     const scrollToTop = () => {
         if (typeof window !== undefined) {
             window.scrollTo({
@@ -118,20 +123,6 @@ const Leaderboard: React.FC = (leaderboardData) => {
                         }}
                     >
                         Clear
-                    </button>
-                    <button
-                        onClick={() => {
-                            searchCards(false);
-                        }}
-                        style={{
-                            background: "gray",
-                            width: 100,
-                            color: "white",
-                            borderRadius: 6,
-                            marginLeft: 4,
-                        }}
-                    >
-                        Search
                     </button>
                 </div>
                 <table className="w-full xl:text-xl text-lg box-content my-8 xl:my-12">
