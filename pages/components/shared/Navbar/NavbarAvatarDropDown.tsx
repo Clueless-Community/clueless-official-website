@@ -43,7 +43,7 @@ const NavbarAvatarDropDown: React.FC<Props> = ({ img, name, email, uid }) => {
           src={img}
           alt={name}
           sx={{ width: "52px", height: "52px" }}
-          className=" cursor-pointer border-2 border-[#1955CA] hidden lg:block"
+          className=" cursor-pointer border-2 border-[#1955CA] hidden lg:flex"
         />
       </IconButton>
       <Menu

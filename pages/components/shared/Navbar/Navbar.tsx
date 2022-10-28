@@ -52,6 +52,7 @@ const Navbar: NextComponentType = () => {
           </button>
         </Link>
       </div>
+      <div className="flex">
       <ModeSelect />
       {session.status === "authenticated" && (
         <div className="hidden md:block">
@@ -71,14 +72,9 @@ const Navbar: NextComponentType = () => {
         </Link>
       )}
       <div className=" flex items-center lg:hidden">
-        {session.status === "unauthenticated" && (
-          <Link href="/auth/signin" passHref>
-            <div className="btn-blue text-xs sm:text-lg ">
-              <button>Log In</button>
-            </div>
-          </Link>
-        )}
+
         <NavbarDrawer uid={uid as string} img={image as string} name={name as string} email={email as string} />
+      </div>
       </div>
     </nav>
   );
