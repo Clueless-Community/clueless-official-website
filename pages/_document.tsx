@@ -3,6 +3,10 @@ import { Html, Head, Main, NextScript } from 'next/document'
 export default function Document(): JSX.Element {
     return (
         <Html lang="en">
+            <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        ></link>
             <link rel="icon" href="/ClueLess Logo with Bg.png" />
             <link rel="preconnect" href="https://fonts.googleapis.com" />
             <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin='true' />

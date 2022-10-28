@@ -40,37 +40,37 @@ const ProfileSummaryAdmin: React.FC<Props> = ({
     sx={{ width: 120, height: 120 }}
    />
    <p className='mt-5 text-2xl text-center'>{profileName}</p>
-   {collegeName && <p className='mt-2 text-sm opacity-80'>{collegeName}</p>}
+   {collegeName && <p className='mt-2 text-sm opacity-80 text-center'>{collegeName}</p>}
    {passOutYear && <p className='mt-1 text-sm'>{passOutYear}</p>}
    <div className='flex gap-10 mt-3'>
     {githubLink && (
      <a
       href={githubLink}
       target='_blank'
-      className=' opacity-80'
+      className=' opacity-80 '
       rel='noreferrer'
      >
-      <GitHubIcon fontSize='large' />
+      <GitHubIcon fontSize='large' className='hover:hover:text-[#1955ca] transition-transform hover:scale-90'/>
      </a>
     )}
     {linkedInLink && (
      <a
       href={linkedInLink}
       target='_blank'
-      className=' opacity-80'
+      className=' opacity-80 '
       rel='noreferrer'
      >
-      <LinkedInIcon fontSize='large' />
+      <LinkedInIcon fontSize='large' className='hover:hover:text-[#1955ca] transition-transform hover:scale-90' />
      </a>
     )}
     {githubLink && (
      <a
       href={twitterlink}
       target='_blank'
-      className=' opacity-80'
+      className=' opacity-80 '
       rel='noreferrer'
      >
-      <TwitterIcon fontSize='large' />
+      <TwitterIcon fontSize='large' className='hover:hover:text-[#1955ca] transition-transform hover:scale-90' />
      </a>
     )}
    </div>
