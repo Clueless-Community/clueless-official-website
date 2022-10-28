@@ -22,9 +22,9 @@ const Navbar: NextComponentType = () => {
           <img
             src="/ClueLess Logo.png"
             alt=""
-            className="sm:w-[65px] w-[35px]"
+            className="sm:w-[65px] w-[30px]"
           />
-          <h1 className=" font-raleway sm:text-3xl text-xl sm:ml-8 ml-2">
+          <h1 className="hidden xs:block font-raleway xs:text-3xl text-lg sm:ml-8 ml-2">
             ClueLess
           </h1>
         </div>
@@ -63,7 +63,7 @@ const Navbar: NextComponentType = () => {
         </Link>
       </div>
       <div className="flex items-center">
-        <div className=""><ModeSelect /></div>
+        <ModeSelect />
         {session.status === "authenticated" && (
           <div className="hidden md:block">
             <NavbarAvatarDropDown
@@ -89,12 +89,14 @@ const Navbar: NextComponentType = () => {
             </div>
           </Link>
         )}
-          <NavbarDrawer
+        
+        <NavbarDrawer
             uid={uid as string}
             img={image as string}
             name={name as string}
             email={email as string}
           />
+          
         </div>
       </div>
     </nav>
