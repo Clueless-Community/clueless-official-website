@@ -12,6 +12,8 @@ import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import { db, storage } from "../../../../lib/clientApp";
 import { useSession } from "next-auth/react";
 import { doc, setDoc } from "firebase/firestore";
+import { useTheme } from "next-themes";
+
 
 interface Props {
   projectId: string;
@@ -25,23 +27,12 @@ interface Props {
 }
 
 const editSvg = (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path
-      d="M16.474 5.40783L18.592 7.52483L16.474 5.40783ZM17.836 3.54283L12.109 9.26983C11.8131 9.56533 11.6113 9.94181 11.529 10.3518L11 12.9998L13.648 12.4698C14.058 12.3878 14.434 12.1868 14.73 11.8908L20.457 6.16383C20.6291 5.99173 20.7656 5.78742 20.8588 5.56256C20.9519 5.33771 20.9998 5.09671 20.9998 4.85333C20.9998 4.60994 20.9519 4.36895 20.8588 4.14409C20.7656 3.91923 20.6291 3.71492 20.457 3.54283C20.2849 3.37073 20.0806 3.23421 19.8557 3.14108C19.6309 3.04794 19.3899 3 19.1465 3C18.9031 3 18.6621 3.04794 18.4373 3.14108C18.2124 3.23421 18.0081 3.37073 17.836 3.54283V3.54283Z"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-    <path
-      d="M19 15V18C19 18.5304 18.7893 19.0391 18.4142 19.4142C18.0391 19.7893 17.5304 20 17 20H6C5.46957 20 4.96086 19.7893 4.58579 19.4142C4.21071 19.0391 4 18.5304 4 18V7C4 6.46957 4.21071 5.96086 4.58579 5.58579C4.96086 5.21071 5.46957 5 6 5H9"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  </svg>
-);
+    <svg width="24" height="24" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg">
+      <path d="M18.660 2.040 C 18.367 2.094,18.024 2.220,17.724 2.385 C 17.499 2.509,17.002 2.986,14.346 5.635 C 12.423 7.553,11.158 8.845,11.037 9.015 C 10.727 9.451,10.629 9.768,10.297 11.411 C 9.954 13.101,9.939 13.303,10.129 13.590 C 10.200 13.699,10.308 13.787,10.453 13.858 C 10.835 14.045,10.941 14.038,12.593 13.703 C 14.204 13.376,14.502 13.285,14.957 12.981 C 15.136 12.861,16.218 11.804,18.363 9.652 C 21.243 6.764,21.518 6.477,21.649 6.220 C 21.853 5.820,21.962 5.434,21.988 5.019 C 22.072 3.681,21.182 2.454,19.871 2.096 C 19.606 2.023,18.924 1.992,18.660 2.040 M5.499 4.043 C 4.383 4.230,3.461 5.048,3.114 6.160 L 3.020 6.460 3.020 12.500 L 3.020 18.540 3.114 18.840 C 3.422 19.827,4.173 20.578,5.160 20.886 L 5.460 20.980 11.500 20.980 L 17.540 20.980 17.840 20.886 C 18.827 20.578,19.578 19.827,19.886 18.840 C 19.979 18.543,19.980 18.523,19.980 16.580 L 19.980 14.620 19.889 14.450 C 19.724 14.140,19.329 13.970,18.874 14.011 C 18.439 14.051,18.141 14.274,18.041 14.635 C 18.017 14.721,18.000 15.453,18.000 16.444 C 18.000 18.250,17.991 18.340,17.779 18.618 C 17.718 18.698,17.585 18.813,17.484 18.872 L 17.300 18.980 11.500 18.980 L 5.700 18.980 5.516 18.872 C 5.415 18.813,5.284 18.700,5.225 18.623 C 4.987 18.311,5.000 18.655,5.000 12.522 C 5.000 6.182,4.978 6.628,5.303 6.303 C 5.601 6.005,5.638 6.000,7.557 6.000 C 8.548 6.000,9.279 5.983,9.365 5.959 C 9.586 5.898,9.770 5.755,9.880 5.558 C 9.967 5.402,9.980 5.332,9.979 5.000 C 9.978 4.567,9.898 4.355,9.678 4.199 C 9.412 4.009,9.303 4.000,7.444 4.005 C 6.485 4.007,5.609 4.025,5.499 4.043 M19.500 4.095 C 19.739 4.207,19.809 4.281,19.923 4.538 C 20.022 4.761,20.012 5.024,19.896 5.248 C 19.858 5.320,19.611 5.601,19.346 5.871 L 18.864 6.363 18.250 5.751 L 17.637 5.140 18.135 4.650 C 18.809 3.985,19.054 3.885,19.500 4.095 M16.829 7.169 C 17.143 7.483,17.400 7.758,17.400 7.781 C 17.400 7.804,16.604 8.616,15.630 9.586 C 14.159 11.051,13.830 11.360,13.680 11.415 C 13.494 11.483,12.317 11.731,12.293 11.707 C 12.269 11.683,12.517 10.506,12.585 10.320 C 12.640 10.170,12.949 9.841,14.414 8.370 C 15.384 7.396,16.196 6.600,16.218 6.600 C 16.241 6.600,16.516 6.856,16.829 7.169
+    "stroke="none" fillRule="evenodd"  className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root">
+      </path>
+    </svg>
+      );
 
 const style = {
   position: "absolute" as "absolute",
@@ -77,6 +68,7 @@ const EditProject: React.FC<Props> = ({
 }) => {
   const [editIsOpen, setEditIsOpen] = React.useState<boolean>(false);
   const { data: session } = useSession();
+
   const uid = session?.user?.id;
   const handleOpen: React.MouseEventHandler<HTMLButtonElement> = (e) => {
     e.stopPropagation();
@@ -92,7 +84,7 @@ const EditProject: React.FC<Props> = ({
   const [gitHubLinkNew, _setGitHubLinkNew] = React.useState<string>(gitHubLink as string);
   const [projectTechStacks, setProjectTechStacks] = React.useState<{ name: string }[]>(techStacks);
   const [downloadURL, setDownloadURL] = React.useState<string>("");
-
+  const { currentTheme, setTheme } = useTheme();
   const setProjectNameNew = (val: string) => _setProjectNameNew(val.slice(0, MAX_PROJECT_NAME_LENGTH));
   const setProjectDescNew = (val: string) => _setProjectDescNew(val.slice(0, MAX_DESC_LENGTH));
   const setPublicLinkNew = (val: string) => _setPublicLinkNew(val.slice(0, MAX_PUBLIC_LINK_LENGTH));
@@ -200,7 +192,7 @@ const EditProject: React.FC<Props> = ({
   return (
     <>
       <button
-        className="hover:text-black text-gray-500 p-1 rounded-full w-9 h-9 flex items-center justify-center transition-all"
+        className=" p-1 rounded-full w-9 h-9 flex items-center justify-center transition-all"
         onClick={handleOpen}
       >
         {editSvg}
