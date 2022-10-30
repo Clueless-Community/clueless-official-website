@@ -12,8 +12,6 @@ import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import { db, storage } from "../../../../lib/clientApp";
 import { useSession } from "next-auth/react";
 import { doc, setDoc } from "firebase/firestore";
-import { useTheme } from "next-themes";
-
 
 interface Props {
   projectId: string;
@@ -84,7 +82,6 @@ const EditProject: React.FC<Props> = ({
   const [gitHubLinkNew, _setGitHubLinkNew] = React.useState<string>(gitHubLink as string);
   const [projectTechStacks, setProjectTechStacks] = React.useState<{ name: string }[]>(techStacks);
   const [downloadURL, setDownloadURL] = React.useState<string>("");
-  const { currentTheme, setTheme } = useTheme();
   const setProjectNameNew = (val: string) => _setProjectNameNew(val.slice(0, MAX_PROJECT_NAME_LENGTH));
   const setProjectDescNew = (val: string) => _setProjectDescNew(val.slice(0, MAX_DESC_LENGTH));
   const setPublicLinkNew = (val: string) => _setPublicLinkNew(val.slice(0, MAX_PUBLIC_LINK_LENGTH));
