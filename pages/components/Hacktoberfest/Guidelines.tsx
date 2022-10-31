@@ -19,7 +19,7 @@ const Guidelines = () => {
                 <img src="/guidelines3.png" class="mx-auto md:mx-0" style="
     max-width: 70%;
     margin-left: 175px;
-">
+"/>
             </div>
         </div>
     )
