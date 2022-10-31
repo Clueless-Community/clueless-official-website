@@ -16,7 +16,7 @@ const Guidelines = () => {
                     <button className='btn-blue mt-6'>Read More</button>
                     </a>
                 </div>
-                <img src='/guidelines.png' className='mx-auto md:mx-0' />
+                <img src="/guidelines3.png" className="mx-auto md:mx-0 max-w-[70%] ml-[175px]" />
             </div>
         </div>
     )
