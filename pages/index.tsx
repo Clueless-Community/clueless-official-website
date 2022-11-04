@@ -17,7 +17,7 @@ import ReactTooltip from 'react-tooltip';
 const Home: NextPage = () => {
   return (
     <>
-    <ReactTooltip />
+      <ReactTooltip />
       <Head>
         <title>ClueLess</title>
         <meta name="description" content="A virtual Open source and development community" />
@@ -38,14 +38,14 @@ const Home: NextPage = () => {
       <UpcomingEvents />
       <UltimateResourceHub />
       {/* Sponsors Section */}
-      <div className="flex flex-col justify-center items-center xl:space-y-16 space-y-8 w-[10/12] mx-auto">
+      {/* <div className="flex flex-col justify-center items-center xl:space-y-16 space-y-8 w-[10/12] mx-auto">
         <h1 className="xl:text-5xl font-bold md:text-4xl text-2xl">
           Our <span className="text-skin-main">Sponsors</span>
         </h1>
         <a href="https://ineuron.ai/" target='_blank' rel="noopener noreferrer">
           <img src="ineuron-logo.png" alt="ineutron Logo" className="p-10" />
         </a>
-      </div>
+      </div> */}
       {/* Community Partner Section */}
       <div className="mt-32 flex flex-col justify-center items-center xl:space-y-16 space-y-8 w-[10/12] mx-auto">
         <h1 className="xl:text-5xl font-bold md:text-4xl text-2xl">
