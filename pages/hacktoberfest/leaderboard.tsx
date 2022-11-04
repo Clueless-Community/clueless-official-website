@@ -192,7 +192,7 @@ const Leaderboard: React.FC = (leaderboardData) => {
                                             </span>
                                         </td>
                                         <td
-                                            className={`my-2 pl-2 xl:rounded-tl-md rounded-tl-sm xl:rounded-bl-md rounded-bl-sm font-semibold text-center`}
+                                            className={`my-2 pl-2 font-semibold text-center`}
                                         >
                                             {data.PRCount}
                                         </td>
