@@ -1,3 +1,12 @@
+<!-- # What is Clueless? ![hippo](https://media.tenor.com/LA_6z3bAMScAAAAi/ナニ-ベタックマ.gif) -->
+# What is Clueless<img src="https://media.tenor.com/LA_6z3bAMScAAAAi/ナニ-ベタックマ.gif" alt="gif" width="67"/>
+
+Clueless is an open-source student community built in collaboration with [iNeuron]() with the vision to encourage development and promote open-source. We aim to provide the best and curated resources from the Internet, conduct contests, hackathons, and lots more.
+
+[![official_website](https://www.linkpicture.com/q/cluelessHomepage.png)](https://www.clueless.tech/)
+
+# Want to contribute?<img src="https://media.tenor.com/8q1Mi4wzB7sAAAAj/robot-cute.gif" alt="gif" width="67"/>
+
 <h1 align='center'>Contribute to CodePeak 2022 with ClueLess</h1>
 
 ![codepeak-readme-cover](https://user-images.githubusercontent.com/91758830/205308086-df454271-2d7a-4158-a743-4359a18e8038.jpeg)
@@ -10,20 +19,6 @@ Do you know we are sponsering CodePeak 2022 :
 1. Top 5 contributors of CodePeak will get an amazing swag kit from us. ( Which includes a t-shirt, stickers and custom printed cheatsheets and much more.)
 2. Top Contributors of ClueLess projects may get an opportunity to work with ClueLess.  
 3. Top 5 winners will be both featured on ClueLess official website as well as social media handles.
-
-<!-- # What is Clueless? ![hippo](https://media.tenor.com/LA_6z3bAMScAAAAi/ナニ-ベタックマ.gif) -->
-# What is Clueless<img src="https://media.tenor.com/LA_6z3bAMScAAAAi/ナニ-ベタックマ.gif" alt="gif" width="67"/>
-
-Clueless is an open-source student community built in collaboration with [iNeuron]() with the vision to encourage development and promote open-source. We aim to provide the best and curated resources from the Internet, conduct contests, hackathons, and lots more.
-
-[![official_website](https://www.linkpicture.com/q/cluelessHomepage.png)](https://www.clueless.tech/)
-
-# Want to contribute?<img src="https://media.tenor.com/8q1Mi4wzB7sAAAAj/robot-cute.gif" alt="gif" width="67"/>
-
-
-You can contribute to this project under [Hacktoberfest 2022](https://hacktoberfest.com/) 🤩
-
-![1ad7db43-d819-4dd7-8ead-0ea3cca39b2f](https://user-images.githubusercontent.com/91758830/193353014-0b52c976-ee52-4512-ac25-590038a79014.jpg)
 
 
 ### If you are willing to contribute, please check the guide to local system setup [here on CONTRIBUTING.md](https://github.com/Clueless-Community/clueless-official-website/blob/main/CONTRIBUTING.md).
