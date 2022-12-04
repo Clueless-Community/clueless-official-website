@@ -3,6 +3,7 @@ import { ClassNameMap } from "@mui/styles";
 import React from "react";
 import { ModeMenuStyle } from "../../../../styles/Mui-styles/MenuStyle.Mui.";
 import { useTheme } from "next-themes";
+import Document from "../../../_document";
 
 const renderSelectedIcon = (theme?: string) => {
   return theme === "dark" ? (
@@ -99,6 +100,7 @@ const ModeSelect = () => {
           <MenuItem
             onClick={(): void => {
               setTheme("light");
+              document.getElementById('logo_dark').setAttribute( 'src', '/Open-source Home.png' );
               handleClose();
             }}
             className="font-nunito"
@@ -125,7 +127,9 @@ const ModeSelect = () => {
           <MenuItem
             onClick={(): void => {
               setTheme("dark");
+              document.getElementById('logo_dark').setAttribute( 'src', '/logo-dark.png' );
               handleClose();
+              
             }}
             className="font-nunito"
           >
