@@ -88,7 +88,7 @@ const WhatIsClueLess: React.FC = () => {
                 duration: 0.5,
               }}
             >
-              <h2 className="font-semibold text-4xl text-white ease-in-out transition-all duration-1000 text-center sm:text-left mx-auto sm:m-0">
+              <h2 className="font-semibold text-4xl text-white ease-in-out transition-all duration-1000 text-center lg:text-left mx-auto lg:m-0">
                 What is ClueLess?
               </h2>
               <p className="text-gray-200 mt-8">
