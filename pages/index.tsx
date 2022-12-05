@@ -32,7 +32,7 @@ const Home: NextPage = () => {
       </h2>
       <TeachStackLine />
       <div className="flex justify-center w-full lg:hidden">
-        <img src="/Open-source Home.png" alt="" className="w-72 sm:w-96" />
+        <img src="/Open-source Home.png" id="logo_dark" alt="" className="w-72 sm:w-96" />
       </div>
       {/* <UpcomingEvents/>  */}
       <UpcomingEvents />
