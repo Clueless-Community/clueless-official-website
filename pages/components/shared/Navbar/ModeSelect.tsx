@@ -100,7 +100,7 @@ const ModeSelect = () => {
           <MenuItem
             onClick={(): void => {
               setTheme("light");
-              document.getElementById('logo_dark').setAttribute( 'src', '/Open-source Home.png' );
+              document.getElementById('logo_dark')!.setAttribute( 'src', '/Open-source Home.png' );
               handleClose();
             }}
             className="font-nunito"
@@ -127,7 +127,7 @@ const ModeSelect = () => {
           <MenuItem
             onClick={(): void => {
               setTheme("dark");
-              document.getElementById('logo_dark').setAttribute( 'src', '/logo-dark.png' );
+              document.getElementById('logo_dark')!.setAttribute( 'src', '/logo-dark.png' );
               handleClose();
               
             }}
