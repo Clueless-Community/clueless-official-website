@@ -11,13 +11,13 @@ import HomeMain from "./components/Home/HomeMain";
 import SocialHome from "./components/Home/SocialHome";
 import TeachStackLine from "./components/shared/TeachStackLine";
 import UpcomingEvents from "./components/Home/Events/UpcomingEvents";
-import Hacktoberfest from "./components/Home/Hacktoberfest";
 import ReactTooltip from 'react-tooltip';
+import Codepeak from "./components/Home/Codepeak";
 
 const Home: NextPage = () => {
   return (
     <>
-    <ReactTooltip />
+      <ReactTooltip />
       <Head>
         <title>ClueLess</title>
         <meta name="description" content="A virtual Open source and development community" />
@@ -25,7 +25,7 @@ const Home: NextPage = () => {
       </Head>
       <Navbar />
       <HomeMain />
-      <Hacktoberfest />
+      <Codepeak />
       <WhatIsClueLess />
       <h2 className="md:text-6xl sm:text-5xl text-3xl text-center my-10 mt-28 font-bold sm:leading-[80px] leading-10">
         Dive into the world of <br /> <span className=" text-skin-main">Development🚀</span>
@@ -42,8 +42,8 @@ const Home: NextPage = () => {
         <h1 className="xl:text-5xl font-bold md:text-4xl text-2xl">
           Our <span className="text-skin-main">Sponsors</span>
         </h1>
-        <a href="https://ineuron.ai/" target='_blank' rel="noopener noreferrer">
-          <img src="ineuron-logo.png" alt="ineutron Logo" className="p-10" />
+        <a href="#" target='_blank' rel="noopener noreferrer">
+          <img src="Your Brand Stories (Black).png" alt="Your Brand Stories Logo" className="p-10 w-[170px] sm:w-[280px] dark:invert dark:brightness-0" />
         </a>
       </div>
       {/* Community Partner Section */}

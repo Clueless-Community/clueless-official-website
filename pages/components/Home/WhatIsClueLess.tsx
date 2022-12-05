@@ -32,7 +32,7 @@ const WhatIsClueLess: React.FC = () => {
           }}
         />
         <StorageIcon
-          className="absolute text-5xl hover:scale-125 transition-all cursor-pointer hover:text-skin-main text-skin-hoverBlue  md:block top-12 2xl:left-60 xl:left-28 left-10 sm:left-24"
+          className="absolute text-5xl hover:scale-125 transition-all cursor-pointer hover:text-skin-main text-skin-hoverBlue  md:block top-12 2xl:left-40 xl:left-28 left-10 sm:left-24"
           fontSize='inherit' sx={{ fontSize: "50px" }}
           onMouseOver={() => {
             setState(2);
@@ -42,7 +42,7 @@ const WhatIsClueLess: React.FC = () => {
           }}
         />
         <LocalPoliceIcon
-          className="absolute text-5xl hover:scale-125 transition-all cursor-pointer hover:text-skin-main text-skin-hoverBlue  md:block top-12 2xl:right-72 xl:right-40 sm:right-24 right-10"
+          className="absolute text-5xl hover:scale-125 transition-all cursor-pointer hover:text-skin-main text-skin-hoverBlue  md:block top-12 2xl:right-52 xl:right-40 sm:right-24 right-10"
           fontSize='inherit' sx={{ fontSize: "50px" }}
           onMouseOver={() => {
             setState(3);
@@ -88,7 +88,7 @@ const WhatIsClueLess: React.FC = () => {
                 duration: 0.5,
               }}
             >
-              <h2 className="font-semibold text-4xl text-white ease-in-out transition-all duration-1000 text-center sm:text-left mx-auto sm:m-0">
+              <h2 className="font-semibold text-4xl text-white ease-in-out transition-all duration-1000 text-center lg:text-left mx-auto lg:m-0">
                 What is ClueLess?
               </h2>
               <p className="text-gray-200 mt-8">

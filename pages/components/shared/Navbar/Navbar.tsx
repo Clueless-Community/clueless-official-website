@@ -19,8 +19,14 @@ const Navbar: NextComponentType = () => {
     <nav className="flex justify-between sm:px-14 lg:px-36 px-5 py-5 items-center shadow-xl dark:bg-zinc-900">
       <Link href="/" passHref>
         <div className="flex items-center cursor-pointer">
-          <img src="/ClueLess Logo.png" alt="" className="sm:w-[65px] w-[35px]" />
-          <h1 className=" font-raleway sm:text-3xl text-xl sm:ml-8 ml-2">ClueLess</h1>
+          <img
+            src="/ClueLess Logo.png"
+            alt=""
+            className="sm:w-[65px] w-[30px]"
+          />
+          <h1 className="hidden xs:block font-raleway xs:text-3xl text-lg sm:ml-8 ml-2">
+            ClueLess
+          </h1>
         </div>
       </Link>
       <div className="hidden lg:block">
@@ -36,7 +42,11 @@ const Navbar: NextComponentType = () => {
           </a>
         </button> */}
 
-        <a href="https://clueless-resources.super.site/resources" target="_blank" rel="noreferrer">
+        <a
+          href="https://clueless-resources.super.site/resources"
+          target="_blank"
+          rel="noreferrer"
+        >
           <button className="hover:-translate-y-1 hover:ease-in-out hover:scale-105 hover:duration-150  xl:mx-8 mx-3 text-xl transition-all">
             Resources
           </button>
@@ -52,29 +62,42 @@ const Navbar: NextComponentType = () => {
           </button>
         </Link>
       </div>
-      <div className="flex">
-      <ModeSelect />
-      {session.status === "authenticated" && (
-        <div className="hidden md:block">
-          <NavbarAvatarDropDown
+      <div className="flex items-center">
+        <ModeSelect />
+        {session.status === "authenticated" && (
+          <div className="hidden md:block">
+            <NavbarAvatarDropDown
+              img={image as string}
+              name={name as string}
+              email={email as string}
+              uid={uid as string}
+            />
+          </div>
+        )}
+        {session.status === "unauthenticated" && (
+          <Link href="/auth/signin" passHref>
+            <div className="scale-75 sm:scale-100 hidden lg:block">
+              <SvgButton>Log In</SvgButton>
+            </div>
+          </Link>
+        )}
+        <div className=" flex items-center lg:hidden">
+        {session.status === "unauthenticated" && (
+          <Link href="/auth/signin" passHref>
+            <div className="btn-blue text-xs sm:text-lg ">
+              <button>Log In</button>
+            </div>
+          </Link>
+        )}
+        
+        <NavbarDrawer
+            uid={uid as string}
             img={image as string}
             name={name as string}
             email={email as string}
-            uid={uid as string}
           />
+          
         </div>
-      )}
-      {session.status === "unauthenticated" && (
-        <Link href="/auth/signin" passHref>
-          <div className="scale-75 sm:scale-100 hidden lg:block">
-            <SvgButton>Log In</SvgButton>
-          </div>
-        </Link>
-      )}
-      <div className=" flex items-center lg:hidden">
-
-        <NavbarDrawer uid={uid as string} img={image as string} name={name as string} email={email as string} />
-      </div>
       </div>
     </nav>
   );
