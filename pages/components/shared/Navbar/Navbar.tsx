@@ -29,7 +29,7 @@ const Navbar: NextComponentType = () => {
           </h1>
         </div>
       </Link>
-      <div className="hidden xl:font-30 lg:block">
+      <div className="hidden lg:block">
         <Link href="/" passHref>
           <button className="hover:-translate-y-1 hover:ease-in-out hover:scale-105 hover:duration-150 xl:mx-8 mx-3 text-xl transition-all">
             Home
