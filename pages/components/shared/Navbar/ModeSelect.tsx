@@ -70,7 +70,7 @@ const ModeSelect = () => {
   }
 
   return (
-    <div className="flex flex-row items-center justify-center">
+    <div className="flex flex-row items-center justify-center px-5">
       <IconButton
         id="basic-button"
         aria-controls={open ? "basic-menu" : undefined}

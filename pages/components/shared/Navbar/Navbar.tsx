@@ -16,7 +16,7 @@ const Navbar: NextComponentType = () => {
   const uid = session.data?.user.id;
 
   return (
-    <nav className="flex justify-between sm:px-14 lg:px-36 px-5 py-5 items-center shadow-xl dark:bg-zinc-900">
+    <nav className="flex justify-between xl:px-36 sm:px-14 lg:px-30 px-5 py-5 items-center shadow-xl dark:bg-zinc-900">
       <Link href="/" passHref>
         <div className="flex items-center cursor-pointer">
           <img
@@ -47,23 +47,23 @@ const Navbar: NextComponentType = () => {
           target="_blank"
           rel="noreferrer"
         >
-          <button className="hover:-translate-y-1 hover:ease-in-out hover:scale-105 hover:duration-150  xl:mx-8 mx-3 text-xl transition-all">
+          <button className="hover:-translate-y-1 hover:ease-in-out hover:scale-105 hover:duration-150  xl:mx-4 mx-3 text-xl transition-all">
             Resources
           </button>
         </a>
         <Link href="/events" passHref>
-          <button className="hover:-translate-y-1 hover:ease-in-out hover:scale-105 hover:duration-150  xl:mx-8 mx-3 text-xl transition-all">
+          <button className="hover:-translate-y-1 hover:ease-in-out hover:scale-105 hover:duration-150  xl:mx-4 mx-3 text-xl transition-all">
             Events
           </button>
         </Link>
         <Link href="/about-us" passHref>
-          <button className="hover:-translate-y-1 hover:ease-in-out hover:scale-105 hover:duration-150  xl:mx-8 mx-3 text-xl transition-all">
+          <button className="hover:-translate-y-1 hover:ease-in-out hover:scale-105 hover:duration-150  xl:mx-4 mx-3 text-xl transition-all">
             About Us
           </button>
         </Link>
       </div>
       <div className="flex items-center">
-        <ModeSelect />
+      <ModeSelect />
         {session.status === "authenticated" && (
           <div className="hidden md:block">
             <NavbarAvatarDropDown
@@ -89,12 +89,12 @@ const Navbar: NextComponentType = () => {
             </div>
           </Link>
         )}
-        
-        <NavbarDrawer
+         
+        <NavbarDrawer 
             uid={uid as string}
             img={image as string}
             name={name as string}
-            email={email as string}
+            email={email as string}          
           />
           
         </div>
