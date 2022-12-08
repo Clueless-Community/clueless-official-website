@@ -39,6 +39,28 @@ export const ModeMenuStyle = makeStyles<WithStylesOptions<DefaultTheme>>({
       width: "90%",
       marginRight: "auto",
       marginLeft: "auto",
+    }
+  }
+});
+export const ModeMenuStyleDark = makeStyles<WithStylesOptions<DefaultTheme>>({
+  //Materia UI Styles for Mode Select Menu
+  menudark: {
+    "& .MuiPaper-root": {
+      color: "#0d0d0d",
+      width: "150px",
+      background: "rgb(18,18,18)",
     },
-  },
+    "& .MuiMenuItem-root:hover": {
+      background: "rgb(24,24,27)",
+      marginRight: "auto",
+      marginLeft: "auto",
+      borderRadius: "4px",
+    },
+    "& .MuiMenuItem-root": {
+      background:"rgb(18,18,18)",
+      width: "90%",
+      marginRight: "auto",
+      marginLeft: "auto",
+    }
+  }
 });
