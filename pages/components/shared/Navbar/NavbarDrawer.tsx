@@ -13,15 +13,24 @@ import { signOut } from "next-auth/react";
 import { useSession } from "next-auth/react";
 import LogoutIcon from "@mui/icons-material/Logout";
 import useConfirmationDialog from "../../../../hooks/useConfirmation";
+import { useTheme } from "next-themes";
 
 const Style = makeStyles<WithStylesOptions<DefaultTheme>>({
-  //Materia UI Styles for Menu
-  Drawer: {
+  DrawerWhite: {
+    "& .MuiDrawer-paper": {
+      // This is to only style the Drawer Paper Section
+      borderRadius: "10px 0px 0px 10px",
+      width: "100%",
+      maxWidth: "290px"
+    },
+  },
+  DrawerDark: {
     "& .MuiDrawer-paper": {
       // This is to only style the Drawer Paper Section
       borderRadius: "10px 0px 0px 10px",
       width: "100%",
       maxWidth: "290px",
+      backgroundColor: "black"
     },
   },
 });
@@ -34,7 +43,8 @@ type Props = {
   email: string;
 };
 
-const NavbarDrawer: React.FC<Props> = ({ img, name, email, uid }) => {
+const NavbarDrawer: React.FC<Props> = ({ img, name, email, uid }) => {  
+  const { theme, setTheme } = useTheme();
   const classes: ClassNameMap<"Drawer"> = Style();
   const [drawer, SetDrawer] = useState<boolean>(false);
   const session = useSession();
@@ -68,24 +78,24 @@ const NavbarDrawer: React.FC<Props> = ({ img, name, email, uid }) => {
           onClose={(): void => {
             SetDrawer(false);
           }}
-          className={classes.Drawer}
+          className={theme == 'dark' ?  classes.DrawerDark : classes.DrawerWhite}
         >
           <div className=" flex flex-col my-10">
             <Link href="/" passHref>
               <div className="flex items-center cursor-pointer mx-auto">
                 <img src="/ClueLess Logo.png" alt="" className="w-[65px]" />
-                <h1 className=" font-raleway text-3xl ml-8">ClueLess</h1>
+                <h1 className=" font-raleway text-3xl ml-8 dark:text-white">ClueLess</h1>
               </div>
             </Link>
             <Link href="/" passHref>
               <button
                 onClick={handleClose}
-                className="font-semibold text-xl mt-16"
+                className="font-semibold text-xl mt-16 dark:text-white"
               >
                 Home
               </button>
             </Link>
-            <div className="bg-gray-300 h-[1px] w-10/12 mx-auto mt-3"></div>
+            <div className="bg-gray-300 h-[1px] w-10/12 mx-auto mt-3 dark:bg-gray-600"></div>
             {/* <a
               href="https://clueless-blogs.hashnode.dev/"
               target="_blank"
@@ -107,36 +117,36 @@ const NavbarDrawer: React.FC<Props> = ({ img, name, email, uid }) => {
             >
               <button
                 onClick={handleClose}
-                className="font-semibold text-xl mt-5"
+                className="font-semibold text-xl mt-5 dark:text-white"
               >
                 Resources
               </button>
             </a>
-            <div className="bg-gray-300 h-[1px] w-10/12 mx-auto mt-3"></div>
+            <div className="bg-gray-300 h-[1px] w-10/12 mx-auto mt-3 dark:bg-gray-600"></div>
             <Link href="/events" passHref>
               <button
                 onClick={handleClose}
-                className="font-semibold text-xl mt-5"
+                className="font-semibold text-xl mt-5 dark:text-white"
               >
                 Events
               </button>
             </Link>
-            <div className="bg-gray-300 h-[1px] w-10/12 mx-auto mt-3"></div>
+            <div className="bg-gray-300 h-[1px] w-10/12 mx-auto mt-3 dark:bg-gray-600"></div>
             <Link href="/about-us" passHref>
               <button
                 onClick={handleClose}
-                className="font-semibold text-xl mt-5"
+                className="font-semibold text-xl mt-5 dark:text-white"
               >
                 About Us
               </button>
             </Link>
             {session.status === "unauthenticated" && (
               <>
-                <div className="bg-gray-300 h-[1px] w-10/12 mx-auto mt-3"></div>
+                <div className="bg-gray-300 h-[1px] w-10/12 mx-auto mt-3 dark:bg-gray-600"></div>
                 <Link href="/auth/signin" passHref>
                   <button
                     onClick={handleClose}
-                    className="font-semibold text-xl mt-5"
+                    className="font-semibold text-xl mt-5 dark:text-white"
                   >
                     Login
                   </button>
