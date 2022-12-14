@@ -78,8 +78,6 @@ export const techstack = [
 { name: 'Objective C' },
 { name: 'Open CV' },
 { name: 'Oracle' },
-{ name: 'Oracle' },
-{ name: 'Oracle' },
 { name: 'Perl' },
 { name: 'PHP' },
 { name: 'PostgreSQL' },
