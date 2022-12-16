@@ -44,6 +44,10 @@ const textFieldTheme = createTheme({
           "& .MuiFormLabel-root.Mui-disabled": {
             color: "white",
           },
+          " .MuiAutocomplete-listbox": {
+            background :"black",
+            color : "white",
+          },
           "& .MuiOutlinedInput-notchedOutline" : {
             borderColor: "white",
           },
