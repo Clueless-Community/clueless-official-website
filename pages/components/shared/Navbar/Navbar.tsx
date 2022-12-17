@@ -57,13 +57,13 @@ const Navbar: NextComponentType = () => {
           </button>
         </Link>
         <Link href="/about-us" passHref>
-          <button className="hover:-translate-y-1 hover:ease-in-out hover:scale-105 hover:duration-150  xl:mx-4 mx-3 text-xl transition-all">
+          <button className="hover:-translate-y-1 hover:ease-in-out hover:scale-105 hover:duration-150  xl:mx-4 mx-1 text-xl transition-all">
             About Us
           </button>
         </Link>
       </div>
       <div className="flex items-center">
-      <ModeSelect />
+        <ModeSelect />
         {session.status === "authenticated" && (
           <div className="hidden md:block">
             <NavbarAvatarDropDown
@@ -82,21 +82,20 @@ const Navbar: NextComponentType = () => {
           </Link>
         )}
         <div className=" flex items-center lg:hidden">
-        {session.status === "unauthenticated" && (
-          <Link href="/auth/signin" passHref>
-            <div className="btn-blue text-xs sm:text-lg ">
-              <button>Log In</button>
-            </div>
-          </Link>
-        )}
-         
-        <NavbarDrawer 
+          {session.status === "unauthenticated" && (
+            <Link href="/auth/signin" passHref>
+              <div className="btn-blue text-xs sm:text-lg ">
+                <button>Log In</button>
+              </div>
+            </Link>
+          )}
+
+          <NavbarDrawer
             uid={uid as string}
             img={image as string}
             name={name as string}
-            email={email as string}          
+            email={email as string}
           />
-          
         </div>
       </div>
     </nav>
