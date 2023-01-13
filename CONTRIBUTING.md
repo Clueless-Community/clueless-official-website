@@ -48,6 +48,15 @@ If you are assigned an issue mail us at **official.cluelesscommunity@gmail.com**
 
 Create **.env.local** file in the root directory with the credentials you receive.
 
+## How can i contribute?
+You can contribute to this project by suggesting an enhancement, reporting a bug, and fixing documentation. Here's how to do it:
+- Go to [issues](https://github.com/Clueless-Community/clueless-official-website/issues/new/choose) page
+- Select the issue you would like to open
+- Use a descriptive title. It should take this format "[BUG]: Title"
+- Add a description explaining the issue. You should give a detailed explanation. For example, the button on the website has a bright color which makes it hard to see the text in it.
+- Add screenshots if available 
+- Add a possible solution.
+
 **Never push credentials to GitHub**
 
 ## Pushing changes or making changes
