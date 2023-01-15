@@ -7,6 +7,7 @@ import Link from "next/link";
 import { useSession } from "next-auth/react";
 import Head from "next/head";
 
+
 const HomeMain = () => {
   const session = useSession();
   const [showButton, setShowButton] = useState(false);
@@ -68,21 +69,21 @@ const HomeMain = () => {
         id="home"
       >
         <div>
-          <h1 className="text-skin-main md:text-[90px] leading-tight font-bold text-5xl">
+          <h1 className="text-skin-main md:text-[90px] leading-tight font-bold text-5xl  animation">
             ClueLess <br /> <span className="text-gray-900 dark:text-white">Community</span>
           </h1>
-          <h2 className=" font-raleway text-skin-main mt-5 text-4xl mb-16 ">
+          <h2 className=" font-raleway text-skin-main mt-5 text-4xl mb-16 animation">
             Learn.<span className="text-gray-900 dark:text-white">Grow.</span>
           </h2>
-          <div className="flex flex-col sm:flex-row items-start">
+          <div className="flex flex-col sm:flex-row items-start ">
             <Link href={"/events"} passHref>
-              <button className="btn-blue text-xl flex items-center px-6 py-3 shadow-blue-600">Explore events</button>
+              <button className="btn-blue text-xl flex items-center px-6 py-3 shadow-blue-600 button_animation">Explore events</button>
             </Link>
             <div></div>
             <a href="https://discord.gg/zrVMjGW8sB" target="_blank" rel="noreferrer">
-              <SvgButton className="sm:ml-10 mt-5 sm:mt-0 max-w-fit">
+              <SvgButton className="sm:ml-10 mt-5 sm:mt-0 max-w-fit button_animation">
                 <FaDiscord className="text-3xl text-[#1955CA]" />{" "}
-                <span className=" font-nunito font-bold">Join Discord</span>{" "}
+                <span className=" font-nunito font-bold ">Join Discord</span>{" "}
               </SvgButton>
             </a>
           </div>
