@@ -6,7 +6,15 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "prettier --check .",
+    "format": "prettier --write .",
+    "prepare": "husky install",
+    "pre-commit": "npm run format && git add -A ."
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run format && git add -A ."
+    }
   },
   "dependencies": {
     "@emotion/react": "^11.10.5",
@@ -26,7 +34,9 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",
+    "husky": "^8.0.3",
     "postcss": "^8.4.21",
+    "prettier": "2.8.3",
     "tailwindcss": "^3.2.4"
   }
 }
