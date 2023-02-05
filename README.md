@@ -1,43 +1,38 @@
-# What is Clueless?
-Clueless is an open-source student community built in collaboration with [iNeuron]() with the vision to encourage development and promote open-source. We aim to provide the best and curated resources from the Internet, conduct contests, hackathons, and lots more.
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-[![official_website](https://www.linkpicture.com/q/cluelessHomepage.png)](https://www.clueless.tech/)
+## Getting Started
 
-# Want to contribute?
-## If you are willing to contribute, please check the guide to local system setup [here on CONTRIBUTING.md](https://github.com/Clueless-Community/clueless-official-website/blob/main/CONTRIBUTING.md).
+First, run the development server:
 
-Don't forget to check the [issue](https://github.com/Clueless-Community/clueless-official-website/issues) section where we have already raised some issues for you to work on.
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+```
 
-# What do we provide?
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-+ ## Resources
+You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
-The Internet is flooded with so many resources that can make one confused and clueless. So we, the Clueless Community provide the best, filtered, and curated resources like YouTube videos, GitHub repositories, websites, cheatsheets, etc! You can check our resources page [here](https://clueless-resources.super.site/resources)
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
 
+The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-[![image](https://www.linkpicture.com/q/cluelessResources.png)](https://clueless-resources.super.site/resources)
+## Learn More
 
-+ ## Discord Community
-We have an amazing Discord Community, where separate channels are created for different topics like web development, app development, web3, etc where you can use these respective channels to query and help others. We try to keep you updated with the latest opportunities, jobs, and hackathons, and share useful resources too.
+To learn more about Next.js, take a look at the following resources:
 
-[![image](https://www.linkpicture.com/q/cluelessDiscord.png)](https://discord.gg/zrVMjGW8sB)
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-Click [here](https://discord.gg/zrVMjGW8sB) to  join 🚀
----
+## Deploy on Vercel
 
-#  Projects we are working on
-+ ## Datasets
-A GitHub repository where we have collected datasets like tech stacks, cities, colleges in India, Spotify stats, etc in different forms like arrays, JSON, and CSV which you can use for your next project.
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Click [here](https://github.com/Clueless-Community/Datasets) to check this amazing repository. All the changes and contributions are appreciated.
-
-+ ## College API
-An API that gets you the list of Indian colleges and their details like city, state, and NIRF ranks. You can even filter out colleges by city and state. 
-
-Check this project [this](https://github.com/Clueless-Community/collegeAPI) here! 
-
-# Events
-## Hacktoberfest
-Hacktoborfest is here and we are ready for you guys awesome contributions. And this time you will also get awesome swags for contribution. T-shirts, stickers, certificates andmuch more.
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

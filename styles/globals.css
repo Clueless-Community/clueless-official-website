@@ -1,34 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@layer base{
-    body{
-        font-family: 'Nunito Sans', sans-serif;
-    }
-
-    :root{
-        --main: #1955CA;
-        --red : #B92020 ;
-        --tag: #8FDDDD  ;
-        --btn-hover-blue: #144198 ;
-        --btn-hover-red: #961212 ;
-    }
-    @layer components{
-        .btn-blue{
-            @apply cursor-pointer bg-skin-main text-white rounded px-4 py-3 hover:bg-skin-hoverBlue transition-all font-semibold font-nunito active:scale-95
-        }
-        .btn-red{
-            @apply cursor-pointer bg-skin-red text-white rounded px-4 py-3 hover:bg-skin-hoverRed transition-all font-semibold font-nunito active:scale-95
-        }
-        
-    }
-    
-}
-
-tbody:before {
-    content:"@";
-    display:block;
-    line-height:15px;
-    text-indent:-99999px;
-}
