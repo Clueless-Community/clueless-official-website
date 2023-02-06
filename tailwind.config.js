@@ -5,7 +5,22 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      textColor: {
+        skin: {
+          globalGreen: '#7EE787',
+        },
+      },
+      backgroundColor: {
+        skin: {
+          cardBg: 'rgba(40, 46, 54, 0.97);',
+          mainBg: '#1B1B1B;',
+        },
+      },
+      fontFamily: {
+        dmSans: "'DM Sans', sans-serif;",
+      },
+    },
   },
   plugins: [],
 };
