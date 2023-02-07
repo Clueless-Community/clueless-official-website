@@ -31,9 +31,8 @@ const UpcomingEvents = () => {
 
   return (
 
-    eventData.length !== 0 ? <div className='xl:my-20 my-4 xl:mx-40 md:mx-20 mx-4'>
-      <h1 className='child:text-skin-main md:text-6xl sm:text-5xl text-3xl text-center my-10 mt-28 font-bold sm:leading-[80px] leading-10'>️❤️<span>Events </span>by ClueLess <span>X</span> iNeuron.</h1>
-      <h1 className='text-4xl text-center py-8 font-semibold' >Upcoming Events </h1>
+    <div className='xl:my-20 my-4 xl:mx-40 md:mx-20 mx-4'>
+      <h1 className='text-[#7EE787] text-6xl font-medium leading-[70.5px]' >Ongoing Events </h1>
       <div>
         {eventData.map((data: any, i: number) => {
           const date = format(new Date(data.date.seconds * 1000), 'do LLLLLL, yyyy')
@@ -47,7 +46,7 @@ const UpcomingEvents = () => {
           )
         })}
       </div>
-    </div> : null
+    </div>
   )
 }
 
