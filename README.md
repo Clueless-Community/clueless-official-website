@@ -7,14 +7,13 @@ Clueless is an open-source student community built in collaboration with [iNeuro
 
 # Want to contribute?<img src="https://media.tenor.com/8q1Mi4wzB7sAAAAj/robot-cute.gif" alt="gif" width="67"/>
 
-<h1 align='center'>Contribute to SWoC 2023</h1>
+<h1 align='center'>Diversion 2K23 and WoC 3.O</h1>
 
-[![swoc-banner](https://www.linkpicture.com/q/swoc_banner.jpg)](https://www.linkpicture.com/view.php?img=LPic63b83f84ef97a1940128285)
+![banner](https://user-images.githubusercontent.com/93156825/216752982-25ca40d7-2b8c-424b-990e-06c56a06712e.png)
 
+## About Diversion and WoC
+**Diversion** is an open-source event organized by IEM-ACM Student Chapter, Department of Computer Science & Engineering, Department of Computer Science & Engineering (AI) and Controller of Examination Department of Institute of Engineering & Management, Kolkata, West Bengal and **Winter of Code 3.0** is also an open-source program by GDSC IIIT Kalyani with collaborative efforts from 30+ Google Developer Student Clubs. The program will last for a period of 45 days and is based on the lines of GSoC.
 
-
-## About SWoC 
-Social Winter Of Code is the 3 month long open source program by Social India , with the aim to introduce more and more people to the world of Open source. In this program all the selected participants will get a chance to work on various exciting projects under the guidance of experienced Mentors. Check SWoC official [website](https://swoc.getsocialnow.co/) to know more about the program.
 
 
 ### If you are willing to contribute, please check the guide to local system setup [here on CONTRIBUTING.md](https://github.com/Clueless-Community/clueless-official-website/blob/main/CONTRIBUTING.md).
