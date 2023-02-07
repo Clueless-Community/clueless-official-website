@@ -25,7 +25,7 @@ const Home: NextPage = () => {
       </Head>
       <Navbar />
       <HomeMain />
-      <Codepeak />
+      {/* <Codepeak /> */}
       <WhatIsClueLess />
       <h2 className="md:text-6xl sm:text-5xl text-3xl text-center my-10 mt-28 font-bold sm:leading-[80px] leading-10">
         Dive into the world of <br /> <span className=" text-skin-main">Development🚀</span>
