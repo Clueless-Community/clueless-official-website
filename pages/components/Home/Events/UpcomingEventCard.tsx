@@ -40,32 +40,32 @@ const UpcomingEventCard: React.FC<dataProps> = ({ eventposter, heading, Time, in
 
 
     return (
-        <div className=' bg-[#282e36f7] border-[0.5px] border-black xl:flex-row flex-col flex xl:justify-between rounded-[46px] relative space-y-3 xl:space-y-0'>
-            <div className='h-[293px] w-[455px]'>
-                <img src={eventposter} className="h-auto w-36 object-cover xl:h-[293px] xl:w-[455px] rounded-l-[46px]" alt='event poster' />
+        <div className=' bg-[#282e36f7] border-[0.5px] border-white xl:flex-row flex-col flex xl:justify-between rounded-[46px] relative space-y-3 xl:space-y-0 h-[275px]'>
+            <div className='h-[273px] w-[515px]'>
+                <img src={eventposter} className="w-[515px] xl:h-[273px] rounded-l-[44px]" alt='event poster' />
             </div>
-            <section className="flex xl:justify-start xl:space-x-8 space-x-4  pb-4 xl:pb-0 w-full pl-[52px] pr-[301px]">
-                <div className='flex flex-col xl:justify-center  space-y-16 xl:text-xl'>
-                    <div className={`flex flex-col xl:justify-center justify-between md:space-y-4`}>
-                        <h1 className='xl:text-4xl text-2xl hidden xl:block text-[#7EE787] leading-[70px]'> {heading}</h1>
+            <section className="flex xl:justify-start xl:space-x-8 space-x-4  pb-4 xl:pb-0 w-[1194px] pl-[44px]">
+                <div className='flex flex-col xl:justify-center space-y-16 xl:text-xl pr-[170px]'>
+                    <div className={`flex flex-col xl:justify-center `}>
+                        <h1 className='xl:text-3xl text-2xl hidden xl:block text-[#B6F5BB] leading-[70px]'> {heading}</h1>
                         <div className={`flex md:flex-row flex-col flex-wrap xl:justify-start md:child:mr-8 h-full md:space-y-0 space-y-4 child:mb-4`}>
                             <div className={`flex 2xl:flex-row flex-col 2xl:space-x-2 justify-start`}>
-                                <h1 className=' text-[#E2E2E2] text-lg'>{agenda}</h1>
+                                <h1 className=' text-[#E2E2E2] text-base font-light'>{agenda}</h1>
                             </div>
                             <div className={`flex 2xl:flex-row flex-col 2xl:space-x-2 justify-start`}>
-                                <h1 className='font-bold text-[#E2E2E2] text-lg'>Timeline :</h1>
-                                <h1 className=' text-[#E2E2E2] text-lg'>{date}</h1>
+                                <h1 className='font-bold text-[#E2E2E2] text-base'>Timeline :</h1>
+                                <h1 className=' text-[#E2E2E2] text-base font-light'>{date}</h1>
                             </div>
                             <div className={`flex 2xl:flex-row flex-col 2xl:space-x-2 justify-start`}>
-                                <h1 className='font-bold text-[#E2E2E2] text-lg'>Time :</h1>
-                                <h1 className=' text-[#E2E2E2] text-lg'>{Time}</h1>
+                                <h1 className='font-bold text-[#E2E2E2] text-base'>Time :</h1>
+                                <h1 className=' text-[#E2E2E2] text-base font-light'>{Time}</h1>
                             </div>
                         </div>
                         <div className='hidden md:block xl:space-y-4'>
                             <div className={`flex 2xl:flex-row flex-col 2xl:space-x-2 `}>
-                                <h1 className='font-bold pb-2 text-[#E2E2E2] text-lg'>Instructor / speaker :</h1>
+                                <h1 className='font-bold pb-2 text-[#E2E2E2] text-base'>Instructor / speaker :</h1>
                                 {allSpeakerNames?.map((item, i) => {
-                                    return <h1 className='text-[#E2E2E2] text-lg' key={i}>{item}</h1>
+                                    return <h1 className='text-[#E2E2E2] text-base font-light' key={i}>{item}</h1>
                                 })}
                             </div>
                         </div>
@@ -85,7 +85,7 @@ const UpcomingEventCard: React.FC<dataProps> = ({ eventposter, heading, Time, in
             </div> */}
             <div className='text-right flex items-center space-x-4 h-fit'>
                 <Link href={`/events/[event_id]`} as={`/events/${eventId}`} passHref>
-                    <button className='bg-[#7EE787] rounded-r-[46px] text-[#272D35] w-[131px] h-[293px] xl:text-xl'><ArrowForwardIosIcon className='text-[42px] font-bold' /></button>
+                    <button className='bg-[#7EE787] rounded-r-[44px] text-[#272D35] w-[111px] h-[273px] xl:text-xl'><ArrowForwardIosIcon className='text-[42px] font-bold' /></button>
                 </Link>
             </div>
         </div>

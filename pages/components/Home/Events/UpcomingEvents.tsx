@@ -31,17 +31,15 @@ const UpcomingEvents = () => {
 
   return (
 
-    <div className='xl:my-20 my-4 xl:mx-40 md:mx-20 mx-4'>
-      <h1 className='text-[#7EE787] text-6xl font-semibold leading-[70.5px]' >Ongoing Events </h1>
+    <div className='xl:my-[300px] my-4 xl:ml-[105px] md:mx-20 mx-4'>
+      <h1 className='text-[#7EE787] text-6xl font-semibold leading-[70.5px] my-[55px]' >Ongoing Events </h1>
       <div>
         {eventData.map((data: any, i: number) => {
           // const date = format(new Date(data.date.seconds * 1000), 'do LLLLLL, yyyy')
           return (
             <div key={i} className="my-10">
-
               <UpcomingEventCard eventposter={data.event_icon_image} heading={data.event_name} venue={data.venue_name} Time={data.time_period} instructorOrspeaker={data.speakers_info} agenda={data.agenda} eventId={data.project_id} date={data.date} />
             </div>
-
           )
         })}
       </div>
