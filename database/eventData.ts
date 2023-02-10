@@ -5,7 +5,7 @@ const data = [
       event_name: "Flutter Festival",
       time_period: "12:00 - 4:00",
       agenda: "Winter of Code is a program aimed to increase participation for the Google Summer of Code program among students in colleges and universities",
-      date: "1st Feb - 31st March ",
+      date: "1st Feb - 31st Mar ",
       // speakers_info: "uwshge",
     },
     {
@@ -14,7 +14,7 @@ const data = [
         event_name: "JWOC",
         time_period: "12:00 - 4:00",
         agenda: "Winter of Code is a program aimed to increase participation for the Google Summer of Code program among students in colleges and universities",
-        date: "1st Feb - 31st March",
+        date: "1st Feb - 31st Mar",
         // speakers_info: "we7uyhgu",
       },
   ];

@@ -31,8 +31,8 @@ const UpcomingEvents = () => {
 
   return (
 
-    <div className='xl:my-[300px] my-4 xl:ml-[105px] md:mx-20 mx-4'>
-      <h1 className='text-[#7EE787] text-[55px] font-semibold leading-[70.5px] my-[55px]' >Ongoing Events </h1>
+    <div className='my-[150px] xl:ml-[105px] md:mx-20 mx-[30px]'>
+      <h1 className='text-[#7EE787] xl:text-[55px] font-semibold xl:leading-[70.5px] leading-[30.5px] my-[55px] text-[36px]' >Ongoing Events </h1>
       <div>
         {eventData.map((data: any, i: number) => {
           // const date = format(new Date(data.date.seconds * 1000), 'do LLLLLL, yyyy')
