@@ -28,7 +28,7 @@ const UpcomingEventCard: React.FC<dataProps> = ({
       <div className="xl:h-[231px] xl:w-[515px] h-[293px]">
         <img
           src={eventposter}
-          className="xl:w-[515px] xl:h-[231px] xl:rounded-l-[44px] xl:rounded-tr-[0px] rounded-t-[19px] h-[293px] w-[100%]"
+          className="xl:w-[515px] xl:h-[231px] xl:rounded-l-[44px] xl:rounded-tr-[0px] rounded-t-[19px] h-[293px] w-full"
           alt="event poster"
         />
       </div>
@@ -65,9 +65,7 @@ const UpcomingEventCard: React.FC<dataProps> = ({
               </div>
             </div>
             <div className="md:block xl:space-y-4 pb-[20px] xl:pb-[0px] pt-[5px] xl:pt-[0px]">
-              <div
-                className={`flex 2xl:flex-row flex-col 2xl:space-x-2 space-y-1 xl:space-y-0`}
-              >
+              <div className={`flex flex-row space-x-2`}>
                 <h1 className="pb-2 text-[#E2E2E2] text-base">
                   Instructor / speaker :
                 </h1>
@@ -80,11 +78,11 @@ const UpcomingEventCard: React.FC<dataProps> = ({
         </div>
       </section>
       <div className="text-right flex items-center space-x-4 h-fit">
-        <Link href={`/events/[event_id]`} as={`/events/${eventId}`} passHref>
-          <button className="bg-[#7EE787] xl:rounded-r-[44px] text-[#272D35] xl:w-[111px] xl:h-[231px] text-10xl xl:rounded-bl-[0px] rounded-b-[19px] h-[100px] w-[100%]">
-            <ArrowForwardIosIcon className="text-[42px] font-bold" />
-          </button>
-        </Link>
+        {/* <Link href={`/events/[event_id]`} as={`/events/${eventId}`} passHref> */}
+        <button className="bg-[#7EE787] xl:rounded-r-[44px] text-[#272D35] xl:w-[111px] xl:h-[231px] text-10xl xl:rounded-bl-[0px] rounded-b-[19px] h-[100px] w-full">
+          <ArrowForwardIosIcon className="text-[42px] font-bold" />
+        </button>
+        {/* </Link> */}
       </div>
     </div>
   );
