@@ -3,7 +3,7 @@ import React from 'react';
 const Home = () => {
   return (
     <div className="flex h-screen items-center justify-center bg-slate-900 flex-col">
-      <h1 className="text-5xl font-semibold text-white">
+      <h1 className="text-5xl font-semibold text-white font-dmSans">
         Hello welcome to Tailwind based Next.js
       </h1>
       <a
