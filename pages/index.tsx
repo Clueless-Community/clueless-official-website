@@ -1,20 +1,25 @@
 import React from 'react';
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import UpcomingEvents from './components/home/events/UpcomingEvents';
+import ReactTooltip from 'react-tooltip';
 
-const Home = () => {
+const Home: NextPage = () => {
   return (
-    <div className="flex h-screen items-center justify-center bg-slate-900 flex-col">
-      <h1 className="text-5xl font-semibold text-white font-dmSans">
-        Hello welcome to Tailwind based Next.js
-      </h1>
-      <a
-        href="https://github.com/Rajdip019"
-        target="_blank"
-        className=" text-gray-200 mt-10 "
-        rel="noreferrer"
-      >
-        - by Rajdeep Sengupta
-      </a>
-    </div>
+    <>
+      <Head>
+        <title>ClueLess</title>
+        <meta
+          name="description"
+          content="A virtual Open source and development community"
+        />
+        <meta
+          property="og:image"
+          content="https://i.ibb.co/WVBNFXB/Clueless-SS.png"
+        />
+      </Head>
+      <UpcomingEvents />
+    </>
   );
 };
 
