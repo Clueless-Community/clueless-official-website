@@ -7,12 +7,11 @@ Clueless is an open-source student community built in collaboration with [iNeuro
 
 # Want to contribute?<img src="https://media.tenor.com/8q1Mi4wzB7sAAAAj/robot-cute.gif" alt="gif" width="67"/>
 
-<h1 align='center'>Diversion 2K23 and WoC 3.O</h1>
+<h1 align='center'>Contribute to this project under JWoC 2023.</h1>
 
-![banner](https://user-images.githubusercontent.com/93156825/216752982-25ca40d7-2b8c-424b-990e-06c56a06712e.png)
+![image](https://user-images.githubusercontent.com/93156825/218812396-11adb7dd-7d59-4d99-bd0b-651bcd00f22d.png)
 
-## About Diversion and WoC
-**Diversion** is an open-source event organized by IEM-ACM Student Chapter, Department of Computer Science & Engineering, Department of Computer Science & Engineering (AI) and Controller of Examination Department of Institute of Engineering & Management, Kolkata, West Bengal and **Winter of Code 3.0** is also an open-source program by GDSC IIIT Kalyani with collaborative efforts from 30+ Google Developer Student Clubs. The program will last for a period of 45 days and is based on the lines of GSoC.
+JWoC (JGEC Winter of Code) is a begineer friendly open-source coding event organised annually by JGEC which helps students to plunge into Open Source contribution and get the realm of Software Development.
 
 
 
