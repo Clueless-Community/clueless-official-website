@@ -32,7 +32,7 @@ const UpcomingEventCard: React.FC<dataProps> = ({
           alt="event poster"
         />
       </div>
-      <section className="flex xl:justify-start xl:space-x-8 space-x-4 xl:w-[1194px] pl-[44px] border-slate-400 xl:border-y-[0.1px] border-x-[0.1px] xl:border-x-[0px]">
+      <section className="flex xl:justify-start xl:space-x-8 space-x-4 xl:w-[1194px] pl-[39px] border-slate-400 xl:border-y-[0.1px] border-x-[0.1px] xl:border-x-[0px] pr-[39px]">
         <div className="flex flex-col xl:justify-center space-y-16 xl:text-xl xl:pr-[200px]">
           <div className={`flex flex-col xl:justify-center `}>
             <h1 className="font-[550] xl:text-3xl text-[28px] text-[#B6F5BB] xl:leading-[40px] pb-[10px] leading-[70.5px] pt-[10px] xl:pt-[0px]">
@@ -43,7 +43,7 @@ const UpcomingEventCard: React.FC<dataProps> = ({
               className={`flex md:flex-row flex-col flex-wrap xl:justify-start md:child:mr-8 h-full md:space-y-0 space-y-4 child:mb-4`}
             >
               <div
-                className={`flex 2xl:flex-row flex-col 2xl:space-x-2 justify-start xl:pb-2 pr-[44px]`}
+                className={`flex 2xl:flex-row flex-col 2xl:space-x-2 justify-start xl:pb-2`}
               >
                 <h1 className=" text-[#E2E2E2] text-base font-light">{desc}</h1>
               </div>
@@ -53,7 +53,7 @@ const UpcomingEventCard: React.FC<dataProps> = ({
                 <h1 className="font-bold text-[#E2E2E2] text-base">
                   Timeline :
                 </h1>
-                <h1 className=" text-[#E2E2E2] text-base font-light xl:pr-[80px]">
+                <h1 className="flex flex-col text-[#E2E2E2] text-base font-light xl:pr-[80px]">
                   {date}
                 </h1>
               </div>

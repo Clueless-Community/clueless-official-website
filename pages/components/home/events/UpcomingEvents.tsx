@@ -4,7 +4,7 @@ import eventData from '../../../../database/eventData';
 
 const UpcomingEvents = () => {
   return (
-    <div className="my-[150px] xl:ml-[105px] md:mx-20 mx-[30px]">
+    <div className="my-[150px] xl:ml-[105px] md:mx-20 mx-[20px]">
       <h1 className="text-[#7EE787] xl:text-[55px] font-semibold xl:leading-[70.5px] leading-[30.5px] my-[55px] text-[36px]">
         Ongoing Events{' '}
       </h1>
