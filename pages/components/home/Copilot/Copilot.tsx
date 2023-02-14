@@ -54,54 +54,71 @@ const Copilot = () => {
       </h1>
       <div className="flex flex-row h-[519px]">
         <div className="w-[800px]">
-          <div className="h-[50px] flex flex-row bg-[#312b32] rounded-t-[31px]">
+          <div className="h-[50px] flex flex-row bg-[#262227] rounded-t-[31px]">
             <button
               onClick={ActivateButton1}
-              className={`mt-[10px] flex flex-row rounded-tr-[10px] rounded-tl-[19px] ${
-                active1 === true ? 'bg-black' : 'bg-[#312b32]'
+              className={`flex flex-row rounded-tr-[10px] ${
+                active1 === true ? 'bg-black' : 'bg-[#262227]'
               }`}
             >
               <FaPython
-                className={` ml-[10px] mt-[14px] ${
+                className={` ml-[10px] mt-[17px] ${
                   active1 === true ? 'text-white' : 'text-[#b6b5b5]'
                 }`}
               />
-              <h1 className="text-[#b6b5b5] ml-[5px] mt-[9px] mr-[10px]">
+              <h1 className="text-[#b6b5b5] ml-[5px] mt-[12px] mr-[10px]">
                 draw_scatterplot.py
               </h1>
             </button>
             <button
               onClick={ActivateButton2}
-              className={`mt-[10px] flex flex-row rounded-t-[10px] ${
-                active2 === true ? 'bg-black' : 'bg-[#312b32]'
+              className={`flex flex-row ${
+                active2 === true ? 'bg-black' : 'bg-[#262227]'
               }`}
             >
               <IoLogoJavascript
-                className={` ml-[10px] mt-[14px] ${
+                className={` ml-[10px] mt-[17px] ${
                   active2 === true ? 'text-white' : 'text-[#b6b5b5]'
                 }`}
               />
-              <h1 className="text-[#b6b5b5] ml-[5px] mt-[9px] mr-[10px]">
+              <h1 className="text-[#b6b5b5] ml-[5px] mt-[12px] mr-[10px]">
                 time.js
               </h1>
             </button>
             <button
               onClick={ActivateButton3}
-              className={`mt-[10px] flex flex-row rounded-t-[10px] ${
-                active3 === true ? 'bg-black' : 'bg-[#312b32]'
+              className={`flex flex-row ${
+                active3 === true ? 'bg-black' : 'bg-[#262227]'
               }`}
             >
               <SiGoland
-                className={` ml-[10px] mt-[14px] ${
+                className={` ml-[10px] mt-[17px] ${
                   active3 === true ? 'text-white' : 'text-[#b6b5b5]'
                 }`}
               />
-              <h1 className="text-[#b6b5b5] ml-[5px] mt-[9px] mr-[10px]">
+              <h1 className="text-[#b6b5b5] ml-[5px] mt-[12px] mr-[10px]">
                 memoize.go
               </h1>
             </button>
           </div>
-          <div className="h-[375px] bg-black"></div>
+
+          <div className="flex flex-row h-[375px] bg-black">
+            <div className="w-[20px] bg-[#262227]">
+              <h1 className="text-white pl-[7px] pb-[5px] mt-[30px]">1</h1>
+              <h1 className="text-white pl-[5px] pb-[5px]">2</h1>
+              <h1 className="text-white pl-[5px] pb-[5px]">3</h1>
+              <h1 className="text-white pl-[5px] pb-[5px]">4</h1>
+              <h1 className="text-white pl-[5px] pb-[5px]">5</h1>
+              <h1 className="text-white pl-[5px] pb-[5px]">6</h1>
+              <h1 className="text-white pl-[5px] pb-[5px]">7</h1>
+              <h1 className="text-white pl-[5px] pb-[5px]">8</h1>
+              <h1 className="text-white pl-[5px] pb-[5px]">9</h1>
+              <h1 className="text-white pl-[2px] pb-[5px]">10</h1>
+              <h1 className="text-white pl-[4px] pb-[5px]">11</h1>
+            </div>
+            <div></div>
+          </div>
+
           <div className="h-[93px] flex flex-row ">
             <button className="w-[667px] flex flex-row bg-[#262227] rounded-b-[31px]">
               <LoopIcon className="text-[30px] mt-[30px] ml-[273px] text-white" />
