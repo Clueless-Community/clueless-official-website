@@ -70,7 +70,7 @@ const Copilot = () => {
                 }`}
               />
               <h1 className="text-[#b6b5b5] ml-[5px] mt-[12px] mr-[10px]">
-                draw_scatterplot.py
+                draw.py
               </h1>
             </button>
             <button
@@ -100,7 +100,7 @@ const Copilot = () => {
                 }`}
               />
               <h1 className="text-[#b6b5b5] ml-[5px] mt-[12px] mr-[10px]">
-                memoize.go
+                memo.go
               </h1>
             </button>
           </div>
