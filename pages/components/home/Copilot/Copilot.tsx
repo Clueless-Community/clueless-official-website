@@ -5,7 +5,9 @@ import LoopIcon from '@mui/icons-material/Loop';
 import { FaPython } from 'react-icons/fa';
 import { IoLogoJavascript } from 'react-icons/io';
 import { SiGoland } from 'react-icons/si';
-import { TfiGithub } from 'react-icons/tfi';
+import Py from './py';
+import Js from './js';
+import Go from './go';
 
 const Copilot = () => {
   const [active1, setActive1] = useState(true);
@@ -105,7 +107,13 @@ const Copilot = () => {
 
           <div className="flex flex-row h-[375px] bg-black">
             <div className="w-[20px] bg-[#262227]">
-              <h1 className="text-slate-400 pl-[7px] pb-[5px] mt-[30px]">1</h1>
+              <h1
+                className={`text-slate-400 pl-[7px] pb-[5px] ${
+                  active3 === true ? 'mt-[15px]' : 'mt-[30px]'
+                }`}
+              >
+                1
+              </h1>
               <h1 className="text-slate-400 pl-[5px] pb-[5px]">2</h1>
               <h1 className="text-slate-400 pl-[5px] pb-[5px]">3</h1>
               <h1 className="text-slate-400 pl-[5px] pb-[5px]">4</h1>
@@ -117,58 +125,15 @@ const Copilot = () => {
               <h1 className="text-slate-400 pl-[2px] pb-[5px]">10</h1>
               <h1 className="text-slate-400 pl-[4px] pb-[5px]">11</h1>
             </div>
-            <div>
-              <div>
-                <h1 className="text-white pl-[15px] pb-[5px] mt-[30px]">
-                  <span className="text-[#c92828]">import</span>{' '}
-                  matplotlib.pyplot <span className="text-[#c92828]">as</span>{' '}
-                  plt
-                </h1>
-                <h1 className="text-white pl-[15px] pb-[5px]">
-                  <br></br>
-                </h1>
-                <h1 className="text-white pl-[15px] pb-[5px]">
-                  <span className="text-[#c92828]">def </span>
-                  <span className="text-[#bb85eb]">draw_scatterplot</span>
-                  (x_values, y_values):
-                </h1>
-              </div>
-              <div className="border-l-[3px] border-blue-600 ">
-                <div className="mr-[12px] pl-[25px] bg-blue-600/[0.25]">
-                  <h1 className="text-white pl-[15px] pb-[5px] ">
-                    plt.<span className="text-[#bb85eb]">scatter</span>
-                    (x_values, y_values,{' '}
-                    <span className="text-[#73b2ed]">s=20</span>)
-                  </h1>
-                </div>
-                <div className="mr-[120px] pl-[25px] bg-blue-600/[0.25]">
-                  <h1 className="text-white pl-[15px] pb-[5px] ">
-                    plt.<span className="text-[#bb85eb]">title</span>(
-                    <span className="text-[#73b2ed]">"Scatter Plot"</span>)
-                  </h1>
-                </div>
-                <div className="mr-[130px] pl-[25px] bg-blue-600/[0.25]">
-                  <h1 className="text-white pl-[15px] pb-[5px] ">
-                    plt.<span className="text-[#bb85eb]">xlabel</span>(
-                    <span className="text-[#73b2ed]">"x-values"</span>)
-                  </h1>
-                </div>
-                <div className="mr-[130px] pl-[25px] bg-blue-600/[0.25]">
-                  <h1 className="text-white pl-[15px] pb-[5px] ">
-                    plt.<span className="text-[#bb85eb]">ylabel</span>(
-                    <span className="text-[#73b2ed]">"y-values"</span>)
-                  </h1>
-                </div>
-                <div className="mr-[208px] pl-[25px] bg-blue-600/[0.25]">
-                  <h1 className="text-white pl-[15px] pb-[5px] ">
-                    plt.<span className="text-[#bb85eb]">show</span>()
-                  </h1>
-                </div>
-              </div>
-              <div className="rounded-[5px] w-[83px] h-[37px] flex flex-row bg-blue-600">
-                <TfiGithub className="text-white mt-[10px] ml-[5px]" />
-                <h1 className="text-white pt-[7px] ml-[2px]">Copilot</h1>
-              </div>
+
+            <div className={`${active1 === true ? '' : 'hidden'}`}>
+              <Py />
+            </div>
+            <div className={`${active2 === true ? '' : 'hidden'}`}>
+              <Js />
+            </div>
+            <div className={`${active3 === true ? '' : 'hidden'}`}>
+              <Go />
             </div>
           </div>
 
