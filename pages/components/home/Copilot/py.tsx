@@ -19,31 +19,31 @@ const Py = () => {
         </h1>
       </div>
       <div className="border-l-[3px] border-blue-600 ">
-        <div className="mr-[12px] pl-[25px] bg-blue-600/[0.25]">
+        <div className="pl-[25px] bg-blue-600/[0.25]">
           <h1 className="text-white pl-[15px] pb-[5px] ">
             plt.<span className="text-[#bb85eb]">scatter</span>
             (x_values, y_values, <span className="text-[#73b2ed]">s=20</span>)
           </h1>
         </div>
-        <div className="mr-[120px] pl-[25px] bg-blue-600/[0.25]">
+        <div className=" pl-[25px] bg-blue-600/[0.25]">
           <h1 className="text-white pl-[15px] pb-[5px] ">
             plt.<span className="text-[#bb85eb]">title</span>(
             <span className="text-[#73b2ed]">"Scatter Plot"</span>)
           </h1>
         </div>
-        <div className="mr-[130px] pl-[25px] bg-blue-600/[0.25]">
+        <div className="pl-[25px] bg-blue-600/[0.25]">
           <h1 className="text-white pl-[15px] pb-[5px] ">
             plt.<span className="text-[#bb85eb]">xlabel</span>(
             <span className="text-[#73b2ed]">"x-values"</span>)
           </h1>
         </div>
-        <div className="mr-[130px] pl-[25px] bg-blue-600/[0.25]">
+        <div className="pl-[25px] bg-blue-600/[0.25]">
           <h1 className="text-white pl-[15px] pb-[5px] ">
             plt.<span className="text-[#bb85eb]">ylabel</span>(
             <span className="text-[#73b2ed]">"y-values"</span>)
           </h1>
         </div>
-        <div className="mr-[208px] pl-[25px] bg-blue-600/[0.25]">
+        <div className="pl-[25px] bg-blue-600/[0.25]">
           <h1 className="text-white pl-[15px] pb-[5px] ">
             plt.<span className="text-[#bb85eb]">show</span>()
           </h1>

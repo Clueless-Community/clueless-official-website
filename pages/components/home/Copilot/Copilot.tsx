@@ -51,12 +51,12 @@ const Copilot = () => {
   };
 
   return (
-    <div className="my-[150px] xl:ml-[105px] md:mx-20 mx-[20px]">
-      <h1 className="text-[#7EE787] xl:text-[55px] font-semibold xl:leading-[70.5px] leading-[30.5px] my-[55px] text-[36px]  xl:mr-[516px]">
+    <div className="mt-[150px] xl:ml-[105px] mx-[20px] mb-[400px] xl:mb-[200px]">
+      <h1 className="text-[#7EE787] xl:text-[55px] font-semibold xl:leading-[70.5px] leading-[30.5px] my-[55px] text-[36px] xl:mr-[516px]">
         Get out of tutorial hell and start contributing{' '}
       </h1>
-      <div className="flex flex-row h-[519px]">
-        <div className="w-[800px]">
+      <div className="flex xl:flex-row flex-col h-[519px]">
+        <div className="xl:w-[1300px]">
           <div className="h-[50px] flex flex-row bg-[#262227] rounded-t-[31px]">
             <button
               onClick={ActivateButton1}
@@ -126,37 +126,41 @@ const Copilot = () => {
               <h1 className="text-slate-400 pl-[4px] pb-[5px]">11</h1>
             </div>
 
-            <div className={`${active1 === true ? '' : 'hidden'}`}>
+            <div className={`w-[100%] ${active1 === true ? '' : 'hidden'}`}>
               <Py />
             </div>
-            <div className={`${active2 === true ? '' : 'hidden'}`}>
+            <div className={`w-[100%] ${active2 === true ? '' : 'hidden'}`}>
               <Js />
             </div>
-            <div className={`${active3 === true ? '' : 'hidden'}`}>
+            <div className={`w-[100%] ${active3 === true ? '' : 'hidden'}`}>
               <Go />
             </div>
           </div>
 
           <div className="h-[93px] flex flex-row ">
-            <button className="w-[667px] flex flex-row bg-[#262227] rounded-b-[31px]">
-              <LoopIcon className="text-[30px] mt-[30px] ml-[273px] text-white" />
-              <h1 className="text-[26px] mt-[27px] text-white">Replay</h1>
+            <button className="w-[100%] flex flex-row bg-[#262227] rounded-b-[31px] justify-items-center">
+              <div className="flex flex-row mx-auto my-auto">
+                <LoopIcon className="text-[30px] text-white" />
+                <h1 className="text-[26px] text-white">Replay</h1>
+              </div>
             </button>
           </div>
         </div>
-        <div className="w-[800px]">
-          <div className="h-[257px] mt-[80px] mr-[20px] ml-[75px]">
-            <h1 className="text-[26px] mb-[20px] font-medium text-white">
+        <div>
+          <div className="xl:h-[227px] xl:mt-[100px] xl:mx-[100px] mt-[50px]">
+            <h1 className="text-[22px] mb-[20px] font-medium text-white">
               Built with the vision to encourage open-source enthusiasts!
             </h1>
-            <h1 className="text-[26px] font-medium text-white">
+            <h1 className="text-[22px] font-medium text-white">
               built with the vision to encourage open-source enthusiasts! built
               with the vision to encourage open-source enthusiasts!
             </h1>
           </div>
-          <div className="ml-[75px]">
+          <div className="xl:ml-[100px] mt-[10px] xl:mt-0">
             <button className="text-[#7EE787] flex flex-row">
-              <h1 className="text-[22px] font-extrabold">Explore</h1>
+              <h1 className="xl:text-[22px] text-[20px] font-extrabold">
+                Explore
+              </h1>
               <ArrowForwardIosIcon className="text-[23px] font-extrabold mt-[6px]" />
             </button>
           </div>

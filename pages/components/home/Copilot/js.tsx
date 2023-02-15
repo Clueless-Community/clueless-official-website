@@ -18,7 +18,7 @@ const Js = () => {
         </h1>
       </div>
       <div className="border-l-[3px] border-blue-600 ">
-        <div className="mr-[195px] bg-blue-600/[0.25]">
+        <div className="bg-blue-600/[0.25]">
           <h1 className="text-white pl-[15px] pb-[5px]">
             <span className="text-[#c92828]">const </span>
             hours
@@ -27,7 +27,7 @@ const Js = () => {
             <span className="text-[#73b2ed]"> / 60</span>
           </h1>
         </div>
-        <div className="mr-[220px] bg-blue-600/[0.25]">
+        <div className="bg-blue-600/[0.25]">
           <h1 className="text-white pl-[15px] pb-[5px]">
             <span className="text-[#c92828]">const </span>
             days
@@ -36,7 +36,7 @@ const Js = () => {
             <span className="text-[#73b2ed]"> / 24</span>
           </h1>
         </div>
-        <div className="mr-[225px] bg-blue-600/[0.25]">
+        <div className="bg-blue-600/[0.25]">
           <h1 className="text-white pl-[15px] pb-[5px]">
             <span className="text-[#c92828]">const </span>
             weeks
@@ -45,7 +45,7 @@ const Js = () => {
             <span className="text-[#73b2ed]"> / 7</span>
           </h1>
         </div>
-        <div className="mr-[204px] bg-blue-600/[0.25]">
+        <div className="bg-blue-600/[0.25]">
           <h1 className="text-white pl-[15px] pb-[5px]">
             <span className="text-[#c92828]">const </span>
             months
@@ -54,7 +54,7 @@ const Js = () => {
             <span className="text-[#73b2ed]"> / 30</span>
           </h1>
         </div>
-        <div className="mr-[205px] bg-blue-600/[0.25]">
+        <div className="bg-blue-600/[0.25]">
           <h1 className="text-white pl-[15px] pb-[5px]">
             <span className="text-[#c92828]">const </span>
             years

@@ -19,7 +19,7 @@ const Go = () => {
         </h1>
       </div>
       <div className="border-l-[3px] border-blue-600 ">
-        <div className="mr-[104px] pl-[25px] bg-blue-600/[0.25]">
+        <div className="pl-[25px] bg-blue-600/[0.25]">
           <h1 className="text-white pl-[15px] pb-[5px] ">
             cache
             <span className="text-[#73b2ed]"> := </span>
@@ -28,13 +28,13 @@ const Go = () => {
             [int]int)
           </h1>
         </div>
-        <div className="mr-[142px] pl-[25px] bg-blue-600/[0.25]">
+        <div className="pl-[25px] bg-blue-600/[0.25]">
           <h1 className="text-white pl-[15px] pb-[5px] ">
             <span className="text-[#c92828]">return func</span>
             (n int) int &#123;
           </h1>
         </div>
-        <div className="mr-[106px] pl-[55px] bg-blue-600/[0.25]">
+        <div className="pl-[55px] bg-blue-600/[0.25]">
           <h1 className="text-white pl-[15px] pb-[5px] ">
             <span className="text-[#c92828]">if </span>
             v, ok
@@ -42,15 +42,15 @@ const Go = () => {
             cache[n]; ok &#123;
           </h1>
         </div>
-        <div className="mr-[186px] pl-[85px] bg-blue-600/[0.25]">
+        <div className="pl-[85px] bg-blue-600/[0.25]">
           <h1 className="text-white pl-[15px] pb-[5px] ">
             <span className="text-[#c92828]">return </span>v
           </h1>
         </div>
-        <div className="mr-[266px] pl-[55px] bg-blue-600/[0.25]">
+        <div className="pl-[55px] bg-blue-600/[0.25]">
           <h1 className="text-white pl-[15px] pb-[5px] ">&#125;</h1>
         </div>
-        <div className="mr-[156px] pl-[55px] bg-blue-600/[0.25]">
+        <div className="pl-[55px] bg-blue-600/[0.25]">
           <h1 className="text-white pl-[15px] pb-[5px] ">
             cache[n]
             <span className="text-[#73b2ed]"> = </span>
@@ -58,16 +58,16 @@ const Go = () => {
             (n)
           </h1>
         </div>
-        <div className="mr-[159px] pl-[55px] bg-blue-600/[0.25]">
+        <div className="pl-[55px] bg-blue-600/[0.25]">
           <h1 className="text-white pl-[15px] pb-[5px] ">
             <span className="text-[#c92828]">return </span>
             cache[n]
           </h1>
         </div>
-        <div className="mr-[296px] pl-[25px] bg-blue-600/[0.25]">
+        <div className="pl-[25px] bg-blue-600/[0.25]">
           <h1 className="text-white pl-[15px] pb-[5px] ">&#125;</h1>
         </div>
-        <div className="mr-[323px] bg-blue-600/[0.25]">
+        <div className="bg-blue-600/[0.25]">
           <h1 className="text-white pl-[15px] pb-[5px] ">&#125;</h1>
         </div>
       </div>
