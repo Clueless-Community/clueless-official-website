@@ -137,7 +137,7 @@ const Copilot = () => {
             </div>
           </div>
 
-          <div className="h-[93px] flex flex-row ">
+          <div className="h-[93px] flex flex-row mt-[25px] xl:mt-0">
             <button className="w-[100%] flex flex-row bg-[#262227] rounded-b-[31px] justify-items-center">
               <div className="flex flex-row mx-auto my-auto">
                 <LoopIcon className="text-[30px] text-white" />
