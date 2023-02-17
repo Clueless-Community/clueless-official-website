@@ -6,7 +6,7 @@ import { FaDiscord } from "react-icons/fa";
 import Link from "next/link";
 import { useSession } from "next-auth/react";
 import Head from "next/head";
-
+import OpenSource from "../OpenSource/OpenSource";
 
 const HomeMain = () => {
   const session = useSession();
@@ -64,6 +64,7 @@ const HomeMain = () => {
           ></button>
         </div>
       )}
+      <OpenSource/>
       <div
         className="lg:grid xl:grid-cols-2 xl:mx-40 mt-8 flex flex-col w-10/12 mx-auto lg:text-left md:py-28 pt-16"
         id="home"
