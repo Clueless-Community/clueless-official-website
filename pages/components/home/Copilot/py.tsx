@@ -34,19 +34,20 @@ const Py = () => {
           <div className=" pl-[25px] bg-blue-600/[0.25]">
             <h1 className="text-white pl-[15px] pb-[5px] ">
               plt.<span className="text-[#bb85eb]">title</span>(
-              <span className="text-[#73b2ed]">"Scatter Plot"</span>)
+              <span className="text-[#73b2ed]">&ldquo;Scatter Plot&rdquo;</span>
+              )
             </h1>
           </div>
           <div className="pl-[25px] bg-blue-600/[0.25]">
             <h1 className="text-white pl-[15px] pb-[5px] ">
               plt.<span className="text-[#bb85eb]">xlabel</span>(
-              <span className="text-[#73b2ed]">"x-values"</span>)
+              <span className="text-[#73b2ed]">&ldquo;x-values&rdquo;</span>)
             </h1>
           </div>
           <div className="pl-[25px] bg-blue-600/[0.25]">
             <h1 className="text-white pl-[15px] pb-[5px] ">
               plt.<span className="text-[#bb85eb]">ylabel</span>(
-              <span className="text-[#73b2ed]">"y-values"</span>)
+              <span className="text-[#73b2ed]">&ldquo;y-values&rdquo;</span>)
             </h1>
           </div>
           <div className="pl-[25px] bg-blue-600/[0.25]">
