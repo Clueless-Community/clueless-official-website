@@ -50,6 +50,21 @@ const Copilot = () => {
     }
   };
 
+  const ReplayButton = () => {
+    if (active1 === true) {
+      setActive1(false);
+      setTimeout(() => setActive1(true), 50);
+    }
+    if (active2 === true) {
+      setActive2(false);
+      setTimeout(() => setActive2(true), 50);
+    }
+    if (active3 === true) {
+      setActive3(false);
+      setTimeout(() => setActive3(true), 50);
+    }
+  };
+
   return (
     <div className="mt-[150px] xl:ml-[105px] mx-[20px] mb-[400px] xl:mb-[200px]">
       <h1 className="text-[#7EE787] xl:text-[55px] font-semibold xl:leading-[70.5px] leading-[30.5px] my-[55px] text-[36px] xl:mr-[516px]">
@@ -138,7 +153,10 @@ const Copilot = () => {
           </div>
 
           <div className="h-[93px] flex flex-row mt-[25px] xl:mt-0">
-            <button className="w-[100%] flex flex-row bg-[#262227] rounded-b-[31px] justify-items-center">
+            <button
+              onClick={ReplayButton}
+              className="w-[100%] flex flex-row bg-[#262227] rounded-b-[31px] justify-items-center"
+            >
               <div className="flex flex-row mx-auto my-auto">
                 <LoopIcon className="text-[30px] text-white" />
                 <h1 className="text-[26px] text-white">Replay</h1>

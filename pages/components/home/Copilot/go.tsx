@@ -9,7 +9,7 @@ const Go = () => {
         <h1 className="text-white pl-[15px] pb-[5px] mt-[15px]">
           <span className="text-[#c92828]">package </span> main
         </h1>
-        <h1 className="text-white pl-[15px] pb-[5px]">
+        <h1 className="text-white pl-[15px] pb-[5px] typewriter">
           <span className="text-[#c92828]">func </span>
           <span className="text-[#bb85eb]">Memoize</span>
           (fn
@@ -21,7 +21,7 @@ const Go = () => {
       </div>
       <motion.div
         whileInView={{ y: [10, 0], opacity: [0, 1] }}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: 0.8, delay: 1 }}
       >
         <div className="border-l-[3px] border-blue-600 ">
           <div className="pl-[25px] bg-blue-600/[0.25]">

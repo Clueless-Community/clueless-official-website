@@ -10,7 +10,7 @@ const Js = () => {
           <span className="text-[#c92828]">const</span> seconds{' '}
           <span className="text-[#73b2ed]">= 3600</span>{' '}
         </h1>
-        <h1 className="text-white pl-[18px] pb-[5px]">
+        <h1 className="text-white pl-[18px] pb-[5px] typewriter">
           <span className="text-[#c92828]">const </span>
           minutes
           <span className="text-[#73b2ed]"> = </span>
@@ -20,9 +20,9 @@ const Js = () => {
       </div>
       <motion.div
         whileInView={{ y: [10, 0], opacity: [0, 1] }}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: 0.8, delay: 0.7 }}
       >
-        <div className="border-l-[3px] border-blue-600 ">
+        <div className="border-l-[3px] border-blue-600">
           <div className="bg-blue-600/[0.25]">
             <h1 className="text-white pl-[15px] pb-[5px]">
               <span className="text-[#c92828]">const </span>
