@@ -158,13 +158,13 @@ const Copilot = () => {
               className="w-[100%] flex flex-row bg-[#262227] rounded-b-[31px] justify-items-center"
             >
               <div className="flex flex-row mx-auto my-auto">
-                <LoopIcon className="text-[30px] text-white" />
+                <LoopIcon className="text-[30px] text-white my-auto" />
                 <h1 className="text-[26px] text-white">Replay</h1>
               </div>
             </button>
           </div>
         </div>
-        <div>
+        <div className="xl:ml-[80px]">
           <div className="xl:h-[227px] xl:mt-[100px] xl:mx-[100px] mt-[50px]">
             <h1 className="text-[22px] mb-[20px] font-medium text-white">
               Built with the vision to encourage open-source enthusiasts!
