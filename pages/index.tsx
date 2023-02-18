@@ -3,6 +3,7 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import UpcomingEvents from './components/home/events/UpcomingEvents';
 import ReactTooltip from 'react-tooltip';
+import OpenSource from './components/home/OpenSource';
 
 const Home: NextPage = () => {
   return (
@@ -19,6 +20,7 @@ const Home: NextPage = () => {
         />
       </Head>
       <UpcomingEvents />
+      <OpenSource/>
     </>
   );
 };
