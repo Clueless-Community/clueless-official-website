@@ -3,6 +3,7 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import UpcomingEvents from './components/home/events/UpcomingEvents';
 import ReactTooltip from 'react-tooltip';
+import LackingSkills from './components/home/lackingskills/lackingskills';
 
 const Home: NextPage = () => {
   return (
@@ -18,6 +19,7 @@ const Home: NextPage = () => {
           content="https://i.ibb.co/WVBNFXB/Clueless-SS.png"
         />
       </Head>
+      <LackingSkills />
       <UpcomingEvents />
     </>
   );
