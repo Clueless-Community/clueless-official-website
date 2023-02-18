@@ -66,7 +66,7 @@ const Copilot = () => {
   };
 
   return (
-    <div className="mt-[150px] xl:ml-[105px] mx-[20px] mb-[400px] xl:mb-[200px]">
+    <div className="mt-[150px] xl:ml-[105px] mx-[20px] mb-[400px] xl:mb-[200px] sm:px-[100px] md:px-[150px] lg:px-[200px] xl:px-0">
       <h1 className="text-[#7EE787] xl:text-[55px] font-semibold xl:leading-[70.5px] leading-[30.5px] my-[55px] text-[36px] xl:mr-[516px]">
         Get out of tutorial hell and start contributing{' '}
       </h1>
