@@ -1,20 +1,25 @@
 /* eslint-disable @next/next/no-img-element */
-import React, { useRef } from "react";
-import { Container, Typography } from "@mui/material";
+import React, { useEffect, useRef } from "react";
+import { Container, SvgIcon, Typography } from "@mui/material";
 import { Box } from "@mui/system";
-import { motion } from "framer-motion";
+import { calcLength, motion } from "framer-motion";
 import Link from "next/link";
 import GitHubIcon from "@mui/icons-material/GitHub";
+import { LineAxis } from "@mui/icons-material";
 
 const WorldOfOpenSource: React.FC = () => {
     const constraintsRef = useRef(null);
+    const KconstraintsRef = useRef(null);
 
     return (
         <>
-            <Container maxWidth="md" sx={{
+            <Container maxWidth="lg" sx={{
+                width: "80%",
+                height: "320px",
                 backgroundColor: "black",
                 display: "flex",
                 justifyContent: "center",
+                alignItems: "center",
                 borderRadius: "22px",
                 marginTop: "10rem",
                 marginX: "auto",
@@ -24,8 +29,6 @@ const WorldOfOpenSource: React.FC = () => {
                     width: "50%",
                     padding: "4rem 2rem",
                 }}>
-
-
                     <Typography
                         variant="h2"
                         sx={{
@@ -39,7 +42,7 @@ const WorldOfOpenSource: React.FC = () => {
                     </Typography>
                     <Typography
                         variant="h4"
-                        mt={"0.8rem"}
+                        my={"0.8rem"}
                         sx={{
                             fontWeight: "300",
                             fontSize: "1.05rem",
@@ -61,27 +64,44 @@ const WorldOfOpenSource: React.FC = () => {
                         </button>
                     </Link>
                 </Box>
-                <Box
-                    sx={{
-                        width: "50%",
-                        justifyContent: "center",
-                        alignContent: "center",
-                    }}>
-                    <motion.div className="drag-area" ref={constraintsRef} style={{
-                        height: "90%",
-                        backgroundColor: "rgba(40, 46, 54, 0.97)",
-                        borderRadius: "20px",
-                    }} />
-                    <motion.div drag dragConstraints={constraintsRef} style={{
-                        height: "20%",
-                        width: "20%",
-                        backgroundColor: "white",
-                        borderRadius: "20px",
+                <Box sx={{
+                    width: "40%",
+                    height: "80%",
+                    display: "flex",
+                    flexDirection: "row",
+                    justifyContent: "space-between",
+                    backgroundColor: "rgba(40, 46, 54, 0.97)",
+                    borderRadius: "20px",
+                    padding: "1rem 2rem",
+                    border: "1px solid lightgreen"
+                }}>
+                    <motion.div drag
+                        dragConstraints={{
+                            top: 0,
+                        }}
+                        style={{
+                            backgroundImage: `url("/icons/icon2.svg")`,
+                            backgroundSize: "contain",
+                            backgroundRepeat: "no-repeat",
+                            width: "45px",
+                        }} />
+                    <motion.div drag dragConstraints={{
+                        top: 0,
                     }} >
-                        <img src="/icons/icon7.svg" alt="https://www.linux.org/"></img>
-                        <img src="/icons/icon2.svg" alt="https://www.kubernetes.com/"></img>
-                        <GitHubIcon className="text-white mb-8" fontSize='inherit' sx={{ fontSize: "50px" }} />
+                        <GitHubIcon className="text-white" sx={{
+                            fontSize: "50px"
+                        }} />
                     </motion.div>
+                    <motion.div drag
+                        dragConstraints={{
+                            top: 0,
+                        }}
+                        style={{
+                            backgroundImage: `url("/icons/icon7.svg")`,
+                            backgroundSize: "contain",
+                            backgroundRepeat: "no-repeat",
+                            width: "65px"
+                        }} />
                 </Box>
             </Container>
         </>
