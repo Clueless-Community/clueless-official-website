@@ -13,6 +13,7 @@ import TeachStackLine from "./components/shared/TeachStackLine";
 import UpcomingEvents from "./components/Home/Events/UpcomingEvents";
 import ReactTooltip from 'react-tooltip';
 import Codepeak from "./components/Home/Codepeak";
+import WorldOfOpenSource from "./components/Home/WorldOfOpenSource";
 
 const Home: NextPage = () => {
   return (
@@ -27,6 +28,8 @@ const Home: NextPage = () => {
       <HomeMain />
       {/* <Codepeak /> */}
       <WhatIsClueLess />
+      <WorldOfOpenSource />
+
       <h2 className="md:text-6xl sm:text-5xl text-3xl text-center my-10 mt-28 font-bold sm:leading-[80px] leading-10">
         Dive into the world of <br /> <span className=" text-skin-main">Development🚀</span>
       </h2>
