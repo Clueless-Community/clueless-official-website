@@ -27,7 +27,7 @@ const LackingSkills = () => {
           </Stack>
         </Grid>
         <Grid item md={2}>
-          svg file here
+          svg here
         </Grid>
       </Grid>
       <div className="h-[56vh] relative">
