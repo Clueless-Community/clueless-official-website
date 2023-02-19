@@ -9,6 +9,7 @@ import { LineAxis } from "@mui/icons-material";
 
 const WorldOfOpenSource: React.FC = () => {
     const constraintsRef = useRef(null);
+    const LconstraintsRef = useRef(null);
     const KconstraintsRef = useRef(null);
 
     return (
@@ -71,31 +72,36 @@ const WorldOfOpenSource: React.FC = () => {
                     flexDirection: "row",
                     justifyContent: "space-between",
                     backgroundColor: "rgba(40, 46, 54, 0.97)",
-                    borderRadius: "20px",
+                    borderRadius: "28px",
                     padding: "1rem 2rem",
-                    border: "1px solid lightgreen"
+                    border: "0.5px solid #FFFFFF"
                 }}>
+                    <motion.div style={{
+                        // width: "100%",
+                        // height: "100%",
+                    }} ref={KconstraintsRef} />
                     <motion.div drag
-                        dragConstraints={{
-                            top: 0,
-                        }}
+                        dragConstraints={KconstraintsRef}
                         style={{
                             backgroundImage: `url("/icons/icon2.svg")`,
                             backgroundSize: "contain",
                             backgroundRepeat: "no-repeat",
                             width: "45px",
                         }} />
-                    <motion.div drag dragConstraints={{
-                        top: 0,
-                    }} >
+                    <motion.div style={{
+                        // width: "100%",
+                        // height: "100%",
+                    }} ref={constraintsRef} />
+                    <motion.div drag dragConstraints={constraintsRef} >
                         <GitHubIcon className="text-white" sx={{
-                            fontSize: "50px"
+                            fontSize: "50px",
                         }} />
                     </motion.div>
-                    <motion.div drag
-                        dragConstraints={{
-                            top: 0,
-                        }}
+                    <motion.div style={{
+                        // width: "100%",
+                        // height: "100%",
+                    }} ref={LconstraintsRef} />
+                    <motion.div drag dragConstraints={LconstraintsRef}
                         style={{
                             backgroundImage: `url("/icons/icon7.svg")`,
                             backgroundSize: "contain",
