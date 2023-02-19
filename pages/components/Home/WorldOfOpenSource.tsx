@@ -1,8 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { useRef } from "react";
-import { Button, Container, Typography } from "@mui/material";
+import { Container, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import { motion } from "framer-motion";
+import Link from "next/link";
+import GitHubIcon from "@mui/icons-material/GitHub";
 
 const WorldOfOpenSource: React.FC = () => {
     const constraintsRef = useRef(null);
@@ -22,6 +24,8 @@ const WorldOfOpenSource: React.FC = () => {
                     width: "50%",
                     padding: "4rem 2rem",
                 }}>
+
+
                     <Typography
                         variant="h2"
                         sx={{
@@ -44,7 +48,18 @@ const WorldOfOpenSource: React.FC = () => {
                     >
                         built with the vision to encourage open-source enthusiasts!
                     </Typography>
-                    <Button sx={{ marginTop: "0.6rem", backgroundColor: "red" }}>Explore</Button>
+                    <Link href={""} passHref>
+                        <button
+                            className="btn-blue my-2 text-sm flex items-center px-8 py-2 button_animation"
+                            style={{
+                                animationName: "moveInLeft",
+                                color: "black",
+                                backgroundColor: "lightgreen"
+                            }}
+                        >
+                            Explore events
+                        </button>
+                    </Link>
                 </Box>
                 <Box
                     sx={{
@@ -62,11 +77,16 @@ const WorldOfOpenSource: React.FC = () => {
                         width: "20%",
                         backgroundColor: "white",
                         borderRadius: "20px",
-                    }} />
+                    }} >
+                        <img src="/icons/icon7.svg" alt="https://www.linux.org/"></img>
+                        <img src="/icons/icon2.svg" alt="https://www.kubernetes.com/"></img>
+                        <GitHubIcon className="text-white mb-8" fontSize='inherit' sx={{ fontSize: "50px" }} />
+                    </motion.div>
                 </Box>
             </Container>
         </>
     );
 };
+
 
 export default WorldOfOpenSource;
