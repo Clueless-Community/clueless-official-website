@@ -6,7 +6,6 @@ import ReactTooltip from 'react-tooltip';
 import LackingSkills from './components/home/lackingskills/lackingskills';
 import Copilot from './components/home/Copilot/Copilot';
 
-
 const Home: NextPage = () => {
   return (
     <>
