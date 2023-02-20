@@ -2,7 +2,7 @@ import React from 'react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import UpcomingEvents from './components/home/events/UpcomingEvents';
-import Copilot from './components/home/Copilot/Copilot';
+import WorldOfOpenSource from './components/home/WorldOfOpenSource/WorldOfOpenSource';
 
 const Home: NextPage = () => {
   return (
@@ -10,8 +10,9 @@ const Home: NextPage = () => {
       <Head>
         <title>ClueLess</title>
       </Head>
-      <Copilot />
-      <UpcomingEvents />
+      {/* <Copilot /> */}
+      <WorldOfOpenSource />
+      {/* <UpcomingEvents /> */}
     </>
   );
 };
