@@ -1,4 +1,4 @@
-import { Button, Grid, Typography } from '@mui/material';
+import { Button, Grid } from '@mui/material';
 import { Stack } from '@mui/system';
 import React from 'react';
 
@@ -8,16 +8,12 @@ const LackingSkills = () => {
       <Grid container spacing={4} padding={5}>
         <Grid item md={10}>
           <Stack className="md:w-2/5">
-            <Typography sx={{ color: '#72cf7b' }} className="text-5xl">
-              Lacking skills?
-            </Typography>
-            <Typography className="text-5xl pb-10 space-x-1 ">
-              We got you covered.
-            </Typography>
-            <Typography className="pb-10">
+            <h1 className="text-5xl text-[#72cf7b] pb-1">Lacking skills?</h1>
+            <h1 className="text-5xl pb-10 space-x-1 ">We got you covered.</h1>
+            <h4 className="pb-10 text-md">
               built with the vision to encourage open-source enthusiasts built
               with the vision to encourage open-source enthusiasts
-            </Typography>
+            </h4>
             <Button
               variant="contained"
               className="md:w-52 bg-[#72cf7b] hover:bg-[#72cf7b]"
@@ -31,9 +27,9 @@ const LackingSkills = () => {
         </Grid>
       </Grid>
       <div className="h-[56vh] relative">
-        <Typography className="text-4xl text-[#72cf7b] absolute bottom-[36rem] left-[63rem]">
+        <h1 className="text-4xl text-[#72cf7b] absolute bottom-[36rem] left-[63rem]">
           App Dev
-        </Typography>
+        </h1>
         <svg
           width="326"
           height="240"
@@ -50,9 +46,9 @@ const LackingSkills = () => {
             stroke-dasharray="20 20"
           />
         </svg>
-        <Typography className="text-4xl text-[#72cf7b] absolute bottom-[21rem] left-[47rem]">
+        <h1 className="text-4xl text-[#72cf7b] absolute bottom-[21rem] left-[47rem]">
           Web3
-        </Typography>
+        </h1>
         <svg
           width="211"
           height="107"
@@ -69,9 +65,9 @@ const LackingSkills = () => {
             stroke-dasharray="20 20"
           />
         </svg>
-        <Typography className="text-4xl text-[#72cf7b] absolute bottom-[11.5rem] left-[32rem]">
+        <h1 className="text-4xl text-[#72cf7b] absolute bottom-[11.5rem] left-[32rem]">
           Web Dev
-        </Typography>
+        </h1>
         <svg
           width="424"
           height="169"
@@ -88,9 +84,9 @@ const LackingSkills = () => {
             stroke-dasharray="20 20"
           />
         </svg>
-        <Typography className="text-4xl text-[#72cf7b] absolute bottom-10 left-10 ">
+        <h1 className="text-4xl text-[#72cf7b] absolute bottom-10 left-10 ">
           DevOps
-        </Typography>
+        </h1>
       </div>
     </main>
   );
