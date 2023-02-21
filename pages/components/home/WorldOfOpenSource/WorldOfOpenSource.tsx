@@ -2,10 +2,9 @@
 import React, { useRef } from "react";
 import { Container, IconButton, SvgIcon, Typography } from "@mui/material";
 import { Box } from "@mui/system";
-import { motion } from "framer-motion";
+import { BoundingBox, motion } from "framer-motion";
 import Link from "next/link";
 import GitHubIcon from "@mui/icons-material/GitHub";
-
 
 const WorldOfOpenSource: React.FC = () => {
     const constraintsRef = useRef(null);
@@ -17,7 +16,7 @@ const WorldOfOpenSource: React.FC = () => {
             <Container maxWidth="lg" sx={{
                 width: "80%",
                 height: "320px",
-                backgroundColor: "black",
+                backgroundColor: "transparent",
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
@@ -65,58 +64,102 @@ const WorldOfOpenSource: React.FC = () => {
                         </button>
                     </Link>
                 </Box>
-                <Box sx={{
+                <motion.div style={{
                     width: "40%",
                     height: "80%",
-                    display: "flex",
-                    flexDirection: "row",
+                    // display: "flex",
+                    // flexDirection: "row",
                     // justifyContent: "space-between",
                     backgroundColor: "rgba(40, 46, 54, 0.97)",
                     borderRadius: "28px",
-                    padding: "1rem 2rem",
-                    border: "0.5px solid #FFFFFF"
-                }}>
-                    <motion.div style={{
-                        height: "70%",
-                        width: "10%",
-                    }} ref={KconstraintsRef} />
-                    <motion.div drag dragConstraints={KconstraintsRef} style={{
-                        width: "64px",
-                        maxHeight: "120px",
-                        backgroundImage: `url('https://img.icons8.com/color/96/null/kubernetes--v1.png')`,
-                        backgroundSize: "contain",
-                        backgroundRepeat: "no-repeat",
-                        cursor: 'grab',
-                    }} />
+                    padding: "12px",
+                    border: "0.5px solid #FFFFFF",
+                }} ref={constraintsRef}>
 
-
-                    <motion.div style={{
-                        height: "100%",
-                        width: "40%",
-                    }} ref={constraintsRef} />
-                    <motion.div drag dragConstraints={constraintsRef} >
-                        <GitHubIcon className="text-white" sx={{
-                            fontSize: "50px",
+                    {/* <motion.div
+                        drag
+                        dragConstraints={constraintsRef}
+                        // dragElastic={{ top: 1, bottom: 1 }}
+                        dragElastic={0}
+                        style={{
+                            // position: "relative",
+                            // left: "-8%",
+                            // top: "8%",
+                            width: "50px",
+                            maxWidth: "60px",
+                            backgroundImage: `url('https://img.icons8.com/color/96/null/kubernetes--v1.png')`,
+                            backgroundSize: "contain",
+                            backgroundRepeat: "no-repeat",
                             cursor: 'grab',
-                            position: "relative",
-                            top: "80%",
-                        }} />
+                        }}
+                    // dragSnapToOrigin={true}
+                    />
+
+                    <motion.div
+                        drag
+                        dragConstraints={constraintsRef}
+                        // dragElastic={{ top: 1, bottom: 1 }}
+                        dragElastic={0}
+                        style={{
+                            // position: "relative",
+                            // left: "-8%",
+                            // top: "8%",
+                            width: "50px",
+                            maxWidth: "60px",
+                            backgroundImage: `url('https://img.icons8.com/color/96/null/linux--v1.png')`,
+                            backgroundSize: "contain",
+                            backgroundRepeat: "no-repeat",
+                            cursor: 'grab',
+                        }}
+                    /> */}
+
+                    <motion.div
+                        drag
+                        dragElastic={0}
+                        dragConstraints={constraintsRef}
+                        style={{
+                            width: "fit-content",
+                        }}
+                    >
+                        <GitHubIcon sx={{
+                            fontSize: "42px",
+                            cursor: 'grab',
+                            color: "white",
+                        }}
+                        />
+                    </motion.div>
+                    <motion.div
+                        drag
+                        dragElastic={0}
+                        dragConstraints={constraintsRef}
+                        style={{
+                            width: "fit-content",
+                        }}
+                    >
+                        <GitHubIcon sx={{
+                            fontSize: "42px",
+                            cursor: 'grab',
+                            color: "white",
+                        }}
+                        />
+                    </motion.div>
+                    <motion.div
+                        drag
+                        dragElastic={0}
+                        dragConstraints={constraintsRef}
+                        style={{
+                            width: "fit-content",
+                        }}
+                    >
+                        <GitHubIcon sx={{
+                            fontSize: "42px",
+                            cursor: 'grab',
+                            color: "white",
+                        }}
+                        />
                     </motion.div>
 
-
-                    <motion.div style={{
-                        height: "70%",
-                        width: "20%",
-                    }} ref={LconstraintsRef} />
-                    <motion.div drag dragConstraints={LconstraintsRef} style={{
-                        cursor: 'grab',
-                        width: "64px",
-                        maxHeight: "120px",
-                        backgroundImage: `url('https://img.icons8.com/color/96/null/linux--v1.png')`,
-                        backgroundSize: "contain",
-                        backgroundRepeat: "no-repeat",
-                    }} />
-                </Box>
+                </motion.div>
             </Container>
         </>
     );
