@@ -1,8 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { useRef } from "react";
-import { Container, IconButton, SvgIcon, Typography } from "@mui/material";
+import { Container, SvgIcon, Typography } from "@mui/material";
 import { Box } from "@mui/system";
-import { BoundingBox, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import GitHubIcon from "@mui/icons-material/GitHub";
 
@@ -76,7 +76,7 @@ const WorldOfOpenSource: React.FC = () => {
                     border: "0.5px solid #FFFFFF",
                 }} ref={constraintsRef} >
 
-                    <motion.svg
+                    <motion.div
                         drag
                         dragElastic={0}
                         dragConstraints={constraintsRef}
@@ -97,7 +97,7 @@ const WorldOfOpenSource: React.FC = () => {
                             </svg>
                         </SvgIcon>
 
-                    </motion.svg>
+                    </motion.div>
 
                     <motion.div
                         drag
@@ -118,7 +118,7 @@ const WorldOfOpenSource: React.FC = () => {
                         />
                     </motion.div>
 
-                    <motion.svg
+                    <motion.div
                         drag
                         dragElastic={0}
                         dragConstraints={constraintsRef}
@@ -139,7 +139,7 @@ const WorldOfOpenSource: React.FC = () => {
                             </svg>
                         </SvgIcon>
 
-                    </motion.svg>
+                    </motion.div>
 
                 </motion.div>
             </Container>
