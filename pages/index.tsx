@@ -3,7 +3,7 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import UpcomingEvents from './components/home/events/UpcomingEvents';
 import ReactTooltip from 'react-tooltip';
-import OpenSource from './OpenSource/mainOpenSource';
+import OpenSource from './components/home/OpenSource/mainOpenSource';
 
 const Home: NextPage = () => {
   return (
