@@ -79,19 +79,20 @@ const WorldOfOpenSource: React.FC = () => {
                         dragConstraints={constraintsRef}
 
                         initial={{
-                            left: 0,
-                            // y: 0
+                            x: 0,
+                            y: 0
                         }}
+
                         animate={{
-                            left: ["0%", "80%", "0%"],
+                            x: [0, 220, 0],
                             y: [0, 60, 80, 150, 80, 60, 0],
                         }}
+
                         transition={{
-                            duration: 6,
+                            duration: 2,
                             delay: 0.2,
                             repeat: Infinity
                         }}
-
 
                         style={{
                             height: "48px",
@@ -99,7 +100,7 @@ const WorldOfOpenSource: React.FC = () => {
                             // border: "1px solid white",
                             position: 'relative',
                             left: "8%",
-                            top: "8%"
+                            top: "8%",
                         }}
                     >
                         <SvgIcon sx={{ fontSize: "42px" }}>
@@ -118,10 +119,11 @@ const WorldOfOpenSource: React.FC = () => {
                         dragConstraints={constraintsRef}
 
                         initial={{
-                            left: 0,
+                            x: 0,
+                            y: 0
                         }}
                         animate={{
-                            left: ["0%", "80%", "0%"],
+                            x: [0, 220, 0],
                             y: [0, -70, -90, -140, -90, -70, 0],
                         }}
                         transition={{
@@ -152,11 +154,12 @@ const WorldOfOpenSource: React.FC = () => {
 
 
                         initial={{
-                            x: 0
+                            x: 0,
+                            y: 0
                         }}
                         animate={{
-                            y: ["0%", "100%", "120%", "100%", "0%", "0%", "-100%", "-120%", "-100%", "0%"],
-                            left: ["0%", "80%", "0%"],
+                            y: [0, 40, 80, 100, -80, -40, 0],
+                            x: [0, -240, -150, 0],
                         }}
                         transition={{
                             duration: 4,
