@@ -1,18 +1,8 @@
 import React from "react";
-import Head from "next/head";
 
-function OpenSource() {
+function PcOpenSource() {
   return (
     <>
-      {/* <Head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-          href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap"
-          rel="stylesheet" 
-          bg-gradient-radial from-[#7EE787] via-black to-black 
-        /> 
-      </Head> */}
       <div className="bg-black flex h-[600px] box-border">
         <div className="p-3 w-1/3 h-[20rem] m-[5rem] space-y-10">
           <h1 className="leading-[3rem] text-[40px]">
@@ -90,4 +80,4 @@ function OpenSource() {
   );
 }
 
-export default OpenSource;
+export default PcOpenSource;
