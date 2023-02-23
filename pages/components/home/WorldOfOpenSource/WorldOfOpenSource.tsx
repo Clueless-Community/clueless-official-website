@@ -67,9 +67,6 @@ const WorldOfOpenSource: React.FC = () => {
                 <motion.div style={{
                     width: "40%",
                     height: "80%",
-                    // display: "flex",
-                    // flexDirection: "row",
-                    // justifyContent: "space-between",
                     backgroundColor: "rgba(40, 46, 54, 0.97)",
                     borderRadius: "28px",
                     padding: "12px",
@@ -80,6 +77,22 @@ const WorldOfOpenSource: React.FC = () => {
                         drag
                         dragElastic={0}
                         dragConstraints={constraintsRef}
+
+                        initial={{
+                            left: 0,
+                            // y: 0
+                        }}
+                        animate={{
+                            left: ["0%", "80%", "0%"],
+                            y: [0, 60, 80, 150, 80, 60, 0],
+                        }}
+                        transition={{
+                            duration: 6,
+                            delay: 0.2,
+                            repeat: Infinity
+                        }}
+
+
                         style={{
                             height: "48px",
                             width: "48px",
@@ -103,6 +116,20 @@ const WorldOfOpenSource: React.FC = () => {
                         drag
                         dragElastic={0}
                         dragConstraints={constraintsRef}
+
+                        initial={{
+                            left: 0,
+                        }}
+                        animate={{
+                            left: ["0%", "80%", "0%"],
+                            y: [0, -70, -90, -140, -90, -70, 0],
+                        }}
+                        transition={{
+                            duration: 8,
+                            delay: 0.2,
+                            repeat: Infinity
+                        }}
+
                         style={{
                             width: "fit-content",
                             position: 'relative',
@@ -122,6 +149,21 @@ const WorldOfOpenSource: React.FC = () => {
                         drag
                         dragElastic={0}
                         dragConstraints={constraintsRef}
+
+
+                        initial={{
+                            x: 0
+                        }}
+                        animate={{
+                            y: ["0%", "100%", "120%", "100%", "0%", "0%", "-100%", "-120%", "-100%", "0%"],
+                            left: ["0%", "80%", "0%"],
+                        }}
+                        transition={{
+                            duration: 4,
+                            delay: 0.2,
+                            repeat: Infinity
+                        }}
+
                         style={{
                             height: "48px",
                             width: "48px",
