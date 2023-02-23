@@ -19,8 +19,8 @@ const Home: NextPage = () => {
           content="https://i.ibb.co/WVBNFXB/Clueless-SS.png"
         />
       </Head>
-      <UpcomingEvents />
       <Copilot/>
+      <UpcomingEvents />      
       <OpenSource/>
     </>
   );
