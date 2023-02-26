@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Container, SvgIcon, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import { motion } from "framer-motion";
@@ -8,6 +8,13 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 
 const WorldOfOpenSource: React.FC = () => {
     const constraintsRef = useRef(null);
+    const [size, setSize] = useState({h: 0, w:0});
+    
+    useEffect(() => {
+        const w = document.getElementById('motion-area')?.offsetWidth;
+        const h = document.getElementById('motion-area')?.offsetHeight;
+        setSize({h: Number(h), w: Number(w)});
+    }, []);
 
     return (
         <>
@@ -64,7 +71,7 @@ const WorldOfOpenSource: React.FC = () => {
                     </Link>
                 </Box>
 
-                <motion.div style={{
+                <motion.div id="motion-area" style={{
                     width: "40%",
                     height: "80%",
                     backgroundColor: "rgba(40, 46, 54, 0.97)",
@@ -79,31 +86,31 @@ const WorldOfOpenSource: React.FC = () => {
                         dragConstraints={constraintsRef}
 
                         initial={{
-                            x: 0,
-                            y: 0
+                            
                         }}
 
                         animate={{
-                            x: [0, 220, 0],
-                            y: [0, 60, 80, 150, 80, 60, 0],
+                            x: [0, size.w * 0.75, 0],
+                            y: [0, size.h * 0.6],
                         }}
 
                         transition={{
-                            duration: 8,
+                            duration: 6,
                             delay: 0.2,
-                            repeat: Infinity
+                            repeat: Infinity,
+                            repeatType: "mirror"
                         }}
 
                         style={{
-                            height: "52px",
-                            width: "52px",
+                            height: "56px",
+                            width: "56px",
                             // border: "1px solid white",
                             position: 'relative',
                             left: "8%",
                             top: "8%",
                         }}
                     >
-                        <SvgIcon sx={{ fontSize: "52px", cursor: "grab"  }}>
+                        <SvgIcon sx={{ fontSize: "56px", cursor: "grab"  }}>
                             <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                                 width="48" height="48"
                                 viewBox="0 0 100 100">
@@ -119,17 +126,19 @@ const WorldOfOpenSource: React.FC = () => {
                         dragConstraints={constraintsRef}
 
                         initial={{
-                            x: 0,
-                            y: 0
+                            
                         }}
+
                         animate={{
-                            x: [0, 220, 0],
-                            y: [0, -70, -90, -140, -90, -70, 0],
+                            x: [0, size.w * 0.25, 0, size.w * 0.45, 0],
+                            y: [0, -size.h * 0.7]
                         }}
+
                         transition={{
                             duration: 6,
                             delay: 0.2,
-                            repeat: Infinity
+                            repeat: Infinity,
+                            repeatType: "reverse"
                         }}
 
                         style={{
@@ -154,29 +163,31 @@ const WorldOfOpenSource: React.FC = () => {
 
 
                         initial={{
-                            x: 0,
-                            y: 0
+                            
                         }}
+
                         animate={{
-                            y: [0, 40, 80, 100, -80, -40, 0],
-                            x: [0, -240, -140, 0],
+                            x: [0, -size.w * 0.25, -size.w * 0.1, -size.w * 0.45, -size.w * 0.1,  -size.w * 0.65, 0],
+                            y: [0, -size.h * 0.2, size.h * 0.28]
                         }}
+
                         transition={{
-                            duration: 12,
+                            duration: 8,
                             delay: 0.2,
-                            repeat: Infinity
+                            repeat: Infinity,
+                            repeatType: "mirror"
                         }}
 
                         style={{
-                            height: "52px",
-                            width: "52px",
+                            height: "56px",
+                            width: "56px",
                             // border: "1px solid white",
                             position: 'relative',
                             left: "80%"
                         }}
                     >
 
-                        <SvgIcon sx={{ fontSize: "52px", cursor: "grab" }}>
+                        <SvgIcon sx={{ fontSize: "56px", cursor: "grab" }}>
                             <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                                 width="48" height="48"
                                 viewBox="0 2 100 100">
