@@ -90,8 +90,8 @@ const WorldOfOpenSource: React.FC = () => {
                         }}
 
                         animate={{
-                            x: [0, size.w * 0.75, 0],
-                            y: [0, size.h * 0.6],
+                            x: [0, size.w * 0.65, 0],
+                            y: [0, size.h * 0.55],
                         }}
 
                         transition={{
@@ -102,15 +102,15 @@ const WorldOfOpenSource: React.FC = () => {
                         }}
 
                         style={{
-                            height: "56px",
-                            width: "56px",
+                            height: "76px",
+                            width: "76px",
                             // border: "1px solid white",
                             position: 'relative',
                             left: "8%",
                             top: "8%",
                         }}
                     >
-                        <SvgIcon sx={{ fontSize: "56px", cursor: "grab"  }}>
+                        <SvgIcon sx={{ fontSize: "76px", cursor: "grab"  }}>
                             <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                                 width="48" height="48"
                                 viewBox="0 0 100 100">
@@ -131,7 +131,7 @@ const WorldOfOpenSource: React.FC = () => {
 
                         animate={{
                             x: [0, size.w * 0.25, 0, size.w * 0.45, 0],
-                            y: [0, -size.h * 0.7]
+                            y: [0, -size.h * 0.6]
                         }}
 
                         transition={{
@@ -145,11 +145,11 @@ const WorldOfOpenSource: React.FC = () => {
                             width: "fit-content",
                             position: 'relative',
                             left: "8%",
-                            top: "50%"
+                            top: "40%"
                         }}
                     >
                         <GitHubIcon sx={{
-                            fontSize: "46px",
+                            fontSize: "64px",
                             cursor: 'grab',
                             color: "white",
                         }}
@@ -167,8 +167,8 @@ const WorldOfOpenSource: React.FC = () => {
                         }}
 
                         animate={{
-                            x: [0, -size.w * 0.25, -size.w * 0.1, -size.w * 0.45, -size.w * 0.1,  -size.w * 0.65, 0],
-                            y: [0, -size.h * 0.2, size.h * 0.28]
+                            x: [0, -size.w * 0.3, -size.w * 0.1, -size.w * 0.45, -size.w * 0.15,  -size.w * 0.55, 0],
+                            y: [0, -size.h * 0.3, size.h * 0.26]
                         }}
 
                         transition={{
@@ -179,15 +179,15 @@ const WorldOfOpenSource: React.FC = () => {
                         }}
 
                         style={{
-                            height: "56px",
-                            width: "56px",
-                            // border: "1px solid white",
+                            height: "76px",
+                            width: "76px",
                             position: 'relative',
-                            left: "80%"
+                            left: "70%",
+                            top: "-25%"
                         }}
                     >
 
-                        <SvgIcon sx={{ fontSize: "56px", cursor: "grab" }}>
+                        <SvgIcon sx={{ fontSize: "76px", cursor: "grab" }}>
                             <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                                 width="48" height="48"
                                 viewBox="0 2 100 100">
