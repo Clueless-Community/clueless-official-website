@@ -89,21 +89,21 @@ const WorldOfOpenSource: React.FC = () => {
                         }}
 
                         transition={{
-                            duration: 2,
+                            duration: 8,
                             delay: 0.2,
                             repeat: Infinity
                         }}
 
                         style={{
-                            height: "48px",
-                            width: "48px",
+                            height: "52px",
+                            width: "52px",
                             // border: "1px solid white",
                             position: 'relative',
                             left: "8%",
                             top: "8%",
                         }}
                     >
-                        <SvgIcon sx={{ fontSize: "42px" }}>
+                        <SvgIcon sx={{ fontSize: "52px", cursor: "grab"  }}>
                             <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                                 width="48" height="48"
                                 viewBox="0 0 100 100">
@@ -127,7 +127,7 @@ const WorldOfOpenSource: React.FC = () => {
                             y: [0, -70, -90, -140, -90, -70, 0],
                         }}
                         transition={{
-                            duration: 8,
+                            duration: 6,
                             delay: 0.2,
                             repeat: Infinity
                         }}
@@ -140,7 +140,7 @@ const WorldOfOpenSource: React.FC = () => {
                         }}
                     >
                         <GitHubIcon sx={{
-                            fontSize: "42px",
+                            fontSize: "46px",
                             cursor: 'grab',
                             color: "white",
                         }}
@@ -159,24 +159,24 @@ const WorldOfOpenSource: React.FC = () => {
                         }}
                         animate={{
                             y: [0, 40, 80, 100, -80, -40, 0],
-                            x: [0, -240, -150, 0],
+                            x: [0, -240, -140, 0],
                         }}
                         transition={{
-                            duration: 4,
+                            duration: 12,
                             delay: 0.2,
                             repeat: Infinity
                         }}
 
                         style={{
-                            height: "48px",
-                            width: "48px",
+                            height: "52px",
+                            width: "52px",
                             // border: "1px solid white",
                             position: 'relative',
                             left: "80%"
                         }}
                     >
 
-                        <SvgIcon sx={{ fontSize: "42px" }}>
+                        <SvgIcon sx={{ fontSize: "52px", cursor: "grab" }}>
                             <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                                 width="48" height="48"
                                 viewBox="0 2 100 100">
