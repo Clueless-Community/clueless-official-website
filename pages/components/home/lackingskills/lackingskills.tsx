@@ -5,13 +5,17 @@ const LackingSkills = () => {
     <main style={{ backgroundColor: '#1b1b1b', color: 'white' }}>
       <div>
         <div className="md:w-2/5 p-5">
-          <h1 className="text-5xl text-[#72cf7b] pb-1">Lacking skills?</h1>
-          <h1 className="text-5xl pb-10 space-x-1 ">We got you covered.</h1>
-          <h4 className="pb-10 text-md">
+          <h1 className="text-[3rem] leading-4 text-[#72cf7b] pt-10">
+            Lacking skills?
+          </h1>
+          <h1 className="text-[2.8rem] pb-10 space-x-1 ">
+            We got you covered.
+          </h1>
+          <h4 className="pb-10 text-lg text-gray-300">
             built with the vision to encourage open-source enthusiasts built
             with the vision to encourage open-source enthusiasts
           </h4>
-          <button className="bg-[#72cf7b] p-2 rounded-md">
+          <button className="bg-[#72cf7b] text-black font-bold p-2 rounded-md">
             Explore resource hub
           </button>
         </div>
