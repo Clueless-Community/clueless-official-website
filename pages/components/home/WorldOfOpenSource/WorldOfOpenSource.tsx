@@ -9,8 +9,10 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 const WorldOfOpenSource: React.FC = () => {
     const constraintsRef = useRef(null);
     const [size, setSize] = useState({h: 0, w:0});
+    const [isMobile, setIsMobile] = useState(false)
     
     useEffect(() => {
+        if(window.screen.width < 600) {setIsMobile(true)}
         const w = document.getElementById('motion-area')?.offsetWidth;
         const h = document.getElementById('motion-area')?.offsetHeight;
         setSize({h: Number(h), w: Number(w)});
@@ -19,20 +21,18 @@ const WorldOfOpenSource: React.FC = () => {
     return (
         <>
             <Container maxWidth="lg" sx={{
-                width: "80%",
-                height: "320px",
+                width: isMobile ? "100%" : "80%",
+                height: isMobile ? "fit-content" : "320px",
                 backgroundColor: "transparent",
                 display: "flex",
+                flexDirection: isMobile ? 'column-reverse' : 'row',
                 justifyContent: "center",
                 alignItems: "center",
-                borderRadius: "22px",
-                marginTop: "10rem",
-                marginX: "auto",
-                gap: "2px",
+                marginTop: isMobile ? "2rem" : "10rem",
             }}>
 
                 <Box sx={{
-                    width: "50%",
+                    width: isMobile ? "100%" : "50%",
                     padding: "4rem 2rem",
                 }}>
                     <Typography
@@ -72,8 +72,8 @@ const WorldOfOpenSource: React.FC = () => {
                 </Box>
 
                 <motion.div id="motion-area" style={{
-                    width: "40%",
-                    height: "80%",
+                    width: isMobile ? "100%" : "40%",
+                    height: isMobile ? "320px" : "80%",
                     backgroundColor: "rgba(40, 46, 54, 0.97)",
                     borderRadius: "28px",
                     padding: "12px",
