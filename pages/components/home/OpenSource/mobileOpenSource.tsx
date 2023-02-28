@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 function MobileOpensource() {
   return (
@@ -8,7 +8,7 @@ function MobileOpensource() {
           <h1 className="m-5 leading-[3rem] text-[44px]">
             <span className="font-bold  text-[#7EE787]">
               Learn about some biggest
-            </span>{" "}
+            </span>{' '}
             <span className="text-white">Open-source Programs</span>
           </h1>
           <div>
@@ -58,7 +58,8 @@ function MobileOpensource() {
               <div className="h-1 w-[95px] bg-white"></div>
               <div className="h-1 w-[100px] bg-white"></div>
               <div className="h-1 w-[110px] bg-white"></div>
-            </div>s
+            </div>
+            s
           </div>
         </div>
       </div>

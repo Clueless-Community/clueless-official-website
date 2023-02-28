@@ -12,9 +12,9 @@ const Home: NextPage = () => {
       <Head>
         <title>ClueLess</title>
       </Head>
-      <Copilot/>
-      <UpcomingEvents />      
-      <OpenSource/>
+      <Copilot />
+      <UpcomingEvents />
+      <OpenSource />
     </>
   );
 };

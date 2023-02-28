@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 function PcOpenSource() {
   return (
@@ -8,7 +8,7 @@ function PcOpenSource() {
           <h1 className="leading-[3rem] text-[40px]">
             <span className="font-bold  text-[#7EE787]">
               Learn about some biggest
-            </span>{" "}
+            </span>{' '}
             <span className="text-white">Open-source Programs</span>
           </h1>
           <button className="bg-[#7EE787] px-[3rem] py-[10px]  rounded-md">

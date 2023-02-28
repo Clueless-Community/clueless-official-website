@@ -1,10 +1,10 @@
 import { useState, useCallback, useEffect } from 'react';
 import PcOpenSource from './pcOpenSource';
-import MobileOpensource from './mobileOpenSource'; 
+import MobileOpensource from './mobileOpenSource';
 const useMediaQuery = (width: number) => {
   const [targetReached, setTargetReached] = useState(false);
 
-  const updateTarget = useCallback((e) => {
+  const updateTarget = useCallback((e: { matches: any }) => {
     if (e.matches) {
       setTargetReached(true);
     } else {
@@ -13,37 +13,33 @@ const useMediaQuery = (width: number) => {
   }, []);
 
   useEffect(() => {
-    const media = window.matchMedia(`(max-width: ${width}px)`)
-    media.addEventListener('change', e => updateTarget(e))
-   if (media.matches) {
-      setTargetReached(true)
+    const media = window.matchMedia(`(max-width: ${width}px)`);
+    media.addEventListener('change', (e) => updateTarget(e));
+    if (media.matches) {
+      setTargetReached(true);
     }
 
-    return () => media.removeEventListener('change', e => updateTarget(e))
-  }, [])
+    return () => media.removeEventListener('change', (e) => updateTarget(e));
+  }, []);
 
   return targetReached;
 };
 
-
-
 const Navbar = () => {
-   const isBreakpoint = useMediaQuery(768)
-   return (
+  const isBreakpoint = useMediaQuery(768);
+  return (
     <div>
-      { isBreakpoint ? (
+      {isBreakpoint ? (
         <div>
           <MobileOpensource />
         </div>
       ) : (
         <div>
-           <PcOpenSource />
+          <PcOpenSource />
         </div>
-   )
-   }
-   </div>
-   );
-}
-
+      )}
+    </div>
+  );
+};
 
 export default Navbar;
