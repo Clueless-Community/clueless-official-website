@@ -9,10 +9,10 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 const WorldOfOpenSource: React.FC = () => {
     const constraintsRef = useRef(null);
     const [size, setSize] = useState({h: 0, w:0});
-    const [isMobile, setIsMobile] = useState(false)
+    const [lessThanLag, setlessThanLag] = useState(false)
     
     useEffect(() => {
-        if(window.screen.width < 600) {setIsMobile(true)}
+        if(window.screen.width <= 920) {setlessThanLag(true)}
         const w = document.getElementById('motion-area')?.offsetWidth;
         const h = document.getElementById('motion-area')?.offsetHeight;
         setSize({h: Number(h), w: Number(w)});
@@ -21,18 +21,18 @@ const WorldOfOpenSource: React.FC = () => {
     return (
         <>
             <Container maxWidth="lg" sx={{
-                width: isMobile ? "100%" : "80%",
-                height: isMobile ? "fit-content" : "320px",
+                width: lessThanLag ? "100%" : "80%",
+                height: lessThanLag ? "fit-content" : "320px",
                 backgroundColor: "transparent",
                 display: "flex",
-                flexDirection: isMobile ? 'column-reverse' : 'row',
+                flexDirection: lessThanLag ? 'column-reverse' : 'row',
                 justifyContent: "center",
                 alignItems: "center",
-                marginTop: isMobile ? "2rem" : "10rem",
+                marginTop: lessThanLag ? "2rem" : "10rem",
             }}>
 
                 <Box sx={{
-                    width: isMobile ? "100%" : "50%",
+                    width: lessThanLag ? "100%" : "50%",
                     padding: "4rem 2rem",
                 }}>
                     <Typography
@@ -72,8 +72,8 @@ const WorldOfOpenSource: React.FC = () => {
                 </Box>
 
                 <motion.div id="motion-area" style={{
-                    width: isMobile ? "100%" : "40%",
-                    height: isMobile ? "320px" : "80%",
+                    width: lessThanLag ? "100%" : "40%",
+                    height: lessThanLag ? "320px" : "80%",
                     backgroundColor: "rgba(40, 46, 54, 0.97)",
                     borderRadius: "28px",
                     padding: "12px",
@@ -90,7 +90,7 @@ const WorldOfOpenSource: React.FC = () => {
                         }}
 
                         animate={{
-                            x: [0, size.w * 0.65, 0],
+                            x: [0, size.w * 0.6, 0],
                             y: [0, size.h * 0.55],
                         }}
 
