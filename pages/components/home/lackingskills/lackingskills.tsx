@@ -4,11 +4,11 @@ const LackingSkills = () => {
   return (
     <main style={{ backgroundColor: '#1b1b1b', color: 'white' }}>
       <div className="pl-10">
-        <div className="md:w-[35%] p-5">
-          <h1 className="text-[3rem] leading-4 text-[#72cf7b] pt-10 pb-1">
+        <div className="lg:w-[35%] p-5">
+          <h1 className="text-[3rem] text-[#72cf7b] pt-10 pb-1 lg:leading-4">
             Lacking skills?
           </h1>
-          <h1 className=" text-[2.5rem] sm:text-[2.8rem] pb-10 space-x-1 ">
+          <h1 className=" text-[2.5rem] sm:text-[2.8rem] pb-3 space-x-1 ">
             We got you covered.
           </h1>
           <h4 className="pb-10 text-lg text-gray-300">
