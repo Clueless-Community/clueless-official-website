@@ -1,4 +1,8 @@
 import React from 'react';
+import Image from 'next/image';
+import GSSOC from '../../../../public/Gssoc.png';
+import MLH from '../../../../public/MLH.png';
+import LFX from '../../../../public/LFX.png';
 
 function PcOpenSource() {
   return (
@@ -22,9 +26,12 @@ function PcOpenSource() {
                 <h3 className="ml-4 text-white h-[4rem] w-[16rem] my-2">
                   LFX Mentorship
                 </h3>
-                <img
-                  className="h-[5rem]"
-                  src="https://s3-alpha-sig.figma.com/img/e07e/292e/cf33fc0069acc75162c1ada73a19afb5?Expires=1677456000&Signature=Dh2u1xYWLqOStBhfuXimN1pSchIbiOp5pWIDYb9GqJ1FtdK7517XvYdFczJQcTm7aLsKd-s89g73TG426kdlthPESLn0mq3NCPhaP209MaPhUK6B6CmBYNgJG1tiR0bnFeHT2pwl8gKubsD~7-HUkv5-4rvN25RIF~x3ad3y7VkG90~uADe0n4Eldw3ynyIYixhwCvMDf133YURE5j8RMtpQEeys4bhkqZGFtoduOGj~E8FV0bfu~V2et9zNwTI6e2-PTbfbh9TwWqCyesvHSFl0CIpHMhCUwhGuIo-i8HqXH8yYVP-LIjqS6cmMFySjL0apLtsiRbamviJRPcZmVw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
+                <Image
+                  src={LFX}
+                  alt="Picture of the LFX"
+                  height={60}
+                  width={160}
+                  className="mr-[1rem]"
                 />
               </div>
               <div className="space-y-3 mx-4">
@@ -41,9 +48,12 @@ function PcOpenSource() {
                 <h3 className="ml-4 text-white h-[4rem] w-[16rem] my-2 mx-4">
                   MLH Fellowship
                 </h3>
-                <img
-                  className="h-[4rem] m-[10px]"
-                  src="https://s3-alpha-sig.figma.com/img/38b8/d974/eeb5461de05772329749aa6d58df9fa4?Expires=1677456000&Signature=LsPaZbQG30YmCIxXvjJLrirhjTZdcMqaq2WAyLvMVrI8Eochzkb18Nhr9hkby3oqNfuMy-E48x-50VflD2CcNpKEhjc9pF~aXRf3gQ-6doiIFcGL78rw4~oNVH1q3W~dpKnu-i7FyuG8noMcbLCG2fm59~4~L2~~FUJB6iT8GoNKdK7X6Kw-J6biUg0OduVsICom-vP-yGX4YR6P07DMKXhGoDJqHvCWfejAIxPhRcaR441uTxjJvLA0MmonqCrpH~mMP~c2vabE-O--oHvE7LNQUAzOa1DijFwAmksTeiV6MLIVudTuxqvmAK-FioIaKLySZQcaj8ZmoYSNWdbYTw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
+                <Image
+                  src={MLH}
+                  alt="MLH"
+                  className="mr-[2.5rem] mt-[1rem]"
+                  height={25}
+                  width={120}
                 />
               </div>
               <div className="space-y-3 mx-4">
@@ -60,9 +70,10 @@ function PcOpenSource() {
                 <h3 className="ml-4 text-white h-[4rem] w-[45rem] my-1">
                   Google Summer Of Code
                 </h3>
-                <img
+                <Image
+                  src={GSSOC}
+                  alt="GSSOC"
                   className="h-[5rem] left-[10rem]"
-                  src="https://s3-alpha-sig.figma.com/img/89c1/dab1/f0ca5dbca20d3a525ee8a5462a22c75c?Expires=1677456000&Signature=L2zh-U-pufE~49nVlMkNLBIuVcLW0JRD8~In~zbTBZyBH5s90SFK8nGJLrNSDHBKH2rvoCdXG4M~8YBbHRl0G3~yHRpoU03J4PTU-Wxp6nGZ~KWUGptgnS8kntl4qzt-Qgg-M~W30nZrgRqoVScOX04~X9ZsgpaT-PmG7G34jECp48~BoGweFJhHNOqpmj3~Lr91Kx8yCdlgGZYYy608xmcHz0sZ5FHjBh~CrJzhsik7C0zkSaosNcwABUYwwQNSToEWYtSZoizPJ1taOdrpu6zVgdbNcEyq4NfPKRnS8PQx0n4dfGwvqJxOudrH4URIKUGEeLZGb7YAj3PI8V-cMQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
                 />
               </div>
               <div className="space-y-3 mx-4">
