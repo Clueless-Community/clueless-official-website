@@ -7,7 +7,7 @@ import LFX from '../../../../public/LFX.png';
 function MobileOpensource() {
   return (
     <>
-      <div className="bg-black grid  grid-rows-2">
+      <div className="bg-[#181f19] grid  grid-rows-2">
         <div className="grid  grid-rows-2 gap-4 ml-3">
           <h1 className="m-5 leading-[3rem] text-[44px]">
             <span className="font-bold  text-[#7EE787]">
@@ -22,8 +22,8 @@ function MobileOpensource() {
           </div>
         </div>
         {/* Card Section */}
-        <div className="grid grid-cols-3 gap-2 m-2 mx-[3rem] items-center">
-          <div className="bg-[#282E36] border-[1px] border-white rounded-[25px] w-[140px] h-[300px] absolute z-10 rotate-[-5deg] ml-2">
+        <div className="grid grid-cols-3 gap-4 mt-2 place-items-center">
+          <div className="bg-[#282E36] border-[1px] border-white rounded-[25px] w-[129px] h-[246px] absolute z-10 rotate-[-4deg] mr-[240px]">
             <Image
               src={GSSOC}
               alt="Picture of the Gssoc"
@@ -31,13 +31,13 @@ function MobileOpensource() {
             />
             <h1 className="text-white text-center ">Google Summer Of Code</h1>
             <div className="space-y-3 m-[1rem]">
-              <div className="h-1 w-[110px] bg-white"></div>
-              <div className="h-1 w-[95px] bg-white"></div>
-              <div className="h-1 w-[100px] bg-white"></div>
-              <div className="h-1 w-[110px] bg-white"></div>
+              <div className="h-1 w-[87.3px] bg-white"></div>
+              <div className="h-1 w-[71.32px] bg-white"></div>
+              <div className="h-1 w-[81.77px] bg-white"></div>
+              <div className="h-1 w-[87.3px] bg-white"></div>
             </div>
           </div>
-          <div className="bg-[#282E36] border-[1px] border-white rounded-[25px] w-[140px] h-[300px] absolute ml-[7rem] z-20 mb-[3rem]">
+          <div className="bg-[#282E36] border-[1px] border-white rounded-[25px] w-[129px] h-[246px]  absolute  z-20 mb-[3rem]">
             <Image
               src={MLH}
               alt="Picture of the MLH"
@@ -46,13 +46,13 @@ function MobileOpensource() {
             />
             <h1 className="text-white text-center">MLH Fellowship</h1>
             <div className="space-y-3 m-[1rem]">
-              <div className="h-1 w-[110px] bg-white"></div>
-              <div className="h-1 w-[95px] bg-white"></div>
-              <div className="h-1 w-[100px] bg-white"></div>
-              <div className="h-1 w-[110px] bg-white"></div>
+              <div className="h-1 w-[87.3px] bg-white"></div>
+              <div className="h-1 w-[71.32px] bg-white"></div>
+              <div className="h-1 w-[81.77px] bg-white"></div>
+              <div className="h-1 w-[87.3px] bg-white"></div>
             </div>
           </div>
-          <div className="bg-[#282E36] border-[1px] border-white rounded-[25px] w-[140px] h-[300px] absolute ml-[14rem] z-10 rotate-[6.55deg]">
+          <div className="bg-[#282E36] border-[1px] border-white rounded-[25px] w-[129px] h-[246px] absolute z-10 rotate-[4deg] ml-[240px]">
             <Image
               src={LFX}
               alt="Picture of the LFX"
@@ -63,10 +63,10 @@ function MobileOpensource() {
               LFX Mentorship
             </h1>
             <div className="space-y-3 m-[1rem]">
-              <div className="h-1 w-[110px] bg-white"></div>
-              <div className="h-1 w-[95px] bg-white"></div>
-              <div className="h-1 w-[100px] bg-white"></div>
-              <div className="h-1 w-[110px] bg-white"></div>
+              <div className="h-1 w-[87.3px] bg-white"></div>
+              <div className="h-1 w-[71.32px] bg-white"></div>
+              <div className="h-1 w-[81.77px] bg-white"></div>
+              <div className="h-1 w-[87.3px] bg-white"></div>
             </div>
           </div>
         </div>
