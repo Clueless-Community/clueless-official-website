@@ -1,7 +1,6 @@
 import React from 'react';
 import { TfiGithub } from 'react-icons/tfi';
 import { motion } from 'framer-motion';
-import Typed from 'react-typed';
 
 const Py = () => {
   return (
