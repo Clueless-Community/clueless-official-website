@@ -20,6 +20,7 @@ function PcOpenSource() {
           </button>
         </div>
         <div className="m-4  h-[600px] text-[30px] relative ml-10 lg:ml-6">
+          <div className="splash"></div>
           <div className="absolute z-7">
             <div className="bg-[#282E36] rounded-[4rem] h-[200px] space-y-6  w-[28rem] border border-white lg:w-[35rem]">
               <div className="flex mx-4 my-1 justify-between">
