@@ -22,7 +22,7 @@ function PcOpenSource() {
         <div className="m-4  h-[600px] text-[30px] relative ml-10 lg:ml-6">
           <div className="splash"></div>
           <div className="absolute z-7">
-            <div className="bg-[#282E36] rounded-[4rem] h-[200px] space-y-6  w-[28rem] border border-white lg:w-[35rem]">
+            <div className="bg-[#282E36] rounded-[46px] h-[200px] space-y-6  w-[28rem] border border-white lg:w-[35rem]">
               <div className="flex mx-4 my-1 justify-between">
                 <h3 className="ml-4 text-white h-[4rem] w-[16rem] my-2">
                   LFX Mentorship
@@ -30,8 +30,8 @@ function PcOpenSource() {
                 <Image
                   src={LFX}
                   alt="Picture of the LFX"
-                  height={60}
-                  width={160}
+                  height={59.6}
+                  width={153.5}
                   className="mr-[1rem]"
                 />
               </div>
@@ -44,7 +44,7 @@ function PcOpenSource() {
             </div>
           </div>
           <div className="absolute -left-10 my-[6rem] z-8">
-            <div className="bg-[#272D36] rounded-[4rem] h-[200px] space-y-6 right-15 w-[30rem] border border-white mr-4 lg:w-[35rem]">
+            <div className="bg-[#272D36] rounded-[46px] h-[200px] space-y-6 right-15 w-[30rem] border border-white mr-4 lg:w-[35rem]">
               <div className="flex mx-4 my-1 justify-between">
                 <h3 className="ml-4 text-white h-[4rem] w-[16rem] my-2 mx-4">
                   MLH Fellowship
@@ -53,8 +53,8 @@ function PcOpenSource() {
                   src={MLH}
                   alt="MLH"
                   className="mr-[2.5rem] mt-[1rem]"
-                  height={10}
-                  width={120}
+                  height={50.8}
+                  width={119.3}
                 />
               </div>
               <div className="space-y-3 mx-4">
@@ -66,15 +66,17 @@ function PcOpenSource() {
             </div>
           </div>
           <div className="absolute -left-20 my-[12rem] z-10">
-            <div className="bg-[#282E36F7] rounded-[4rem] h-[200px] space-y-6 right-20 w-[30rem] border border-white mr-4 lg:w-[35rem]">
+            <div className="bg-[#282E36F7] rounded-[46px] h-[200px] space-y-6 right-20 w-[30rem] border border-white mr-4 lg:w-[35rem]">
               <div className="flex mx-4 justify-between">
-                <h3 className="ml-4 text-white h-[4rem] w-[45rem] my-1">
+                <h3 className="ml-4 text-white h-[4rem] w-[30rem] my-1">
                   Google Summer Of Code
                 </h3>
                 <Image
                   src={GSSOC}
                   alt="GSSOC"
                   className="h-[5rem] left-[10rem]"
+                  height={86.94}
+                  width={261.5}
                 />
               </div>
               <div className="space-y-3 mx-4">
