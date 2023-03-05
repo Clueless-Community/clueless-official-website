@@ -34,7 +34,7 @@ const HomeMain = () => {
 
   return (
     <>
-      <Head></Head>
+      <Head>{}</Head>
       {showButton && (
         <div
           id="return_top"
