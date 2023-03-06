@@ -19,6 +19,7 @@ module.exports = {
       },
       fontFamily: {
         dmSans: "'DM Sans', sans-serif;",
+        ibmSans: 'IBM Plex Sans',
       },
     },
   },
