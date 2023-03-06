@@ -3,7 +3,7 @@ import React from 'react';
 function privacy_policy() {
   return (
     <>
-      <div className="bg-white text-black h-max font-ibmSans px-64 py-4 overflow-x-hidden">
+      <div className="bg-white text-black h-max font-ibmSans px-4 py-4 overflow-x-hidden lg:px-32 md:px-16 sm:px-8">
         <p className="font-medium text-5xl underline underline-offset-4 mb-4">
           Privacy Policy
         </p>
