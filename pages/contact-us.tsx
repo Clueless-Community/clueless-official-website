@@ -8,7 +8,7 @@ function contact_us() {
       <Head>
         <title>ClueLess</title>
       </Head>
-      <div className="flex flex-wrap justify-center items-center bg-white h-full w-screen px-16 py-8  gap-32 max-[1280px]:gap-8">
+      <div className="flex flex-wrap justify-center items-center bg-white h-full w-screen px-16 py-16  gap-32 max-[1280px]:gap-8">
         <div className="pt-8 pb-4 px-16 bg-zinc-100 w-1/3 rounded-lg shadow-2xl h-[90%] min-w-[350px] max-[1280px]:h-max">
           <p className="font-medium leading-10 text-4xl text-center mb-4">
             Contact Us
