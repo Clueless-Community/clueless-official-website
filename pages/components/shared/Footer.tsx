@@ -99,7 +99,7 @@ const Footer: React.FC = () => {
           <h3 className=" font-nunito font-semibold text-xl mb-8 sm:mt-12 lg:mt-0 text-[#7EE787]">
             Contact & Help
           </h3>
-          <Link legacyBehavior href="/contact-us">
+          <Link legacyBehavior href="/contact_us">
             <a className="my-3 hover:text-skin-main transition-all">
               Contact Us
             </a>

@@ -4,6 +4,7 @@ import Head from 'next/head';
 import UpcomingEvents from './components/home/events/UpcomingEvents';
 import WorldOfOpenSource from './components/home/WorldOfOpenSource/WorldOfOpenSource';
 import Footer from './components/shared/Footer';
+import Copilot from './components/home/Copilot/Copilot';
 
 const Home: NextPage = () => {
   return (
@@ -11,9 +12,9 @@ const Home: NextPage = () => {
       <Head>
         <title>ClueLess</title>
       </Head>
-      {/* <Copilot /> */}
+      <Copilot />
       <WorldOfOpenSource />
-      {/* <UpcomingEvents /> */}
+      <UpcomingEvents />
       <Footer />
     </>
   );
