@@ -1,7 +1,7 @@
 <!-- # What is Clueless? ![hippo](https://media.tenor.com/LA_6z3bAMScAAAAi/ナニ-ベタックマ.gif) -->
 # What is Clueless<img src="https://media.tenor.com/LA_6z3bAMScAAAAi/ナニ-ベタックマ.gif" alt="gif" width="67"/>
 
-Clueless is an open-source student community built in collaboration with [iNeuron]() with the vision to encourage development and promote open-source. We aim to provide the best and curated resources from the Internet, conduct contests, hackathons, and lots more.
+Clueless is an open-source student community built with the vision to encourage development and promote open-source. We aim to provide the best and curated resources from the Internet, conduct contests, hackathons, and lots more.
 
 [![official_website](https://www.linkpicture.com/q/cluelessHomepage.png)](https://www.clueless.tech/)
 
