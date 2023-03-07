@@ -229,7 +229,7 @@ const WhatIsClueless: React.FC = () => {
       <Container
         maxWidth="lg"
         sx={{
-          width: '95%',
+          width: isMobile ? '92.5%' : '95%',
           display: 'flex',
           flexDirection: isMobile ? 'column' : 'row',
           justifyContent: 'center',
@@ -251,18 +251,18 @@ const WhatIsClueless: React.FC = () => {
             variant="h2"
             sx={{
               fontWeight: '500',
-              fontSize: isMobile ? '2.2rem' : '2.6rem',
+              fontSize: isMobile ? '2rem' : '2.6rem',
               color: 'lightgreen',
               marginBottom: '1rem',
             }}
           >
-            ClueLess is a student community
+            Clueless is a student community
           </Typography>
           <Typography
             variant="h3"
             sx={{
               fontWeight: '300',
-              fontSize: '1.4rem',
+              fontSize: isMobile ? '1.2rem' : '1.4rem',
               lineHeight: '1.8rem',
               color: 'white',
             }}
