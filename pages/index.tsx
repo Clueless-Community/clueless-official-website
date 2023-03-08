@@ -2,10 +2,9 @@ import React from 'react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import UpcomingEvents from './components/home/events/UpcomingEvents';
-import WorldOfOpenSource from './components/home/WorldOfOpenSource/WorldOfOpenSource';
-import ExploreProjects from './components/home/ExploreProjects/ExploreProjects';
-import Footer from './components/shared/Footer';
-import WhatIsClueless from './components/home/WhatIsClueless/WhatIsClueless';
+import ReactTooltip from 'react-tooltip';
+import LackingSkills from './components/home/lackingskills/lackingskills';
+import Copilot from './components/home/Copilot/Copilot';
 
 const Home: NextPage = () => {
   return (
@@ -13,11 +12,8 @@ const Home: NextPage = () => {
       <Head>
         <title>ClueLess</title>
       </Head>
-      {/* <Copilot /> */}
-      <ExploreProjects />
-      {/* <WorldOfOpenSource /> */}
-      {/* <UpcomingEvents /> */}
-      <Footer />
+      <LackingSkills />
+      <UpcomingEvents />
     </>
   );
 };
