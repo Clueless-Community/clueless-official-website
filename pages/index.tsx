@@ -4,6 +4,7 @@ import Head from 'next/head';
 import UpcomingEvents from './components/home/events/UpcomingEvents';
 import ReactTooltip from 'react-tooltip';
 import OpenSource from './components/home/OpenSource/mainOpenSource';
+import LackingSkills from './components/home/lackingskills/lackingskills';
 import Copilot from './components/home/Copilot/Copilot';
 
 const Home: NextPage = () => {
@@ -12,7 +13,7 @@ const Home: NextPage = () => {
       <Head>
         <title>ClueLess</title>
       </Head>
-      <Copilot />
+      <LackingSkills />
       <UpcomingEvents />
       <OpenSource />
     </>
