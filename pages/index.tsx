@@ -4,11 +4,15 @@ import Head from 'next/head';
 import UpcomingEvents from './components/home/events/UpcomingEvents';
 import WorldOfOpenSource from './components/home/WorldOfOpenSource/WorldOfOpenSource';
 import Footer from './components/shared/Footer';
-import Copilot from './components/home/Copilot/Copilot';
-import { createMuiTheme, ThemeProvider } from '@mui/material';
+import { createTheme, ThemeProvider } from '@mui/material';
+import WhatIsClueless from './components/home/WhatIsClueless/WhatIsClueless';
+import TutorialHell from './components/home/Tutorial Hell/tutorial_hell';
+import ExploreProjects from './components/home/ExploreProjects/ExploreProjects';
+import OpenSourcePrograms from './components/home/Open-Source Programs/mainOpenSource';
+import LackingSkills from './components/home/lackingskills/lackingskills';
 
 const Home: NextPage = () => {
-  const theme = createMuiTheme({
+  const theme = createTheme({
     typography: {
       fontFamily: [
         'DM Sans',
@@ -21,8 +25,12 @@ const Home: NextPage = () => {
       <Head>
         <title>ClueLess</title>
       </Head>
-      <Copilot />
+      <WhatIsClueless />
       <WorldOfOpenSource />
+      <TutorialHell />
+      <ExploreProjects />
+      <OpenSourcePrograms />
+      <LackingSkills />
       <UpcomingEvents />
       <Footer />
     </ThemeProvider>

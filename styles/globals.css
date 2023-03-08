@@ -35,3 +35,10 @@ body {
     border-color: transparent;
   }
 }
+.splash {
+  position: absolute;
+  width: 234px;
+  height: 234px;
+  background: rgba(126, 231, 135, 0.54);
+  filter: blur(182px);
+}

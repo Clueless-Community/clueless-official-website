@@ -9,7 +9,7 @@ import Py from './py';
 import Js from './js';
 import Go from './go';
 
-const Copilot = () => {
+const TutorialHell = () => {
   const [active1, setActive1] = useState(true);
   const [active2, setActive2] = useState(false);
   const [active3, setActive3] = useState(false);
@@ -75,14 +75,12 @@ const Copilot = () => {
           <div className="h-[50px] flex flex-row bg-[#262227] rounded-t-[31px]">
             <button
               onClick={ActivateButton1}
-              className={`flex flex-row rounded-tr-[10px] ${
-                active1 === true ? 'bg-black' : 'bg-[#262227]'
-              }`}
+              className={`flex flex-row rounded-tr-[10px] ${active1 === true ? 'bg-black' : 'bg-[#262227]'
+                }`}
             >
               <FaPython
-                className={` ml-[10px] mt-[17px] ${
-                  active1 === true ? 'text-white' : 'text-[#b6b5b5]'
-                }`}
+                className={` ml-[10px] mt-[17px] ${active1 === true ? 'text-white' : 'text-[#b6b5b5]'
+                  }`}
               />
               <h1 className="text-[#b6b5b5] ml-[5px] mt-[12px] mr-[10px]">
                 draw.py
@@ -90,14 +88,12 @@ const Copilot = () => {
             </button>
             <button
               onClick={ActivateButton2}
-              className={`flex flex-row ${
-                active2 === true ? 'bg-black' : 'bg-[#262227]'
-              }`}
+              className={`flex flex-row ${active2 === true ? 'bg-black' : 'bg-[#262227]'
+                }`}
             >
               <IoLogoJavascript
-                className={` ml-[10px] mt-[17px] ${
-                  active2 === true ? 'text-white' : 'text-[#b6b5b5]'
-                }`}
+                className={` ml-[10px] mt-[17px] ${active2 === true ? 'text-white' : 'text-[#b6b5b5]'
+                  }`}
               />
               <h1 className="text-[#b6b5b5] ml-[5px] mt-[12px] mr-[10px]">
                 time.js
@@ -105,14 +101,12 @@ const Copilot = () => {
             </button>
             <button
               onClick={ActivateButton3}
-              className={`flex flex-row ${
-                active3 === true ? 'bg-black' : 'bg-[#262227]'
-              }`}
+              className={`flex flex-row ${active3 === true ? 'bg-black' : 'bg-[#262227]'
+                }`}
             >
               <SiGoland
-                className={` ml-[10px] mt-[17px] ${
-                  active3 === true ? 'text-white' : 'text-[#b6b5b5]'
-                }`}
+                className={` ml-[10px] mt-[17px] ${active3 === true ? 'text-white' : 'text-[#b6b5b5]'
+                  }`}
               />
               <h1 className="text-[#b6b5b5] ml-[5px] mt-[12px] mr-[10px]">
                 memo.go
@@ -123,9 +117,8 @@ const Copilot = () => {
           <div className="flex flex-row h-[375px] bg-black">
             <div className="w-[20px] bg-[#262227]">
               <h1
-                className={`text-slate-400 pl-[7px] pb-[5px] ${
-                  active3 === true ? 'mt-[15px]' : 'mt-[30px]'
-                }`}
+                className={`text-slate-400 pl-[7px] pb-[5px] ${active3 === true ? 'mt-[15px]' : 'mt-[30px]'
+                  }`}
               >
                 1
               </h1>
@@ -188,4 +181,4 @@ const Copilot = () => {
   );
 };
 
-export default Copilot;
+export default TutorialHell;
