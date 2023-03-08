@@ -24,46 +24,39 @@ const Navbar: NextComponentType = () => {
             alt=""
             className="sm:w-[65px] w-[30px]"
           />
-          <h1 className="hidden xs:block font-raleway xs:text-3xl text-lg sm:ml-8 ml-2">
+          <h1 className="hidden text-white xs:block font-raleway xs:text-3xl text-lg sm:ml-8 ml-2">
             ClueLess
           </h1>
         </div>
       </Link>
       <div className="hidden lg:block">
         <Link href="/" passHref>
-          <button className="hover:-translate-y-1 hover:ease-in-out hover:scale-105 hover:duration-150 xl:mx-8 mx-3 text-xl transition-all">
+          <button className="text-white hover:text-green-300 hover:-translate-y-1 hover:ease-in-out hover:scale-105 hover:duration-150 xl:mx-8 mx-3 text-xl transition-all">
             Home
           </button>
         </Link>
-
-        {/* <button className="hover:font-semibold hover:underline cursor-pointer xl:mx-8 mx-3 text-xl transition-all">
-          <a href="https://clueless-blogs.hashnode.dev" target="_blank" rel="noreferrer">
-            Blogs
-          </a>
-        </button> */}
-
         <a
-          href="https://clueless-resources.super.site/resources"
+          href="/events"
           target="_blank"
           rel="noreferrer"
         >
-          <button className="hover:-translate-y-1 hover:ease-in-out hover:scale-105 hover:duration-150  xl:mx-4 mx-3 text-xl transition-all">
-            Resources
+          <button className="text-white hover:text-green-300 hover:-translate-y-1 hover:ease-in-out hover:scale-105 hover:duration-150  xl:mx-4 mx-3 text-xl transition-all">
+            Events
           </button>
         </a>
         <Link href="/events" passHref>
-          <button className="hover:-translate-y-1 hover:ease-in-out hover:scale-105 hover:duration-150  xl:mx-4 mx-3 text-xl transition-all">
-            Events
+          <button className="text-white hover:text-green-300 hover:-translate-y-1 hover:ease-in-out hover:scale-105 hover:duration-150  xl:mx-4 mx-3 text-xl transition-all">
+            OpenSource projects
           </button>
         </Link>
-        <Link href="/about-us" passHref>
-          <button className="hover:-translate-y-1 hover:ease-in-out hover:scale-105 hover:duration-150  xl:mx-4 mx-1 text-xl transition-all">
-            About Us
+        <Link href="https://clueless-resources.super.site/resources" passHref>
+          <button className="text-white hover:text-green-300 hover:-translate-y-1 hover:ease-in-out hover:scale-105 hover:duration-150  xl:mx-4 mx-1 text-xl transition-all">
+            Resources
           </button>
         </Link>
       </div>
       <div className="flex items-center">
-        <ModeSelect />
+        {/* <ModeSelect /> */}
         {session.status === "authenticated" && (
           <div className="hidden md:block">
             <NavbarAvatarDropDown
@@ -84,13 +77,14 @@ const Navbar: NextComponentType = () => {
         <div className=" flex items-center lg:hidden">
           {session.status === "unauthenticated" && (
             <Link href="/auth/signin" passHref>
-              <div className="btn-blue text-xs sm:text-lg ">
-                <button>Log In</button>
+              <div className="   text-xs sm:text-lg ">
+                <button className="bg-[#7EE787] rounded  text-black  px-6 py-2">Log In</button>
               </div>
             </Link>
           )}
 
           <NavbarDrawer
+          
             uid={uid as string}
             img={image as string}
             name={name as string}

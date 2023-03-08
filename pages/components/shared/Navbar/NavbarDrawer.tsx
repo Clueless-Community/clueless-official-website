@@ -22,6 +22,7 @@ const Style = makeStyles<WithStylesOptions<DefaultTheme>>({
       borderRadius: "10px 0px 0px 10px",
       width: "100%",
       maxWidth: "290px",
+      background: "rgba(27, 27, 27)",
     },
   },
 });
@@ -54,7 +55,7 @@ const NavbarDrawer: React.FC<Props> = ({ img, name, email, uid }) => {
 
   return (
     <React.Fragment>
-      <div className="lg:hidden relative">
+      <div className="lg:hidden  relative ">
         <Button
           onClick={(): void => {
             SetDrawer(true);
@@ -74,13 +75,13 @@ const NavbarDrawer: React.FC<Props> = ({ img, name, email, uid }) => {
             <Link href="/" passHref>
               <div className="flex items-center cursor-pointer mx-auto">
                 <img src="/ClueLess Logo.png" alt="" className="w-[65px]" />
-                <h1 className=" font-raleway text-3xl ml-8">ClueLess</h1>
+                <h1 className="text-white font-raleway text-3xl ml-8">ClueLess</h1>
               </div>
             </Link>
             <Link href="/" passHref>
               <button
                 onClick={handleClose}
-                className="font-semibold text-xl mt-16"
+                className="font-semibold text-white text-xl mt-16"
               >
                 Home
               </button>
@@ -107,7 +108,7 @@ const NavbarDrawer: React.FC<Props> = ({ img, name, email, uid }) => {
             >
               <button
                 onClick={handleClose}
-                className="font-semibold text-xl mt-5"
+                className="text-white font-semibold text-xl mt-5"
               >
                 Resources
               </button>
@@ -116,7 +117,7 @@ const NavbarDrawer: React.FC<Props> = ({ img, name, email, uid }) => {
             <Link href="/events" passHref>
               <button
                 onClick={handleClose}
-                className="font-semibold text-xl mt-5"
+                className="text-white  font-semibold text-xl mt-5"
               >
                 Events
               </button>
@@ -125,7 +126,7 @@ const NavbarDrawer: React.FC<Props> = ({ img, name, email, uid }) => {
             <Link href="/about-us" passHref>
               <button
                 onClick={handleClose}
-                className="font-semibold text-xl mt-5"
+                className="text-white  font-semibold text-xl mt-5"
               >
                 About Us
               </button>
@@ -136,7 +137,7 @@ const NavbarDrawer: React.FC<Props> = ({ img, name, email, uid }) => {
                 <Link href="/auth/signin" passHref>
                   <button
                     onClick={handleClose}
-                    className="font-semibold text-xl mt-5"
+                    className="text-white  font-semibold text-xl mt-5"
                   >
                     Login
                   </button>

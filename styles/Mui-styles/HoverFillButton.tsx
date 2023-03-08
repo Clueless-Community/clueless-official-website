@@ -4,6 +4,7 @@ import ButtonUnstyled, {
   buttonUnstyledClasses,
 } from '@mui/base/ButtonUnstyled';
 import { styled, Theme } from '@mui/system';
+import { green } from '@mui/material/colors';
 
 const ButtonRoot = React.forwardRef(function ButtonRoot(
   props: React.PropsWithChildren<{}>,
@@ -37,9 +38,9 @@ const CustomButtonRoot = styled(ButtonRoot)(
   ({ theme }: { theme: Theme }) => `
   overflow: visible;
   cursor: pointer;
-  --main-color: ${theme.palette.mode === 'light' ? blue[600] : blue[100]};
-  --hover-color: ${theme.palette.mode === 'light' ? blue[200] : blue[900]};
-  --active-color: ${theme.palette.mode === 'light' ? blue[100] : blue[800]};
+  --main-color: ${theme.palette.mode === 'light' ? green[600] : green[100]};
+  --hover-color: ${theme.palette.mode === 'light' ? green[200] : green[900]};
+  --active-color: ${theme.palette.mode === 'light' ? green[100] : green[800]};
 
   & polygon {
     fill: transparent;
@@ -75,7 +76,7 @@ const CustomButtonRoot = styled(ButtonRoot)(
 
   &:focus,
   &.${buttonUnstyledClasses.focusVisible} {
-    outline: 2px solid ${theme.palette.mode === 'dark' ? blue[400] : blue[200]};
+    outline: 2px solid ${theme.palette.mode === 'dark' ? green[400] : green[200]};
     outline-offset: 2px;
   }
 
