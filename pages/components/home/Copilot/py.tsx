@@ -1,7 +1,7 @@
 import React from 'react';
-import { TfiGithub } from 'react-icons/tfi';
+import { BsGithub } from "react-icons/bs";
 import { motion } from 'framer-motion';
-import Typed from 'react-typed';
+// import Typed from 'react-typed';
 
 const Py = () => {
   return (
@@ -57,7 +57,7 @@ const Py = () => {
           </div>
         </div>
         <div className="rounded-[5px] w-[83px] h-[37px] flex flex-row bg-blue-600">
-          <TfiGithub className="text-white mt-[10px] ml-[5px]" />
+          <BsGithub className="text-white mt-[10px] ml-[5px]" />
           <h1 className="text-white pt-[7px] ml-[2px]">Copilot</h1>
         </div>
       </motion.div>
