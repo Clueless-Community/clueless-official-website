@@ -5,6 +5,7 @@ import UpcomingEvents from './components/home/events/UpcomingEvents';
 import WorldOfOpenSource from './components/home/WorldOfOpenSource/WorldOfOpenSource';
 import ExploreProjects from './components/home/ExploreProjects/ExploreProjects';
 import Footer from './components/shared/Footer';
+import WhatIsClueless from './components/home/WhatIsClueless/WhatIsClueless';
 
 const Home: NextPage = () => {
   return (
