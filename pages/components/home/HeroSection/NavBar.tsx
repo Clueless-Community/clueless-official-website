@@ -64,7 +64,7 @@ const NavBar: React.FC = () => {
                             item.current
                               ? 'text-[#7EE787]'
                               : 'text-gray-300 hover:text-[#7EE787]',
-                            'rounded-md text-md font-medium'
+                            'rounded-md text-lg font-medium'
                           )}
                           aria-current={item.current ? 'page' : undefined}
                         >
@@ -73,12 +73,11 @@ const NavBar: React.FC = () => {
                       ))}
                     </div>
                     {/* Profile Image */}
-                    <div className="absolute inset-y-0 right-0 flex items-center pr-2 md:static md:inset-auto md:ml-6 md:pr-0">
-                      <button className="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-                        <span className="sr-only">Open user menu</span>
+                    <div className="absolute inset-y-0 right-0 flex items-center pl-5 md:static md:inset-auto md:ml-6 md:pr-0">
+                      <button className="flex rounded-full text-sm hover:outline-none hover:ring-2 hover:ring-[#7EE787] hover:ring-offset-2 hover:ring-offset-gray-800">
                         <img
-                          className="h-8 w-8 rounded-full"
-                          src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                          className="w-10 rounded-full"
+                          src="https://pbs.twimg.com/profile_images/1626657457446752257/d4kJWBeS_400x400.jpg"
                           alt=""
                         />
                       </button>
