@@ -52,10 +52,11 @@ const HeroSection: React.FC = () => {
     <div className="w-[100vw] flex flex-col">
       <NavBar />
       <Container
-        className="justify-center sm:space-x-20 p-0"
-        maxWidth="xl"
+        className="p-0 border"
+        maxWidth="lg"
         sx={{
           display: 'flex',
+          justifyContent: isMobile ? 'center' : 'space-between',
         }}
       >
         <Box className="flex flex-col justify-center pl-5 sm:pl-10">
