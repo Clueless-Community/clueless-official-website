@@ -23,22 +23,21 @@ const HeroSection: React.FC = () => {
       height: 1000,
       phi: 0,
       theta: 0,
-      dark: 0,
+      dark: 1,
       diffuse: 1.2,
       scale: 1,
       mapSamples: 16000,
       mapBrightness: 6,
-      baseColor: [0.3, 0.3, 0.3],
-      markerColor: [1, 0.5, 1],
+      baseColor: [1, 1, 1],
+      markerColor: [0.1, 0.3, 0.1],
       glowColor: [1, 1, 1],
       offset: [0, 0],
       markers: [
-        { location: [37.7595, -122.4367], size: 0.03 },
+        { location: [37.7595, -122.4367], size: 0.01 },
         { location: [40.7128, -74.006], size: 0.1 },
+        { location: [26.732311, 88.410286], size: 0.2 },
       ],
       onRender: (state) => {
-        // Called on every animation frame.
-        // `state` will be an empty object, return updated params.
         state.phi = phi;
         phi += 0.01;
       },
@@ -52,16 +51,18 @@ const HeroSection: React.FC = () => {
   return (
     <>
       <NavBar />
-      <Container className="flex justify-between" maxWidth="lg">
-        <Box>
-          <h1 className="text-white text-[3rem] font-black leading-none">
+      <Container className="flex justify-between p-0" maxWidth="lg">
+        <Box className="flex flex-col justify-center pl-5 sm:pl-10">
+          <h1 className="text-white text-[3rem] sm:text-[5rem] font-black leading-none">
             Clueless <br />
             Community.
           </h1>
 
           <div className="relative top-6 left-8">
-            <h2 className="text-white text-[1.6rem]">Learn, Grow.</h2>
-            <div className="flex space-x-3">
+            <h2 className="text-white text-[1.6rem] sm:text-[2rem] ">
+              Learn, Grow.
+            </h2>
+            <div className="flex space-x-3 mt-4">
               <button className="hidden md:block bg-[#7EE787] px-4 py-1.5 rounded-lg">
                 <div className="flex items-center space-x-2">
                   <svg
@@ -85,7 +86,7 @@ const HeroSection: React.FC = () => {
             </div>
           </div>
         </Box>
-        <Box>
+        <Box className="">
           <canvas
             className=""
             ref={globeRefs as RefObject<HTMLCanvasElement>}
