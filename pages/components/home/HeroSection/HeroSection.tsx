@@ -49,9 +49,15 @@ const HeroSection: React.FC = () => {
   }, []);
 
   return (
-    <>
+    <div className="w-[100vw] flex flex-col">
       <NavBar />
-      <Container className="flex justify-between p-0" maxWidth="lg">
+      <Container
+        className="justify-center sm:space-x-20 p-0"
+        maxWidth="xl"
+        sx={{
+          display: 'flex',
+        }}
+      >
         <Box className="flex flex-col justify-center pl-5 sm:pl-10">
           <h1 className="text-white text-[3rem] sm:text-[5rem] font-black leading-none">
             Clueless <br />
@@ -86,7 +92,17 @@ const HeroSection: React.FC = () => {
             </div>
           </div>
         </Box>
-        <Box className="">
+        <Box
+          className="flex"
+          sx={
+            isMobile
+              ? {
+                  position: 'relative',
+                  right: '-20px',
+                }
+              : {}
+          }
+        >
           <canvas
             className=""
             ref={globeRefs as RefObject<HTMLCanvasElement>}
@@ -99,7 +115,7 @@ const HeroSection: React.FC = () => {
           />
         </Box>
       </Container>
-    </>
+    </div>
   );
 };
 
