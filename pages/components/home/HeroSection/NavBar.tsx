@@ -1,0 +1,136 @@
+/* eslint-disable @next/next/no-img-element */
+import React, { useEffect, useRef, useState } from 'react';
+import { Button, Container, Typography } from '@mui/material';
+import { Box } from '@mui/system';
+import Link from 'next/link';
+import { Fragment } from 'react';
+import { Disclosure, Menu, Transition } from '@headlessui/react';
+import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
+
+const NavBar: React.FC = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    if (window.screen.width < 600) {
+      setIsMobile(true);
+    }
+  }, []);
+
+  const navigation = [
+    { name: 'Home', href: '#', current: true },
+    { name: 'Events', href: '#', current: false },
+    { name: 'Open Source Projects', href: '#', current: false },
+    { name: 'Resources', href: '#', current: false },
+  ];
+
+  function classNames(...classes: string[]) {
+    return classes.filter(Boolean).join(' ');
+  }
+
+  return (
+    <>
+      <Container className="mt-1 text-white" maxWidth="lg">
+        <Disclosure as="nav" className="">
+          {({ open }) => (
+            <>
+              <div className="relative flex h-16">
+                {/* Menu Icon for Mobile */}
+                <div className="absolute inset-y-0 right-0 flex items-center sm:hidden">
+                  <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                    {open ? (
+                      <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
+                    ) : (
+                      <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
+                    )}
+                  </Disclosure.Button>
+                </div>
+                <div className="w-[100%] flex justify-between">
+                  {/* Hero Logo */}
+                  <div className="flex items-center cursor-pointer">
+                    {ClueLogo('white')}
+                    <div className="mt-1">
+                      <h1 className="font-raleway text-3xl ml-1">Clueless</h1>
+                    </div>
+                  </div>
+                  {/* Rest Part */}
+                  <div className="hidden md:flex items-center">
+                    {/* Tabs */}
+                    <div className="flex space-x-8">
+                      {navigation.map((item) => (
+                        <a
+                          key={item.name}
+                          href={item.href}
+                          className={classNames(
+                            item.current
+                              ? 'text-[#7EE787]'
+                              : 'text-gray-300 hover:text-[#7EE787]',
+                            'rounded-md text-md font-medium'
+                          )}
+                          aria-current={item.current ? 'page' : undefined}
+                        >
+                          {item.name}
+                        </a>
+                      ))}
+                    </div>
+                    {/* Profile Image */}
+                    <div className="absolute inset-y-0 right-0 flex items-center pr-2 md:static md:inset-auto md:ml-6 md:pr-0">
+                      <button className="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                        <span className="sr-only">Open user menu</span>
+                        <img
+                          className="h-8 w-8 rounded-full"
+                          src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                          alt=""
+                        />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <Disclosure.Panel className="sm:hidden">
+                <div className="space-y-1 px-2 pt-2 pb-3">
+                  {navigation.map((item) => (
+                    <Disclosure.Button
+                      key={item.name}
+                      as="a"
+                      href={item.href}
+                      className={classNames(
+                        item.current
+                          ? 'bg-gray-900 text-white'
+                          : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                        'block rounded-md px-3 py-2 text-base font-medium'
+                      )}
+                      aria-current={item.current ? 'page' : undefined}
+                    >
+                      {item.name}
+                    </Disclosure.Button>
+                  ))}
+                </div>
+              </Disclosure.Panel>
+            </>
+          )}
+        </Disclosure>
+      </Container>
+    </>
+  );
+};
+
+const ClueLogo = (color: string) => {
+  return (
+    <div style={{ margin: '2px' }}>
+      <svg
+        width="48"
+        viewBox="0 0 65 60"
+        fill={color}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M37.8241 54.2932C37.8241 73.529 60.7067 25.0978 45.0366 0C30.6352 22.7929 65 75.0657 65 55.8298C65 36.594 -16.3085 19.4636 2.95127 19.4636C22.211 19.4636 37.8241 35.0573 37.8241 54.2932Z"
+          fill={color}
+        />
+      </svg>
+    </div>
+  );
+};
+
+export default NavBar;
