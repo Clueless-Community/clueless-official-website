@@ -23,7 +23,8 @@ const WorldOfOpenSource: React.FC = () => {
   return (
     <>
       <Container
-        maxWidth='xl'
+        className="mt-24"
+        maxWidth="xl"
         sx={{
           width: lessThanLag ? '100%' : '80%',
           height: lessThanLag ? 'fit-content' : '320px',

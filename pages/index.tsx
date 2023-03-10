@@ -14,14 +14,11 @@ import LackingSkills from './components/home/lackingskills/lackingskills';
 const Home: NextPage = () => {
   const theme = createTheme({
     typography: {
-      fontFamily: [
-        'DM Sans',
-        'sans-serif'
-      ].join(','),
-    }
+      fontFamily: ['DM Sans', 'sans-serif'].join(','),
+    },
   });
   return (
-    <ThemeProvider theme={theme} >
+    <ThemeProvider theme={theme}>
       <Head>
         <title>ClueLess</title>
       </Head>
