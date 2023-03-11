@@ -1,5 +1,4 @@
 import React from 'react';
-import UpcomingEvents from './components/home/Events/UpcomingEvents';
 import WorldOfOpenSource from './components/home/WorldOfOpenSource/WorldOfOpenSource';
 import HeroSection from './components/home/HeroSection/HeroSection';
 import WhatIsClueless from './components/home/WhatIsClueless/WhatIsClueless';
@@ -10,6 +9,7 @@ import LackingSkills from './components/home/lackingskills/lackingskills';
 import OpenSourceProfile from './components/home/OpenSourceProfile/OpenSourceProfile';
 import Head from 'next/head';
 import { NextPage } from 'next';
+import UpcomingEvents from './components/home/Events/UpcomingEvents';
 
 const Home: NextPage = () => {
   return (
