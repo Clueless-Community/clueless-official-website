@@ -52,7 +52,7 @@ const HeroSection: React.FC = () => {
     <div className="w-[100vw] flex flex-col">
       <NavBar />
       <Container
-        className="p-0 border"
+        className="p-0"
         maxWidth="lg"
         sx={{
           display: 'flex',
