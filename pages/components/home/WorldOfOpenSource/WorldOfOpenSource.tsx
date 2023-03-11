@@ -23,7 +23,7 @@ const WorldOfOpenSource: React.FC = () => {
   return (
     <>
       <Container
-        className="mt-24"
+        className="flex space-between w-full"
         maxWidth="xl"
         sx={{
           width: lessThanLag ? '100%' : '80%',
@@ -47,7 +47,7 @@ const WorldOfOpenSource: React.FC = () => {
               fontSize: '2.2rem',
               lineHeight: '2.2rem',
               color: 'lightgreen',
-              marginBottom: '20px'
+              marginBottom: '20px',
             }}
           >
             Jump into the world of Open-source
@@ -59,22 +59,13 @@ const WorldOfOpenSource: React.FC = () => {
               fontWeight: '300',
               fontSize: '1.05rem',
               color: 'white',
-              marginBottom: '20px'
+              marginBottom: '20px',
             }}
           >
             built with the vision to encourage open-source enthusiasts!
           </Typography>
           <Link href={''} passHref>
-            <button
-              className="btn-blue my-2 text-sm flex items-center px-8 py-2 button_animation"
-              style={{
-                animationName: 'moveInLeft',
-                color: 'black',
-                backgroundColor: 'lightgreen',
-              }}
-            >
-              Explore
-            </button>
+            <button className="btn-green">Explore</button>
           </Link>
         </Box>
 
@@ -262,8 +253,8 @@ const WorldOfOpenSource: React.FC = () => {
           </motion.div>
         </motion.div>
       </Container>
-      <div className='flex h-72 ml-[15%]'>
-        <img src="/line2.png" alt="line2"/>
+      <div className="flex h-72 ml-[15%]">
+        <img src="/line2.png" alt="line2" />
       </div>
     </>
   );

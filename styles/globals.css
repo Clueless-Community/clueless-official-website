@@ -2,9 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: 'DM Sans', sans-serif;
-  background-color: #181f19;
+@layer base {
+  * {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background-color: #181f19;
+  }
+
+  :root {
+    --bg: #1b1b1b;
+    --green: #7ee787;
+    --card_bg: #282e36;
+    --btn-hover-green: #1bcd2a;
+  }
+
+  @layer components {
+    .btn-green {
+      @apply cursor-pointer bg-skin-globalGreen text-black rounded px-4 py-2 hover:bg-skin-hover_green transition-all font-semibold font-dmSans active:scale-95;
+    }
+    .btn-outline {
+      @apply cursor-pointer border border-[#7EE787] text-white rounded-lg px-4 py-2 hover:border-[#1bcd2a] transition-all font-semibold font-dmSans active:scale-95;
+    }
+  }
 }
 
 .typewriter {

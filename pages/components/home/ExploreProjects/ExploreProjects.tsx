@@ -21,16 +21,14 @@ function ExploreProjects() {
   ];
 
   return (
-    <div className=" mx-[8%]">
+    <div>
       <div className="w-full relative">
         {/* Heading Part */}
         <div className="flex justify-between gap-2 md:items-center flex-col md:flex-row mb-5">
           <h1 className="md:text-[64px] text-[36px] text-[#7EE787] font-medium">
             Explore Projects to contribute
           </h1>
-          <button className="md:h-12 md:w-52 w-36 h-10 border-2 border-[#7EE787] rounded-[7px] md:text-[20px] text-[15px] text-white">
-            Explore projects
-          </button>
+          <button className="btn-outline">Explore projects</button>
         </div>
 
         {/* Cards */}

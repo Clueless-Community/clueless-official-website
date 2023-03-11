@@ -66,7 +66,7 @@ const TutorialHell = () => {
   };
 
   return (
-    <div className="xl:ml-[8%]">
+    <div>
       <h1 className="text-[#7EE787] xl:text-[55px] font-semibold xl:leading-[70.5px] leading-[30.5px] w-3/5 my-12 text-[36px]">
         Get out of tutorial hell and start contributing{' '}
       </h1>
@@ -184,9 +184,9 @@ const TutorialHell = () => {
           </div>
         </div>
       </div>
-      <div className='flex h-40 m-10'>
-      <img src="/line1.png" alt="line3 "/>
-    </div>
+      <div className="flex h-40 m-10">
+        <img src="/line1.png" alt="line3 " />
+      </div>
     </div>
   );
 };

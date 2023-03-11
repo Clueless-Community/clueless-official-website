@@ -16,9 +16,7 @@ function MobileOpensource() {
             <span className="text-white">Open-source Programs</span>
           </h1>
           <div>
-            <button className="bg-[#7EE787] px-12 py-3 ml-3 rounded-md">
-              Explore
-            </button>
+            <button className="btn-green">Explore</button>
           </div>
         </div>
         {/* Card Section */}

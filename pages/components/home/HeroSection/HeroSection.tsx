@@ -1,6 +1,5 @@
 import React, { RefObject, useEffect, useRef, useState } from 'react';
-import { Button, Container, Typography } from '@mui/material';
-import { Box } from '@mui/system';
+import { Box, Button, Container, Typography } from '@mui/material';
 import NavBar from './NavBar';
 import createGlobe from 'cobe';
 
@@ -49,8 +48,7 @@ const HeroSection: React.FC = () => {
   }, []);
 
   return (
-    <div className="w-[100vw] flex flex-col">
-      <NavBar />
+    <div>
       <Container
         className="p-0"
         maxWidth="lg"
@@ -59,7 +57,7 @@ const HeroSection: React.FC = () => {
           justifyContent: isMobile ? 'center' : 'space-between',
         }}
       >
-        <Box className="flex flex-col justify-center pl-5 sm:pl-10">
+        <Box className="flex flex-col justify-center">
           <h1 className="text-white text-[3rem] sm:text-[5rem] font-black leading-none">
             Clueless <br />
             Community.
@@ -70,7 +68,7 @@ const HeroSection: React.FC = () => {
               Learn, Grow.
             </h2>
             <div className="flex space-x-3 mt-4">
-              <button className="hidden md:block bg-[#7EE787] px-4 py-1.5 rounded-lg">
+              <button className="hidden md:block btn-green">
                 <div className="flex items-center space-x-2">
                   <svg
                     width="18"
@@ -87,9 +85,7 @@ const HeroSection: React.FC = () => {
                   <h1>Join Discord</h1>
                 </div>
               </button>
-              <button className="border border-[#7EE787] text-white rounded-lg px-4 py-1.5">
-                Explore Projects
-              </button>
+              <button className="btn-outline">Explore Projects</button>
             </div>
           </div>
         </Box>

@@ -2,7 +2,7 @@ import React from 'react';
 
 const LackingSkills = () => {
   return (
-    <main className='mx-[8%]'>
+    <main>
       <div className="">
         <div className="lg:w-[40%] p-5 relative">
           <h1 className="text-[3rem] text-[#72cf7b] pt-10 pb-1 lg:leading-4">
@@ -15,17 +15,22 @@ const LackingSkills = () => {
             built with the vision to encourage open-source enthusiasts built
             with the vision to encourage open-source enthusiasts
           </h4>
-          <button className="bg-[#72cf7b] text-black font-bold p-2 rounded-md">
-            Explore resource hub
-          </button>
+          <button className="btn-green">Explore resource hub</button>
         </div>
-        <div className='flex justify-center'>
-
-        <img className='-mt-12 w-full hidden md:block' src="/path.png" alt="" />
-        <img className='-mt-12 w-full md:hidden w-2/3 justify-center flex ' src="/path2.png" alt="" />
+        <div className="flex justify-center">
+          <img
+            className="-mt-12 w-full hidden md:block"
+            src="/path.png"
+            alt=""
+          />
+          <img
+            className="-mt-12 w-full md:hidden md:w-2/3 justify-center flex "
+            src="/path2.png"
+            alt=""
+          />
         </div>
       </div>
-     
+
       {/* destop view svg */}
 
       {/* <div className="hidden lg:block h-[56vh] relative ">

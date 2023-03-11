@@ -19,7 +19,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "pages/components/home/events/UpcomingEvents.tsx"
+    "pages/components/home/Events/UpcomingEvents.tsx"
   ],
   "exclude": ["node_modules"]
 }

@@ -8,13 +8,15 @@ module.exports = {
     extend: {
       textColor: {
         skin: {
-          globalGreen: '#7EE787',
+          globalGreen: 'var(--green)',
         },
       },
       backgroundColor: {
         skin: {
-          cardBg: 'rgba(40, 46, 54, 0.97);',
-          mainBg: '#1B1B1B;',
+          cardBg: 'var(--card_bg)',
+          mainBg: 'var(--bg)',
+          globalGreen: 'var(--green)',
+          hover_green: 'var(--btn-hover-green)',
         },
       },
       fontFamily: {
