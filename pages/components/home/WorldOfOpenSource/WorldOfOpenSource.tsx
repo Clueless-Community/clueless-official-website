@@ -46,6 +46,7 @@ const WorldOfOpenSource: React.FC = () => {
               fontSize: '2.2rem',
               lineHeight: '2.2rem',
               color: 'lightgreen',
+              marginBottom: '20px'
             }}
           >
             Jump into the world of Open-source
@@ -57,6 +58,7 @@ const WorldOfOpenSource: React.FC = () => {
               fontWeight: '300',
               fontSize: '1.05rem',
               color: 'white',
+              marginBottom: '20px'
             }}
           >
             built with the vision to encourage open-source enthusiasts!
@@ -259,6 +261,9 @@ const WorldOfOpenSource: React.FC = () => {
           </motion.div>
         </motion.div>
       </Container>
+      <div className='flex h-72 ml-[15%]'>
+        <img src="/line2.png" alt="line2"/>
+      </div>
     </>
   );
 };

@@ -274,6 +274,9 @@ const WhatIsClueless: React.FC = () => {
         </Box>
         <HeatMapImage />
       </Container>
+      <div className='flex justify-end h-40 mr-72 my-4'>
+        <img src="/line1.png" alt="line1"/>
+      </div>
     </>
   );
 };

@@ -10,6 +10,7 @@ import TutorialHell from './components/home/Tutorial Hell/tutorial_hell';
 import ExploreProjects from './components/home/ExploreProjects/ExploreProjects';
 import OpenSourcePrograms from './components/home/Open-Source Programs/mainOpenSource';
 import LackingSkills from './components/home/lackingskills/lackingskills';
+import OpenSourceProfile from './components/home/OpenSourceProfile/OpenSourceProfile';
 
 const Home: NextPage = () => {
   const theme = createTheme({
@@ -23,13 +24,14 @@ const Home: NextPage = () => {
   return (
     <ThemeProvider theme={theme} >
       <Head>
-        <title>ClueLess</title>
+        <title>ClueLess - Revamp</title>
       </Head>
       <WhatIsClueless />
       <WorldOfOpenSource />
       <TutorialHell />
       <ExploreProjects />
-      <OpenSourcePrograms />
+      <OpenSourceProfile/>
+      {/* <OpenSourcePrograms /> */}
       <LackingSkills />
       <UpcomingEvents />
       <Footer />

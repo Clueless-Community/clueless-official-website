@@ -66,11 +66,11 @@ const TutorialHell = () => {
   };
 
   return (
-    <div className="mt-[150px] xl:ml-[105px] mx-[20px] mb-[400px] xl:mb-[200px] sm:px-[100px] md:px-[150px] lg:px-[200px] xl:px-0">
-      <h1 className="text-[#7EE787] xl:text-[55px] font-semibold xl:leading-[70.5px] leading-[30.5px] my-[55px] text-[36px] xl:mr-[516px]">
+    <div className="xl:ml-[8%]">
+      <h1 className="text-[#7EE787] xl:text-[55px] font-semibold xl:leading-[70.5px] leading-[30.5px] w-3/5 my-12 text-[36px]">
         Get out of tutorial hell and start contributing{' '}
       </h1>
-      <div className="flex xl:flex-row flex-col h-[519px]">
+      <div className="flex xl:flex-row flex-col h-[519px] mx-[1%]">
         <div className="xl:w-[1300px]">
           <div className="h-[50px] flex flex-row bg-[#262227] rounded-t-[31px]">
             <button
@@ -157,7 +157,7 @@ const TutorialHell = () => {
             </button>
           </div>
         </div>
-        <div className="xl:ml-[80px]">
+        <div className="xl:ml-[40px]">
           <div className="xl:h-[227px] xl:mt-[100px] xl:mx-[100px] mt-[50px]">
             <h1 className="text-[22px] mb-[20px] font-medium text-white">
               Built with the vision to encourage open-source enthusiasts!
@@ -177,6 +177,9 @@ const TutorialHell = () => {
           </div>
         </div>
       </div>
+      <div className='flex h-40 m-10'>
+      <img src="/line1.png" alt="line3 "/>
+    </div>
     </div>
   );
 };

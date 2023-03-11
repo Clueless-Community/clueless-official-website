@@ -1,8 +1,9 @@
 import { AppProps } from 'next/dist/shared/lib/router/router';
 import '../styles/globals.css';
-
-function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
-  return <Component {...pageProps} />;
+import PageLayout from './components/PageLayout';
+export default function App({ Component, pageProps }: AppProps) {
+  return (
+    <PageLayout>
+      <Component {...pageProps} />
+    </PageLayout>)
 }
-
-export default MyApp;

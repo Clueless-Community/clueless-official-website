@@ -21,10 +21,10 @@ function ExploreProjects() {
   ];
 
   return (
-    <div className="w-screen bg-[#1b1b1b]">
-      <div className="w-full max-w-[1500px] m-auto min-h-screen px-5 md:px-10 py-2 relative">
+    <div className=" mx-[8%]">
+      <div className="w-full relative">
         {/* Heading Part */}
-        <div className="flex justify-between gap-2 md:items-center flex-col md:flex-row">
+        <div className="flex justify-between gap-2 md:items-center flex-col md:flex-row mb-5">
           <h1 className="md:text-[64px] text-[36px] text-[#7EE787] font-medium">
             Explore Projects to contribute
           </h1>
