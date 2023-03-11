@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { useEffect, useRef, useState } from 'react';
-import { Container, SvgIcon, Typography } from '@mui/material';
+import { Container, createMuiTheme, SvgIcon, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
@@ -23,16 +23,14 @@ const WorldOfOpenSource: React.FC = () => {
   return (
     <>
       <Container
-        maxWidth="lg"
+        maxWidth='xl'
         sx={{
           width: lessThanLag ? '100%' : '80%',
           height: lessThanLag ? 'fit-content' : '320px',
           backgroundColor: 'transparent',
           display: 'flex',
           flexDirection: lessThanLag ? 'column-reverse' : 'row',
-          justifyContent: 'center',
-          alignItems: 'center',
-          marginTop: lessThanLag ? '2rem' : '10rem',
+          justifyContent: 'space-between',
         }}
       >
         <Box
