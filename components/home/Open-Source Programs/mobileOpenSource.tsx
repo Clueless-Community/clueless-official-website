@@ -1,8 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
-import GSSOC from '../../../../public/Gssoc.png';
-import MLH from '../../../../public/MLH.png';
-import LFX from '../../../../public/LFX.png';
+import GSSOC from '../../../public/Gssoc.png';
+import MLH from '../../../public/MLH.png';
+import LFX from '../../../public/LFX.png';
 
 function MobileOpensource() {
   return (

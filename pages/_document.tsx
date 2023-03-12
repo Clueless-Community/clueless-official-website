@@ -11,7 +11,9 @@ export default function Document() {
         href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap"
         rel="stylesheet"
       />
-      <Head />
+      <Head>
+        <title>ClueLess</title>
+      </Head>
       <body>
         <Main />
         <NextScript />

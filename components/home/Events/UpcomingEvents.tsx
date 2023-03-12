@@ -1,5 +1,5 @@
 import React from 'react';
-import eventData from '../../../../database/eventData';
+import eventData from '../../../database/eventData';
 import UpcomingEventCard from './UpcomingEventCard';
 
 const UpcomingEvents = () => {
