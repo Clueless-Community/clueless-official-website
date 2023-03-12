@@ -8,7 +8,7 @@ function MobileOpensource() {
   return (
     <>
       <div className="bg-[#181f19] grid  grid-rows-2">
-        <div className="grid  grid-rows-2 gap-4 ml-3">
+        <div className="">
           <h1 className="m-5 leading-[3rem] text-[44px]">
             <span className="font-bold  text-[#7EE787]">
               Learn about some biggest
@@ -16,7 +16,7 @@ function MobileOpensource() {
             <span className="text-white">Open-source Programs</span>
           </h1>
           <div>
-            <button className="btn-green">Explore</button>
+            <button className="m-5 btn-green">Explore</button>
           </div>
         </div>
         {/* Card Section */}

@@ -5,7 +5,7 @@ import UpcomingEventCard from './UpcomingEventCard';
 const UpcomingEvents = () => {
   return (
     <div className="my-20">
-      <h1 className="text-[#7EE787] xl:text-[55px] font-semibold xl:leading-[70.5px] leading-[30.5px] my-[55px] text-[36px] mt-[500px] sm:mt-0">
+      <h1 className="text-[#7EE787] xl:text-[55px] font-semibold xl:leading-[70.5px] leading-[30.5px] md:my-[55px] text-[36px]">
         Ongoing Events{' '}
       </h1>
       <div>

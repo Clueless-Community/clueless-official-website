@@ -70,7 +70,7 @@ const TutorialHell = () => {
       <h1 className="text-[#7EE787] xl:text-[55px] font-semibold xl:leading-[70.5px] leading-[30.5px] w-3/5 my-12 text-[36px]">
         Get out of tutorial hell and start contributing{' '}
       </h1>
-      <div className="flex xl:flex-row flex-col h-[519px] mx-[1%]">
+      <div className="flex xl:flex-row flex-col mx-[1%]">
         <div className="xl:w-[1300px]">
           <div className="h-[50px] flex flex-row bg-[#262227] rounded-t-[31px]">
             <button

@@ -19,12 +19,12 @@ const LackingSkills = () => {
         </div>
         <div className="flex justify-center">
           <img
-            className="-mt-12 w-full hidden md:block"
+            className="-mt-28 xl:-mt-36 w-full hidden md:block"
             src="/path.png"
             alt=""
           />
           <img
-            className="-mt-12 w-full md:hidden md:w-2/3 justify-center flex "
+            className="-mt-12 scale-75 w-full md:hidden md:w-2/3 justify-center flex"
             src="/path2.png"
             alt=""
           />

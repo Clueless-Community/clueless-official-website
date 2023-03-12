@@ -4,8 +4,6 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import Link from 'next/link';
-import { lightGreen } from '@mui/material/colors';
-import Image from 'next/image';
 
 const Footer: React.FC = () => {
   const ClueLogo = (color: string) => {
@@ -29,7 +27,7 @@ const Footer: React.FC = () => {
   return (
     <>
       <div className="grid lg:grid-cols-5 sm:grid-cols-3 gap-8 grid-cols-1 md:px-28 sm:px-12 px-6 mt-auto text-white bg-[#1B1B1B] pt-12 justify-items-start child:w-full shadow-inner dark:bg-zinc-900">
-        <div className="flex mb-auto flex-wrap justify-center">
+        <div className="flex mb-auto flex-wrap justify-center mx-auto">
           <div className="flex items-center cursor-pointer">
             {/* <img src="/ClueLess Logo.png" alt="" className="w-[70px]" /> */}
             {ClueLogo('white')}
