@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { RefObject, useEffect, useRef, useState } from 'react';
 import { Box, Button, Container, Typography } from '@mui/material';
 import NavBar from './NavBar';
@@ -18,8 +19,8 @@ const HeroSection: React.FC = () => {
 
     const globe = createGlobe(globeRefs.current as HTMLCanvasElement, {
       devicePixelRatio: 2,
-      width: 1400,
-      height: 1300,
+      width: 1460,
+      height: 1460,
       phi: 0,
       theta: 0,
       dark: 1,
@@ -50,7 +51,7 @@ const HeroSection: React.FC = () => {
   return (
     <div>
       <Container
-        className="p-0 justify-between items-start"
+        className="p-0 justify-between items-start relative"
         maxWidth="lg"
         sx={{
           display: 'flex',
@@ -63,7 +64,7 @@ const HeroSection: React.FC = () => {
             Community.
           </h1>
 
-          <div className="relative top-6 left-8">
+          <div className="relative top-4 left-16">
             <h2 className="text-white text-[1.6rem] sm:text-[2rem] ">
               Learn, Grow.
             </h2>
@@ -104,13 +105,16 @@ const HeroSection: React.FC = () => {
             className=""
             ref={globeRefs as RefObject<HTMLCanvasElement>}
             style={{
-              width: '650px',
-              height: '640px',
+              width: '700px',
+              height: '700px',
               maxWidth: '100%',
               aspectRatio: 1,
             }}
           />
         </Box>
+        <div className="absolute top-[19rem]   w-80">
+          <img src="/LandingPage/HeroSection/hero_line.png" alt="" />
+        </div>
       </Container>
     </div>
   );

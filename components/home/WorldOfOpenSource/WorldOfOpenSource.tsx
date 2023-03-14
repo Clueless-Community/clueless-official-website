@@ -23,15 +23,12 @@ const WorldOfOpenSource: React.FC = () => {
   return (
     <>
       <Container
-        className="flex flex-col-reverse md:flex-row  w-full"
+        className="flex flex-col-reverse md:flex-row w-full"
         maxWidth="xl"
         sx={{
           width: lessThanLag ? '100%' : '80%',
           height: lessThanLag ? 'fit-content' : '320px',
           backgroundColor: 'transparent',
-          display: 'flex',
-          flexDirection: lessThanLag ? 'column-reverse' : 'row',
-          justifyContent: 'space-between',
         }}
       >
         <Box

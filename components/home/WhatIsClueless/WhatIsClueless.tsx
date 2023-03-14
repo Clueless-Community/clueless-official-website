@@ -17,10 +17,9 @@ const WhatIsClueless: React.FC = () => {
     <>
       <Container
         maxWidth="lg"
+        className="mt-24 flex flex-col md:flex-row scale-105"
         sx={{
           width: isMobile ? '92.5%' : '95%',
-          display: 'flex',
-          flexDirection: isMobile ? 'column' : 'row',
           justifyContent: 'center',
           alignItems: 'center',
           border: '1px solid #ccc',
@@ -75,8 +74,8 @@ export default WhatIsClueless;
 const HeatMapImage = () => {
   return (
     <svg
-      width="180"
-      height="228"
+      width="270"
+      height="270"
       viewBox="0 0 301 228"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
