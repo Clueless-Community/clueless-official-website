@@ -1,11 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
-import React, { useEffect, useRef, useState } from 'react';
-import { Button, Container, Typography } from '@mui/material';
-import { Box } from '@mui/system';
-import Link from 'next/link';
-import { Fragment } from 'react';
-import { Disclosure, Menu, Transition } from '@headlessui/react';
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import React, { useEffect, useState } from 'react';
+import { Disclosure } from '@headlessui/react';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
 const NavBar: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -29,8 +25,8 @@ const NavBar: React.FC = () => {
 
   return (
     <>
-      <Container className="mt-1 text-white" maxWidth="lg">
-        <Disclosure as="nav" className="">
+      <div className="mt-1 text-white px-5 md:px-20 lg:px-40">
+        <Disclosure as="nav">
           {({ open }) => (
             <>
               <div className="relative flex h-16">
@@ -115,7 +111,7 @@ const NavBar: React.FC = () => {
             </>
           )}
         </Disclosure>
-      </Container>
+      </div>
     </>
   );
 };

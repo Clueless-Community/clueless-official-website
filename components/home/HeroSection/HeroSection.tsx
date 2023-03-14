@@ -50,13 +50,13 @@ const HeroSection: React.FC = () => {
 
   return (
     <div>
-      <Container
-        className="p-0 justify-between items-start relative"
-        maxWidth="lg"
-        sx={{
-          display: 'flex',
-          justifyContent: isMobile ? 'center' : 'space-between',
-        }}
+      <div
+        className="p-0 relative flex justify-center lg:justify-between items-start"
+        // maxWidth="lg"
+        // sx={{
+        //   display: 'flex',
+        //   justifyContent: isMobile ? 'center' : 'space-between',
+        // }}
       >
         <Box className="flex flex-col mt-32">
           <h1 className="text-white text-[3rem] sm:text-[5rem] font-black leading-none">
@@ -115,7 +115,7 @@ const HeroSection: React.FC = () => {
         <div className="absolute top-[19rem]   w-80">
           <img src="/LandingPage/HeroSection/hero_line.png" alt="" />
         </div>
-      </Container>
+      </div>
     </div>
   );
 };
