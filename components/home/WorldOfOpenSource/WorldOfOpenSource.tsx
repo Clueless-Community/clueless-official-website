@@ -23,7 +23,7 @@ const WorldOfOpenSource: React.FC = () => {
   return (
     <>
       <Container
-        className="flex space-between w-full"
+        className="flex flex-col-reverse md:flex-row  w-full"
         maxWidth="xl"
         sx={{
           width: lessThanLag ? '100%' : '80%',
@@ -253,7 +253,7 @@ const WorldOfOpenSource: React.FC = () => {
           </motion.div>
         </motion.div>
       </Container>
-      <div className="flex h-72 ml-[15%]">
+      <div className="flex h-72 ml-[6%]">
         <img src="/line2.png" alt="line2" />
       </div>
     </>

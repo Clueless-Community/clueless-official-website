@@ -26,18 +26,11 @@ const useMediaQuery = (width: number) => {
 };
 
 const OpenSourcePrograms = () => {
-  const isBreakpoint = useMediaQuery(768);
   return (
     <div>
-      {isBreakpoint ? (
-        <div>
-          <MobileOpensource />
-        </div>
-      ) : (
-        <div>
-          <PcOpenSource />
-        </div>
-      )}
+      <div>
+        <PcOpenSource />
+      </div>
     </div>
   );
 };

@@ -7,8 +7,8 @@ import LFX from '../../../public/LFX.png';
 function PcOpenSource() {
   return (
     <>
-      <div className="bg-[#181f19] flex box-border mx-w-screen justify-between items-center">
-        <div className="p-3 w-1/3 space-y-10">
+      <div className="bg-[#181f19] flex flex-col lg:flex-row box-border mx-w-screen justify-between items-center">
+        <div className="p-3 lg:w-1/3 space-y-10">
           <h1 className="leading-[3rem] text-[40px]">
             <span className="font-bold  text-[#7EE787]">
               Learn about some biggest
@@ -19,7 +19,10 @@ function PcOpenSource() {
             <a>Explore</a>
           </button>
         </div>
-        <div>
+        <div className="md:w-2/3">
+          <img src="/LandingPage/OpenSource/program.png" alt="" />
+        </div>
+        {/* <div>
           <div className="m-4 h-[600px] text-[30px] relative">
             <div className="absolute z-7">
               <div className="bg-[#282E36] rounded-[46px] h-[200px] space-y-6  w-[28rem] border border-white lg:w-[35rem]">
@@ -88,7 +91,7 @@ function PcOpenSource() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </>
   );

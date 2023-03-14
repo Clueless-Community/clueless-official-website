@@ -18,8 +18,8 @@ const HeroSection: React.FC = () => {
 
     const globe = createGlobe(globeRefs.current as HTMLCanvasElement, {
       devicePixelRatio: 2,
-      width: 1000,
-      height: 1000,
+      width: 1400,
+      height: 1300,
       phi: 0,
       theta: 0,
       dark: 1,
@@ -50,14 +50,14 @@ const HeroSection: React.FC = () => {
   return (
     <div>
       <Container
-        className="p-0"
+        className="p-0 justify-between items-start"
         maxWidth="lg"
         sx={{
           display: 'flex',
           justifyContent: isMobile ? 'center' : 'space-between',
         }}
       >
-        <Box className="flex flex-col justify-center">
+        <Box className="flex flex-col mt-32">
           <h1 className="text-white text-[3rem] sm:text-[5rem] font-black leading-none">
             Clueless <br />
             Community.
@@ -104,8 +104,8 @@ const HeroSection: React.FC = () => {
             className=""
             ref={globeRefs as RefObject<HTMLCanvasElement>}
             style={{
-              width: '500px',
-              height: '500px',
+              width: '650px',
+              height: '640px',
               maxWidth: '100%',
               aspectRatio: 1,
             }}
