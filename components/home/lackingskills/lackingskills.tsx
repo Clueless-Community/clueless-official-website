@@ -1,17 +1,18 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react';
 
 const LackingSkills = () => {
   return (
     <main>
       <div className="">
-        <div className="lg:w-[40%] p-5 relative">
-          <h1 className="text-[3rem] text-[#72cf7b] pt-10 pb-1 lg:leading-4">
+        <div className="md:w-3/5 xl:w-1/2 space-y-2">
+          <h1 className="text-[3rem] text-[#72cf7b] whitespace-nowrap">
             Lacking skills?
           </h1>
-          <h1 className=" text-[2.5rem] sm:text-[2.8rem] pb-3 space-x-1 text-white">
+          <h1 className=" text-3xl text-white whitespace-nowrap">
             We got you covered.
           </h1>
-          <h4 className="pb-10 text-lg text-gray-300">
+          <h4 className="pb-6 text-lg text-gray-300">
             built with the vision to encourage open-source enthusiasts built
             with the vision to encourage open-source enthusiasts
           </h4>
@@ -21,13 +22,9 @@ const LackingSkills = () => {
           <img
             className="-mt-28 xl:-mt-36 w-full hidden md:block"
             src="/path.png"
-            alt=""
+            alt="Path"
           />
-          <img
-            className="-mt-12 scale-75 w-full md:hidden md:w-2/3 justify-center flex"
-            src="/path2.png"
-            alt=""
-          />
+          <img className="md:hidden w-1/2 " src="/path2.png" alt="Path" />
         </div>
       </div>
 
