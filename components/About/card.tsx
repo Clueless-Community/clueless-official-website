@@ -20,18 +20,18 @@ const Card: React.FC<cardProps> = ({
   twitter_url,
 }) => {
   return (
-    <div className="rounded-full h-48 w-48 bg-green-400 relative">
+    <div className="relative border-4 border-green-400 rounded-full">
       <img
         src={photo_url}
-        className="h-48 w-48 object-cover p-1 rounded-full"
+        className="sm:h-48 h-30 w-30 grayscale sm:w-48 object-cover rounded-full"
         alt=""
       />
-      <div className="absolute top-40 left-6 rounded-full">
-        <div className="flex flex-col justify-center text-center bg-gray-800 w-36">
-          <h1>{name}</h1>
+      <div className="absolute hidden sm:block top-40 left-4 rounded-full">
+        <div className="flex flex-col rounded-t-[12px] justify-center py-[7px] text-center bg-gray-800 w-40">
+          <h1 className="text-[15px]">{name}</h1>
           <h1 className="text-[12px] text-gray-400">{designation}</h1>
         </div>
-        <div className="flex bg-green-400 justify-center gap-x-3 py-1">
+        <div className="flex bg-green-400 rounded-b-[12px] justify-center gap-x-4 pt-[5px] pb-[9px]">
           <Link
             href={github_url}
             className="text-black text-lg"
