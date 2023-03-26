@@ -10,6 +10,14 @@ const AboutUs = () => {
         <title>ClueLess | About Us</title>
         <meta name="description" content="ClueLess About Us Page" />
       </Head>
+      {/* Blur Effect */}
+      <div
+        className="hidden md:block absolute shrink-0 mt-24 w-[200px] h-[200px]"
+        style={{
+          background: 'rgba(126, 231, 135, 0.4)',
+          filter: 'blur(180px)',
+        }}
+      />
       <div className="relative sm:p-10">
         <div className="hidden lg:block">
           <h1 className="text-5xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mt-24">
@@ -23,16 +31,37 @@ const AboutUs = () => {
             other to explore their domain more deeply, organize events, GitHub
             repositories, organize hackathons, and more couniting activities
           </p>
-          <img
-            className="lg:w-1/2 p-20 absolute top-56 xl:top-8 lg:right-0 lg:top-28"
-            src="About/right.png"
-            alt=""
-          />
-          <img
-            className="w-36 top-72 ml-2 hidden absolute lg:block"
-            src="About/greenLine.png"
-            alt=""
-          />
+          <div>
+            <img
+              className="lg:w-1/2 p-20 absolute top-56 xl:top-8 lg:right-0 lg:top-28"
+              src="About/right.png"
+              alt=""
+            />
+            {/* Blur Effect */}
+            <div
+              className="hidden md:block right-40 absolute shrink-0 w-[200px] h-[200px]"
+              style={{
+                background: 'rgba(126, 231, 135, 0.3)',
+                filter: 'blur(180px)',
+              }}
+            />
+          </div>
+          <div>
+            <img
+              className="w-36 top-72 ml-2 hidden absolute lg:block"
+              src="About/greenLine.png"
+              alt=""
+            />
+            {/* Blur Effect */}
+            <div
+              className="hidden md:block -left-60 absolute shrink-0 w-[200px] h-[200px]"
+              style={{
+                background: 'rgba(126, 231, 135, 0.3)',
+                filter: 'blur(180px)',
+              }}
+            />
+          </div>
+
           <div className="mt-60 bg-[#272D36] flex relative border rounded-[32px]">
             <div className="flex items-center 2xl:gap-20 py-10">
               <img
@@ -59,11 +88,21 @@ const AboutUs = () => {
           <h1 className="text-5xl px-2 md:text-7xl font-bold text-white mt-24">
             About <br className="hidden" /> Community.
           </h1>
-          <img
-            className="w-96 my-8 px-2 sm:mx-auto lg:mx-0"
-            src="About/right.png"
-            alt=""
-          />
+          <div>
+            {/* Blur Effect */}
+            <div
+              className="block  absolute shrink-0 top-80 left-20 w-[200px] h-[200px]"
+              style={{
+                background: 'rgba(126, 231, 135, 0.25)',
+                filter: 'blur(182px)',
+              }}
+            />
+            <img
+              className="w-96 my-8 px-2 sm:mx-auto lg:mx-0"
+              src="About/right.png"
+              alt=""
+            />
+          </div>
           <p className="text-white font-normal text-[20px] px-3 tracking-wider">
             Clueless in a virtual open-source community built with the motive of
             “Learn and Grow”. We, as a community, encourage and guide

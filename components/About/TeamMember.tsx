@@ -17,6 +17,14 @@ const TeamMember = () => {
             <div className="absolute left-[6.5rem] lg:left-[11.7rem] -bottom-[2.3rem] h-5 w-5 rotate-180 rounded-bl-2xl lg:rounded-bl-full border-l-[0.2rem] border-b-[0.2rem] border-[#7EE787]"></div>
             <div className="absolute left-[7.53rem] lg:left-[12.75rem] -bottom-16 lg:-bottom-[117px] mx-auto h-8 lg:h-20 w-[0.2rem] bg-[#7EE787]"></div>
             <div className="absolute -bottom-[5.2rem] lg:-bottom-[8.7rem] left-28 lg:left-[194px] h-5 lg:h-6 lg:w-6 lg:border-[3.5px] w-5 rounded-full border-4 border-[#7EE787]"></div>
+            {/* Blur Effect */}
+            <div
+              className="hidden md:block left-60 top-20 absolute shrink-0 w-[200px] h-[200px]"
+              style={{
+                background: 'rgba(126, 231, 135, 0.3)',
+                filter: 'blur(182px)',
+              }}
+            />
           </div>
         </div>
       </div>
@@ -40,7 +48,7 @@ const TeamMember = () => {
         <div className="flex w-full flex-wrap relative gap-4 justify-between items-center">
           <img
             src="/About/Bottom/flutter.svg"
-            className="h-12 lg:relative absolute xl:h-16 sm:top-32 top-36 lg:top-0 left-[45%] lg:left-0"
+            className="h-12 lg:relative absolute xl:h-16 sm:top-32 top-36 lg:top-0 sm:left-[45%] left-[40%] lg:left-0"
             alt="flutter"
           />
           <img
@@ -60,28 +68,60 @@ const TeamMember = () => {
           />
           <img
             src="/About/Bottom/github.svg"
-            className="lg:h-24 h-16 xl:h-32 lg:relative absolute left-[45%] lg:left-0"
+            className="lg:h-24 h-16 xl:h-32 lg:relative absolute sm:left-[45%] left-[37%] lg:left-0"
             alt="Github"
           />
           <img
             src="/About/Bottom/react.svg"
-            className="h-12 lg:relative absolute xl:h-16 sm:left-[82%] left-[76%] sm:top-0 top-[400px] lg:left-0"
+            className="h-12 lg:relative absolute xl:h-16 sm:left-[82%] left-[66%] sm:top-0 top-[400px] lg:left-0"
             alt="react"
           />
           <img
             src="/About/Bottom/vscode.svg"
-            className="h-12 lg:relative absolute xl:h-16 sm:left-[66%] left-[76%] lg:left-0 top-16 lg:top-0"
+            className="h-12 lg:relative absolute xl:h-16 left-[66%] lg:left-0 top-16 lg:top-0"
             alt="vs code"
           />
           <img
             src="/About/Bottom/d3.svg"
-            className="h-12 lg:relative absolute xl:h-16 sm:left-[65%] left-[76%] lg:left-0 sm:-top-28 top-60 lg:top-0"
+            className="h-12 lg:relative absolute xl:h-16 left-[65%] lg:left-0 sm:-top-28 top-60 lg:top-0"
             alt="d3js"
           />
           <img
             src="/About/Bottom/polygon.svg"
-            className="h-12 lg:relative absolute xl:h-16 left-[45%] lg:left-0 sm:-top-40 top-80 lg:top-0"
+            className="h-12 lg:relative absolute xl:h-16 sm:left-[45%] left-[40%] lg:left-0 sm:-top-40 top-80 lg:top-0"
             alt="polygon"
+          />
+          {/* Blur Effect */}
+          <div
+            className="hidden md:block -left-60 -top-[900px] absolute shrink-0 w-[200px] h-[200px]"
+            style={{
+              background: 'rgba(126, 231, 135, 0.3)',
+              filter: 'blur(182px)',
+            }}
+          />
+          {/* Blur Effect */}
+          <div
+            className="hidden md:block -right-60 -top-[700px] absolute shrink-0 w-[200px] h-[200px]"
+            style={{
+              background: 'rgba(126, 231, 135, 0.3)',
+              filter: 'blur(182px)',
+            }}
+          />
+          {/* Blur Effect */}
+          <div
+            className="hidden md:block -left-60 -top-20 absolute shrink-0 w-[200px] h-[200px]"
+            style={{
+              background: 'rgba(126, 231, 135, 0.3)',
+              filter: 'blur(182px)',
+            }}
+          />
+          {/* Blur Effect */}
+          <div
+            className="hidden md:block -right-60 -top-20 absolute shrink-0 w-[200px] h-[200px]"
+            style={{
+              background: 'rgba(126, 231, 135, 0.2)',
+              filter: 'blur(182px)',
+            }}
           />
         </div>
       </div>
