@@ -33,7 +33,7 @@ const AboutUs = () => {
           </p>
           <div>
             <img
-              className="lg:w-1/2 p-20 absolute top-56 xl:top-8 lg:right-0 lg:top-28"
+              className="lg:w-1/2 2xl:w-[600px] p-20 absolute top-56 xl:top-8 lg:-right-16 xl:right-0 lg:top-28"
               src="About/right.png"
               alt=""
             />
