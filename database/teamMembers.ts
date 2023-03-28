@@ -60,8 +60,8 @@ const data = [
     photo_url: 'https://i.ibb.co/nD5zf3X/ravindra.jpg ',
     designation: 'Cheif-Developer',
     linkedin_url: 'https://www.linkedin.com/in/ravindrap04/',
-    github_url: 'https://github.com/bbsdevloper',
-    twitter_url: 'https://twitter.com/MukeshKuiry7',
+    github_url: 'https://github.com/RavindraP04',
+    twitter_url: 'https://twitter.com/RavindraP04',
   },
   {
     name: 'Muskan',
