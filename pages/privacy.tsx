@@ -16,8 +16,11 @@ const privacy = () => {
           similique voluptas optio hic quos iusto iste tempore ducimus, nihil
           impedit sint reiclorem Lorem ipsum dolor sit amet consectetur
           adipisicing elit. Nostrum rerum, doloremque beatae temporibus suscipit
-          earum asperiores ex iste at eaque voluptate dolore? Animi velit
-          laborum cupiditate distinctio sequi earum necessitatibus?
+          earum asperiores ex iste at eaque voluptate dolore? Animi velit Lorem,
+          ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
+          consectetur, corrupti adipisci est, asperiores inventore sunt earum
+          aliquid totam esse nostrum sequi aspernatur! laborum cupiditate
+          distinctio sequi earum necessitatibus?
           <br /> Accusantium, voluptatem consequatur quas cum nostrum aliquid
           delectus, hic officia fuga obcaecati vel ipsam! Sunt nemo culpa
           accusamus quisquam! Omnis illo totam nam quo tenetur sit, aperiam quos
