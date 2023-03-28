@@ -64,3 +64,19 @@
   background: rgba(126, 231, 135, 0.54);
   filter: blur(182px);
 }
+
+.swiper-wrapper .swiper-slide .swiper-slide-shadow-left {
+  background-image: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0)
+  );
+}
+
+.swiper-wrapper .swiper-slide .swiper-slide-shadow-right {
+  background-image: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0)
+  );
+}
