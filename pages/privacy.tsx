@@ -14,11 +14,10 @@ const privacy = () => {
           ratione iste debitis, perspiciatis non rem, nihil sit aliquam.
           Perferendis sed eius, deserunt aliquam expedita cupiditate repudiandae
           similique voluptas optio hic quos iusto iste tempore ducimus, nihil
-          impedit sint reiciendis totam magnam velit saepe qui, quia non ex!
-          Odit Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia
-          aliquam facere eligendi officiis pariatur non minima accusamus beatae
-          porro ullam consequatur sit cum eum sapiente aperiam ex eos officia,
-          deserunt natus dolor.
+          impedit sint reiclorem Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Nostrum rerum, doloremque beatae temporibus suscipit
+          earum asperiores ex iste at eaque voluptate dolore? Animi velit
+          laborum cupiditate distinctio sequi earum necessitatibus?
           <br /> Accusantium, voluptatem consequatur quas cum nostrum aliquid
           delectus, hic officia fuga obcaecati vel ipsam! Sunt nemo culpa
           accusamus quisquam! Omnis illo totam nam quo tenetur sit, aperiam quos
