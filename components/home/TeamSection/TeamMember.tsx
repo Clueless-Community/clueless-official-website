@@ -1,5 +1,7 @@
 // Swiper JS is used for this component
+/* eslint-disable @next/next/no-img-element */
 
+import Team from './Team';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import { EffectCoverflow, Autoplay, Mousewheel, Keyboard } from 'swiper';
@@ -11,7 +13,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/virtual';
 
-export default () => {
+export default function TeamMember() {
   return (
     <>
       <h1 className="text-[#7EE787] xl:text-[55px] text-center sm:text-start font-semibold xl:leading-[70.5px] leading-[30.5px] my-[55px] text-[36px]">
@@ -57,13 +59,12 @@ export default () => {
           modules={[Autoplay, EffectCoverflow, Mousewheel, Keyboard]}
           className="mySwiper hidden"
         >
-          {teamMembers.map((item) => (
-            <SwiperSlide className="border-4 rounded-full border-[#7EE787]">
-              <img
-                className="rounded-full grayscale mx-auto"
-                src={item.photo_url}
-                alt="teamMates Photo"
-              />
+          {teamMembers.map((item, index) => (
+            <SwiperSlide
+              key={index}
+              className="border-4 rounded-full border-[#7EE787]"
+            >
+              <Team photo_url={item.photo_url} />
             </SwiperSlide>
           ))}
         </Swiper>
@@ -109,17 +110,16 @@ export default () => {
           modules={[Autoplay, EffectCoverflow, Mousewheel, Keyboard]}
           className="mySwiper hidden"
         >
-          {teamMembers.map((item) => (
-            <SwiperSlide className="border-4 rounded-full border-[#7EE787]">
-              <img
-                className="rounded-full grayscale mx-auto"
-                src={item.photo_url}
-                alt="teamMates Photo"
-              />
+          {teamMembers.map((item, index) => (
+            <SwiperSlide
+              key={index}
+              className="border-4 rounded-full border-[#7EE787]"
+            >
+              <Team photo_url={item.photo_url} />
             </SwiperSlide>
           ))}
         </Swiper>
       </div>
     </>
   );
-};
+}
