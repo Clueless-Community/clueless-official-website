@@ -10,6 +10,7 @@ import TutorialHell from '../components/home/Tutorial Hell/tutorial_hell';
 import WhatIsClueless from '../components/home/WhatIsClueless/WhatIsClueless';
 import WorldOfOpenSource from '../components/home/WorldOfOpenSource/WorldOfOpenSource';
 import Testimonial from '../components/home/Testimonials/testimonials';
+import TeamMember from '../components/home/TeamSection/TeamMember';
 
 const Home: NextPage = () => {
   return (
@@ -23,6 +24,7 @@ const Home: NextPage = () => {
       <OpenSourcePrograms />
       <LackingSkills />
       <UpcomingEvents />
+      <TeamMember />
       <Testimonial />
     </>
   );
