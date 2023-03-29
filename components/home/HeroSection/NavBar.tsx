@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { Disclosure } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import Link from 'next/link';
 
 const NavBar: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -31,7 +32,7 @@ const NavBar: React.FC = () => {
             <>
               <div className="relative flex h-16">
                 {/* Menu Icon for Mobile */}
-                <div className="absolute inset-y-0 right-0 flex items-center sm:hidden">
+                <div className="absolute inset-y-0 right-0 flex items-center md:hidden">
                   <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                     {open ? (
                       <XMarkIcon
@@ -48,12 +49,14 @@ const NavBar: React.FC = () => {
                 </div>
                 <div className="w-[100%] flex justify-between">
                   {/* Hero Logo */}
-                  <div className="flex items-center cursor-pointer">
-                    {ClueLogo('white')}
-                    <div className="mt-1">
-                      <h1 className="font-raleway text-3xl ml-1">Clueless</h1>
+                  <Link href="/">
+                    <div className="flex items-center cursor-pointer">
+                      {ClueLogo('white')}
+                      <div className="mt-1">
+                        <h1 className="font-raleway text-3xl ml-1">Clueless</h1>
+                      </div>
                     </div>
-                  </div>
+                  </Link>
                   {/* Rest Part */}
                   <div className="hidden md:flex items-center">
                     {/* Tabs */}

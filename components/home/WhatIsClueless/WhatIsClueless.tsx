@@ -15,7 +15,7 @@ const WhatIsClueless: React.FC = () => {
 
   return (
     <>
-      <Container
+      {/* <Container
         maxWidth="lg"
         className="mt-24 flex flex-col md:flex-row scale-105"
         sx={{
@@ -63,6 +63,25 @@ const WhatIsClueless: React.FC = () => {
         <HeatMapImage />
       </Container>
       <div className="flex justify-end h-40 mr-72 my-4">
+        <img src="/line1.png" alt="line1" />
+      </div> */}
+      <div className="bg-[#282E36] border border-[#ccc] flex flex-col lg:flex-row mb-8 justify-between items-center mt-[6rem] rounded-[2.5rem] p-8">
+        <div>
+          <h1 className="text-[2rem] md:text-[2.4rem] text-green-500 font-medium mb-[1rem]">
+            Clueless is a student community
+          </h1>
+          <h1 className="font-light text-[1.2rem] md:text-[1.4rem] max-w-3xl">
+            {' '}
+            Built with the vision to encourage open-source enthusiasts! We
+            provide the best resources, conducts weekly contests to test your
+            skills, a guide to Open-source, and help you build projects.
+          </h1>
+        </div>
+        <div>
+          <HeatMapImage />
+        </div>
+      </div>
+      <div className="flex justify-end h-40 mr-56 my-4">
         <img src="/line1.png" alt="line1" />
       </div>
     </>
