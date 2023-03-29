@@ -28,7 +28,7 @@ function ExploreProjects() {
           <h1 className="md:text-[64px] text-[36px] text-[#7EE787] font-medium">
             Explore Projects to contribute
           </h1>
-          <button className="btn-outline">Explore projects</button>
+          <button className="btn-outline w-fit px-6">Explore projects</button>
         </div>
 
         {/* Cards */}

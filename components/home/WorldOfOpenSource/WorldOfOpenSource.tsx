@@ -23,7 +23,7 @@ const WorldOfOpenSource: React.FC = () => {
   return (
     <>
       <Container
-        className="flex flex-col-reverse md:flex-row w-full"
+        className="flex flex-col mb-4 md:flex-row w-full"
         maxWidth="xl"
         sx={{
           width: lessThanLag ? '100%' : '80%',
@@ -41,8 +41,8 @@ const WorldOfOpenSource: React.FC = () => {
             variant="h2"
             sx={{
               fontWeight: '500',
-              fontSize: '2.2rem',
-              lineHeight: '2.2rem',
+              fontSize: '2.8rem',
+              lineHeight: '2.8rem',
               color: 'lightgreen',
               marginBottom: '20px',
             }}
@@ -54,7 +54,7 @@ const WorldOfOpenSource: React.FC = () => {
             my={'0.8rem'}
             sx={{
               fontWeight: '300',
-              fontSize: '1.05rem',
+              fontSize: '1.4rem',
               color: 'white',
               marginBottom: '20px',
             }}
@@ -62,7 +62,7 @@ const WorldOfOpenSource: React.FC = () => {
             built with the vision to encourage open-source enthusiasts!
           </Typography>
           <Link href={''} passHref>
-            <button className="btn-green">Explore</button>
+            <button className="btn-green text-lg px-8">Explore</button>
           </Link>
         </Box>
 

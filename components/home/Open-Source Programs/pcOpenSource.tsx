@@ -19,7 +19,7 @@ function PcOpenSource() {
             <a>Explore</a>
           </button>
         </div>
-        <div className="md:w-2/3">
+        <div className="md:w-3/5 md:p-10">
           <img src="/LandingPage/OpenSource/program.png" alt="" />
         </div>
         {/* <div>
