@@ -23,7 +23,7 @@ const WorldOfOpenSource: React.FC = () => {
   return (
     <>
       <Container
-        className="flex flex-col-reverse md:flex-row w-full"
+        className="flex flex-col mb-4 md:flex-row w-full"
         maxWidth="xl"
         sx={{
           width: lessThanLag ? '100%' : '80%',
