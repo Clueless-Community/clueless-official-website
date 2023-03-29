@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 const contact = () => {
   return (
-    <div className=" mb-12">
+    <div className=" mb-12 mr-4 pl-6">
       <div className=" flex flex-col md:hidden items-start justify-start px-0 ">
         <h1 className="text-white text-4xl font-semibold sm:text-3xl sm:font-semibold md:text-5xl md:font-bold pt-7">
           Contact Us
@@ -10,7 +10,8 @@ const contact = () => {
           Have any questions? We would love to hear from you
         </p>
       </div>
-      <div className="flex flex-col-reverse md:flex-row items-center w-full justify-between pt-[4%]">
+
+      <div className="flex flex-col-reverse md:flex-row items-center  w-full  justify-between pt-[4%]">
         <div className=" w-full md:w-[50%] lg:w-[35%]">
           <h1 className="hidden md:block text-white text-2xl font-semibold md:text-3xl sm:font-semibold lg:text-5xl md:font-bold">
             Contact Us
@@ -20,26 +21,26 @@ const contact = () => {
           </p>
           <div className="flex flex-col w-full md:w-[80%] lg:w-full">
             <input
-              className="border-solid border-[1px] border-green-400 bg-transparent mt-[5%] pt-2 pb-2 md:pt-1 md:pb-1 lg:pt-2 lg:pb-2 pl-3 rounded-md text-white"
+              className="inp-secondary mt-[5%]"
               type="email"
               placeholder="Write your Email"
             />
 
             <input
-              className="border-solid border-[1px] border-green-400 bg-transparent mt-[8%] pt-2 pb-2 md:pt-1 md:pb-1 lg:pt-2 lg:pb-2 pl-3 rounded-md text-white"
+              className="inp-secondary mt-[8%]"
               type="text"
               placeholder="Enter the subject"
               id=""
             />
 
             <textarea
-              className="border-solid border-[1px] border-green-400 bg-transparent mt-[8%] pt-2 pb-2 md:pt-1 md:pb-1 lg:pt-2 lg:pb-2 pl-3 rounded-md text-white resize-none"
+              className="inp-secondary mt-[8%]"
               rows={7}
               placeholder="How can we help you?"
               id=""
             />
             <div className="flex items-center justify-center md:block">
-              <button className="h-[40px] w-40 text-base items-center font-semibold mt-6 bg-green-400 hover:bg-green-500 rounded-md ">
+              <button className="h-[40px] w-[150px] text-base items-center  mt-6 btn-green">
                 Submit
               </button>
             </div>
@@ -49,7 +50,7 @@ const contact = () => {
         {/* <div className='flex  justify-center mb-[70px] md:mb-0 md:w-[70%] '> */}
 
         <img
-          className="w-[80%] sm:w-[70%] mb-[70px] md:mt-[7.75rem] md:w-[45%] mr-[0] lg:mr-[35px] lg:w-[40%] "
+          className="w-[80%] sm:w-[70%] mb-[70px] md:mt-[110px] md:w-[46%] mr-[0] lg:mr-[35px] lg:w-[40%] "
           src="/LandingPage/Contact/contact.png"
           alt=""
         />
