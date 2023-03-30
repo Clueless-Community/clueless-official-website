@@ -67,7 +67,7 @@ const WhatIsClueless: React.FC = () => {
       </div> */}
       <div className="bg-[#282E36] border border-[#ccc] flex flex-col lg:flex-row mb-8 justify-between items-center mt-[6rem] rounded-[2.5rem] p-8">
         <div>
-          <h1 className="text-[2rem] md:text-[2.4rem] text-green-500 font-medium mb-[1rem]">
+          <h1 className="text-[2rem] md:text-[2.4rem] text-skin-globalGreen font-medium mb-[1rem]">
             Clueless is a student community
           </h1>
           <h1 className="font-light text-[1.2rem] md:text-[1.4rem] max-w-3xl">

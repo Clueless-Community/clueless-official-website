@@ -34,7 +34,7 @@ const WorldOfOpenSource: React.FC = () => {
         <Box
           sx={{
             width: lessThanLag ? '100%' : '50%',
-            padding: '4rem 2rem',
+            padding: '4rem 1rem',
           }}
         >
           <Typography
@@ -68,6 +68,7 @@ const WorldOfOpenSource: React.FC = () => {
 
         <motion.div
           id="motion-area"
+          className="my-auto"
           style={{
             width: lessThanLag ? '100%' : '40%',
             height: lessThanLag ? '320px' : '80%',

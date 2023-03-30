@@ -112,7 +112,7 @@ const HeroSection: React.FC = () => {
             }}
           />
         </Box>
-        <div className="absolute top-[19rem]   w-80">
+        <div className="absolute left-0 top-[19rem] w-80">
           <img src="/LandingPage/HeroSection/hero_line.png" alt="" />
         </div>
       </div>
