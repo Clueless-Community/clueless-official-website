@@ -22,21 +22,8 @@ const WorldOfOpenSource: React.FC = () => {
 
   return (
     <>
-      <Container
-        className="flex flex-col mb-4 md:flex-row w-full"
-        maxWidth="xl"
-        sx={{
-          width: lessThanLag ? '100%' : '80%',
-          height: lessThanLag ? 'fit-content' : '320px',
-          backgroundColor: 'transparent',
-        }}
-      >
-        <Box
-          sx={{
-            width: lessThanLag ? '100%' : '50%',
-            padding: '4rem 1rem',
-          }}
-        >
+      <div className="flex flex-col justify-between mb-4 md:flex-row w-full h-[320px] lg:h-fit">
+        <div className="w-full md:pr-[3rem] py-[1rem] mb-5 md:mb-[5%]">
           <Typography
             variant="h2"
             sx={{
@@ -64,7 +51,7 @@ const WorldOfOpenSource: React.FC = () => {
           <Link href={''} passHref>
             <button className="btn-green text-lg px-8">Explore</button>
           </Link>
-        </Box>
+        </div>
 
         <motion.div
           id="motion-area"
@@ -250,8 +237,8 @@ const WorldOfOpenSource: React.FC = () => {
             </SvgIcon>
           </motion.div>
         </motion.div>
-      </Container>
-      <div className="flex h-72 ml-[6%]">
+      </div>
+      <div className="flex h-72 mt-[85%] sm:mt-[50%] md:mt-[10%] lg:mt-0">
         <img src="/line2.png" alt="line2" />
       </div>
     </>
