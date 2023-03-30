@@ -27,14 +27,14 @@ export default function TeamMember() {
           centeredSlides={true}
           slidesPerView={3}
           initialSlide={0}
-          loopedSlides={4}
-          keyboard={true}
+          loopedSlides={5}
+          // keyboard={true}
           spaceBetween={-20}
-          mousewheel={true}
+          // mousewheel={true}
           coverflowEffect={{
             rotate: 0,
             stretch: 0,
-            depth: 10,
+            depth: 0,
             modifier: 1,
             slideShadows: false,
           }}
@@ -51,10 +51,12 @@ export default function TeamMember() {
             },
           }}
           loop={true}
-          speed={1200}
+          speed={2500}
           autoplay={{
-            delay: 2000,
+            delay: 200,
             disableOnInteraction: false,
+            reverseDirection: true,
+            waitForTransition: true,
           }}
           modules={[Autoplay, EffectCoverflow, Mousewheel, Keyboard]}
           className="mySwiper hidden"
