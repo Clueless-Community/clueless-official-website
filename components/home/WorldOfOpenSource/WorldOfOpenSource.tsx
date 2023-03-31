@@ -23,41 +23,42 @@ const WorldOfOpenSource: React.FC = () => {
   return (
     <>
       <div className="flex flex-col justify-between mb-4 md:flex-row w-full h-[320px] lg:h-fit">
-        <div className="w-full md:pr-[3rem] py-[1rem] mb-5 md:mb-[5%]">
-          <Typography
-            variant="h2"
-            sx={{
-              fontWeight: '500',
-              fontSize: '2.8rem',
-              lineHeight: '2.8rem',
-              color: 'lightgreen',
-              marginBottom: '20px',
-            }}
-          >
-            Jump into the world of Open-source
-          </Typography>
-          <Typography
-            variant="h4"
-            my={'0.8rem'}
-            sx={{
-              fontWeight: '300',
-              fontSize: '1.4rem',
-              color: 'white',
-              marginBottom: '20px',
-            }}
-          >
-            built with the vision to encourage open-source enthusiasts!
-          </Typography>
-          <Link href={''} passHref>
-            <button className="btn-green text-lg px-8">Explore</button>
-          </Link>
+        <div className="w-full md:w-[80%]">
+          <div className="md:pr-[3rem] py-[1rem] my-auto max-w-[524px]">
+            <Typography
+              variant="h2"
+              sx={{
+                fontWeight: '500',
+                fontSize: '2.8rem',
+                lineHeight: '2.8rem',
+                color: 'lightgreen',
+                marginBottom: '20px',
+              }}
+            >
+              Jump into the world of Open-source
+            </Typography>
+            <Typography
+              variant="h4"
+              my={'0.8rem'}
+              sx={{
+                fontWeight: '300',
+                fontSize: '1.4rem',
+                color: 'white',
+                marginBottom: '20px',
+              }}
+            >
+              built with the vision to encourage open-source enthusiasts!
+            </Typography>
+            <Link href={''} passHref>
+              <button className="btn-green text-lg px-8">Explore</button>
+            </Link>
+          </div>
         </div>
 
         <motion.div
           id="motion-area"
-          className="my-auto"
+          className="my-auto w-full md:w-[60%]"
           style={{
-            width: lessThanLag ? '100%' : '40%',
             height: lessThanLag ? '320px' : '80%',
             backgroundColor: 'rgba(40, 46, 54, 0.97)',
             borderRadius: '28px',
@@ -73,7 +74,7 @@ const WorldOfOpenSource: React.FC = () => {
             initial={{}}
             animate={{
               x: [0, size.w * 0.6, 0],
-              y: [0, size.h * 0.55],
+              y: [0, size.h * 0.35],
             }}
             transition={{
               duration: 6,
@@ -134,7 +135,7 @@ const WorldOfOpenSource: React.FC = () => {
             initial={{}}
             animate={{
               x: [0, size.w * 0.25, 0, size.w * 0.45, 0],
-              y: [0, -size.h * 0.6],
+              y: [0, -size.h * 0.35],
             }}
             transition={{
               duration: 6,
@@ -146,7 +147,7 @@ const WorldOfOpenSource: React.FC = () => {
               width: 'fit-content',
               position: 'relative',
               left: '8%',
-              top: '40%',
+              top: '50%',
             }}
           >
             <GitHubIcon
@@ -173,7 +174,7 @@ const WorldOfOpenSource: React.FC = () => {
                 -size.w * 0.55,
                 0,
               ],
-              y: [0, -size.h * 0.3, size.h * 0.26],
+              y: [0, -size.h * 0.5, size.h * 0.1],
             }}
             transition={{
               duration: 8,
