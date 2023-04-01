@@ -20,11 +20,11 @@ const oops = () => {
             </button>
           </Link>
         </div>
-        <img
+        {/* <img
           className="absolute opacity-70 top-[-190px] left-[-190px] w-[700px]"
           src="./LandingPage/shade/shade.png"
           alt=""
-        />
+        /> */}
       </div>
     </div>
   );
