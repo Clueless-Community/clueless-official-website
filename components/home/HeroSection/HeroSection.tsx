@@ -91,7 +91,7 @@ const HeroSection: React.FC = () => {
           </div>
         </Box>
         <Box
-          className="flex"
+          className="flex relative"
           sx={
             isMobile
               ? {
@@ -101,6 +101,8 @@ const HeroSection: React.FC = () => {
               : {}
           }
         >
+          <div className="green-gradient absolute z-0 top-96 bottom-48 opacity-70 -left-20 block sm:hidden"></div>
+
           <canvas
             className=""
             ref={globeRefs as RefObject<HTMLCanvasElement>}

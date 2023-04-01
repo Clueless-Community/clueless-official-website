@@ -6,8 +6,9 @@ import LFX from '../../../public/LFX.png';
 
 function PcOpenSource() {
   return (
-    <>
-      <div className="flex flex-col lg:flex-row box-border mx-w-screen justify-between items-center">
+    <div className="relative">
+      <div className="green-gradient absolute z-0 bottom-52 opacity-95 right-96 hidden sm:block"></div>
+      <div className="flex flex-col relative z-10 lg:flex-row box-border mx-w-screen justify-between items-center">
         <div className="p-3 lg:w-1/3 space-y-10">
           <h1 className="leading-[3rem] text-[40px]">
             <span className="font-bold  text-[#7EE787]">
@@ -93,7 +94,7 @@ function PcOpenSource() {
           </div>
         </div> */}
       </div>
-    </>
+    </div>
   );
 }
 

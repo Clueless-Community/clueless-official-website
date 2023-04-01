@@ -21,8 +21,9 @@ const WorldOfOpenSource: React.FC = () => {
   }, []);
 
   return (
-    <>
-      <div className="flex flex-col justify-between mb-4 md:flex-row w-full h-[320px] lg:h-fit">
+    <div className="relative">
+      <div className="green-gradient absolute z-10 -top-5 right-80"></div>
+      <div className="flex flex-col justify-between relative z-20 mb-4 md:flex-row w-full h-[320px] lg:h-fit">
         <div className="w-full md:w-[80%]">
           <div className="md:pr-[3rem] py-[1rem] my-auto max-w-[524px]">
             <Typography
@@ -242,7 +243,7 @@ const WorldOfOpenSource: React.FC = () => {
       <div className="flex h-72 mt-[85%] sm:mt-[50%] md:mt-[10%] lg:mt-0">
         <img src="/line2.png" alt="line2" />
       </div>
-    </>
+    </div>
   );
 };
 

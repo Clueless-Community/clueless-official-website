@@ -76,3 +76,10 @@ html {
   background: url(../public/pattern.svg);
   background-color: #1b1b1b;
 }
+
+.green-gradient {
+  background: rgba(126, 231, 135, 0.54);
+  filter: blur(138.5px);
+  width: 234px;
+  height: 234px;
+}
