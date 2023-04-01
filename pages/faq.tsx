@@ -271,10 +271,13 @@ const Faq: NextPage = () => {
                 </div>
               </div>
             </div>
-            <div className=" lg:w-[50vw]  justify-center items-center hidden lg:flex  lg:ml-20 ">
-              <img src="/faq1.png" className="w-2/5 lg:w-full " alt="text" />
+            <div className="lg:w-[50vw] justify-center items-center hidden lg:mt-[-5rem] lg:mb-[1rem] lg:flex lg:ml-20 ">
+              <img src="/faq1.png" className="w-72" alt="text" />
+              {/* w-2/5 lg:w-full */}
+              {/* absolute w-full 2xl:w-2/5 */}
             </div>
-            <div className=" lg:w-[50vw] flex justify-center items-center lg:hidden  lg:ml-20 ">
+
+            <div className=" lg:w-[50vw] flex justify-center items-center lg:hidden lg:ml-20 ">
               <img
                 src="/faq2.png"
                 className="w-2/5 lg:w-full mt-10"
