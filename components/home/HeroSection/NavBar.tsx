@@ -26,7 +26,7 @@ const NavBar: React.FC = () => {
 
   return (
     <>
-      <div className="pt-2 pattern text-white px-5 md:px-20 lg:px-40">
+      <div className="pt-2 pattern text-white px-5 md:px-20 xl:px-40">
         <Disclosure as="nav">
           {({ open }) => (
             <>
