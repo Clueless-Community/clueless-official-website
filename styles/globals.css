@@ -71,3 +71,8 @@ html {
   background: rgba(126, 231, 135, 0.54);
   filter: blur(182px);
 }
+
+.pattern {
+  background: url(../public/pattern.svg);
+  background-color: #1b1b1b;
+}
