@@ -12,7 +12,8 @@ const Testimonial = () => {
 
         <div className="flex justify-center items-center my-12">
           <img
-            src="/LandingPage/Testimonials/testimonials.svg"
+            // src="/LandingPage/Testimonials/testimonials.svg"
+            src="testimonial/0.png"
             className=""
             alt="Hello"
           />
