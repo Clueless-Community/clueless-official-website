@@ -3,7 +3,10 @@ import React from 'react';
 
 const oops = () => {
   return (
-    <div>
+    <div className="relative">
+      <div className="green-gradient absolute z-0 -left-40 bottom-0 hidden sm:block "></div>
+      <div className="green-gradient absolute z-0 sm:top-60 top-[40%] left-10 sm:left-[500px] "></div>
+      <div className="green-gradient absolute z-0 bottom-0 -right-20 hidden sm:block "></div>
       <div className=" min-h-screen relative">
         <div className="flex flex-col sm:mt-0 items-center h-fit  min-h-screen">
           <img
