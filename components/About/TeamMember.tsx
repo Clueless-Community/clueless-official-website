@@ -11,16 +11,21 @@ const TeamMember = () => {
           </h1>
           <div>
             <div className="w-5 h-5 absolute -left-48 top-60 rounded-sm bg-[#AAEBB0]"></div>
+            <div className="w-5 h-5 absolute rounded-sm right-20 top-[870px] bg-[#4F855A]"></div>
             <div className="w-5 h-5 absolute rounded-sm -right-32 -bottom-32 bg-[#AAEBB0]"></div>
             <div className="w-5 h-5 absolute rounded-sm -right-[480px] -bottom-96 bg-[#7EE787]"></div>
             <div className="w-5 h-5 absolute rounded-sm  -right-[420px] -bottom-64 bg-[#AAEBB0]"></div>
             <div className="w-5 h-5 absolute rounded-sm right-40 -bottom-96 bg-[#AAEBB0]"></div>
+            <div className="w-5 h-5 absolute rounded-sm left-[220px] -bottom-16 bg-[#7EE787]"></div>
             <div className="w-5 h-5 absolute rounded-sm -left-[420px] -bottom-[650px] bg-[#AAEBB0]"></div>
             <div className="w-5 h-5 absolute rounded-sm -right-[150px] -bottom-[850px] bg-[#AAEBB0]"></div>
             <div className="w-5 h-5 absolute rounded-sm -left-96 top-[550px] bg-[#4F855A]"></div>
             <div className="w-3 h-3 absolute rounded-sm -left-96 top-80 bg-[#4F855A]"></div>
+            <div className="w-3 h-3 absolute rounded-sm -right-96 top-[700px] bg-[#4F855A]"></div>
+            <div className="w-3 h-3 absolute rounded-sm -left-20 top-[600px] bg-[#4F855A]"></div>
             <div className="w-3 h-3 absolute rounded-sm left-96 -bottom-96 bg-[#4F855A]"></div>
             <div className="w-3 h-3 absolute rounded-sm -left-[100px] -bottom-[800px] bg-[#4F855A]"></div>
+            <div className="w-5 h-5 absolute rounded-sm -left-[460px] -bottom-[500px] bg-[#7EE787]"></div>
           </div>
         </div>
         <div className="-ml-40 sm:-ml-52 lg:-ml-96 flex">

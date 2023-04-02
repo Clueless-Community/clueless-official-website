@@ -100,7 +100,7 @@ export function HeroSection() {
         </div>
       </Box>
       <Box
-        className="flex lg:max-w-[600px] 2xl:max-w-[700px] sm:max-w-[400px] w-[460px] sm:w-[100%] sm:mt-16 mt-10 xl:mt-0 absolute -right-96 sm:left-0 sm:relative"
+        className="flex lg:max-w-[600px] 2xl:max-w-[650px] sm:max-w-[400px] w-[460px] sm:w-[100%] sm:mt-16 mt-10 xl:mt-0 absolute -right-96 sm:left-0 sm:relative"
         style={{
           aspectRatio: 1,
         }}
