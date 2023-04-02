@@ -263,27 +263,27 @@ const Faq: NextPage = () => {
                   </AccordionDetails>
                 </Accordion>
               </div>
+              <div className="mt-6 mb-4 flex items-center">
+                <h2 className="text-md  sm:text-lg text-white font-semibold mr-3">
+                  Have Questions other than this?
+                </h2>
+                <Link href="/contact-us" passHref>
+                  <button className="text-black font-semibold px-6 py-1 sm:px-10 sm:py-2 rounded bg-[#7EE787] hover:bg-[#3b9242]">
+                    Contact
+                  </button>
+                </Link>
+              </div>
             </div>
-            <div className=" lg:w-[50vw]  justify-center items-center hidden lg:flex  lg:ml-20 ">
-              <img src="/faq1.png" className="w-2/5 lg:w-full " alt="text" />
+            <div className=" lg:w-[50vw]  justify-center items-center hidden lg:flex mb-4 lg:ml-20 ">
+              <img src="/faq1.png" className="w-72" alt="text" />
             </div>
             <div className=" lg:w-[50vw] flex justify-center items-center lg:hidden  lg:ml-20 ">
               <img
                 src="/faq2.png"
-                className="w-2/5 lg:w-full mt-10"
+                className="w-3/5 lg:w-full my-4"
                 alt="text"
               />
             </div>
-          </div>
-          <div className="mt-6 mb-4 flex items-center">
-            <h2 className="text-md  sm:text-lg text-white font-semibold mr-3">
-              Have Questions other than this?
-            </h2>
-            <Link href="/contact-us" passHref>
-              <button className="text-black font-semibold px-6 py-1 sm:px-10 sm:py-2 rounded bg-[#7EE787] hover:bg-[#3b9242]">
-                Contact
-              </button>
-            </Link>
           </div>
         </div>
       </div>
