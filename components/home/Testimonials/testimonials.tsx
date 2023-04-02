@@ -4,7 +4,7 @@ import MobileSwipper from './testimonialsMobile';
 
 const Testimonial = () => {
   return (
-    <div className="min-h-screen pt-[3%]">
+    <div className="md:min-h-screen pt-[3%]">
       <div className="hidden lg:block">
         <div className=" flex justify-center">
           <h1 className="text-green-400 font-bold text-5xl">Testimonial</h1>
