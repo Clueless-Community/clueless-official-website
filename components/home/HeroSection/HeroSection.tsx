@@ -61,7 +61,10 @@ export function HeroSection() {
     return () => globe.destroy();
   }, []);
   return (
-    <div className="relative xl:h-[800px] lg:h-[685px] md:h-[570px] sm:h-[520px] h-[430px] items-start flex justify-between">
+    <div
+      id="hero"
+      className="relative xl:h-[800px] lg:h-[685px] md:h-[570px] sm:h-[520px] h-[430px] items-start flex justify-between"
+    >
       <Box className="flex flex-col mt-32">
         <h1 className="text-white text-[3rem] sm:text-[3.5rem] lg:text-[4.5rem] xl:text-[5rem] font-black leading-none">
           Clueless <br />

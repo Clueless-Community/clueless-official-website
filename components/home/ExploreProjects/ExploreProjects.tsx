@@ -22,7 +22,7 @@ function ExploreProjects() {
 
   return (
     <div>
-      <div className="w-full relative">
+      <div id="projects" className="w-full relative">
         {/* Heading Part */}
         <div className="flex justify-between gap-2 md:items-center flex-col md:flex-row mb-5">
           <h1 className="md:text-[64px] text-[36px] text-[#7EE787] font-medium">

@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { useEffect, useRef, useState } from 'react';
-import { Container, createMuiTheme, SvgIcon, Typography } from '@mui/material';
-import { Box } from '@mui/system';
+import { SvgIcon, Typography } from '@mui/material';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -23,9 +22,9 @@ const WorldOfOpenSource: React.FC = () => {
   return (
     <div className="relative">
       <div className="green-gradient absolute z-10 -top-5 right-80"></div>
-      <div className="flex flex-col justify-between relative z-20 mb-4 md:flex-row w-full h-[320px] lg:h-fit">
-        <div className="w-full md:w-[80%]">
-          <div className="md:pr-[3rem] py-[1rem] my-auto max-w-[524px]">
+      <div className="flex flex-col justify-between relative z-20 mb-4 md:flex-row w-full h-[380px]">
+        <div className="w-full md:w-[80%] my-auto">
+          <div className="md:pr-[3rem] py-[1rem] max-w-[524px]">
             <Typography
               variant="h2"
               sx={{
@@ -175,7 +174,7 @@ const WorldOfOpenSource: React.FC = () => {
                 -size.w * 0.55,
                 0,
               ],
-              y: [0, -size.h * 0.5, size.h * 0.1],
+              y: [0, -size.h * 0.3, -size.h * 0.1],
             }}
             transition={{
               duration: 8,

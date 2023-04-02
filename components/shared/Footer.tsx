@@ -65,16 +65,12 @@ const Footer: React.FC = () => {
           <h3 className="font-nunito font-semibold text-xl mb-8 text-[#7EE787]">
             Quick links
           </h3>
-          <Link legacyBehavior href="/events">
-            <a
-              className="my-3 hover:text-skin-main transition-all"
-              href="https://www.clueless.tech/events"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Events
-            </a>
-          </Link>
+          <a
+            className="my-3 hover:text-skin-main transition-all"
+            href="/#events"
+          >
+            Events
+          </a>
           <a
             className="my-3 hover:text-skin-main transition-all"
             href="https://clueless-resources.super.site/"

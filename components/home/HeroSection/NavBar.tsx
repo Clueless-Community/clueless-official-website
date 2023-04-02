@@ -14,10 +14,14 @@ const NavBar: React.FC = () => {
   }, []);
 
   const navigation = [
-    { name: 'Home', href: '#', current: true },
-    { name: 'Events', href: '#', current: false },
-    { name: 'Open Source Projects', href: '#', current: false },
-    { name: 'Resources', href: '#', current: false },
+    { name: 'Home', href: '/#hero', current: true },
+    { name: 'Events', href: '/#events', current: false },
+    { name: 'Open Source Projects', href: '#projects', current: false },
+    {
+      name: 'Resources',
+      href: 'https://clueless-resources.super.site/resources',
+      current: false,
+    },
   ];
 
   function classNames(...classes: string[]) {
