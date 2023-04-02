@@ -280,7 +280,7 @@ const Faq: NextPage = () => {
             <div className=" lg:w-[50vw] flex justify-center items-center lg:hidden  lg:ml-20 ">
               <img
                 src="/faq2.png"
-                className="w-2/5 lg:w-full mt-10"
+                className="w-2/5 lg:w-full my-4"
                 alt="text"
               />
             </div>
