@@ -30,6 +30,7 @@ const OpenSourcePrograms = () => {
     <div>
       <div>
         <PcOpenSource />
+        {/* <MobileOpensource/> */}
       </div>
     </div>
   );

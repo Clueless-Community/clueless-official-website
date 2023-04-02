@@ -64,7 +64,10 @@ const Faq: NextPage = () => {
     };
 
   return (
-    <div className="">
+    <div className="relative">
+      <div className="green-gradient absolute z-0 opacity-70 sm:-right-52 right-0 top-72 sm:bottom-0"></div>
+      <div className="green-gradient absolute z-0 opacity-70 top-40 -left-64 hidden sm:block"></div>
+      <div className="green-gradient absolute z-0 top-40 right-96 opacity-70 scale-75 hidden sm:block"></div>
       <div>
         <Head>
           <title>ClueLess | FAQ</title>

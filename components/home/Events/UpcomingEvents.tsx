@@ -4,7 +4,8 @@ import UpcomingEventCard from './UpcomingEventCard';
 
 const UpcomingEvents = () => {
   return (
-    <div className="my-20">
+    <div className="my-52 relative">
+      <div className="green-gradient absolute z-0 top-0 opacity-70 -left-20 "></div>
       <h1 className="text-[#7EE787] xl:text-[55px] font-semibold xl:leading-[70.5px] leading-[30.5px] md:my-[55px] text-[36px]">
         Ongoing Events{' '}
       </h1>

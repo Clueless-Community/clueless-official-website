@@ -14,7 +14,8 @@ const WhatIsClueless: React.FC = () => {
   }, []);
 
   return (
-    <>
+    <div className="relative">
+      <div className="green-gradient absolute -top-10 -right-10 hidden sm:block"></div>
       {/* <Container
         maxWidth="lg"
         className="mt-24 flex flex-col md:flex-row scale-105"
@@ -65,7 +66,7 @@ const WhatIsClueless: React.FC = () => {
       <div className="flex justify-end h-40 mr-72 my-4">
         <img src="/line1.png" alt="line1" />
       </div> */}
-      <div className="bg-[#282E36] border border-[#ccc] flex flex-col lg:flex-row mb-8 justify-between items-center mt-[6rem] rounded-[2.5rem] p-8">
+      <div className="bg-[#282E36] relative border border-[#ccc] flex flex-col lg:flex-row mb-8 justify-between items-center mt-[6rem] rounded-[2.5rem] p-8">
         <div>
           <h1 className="text-[2rem] md:text-[2.4rem] text-skin-globalGreen font-medium mb-[1rem]">
             Clueless is a student community
@@ -84,7 +85,7 @@ const WhatIsClueless: React.FC = () => {
       <div className="flex justify-end h-40 mr-56 my-4">
         <img src="/line1.png" alt="line1" />
       </div>
-    </>
+    </div>
   );
 };
 

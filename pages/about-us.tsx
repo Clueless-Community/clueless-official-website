@@ -10,14 +10,7 @@ const AboutUs = () => {
         <title>ClueLess | About Us</title>
         <meta name="description" content="ClueLess About Us Page" />
       </Head>
-      {/* Blur Effect */}
-      <div
-        className="hidden md:block absolute shrink-0 mt-24 w-[200px] h-[200px]"
-        style={{
-          background: 'rgba(126, 231, 135, 0.4)',
-          filter: 'blur(180px)',
-        }}
-      />
+      <div className="green-gradient absolute left-[10%] top-[20%] scale-110"></div>
       <div className="relative sm:p-10">
         <div className="hidden lg:block">
           <h1 className="text-5xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mt-24">
@@ -41,7 +34,7 @@ const AboutUs = () => {
             <div
               className="hidden md:block right-40 absolute shrink-0 w-[200px] h-[200px]"
               style={{
-                background: 'rgba(126, 231, 135, 0.3)',
+                background: 'rgba(126, 231, 135, 0.5)',
                 filter: 'blur(180px)',
               }}
             />
@@ -54,9 +47,9 @@ const AboutUs = () => {
             />
             {/* Blur Effect */}
             <div
-              className="hidden md:block -left-60 absolute shrink-0 w-[200px] h-[200px]"
+              className="hidden md:block -left-60 top-[600px] absolute shrink-0 w-[200px] h-[200px]"
               style={{
-                background: 'rgba(126, 231, 135, 0.3)',
+                background: 'rgba(126, 231, 135, 0.5)',
                 filter: 'blur(180px)',
               }}
             />
@@ -93,7 +86,7 @@ const AboutUs = () => {
             <div
               className="block  absolute shrink-0 top-80 left-20 w-[200px] h-[200px]"
               style={{
-                background: 'rgba(126, 231, 135, 0.25)',
+                background: 'rgba(126, 231, 135, 0.4)',
                 filter: 'blur(182px)',
               }}
             />
