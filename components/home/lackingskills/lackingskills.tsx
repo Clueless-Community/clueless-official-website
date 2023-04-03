@@ -5,10 +5,12 @@ const LackingSkills = () => {
   return (
     <main>
       <div className="">
-        <div className="md:hidden flex flex-col items-center w-fit px-8 py-10">
-          <div className="w-4 h-4 rounded-full border-2 border-[#7ee787]" />
-          <div className="border-l-2 border-[#7EE787] h-16" />
-          <div className="w-4 h-4 rounded-full border-2 border-[#7ee787]" />
+        <div className="flex md:flex-row-reverse md:mr-16 md:-mb-24 md:-mt-10">
+          <div className="flex flex-col items-center w-fit px-8 py-12">
+            <div className="w-4 md:w-6 h-4 md:h-6 rounded-full border-4 border-[#7ee787]" />
+            <div className="border-l-4 border-[#7EE787] h-24" />
+            <div className="w-4 md:w-6 h-4 md:h-6 rounded-full border-4 border-[#7ee787]" />
+          </div>
         </div>
         <div className="md:w-3/5 xl:w-1/2 space-y-2">
           <h1 className="text-[2.8rem] text-[#72cf7b] whitespace-nowrap">
@@ -21,9 +23,12 @@ const LackingSkills = () => {
             built with the vision to encourage open-source enthusiasts built
             with the vision to encourage open-source enthusiasts
           </h4>
-          <button className="btn-green">Explore resource hub</button>
+          <button className="btn-green hidden md:block">
+            Explore resource hub
+          </button>
+          <button className="btn-green md:hidden">Explore</button>
         </div>
-        <div className="flex justify-center pt-4 -mb-36">
+        <div className="flex justify-center pt-8 mb-[-8rem] md:mb-5">
           <img
             className="-mt-28 xl:-mt-36 w-full hidden md:block"
             src="/path.png"
