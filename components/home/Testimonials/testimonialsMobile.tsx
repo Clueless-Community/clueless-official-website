@@ -9,8 +9,6 @@ const MobileSwipper = () => {
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
-    speed: 2000,
     centerMode: true,
     autoplaySpeed: 2000,
     cssEase: 'linear',

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-html-link-for-pages */
 /* eslint-disable @next/next/no-img-element */
 import React from 'react';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -26,7 +27,7 @@ const Footer: React.FC = () => {
 
   return (
     <>
-      <div className="grid lg:grid-cols-5 sm:grid-cols-3 gap-8 grid-cols-1 md:px-28 sm:px-12 px-6 mt-auto text-white bg-[#1B1B1B] pt-12 justify-items-start child:w-full shadow-inner dark:bg-zinc-900">
+      <div className="grid lg:grid-cols-5 sm:grid-cols-3 gap-8 grid-cols-1 xl:px-24 md:px-10 px-5 mt-auto text-white bg-[#1B1B1B] pt-12 justify-items-start child:w-full shadow-inner dark:bg-zinc-900">
         <div className="flex mb-auto flex-wrap justify-center mx-auto">
           <div className="flex items-center cursor-pointer">
             {/* <img src="/ClueLess Logo.png" alt="" className="w-[70px]" /> */}
@@ -37,7 +38,7 @@ const Footer: React.FC = () => {
             {/* <p className="font-raleway ml-8 mt-1">Learn. Grow.</p> */}
           </div>
         </div>
-        <div className="flex flex-col mx-auto my-5 mt-12 sm:my-0 sm:text-left text-center">
+        <div className="flex flex-col jus mx-auto my-5 mt-12 sm:my-0 sm:text-left text-center">
           <h3 className="font-nunito font-semibold text-xl mb-8 text-[#7EE787]">
             Know Us
           </h3>
