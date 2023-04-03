@@ -8,7 +8,7 @@ const NavBar: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    if (window.screen.width < 600) {
+    if (window.screen.width < 1024) {
       setIsMobile(true);
     }
   }, []);
@@ -30,13 +30,13 @@ const NavBar: React.FC = () => {
 
   return (
     <>
-      <div className="pt-2 pattern text-white px-5 md:px-20 xl:px-40">
+      <div className="pt-2 pattern text-white xl:px-24 md:px-10 px-5">
         <Disclosure as="nav">
           {({ open }) => (
             <>
               <div className="relative flex h-16">
                 {/* Menu Icon for Mobile */}
-                <div className="absolute inset-y-0 right-0 flex items-center md:hidden">
+                <div className="absolute inset-y-0 right-0 flex items-center lg:hidden">
                   <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                     {open ? (
                       <XMarkIcon
@@ -50,6 +50,14 @@ const NavBar: React.FC = () => {
                       />
                     )}
                   </Disclosure.Button>
+                  {/* Profile Image */}
+                  <button className="flex rounded-full md:ml-4  text-sm hover:outline-none hover:ring-2 hover:ring-[#7EE787] hover:ring-offset-2 hover:ring-offset-gray-800">
+                    <img
+                      className="w-10 h-10 rounded-full"
+                      src="https://pbs.twimg.com/profile_images/1626657457446752257/d4kJWBeS_400x400.jpg"
+                      alt=""
+                    />
+                  </button>
                 </div>
                 <div className="w-[100%] flex justify-between">
                   {/* Hero Logo */}
@@ -62,7 +70,7 @@ const NavBar: React.FC = () => {
                     </div>
                   </Link>
                   {/* Rest Part */}
-                  <div className="hidden md:flex items-center">
+                  <div className="hidden lg:flex items-center">
                     {/* Tabs */}
                     <div className="flex space-x-8">
                       {navigation.map((item) => (
@@ -95,7 +103,7 @@ const NavBar: React.FC = () => {
                 </div>
               </div>
 
-              <Disclosure.Panel className="sm:hidden">
+              <Disclosure.Panel className="lg:hidden">
                 <div className="space-y-1 px-2 pt-2 pb-3">
                   {navigation.map((item) => (
                     <Disclosure.Button
