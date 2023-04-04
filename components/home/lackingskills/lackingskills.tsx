@@ -5,15 +5,8 @@ const LackingSkills = () => {
   return (
     <main>
       <div className="">
-        <div className="flex md:flex-row-reverse md:mr-[3.3rem] md:-mb-24 md:-mt-10">
-          <div className="flex flex-col items-center w-fit px-8 py-12">
-            <div className="w-6 h-6 rounded-full border-4 border-[#7ee787]" />
-            <div className="border-l-4 border-[#7EE787] h-24" />
-            <div className="w-6 h-6 rounded-full border-4 border-[#7ee787]" />
-          </div>
-        </div>
         <div className="md:w-3/5 xl:w-1/2 space-y-2">
-          <h1 className="text-[2.8rem] text-[#72cf7b] whitespace-nowrap">
+          <h1 className="text-[36px] text-[#72cf7b] whitespace-nowrap">
             Lacking skills?
           </h1>
           <h1 className="text-3xl text-white whitespace-nowrap">
