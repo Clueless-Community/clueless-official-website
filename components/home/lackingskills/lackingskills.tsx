@@ -5,11 +5,11 @@ const LackingSkills = () => {
   return (
     <main>
       <div className="">
-        <div className="flex md:flex-row-reverse md:mr-16 md:-mb-24 md:-mt-10">
+        <div className="flex md:flex-row-reverse md:mr-[3.3rem] md:-mb-24 md:-mt-10">
           <div className="flex flex-col items-center w-fit px-8 py-12">
-            <div className="w-4 md:w-6 h-4 md:h-6 rounded-full border-4 border-[#7ee787]" />
+            <div className="w-6 h-6 rounded-full border-4 border-[#7ee787]" />
             <div className="border-l-4 border-[#7EE787] h-24" />
-            <div className="w-4 md:w-6 h-4 md:h-6 rounded-full border-4 border-[#7ee787]" />
+            <div className="w-6 h-6 rounded-full border-4 border-[#7ee787]" />
           </div>
         </div>
         <div className="md:w-3/5 xl:w-1/2 space-y-2">
@@ -23,10 +23,7 @@ const LackingSkills = () => {
             built with the vision to encourage open-source enthusiasts built
             with the vision to encourage open-source enthusiasts
           </h4>
-          <button className="btn-green hidden md:block">
-            Explore resource hub
-          </button>
-          <button className="btn-green md:hidden">Explore</button>
+          <button className="btn-green">Explore resource hub</button>
         </div>
         <div className="flex justify-center pt-8 mb-[-8rem] md:mb-5">
           <img
