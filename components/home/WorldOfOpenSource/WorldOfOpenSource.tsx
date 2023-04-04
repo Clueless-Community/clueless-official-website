@@ -20,9 +20,9 @@ const WorldOfOpenSource: React.FC = () => {
   }, []);
 
   return (
-    <div className="relative">
+    <div className="relative md:mt-10 mt-8">
       <div className="green-gradient absolute z-10 -top-5 right-80"></div>
-      <div className="flex flex-col justify-between relative z-20 mb-4 md:flex-row w-full h-[380px]">
+      <div className="flex flex-col-reverse justify-between relative z-20 mb-4 md:flex-row w-full h-auto">
         <div className="w-full md:w-[80%] my-auto">
           <div className="md:pr-[3rem] py-[1rem] max-w-[524px]">
             <Typography
@@ -57,9 +57,9 @@ const WorldOfOpenSource: React.FC = () => {
 
         <motion.div
           id="motion-area"
-          className="my-auto w-full md:w-[60%]"
+          className="my-auto w-full sm:h-[320px] h-[420px] md:w-[60%]"
           style={{
-            height: lessThanLag ? '320px' : '80%',
+            // height: lessThanLag ? '320px' : '80%',
             backgroundColor: 'rgba(40, 46, 54, 0.97)',
             borderRadius: '28px',
             padding: '12px',
@@ -187,7 +187,7 @@ const WorldOfOpenSource: React.FC = () => {
               width: '76px',
               position: 'relative',
               left: '70%',
-              top: '-25%',
+              top: '5%',
             }}
           >
             <SvgIcon sx={{ fontSize: '76px', cursor: 'grab' }}>
@@ -239,7 +239,7 @@ const WorldOfOpenSource: React.FC = () => {
           </motion.div>
         </motion.div>
       </div>
-      <div className="flex h-72 mt-[85%] sm:mt-[50%] md:mt-[10%] lg:mt-0">
+      <div className="flex sm:h-56 h-36 ml-5 lg:mt-0">
         <img src="/line2.png" alt="line2" />
       </div>
     </div>

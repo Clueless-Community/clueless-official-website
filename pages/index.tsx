@@ -20,7 +20,7 @@ const Home: NextPage = () => {
       <WorldOfOpenSource />
       <TutorialHell />
       <ExploreProjects />
-      {/* <OpenSourceProfile /> */}
+      <OpenSourceProfile />
       <OpenSourcePrograms />
       <LackingSkills />
       <UpcomingEvents />

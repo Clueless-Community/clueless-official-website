@@ -186,7 +186,7 @@ const TutorialHell = () => {
             </div>
           </div>
         </div>
-        <div className="flex h-40 m-10">
+        <div className="flex sm:h-40 h-28 m-10">
           <img src="/line1.png" alt="line3 " />
         </div>
       </div>
