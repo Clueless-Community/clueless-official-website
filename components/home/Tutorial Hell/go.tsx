@@ -76,7 +76,7 @@ const Go = () => {
             <h1 className="text-white pl-[15px] pb-[5px] ">&#125;</h1>
           </div>
         </div>
-        <div className="rounded-[5px] w-[83px] h-[37px] flex flex-row bg-blue-600">
+        <div className="rounded-[5px] relative w-[83px] h-[37px] flex flex-row bg-blue-600">
           <BsGithub className="text-white mt-[10px] ml-[5px]" />
           <h1 className="text-white pt-[7px] ml-[2px]">Copilot</h1>
         </div>
