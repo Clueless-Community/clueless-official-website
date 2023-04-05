@@ -113,45 +113,45 @@ export function HeroSection() {
         <div className="green-gradient absolute z-0 top-96 bottom-48 opacity-70 -left-20 block sm:hidden"></div>
         <canvas
           ref={canvasRef}
-          onPointerDown={(e) => {
-            if (canvasRef.current != null) {
-              canvasRef.current.style.cursor = 'grabbing';
-            }
-            pointerInteracting.current =
-              e.clientX - pointerInteractionMovement.current;
-          }}
-          onPointerUp={() => {
-            pointerInteracting.current = null;
-            if (canvasRef.current != null) {
-              canvasRef.current.style.cursor = 'grab';
-            }
-          }}
-          onPointerOut={() => {
-            pointerInteracting.current = null;
-            if (canvasRef.current != null) {
-              canvasRef.current.style.cursor = 'grab';
-            }
-          }}
-          onMouseMove={(e) => {
-            if (pointerInteracting.current !== null) {
-              const delta = e.clientX - pointerInteracting.current;
-              pointerInteractionMovement.current = delta;
-              api.start({
-                r: delta / 200,
-              });
-            }
-          }}
-          onTouchMove={(e) => {
-            if (pointerInteracting.current !== null && e.touches[0]) {
-              const delta = e.touches[0].clientX - pointerInteracting.current;
-              pointerInteractionMovement.current = delta;
-              api.start({
-                r: delta / 100,
-              });
-            }
-          }}
+          // onPointerDown={(e) => {
+          //   if (canvasRef.current != null) {
+          //     canvasRef.current.style.cursor = 'grabbing';
+          //   }
+          //   pointerInteracting.current =
+          //     e.clientX - pointerInteractionMovement.current;
+          // }}
+          // onPointerUp={() => {
+          //   pointerInteracting.current = null;
+          //   if (canvasRef.current != null) {
+          //     canvasRef.current.style.cursor = 'grab';
+          //   }
+          // }}
+          // onPointerOut={() => {
+          //   pointerInteracting.current = null;
+          //   if (canvasRef.current != null) {
+          //     canvasRef.current.style.cursor = 'grab';
+          //   }
+          // }}
+          // onMouseMove={(e) => {
+          //   if (pointerInteracting.current !== null) {
+          //     const delta = e.clientX - pointerInteracting.current;
+          //     pointerInteractionMovement.current = delta;
+          //     api.start({
+          //       r: delta / 200,
+          //     });
+          //   }
+          // }}
+          // onTouchMove={(e) => {
+          //   if (pointerInteracting.current !== null && e.touches[0]) {
+          //     const delta = e.touches[0].clientX - pointerInteracting.current;
+          //     pointerInteractionMovement.current = delta;
+          //     api.start({
+          //       r: delta / 100,
+          //     });
+          //   }
+          // }}
           style={{
-            cursor: 'grab',
+            // cursor: 'grab',
             contain: 'layout paint size',
             opacity: 0,
             transition: 'opacity 1s ease',
