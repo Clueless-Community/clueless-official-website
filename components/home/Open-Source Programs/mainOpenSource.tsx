@@ -20,7 +20,7 @@ function OpenSourcePrograms() {
             <a>Explore</a>
           </button>
         </div>
-        <div className="md:w-4/5 lg:w-3/5 relative md:p-10">
+        <div className="flex justify-center lg:w-4/5 relative md:p-10">
           <img
             className="relative z-10 sm:block hidden"
             src="/LandingPage/OpenSource/program.png"
