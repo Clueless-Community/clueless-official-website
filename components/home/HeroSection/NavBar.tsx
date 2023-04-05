@@ -65,7 +65,7 @@ const NavBar: React.FC = () => {
                     <div className="flex items-center cursor-pointer">
                       {ClueLogo('white')}
                       <div className="mt-1">
-                        <h1 className="font-raleway text-3xl ml-1">Clueless</h1>
+                        <h1 className="text-3xl ml-1">Clueless</h1>
                       </div>
                     </div>
                   </Link>
