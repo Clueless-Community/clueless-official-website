@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 const Js = () => {
   return (
-    <div>
+    <div className="sm:text-base text-[14px]">
       <div>
         <h1 className="text-white pl-[18px] pb-[5px] mt-[30px]">
           <span className="text-[#c92828]">const</span> seconds{' '}

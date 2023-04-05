@@ -13,7 +13,7 @@ html {
 
   body {
     font-family: 'DM Sans', sans-serif;
-    background-color: #181f19;
+    background-color: #1b1b1b;
   }
 
   :root {
@@ -82,4 +82,13 @@ html {
   filter: blur(138.5px);
   width: 234px;
   height: 234px;
+}
+
+.nav_gradient {
+  background: linear-gradient(
+    152.97deg,
+    rgba(255, 255, 255, 0) 0% rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  backdrop-filter: blur(20px);
 }

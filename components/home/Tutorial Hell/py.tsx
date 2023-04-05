@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 const Py = () => {
   return (
-    <div>
+    <div className="sm:text-base text-sm">
       <div>
         <h1 className="text-white pl-[15px] pb-[5px] mt-[30px]">
           <span className="text-[#c92828]">import</span> matplotlib.pyplot{' '}
@@ -24,7 +24,7 @@ const Py = () => {
         whileInView={{ y: [10, 0], opacity: [0, 1] }}
         transition={{ duration: 0.8, delay: 0.9 }}
       >
-        <div className="border-l-[3px] border-blue-600 ">
+        <div className="border-l-[3px] border-blue-600 mt-1 sm:mt-0">
           <div className="pl-[25px] bg-blue-600/[0.25]">
             <h1 className="text-white pl-[15px] pb-[5px] ">
               plt.<span className="text-[#bb85eb]">scatter</span>

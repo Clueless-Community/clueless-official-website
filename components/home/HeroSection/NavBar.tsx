@@ -30,7 +30,7 @@ const NavBar: React.FC = () => {
 
   return (
     <>
-      <div className="pt-2 pattern text-white xl:px-24 md:px-10 px-5">
+      <div className="pb-2 pt-2 sticky top-0 nav_gradient z-10 text-white xl:px-24 md:px-10 px-5">
         <Disclosure as="nav">
           {({ open }) => (
             <>
@@ -51,7 +51,7 @@ const NavBar: React.FC = () => {
                     )}
                   </Disclosure.Button>
                   {/* Profile Image */}
-                  <button className="flex rounded-full md:ml-4  text-sm hover:outline-none hover:ring-2 hover:ring-[#7EE787] hover:ring-offset-2 hover:ring-offset-gray-800">
+                  <button className="flex rounded-full md:ml-4 text-sm hover:outline-none hover:ring-2 hover:ring-[#7EE787] hover:ring-offset-2 hover:ring-offset-gray-800">
                     <img
                       className="w-10 h-10 rounded-full"
                       src="https://pbs.twimg.com/profile_images/1626657457446752257/d4kJWBeS_400x400.jpg"
@@ -59,7 +59,7 @@ const NavBar: React.FC = () => {
                     />
                   </button>
                 </div>
-                <div className="w-[100%] flex justify-between">
+                <div className="w-[100%] flex justify-between items-center">
                   {/* Hero Logo */}
                   <Link href="/">
                     <div className="flex items-center cursor-pointer">

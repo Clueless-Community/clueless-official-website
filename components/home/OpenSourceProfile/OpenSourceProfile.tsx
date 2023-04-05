@@ -44,7 +44,7 @@ const opensrc = () => {
           alt=""
         />
         <img
-          className="flex w-[70vw] items-center justify-center mt-3 sm:hidden"
+          className="flex w-[60vw] mr-5 items-center justify-center mt-3 sm:hidden"
           src="true-design2.png"
           alt=""
         />
