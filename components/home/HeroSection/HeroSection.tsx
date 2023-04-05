@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import React from 'react';
 import { NextPage } from 'next';
-import MobileHeroSection from './mobileHeroSection';
+import MobileHeroSection from './MobileHeroSection';
 import PcHeroSection from './PcHeroSection';
 
 export function HeroSection() {
