@@ -26,13 +26,14 @@ const WorldOfOpenSource: React.FC = () => {
         <div className="w-full md:w-[80%] my-auto">
           <div className="md:pr-[3rem] py-[1rem] ">
             <Typography
-              className="text-[2rem] md:text-[2.4rem] text-[#7EE787] font-medium xl:leading-[70.5px] w-full leading-[40px]"
+              className="text-[2rem] md:text-[3rem] text-[#7EE787] font-medium xl:leading-[55px] w-full leading-[40px]"
               variant="h2"
               sx={{
                 marginBottom: '20px',
               }}
             >
-              Jump into the world of Open-source
+              Jump into the world of <br className="sm:block hidden" />{' '}
+              Open-source
             </Typography>
             <Typography
               variant="h4"
