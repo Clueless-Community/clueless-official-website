@@ -25,18 +25,11 @@ const WorldOfOpenSource: React.FC = () => {
       <div className="flex flex-col-reverse justify-between relative z-20 mb-4 md:flex-row w-full h-auto">
         <div className="w-full md:w-[80%] my-auto">
           <div className="md:pr-[3rem] py-[1rem] ">
-            <Typography
-              className="text-[2rem] md:text-[3rem] text-[#7EE787] font-medium xl:leading-[55px] w-full leading-[40px]"
-              variant="h2"
-              sx={{
-                marginBottom: '20px',
-              }}
-            >
-              Jump into the world of <br className="sm:block hidden" />{' '}
+            <h1 className="text-[2rem] md:text-[3rem] text-[#7EE787] font-medium xl:leading-[55px] w-full leading-[40px]">
+              Jump into the world of <br className="sm:block hidden" />
               Open-source
-            </Typography>
+            </h1>
             <Typography
-              variant="h4"
               my={'0.8rem'}
               sx={{
                 fontWeight: '300',
