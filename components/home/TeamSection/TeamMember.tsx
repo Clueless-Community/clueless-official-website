@@ -106,11 +106,6 @@ export default function TeamMember() {
               },
             }}
             loop={true}
-            speed={1200}
-            autoplay={{
-              delay: 2000,
-              disableOnInteraction: false,
-            }}
             modules={[Autoplay, EffectCoverflow, Mousewheel, Keyboard]}
             className="mySwiper hidden"
           >
