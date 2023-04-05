@@ -87,8 +87,7 @@ html {
 .nav_gradient {
   background: linear-gradient(
     152.97deg,
-    rgba(255, 255, 255, 0) 0% rgba(255, 255, 255, 0.2) 50%,
-    rgba(255, 255, 255, 0) 100%
+    rgb(255, 255, 255) 0% rgba(255, 255, 255, 0) 100%
   );
   backdrop-filter: blur(20px);
 }
