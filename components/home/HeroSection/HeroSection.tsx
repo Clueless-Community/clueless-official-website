@@ -6,7 +6,7 @@ import { Box } from '@mui/material';
 import { useSpring } from '@react-spring/web';
 
 export function HeroSection() {
-  // const [isMobile, setIsMobile] = useState(false);
+  // const [IsMobile, setIsMobile] = useState(0);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const pointerInteracting = useRef<null | number>(null);
   const pointerInteractionMovement = useRef(0);
@@ -50,6 +50,9 @@ export function HeroSection() {
       onRender: (state) => {
         if (!pointerInteracting.current) {
           phi += 0.005;
+        }
+        if (window.screen.width < 600) {
+          phi = 1.5;
         }
         state.phi = phi + r.get();
         state.width = width * 2;
