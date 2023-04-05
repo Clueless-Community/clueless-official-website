@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 const Go = () => {
   return (
-    <div>
+    <div className="sm:text-base text-[14px]">
       <div>
         <h1 className="text-white pl-[15px] pb-[5px] mt-[15px]">
           <span className="text-[#c92828]">package </span> main
@@ -16,14 +16,14 @@ const Go = () => {
           <span className="text-[#c92828]"> func </span>
           (int) int)
           <span className="text-[#c92828]"> func </span>
-          (int) int &#123;
+          (int) int <br /> &#123;
         </h1>
       </div>
       <motion.div
         whileInView={{ y: [10, 0], opacity: [0, 1] }}
         transition={{ duration: 0.8, delay: 1 }}
       >
-        <div className="border-l-[3px] border-blue-600 ">
+        <div className="border-l-[3px] border-blue-600 mt-1.5 sm:mt-0">
           <div className="pl-[25px] bg-blue-600/[0.25]">
             <h1 className="text-white pl-[15px] pb-[5px] ">
               cache

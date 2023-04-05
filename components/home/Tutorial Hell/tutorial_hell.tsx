@@ -66,14 +66,14 @@ const TutorialHell = () => {
   };
 
   return (
-    <div className="relative">
+    <div className="relative mx-auto">
       <div className="green-gradient absolute z-0 bottom-52 -left-20"></div>
       <div className="relative z-10">
         <h1 className="text-[#7EE787] xl:text-[55px] font-semibold xl:leading-[70.5px] leading-[30.5px] w-3/5 my-12 text-[36px]">
           Get out of tutorial hell and start contributing{' '}
         </h1>
-        <div className="flex xl:flex-row flex-col mx-[1%]">
-          <div className="xl:w-[1300px]">
+        <div className="flex xl:flex-row flex-col">
+          <div className="xl:w-[1300px] w-[320px] sm:w-[600px]">
             <div className="h-[50px] flex flex-row bg-[#262227] rounded-t-[31px]">
               <button
                 onClick={ActivateButton1}
@@ -123,7 +123,7 @@ const TutorialHell = () => {
             </div>
 
             <div className="flex flex-row h-[375px] bg-black">
-              <div className="w-[20px] bg-[#262227]">
+              <div className="sm:text-base text-[14px] w-[20px] bg-[#262227]">
                 <h1
                   className={`text-slate-400 pl-[7px] pb-[5px] ${
                     active3 === true ? 'mt-[15px]' : 'mt-[30px]'
@@ -141,6 +141,9 @@ const TutorialHell = () => {
                 <h1 className="text-slate-400 pl-[5px] pb-[5px]">9</h1>
                 <h1 className="text-slate-400 pl-[2px] pb-[5px]">10</h1>
                 <h1 className="text-slate-400 pl-[4px] pb-[5px]">11</h1>
+                <h1 className="text-slate-400 pl-[4px] pb-[5px] sm:hidden block">
+                  12
+                </h1>
               </div>
 
               <div className={`w-[100%] ${active1 === true ? '' : 'hidden'}`}>
@@ -154,14 +157,16 @@ const TutorialHell = () => {
               </div>
             </div>
 
-            <div className="h-[93px] flex flex-row mt-[25px] xl:mt-0">
+            <div className="sm:h-[93px] h-[65px] flex flex-row xl:mt-0">
               <button
                 onClick={ReplayButton}
                 className="w-[100%] flex flex-row bg-[#262227] rounded-b-[31px] justify-items-center"
               >
                 <div className="flex flex-row mx-auto my-auto">
-                  <LoopIcon className="text-[30px] text-white my-auto" />
-                  <h1 className="text-[26px] text-white">Replay</h1>
+                  <LoopIcon className="sm:text-[30px] text-[22px] mr-1 sm:mr-0 text-white my-auto" />
+                  <h1 className="sm:text-[26px] text-[20px] text-white">
+                    Replay
+                  </h1>
                 </div>
               </button>
             </div>
