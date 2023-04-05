@@ -20,13 +20,25 @@ function OpenSourcePrograms() {
             <a>Explore</a>
           </button>
         </div>
-        <div className="md:w-4/5 lg:w-3/5 relative md:p-10">
+        <div className="flex justify-center lg:w-4/5 relative md:p-10">
           <img
-            className="relative z-10"
+            className="relative z-10 hidden lg:block"
             src="/LandingPage/OpenSource/program.png"
             alt=""
           />
-          <div className="green-gradient absolute z-0 lg:bottom-52 sm:bottom-24 bottom-16 lg:right-96"></div>
+          <img
+            className="relative z-10 w-screen lg:hidden"
+            src="/LandingPage/OpenSource/program2.png"
+            alt=""
+          />
+          <div className="hidden lg:block green-gradient absolute z-0 lg:bottom-52 sm:bottom-24 bottom-16 lg:right-96"></div>
+        </div>
+      </div>
+      <div className="flex md:flex-row-reverse md:mr-[3.3rem] md:-mb-24 md:-mt-10">
+        <div className="flex flex-col items-center w-fit px-8 py-12">
+          <div className="w-6 h-6 rounded-full border-4 border-[#7ee787]" />
+          <div className="border-l-4 border-[#7EE787] h-24" />
+          <div className="w-6 h-6 rounded-full border-4 border-[#7ee787]" />
         </div>
       </div>
     </div>

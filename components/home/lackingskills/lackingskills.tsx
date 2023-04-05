@@ -6,19 +6,19 @@ const LackingSkills = () => {
     <main>
       <div className="">
         <div className="md:w-3/5 xl:w-1/2 space-y-2">
-          <h1 className="text-[3rem] text-[#72cf7b] whitespace-nowrap">
+          <h1 className="text-[36px] text-[#72cf7b] whitespace-nowrap">
             Lacking skills?
           </h1>
-          <h1 className=" text-3xl text-white whitespace-nowrap">
+          <h1 className="text-3xl text-white whitespace-nowrap">
             We got you covered.
           </h1>
-          <h4 className="pb-6 text-lg text-gray-300">
+          <h4 className="pb-2 text-lg text-gray-300">
             built with the vision to encourage open-source enthusiasts built
             with the vision to encourage open-source enthusiasts
           </h4>
           <button className="btn-green">Explore resource hub</button>
         </div>
-        <div className="flex justify-center">
+        <div className="flex justify-center pt-8 mb-[-8rem] md:mb-5">
           <img
             className="-mt-28 xl:-mt-36 w-full hidden md:block"
             src="/path.png"
