@@ -25,7 +25,7 @@ function ExploreProjects() {
       <div id="projects" className="w-full md:pb-20 lg:pb-0 relative">
         {/* Heading Part */}
         <div className="flex justify-between gap-2 md:items-center flex-col md:flex-row mb-5">
-          <h1 className="md:text-[64px] text-[36px] text-[#7EE787] font-medium">
+          <h1 className="xl:text-[55px] text-[#7EE787] font-medium xl:leading-[70.5px] w-full leading-[40px] text-[36px]">
             Explore Projects to contribute
           </h1>
           <button className="btn-outline w-fit px-6">Explore projects</button>

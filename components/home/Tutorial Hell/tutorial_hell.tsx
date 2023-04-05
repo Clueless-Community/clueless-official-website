@@ -69,7 +69,7 @@ const TutorialHell = () => {
     <div className="relative mx-auto">
       <div className="green-gradient absolute z-0 bottom-52 -left-20"></div>
       <div className="relative z-10">
-        <h1 className="text-[#7EE787] xl:text-[55px] font-semibold xl:leading-[70.5px] leading-[30.5px] w-3/5 my-12 text-[36px]">
+        <h1 className="xl:text-[55px] text-[#7EE787] font-medium xl:leading-[70.5px] w-full leading-[40px] text-[36px] my-12">
           Get out of tutorial hell and start contributing{' '}
         </h1>
         <div className="flex xl:flex-row flex-col">

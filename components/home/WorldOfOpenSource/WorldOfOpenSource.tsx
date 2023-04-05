@@ -24,14 +24,11 @@ const WorldOfOpenSource: React.FC = () => {
       <div className="green-gradient absolute z-10 -top-5 right-80"></div>
       <div className="flex flex-col-reverse justify-between relative z-20 mb-4 md:flex-row w-full h-auto">
         <div className="w-full md:w-[80%] my-auto">
-          <div className="md:pr-[3rem] py-[1rem] max-w-[524px]">
+          <div className="md:pr-[3rem] py-[1rem] ">
             <Typography
+              className="xl:text-[55px] text-[#7EE787] font-medium xl:leading-[70.5px] w-full leading-[40px] text-[36px] "
               variant="h2"
               sx={{
-                fontWeight: '500',
-                fontSize: '2.8rem',
-                lineHeight: '2.8rem',
-                color: 'lightgreen',
                 marginBottom: '20px',
               }}
             >
