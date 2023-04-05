@@ -26,7 +26,7 @@ const WorldOfOpenSource: React.FC = () => {
         <div className="w-full md:w-[80%] my-auto">
           <div className="md:pr-[3rem] py-[1rem] ">
             <Typography
-              className="xl:text-[55px] text-[#7EE787] font-medium xl:leading-[70.5px] w-full leading-[40px] text-[36px]"
+              className="text-[2rem] md:text-[2.4rem] 2xl:text-[55px] text-[#7EE787] font-medium xl:leading-[70.5px] w-full leading-[40px]"
               variant="h2"
               sx={{
                 marginBottom: '20px',
