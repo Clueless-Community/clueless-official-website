@@ -6,7 +6,6 @@ import { Box } from '@mui/material';
 import { useSpring } from '@react-spring/web';
 
 export function HeroSection() {
-  // const [IsMobile, setIsMobile] = useState(0);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const pointerInteracting = useRef<null | number>(null);
   const pointerInteractionMovement = useRef(0);
