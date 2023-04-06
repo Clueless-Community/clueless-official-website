@@ -28,12 +28,12 @@ const privacy = () => {
 
         <p className="my-4">
           Permission is granted to temporarily download one copy of the
-          materials on ClueLess's Website for personal, non-commercial
+          materials on ClueLess&apos;s Website for personal, non-commercial
           transitory viewing only. This is the grant of a license, not a
           transfer of title, and under this license you may not: modify or copy
           the materials; use the materials for any commercial purpose or for any
           public display; attempt to reverse engineer any software contained on
-          ClueLess's Website; remove any copyright or other proprietary
+          ClueLess&apos;s Website; remove any copyright or other proprietary
           notations from the materials; or transferring the materials to another
           person or "mirror" the materials on any other server. This will let
           ClueLess to terminate upon violations of any of these restrictions.
@@ -45,38 +45,38 @@ const privacy = () => {
         <h1 className="text-xl font-medium mt-16">3. Disclaimer</h1>
 
         <p className="my-4">
-          All the materials on ClueLess’s Website are provided "as is". ClueLess
-          makes no warranties, may it be expressed or implied, therefore negates
-          all other warranties. Furthermore, ClueLess does not make any
-          representations concerning the accuracy or reliability of the use of
-          the materials on its Website or otherwise relating to such materials
-          or any sites linked to this Website.
+          All the materials on ClueLess&apos;s Website are provided "as is".
+          ClueLess makes no warranties, may it be expressed or implied,
+          therefore negates all other warranties. Furthermore, ClueLess does not
+          make any representations concerning the accuracy or reliability of the
+          use of the materials on its Website or otherwise relating to such
+          materials or any sites linked to this Website.
         </p>
         <h1 className="text-xl font-medium mt-16">4. Limitations</h1>
         <p className="my-4">
           ClueLess or its suppliers will not be hold accountable for any damages
           that will arise with the use or inability to use the materials on
-          ClueLess’s Website, even if ClueLess or an authorize representative of
-          this Website has been notified, orally or written, of the possibility
-          of such damage. Some jurisdiction does not allow limitations on
-          implied warranties or limitations of liability for incidental damages,
-          these limitations may not apply to you.
+          ClueLess&apos;s Website, even if ClueLess or an authorize
+          representative of this Website has been notified, orally or written,
+          of the possibility of such damage. Some jurisdiction does not allow
+          limitations on implied warranties or limitations of liability for
+          incidental damages, these limitations may not apply to you.
         </p>
         <h1 className="text-xl font-medium mt-16">5. Revisions and Errata</h1>
         <p className="my-4">
-          The materials appearing on ClueLess’s Website may include technical,
-          typographical, or photographic errors. ClueLess will not promise that
-          any of the materials in this Website are accurate, complete, or
-          current. ClueLess may change the materials contained on its Website at
-          any time without notice. ClueLess does not make any commitment to
-          update the materials.
+          The materials appearing on ClueLess&apos;s Website may include
+          technical, typographical, or photographic errors. ClueLess will not
+          promise that any of the materials in this Website are accurate,
+          complete, or current. ClueLess may change the materials contained on
+          its Website at any time without notice. ClueLess does not make any
+          commitment to update the materials.
         </p>
         <h1 className="text-xl font-medium mt-16">6. Links</h1>
         <p className="my-4">
           ClueLess has not reviewed all of the sites linked to its Website and
           is not responsible for the contents of any such linked site. The
           presence of any link does not imply endorsement by ClueLess of the
-          site. The use of any linked website is at the user’s own risk.
+          site. The use of any linked website is at the user&apos;s own risk.
         </p>
         <h1 className="text-xl font-medium mt-16">
           7. Site Terms of Use Modifications
