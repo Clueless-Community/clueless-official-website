@@ -29,7 +29,10 @@ function ExploreProjects() {
       <div id="projects" className="w-full md:pb-20 lg:pb-0 relative">
         {/* Heading Part */}
         <div className="flex justify-between gap-2 md:items-center flex-col md:flex-row mb-5">
-          <h1 className="text-[2rem] md:text-[3rem] text-[#7EE787] font-medium xl:leading-[55px] w-full leading-[40px]">
+          {/* <h1 className="text-[2rem] md:text-[3rem] text-[#7EE787] font-medium xl:leading-[55px] w-full leading-[40px]">
+            Explore Projects to contribute
+          </h1> */}
+          <h1 className="text-[2rem] md:text-[3rem] text-[#7EE787] font-medium ">
             Explore Projects to contribute
           </h1>
           <a
@@ -37,7 +40,7 @@ function ExploreProjects() {
             target="_blank"
             rel="noreferrer"
           >
-            <button className="btn-outline w-fit px-6">Explore projects</button>
+            <button className="btn-green">Explore projects</button>
           </a>
         </div>
 

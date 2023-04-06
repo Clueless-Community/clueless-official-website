@@ -4,6 +4,7 @@ import Image from 'next/image';
 import GSSOC from '../../../public/Gssoc.png';
 import MLH from '../../../public/MLH.png';
 import LFX from '../../../public/LFX.png';
+import Link from 'next/link';
 
 function OpenSourcePrograms() {
   return (
@@ -16,9 +17,11 @@ function OpenSourcePrograms() {
             </span>{' '}
             <span className="text-white">Open-source Programs</span>
           </h1>
-          <button className="btn-green">
-            <a>Explore</a>
-          </button>
+          <Link href="404.tsx">
+            <button className="btn-green">
+              <a>Explore</a>
+            </button>
+          </Link>
         </div>
         <div className="flex justify-center lg:w-4/5 relative md:p-10">
           <img

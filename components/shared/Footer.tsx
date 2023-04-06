@@ -66,12 +66,7 @@ const Footer: React.FC = () => {
           <h3 className="font-nunito font-semibold text-xl mb-8 text-[#7EE787]">
             Quick links
           </h3>
-          <a
-            className="my-3 hover:text-skin-main transition-all"
-            href="/#events"
-          >
-            Events
-          </a>
+
           <a
             className="my-3 hover:text-skin-main transition-all"
             href="https://clueless-resources.super.site/"
@@ -128,7 +123,7 @@ const Footer: React.FC = () => {
         </div>
       </div>
       <div className="sm:px-40 flex justify-between text-sm py-10 bg-[#1B1B1B] text-white flex-col items-center sm:flex-row shadow-xl dark:bg-zinc-900">
-        <p>Copyright &copy; by ClueLess 2022</p>
+        <p>Copyright &copy; by ClueLess 2023</p>
         <p className="mt-5 sm:mt-0">Powered by Clueless</p>
       </div>
     </>

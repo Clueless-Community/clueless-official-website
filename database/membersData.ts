@@ -88,6 +88,14 @@ const data = [
     github_url: 'https://github.com/bbsdevloper',
     twitter_url: 'https://twitter.com/MukeshKuiry7',
   },
+  {
+    name: 'Hritik Bhattacharya',
+    photo_url: 'https://i.ibb.co/QQhh6Vs/hritik.jpg',
+    designation: 'Web-Developer',
+    linkedin_url: 'https://www.linkedin.com/in/hritik-bhattacharya-631847210/',
+    github_url: 'https://github.com/hritikbhattacharya',
+    twitter_url: 'https://twitter.com/Hritikb25',
+  },
 ];
 
 export default data;
