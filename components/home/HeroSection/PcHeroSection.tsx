@@ -95,7 +95,7 @@ export function HeroSection() {
               <h1>Join Discord</h1>
             </button>
 
-            <button className="border-2 sm:text-sm text-xs xl:text-base cursor-pointer border-[#7EE787] text-white rounded-md px-4 py-2 transition-all font-semibold active:scale-95">
+            <button className="border-2 sm:text-sm text-xs xl:text-base btn-outline">
               Explore Projects
             </button>
           </div>

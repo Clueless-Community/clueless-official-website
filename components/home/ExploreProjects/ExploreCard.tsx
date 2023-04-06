@@ -37,8 +37,8 @@ function ExploreCard(props: any) {
         </div>
       </div>
       <a href={props?.data?.repoURL} target="_blank" rel="noreferrer">
-        <div className="md:w-10 bg-[#7EE787] flex justify-center items-center p-1 h-full">
-          <FaAngleRight className="w-5 h-5 text-black" />
+        <div className="md:w-10 bg-[#7EE787] flex justify-center items-center p-1 h-full hover:bg-[#077a11]">
+          <FaAngleRight className="w-5 h-5 text-black " />
         </div>
       </a>
     </div>

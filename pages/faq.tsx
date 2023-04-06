@@ -104,13 +104,7 @@ const Faq: NextPage = () => {
                       expanded === 'panel1' ? 'bg-[#7EE787]' : 'bg-[#17202A]'
                     }
                   >
-                    <Typography
-                      className={
-                        expanded === 'panel1'
-                          ? 'text-black font-semibold'
-                          : 'text-white'
-                      }
-                    >
+                    <Typography className="text-white">
                       1. What is Clueless?
                     </Typography>
                   </AccordionSummary>
@@ -152,13 +146,7 @@ const Faq: NextPage = () => {
                       expanded === 'panel2' ? 'bg-[#7EE787]' : 'bg-[#17202A]'
                     }
                   >
-                    <Typography
-                      className={
-                        expanded === 'panel2'
-                          ? 'text-black font-semibold'
-                          : 'text-white'
-                      }
-                    >
+                    <Typography className={'text-white'}>
                       2. What do we provide?
                     </Typography>
                   </AccordionSummary>
@@ -197,13 +185,7 @@ const Faq: NextPage = () => {
                       expanded === 'panel3' ? 'bg-[#7EE787]' : 'bg-[#17202A]'
                     }
                   >
-                    <Typography
-                      className={
-                        expanded === 'panel3'
-                          ? 'text-black font-semibold'
-                          : 'text-white'
-                      }
-                    >
+                    <Typography className={'text-white'}>
                       3. Do we have a community?
                     </Typography>
                   </AccordionSummary>
@@ -240,13 +222,7 @@ const Faq: NextPage = () => {
                       expanded === 'panel4' ? 'bg-[#7EE787]' : 'bg-[#17202A]'
                     }
                   >
-                    <Typography
-                      className={
-                        expanded === 'panel4'
-                          ? 'text-black font-semibold'
-                          : 'text-white'
-                      }
-                    >
+                    <Typography className={'text-white'}>
                       4. Is it free?
                     </Typography>
                   </AccordionSummary>
