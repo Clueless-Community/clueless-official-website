@@ -51,13 +51,13 @@ const NavBar: React.FC = () => {
                     )}
                   </Disclosure.Button>
                   {/* Profile Image */}
-                  <button className="flex rounded-full md:ml-4 text-sm hover:outline-none hover:ring-2 hover:ring-[#7EE787] hover:ring-offset-2 hover:ring-offset-gray-800">
+                  {/* <button className="flex rounded-full md:ml-4 text-sm hover:outline-none hover:ring-2 hover:ring-[#7EE787] hover:ring-offset-2 hover:ring-offset-gray-800">
                     <img
                       className="w-10 h-10 rounded-full"
                       src="https://pbs.twimg.com/profile_images/1626657457446752257/d4kJWBeS_400x400.jpg"
                       alt=""
                     />
-                  </button>
+                  </button> */}
                 </div>
                 <div className="w-[100%] flex justify-between items-center">
                   {/* Hero Logo */}
@@ -90,7 +90,7 @@ const NavBar: React.FC = () => {
                       ))}
                     </div>
                     {/* Profile Image */}
-                    <div className="absolute inset-y-0 right-0 flex items-center pl-5 md:static md:inset-auto md:ml-6 md:pr-0">
+                    {/* <div className="absolute inset-y-0 right-0 flex items-center pl-5 md:static md:inset-auto md:ml-6 md:pr-0">
                       <button className="flex rounded-full text-sm hover:outline-none hover:ring-2 hover:ring-[#7EE787] hover:ring-offset-2 hover:ring-offset-gray-800">
                         <img
                           className="w-10 rounded-full"
@@ -98,7 +98,7 @@ const NavBar: React.FC = () => {
                           alt=""
                         />
                       </button>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
