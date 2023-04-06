@@ -91,3 +91,10 @@ html {
   );
   backdrop-filter: blur(20px);
 }
+
+.btnHover:hover .icon {
+  fill: white;
+}
+.icon {
+  fill: black;
+}
