@@ -16,7 +16,13 @@ const LackingSkills = () => {
             built with the vision to encourage open-source enthusiasts built
             with the vision to encourage open-source enthusiasts
           </h4>
-          <button className="btn-green">Explore resource hub</button>
+          <a
+            href="https://clueless-resources.super.site/resources"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <button className="btn-green">Explore resource hub</button>
+          </a>
         </div>
         <div className="flex justify-center pt-8 mb-[-8rem] md:mb-5">
           <img

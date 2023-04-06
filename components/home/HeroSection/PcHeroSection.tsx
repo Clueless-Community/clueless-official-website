@@ -77,10 +77,10 @@ export function HeroSection() {
             Learn, Grow.
           </h2>
           <div className="flex lg:space-x-5 sm:space-x-24 space-x-20 sm:mt-4 mt-1">
-            <Link
-              rel="noreferrer"
+            <a
+              href="https://discord.gg/zrVMjGW8sB"
               target="_blank"
-              href={'https://discord.gg/zrVMjGW8sB'}
+              rel="noreferrer"
             >
               <button className="hidden lg:flex text-sm xl:text-base items-center space-x-2 cursor-pointer border-2 border-[#7EE787] bg-[#7EE787] text-black rounded-md px-4 py-2 transition-all font-semibold active:scale-95">
                 <svg
@@ -97,10 +97,12 @@ export function HeroSection() {
                 </svg>
                 <h1>Join Discord</h1>
               </button>
-            </Link>
-            <button className="border-2 sm:text-sm text-xs xl:text-base cursor-pointer border-[#7EE787] text-white rounded-md px-4 py-2 transition-all font-semibold active:scale-95">
-              Explore Projects
-            </button>
+            </a>
+            <a href="" target="_blank" rel="noreferrer">
+              <button className="border-2 sm:text-sm text-xs xl:text-base cursor-pointer border-[#7EE787] text-white rounded-md px-4 py-2 transition-all font-semibold active:scale-95">
+                Explore Projects
+              </button>
+            </a>
           </div>
         </div>
       </Box>
