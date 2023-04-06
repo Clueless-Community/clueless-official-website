@@ -15,8 +15,8 @@ const NavBar: React.FC = () => {
 
   const navigation = [
     { name: 'Home', href: '/#hero', current: true },
-    { name: 'Events', href: '/#events', current: false },
-    { name: 'Open Source Projects', href: '#projects', current: false },
+    { name: 'About Us', href: '/about-us', current: false },
+    { name: 'Open Source Projects', href: '/#projects', current: false },
     {
       name: 'Resources',
       href: 'https://clueless-resources.super.site/resources',

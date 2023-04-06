@@ -7,16 +7,20 @@ function ExploreProjects() {
       title: 'ClueLess Official Website',
       tags: ['HTML', 'Tailwind CSS'],
       desc: 'built with the vision to encourage open-source enthusiasts!',
+      repoURL:
+        'https://github.com/Clueless-Community/clueless-official-website',
     },
     {
       title: 'SeamLess UI',
       tags: ['HTML', 'Tailwind CSS'],
       desc: 'built with the vision to encourage open-source enthusiasts!',
+      repoURL: 'https://github.com/Clueless-Community/seamless-ui',
     },
     {
       title: 'Flutter UI Components',
       tags: ['Flutter', 'Tailwind CSS'],
       desc: 'built with the vision to encourage open-source enthusiasts!',
+      repoURL: 'https://github.com/Clueless-Community/flutter-ui-components',
     },
   ];
 
@@ -28,7 +32,13 @@ function ExploreProjects() {
           <h1 className="text-[2rem] md:text-[3rem] text-[#7EE787] font-medium xl:leading-[55px] w-full leading-[40px]">
             Explore Projects to contribute
           </h1>
-          <button className="btn-outline text-sm">Explore projects</button>
+          <a
+            href="https://github.com/orgs/Clueless-Community/repositories"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <button className="btn-outline w-fit px-6">Explore projects</button>
+          </a>
         </div>
 
         {/* Cards */}
