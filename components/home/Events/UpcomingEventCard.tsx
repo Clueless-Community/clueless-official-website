@@ -1,7 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import React, { useEffect } from 'react';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
+import React from 'react';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 interface dataProps {
@@ -24,11 +22,11 @@ const UpcomingEventCard: React.FC<dataProps> = ({
   date,
 }) => {
   return (
-    <div className=" bg-[#282e36f7] xl:flex-row flex-col flex xl:justify-between rounded-[46px] relative xl:h-[232px] mb-[50px]">
-      <div className="xl:h-[231px] xl:w-[515px] h-[293px]">
+    <div className=" bg-[#282e36f7] xl:flex-row flex-col flex xl:justify-between rounded-[46px] relative xl:h-[232px]">
+      <div className="xl:h-[231px] xl:w-[515px]">
         <img
           src={eventposter}
-          className="xl:w-[515px] xl:h-[231px] xl:rounded-l-[44px] xl:rounded-tr-[0px] rounded-t-[19px] h-[293px] w-full"
+          className="xl:w-[515px] xl:h-[231px] xl:rounded-l-[44px] xl:rounded-tr-[0px] rounded-t-[19px] w-full max-h-[300px]"
           alt="event poster"
         />
       </div>
@@ -40,7 +38,7 @@ const UpcomingEventCard: React.FC<dataProps> = ({
               {heading}
             </h1>
             <div
-              className={`flex md:flex-row flex-col flex-wrap xl:justify-start md:child:mr-8 h-full md:space-y-0 space-y-4 child:mb-4`}
+              className={`flex md:flex-row flex-col flex-wrap xl:justify-start md:child:mr-8 h-full space-y-4 xl:space-y-0 child:mb-4`}
             >
               <div
                 className={`flex 2xl:flex-row flex-col 2xl:space-x-2 justify-start xl:pb-2`}
@@ -79,8 +77,8 @@ const UpcomingEventCard: React.FC<dataProps> = ({
       </section>
       <div className="text-right flex items-center space-x-4 h-fit">
         {/* <Link href={`/events/[event_id]`} as={`/events/${eventId}`} passHref> */}
-        <button className="bg-[#7EE787] xl:rounded-r-[44px] text-[#272D35] xl:w-[111px] xl:h-[231px] text-10xl xl:rounded-bl-[0px] rounded-b-[19px] h-[100px] w-full">
-          <ArrowForwardIosIcon className="text-[42px] font-bold" />
+        <button className="bg-[#7EE787] xl:rounded-r-[44px] text-[#272D35] xl:w-[111px] xl:h-[231px] text-10xl xl:rounded-bl-[0px] rounded-b-[19px] h-[60px] w-full">
+          <ArrowForwardIosIcon className="text-2xl font-bold" />
         </button>
         {/* </Link> */}
       </div>

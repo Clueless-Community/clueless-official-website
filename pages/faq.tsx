@@ -9,8 +9,6 @@ import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import { NextPage } from 'next';
 import Head from 'next/head';
-// import Navbar from "../components/shared/Navbar/Navbar";
-import Footer from '../components/shared/Footer';
 import Link from 'next/link';
 
 const Accordion = styled((props: AccordionProps) => (
@@ -64,7 +62,10 @@ const Faq: NextPage = () => {
     };
 
   return (
-    <div className="">
+    <div className="relative">
+      <div className="green-gradient absolute z-0 opacity-70 sm:-right-52 right-0 top-72 sm:bottom-0"></div>
+      <div className="green-gradient absolute z-0 opacity-70 top-40 -left-64 hidden sm:block"></div>
+      <div className="green-gradient absolute z-0 top-40 right-96 opacity-70 scale-75 hidden sm:block"></div>
       <div>
         <Head>
           <title>ClueLess | FAQ</title>
@@ -103,9 +104,7 @@ const Faq: NextPage = () => {
                   >
                     <Typography
                       className={
-                        expanded === 'panel1'
-                          ? 'text-black font-semibold'
-                          : 'text-white'
+                        expanded === 'panel1' ? 'text-black' : 'text-white'
                       }
                     >
                       1. What is Clueless?
@@ -151,9 +150,7 @@ const Faq: NextPage = () => {
                   >
                     <Typography
                       className={
-                        expanded === 'panel2'
-                          ? 'text-black font-semibold'
-                          : 'text-white'
+                        expanded === 'panel2' ? 'text-black' : 'text-white'
                       }
                     >
                       2. What do we provide?
@@ -196,9 +193,7 @@ const Faq: NextPage = () => {
                   >
                     <Typography
                       className={
-                        expanded === 'panel3'
-                          ? 'text-black font-semibold'
-                          : 'text-white'
+                        expanded === 'panel3' ? 'text-black' : 'text-white'
                       }
                     >
                       3. Do we have a community?
@@ -239,9 +234,7 @@ const Faq: NextPage = () => {
                   >
                     <Typography
                       className={
-                        expanded === 'panel4'
-                          ? 'text-black font-semibold'
-                          : 'text-white'
+                        expanded === 'panel4' ? 'text-black' : 'text-white'
                       }
                     >
                       4. Is it free?
@@ -260,27 +253,27 @@ const Faq: NextPage = () => {
                   </AccordionDetails>
                 </Accordion>
               </div>
+              <div className="mt-6 mb-4 flex items-center">
+                <h2 className="text-md  sm:text-lg text-white font-semibold mr-3">
+                  Have Questions other than this?
+                </h2>
+                <Link href="/contact-us" passHref>
+                  <button className="text-black font-semibold px-6 py-1 sm:px-10 sm:py-2 rounded bg-[#7EE787] hover:bg-[#3b9242]">
+                    Contact
+                  </button>
+                </Link>
+              </div>
             </div>
-            <div className=" lg:w-[50vw]  justify-center items-center hidden lg:flex  lg:ml-20 ">
-              <img src="/faq1.png" className="w-2/5 lg:w-full " alt="text" />
+            <div className=" lg:w-[50vw]  justify-center items-center hidden lg:flex mb-4 lg:ml-20 ">
+              <img src="/faq1.png" className="w-72" alt="text" />
             </div>
             <div className=" lg:w-[50vw] flex justify-center items-center lg:hidden  lg:ml-20 ">
               <img
                 src="/faq2.png"
-                className="w-2/5 lg:w-full mt-10"
+                className="w-3/5 lg:w-full my-4"
                 alt="text"
               />
             </div>
-          </div>
-          <div className="mt-6 mb-4 flex items-center">
-            <h2 className="text-md  sm:text-lg text-white font-semibold mr-3">
-              Have Questions other than this?
-            </h2>
-            <Link href="/contact-us" passHref>
-              <button className="text-black font-semibold px-6 py-1 sm:px-10 sm:py-2 rounded bg-[#7EE787] hover:bg-[#3b9242]">
-                Contact
-              </button>
-            </Link>
           </div>
         </div>
       </div>

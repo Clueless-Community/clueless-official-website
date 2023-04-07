@@ -4,11 +4,12 @@ import UpcomingEventCard from './UpcomingEventCard';
 
 const UpcomingEvents = () => {
   return (
-    <div className="my-20">
+    <div id="events" className="my-52 relative">
+      <div className="green-gradient absolute z-0 top-0 opacity-70 -left-20 "></div>
       <h1 className="text-[#7EE787] xl:text-[55px] font-semibold xl:leading-[70.5px] leading-[30.5px] md:my-[55px] text-[36px]">
         Ongoing Events{' '}
       </h1>
-      <div>
+      <div className="grid grid-cols-1 md:grid-cols-2 md:gap-10 gap-0 xl:grid-cols-1">
         {eventData.map((data: any, i: number) => {
           return (
             <div key={i} className="my-10">

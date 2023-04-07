@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 @layer base {
   * {
     scroll-behavior: smooth;
@@ -9,7 +13,7 @@
 
   body {
     font-family: 'DM Sans', sans-serif;
-    background-color: #181f19;
+    background-color: #1b1b1b;
   }
 
   :root {
@@ -21,10 +25,10 @@
 
   @layer components {
     .btn-green {
-      @apply cursor-pointer bg-skin-globalGreen text-black rounded px-4 py-2 hover:bg-skin-hover_green transition-all font-semibold font-dmSans active:scale-95;
+      @apply sm:text-sm text-xs xl:text-base cursor-pointer bg-skin-globalGreen border border-[#7EE787] text-black rounded px-4 py-2 hover:bg-transparent hover:text-white  transition-all font-semibold font-dmSans active:scale-95;
     }
     .btn-outline {
-      @apply cursor-pointer border border-[#7EE787] text-white rounded-lg px-4 py-2 hover:border-[#1bcd2a] transition-all font-semibold font-dmSans active:scale-95;
+      @apply sm:text-sm text-xs xl:text-base cursor-pointer border border-[#7EE787] text-white rounded-lg px-4 py-2  hover:bg-skin-globalGreen hover:text-black transition-all font-semibold font-dmSans active:scale-95;
     }
     .inp-secondary {
       @apply border-solid border-[1px] border-green-400 bg-transparent  pt-2 pb-2 md:pt-1 md:pb-1 lg:py-2 pl-3 rounded-md text-white;
@@ -66,4 +70,31 @@
   height: 234px;
   background: rgba(126, 231, 135, 0.54);
   filter: blur(182px);
+}
+
+.pattern {
+  background: url(../public/pattern.svg);
+  background-color: #1b1b1b;
+}
+
+.green-gradient {
+  background: rgba(126, 231, 135, 0.54);
+  filter: blur(138.5px);
+  width: 234px;
+  height: 234px;
+}
+
+.nav_gradient {
+  background: linear-gradient(
+    152.97deg,
+    rgb(255, 255, 255) 0% rgba(255, 255, 255, 0) 100%
+  );
+  backdrop-filter: blur(20px);
+}
+
+.btnHover:hover .icon {
+  fill: white;
+}
+.icon {
+  fill: black;
 }

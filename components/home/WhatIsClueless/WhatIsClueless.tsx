@@ -14,58 +14,28 @@ const WhatIsClueless: React.FC = () => {
   }, []);
 
   return (
-    <>
-      <Container
-        maxWidth="lg"
-        className="mt-24 flex flex-col md:flex-row scale-105"
-        sx={{
-          width: isMobile ? '92.5%' : '95%',
-          justifyContent: 'center',
-          alignItems: 'center',
-          border: '1px solid #ccc',
-          gap: isMobile ? '' : '2rem',
-          borderRadius: '46px',
-          background: '#282E36',
-          marginTop: '2rem',
-        }}
-      >
-        <Box
-          sx={{
-            width: isMobile ? '100%' : '70%',
-            padding: isMobile ? '2rem 1rem' : '4rem 2rem',
-          }}
-        >
-          <Typography
-            variant="h2"
-            sx={{
-              fontWeight: '500',
-              fontSize: isMobile ? '2rem' : '2.6rem',
-              color: 'lightgreen',
-              marginBottom: '1rem',
-            }}
-          >
+    <div className="relative">
+      <div className="green-gradient absolute -top-10 -right-10 hidden sm:block"></div>
+      <div className="bg-[#282E36] relative border border-[#ccc] flex flex-col lg:flex-row mb-8 justify-between items-center mt-[6rem] rounded-[2.5rem] p-8">
+        <div>
+          <h1 className="text-[2rem] md:text-[2.4rem] text-skin-globalGreen font-medium mb-[1rem]">
             Clueless is a student community
-          </Typography>
-          <Typography
-            variant="h3"
-            sx={{
-              fontWeight: '300',
-              fontSize: isMobile ? '1.2rem' : '1.4rem',
-              lineHeight: '1.8rem',
-              color: 'white',
-            }}
-          >
+          </h1>
+          <h1 className="font-light text-[1.2rem] md:text-[1.4rem] max-w-3xl">
+            {' '}
             Built with the vision to encourage open-source enthusiasts! We
             provide the best resources, conducts weekly contests to test your
             skills, a guide to Open-source, and help you build projects.
-          </Typography>
-        </Box>
-        <HeatMapImage />
-      </Container>
-      <div className="flex justify-end h-40 mr-72 my-4">
+          </h1>
+        </div>
+        <div>
+          <HeatMapImage />
+        </div>
+      </div>
+      <div className="flex justify-end sm:h-40 h-28 md:mr-56 mr-12 -mt-2 sm:mt-0">
         <img src="/line1.png" alt="line1" />
       </div>
-    </>
+    </div>
   );
 };
 

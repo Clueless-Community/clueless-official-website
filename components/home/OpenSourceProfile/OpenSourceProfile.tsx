@@ -4,8 +4,9 @@ import { MdNavigateNext } from 'react-icons/md';
 
 const opensrc = () => {
   return (
-    <div>
-      <div className="flex flex-col lg:flex-row items-center w-full justify-between">
+    <div className="relative">
+      <div className="green-gradient absolute z-0 bottom-48 opacity-70 -left-20 "></div>
+      <div className="flex flex-col relative z-10 lg:flex-row items-center w-full justify-between">
         <div className=" w-full lg:w-1/2">
           <h1 className="text-skin-globalGreen text-3xl font-semibold sm:text-3xl sm:font-semibold md:text-5xl md:font-bold">
             Your{"'s"} truly
@@ -43,7 +44,7 @@ const opensrc = () => {
           alt=""
         />
         <img
-          className="flex w-[70vw] items-center justify-center mt-3 sm:hidden"
+          className="flex w-[60vw] mr-5 items-center justify-center mt-3 sm:hidden"
           src="true-design2.png"
           alt=""
         />

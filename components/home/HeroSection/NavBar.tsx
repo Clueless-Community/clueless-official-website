@@ -2,21 +2,26 @@
 import React, { useEffect, useState } from 'react';
 import { Disclosure } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import Link from 'next/link';
 
 const NavBar: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    if (window.screen.width < 600) {
+    if (window.screen.width < 1024) {
       setIsMobile(true);
     }
   }, []);
 
   const navigation = [
-    { name: 'Home', href: '#', current: true },
-    { name: 'Events', href: '#', current: false },
-    { name: 'Open Source Projects', href: '#', current: false },
-    { name: 'Resources', href: '#', current: false },
+    { name: 'Home', href: '/#hero', current: true },
+    { name: 'About Us', href: '/about-us', current: false },
+    { name: 'Open Source Projects', href: '/#projects', current: false },
+    {
+      name: 'Resources',
+      href: 'https://clueless-resources.super.site/resources',
+      current: false,
+    },
   ];
 
   function classNames(...classes: string[]) {
@@ -25,13 +30,13 @@ const NavBar: React.FC = () => {
 
   return (
     <>
-      <div className="mt-1 text-white px-5 md:px-20 lg:px-40">
+      <div className="pb-2 pt-2 sticky top-0 nav_gradient z-10 text-white xl:px-24 md:px-10 px-5">
         <Disclosure as="nav">
           {({ open }) => (
             <>
               <div className="relative flex h-16">
                 {/* Menu Icon for Mobile */}
-                <div className="absolute inset-y-0 right-0 flex items-center sm:hidden">
+                <div className="absolute inset-y-0 right-0 flex items-center lg:hidden">
                   <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                     {open ? (
                       <XMarkIcon
@@ -45,17 +50,27 @@ const NavBar: React.FC = () => {
                       />
                     )}
                   </Disclosure.Button>
+                  {/* Profile Image */}
+                  {/* <button className="flex rounded-full md:ml-4 text-sm hover:outline-none hover:ring-2 hover:ring-[#7EE787] hover:ring-offset-2 hover:ring-offset-gray-800">
+                    <img
+                      className="w-10 h-10 rounded-full"
+                      src="https://pbs.twimg.com/profile_images/1626657457446752257/d4kJWBeS_400x400.jpg"
+                      alt=""
+                    />
+                  </button> */}
                 </div>
-                <div className="w-[100%] flex justify-between">
+                <div className="w-[100%] flex justify-between items-center">
                   {/* Hero Logo */}
-                  <div className="flex items-center cursor-pointer">
-                    {ClueLogo('white')}
-                    <div className="mt-1">
-                      <h1 className="font-raleway text-3xl ml-1">Clueless</h1>
+                  <Link href="/">
+                    <div className="flex items-center cursor-pointer">
+                      {ClueLogo('white')}
+                      <div className="mt-1">
+                        <h1 className="text-3xl ml-1">Clueless</h1>
+                      </div>
                     </div>
-                  </div>
+                  </Link>
                   {/* Rest Part */}
-                  <div className="hidden md:flex items-center">
+                  <div className="hidden lg:flex items-center">
                     {/* Tabs */}
                     <div className="flex space-x-8">
                       {navigation.map((item) => (
@@ -75,7 +90,7 @@ const NavBar: React.FC = () => {
                       ))}
                     </div>
                     {/* Profile Image */}
-                    <div className="absolute inset-y-0 right-0 flex items-center pl-5 md:static md:inset-auto md:ml-6 md:pr-0">
+                    {/* <div className="absolute inset-y-0 right-0 flex items-center pl-5 md:static md:inset-auto md:ml-6 md:pr-0">
                       <button className="flex rounded-full text-sm hover:outline-none hover:ring-2 hover:ring-[#7EE787] hover:ring-offset-2 hover:ring-offset-gray-800">
                         <img
                           className="w-10 rounded-full"
@@ -83,12 +98,12 @@ const NavBar: React.FC = () => {
                           alt=""
                         />
                       </button>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
 
-              <Disclosure.Panel className="sm:hidden">
+              <Disclosure.Panel className="lg:hidden">
                 <div className="space-y-1 px-2 pt-2 pb-3">
                   {navigation.map((item) => (
                     <Disclosure.Button
