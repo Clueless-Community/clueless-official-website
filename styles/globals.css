@@ -28,7 +28,7 @@ html {
       @apply sm:text-sm text-xs xl:text-base cursor-pointer bg-skin-globalGreen border border-[#7EE787] text-black rounded px-4 py-2 hover:bg-skin-hover_green transition-all font-semibold font-dmSans active:scale-95;
     }
     .btn-outline {
-      @apply sm:text-sm text-xs xl:text-base cursor-pointer border border-[#7EE787] text-white rounded-lg px-4 py-2  hover:bg-skin-globalGreen hover:text-black transition-all font-semibold font-dmSans active:scale-95;
+      @apply sm:text-sm text-xs xl:text-base cursor-pointer border border-[#7EE787] text-white rounded px-4 py-2  hover:bg-skin-globalGreen hover:text-black transition-all font-semibold font-dmSans active:scale-95;
     }
     .inp-secondary {
       @apply border-solid border-[1px] border-green-400 bg-transparent  pt-2 pb-2 md:pt-1 md:pb-1 lg:py-2 pl-3 rounded-md text-white;

@@ -13,7 +13,7 @@ function OpenSourcePrograms() {
             </span>{' '}
             <span className="text-white">Open-source Programs</span>
           </h1>
-          <Link href="/404.tsx">
+          <Link href="/coming-soon" passHref>
             <button className="btn-green">Explore</button>
           </Link>
         </div>
