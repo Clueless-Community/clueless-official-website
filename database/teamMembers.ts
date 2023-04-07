@@ -95,6 +95,22 @@ const data = [
     github_url: 'https://github.com/hritikbhattacharya',
     twitter_url: 'https://twitter.com/Hritikb25',
   },
+  {
+    name: 'Ashhutosh Jha',
+    photo_url: 'https://i.ibb.co/QDDKKF3/ashdude.jpg',
+    designation: 'Flutter-Developer',
+    linkedin_url: 'https://www.linkedin.com/in/ashhutosh-jha-6734541b9/',
+    github_url: 'https://github.com/ashdude1401',
+    twitter_url: 'https://twitter.com/Ashutos24857768',
+  },
+  {
+    name: 'Bhavik Kothari',
+    photo_url: 'https://i.ibb.co/DMGYNkd/bhavik.jpg',
+    designation: 'Flutter-Developer',
+    linkedin_url: 'https://www.linkedin.com/in/bhavik-kothari/',
+    github_url: '#',
+    twitter_url: '#',
+  },
 ];
 
 export default data;
