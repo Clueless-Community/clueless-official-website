@@ -4,7 +4,7 @@ import { TextField } from '@mui/material';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert, { AlertProps } from '@mui/material/Alert';
 /* eslint-disable @next/next/no-img-element */
-const contact = () => {
+const Contact = () => {
   const maxSubjectInputLength = 150;
   const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
     props,
@@ -169,4 +169,4 @@ const contact = () => {
   );
 };
 
-export default contact;
+export default Contact;
