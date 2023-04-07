@@ -82,8 +82,8 @@ const WorldOfOpenSource: React.FC = () => {
             }}
           >
             <img
-              width="85px"
-              src="/Go-Logo_Aqua.svg"
+              width="56px"
+              src="/golang.png"
               className="cursor-grab"
               alt=""
             />
@@ -396,8 +396,8 @@ const WorldOfOpenSource: React.FC = () => {
 
           <div className="absolute top-[6%] right-[9%]">
             <img
-              width="85px"
-              src="/Go-Logo_Aqua.svg"
+              width="56px"
+              src="/golang.png"
               className="cursor-grab"
               alt=""
             />
