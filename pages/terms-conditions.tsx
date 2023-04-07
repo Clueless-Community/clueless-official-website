@@ -1,6 +1,6 @@
 import React from 'react';
 
-const privacy = () => {
+const termsandconditions = () => {
   return (
     <div className="relative">
       <div className="green-gradient absolute z-0 opacity-70 sm:-right-52 right-0 top-72 sm:bottom-0"></div>
@@ -8,9 +8,9 @@ const privacy = () => {
       <div className="green-gradient absolute z-0  right-0 sm:right-[40%] opacity-70 bottom-[1000px] sm:bottom-0"></div>
       <div className="green-gradient absolute z-0  sm:-right-72 sm:top-40 top-[30%] opacity-70  "></div>
 
-      <div className="lg:px-28 w-11/12 mx-auto ">
+      <div className="min-h-screen px-6 relative z-10 md:px-0 md:justify-center max-w-[98%] lg:max-w-[93%] md:pl-16">
         <h1 className="text-4xl font-semibold mt-16 text-skin-globalGreen">
-          Terms and Conditions of Use
+          <u>Terms and Conditions of Use</u>
         </h1>
 
         <h1 className="text-xl font-medium mt-16">1. Terms</h1>
@@ -91,4 +91,4 @@ const privacy = () => {
   );
 };
 
-export default privacy;
+export default termsandconditions;

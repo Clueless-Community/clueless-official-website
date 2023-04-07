@@ -18,9 +18,7 @@ function OpenSourcePrograms() {
             <span className="text-white">Open-source Programs</span>
           </h1>
           <Link href="404.tsx">
-            <button className="btn-green">
-              <a>Explore</a>
-            </button>
+            <button className="btn-green">Explore</button>
           </Link>
         </div>
         <div className="flex justify-center lg:w-4/5 relative md:p-10">

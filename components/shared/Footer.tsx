@@ -55,7 +55,7 @@ const Footer: React.FC = () => {
               Privacy Policy
             </a>
           </Link>
-          <Link legacyBehavior href="/terms-condition">
+          <Link legacyBehavior href="/terms-conditions">
             <a className="my-3 hover:text-skin-main transition-all">
               Terms & condition
             </a>
