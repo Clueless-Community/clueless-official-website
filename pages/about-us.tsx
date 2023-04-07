@@ -55,7 +55,7 @@ const AboutUs = () => {
             />
           </div>
 
-          <div className="mt-60 bg-[#272D36] flex relative border rounded-[32px]">
+          <div className="mt-72 bg-[#272D36] flex relative border rounded-[32px]">
             <div className="flex items-center 2xl:gap-20 py-10">
               <img
                 src="/About/vision.svg"

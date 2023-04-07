@@ -60,7 +60,7 @@ const data = [
     photo_url: 'https://i.ibb.co/nD5zf3X/ravindra.jpg ',
     designation: 'Web-Developer',
     linkedin_url: 'https://www.linkedin.com/in/ravindrap04/',
-    github_url: 'https://github.com/bbsdevloper',
+    github_url: 'https://github.com/ravindraP04',
     twitter_url: 'https://twitter.com/ravindraP04',
   },
   {
