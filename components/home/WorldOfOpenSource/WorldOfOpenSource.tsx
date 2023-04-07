@@ -40,7 +40,7 @@ const WorldOfOpenSource: React.FC = () => {
             >
               built with the vision to encourage open-source enthusiasts!
             </Typography>
-            <Link href={''} passHref>
+            <Link href="/coming-soon" passHref>
               <button className="btn-green text-lg px-8">Explore</button>
             </Link>
           </div>

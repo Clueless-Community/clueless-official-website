@@ -43,7 +43,9 @@ const Footer: React.FC = () => {
             Know Us
           </h3>
           <Link legacyBehavior href="/about-us">
-            <a className="my-3 hover:text-skin-main transition-all">About Us</a>
+            <a className="my-3 hover:text-skin-main hover:text-skin-globalGreen transition-all">
+              About Us
+            </a>
           </Link>
         </div>
         <div className="flex flex-col mx-auto my-5 sm:my-0 sm:text-left text-center">
@@ -51,12 +53,12 @@ const Footer: React.FC = () => {
             Legal
           </h3>
           <Link legacyBehavior href="/privacy-policy">
-            <a className="my-3 hover:text-skin-main transition-all">
+            <a className="my-3 hover:text-skin-main hover:text-skin-globalGreen transition-all">
               Privacy Policy
             </a>
           </Link>
           <Link legacyBehavior href="/terms-conditions">
-            <a className="my-3 hover:text-skin-main transition-all">
+            <a className="my-3 hover:text-skin-main hover:text-skin-globalGreen transition-all">
               Terms & condition
             </a>
           </Link>
@@ -68,7 +70,7 @@ const Footer: React.FC = () => {
           </h3>
 
           <a
-            className="my-3 hover:text-skin-main transition-all"
+            className="my-3 hover:text-skin-main hover:text-skin-globalGreen transition-all"
             href="https://clueless-resources.super.site/"
             target="_blank"
             rel="noreferrer"
@@ -79,7 +81,7 @@ const Footer: React.FC = () => {
           <a
             href="https://clueless-blogs.hashnode.dev/"
             target="_blank"
-            className="my-3 hover:text-skin-main transition-all"
+            className="my-3 hover:text-skin-main hover:text-skin-globalGreen transition-all"
             rel="noreferrer"
           >
             Blogs
@@ -90,12 +92,14 @@ const Footer: React.FC = () => {
             Contact & Help
           </h3>
           <Link legacyBehavior href="/contact-us">
-            <a className="my-3 hover:text-skin-main transition-all">
+            <a className="my-3 hover:text-skin-main hover:text-skin-globalGreen transition-all">
               Contact Us
             </a>
           </Link>
           <Link legacyBehavior href="/faq">
-            <a className="my-3 hover:text-skin-main transition-all">FAQ</a>
+            <a className="my-3 hover:text-skin-main hover:text-skin-globalGreen transition-all">
+              FAQ
+            </a>
           </Link>
           <div className="text-skin-main flex gap-10 my-3 justify-center md:justify-start">
             <a

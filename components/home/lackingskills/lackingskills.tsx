@@ -21,7 +21,7 @@ const LackingSkills = () => {
           rel="noreferrer"
           className="relative z-100"
         >
-          <button className="btn-green btnHover">Explore resource hub</button>
+          <button className="btn-green">Explore resource hub</button>
         </a>
       </div>
       <div className="flex justify-center pt-8 md:mb-5">

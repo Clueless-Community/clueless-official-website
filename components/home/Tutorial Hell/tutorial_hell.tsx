@@ -8,6 +8,7 @@ import { SiGoland } from 'react-icons/si';
 import Py from './py';
 import Js from './js';
 import Go from './go';
+import Link from 'next/link';
 
 const TutorialHell = () => {
   const [active1, setActive1] = useState(true);
@@ -183,12 +184,14 @@ const TutorialHell = () => {
               </h1>
             </div>
             <div className="xl:ml-[100px] mt-[10px] xl:mt-0">
-              <button className="text-[#7EE787] flex flex-row">
-                <h1 className="xl:text-[22px] text-[20px] font-extrabold">
-                  Explore
-                </h1>
-                <ArrowForwardIosIcon className="text-[23px] font-extrabold mt-[6px]" />
-              </button>
+              <Link href="/coming-soon" passHref>
+                <button className="text-[#7EE787] flex flex-row">
+                  <h1 className="xl:text-[22px] text-[20px] font-extrabold">
+                    Explore
+                  </h1>
+                  <ArrowForwardIosIcon className="text-[23px] font-extrabold mt-[6px]" />
+                </button>
+              </Link>
             </div>
           </div>
         </div>

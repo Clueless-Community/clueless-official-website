@@ -82,7 +82,7 @@ export function HeroSection() {
               target="_blank"
               rel="noreferrer"
             >
-              <button className="hidden lg:flex text-sm xl:text-base items-center  space-x-2 btn-green btnHover">
+              <button className="hidden lg:flex text-sm xl:text-base items-center space-x-2 btn-green">
                 <svg
                   width="18"
                   height="18"
