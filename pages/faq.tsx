@@ -145,9 +145,10 @@ const Faq: NextPage = () => {
                         <ArrowDropDownIcon style={{ fill: 'white' }} />
                       )
                     }
-                    className={
-                      expanded === 'panel2' ? 'bg-[#7EE787]' : 'bg-[#17202A]'
-                    }
+                    sx={{
+                      backgroundColor:
+                        expanded === 'panel2' ? '#7EE787' : '#17202A',
+                    }}
                   >
                     <h1
                       className={
@@ -188,9 +189,10 @@ const Faq: NextPage = () => {
                         <ArrowDropDownIcon style={{ fill: 'white' }} />
                       )
                     }
-                    className={
-                      expanded === 'panel3' ? 'bg-[#7EE787]' : 'bg-[#17202A]'
-                    }
+                    sx={{
+                      backgroundColor:
+                        expanded === 'panel3' ? '#7EE787' : '#17202A',
+                    }}
                   >
                     <h1
                       className={
@@ -229,9 +231,10 @@ const Faq: NextPage = () => {
                         <ArrowDropDownIcon style={{ fill: 'white' }} />
                       )
                     }
-                    className={
-                      expanded === 'panel4' ? 'bg-[#7EE787]' : 'bg-[#17202A]'
-                    }
+                    sx={{
+                      backgroundColor:
+                        expanded === 'panel4' ? '#7EE787' : '#17202A',
+                    }}
                   >
                     <h1
                       className={
