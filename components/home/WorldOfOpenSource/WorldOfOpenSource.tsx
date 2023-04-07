@@ -49,7 +49,7 @@ const WorldOfOpenSource: React.FC = () => {
         {/* --------------Large Screen------------------ */}
         <motion.div
           id="motion-area"
-          className="my-auto hidden sm:block w-full h-[320px] md:w-[60%]"
+          className="my-auto relative hidden sm:block w-full h-[320px] md:w-[60%]"
           style={{
             // height: lessThanLag ? '320px' : '80%',
             backgroundColor: 'rgba(40, 46, 54, 0.97)',
@@ -59,6 +59,7 @@ const WorldOfOpenSource: React.FC = () => {
           }}
           ref={constraintsRef}
         >
+          {/* Go Logo */}
           <motion.div
             drag
             dragElastic={0}
@@ -75,12 +76,42 @@ const WorldOfOpenSource: React.FC = () => {
               repeatType: 'mirror',
             }}
             style={{
+              position: 'absolute',
+              left: '1%',
+              top: '1%',
+            }}
+          >
+            <img
+              width="85px"
+              src="/Go-Logo_Aqua.svg"
+              className="cursor-grab"
+              alt=""
+            />
+          </motion.div>
+
+          {/* Kubernetes logo */}
+          <motion.div
+            drag
+            dragElastic={0}
+            dragConstraints={constraintsRef}
+            initial={{}}
+            animate={{
+              x: [0, size.w * -0.6, 0],
+              y: [0, size.h * 0.35],
+            }}
+            transition={{
+              duration: 6,
+              delay: 0.2,
+              repeat: Infinity,
+              repeatType: 'mirror',
+            }}
+            style={{
               height: '76px',
               width: '76px',
               // border: "1px solid white",
-              position: 'relative',
-              left: '8%',
-              top: '8%',
+              position: 'absolute',
+              right: '5%',
+              top: '1%',
             }}
           >
             <SvgIcon sx={{ fontSize: '76px', cursor: 'grab' }}>
@@ -120,6 +151,7 @@ const WorldOfOpenSource: React.FC = () => {
             </SvgIcon>
           </motion.div>
 
+          {/* Github Logo */}
           <motion.div
             drag
             dragElastic={0}
@@ -137,9 +169,9 @@ const WorldOfOpenSource: React.FC = () => {
             }}
             style={{
               width: 'fit-content',
-              position: 'relative',
-              left: '8%',
-              top: '50%',
+              position: 'absolute',
+              left: '5%',
+              bottom: '5%',
             }}
           >
             <GitHubIcon
@@ -151,6 +183,7 @@ const WorldOfOpenSource: React.FC = () => {
             />
           </motion.div>
 
+          {/* Linux Logo */}
           <motion.div
             drag
             dragElastic={0}
@@ -177,9 +210,9 @@ const WorldOfOpenSource: React.FC = () => {
             style={{
               height: '76px',
               width: '76px',
-              position: 'relative',
-              left: '70%',
-              top: '5%',
+              position: 'absolute',
+              right: '5%',
+              bottom: '5%',
             }}
           >
             <SvgIcon sx={{ fontSize: '76px', cursor: 'grab' }}>
@@ -232,7 +265,6 @@ const WorldOfOpenSource: React.FC = () => {
         </motion.div>
         {/* ---------------Small Screen-------------------- */}
         <div
-          id="motion-area"
           className="my-auto block sm:hidden w-full h-[320px] md:w-[60%]"
           style={{
             backgroundColor: 'rgba(40, 46, 54, 0.97)',
@@ -240,7 +272,6 @@ const WorldOfOpenSource: React.FC = () => {
             padding: '12px',
             border: '0.5px solid #FFFFFF',
           }}
-          ref={constraintsRef}
         >
           <div
             style={{
@@ -310,9 +341,9 @@ const WorldOfOpenSource: React.FC = () => {
             style={{
               height: '76px',
               width: '76px',
-              position: 'relative',
-              left: '70%',
-              top: '-10%',
+              position: 'absolute',
+              right: '7%',
+              top: '35%',
             }}
           >
             <SvgIcon sx={{ fontSize: '76px', cursor: 'grab' }}>
@@ -361,6 +392,15 @@ const WorldOfOpenSource: React.FC = () => {
                 ></path>
               </svg>
             </SvgIcon>
+          </div>
+
+          <div className="absolute top-[6%] right-[9%]">
+            <img
+              width="85px"
+              src="/Go-Logo_Aqua.svg"
+              className="cursor-grab"
+              alt=""
+            />
           </div>
         </div>
       </div>
