@@ -64,6 +64,14 @@ const data = [
     twitter_url: 'https://twitter.com/ravindraP04',
   },
   {
+    name: 'Rupsha Sarkar',
+    photo_url: 'https://i.ibb.co/3hqWYC2/rupsha.jpg',
+    designation: 'Web-Developer',
+    linkedin_url: 'https://www.linkedin.com/in/rupsha-sarkar-aab06723a/',
+    github_url: '#',
+    twitter_url: 'https://twitter.com/ruuuuu_0506',
+  },
+  {
     name: 'Muskan',
     photo_url: 'https://i.ibb.co/r2DK3KX/muskan.jpg ',
     designation: 'UI/UX Designer',

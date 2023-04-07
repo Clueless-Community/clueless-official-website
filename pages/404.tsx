@@ -1,9 +1,14 @@
+import Head from 'next/head';
 import Link from 'next/link';
 import React from 'react';
 
 const oops = () => {
   return (
     <div className="relative">
+      <Head>
+        <title>ClueLess | Error</title>
+        <meta name="description" content="ClueLess About Us Page" />
+      </Head>
       <div className="green-gradient absolute z-0 -left-40 bottom-0 hidden sm:block "></div>
       <div className="green-gradient absolute z-0 sm:top-60 top-[40%] left-10 sm:left-[500px] "></div>
       <div className="green-gradient absolute z-0 bottom-0 -right-20 hidden sm:block "></div>

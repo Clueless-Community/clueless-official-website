@@ -9,10 +9,15 @@ import WhatIsClueless from '../components/home/WhatIsClueless/WhatIsClueless';
 import WorldOfOpenSource from '../components/home/WorldOfOpenSource/WorldOfOpenSource';
 import Testimonial from '../components/home/Testimonials/testimonials';
 import TeamMember from '../components/home/TeamSection/TeamMember';
+import Head from 'next/head';
 
 const Home: NextPage = () => {
   return (
     <>
+      <Head>
+        <title>ClueLess</title>
+        <meta name="description" content="Clueless Home Page" />
+      </Head>
       <HeroSection />
       <WhatIsClueless />
       <WorldOfOpenSource />

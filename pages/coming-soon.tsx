@@ -1,8 +1,13 @@
+import Head from 'next/head';
 import React from 'react';
 
 const comingSoon = () => {
   return (
     <div>
+      <Head>
+        <title>ClueLess | Coming Soon</title>
+        <meta name="description" content="ClueLess About Us Page" />
+      </Head>
       <div className="flex flex-col-reverse min-h-[90vh]">
         <div className=" flex items-center justify-center">
           <img

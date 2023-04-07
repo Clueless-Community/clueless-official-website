@@ -3,7 +3,6 @@ import { Html, Head, Main, NextScript } from 'next/document';
 export default function Document() {
   return (
     <Html lang="en">
-      <title>ClueLess</title>
       <link rel="icon" href="/ClueLess Logo.png" />
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -11,9 +10,7 @@ export default function Document() {
         href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap"
         rel="stylesheet"
       />
-      <Head>
-        <title>ClueLess</title>
-      </Head>
+      <Head />
       <body>
         <Main />
         <NextScript />

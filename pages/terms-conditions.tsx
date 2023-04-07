@@ -1,8 +1,13 @@
+import Head from 'next/head';
 import React from 'react';
 
 const termsandconditions = () => {
   return (
     <div className="relative">
+      <Head>
+        <title>ClueLess | Terms & Conditions</title>
+        <meta name="description" content="Clueless Terms & Conditions Page" />
+      </Head>
       <div className="green-gradient absolute z-0 opacity-70 sm:-right-52 right-0 top-72 sm:bottom-0"></div>
       <div className="green-gradient absolute z-0  sm:-left-72 opacity-70 bottom-20 sm:bottom-96"></div>
       <div className="green-gradient absolute z-0  right-0 sm:right-[40%] opacity-70 bottom-[1000px] sm:bottom-0"></div>
