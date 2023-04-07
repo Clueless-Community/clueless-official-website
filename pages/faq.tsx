@@ -102,13 +102,13 @@ const Faq: NextPage = () => {
                       expanded === 'panel1' ? 'bg-[#7EE787]' : 'bg-[#17202A]'
                     }
                   >
-                    <Typography
+                    <h1
                       className={
                         expanded === 'panel1' ? 'text-black' : 'text-white'
                       }
                     >
                       1. What is Clueless?
-                    </Typography>
+                    </h1>
                   </AccordionSummary>
                   <AccordionDetails className="dark:bg-[#17202A]">
                     <Typography
@@ -148,13 +148,13 @@ const Faq: NextPage = () => {
                       expanded === 'panel2' ? 'bg-[#7EE787]' : 'bg-[#17202A]'
                     }
                   >
-                    <Typography
+                    <h1
                       className={
                         expanded === 'panel2' ? 'text-black' : 'text-white'
                       }
                     >
                       2. What do we provide?
-                    </Typography>
+                    </h1>
                   </AccordionSummary>
                   <AccordionDetails className="dark:bg-[#17202A]">
                     <Typography
@@ -191,13 +191,13 @@ const Faq: NextPage = () => {
                       expanded === 'panel3' ? 'bg-[#7EE787]' : 'bg-[#17202A]'
                     }
                   >
-                    <Typography
+                    <h1
                       className={
                         expanded === 'panel3' ? 'text-black' : 'text-white'
                       }
                     >
                       3. Do we have a community?
-                    </Typography>
+                    </h1>
                   </AccordionSummary>
                   <AccordionDetails className="dark:bg-[#17202A]">
                     <Typography
@@ -232,13 +232,13 @@ const Faq: NextPage = () => {
                       expanded === 'panel4' ? 'bg-[#7EE787]' : 'bg-[#17202A]'
                     }
                   >
-                    <Typography
+                    <h1
                       className={
                         expanded === 'panel4' ? 'text-black' : 'text-white'
                       }
                     >
                       4. Is it free?
-                    </Typography>
+                    </h1>
                   </AccordionSummary>
                   <AccordionDetails className="dark:bg-[#17202A]">
                     <Typography
