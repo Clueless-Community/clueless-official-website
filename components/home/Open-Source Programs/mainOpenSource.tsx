@@ -24,10 +24,11 @@ function OpenSourcePrograms() {
             alt=""
           />
           <img
-            className="relative scale-110 z-10 sm:hidden block"
-            src="/LandingPage/OpenSource/Group111.png"
+            src="/LandingPage/OpenSource/group111.png"
+            className="scale-110 relative z-10 sm:hidden"
             alt=""
           />
+
           <div className="green-gradient absolute z-0 lg:bottom-52 sm:bottom-24 bottom-16 lg:right-96"></div>
         </div>
       </div>
