@@ -1,9 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
 import React from 'react';
-import Image from 'next/image';
-import GSSOC from '../../../public/Gssoc.png';
-import MLH from '../../../public/MLH.png';
-import LFX from '../../../public/LFX.png';
 import Link from 'next/link';
 
 function OpenSourcePrograms() {
@@ -11,13 +7,13 @@ function OpenSourcePrograms() {
     <div className="relative">
       <div className="flex flex-col lg:flex-row mt-5 sm:mt-0 box-border mx-w-screen justify-between items-center">
         <div className="p-3 lg:w-[45%] space-y-5 sm:space-y-10">
-          <h1 className="xl:text-5xl font-thin lg:text-4xl text-3xl">
+          <h1 className="xl:text-5xl font-thin lg:text-4xl text-3xl my-4">
             <span className="font-semibold text-[#7EE787]">
               Learn about some biggest
             </span>{' '}
             <span className="text-white">Open-source Programs</span>
           </h1>
-          <Link href="404.tsx">
+          <Link href="/404.tsx">
             <button className="btn-green">Explore</button>
           </Link>
         </div>

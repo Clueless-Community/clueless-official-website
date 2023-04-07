@@ -9,8 +9,6 @@ import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import { NextPage } from 'next';
 import Head from 'next/head';
-// import Navbar from "../components/shared/Navbar/Navbar";
-import Footer from '../components/shared/Footer';
 import Link from 'next/link';
 
 const Accordion = styled((props: AccordionProps) => (
@@ -104,7 +102,11 @@ const Faq: NextPage = () => {
                       expanded === 'panel1' ? 'bg-[#7EE787]' : 'bg-[#17202A]'
                     }
                   >
-                    <Typography className="text-white">
+                    <Typography
+                      className={
+                        expanded === 'panel1' ? 'text-black' : 'text-white'
+                      }
+                    >
                       1. What is Clueless?
                     </Typography>
                   </AccordionSummary>
@@ -146,7 +148,11 @@ const Faq: NextPage = () => {
                       expanded === 'panel2' ? 'bg-[#7EE787]' : 'bg-[#17202A]'
                     }
                   >
-                    <Typography className={'text-white'}>
+                    <Typography
+                      className={
+                        expanded === 'panel2' ? 'text-black' : 'text-white'
+                      }
+                    >
                       2. What do we provide?
                     </Typography>
                   </AccordionSummary>
@@ -185,7 +191,11 @@ const Faq: NextPage = () => {
                       expanded === 'panel3' ? 'bg-[#7EE787]' : 'bg-[#17202A]'
                     }
                   >
-                    <Typography className={'text-white'}>
+                    <Typography
+                      className={
+                        expanded === 'panel3' ? 'text-black' : 'text-white'
+                      }
+                    >
                       3. Do we have a community?
                     </Typography>
                   </AccordionSummary>
@@ -222,7 +232,11 @@ const Faq: NextPage = () => {
                       expanded === 'panel4' ? 'bg-[#7EE787]' : 'bg-[#17202A]'
                     }
                   >
-                    <Typography className={'text-white'}>
+                    <Typography
+                      className={
+                        expanded === 'panel4' ? 'text-black' : 'text-white'
+                      }
+                    >
                       4. Is it free?
                     </Typography>
                   </AccordionSummary>
