@@ -119,6 +119,15 @@ const data = [
     github_url: '#',
     twitter_url: '#',
   },
+  {
+    name: 'Rohit Ranjan Singh',
+    photo_url:
+      'https://media.licdn.com/dms/image/D5603AQE6ITl3rZMQAw/profile-displayphoto-shrink_200_200/0/1677669282230?e=1686787200&v=beta&t=e745sXnUavivumMBRJwJ2suVShIhEFMCNIDcVkUx4oM',
+    designation: 'DevRel',
+    linkedin_url: 'https://linkedin.com/in/rohit-ranjan-singh-6133901b6/',
+    github_url: 'https://twitter.com/rohit_ranjan27',
+    twitter_url: 'https://github.com/rohitranjan-2702',
+  },
 ];
 
 export default data;

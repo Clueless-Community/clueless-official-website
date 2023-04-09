@@ -43,6 +43,7 @@
     "slick-carousel": "^1.8.1",
     "swiper": "^9.1.1",
     "tailwind": "^4.0.0",
+    "template-helpers": "^1.0.1",
     "typescript": "4.9.5"
   },
   "devDependencies": {
