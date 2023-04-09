@@ -25,9 +25,8 @@ const WorldOfOpenSource: React.FC = () => {
       <div className="flex flex-col-reverse justify-between relative z-20 mb-4 md:flex-row w-full h-auto">
         <div className="w-full md:w-[80%] my-auto">
           <div className="md:pr-[3rem] py-[1rem] ">
-            <h1 className="text-[2rem] md:text-[3rem] text-[#7EE787] font-medium xl:leading-[55px] w-full leading-[40px]">
-              Jump into the world of <br className="sm:block hidden" />
-              Open-source
+            <h1 className="text-[2rem] md:text-[3rem] text-[#7EE787] font-medium xl:leading-[55px] max-w-xl leading-[40px]">
+              Jump into the world of Open-source
             </h1>
             <Typography
               my={'0.8rem'}
