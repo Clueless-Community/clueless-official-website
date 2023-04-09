@@ -12,6 +12,7 @@ const MobileSwipper = () => {
     centerMode: true,
     autoplaySpeed: 2000,
     cssEase: 'linear',
+    variableWidth: true,
   };
   return (
     <div className="">
