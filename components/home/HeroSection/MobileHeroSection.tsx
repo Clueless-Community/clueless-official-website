@@ -56,7 +56,7 @@ export function HeroSection() {
       id="hero"
       className="relative xl:h-[800px] lg:h-[685px] md:h-[570px] sm:h-[520px] h-[430px] items-start sm:hidden flex justify-between"
     >
-      <Box className="flex flex-col mt-32">
+      <Box className="flex flex-col mt-32 z-10">
         <h1 className="text-white text-[3rem] sm:text-[3.5rem] lg:text-[4.5rem] xl:text-[5rem] font-black leading-none">
           Clueless <br />
           Community.
@@ -65,13 +65,13 @@ export function HeroSection() {
           <h2 className="text-white text-[1.6rem] sm:text-[2rem] ">
             Learn, Grow.
           </h2>
-          <div className="flex lg:space-x-5 sm:space-x-24 space-x-3 sm:mt-4 mt-1">
+          <div className="flex lg:space-x-5 sm:space-x-24 space-x-2 sm:mt-4 max-[425px]:-ml-[14px] mt-1">
             <Link
               rel="noreferrer"
               target="_blank"
               href={'https://discord.gg/zrVMjGW8sB'}
             >
-              <button className="flex text-sm xl:text-base items-center space-x-2 cursor-pointer border-2 border-[#7EE787] bg-[#7EE787] text-black rounded-md px-4 py-2 transition-all font-semibold active:scale-95">
+              <button className="flex text-sm xl:text-base items-center space-x-1 cursor-pointer border-2 border-[#7EE787] bg-[#7EE787] text-black rounded-md px-2 py-1 transition-all font-semibold active:scale-95">
                 <svg
                   width="18"
                   height="18"
@@ -87,9 +87,15 @@ export function HeroSection() {
                 <h1>Join Discord</h1>
               </button>
             </Link>
-            <button className="border-2 sm:text-sm text-xs xl:text-base cursor-pointer border-[#7EE787] text-white rounded-md px-4 py-2 transition-all font-semibold active:scale-95">
-              Explore Projects
-            </button>
+            <Link
+              href="https://github.com/orgs/Clueless-Community/repositories"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <button className="border-2 text-sm xl:text-base cursor-pointer border-[#7EE787] text-white rounded-md px-2 py-1 transition-all font-semibold active:scale-95">
+                Explore Projects
+              </button>
+            </Link>
           </div>
         </div>
       </Box>
