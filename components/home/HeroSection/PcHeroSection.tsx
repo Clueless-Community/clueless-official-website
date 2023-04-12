@@ -76,13 +76,13 @@ export function HeroSection() {
           <h2 className="text-white cursor-default text-[1.6rem] sm:text-[2rem] ">
             Learn, Grow.
           </h2>
-          <div className="flex lg:space-x-5 sm:space-x-24 space-x-20 sm:mt-4 mt-1 relative z-100">
+          <div className="flex lg:space-x-5 sm:space-x-3 sm:mt-4 mt-1 -ml-6 lg:ml-0 relative z-100">
             <a
               href="https://discord.gg/zrVMjGW8sB"
               target="_blank"
               rel="noreferrer"
             >
-              <button className="hidden lg:flex text-sm xl:text-base items-center space-x-2 btn-green">
+              <button className="flex text-sm xl:text-base items-center space-x-2 btn-green">
                 <svg
                   width="18"
                   height="18"

@@ -65,13 +65,13 @@ export function HeroSection() {
           <h2 className="text-white text-[1.6rem] sm:text-[2rem] ">
             Learn, Grow.
           </h2>
-          <div className="flex lg:space-x-5 sm:space-x-24 space-x-20 sm:mt-4 mt-1">
+          <div className="flex lg:space-x-5 sm:space-x-24 space-x-3 sm:mt-4 mt-1">
             <Link
               rel="noreferrer"
               target="_blank"
               href={'https://discord.gg/zrVMjGW8sB'}
             >
-              <button className="hidden lg:flex text-sm xl:text-base items-center space-x-2 cursor-pointer border-2 border-[#7EE787] bg-[#7EE787] text-black rounded-md px-4 py-2 transition-all font-semibold active:scale-95">
+              <button className="flex text-sm xl:text-base items-center space-x-2 cursor-pointer border-2 border-[#7EE787] bg-[#7EE787] text-black rounded-md px-4 py-2 transition-all font-semibold active:scale-95">
                 <svg
                   width="18"
                   height="18"
