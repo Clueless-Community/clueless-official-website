@@ -164,7 +164,7 @@ export function HeroSection() {
             opacity: 0,
             transition: 'opacity 1s ease',
           }}
-          className="w-[100%] h-[100%]"
+          className="w-[100%] h-[100%] 2xl:mt-10"
         />
       </Box>
 
