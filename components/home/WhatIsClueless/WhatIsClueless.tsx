@@ -1,8 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import React, { useEffect, useRef, useState } from 'react';
-import { Container, Typography } from '@mui/material';
-import { Box } from '@mui/system';
-import Link from 'next/link';
+import React, { useEffect, useState } from 'react';
 
 const WhatIsClueless: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -23,7 +20,9 @@ const WhatIsClueless: React.FC = () => {
           </h1>
           <h1 className="font-light text-[1.2rem] md:text-[1.4rem] max-w-3xl">
             {' '}
-            which builds developer tools with the power of OpenSource.
+            which builds developer tools with the power of open-source. We
+            believe in the vision “Learn and Grow” and encourage & guide
+            enthusiasts to dive deep into the world of open-source.
           </h1>
         </div>
         <div>

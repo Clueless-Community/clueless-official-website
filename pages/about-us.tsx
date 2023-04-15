@@ -17,12 +17,10 @@ const AboutUs = () => {
             About <br /> Community.
           </h1>
           <p className="text-white lg:w-3/5 ml-12 xl:w-1/2 text-lg mt-8 tracking-wider">
-            Clueless in a virtual open-source community built with the motive of
-            “Learn and Grow”. We, as a community, encourage and guide
-            enthusiasts to dive into the world of open-source. We provide the
-            best resources available on the internet, write blogs that helps
-            other to explore their domain more deeply, organize events, GitHub
-            repositories, organize hackathons, and more couniting activities
+            Clueless is a student community which focuses on building developer
+            tools with the power of open-source. We believe in the vision “Learn
+            and Grow” and encourage & guide enthusiasts to dive deep into the
+            world of open-source.
           </p>
           <div>
             <img
@@ -67,10 +65,9 @@ const AboutUs = () => {
                   Our Vision
                 </h1>
                 <p className="text-[#D4D4D4] text-xl tracking-wider">
-                  Internet is flooded with so many resources that can make one
-                  confused and clueless. So we provide the best, filtered, and
-                  curated resources like YouTube videos, GitHub repositories,
-                  websites, cheatsheets, etc!{' '}
+                  We believe in the motto 'Learn & Grow'. Our sole focus is to
+                  build some developer tools which will be built by developers
+                  and serve for developers.
                 </p>
               </div>
             </div>

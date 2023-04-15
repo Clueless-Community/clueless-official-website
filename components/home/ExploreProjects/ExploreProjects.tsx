@@ -6,20 +6,20 @@ function ExploreProjects() {
     {
       title: 'ClueLess Official Website',
       tags: ['HTML', 'Tailwind CSS'],
-      desc: 'built with the vision to encourage open-source enthusiasts!',
+      desc: 'This is Clueless official website where you can make your developer profile as well as meet new people across the world.',
       repoURL:
         'https://github.com/Clueless-Community/clueless-official-website',
     },
     {
       title: 'SeamLess UI',
       tags: ['HTML', 'Tailwind CSS'],
-      desc: 'built with the vision to encourage open-source enthusiasts!',
+      desc: 'The next gen UI made with simple HTML and Tailwind CSS',
       repoURL: 'https://github.com/Clueless-Community/seamless-ui',
     },
     {
       title: 'Flutter UI Components',
       tags: ['Flutter', 'Tailwind CSS'],
-      desc: 'built with the vision to encourage open-source enthusiasts!',
+      desc: 'A collection of flutter UI components',
       repoURL: 'https://github.com/Clueless-Community/flutter-ui-components',
     },
   ];
