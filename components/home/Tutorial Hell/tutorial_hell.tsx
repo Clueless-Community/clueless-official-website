@@ -74,7 +74,7 @@ const TutorialHell = () => {
           Get out of tutorial hell and start <br className="sm:block hidden" />{' '}
           contributing{' '}
         </h1>
-        <div className="flex xl:flex-row flex-col">
+        <div className="flex xl:flex-row items-center xl:items-start flex-col">
           <div className="xl:w-[1300px] w-[320px] sm:w-[600px]">
             <div className="h-[50px] flex flex-row bg-[#262227] rounded-t-[31px]">
               <button
