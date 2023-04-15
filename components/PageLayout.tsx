@@ -6,9 +6,9 @@ interface Props {
 }
 const PageLayout = ({ children }: Props) => {
   return (
-    <div>
+    <div className="overflow-x-hidden overflow-y-hidden">
       <NavBar />
-      <div className="xl:px-24 relative z-0 md:px-10 px-5 overflow-x-hidden h-full pattern bg-[#1B1B1B] text-white">
+      <div className="xl:px-24 relative z-0 md:px-10 px-5 overflow-x-hidden overflow-y-hidden h-full pattern bg-[#1B1B1B] text-white">
         {children}
       </div>
       <Footer />
