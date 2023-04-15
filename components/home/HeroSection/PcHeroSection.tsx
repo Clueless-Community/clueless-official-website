@@ -68,12 +68,12 @@ export function HeroSection() {
       className="relative xl:h-[800px] lg:h-[685px] md:h-[570px] sm:h-[520px] h-[430px] items-start flex justify-between"
     >
       <Box className="flex flex-col mt-32 z-20">
-        <h1 className="text-white text-[3rem] sm:text-[3.5rem] lg:text-[4.5rem] xl:text-[5rem] font-black leading-none">
+        <h1 className="text-white text-[3rem] cursor-default sm:text-[3.5rem] lg:text-[4.5rem] xl:text-[5rem] font-black leading-none">
           Clueless <br />
           Community.
         </h1>
         <div className="relative top-2 sm:left-16 left-10">
-          <h2 className="text-white text-[1.6rem] sm:text-[2rem] ">
+          <h2 className="text-white cursor-default text-[1.6rem] sm:text-[2rem] ">
             Learn, Grow.
           </h2>
           <div className="flex lg:space-x-5 sm:space-x-24 space-x-20 sm:mt-4 mt-1 relative z-100">
@@ -164,7 +164,7 @@ export function HeroSection() {
             opacity: 0,
             transition: 'opacity 1s ease',
           }}
-          className="w-[100%] h-[100%]"
+          className="w-[100%] h-[100%] 2xl:mt-10"
         />
       </Box>
 

@@ -60,7 +60,7 @@ const data = [
     photo_url: 'https://i.ibb.co/nD5zf3X/ravindra.jpg ',
     designation: 'Web-Developer',
     linkedin_url: 'https://www.linkedin.com/in/ravindrap04/',
-    github_url: 'https://github.com/bbsdevloper',
+    github_url: 'https://github.com/ravindraP04',
     twitter_url: 'https://twitter.com/MukeshKuiry7',
   },
   {
@@ -95,6 +95,15 @@ const data = [
     linkedin_url: 'https://www.linkedin.com/in/hritik-bhattacharya-631847210/',
     github_url: 'https://github.com/hritikbhattacharya',
     twitter_url: 'https://twitter.com/Hritikb25',
+  },
+  {
+    name: 'Rohit Ranjan Singh',
+    photo_url:
+      'https://media.licdn.com/dms/image/D5603AQE6ITl3rZMQAw/profile-displayphoto-shrink_200_200/0/1677669282230?e=1686787200&v=beta&t=e745sXnUavivumMBRJwJ2suVShIhEFMCNIDcVkUx4oM',
+    designation: 'DevRel',
+    linkedin_url: 'https://linkedin.com/in/rohit-ranjan-singh-6133901b6/',
+    github_url: 'https://twitter.com/rohit_ranjan27',
+    twitter_url: 'https://github.com/rohitranjan-2702',
   },
 ];
 
