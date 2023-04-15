@@ -12,8 +12,9 @@ const LackingSkills = () => {
           We got you covered.
         </h1>
         <h4 className="pb-2 text-lg text-gray-300">
-          built with the vision to encourage open-source enthusiasts built with
-          the vision to encourage open-source enthusiasts
+          We have curated all the resources all over the internet and
+          categorised into Tech-Stack. One Stop Solution for your development
+          resources.
         </h4>
         <a
           href="https://clueless-resources.super.site/resources"
@@ -21,7 +22,7 @@ const LackingSkills = () => {
           rel="noreferrer"
           className="relative z-100"
         >
-          <button className="btn-green">Explore resource hub</button>
+          <button className="btn-green my-2">Explore resource hub</button>
         </a>
       </div>
       <div className="flex justify-center pt-8 md:mb-5">

@@ -176,11 +176,12 @@ const TutorialHell = () => {
           <div className="xl:ml-[40px]">
             <div className="xl:h-[227px] xl:mt-[100px] xl:mx-[100px] mt-[50px]">
               <h1 className="text-[22px] mb-[20px] font-medium text-white">
-                Built with the vision to encourage open-source enthusiasts!
+                Don't just always sit before your desktop watching Tutorials.
+                Get out of Tutorial Hell!
               </h1>
               <h1 className="text-[22px] font-medium text-white">
-                built with the vision to encourage open-source enthusiasts!
-                built with the vision to encourage open-source enthusiasts!
+                Contribute to our beginner-friendly repositories and gain
+                practical experience on the technology you are eyeing to master.
               </h1>
             </div>
             <div className="xl:ml-[100px] mt-[10px] xl:mt-0">

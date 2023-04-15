@@ -37,7 +37,9 @@ const WorldOfOpenSource: React.FC = () => {
                 marginBottom: '20px',
               }}
             >
-              built with the vision to encourage open-source enthusiasts!
+              dive deeper into the world of open-source with ClueLess. Start
+              with beginner-friendly repositories and contribute to the bigger
+              cause!
             </Typography>
             <Link href="/coming-soon" passHref>
               <button className="btn-green text-lg px-8">Explore</button>

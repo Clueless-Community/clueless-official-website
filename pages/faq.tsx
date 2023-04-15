@@ -119,14 +119,10 @@ const Faq: NextPage = () => {
                           : 'text-black'
                       }
                     >
-                      Clueless in a virtual open-source community built with the
-                      motive of “Learn and Grow”. We, as a community, encourage
-                      and guide enthusiasts to dive into the world of
-                      open-source. We provide the best resources available on
-                      the internet, write blogs that helps other to explore
-                      their domain more deeply, organize events, GitHub
-                      repositories, organize hackathons, and more couniting
-                      activities.
+                      Clueless is a student community which focuses on building
+                      developer tools with the power of open-source. We believe
+                      in the vision “Learn and Grow” and encourage & guide
+                      enthusiasts to dive deep into the world of open-source.
                     </Typography>
                   </AccordionDetails>
                 </Accordion>
@@ -155,7 +151,7 @@ const Faq: NextPage = () => {
                         expanded === 'panel2' ? 'text-black' : 'text-white'
                       }
                     >
-                      2. What do we provide?
+                      2. Is your Community beginner-friendly?
                     </h1>
                   </AccordionSummary>
                   <AccordionDetails className="dark:bg-[#17202A]">
@@ -166,11 +162,10 @@ const Faq: NextPage = () => {
                           : 'text-balck'
                       }
                     >
-                      Internet is flooded with so many resources that can make
-                      one confused and clueless. So we, the Clueless Community
-                      provide the best, filtered, and curated resources like
-                      YouTube videos, GitHub repositories, websites,
-                      cheatsheets, etc!
+                      Our community is completely beginner-friendly. If you also
+                      want to start in tech. Reach out to our Community Members
+                      and also the community members are also super active. You
+                      will definitely get benefitted.
                     </Typography>
                   </AccordionDetails>
                 </Accordion>
@@ -199,7 +194,7 @@ const Faq: NextPage = () => {
                         expanded === 'panel3' ? 'text-black' : 'text-white'
                       }
                     >
-                      3. Do we have a community?
+                      3. How do i stay up to date on the latest updates?
                     </h1>
                   </AccordionSummary>
                   <AccordionDetails className="dark:bg-[#17202A]">
@@ -210,9 +205,10 @@ const Faq: NextPage = () => {
                           : 'text-black'
                       }
                     >
-                      Yes! we do have an amazing Discord community where you can
-                      interact with other audiences, ask and help others. There
-                      are different channels for every tech domain.
+                      Join our Discord and Whatsapp community group to get
+                      updated with any instant updates from our community. Also
+                      do follow our LinkedIn and Twitter handles to know about
+                      all our announcements.
                     </Typography>
                   </AccordionDetails>
                 </Accordion>
@@ -241,7 +237,7 @@ const Faq: NextPage = () => {
                         expanded === 'panel4' ? 'text-black' : 'text-white'
                       }
                     >
-                      4. Is it free?
+                      4. Is it completely free?
                     </h1>
                   </AccordionSummary>
                   <AccordionDetails className="dark:bg-[#17202A]">
@@ -252,7 +248,9 @@ const Faq: NextPage = () => {
                           : 'text-black'
                       }
                     >
-                      Yes! It is absolutely free.
+                      Yes! It is absolutely free. Our motto is to help fellow
+                      learners through the way of open-source and we don't
+                      charge anything for that.
                     </Typography>
                   </AccordionDetails>
                 </Accordion>
