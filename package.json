@@ -40,6 +40,8 @@
     "react-icons": "^4.7.1",
     "react-slick": "^0.29.0",
     "react-tooltip": "^5.7.5",
+    "react-tweet-embed": "^2.0.0",
+    "react-twitter-embed": "^4.0.4",
     "slick-carousel": "^1.8.1",
     "swiper": "^9.1.1",
     "tailwind": "^4.0.0",
