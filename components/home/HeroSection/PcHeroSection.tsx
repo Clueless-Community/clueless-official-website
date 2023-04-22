@@ -34,7 +34,7 @@ export function HeroSection() {
       theta: 0,
       dark: 1,
       diffuse: 1.2,
-      mapSamples: 16000,
+      mapSamples: 15500,
       mapBrightness: 6,
       opacity: 0.9,
       baseColor: [1, 1, 1],
@@ -48,7 +48,7 @@ export function HeroSection() {
       ],
       onRender: (state) => {
         if (!pointerInteracting.current) {
-          phi += 0.005;
+          phi += 0.002;
         }
         if (window.screen.width < 600) {
           phi = 1.5;
@@ -61,7 +61,7 @@ export function HeroSection() {
 
     setTimeout(() => (canvasRef.current!.style.opacity = '1'));
     return () => globe.destroy();
-  }, []);
+  }, [r]);
   return (
     <div
       id="hero"
