@@ -17,10 +17,10 @@ function ExploreProjects() {
       repoURL: 'https://github.com/Clueless-Community/seamless-ui',
     },
     {
-      title: 'Flutter UI Components',
+      title: 'Spectrum UI',
       tags: ['Flutter', 'Tailwind CSS'],
       desc: 'A collection of flutter UI components',
-      repoURL: 'https://github.com/Clueless-Community/flutter-ui-components',
+      repoURL: 'https://github.com/Clueless-Community/Spectrum-UI',
     },
   ];
 
