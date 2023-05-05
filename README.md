@@ -67,10 +67,10 @@ Click [here](https://github.com/Clueless-Community/flutter-ui-components) to che
         </a>
     </td>
     <td align="center">
-        <a href="https://github.com/Rajdip019">
-            <img src="https://avatars.githubusercontent.com/u/91758830?v=4" width="100;" alt="Rajdeep Sengupta"/>
+        <a href="https://github.com/bbsdevloper">
+            <img src="https://avatars.githubusercontent.com/u/99157367?v=4" width="100;" alt="Mukesh Kuiry"/>
             <br />
-            <sub><b>Rajdeep Sengupta</b></sub>
+            <sub><b>Mukesh Kuiry</b></sub>
         </a>
     </td>
   </tr>
