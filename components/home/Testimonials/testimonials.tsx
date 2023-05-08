@@ -50,6 +50,7 @@ const Testimonial = () => {
         },
       },
     ],
+    variableWidth: true,
   };
   return (
     <div className="min-h-[45rem]">
