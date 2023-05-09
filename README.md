@@ -53,7 +53,7 @@ Check this project [this](https://github.com/Clueless-Community/collegeAPI) here
 - ## Flutter UI Components
   A collection of flutter UI components
 
-Click [here](https://github.com/Clueless-Community/flutter-ui-components) to check this amazing repository. All the changes and contributions are appreciated.
+Click [here](https://github.com/Clueless-Community/Spectrum-UI) to check this amazing repository. All the changes and contributions are appreciated.
 
 <h2 align='center'> Project maintainers </h2>
 <table align='center'>
