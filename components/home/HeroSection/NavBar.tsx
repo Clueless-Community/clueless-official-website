@@ -1,11 +1,13 @@
-/* eslint-disable @next/next/no-img-element */
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { useState, useEffect } from 'react';
 import { Disclosure } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const NavBar: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     if (window.screen.width < 1024) {
@@ -14,15 +16,34 @@ const NavBar: React.FC = () => {
   }, []);
 
   const navigation = [
-    { name: 'Home', href: '/#hero', current: true },
-    { name: 'About Us', href: '/about-us', current: false },
-    { name: 'Open Source Projects', href: '/#projects', current: false },
+    { name: 'Home', href: '/#hero', current: router.pathname === '/' },
+    {
+      name: 'About Us',
+      href: '/about-us',
+      current: router.pathname === '/about-us',
+    },
+    {
+      name: 'Open Source Projects',
+      href: '/#projects',
+      current: router.pathname === '/#projects',
+    },
     {
       name: 'Resources',
       href: 'https://clueless-resources.super.site/resources',
       current: false,
     },
   ];
+
+  const [nav, setNav] = useState(navigation);
+
+  const setActive = (nameToSet: string) => {
+    const updatedNav = nav.map((item) => ({
+      ...item,
+      current: item.name === nameToSet,
+    }));
+
+    setNav(updatedNav);
+  };
 
   function classNames(...classes: string[]) {
     return classes.filter(Boolean).join(' ');
@@ -50,14 +71,6 @@ const NavBar: React.FC = () => {
                       />
                     )}
                   </Disclosure.Button>
-                  {/* Profile Image */}
-                  {/* <button className="flex rounded-full md:ml-4 text-sm hover:outline-none hover:ring-2 hover:ring-[#7EE787] hover:ring-offset-2 hover:ring-offset-gray-800">
-                    <img
-                      className="w-10 h-10 rounded-full"
-                      src="https://pbs.twimg.com/profile_images/1626657457446752257/d4kJWBeS_400x400.jpg"
-                      alt=""
-                    />
-                  </button> */}
                 </div>
                 <div className="w-[100%] flex justify-between items-center">
                   {/* Hero Logo */}
@@ -74,7 +87,7 @@ const NavBar: React.FC = () => {
                     {/* Tabs */}
                     <div className="flex space-x-8">
                       {navigation.map((item) => (
-                        <a
+                        <Link
                           key={item.name}
                           href={item.href}
                           className={classNames(
@@ -83,22 +96,12 @@ const NavBar: React.FC = () => {
                               : 'text-gray-300 hover:text-[#7EE787]',
                             'rounded-md text-lg font-medium'
                           )}
-                          aria-current={item.current ? 'page' : undefined}
+                          onClick={() => setActive(item.name)}
                         >
                           {item.name}
-                        </a>
+                        </Link>
                       ))}
                     </div>
-                    {/* Profile Image */}
-                    {/* <div className="absolute inset-y-0 right-0 flex items-center pl-5 md:static md:inset-auto md:ml-6 md:pr-0">
-                      <button className="flex rounded-full text-sm hover:outline-none hover:ring-2 hover:ring-[#7EE787] hover:ring-offset-2 hover:ring-offset-gray-800">
-                        <img
-                          className="w-10 rounded-full"
-                          src="https://pbs.twimg.com/profile_images/1626657457446752257/d4kJWBeS_400x400.jpg"
-                          alt=""
-                        />
-                      </button>
-                    </div> */}
                   </div>
                 </div>
               </div>
@@ -106,9 +109,8 @@ const NavBar: React.FC = () => {
               <Disclosure.Panel className="lg:hidden">
                 <div className="space-y-1 px-2 pt-2 pb-3">
                   {navigation.map((item) => (
-                    <Disclosure.Button
+                    <Link
                       key={item.name}
-                      as="a"
                       href={item.href}
                       className={classNames(
                         item.current
@@ -116,10 +118,10 @@ const NavBar: React.FC = () => {
                           : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                         'block rounded-md px-3 py-2 text-base font-medium'
                       )}
-                      aria-current={item.current ? 'page' : undefined}
+                      onClick={() => setActive(item.name)}
                     >
                       {item.name}
-                    </Disclosure.Button>
+                    </Link>
                   ))}
                 </div>
               </Disclosure.Panel>
