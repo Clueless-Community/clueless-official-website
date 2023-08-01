@@ -184,7 +184,10 @@ const TutorialHell = () => {
                 practical experience on the technology you are eyeing to master.
               </h1>
             </div>
-            <div className="xl:ml-[100px] mt-[10px] xl:mt-0">
+            <div
+              className="xl:ml-[100px] mt-[10px] xl:mt-0"
+              style={{ marginTop: '12%' }}
+            >
               <Link href="/coming-soon" passHref>
                 <button className="text-[#7EE787] flex flex-row">
                   <h1 className="xl:text-[22px] text-[20px] font-extrabold">

@@ -50,7 +50,7 @@ Click [here](https://github.com/Clueless-Community/Datasets) to check this amazi
 
 Check this project [this](https://github.com/Clueless-Community/collegeAPI) here!
 
-- ## Spectrum UI
+- ## Flutter UI Components
   A collection of flutter UI components
 
 Click [here](https://github.com/Clueless-Community/Spectrum-UI) to check this amazing repository. All the changes and contributions are appreciated.
