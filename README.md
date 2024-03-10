@@ -66,7 +66,7 @@ Click [here](https://github.com/Clueless-Community/Spectrum-UI) to check this am
         </a>
     </td>
     <td align="center">
-        <a href="https://github.com/bbsdevloper">
+        <a href="https://github.com/mukeshkuiry">
             <img src="https://avatars.githubusercontent.com/u/99157367?v=4" width="100;" alt="Mukesh Kuiry"/>
             <br />
             <sub><b>Mukesh Kuiry</b></sub>
